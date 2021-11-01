@@ -26,6 +26,10 @@ body {
   color: #686868;
 }
 
+a {
+  color: #0ae351;
+}
+
 h1:first-child {
   margin-top: 0;
 }
@@ -68,4 +72,34 @@ h1:first-child {
 
 #dtr-page-title-wrapper {
   padding: 100px 0;
+}
+
+.dtr-container {
+  margin: 0 auto;
+}
+
+@media (min-width: 960px) {
+  .dtr-container {
+      width: 1170px;
+  }
+}
+
+.dtr-fullwidth .dtr-content-area {
+  width: 100% !important;
+  float: none;
+}
+
+.elementor-widget-text-editor {
+  color: var( --e-global-color-text );
+  font-family: "Roboto", Sans-serif;
+  font-weight: 400;
+}
+
+.elementor-column-gap-default>.elementor-column>.elementor-element-populated {
+  padding: 10px;
+}
+
+.elementor-3 .elementor-element.elementor-element-0badf10 {
+  text-align: center;
+  color: #0AE351;
 }

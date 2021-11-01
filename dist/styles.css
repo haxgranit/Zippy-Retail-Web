@@ -160,5 +160,7 @@ ul {
 }
 
 @media (min-width: 960px) {
-  .dtr-container { width: 1170px; }
+  .dtr-container {
+    width: 1170px;
+  }
 }
