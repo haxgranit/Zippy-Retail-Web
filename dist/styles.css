@@ -1,0 +1,10 @@
+body {
+    padding: 20px 0;
+    display: flex;
+}
+
+img {
+    border-radius: 10px;
+    box-shadow: #000 0px 5px 15px;
+    margin: 0 auto;
+}
