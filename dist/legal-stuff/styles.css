@@ -61,6 +61,17 @@ h3 {
   color: #333333;
 }
 
+h4 {
+  font-family: Niramit;
+  font-size: 30px;
+  font-weight: 700;
+  letter-spacing: 0px;
+  line-height: 1.2;
+  text-transform: none;
+  color: #333333;
+  margin-top: 20px;
+}
+
 h6 {
   font-family: Niramit;
   font-size: 16px;
@@ -70,6 +81,17 @@ h6 {
   text-transform: none;
   color: #333333;
   margin-top: 20px;
+}
+
+ul {
+  margin: 0 0 10px 0;
+  padding: 0;
+  list-style-position: inside;
+  display: block;
+}
+
+ul li {
+  margin-bottom: 10px;
 }
 
 .dtr-page-title-overlay {
