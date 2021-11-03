@@ -73,7 +73,7 @@ ul {
 .img-container .overlay {
   background-color: #000;
   height: 100%;
-  opacity: 0.7;
+  opacity: 0.4;
   position: absolute;
   top: 0;
   width: 100%;
