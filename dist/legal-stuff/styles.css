@@ -41,11 +41,6 @@ a {
   transition: all .3s ease;
 }
 
-a:hover {
-  color: #333333;
-  text-decoration: none;
-}
-
 h1:first-child {
   margin-top: 0;
 }
@@ -143,6 +138,11 @@ li > ul {
   z-index: 9;
   display: block;
   margin-bottom: 0;
+}
+
+#dtr-main-wrapper a:hover {
+  color: #333333;
+  text-decoration: none;
 }
 
 #dtr-page-title-main {
