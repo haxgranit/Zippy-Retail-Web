@@ -62,6 +62,23 @@ ul {
   display: block;
 }
 
+.img-container {
+  position: relative;
+}
+
+.img-container img {
+  width: 100%;
+}
+
+.img-container .overlay {
+  background-color: #000;
+  height: 100%;
+  opacity: 0.7;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
 .dtr-container {
   width: 1170px;
   margin: 0 auto;
