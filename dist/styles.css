@@ -40,16 +40,6 @@ body {
   padding: 0;
 }
 
-.mockup-container {
-  padding: 20px 0;
-  margin: 0 auto;
-}
-
-.mockup {
-  border-radius: 10px;
-  box-shadow: #000 0px 5px 15px;
-}
-
 a {
   cursor: pointer;
   text-decoration: none;
@@ -70,6 +60,43 @@ ul {
   padding: 0;
   list-style-position: inside;
   display: block;
+}
+
+.img-container {
+  position: relative;
+}
+
+.img-container img {
+  width: 100%;
+}
+
+.img-container .overlay {
+  background-color: #000;
+  height: 100%;
+  opacity: 0.4;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.img-container .coming-soon {
+  height: 100%;
+  position: absolute;
+  text-align: center;
+  top: 0;
+  width: 100%;
+}
+
+.img-container .coming-soon > div {
+  background-color: #df413a;
+  border-radius: 10px;
+  color: #fff;
+  display: inline-block;
+  font-family: 'Poppins', sans-serif;
+  font-size: 48px;
+  line-height: 48px;
+  margin: 200px auto 0 auto;
+  padding: 48px;
 }
 
 .dtr-container {
