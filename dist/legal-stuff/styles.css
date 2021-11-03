@@ -37,7 +37,6 @@ body {
 }
 
 a {
-  color: #0ae351;
   transition: all .3s ease;
 }
 
@@ -116,16 +115,6 @@ li > ul {
   margin-left: 1.5em;
 }
 
-.dtr-page-title-overlay {
-  background-color: rgba(77,75,75,0.6);
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  z-index: 1;
-}
-
 .dtr-page-title {
   font-family: Niramit;
   font-size: 50px;
@@ -146,8 +135,7 @@ li > ul {
 }
 
 #dtr-page-title-main {
-  background-image: url(https://zippy.world/wp-content/uploads/2021/03/ContactPage.jpg);
-  background-color: #333333;
+  background-color: #df413a;
   background-position: right center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -188,7 +176,6 @@ li > ul {
 
 .elementor-3 .elementor-element.elementor-element-0badf10 {
   text-align: center;
-  color: #0AE351;
 }
 
 .elementor-column-gap-default>.elementor-column>.elementor-element-populated {

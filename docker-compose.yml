@@ -6,3 +6,5 @@ services:
     image: zippyangular.azurecr.io/zcorp-consumer
     ports:
       - 80:80
+    volumes:
+      - ./dist:/usr/share/nginx/html
