@@ -1,0 +1,284 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap');
+
+body{
+    font-family: 'Poppins', sans-serif;
+}
+.slider-slide{
+    background-position: center;
+    background-size: cover;
+}
+.slider-slide .container .row{
+    min-height: 60vh;
+    align-items: center;
+}
+.sliderh2{
+	color: #ffffff;
+	font-weight: 500;
+    font-size: 1.6em;
+    padding-top: 6em;
+}
+.hero-heading{
+font-size: 4.5em;
+line-height: 1em;
+}
+.hero .hero-button, .my-button{
+    width: 230px;
+    font-weight: bold;
+    font-size: 2em;
+    padding: 0px 8px;
+    box-shadow: 5px 5px  #88888840;
+    border-radius: 10px !important;
+    color: #FF1926;
+}
+.my-buttonred{
+    font-weight: bold;
+    font-size: 2em;
+    padding: 0px 15px;
+    box-shadow: 5px 5px  #88888840;
+    border-radius: 10px !important;
+    color: #FFFFFF;
+    background-color: #FF1926;   
+}
+.my-buttonred:hover{
+    font-weight: bold;
+    font-size: 2em;
+    padding: 0px 15px;
+    box-shadow: 5px 5px  #88888840;
+    border-radius: 10px !important;
+    color: #FFFFFF;
+    background-color: #FF1926;     
+}
+.ctaband{
+    background-position: center;
+    background-size: cover;
+}
+.aboutus_ctaband{
+    background-position: unset;
+    background-size: cover;
+}
+#colorgradient {
+  background-image: linear-gradient(to right, #FF7300 , #FF1926);
+  margin-top: 18vh;
+}
+#redgradient {
+  background-image: linear-gradient(to right, #ed4238 , #FF7300);
+}
+#bluegradient {
+background-image: linear-gradient(to right, #51aad8 , #51aad8);
+  margin-top: 18vh;
+}
+.orangeredbar{
+    	display: none;		
+		}
+.fw-bold{
+color: #ffffff;
+}
+.redtitle{
+color: #FF1926;
+font-weight: 700;
+}
+.redsubtitle{
+color: #FF1926;
+font-weight: 500;
+}
+.bluetitle{
+color: #51aad8;
+font-weight: 700;
+}
+.whitetitle{
+color: #FFFFFF;
+font-weight: 700;
+}
+.whitecopy{
+color: #FFFFFF;
+font-size: 20px;
+font-weight: 400;
+}
+.header-cta{
+    background-color: grey;
+}
+p.content-home{
+    font-size: 20px;
+    font-weight: 400;
+    color: #5E7472;
+}
+footer{
+    margin-top: 80px;
+    font-weight: 500;
+    color: grey;
+    font-size: 13px;
+}
+.footer-link{
+    display: inline-block;
+    width: 120px;
+}
+.footer-link a{
+    color: grey;
+}
+.line-height-double{
+    line-height: 2rem;
+}
+.spacing{
+    height: 180px;
+}
+.spacingmedium{
+    		height: 100px;
+}
+.spacingsmall{
+    height: 20px;
+}
+.px-5-wide{
+    padding-left: 5rem;
+    padding-right: 5rem;
+}
+.navbar-light .navbar-nav .nav-link {
+color: #5E7472;
+font-size: 1.2em;
+font-weight: 500;
+}
+.navbar-light .navbar-nav .nav-link:hover {
+color: #FF1926;
+font-size: 1.2em;
+text-decoration: underline;
+font-weight: 500;
+}
+.navbar-light .navbar-nav .nav-link:active  {
+color: #FF1926;
+font-size: 1.2em;
+text-decoration: underline;
+}
+.btn-light:hover {
+    color: #FF1926;
+}
+.centerimage {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.circleoverlap {
+padding-top: 17vh;
+}
+.card {
+    background-color: #FF7300;
+}
+.cardbusiness {
+    background-color: #FF1926;
+}
+.formcurve{
+border-radius: .5rem;
+}
+.profilephoto{
+width: 65%;
+}
+
+
+@media (min-width: 576px) {
+
+		.spacingsmall{
+    		height: 20px;
+		}
+		
+		.spacingmedium{
+    		height: 110px;
+		}
+		
+		
+		.circleoverlap {
+			padding-top: 2vh;
+			padding-bottom: 2vh;
+		}
+
+		#colorgradient {
+		  margin-top: 0vh;
+		}
+		
+		#bluegradient {
+		  margin-top: 0vh;
+		}
+		
+		
+		.sliderh2{
+			color: #ffffff;
+			font-weight: 500;
+    		font-size: 2.0em;
+    		padding-top: 0em;
+		}
+
+
+		.hero-heading{
+		font-size: 6.5em;
+		line-height: 1em;
+		}
+
+		.hero .hero-button, .my-button{
+    	width: 340px;
+		}
+
+
+		.aboutus_icon{
+		padding-top: 20px;
+		}
+
+		
+		.btn-red {
+    	color: #FFFFFF;
+    	background-color: #FF1926;
+    	border-color: #FF1926;
+		}
+
+		.orangeredbar{
+    	display: block;
+    	transform: translateY(680px)!important;
+    	top: -210px;
+    	left: 0px;		
+		}
+
+		.profilephoto {
+    	width: 85%;
+		}
+
+
+
+}
+
+
+
+
+
+
+
+
+.slick-dots{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.slick-dots>li{
+    display: inline-block;
+    margin-left: 4px;
+    margin-right: 4px;
+}
+
+.slick-dots>li>button{
+    height: 14px;
+    width: 14px;
+    border: 1px solid #ffffff90;
+    background-color: transparent;
+    color: transparent;
+    border-radius: 50%;
+}
+
+.slick-dots>li.slick-active>button{
+    border: 1px solid #ffffff;
+    background-color: #a3c6e2;
+}
+
+
+
+
+
