@@ -4,6 +4,8 @@ services:
   web:
     build: .
     image: zippyangular.azurecr.io/zcorp-consumer
+    environment:
+      - NGINX_AUTH_BASIC=off
     ports:
       - 80:80
     volumes:
