@@ -1,16 +1,13 @@
 import AOS from 'aos';
-import { faSearch } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useEffect } from 'react';
 import Slider from 'react-slick';
-import './App.css';
-import ZippyCash_Logo from './assets/img/general/ZippyCash_Logo.png';
 import ZippyCash_Landing_Slider_01 from './assets/img/slider/ZippyCash_Landing_Slider-01.jpg';
 import ZippyCash_Landing_Slider_02 from './assets/img/slider/ZippyCash_Landing_Slider-02.jpg';
 import ZippyCash_Landing_Slider_03 from './assets/img/slider/ZippyCash_Landing_Slider-03.jpg';
 import ZippyCash_Icons_A from './assets/img/roundicons/home/ZippyCash_Icons_A.png';
 import ZippyCash_Icons_B from './assets/img/roundicons/home/ZippyCash_Icons_B.png';
 import ZippyCash_Icons_C from './assets/img/roundicons/home/ZippyCash_Icons_C.png';
+import Header from './Header';
 
 function App() {
   const sliderSettings = {
@@ -25,46 +22,7 @@ function App() {
 
   return (
     <div>
-      <nav className="navbar navbar-expand-lg navbar-light">
-        <div className="container">
-          <a className="navbar-brand" href="index.html">
-            <img src={ZippyCash_Logo} alt="" />
-          </a>
-          <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span className="navbar-toggler-icon"></span>
-          </button>
-          <div className="collapse navbar-collapse flex-md-column nav-uppercase" id="navbarSupportedContent">
-            <ul className="navbar-nav ms-auto mb-2 mb-lg-0 me-md-5">
-              <li className="nav-item">
-                <a className="nav-link fw-bold" aria-current="page" href="#">LANGUAGE</a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link fw-bold" aria-current="page" href="login.html">LOGIN</a>
-              </li>
-            </ul>
-            <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
-              <li className="nav-item">
-                <a className="nav-link" aria-current="page" href="about.html">about us</a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link" aria-current="page" href="personal.html">personal</a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link" aria-current="page" href="business.html">business</a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link" aria-current="page" href="personal-profile.html">dev docs</a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link" aria-current="page" href="search.html">
-                  <FontAwesomeIcon icon={faSearch} />
-                </a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </nav>
+      <Header />
       <section className="hero slider">
         <Slider {...sliderSettings}>
           <div>
