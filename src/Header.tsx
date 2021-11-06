@@ -2,7 +2,7 @@ import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import ZippyCash_Logo from './assets/img/general/ZippyCash_Logo.png';
 
-function Header() {
+export default function Header() {
   return (
     <nav className="navbar navbar-expand-lg navbar-light">
       <div className="container">
@@ -46,5 +46,3 @@ function Header() {
     </nav>
   );
 }
-
-export default Header;
