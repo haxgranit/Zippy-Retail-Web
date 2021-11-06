@@ -1,5 +1,6 @@
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import Slider from 'react-slick';
 import './App.css';
 import ZippyCash_Logo from './assets/img/general/ZippyCash_Logo.png';
 import ZippyCash_Landing_Slider_01 from './assets/img/slider/ZippyCash_Landing_Slider-01.jpg';
@@ -10,6 +11,14 @@ import ZippyCash_Icons_B from './assets/img/roundicons/home/ZippyCash_Icons_B.pn
 import ZippyCash_Icons_C from './assets/img/roundicons/home/ZippyCash_Icons_C.png';
 
 function App() {
+  const sliderSettings = {
+    autoplay: true,
+    autoplaySpeed: 3000,
+    arrows: false,
+    dots: false,
+    dotsClass: 'slick-dots'
+  }
+
   return (
     <div>
       <nav className="navbar navbar-expand-lg navbar-light">
@@ -53,39 +62,47 @@ function App() {
         </div>
       </nav>
       <section className="hero slider">
-        <div className="slider-slide" style={{ backgroundImage: `url(${ZippyCash_Landing_Slider_01})` }}>
-          <div className="container">
-            <div className="row">
-              <div className="col-12">
-                <h2 className="sliderh2">personal banking</h2>
-                <h1 className="hero-heading display-3 fw-bold">Zipp it<br />to me!</h1>
-                <a className="hero-button btn btn-light rounded-0" href="personal-signup.html">SIGN UP!</a>
+        <Slider {...sliderSettings}>
+          <div>
+            <div className="slider-slide" style={{ backgroundImage: `url(${ZippyCash_Landing_Slider_01})` }}>
+              <div className="container">
+                <div className="row">
+                  <div className="col-12">
+                    <h2 className="sliderh2">personal banking</h2>
+                    <h1 className="hero-heading display-3 fw-bold">Zipp it<br />to me!</h1>
+                    <a className="hero-button btn btn-light rounded-0" href="personal-signup.html">SIGN UP!</a>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-        <div className="slider-slide" style={{ backgroundImage: `url(${ZippyCash_Landing_Slider_02})` }}>
-          <div className="container">
-            <div className="row">
-              <div className="col-12">
-                <h2 className="sliderh2">personal banking</h2>
-                <h1 className="hero-heading display-3 fw-bold">Zipp it<br />to me!</h1>
-                <a className="hero-button btn btn-light rounded-0" href="personal-signup.html">SIGN UP!</a>
+          <div>
+            <div className="slider-slide" style={{ backgroundImage: `url(${ZippyCash_Landing_Slider_02})` }}>
+              <div className="container">
+                <div className="row">
+                  <div className="col-12">
+                    <h2 className="sliderh2">personal banking</h2>
+                    <h1 className="hero-heading display-3 fw-bold">Zipp it<br />to me!</h1>
+                    <a className="hero-button btn btn-light rounded-0" href="personal-signup.html">SIGN UP!</a>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-        <div className="slider-slide" style={{ backgroundImage: `url(${ZippyCash_Landing_Slider_03})` }}>
-          <div className="container">
-            <div className="row">
-              <div className="col-12">
-                <h2 className="sliderh2">personal sign up</h2>
-                <h1 className="hero-heading display-3 fw-bold">Zipp it<br />to me!</h1>
-                <a className="hero-button btn btn-light rounded-0" href="business-signup.html">SIGN UP!</a>
+          <div>
+            <div className="slider-slide" style={{ backgroundImage: `url(${ZippyCash_Landing_Slider_03})` }}>
+              <div className="container">
+                <div className="row">
+                  <div className="col-12">
+                    <h2 className="sliderh2">personal sign up</h2>
+                    <h1 className="hero-heading display-3 fw-bold">Zipp it<br />to me!</h1>
+                    <a className="hero-button btn btn-light rounded-0" href="business-signup.html">SIGN UP!</a>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
+        </Slider>
       </section>
       <section className="header-cta text-light mb-4">
         <div id="redgradient" className="ctaband" >
