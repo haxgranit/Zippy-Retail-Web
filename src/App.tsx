@@ -1,4 +1,13 @@
+import { faSearch } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import './App.css';
+import ZippyCash_Logo from './assets/img/general/ZippyCash_Logo.png';
+import ZippyCash_Landing_Slider_01 from './assets/img/slider/ZippyCash_Landing_Slider-01.jpg';
+import ZippyCash_Landing_Slider_02 from './assets/img/slider/ZippyCash_Landing_Slider-02.jpg';
+import ZippyCash_Landing_Slider_03 from './assets/img/slider/ZippyCash_Landing_Slider-03.jpg';
+import ZippyCash_Icons_A from './assets/img/roundicons/home/ZippyCash_Icons_A.png';
+import ZippyCash_Icons_B from './assets/img/roundicons/home/ZippyCash_Icons_B.png';
+import ZippyCash_Icons_C from './assets/img/roundicons/home/ZippyCash_Icons_C.png';
 
 function App() {
   return (
@@ -6,7 +15,7 @@ function App() {
       <nav className="navbar navbar-expand-lg navbar-light">
         <div className="container">
           <a className="navbar-brand" href="index.html">
-            <img src="public/img/general/ZippyCash_Logo.png" alt="" />
+            <img src={ZippyCash_Logo} alt="" />
           </a>
           <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -35,14 +44,16 @@ function App() {
                 <a className="nav-link" aria-current="page" href="personal-profile.html">dev docs</a>
               </li>
               <li className="nav-item">
-                <a className="nav-link" aria-current="page" href="search.html"><i className="fa fa-search"></i></a>
+                <a className="nav-link" aria-current="page" href="search.html">
+                  <FontAwesomeIcon icon={faSearch} />
+                </a>
               </li>
             </ul>
           </div>
         </div>
       </nav>
       <section className="hero slider">
-        <div className="slider-slide" style={{ backgroundImage: 'url(\'public/img/slider/ZippyCash_Landing_Slider-01.jpg\')' }}>
+        <div className="slider-slide" style={{ backgroundImage: `url(${ZippyCash_Landing_Slider_01})` }}>
           <div className="container">
             <div className="row">
               <div className="col-12">
@@ -53,7 +64,7 @@ function App() {
             </div>
           </div>
         </div>
-        <div className="slider-slide" style={{ backgroundImage: 'url(\'public/img/slider/ZippyCash_Landing_Slider-02.jpg\')' }}>
+        <div className="slider-slide" style={{ backgroundImage: `url(${ZippyCash_Landing_Slider_02})` }}>
           <div className="container">
             <div className="row">
               <div className="col-12">
@@ -64,7 +75,7 @@ function App() {
             </div>
           </div>
         </div>
-        <div className="slider-slide" style={{ backgroundImage: 'url(\'public/img/slider/ZippyCash_Landing_Slider-03.jpg\')' }}>
+        <div className="slider-slide" style={{ backgroundImage: `url(${ZippyCash_Landing_Slider_03})` }}>
           <div className="container">
             <div className="row">
               <div className="col-12">
@@ -96,7 +107,7 @@ function App() {
           <div className="container">
             <div className="row align-items-center py-4 flex-md-row-reverse">
               <div className="col-12 col-md-6 col-lg-3">
-                <img src="public/img/roundicons/home/ZippyCash_Icons_A.png" alt="happy young woman on her phone" className="img-fluid centerimage" data-aos="flip-left" />
+                <img src={ZippyCash_Icons_A} alt="happy young woman on her phone" className="img-fluid centerimage" data-aos="flip-left" />
               </div>
               <div className="col-12 col-md-6 col-lg-9">
                 <h2 className="redtitle">Want to get more out of your money?</h2>
@@ -111,13 +122,13 @@ function App() {
           <div className="container">
             <div className="row align-items-center py-4">
               <div className="col-12 col-md-6 col-lg-3 text-end position-relative" data-aos="flip-left">
-                <img src="public/img/roundicons/home/ZippyCash_Icons_B.png" alt="young man looking positive" className="img-fluid position-absolute top-0 start-50 translate-middle" data-aos="flip-left" />
+                <img src={ZippyCash_Icons_B} alt="young man looking positive" className="img-fluid position-absolute top-0 start-50 translate-middle" data-aos="flip-left" />
               </div>
               <div className="col-12 col-md-6 col-lg-9 circleoverlap">
                 <br />
                 <h2 className="whitetitle">How do we make it so cheap?</h2>
                 <p className="m-0 whitecopy">
-                  We think financial services should be a win-win.We take less of your money because fees just don't need to be that high. <strong>It's that simple.</strong>
+                  We think financial services should be a win-win. We take less of your money because fees just don't need to be that high. <strong>It's that simple.</strong>
                 </p>
                 <br />
               </div>
@@ -128,12 +139,12 @@ function App() {
           <div className="container">
             <div className="row align-items-center py-4 flex-md-row-reverse">
               <div className="col-12 col-md-6 col-lg-3">
-                <img src="public/img/roundicons/home/ZippyCash_Icons_C.png" alt="smiling young woman" className="img-fluid centerimage" data-aos="flip-left" />
+                <img src={ZippyCash_Icons_C} alt="smiling young woman" className="img-fluid centerimage" data-aos="flip-left" />
               </div>
               <div className="col-12 col-md-6 col-lg-9">
                 <h2 className="redtitle">Our name isn’t just for show.</h2>
                 <p className="m-0 content-home">
-                  Zippy is zippier.A lot zippier.Almost instantaneous, even across borders.We doubled down on speed and security to make sure your money goes where you want it, when you want it, with nothing getting in the way.<strong>You've got places to go after all, so go on!</strong>
+                  Zippy is zippier. A lot zippier. Almost instantaneous, even across borders. We doubled down on speed and security to make sure your money goes where you want it, when you want it, with nothing getting in the way. <strong>You've got places to go after all, so go on!</strong>
                 </p>
               </div>
             </div>
