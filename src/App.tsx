@@ -1,5 +1,7 @@
+import AOS from 'aos';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { useEffect } from 'react';
 import Slider from 'react-slick';
 import './App.css';
 import ZippyCash_Logo from './assets/img/general/ZippyCash_Logo.png';
@@ -17,7 +19,9 @@ function App() {
     arrows: false,
     dots: false,
     dotsClass: 'slick-dots'
-  }
+  };
+
+  useEffect(() => AOS.init(), []);
 
   return (
     <div>
