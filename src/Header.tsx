@@ -1,14 +1,15 @@
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { Link } from 'react-router-dom';
 import ZippyCash_Logo from './assets/img/general/ZippyCash_Logo.png';
 
 export default function Header() {
   return (
     <nav className="navbar navbar-expand-lg navbar-light">
       <div className="container">
-        <a className="navbar-brand" href="index.html">
+        <Link to="/" className="navbar-brand">
           <img src={ZippyCash_Logo} alt="" />
-        </a>
+        </Link>
         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
           aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span className="navbar-toggler-icon"></span>
@@ -16,29 +17,29 @@ export default function Header() {
         <div className="collapse navbar-collapse flex-md-column nav-uppercase" id="navbarSupportedContent">
           <ul className="navbar-nav ms-auto mb-2 mb-lg-0 me-md-5">
             <li className="nav-item">
-              <a className="nav-link fw-bold" aria-current="page" href="#">LANGUAGE</a>
+              <Link to="language" className="nav-link fw-bold" aria-current="page">LANGUAGE</Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link fw-bold" aria-current="page" href="login.html">LOGIN</a>
+              <Link to="login" className="nav-link fw-bold" aria-current="page">LOGIN</Link>
             </li>
           </ul>
           <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
             <li className="nav-item">
-              <a className="nav-link" aria-current="page" href="about.html">about us</a>
+              <Link to="about" className="nav-link" aria-current="page">about us</Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link" aria-current="page" href="personal.html">personal</a>
+              <Link to="personal" className="nav-link" aria-current="page">personal</Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link" aria-current="page" href="business.html">business</a>
+              <Link to="business" className="nav-link" aria-current="page">business</Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link" aria-current="page" href="personal-profile.html">dev docs</a>
+              <Link to="personal/profile" className="nav-link" aria-current="page">dev docs</Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link" aria-current="page" href="search.html">
+              <Link to="search" className="nav-link" aria-current="page">
                 <FontAwesomeIcon icon={faSearch} />
-              </a>
+              </Link>
             </li>
           </ul>
         </div>
