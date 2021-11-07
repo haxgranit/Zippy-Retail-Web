@@ -15,7 +15,7 @@ export default function Personal() {
               <div className="mb-3">
                 <h2 style={{ color: '#FF1926' }}>personal banking</h2>
                 <h1 className="redtitle hero-heading display-3" style={{ fontSize: '4em', paddingBottom: '20px' }}>You can do that with Zippy!</h1>
-                <Link to="personal-signup" className="btn rounded-0 my-buttonred">Sign up for a personal account</Link>
+                <Link to="/personal-signup" className="btn rounded-0 my-buttonred">Sign up for a personal account</Link>
               </div>
             </div>
           </div>

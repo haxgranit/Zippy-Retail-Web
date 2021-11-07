@@ -17,27 +17,27 @@ export default function Header() {
         <div className="collapse navbar-collapse flex-md-column nav-uppercase" id="navbarSupportedContent">
           <ul className="navbar-nav ms-auto mb-2 mb-lg-0 me-md-5">
             <li className="nav-item">
-              <Link to="language" className="nav-link fw-bold" aria-current="page">LANGUAGE</Link>
+              <Link to="/language" className="nav-link fw-bold" aria-current="page">LANGUAGE</Link>
             </li>
             <li className="nav-item">
-              <Link to="login" className="nav-link fw-bold" aria-current="page">LOGIN</Link>
+              <Link to="/login" className="nav-link fw-bold" aria-current="page">LOGIN</Link>
             </li>
           </ul>
           <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
             <li className="nav-item">
-              <Link to="about" className="nav-link" aria-current="page">about Us</Link>
+              <Link to="/about" className="nav-link" aria-current="page">about Us</Link>
             </li>
             <li className="nav-item">
-              <Link to="personal" className="nav-link" aria-current="page">personal</Link>
+              <Link to="/personal" className="nav-link" aria-current="page">personal</Link>
             </li>
             <li className="nav-item">
-              <Link to="business" className="nav-link" aria-current="page">business</Link>
+              <Link to="/business" className="nav-link" aria-current="page">business</Link>
             </li>
             <li className="nav-item">
-              <Link to="personal-profile" className="nav-link" aria-current="page">dev docs</Link>
+              <Link to="/personal-profile" className="nav-link" aria-current="page">dev docs</Link>
             </li>
             <li className="nav-item">
-              <Link to="search" className="nav-link" aria-current="page">
+              <Link to="/search" className="nav-link" aria-current="page">
                 <FontAwesomeIcon icon={faSearch} />
               </Link>
             </li>

@@ -9,6 +9,7 @@ import Home from './Home';
 import Login from './Login';
 import Personal from './Personal';
 import PersonalProfile from './PersonalProfile';
+import PersonalSignup from './PersonalSignup';
 
 export default function App() {
   useEffect(() => AOS.init(), []);
@@ -23,6 +24,7 @@ export default function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/personal" element={<Personal />} />
         <Route path="/personal-profile" element={<PersonalProfile />} />
+        <Route path="/personal-signup" element={<PersonalSignup />} />
       </Routes>
       <Footer />
     </BrowserRouter>

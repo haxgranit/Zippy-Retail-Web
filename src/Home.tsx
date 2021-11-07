@@ -27,7 +27,7 @@ export default function Home() {
                   <div className="col-12">
                     <h2 className="sliderh2">personal banking</h2>
                     <h1 className="hero-heading display-3 fw-bold">Zipp it<br />to me!</h1>
-                    <Link to="personal-signup" className="hero-button btn btn-light rounded-0" href="personal-signup.html">SIGN UP!</Link>
+                    <Link to="/personal-signup" className="hero-button btn btn-light rounded-0">SIGN UP!</Link>
                   </div>
                 </div>
               </div>
@@ -40,7 +40,7 @@ export default function Home() {
                   <div className="col-12">
                     <h2 className="sliderh2">personal banking</h2>
                     <h1 className="hero-heading display-3 fw-bold">Zipp it<br />to me!</h1>
-                    <Link to="personal-signup" className="hero-button btn btn-light rounded-0">SIGN UP!</Link>
+                    <Link to="/personal-signup" className="hero-button btn btn-light rounded-0">SIGN UP!</Link>
                   </div>
                 </div>
               </div>
@@ -53,7 +53,7 @@ export default function Home() {
                   <div className="col-12">
                     <h2 className="sliderh2">personal sign up</h2>
                     <h1 className="hero-heading display-3 fw-bold">Zipp it<br />to me!</h1>
-                    <Link to="business-signup" className="hero-button btn btn-light rounded-0">SIGN UP!</Link>
+                    <Link to="/business-signup" className="hero-button btn btn-light rounded-0">SIGN UP!</Link>
                   </div>
                 </div>
               </div>
@@ -70,7 +70,7 @@ export default function Home() {
                 <h1 className="fw-bold">A little more money. A lot more power.</h1>
               </div>
               <div className="col-12 col-md-6 col-lg-4">
-                <Link to="business-signup" className="btn btn-light rounded-0 my-button">SIGN UP!</Link>
+                <Link to="/business-signup" className="btn btn-light rounded-0 my-button">SIGN UP!</Link>
               </div>
             </div>
           </div>
