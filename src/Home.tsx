@@ -1,5 +1,3 @@
-import AOS from 'aos';
-import { useEffect } from 'react';
 import Slider from 'react-slick';
 import ZippyCash_Landing_Slider_01 from './assets/img/slider/ZippyCash_Landing_Slider-01.jpg';
 import ZippyCash_Landing_Slider_02 from './assets/img/slider/ZippyCash_Landing_Slider-02.jpg';
@@ -16,8 +14,6 @@ export default function Home() {
     dots: false,
     dotsClass: 'slick-dots'
   };
-
-  useEffect(() => AOS.init(), []);
 
   return (
     <div>
