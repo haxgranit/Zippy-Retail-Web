@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import Circle_White_01 from './assets/img/background/Circle_White-01.jpg';
 import ZippyCash_Icons_K from './assets/img/roundicons/business/ZippyCash_Icons_K.png';
 import ZippyCash_Icons_L from './assets/img/roundicons/business/ZippyCash_Icons_L.png';
@@ -13,7 +14,7 @@ export default function Business() {
               <div className="mb-3">
                 <h2 style={{ color: '#FF1926' }}>business banking</h2>
                 <h1 className="redtitle hero-heading display-3" style={{ fontSize: '4em', paddingBottom: '20px' }}>Make your money work your way!</h1>
-                <a href="business-signup.html" className="btn rounded-0 my-buttonred">Sign up for a business account</a>
+                <Link to="business-signup" className="btn rounded-0 my-buttonred">Sign up for a business account</Link>
               </div>
             </div>
           </div>

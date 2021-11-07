@@ -5,6 +5,7 @@ import ZippyCash_Landing_Slider_03 from './assets/img/slider/ZippyCash_Landing_S
 import ZippyCash_Icons_A from './assets/img/roundicons/home/ZippyCash_Icons_A.png';
 import ZippyCash_Icons_B from './assets/img/roundicons/home/ZippyCash_Icons_B.png';
 import ZippyCash_Icons_C from './assets/img/roundicons/home/ZippyCash_Icons_C.png';
+import { Link } from 'react-router-dom';
 
 export default function Home() {
   const sliderSettings = {
@@ -26,7 +27,7 @@ export default function Home() {
                   <div className="col-12">
                     <h2 className="sliderh2">personal banking</h2>
                     <h1 className="hero-heading display-3 fw-bold">Zipp it<br />to me!</h1>
-                    <a className="hero-button btn btn-light rounded-0" href="personal-signup.html">SIGN UP!</a>
+                    <Link to="personal-signup" className="hero-button btn btn-light rounded-0" href="personal-signup.html">SIGN UP!</Link>
                   </div>
                 </div>
               </div>
@@ -39,7 +40,7 @@ export default function Home() {
                   <div className="col-12">
                     <h2 className="sliderh2">personal banking</h2>
                     <h1 className="hero-heading display-3 fw-bold">Zipp it<br />to me!</h1>
-                    <a className="hero-button btn btn-light rounded-0" href="personal-signup.html">SIGN UP!</a>
+                    <Link to="personal-signup" className="hero-button btn btn-light rounded-0">SIGN UP!</Link>
                   </div>
                 </div>
               </div>
@@ -52,7 +53,7 @@ export default function Home() {
                   <div className="col-12">
                     <h2 className="sliderh2">personal sign up</h2>
                     <h1 className="hero-heading display-3 fw-bold">Zipp it<br />to me!</h1>
-                    <a className="hero-button btn btn-light rounded-0" href="business-signup.html">SIGN UP!</a>
+                    <Link to="business-signup" className="hero-button btn btn-light rounded-0">SIGN UP!</Link>
                   </div>
                 </div>
               </div>
@@ -69,7 +70,7 @@ export default function Home() {
                 <h1 className="fw-bold">A little more money. A lot more power.</h1>
               </div>
               <div className="col-12 col-md-6 col-lg-4">
-                <a href="business-signup.html" className="btn btn-light rounded-0 my-button">SIGN UP!</a>
+                <Link to="business-signup" className="btn btn-light rounded-0 my-button">SIGN UP!</Link>
               </div>
             </div>
           </div>

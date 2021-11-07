@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import Circle_Grey_01 from './assets/img/background/Circle_Grey-01.jpg';
 import orangered from './assets/img/background/orangered.jpg';
 import ZippyCash_Icons_H from './assets/img/roundicons/personal/ZippyCash_Icons_H.png';
@@ -14,7 +15,7 @@ export default function Personal() {
               <div className="mb-3">
                 <h2 style={{ color: '#FF1926' }}>personal banking</h2>
                 <h1 className="redtitle hero-heading display-3" style={{ fontSize: '4em', paddingBottom: '20px' }}>You can do that with Zippy!</h1>
-                <a href="personal-signup.html" className="btn rounded-0 my-buttonred">Sign up for a personal account</a>
+                <Link to="personal-signup" className="btn rounded-0 my-buttonred">Sign up for a personal account</Link>
               </div>
             </div>
           </div>
