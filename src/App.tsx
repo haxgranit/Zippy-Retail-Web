@@ -6,6 +6,7 @@ import Footer from './Footer';
 import Header from './Header';
 import Home from './Home';
 import Login from './Login';
+import Personal from './Personal';
 
 export default function App() {
   useEffect(() => AOS.init(), []);
@@ -17,6 +18,7 @@ export default function App() {
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About /> } />
         <Route path="/login" element={<Login />} />
+        <Route path="/personal" element={<Personal />} />
       </Routes>
       <Footer />
     </BrowserRouter>
