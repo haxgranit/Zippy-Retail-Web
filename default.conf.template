@@ -1,12 +1,11 @@
 server {
-    listen       80;
-    server_name  _;
+    server_name _;
 
-    auth_basic           ${NGINX_AUTH_BASIC};
+    auth_basic ${NGINX_AUTH_BASIC};
     auth_basic_user_file /etc/apache2/.htpasswd; 
 
     location / {
-        root   /usr/share/nginx/html;
-        index  index.html index.htm;
+        root /usr/share/nginx/html;
+        try_files $uri $uri/ /index.html;
     }
 }
