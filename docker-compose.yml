@@ -8,5 +8,3 @@ services:
       - NGINX_AUTH_BASIC=off
     ports:
       - 80:80
-    volumes:
-      - ./dist:/usr/share/nginx/html
