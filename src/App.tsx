@@ -7,6 +7,7 @@ import BusinessSignup from './BusinessSignup';
 import Footer from './Footer';
 import Header from './Header';
 import Home from './Home';
+import Language from './Language';
 import Login from './Login';
 import Personal from './Personal';
 import PersonalProfile from './PersonalProfile';
@@ -23,6 +24,7 @@ export default function App() {
         <Route path="/about" element={<About />} />
         <Route path="/business" element={<Business />} />
         <Route path="/business-signup" element={<BusinessSignup />} />
+        <Route path="/language" element={<Language />} />
         <Route path="/login" element={<Login />} />
         <Route path="/personal" element={<Personal />} />
         <Route path="/personal-profile" element={<PersonalProfile />} />
