@@ -27,7 +27,7 @@ export default function Business() {
               </div>
               <div className="col-12 col-md-9">
                 <p className="m-0 content-home">
-                  No matter how big or small your business is, everyone is in the global market.That's why you need the best rates and lowest fees for you brand. Zippy Cash gives you the best rates available every time and takes the complexity out of international commerce. Our fees can't be beat.
+                  No matter how big or small your business is, everyone is in the global market. That's why you need the best rates and lowest fees for you brand. Zippy Cash gives you the best rates available every time and takes the complexity out of international commerce. Our fees can't be beat.
                 </p>
               </div>
             </div>
@@ -41,7 +41,7 @@ export default function Business() {
               </div>
               <div className="col-12 col-md-9 circleoverlap">
                 <p className="m-0 whitecopy">
-                  Setting up international bank accounts may sound daunting but with Zippy we deliver everything you need to start managing accounts abroad in minutes.How is it this easy?We have excellent partnerships with international financial brands, tech solutions that serve as an efficient connector, prioritizing ease, speed and security.
+                  Setting up international bank accounts may sound daunting but with Zippy we deliver everything you need to start managing accounts abroad in minutes. How is it this easy? We have excellent partnerships with international financial brands, tech solutions that serve as an efficient connector, prioritizing ease, speed and security.
                 </p>
               </div>
             </div>
@@ -55,7 +55,7 @@ export default function Business() {
               </div>
               <div className="col-12 col-md-9">
                 <p className="m-0 content-home">
-                  Paying invoices, people and employees just got zippier.We always give you the lowest transaction fees and make it easy (dare we say even fun?) to manage your payments.<br />Find out more here.
+                  Paying invoices, people and employees just got zippier. We always give you the lowest transaction fees and make it easy (dare we say even fun?) to manage your payments.<br />Find out more here.
                 </p>
               </div>
             </div>
