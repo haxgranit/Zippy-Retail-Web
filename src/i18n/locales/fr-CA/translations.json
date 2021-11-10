@@ -47,5 +47,15 @@
   "home.answer_3": "NEEDS_LOC",
   "home.image_alt_1": "NEEDS_LOC",
   "home.image_alt_2": "NEEDS_LOC",
-  "home.image_alt_3": "NEEDS_LOC"
+  "home.image_alt_3": "NEEDS_LOC",
+  
+  "personal.header_title": "NEEDS_LOC",
+  "personal.sign_up_btn": "NEEDS_LOC",
+  "personal.send_description": "NEEDS_LOC",
+  "personal.spend_description": "NEEDS_LOC",
+  "personal.hunzpoints": "NEEDS_LOC",
+  "personal.hunzpoints_description": "NEEDS_LOC",
+  "personal.image_alt_1": "NEEDS_LOC",
+  "personal.image_alt_2": "NEEDS_LOC",
+  "personal.image_alt_3": "NEEDS_LOC"
 }
