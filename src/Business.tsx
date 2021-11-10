@@ -1,3 +1,4 @@
+import { useTranslation, Trans } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import Circle_White_01 from './assets/img/background/Circle_White-01.jpg';
 import ZippyCash_Icons_K from './assets/img/roundicons/business/ZippyCash_Icons_K.png';
@@ -5,6 +6,8 @@ import ZippyCash_Icons_L from './assets/img/roundicons/business/ZippyCash_Icons_
 import ZippyCash_Icons_M from './assets/img/roundicons/business/ZippyCash_Icons_M.png';
 
 export default function Business() {
+  const { t } = useTranslation();
+
   return (
     <main>
       <div className="bg-light" style={{ backgroundImage: `url(${Circle_White_01})`, backgroundSize: 'cover' }}>
@@ -12,9 +15,9 @@ export default function Business() {
           <div className="row py-5">
             <div className="col">
               <div className="mb-3">
-                <h2 style={{ color: '#FF1926' }}>business banking</h2>
-                <h1 className="redtitle hero-heading display-3" style={{ fontSize: '4em', paddingBottom: '20px' }}>Make your money work your way!</h1>
-                <Link to="/business-signup" className="btn rounded-0 my-buttonred">Sign up for a business account</Link>
+                <h2 style={{ color: '#FF1926' }}>{t('business.header_title')}</h2>
+                <h1 className="redtitle hero-heading display-3" style={{ fontSize: '4em', paddingBottom: '20px' }}>{t("business.header_desc")}</h1>
+                <Link to="/business-signup" className="btn rounded-0 my-buttonred">{t('business.sign_up_btn_title')}</Link>
               </div>
             </div>
           </div>
@@ -27,7 +30,9 @@ export default function Business() {
               </div>
               <div className="col-12 col-md-9">
                 <p className="m-0 content-home">
-                  No matter how big or small your business is, everyone is in the global market. That's why you need the best rates and lowest fees for you brand. Zippy Cash gives you the best rates available every time and takes the complexity out of international commerce. Our fees can't be beat.
+                  <Trans
+                    i18nKey="business.business_description_1"
+                  />
                 </p>
               </div>
             </div>
@@ -41,7 +46,9 @@ export default function Business() {
               </div>
               <div className="col-12 col-md-9 circleoverlap">
                 <p className="m-0 whitecopy">
-                  Setting up international bank accounts may sound daunting but with Zippy we deliver everything you need to start managing accounts abroad in minutes. How is it this easy? We have excellent partnerships with international financial brands, tech solutions that serve as an efficient connector, prioritizing ease, speed and security.
+                  <Trans
+                    i18nKey="business.business_description_2"
+                  />
                 </p>
               </div>
             </div>
@@ -55,7 +62,9 @@ export default function Business() {
               </div>
               <div className="col-12 col-md-9">
                 <p className="m-0 content-home">
-                  Paying invoices, people and employees just got zippier. We always give you the lowest transaction fees and make it easy (dare we say even fun?) to manage your payments.<br />Find out more here.
+                  <Trans
+                    i18nKey="business.business_description_3"
+                  />
                 </p>
               </div>
             </div>

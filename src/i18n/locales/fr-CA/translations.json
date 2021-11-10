@@ -16,5 +16,36 @@
   "about.our_values": "NEEDS_LOC",
   "about.our_values_description": "NEEDS_LOC",
   "about.our_partner": "NEEDS_LOC",
-  "about.our_partner_description": "NEEDS_LOC"
+  "about.our_partner_description": "NEEDS_LOC",
+
+  "common.business_title": "NEEDS_LOC",
+  "common.sign_up": "NEEDS_LOC",
+  "common.first_name": "NEEDS_LOC",
+  "common.last_name": "NEEDS_LOC",
+  "common.email": "NEEDS_LOC",
+  "common.password": "NEEDS_LOC",
+  "common.confirm_password": "NEEDS_LOC",
+  "common.agree_title": "NEEDS_LOC",
+  "common.create_your_account": "NEEDS_LOC",
+
+  "business.header_desc": "NEEDS_LOC",
+  "business.sign_up_btn_title": "NEEDS_LOC",
+  "business.business_description_1": "NEEDS_LOC",
+  "business.business_description_2": "NEEDS_LOC",
+  "business.business_description_3": "NEEDS_LOC",
+
+  "home.sign_up_btn": "NEEDS_LOC",
+  "home.zip_it": "NEEDS_LOC",
+  "home.personal_sign_up": "NEEDS_LOC",
+  "home.business_banking": "NEEDS_LOC",
+  "home.business_banking_desc": "NEEDS_LOC",
+  "home.question_1": "NEEDS_LOC",
+  "home.question_2": "NEEDS_LOC",
+  "home.question_3": "NEEDS_LOC",
+  "home.answer_1": "NEEDS_LOC",
+  "home.answer_2": "NEEDS_LOC",
+  "home.answer_3": "NEEDS_LOC",
+  "home.image_alt_1": "NEEDS_LOC",
+  "home.image_alt_2": "NEEDS_LOC",
+  "home.image_alt_3": "NEEDS_LOC"
 }
