@@ -1,10 +1,11 @@
+import NavDropdown from 'react-bootstrap/NavDropdown'
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import ZippyCash_Logo from './assets/img/general/ZippyCash_Logo.png';
 
 export default function Header() {
-  const { t } = useTranslation();
-  
+  const { i18n, t } = useTranslation();
+
   return (
     <nav className="navbar navbar-expand-lg navbar-light">
       <div className="container">
@@ -17,9 +18,12 @@ export default function Header() {
         </button>
         <div className="collapse navbar-collapse flex-md-column nav-uppercase" id="navbarSupportedContent">
           <ul className="navbar-nav ms-auto mb-2 mb-lg-0 me-md-5">
-            <li className="nav-item">
-              <Link to="/language" className="nav-link fw-bold" aria-current="page">{t('header.language')}</Link>
-            </li>
+            <NavDropdown title={<span style={{ color: 'inherit', fontWeight: 700 }}>{t('header.language')}</span>}>
+              <NavDropdown.Item onClick={() => i18n.changeLanguage('en-CA')}>English (Canada)</NavDropdown.Item>
+              <NavDropdown.Item onClick={() => i18n.changeLanguage('en-US')}>English (US)</NavDropdown.Item>
+              <NavDropdown.Item onClick={() => i18n.changeLanguage('fr-CA')}>French (Canada)</NavDropdown.Item>
+              <NavDropdown.Item onClick={() => i18n.changeLanguage('es-US')}>Spanish (US)</NavDropdown.Item>
+            </NavDropdown>
             <li className="nav-item">
               <Link to="/login" className="nav-link fw-bold" aria-current="page">{t('header.login')}</Link>
             </li>
