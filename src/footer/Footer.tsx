@@ -1,9 +1,11 @@
+import Copyright from "./Copyright";
 import QuickLinks from "./QuickLinks";
 
 export default function Footer() {
   return (
     <footer className="container mb-3">
       <QuickLinks />
+      <Copyright />
       {/* Tab and desktop footer */}
       <div className="d-none d-md-block">
         <div className="d-flex justify-content-between border-bottom">
