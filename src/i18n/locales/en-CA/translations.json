@@ -3,6 +3,5 @@
   "header.login": "LOGIN",
   "header.about": "about Us",
   "header.personal": "personal",
-  "header.business": "business",
-  "header.personal-profile": "dev docs"
+  "header.business": "business"
 }

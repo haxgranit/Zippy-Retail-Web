@@ -3,6 +3,5 @@
   "header.login": "ACCESO",
   "header.about": "Sobre nosotras",
   "header.personal": "personal",
-  "header.business": "negocio",
-  "header.personal-profile": "dev docs"
+  "header.business": "negocio"
 }
