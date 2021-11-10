@@ -28,7 +28,7 @@ export default function QuickLinks() {
               <a href="tel:+17026231876" className="text-decoration-none" style={{ color: 'grey' }}>1.702.623.1876</a>
             </li>
             <li>
-              <a href="mail:contact@zippy.cash" className="text-decoration-none" style={{ color: 'grey' }}>contact@zippy.cash</a>
+              <a href="mailto:contact@zippy.cash" className="text-decoration-none" style={{ color: 'grey' }}>contact@zippy.cash</a>
             </li>
           </ul>
         </div>
