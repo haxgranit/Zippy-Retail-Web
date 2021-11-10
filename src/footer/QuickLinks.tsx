@@ -3,7 +3,9 @@ import { Link } from "react-router-dom";
 export default function QuickLinks() {
   return (
     <div className="container">
-      <div className="row">Quick Links</div>
+      <div className="row">
+        <div className="col-sm-12">Quick Links</div>
+      </div>
       <div className="row">
         <div className="col-sm-2">
           <ul>
