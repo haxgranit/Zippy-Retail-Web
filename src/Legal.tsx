@@ -6,8 +6,8 @@ export default function Legal() {
           <div id="dtr-page-title-main">
             <div id="dtr-page-title-wrapper">
               <div className="dtr-container">
-                <h1 className="dtr-page-title text-center" itemProp="headline">
-                  Legal Stuff </h1>
+                <div className="dtr-page-title text-center" itemProp="headline">
+                  Legal Stuff </div>
               </div>
             </div>
           </div>
@@ -24,11 +24,11 @@ export default function Legal() {
                               <div className="elementor-widget-wrap elementor-element-populated">
                                 <div className="elementor-element elementor-element-0badf10 elementor-widget elementor-widget-text-editor" data-id="0badf10" data-element_type="widget" data-widget_type="text-editor.default">
                                   <div className="elementor-widget-container">
-                                    <p><strong><a style={{ fontFamily: 'var( --e-global-typography-text-font-family ), Sans-serif', backgroundColor: '#ffffff', letterSpacing: '0px' }} href="#PrivacyPolicy" rel="noopener">Privacy
+                                    <p><a  href="#PrivacyPolicy" rel="noopener">Privacy
                                       Policy</a>&nbsp; |&nbsp;&nbsp;<a href="#TOU" rel="noopener">TOU</a>&nbsp;
                                       |&nbsp;&nbsp;<a href="#EULA" rel="noopener">EULA</a>&nbsp;
-                                      |&nbsp;<a style={{ fontFamily: 'var( --e-global-typography-text-font-family ), Sans-serif', backgroundColor: '#ffffff', letterSpacing: '0px' }} href="#CardHolderT&amp;C" rel="noopener">Card
-                                        Holder T&amp;C</a></strong></p>
+                                      |&nbsp;<a  href="#CardHolderT&amp;C" rel="noopener">Card
+                                        Holder T&amp;C</a></p>
                                   </div>
                                 </div>
                               </div>
@@ -43,11 +43,11 @@ export default function Legal() {
                                   <div className="elementor-widget-container">
                                     <p id="TOU">
                                     </p>
-                                    <h2>Zippy Cash Prepaid Visa Cardholder Agreement</h2>
-                                    <p><strong>IMPORTANT – PLEASE READ CAREFULLY</strong></p>
+                                    <div>Zippy Cash Prepaid Visa Cardholder Agreement</div>
+                                    <p>IMPORTANT – PLEASE READ CAREFULLY</p>
                                     <p>&nbsp;</p>
-                                    <h3 id="CardHolderT&amp;C">Terms of Use</h3>
-                                    <h6>Effective Date: 03/30/2021</h6>
+                                    <div id="CardHolderT&amp;C">Terms of Use</div>
+                                    <div>Effective Date: 03/30/2021</div>
                                     <p>These Terms and Conditions of Use (“Terms of Use”) apply
                                       to the website owned, operated, licensed, and controlled
                                       by Zippy Cash LLC, including its related, affiliated or
@@ -67,10 +67,10 @@ export default function Legal() {
                                       DO NOT AGREE TO THESE TERMS, THEN PLEASE DO NOT USE OUR
                                       SERVICES OR THE SITE.</p>
                                     <p>&nbsp;</p>
-                                    <h3>Card Holder T&amp;C</h3>
-                                    <h6><b style={{ letterSpacing: '0px' }}>1. Terms and Conditions
+                                    <div>Card Holder T&amp;C</div>
+                                    <div><span>1. Terms and Conditions
                                       for the Zippy Cash®&nbsp;Prepaid
-                                      Visa®&nbsp;Card:</b></h6>
+                                      Visa®&nbsp;Card:</span></div>
                                     <p>This document is an agreement (“Agreement”) containing
                                       the terms and conditions that apply to the Zippy Cash
                                       Prepaid Visa Card that has been issued to you by
@@ -124,21 +124,21 @@ export default function Legal() {
                                       activity may be subject to both internal and potentially
                                       federal investigation. We reserve the right to restrict
                                       or delay your access to any such funds.</p>
-                                    <h6>2. Your Card:</h6>
+                                    <div>2. Your Card:</div>
                                     <p>The Card is a prepaid card. The Card allows you to access
                                       funds loaded or deposited to your Card Account by you or
                                       on your behalf. The funds in your Card Account will be
                                       FDIC-insured once we have verified your identity. You
                                       may access the funds in your Card Account by using your
                                       Card, Card Number, by automated clearinghouse (“ACH”)
-                                      debit using your Account Number.The Card is <b>not</b>
+                                      debit using your Account Number.The Card is <span>not</span>
                                       a credit card. The Card is not a gift card, nor is it
-                                      intended for gifting purposes.You will <b>not</b>
+                                      intended for gifting purposes.You will <span>not</span>
                                       receive any interest on your funds on the Card. The
-                                      funds in your Card Account will <b>not</b> expire,
+                                      funds in your Card Account will <span>not</span> expire,
                                       regardless of the expiration date on the front of your
                                       Card.</p>
-                                    <p><b>Unclaimed Property</b>. If your Card becomes inactive,
+                                    <p><span>Unclaimed Property</span>. If your Card becomes inactive,
                                       we may be legally obligated to report the balance of
                                       your Account as unclaimed property and forward the
                                       unclaimed funds to the state designated in accordance
@@ -146,8 +146,8 @@ export default function Legal() {
                                       report and send funds in an inactive Account varies by
                                       state but usually ranges between three (3) and five (5)
                                       years.</p>
-                                    <h6 style={{ letterSpacing: 'normal' }}>3. FEES:</h6>
-                                    <p style={{ marginBottom: '10px' }}><b>THE FEES RELATING TO THE
+                                    <div >3. FEES:</div>
+                                    <p ><span>THE FEES RELATING TO THE
                                       USE (AND MISUSE) OF YOUR CARD ARE SET FORTH IN THE
                                       “SCHEDULE OF FEES AND CHARGES (SCHEDULE A)” ATTACHED
                                       TO THIS AGREEMENT AND INCORPORATED HEREIN BY
@@ -155,14 +155,14 @@ export default function Legal() {
                                       THIS AGREEMENT WILL BE WITHDRAWN FROM YOUR CARD
                                       ACCOUNT AND WILL BE ASSESSED SO LONG AS THERE IS A
                                       REMAINING BALANCE IN YOUR CARD ACCOUNT, UNLESS
-                                      PROHIBITED BY LAW.</b> You agree to pay all fees
+                                      PROHIBITED BY LAW.</span> You agree to pay all fees
                                       associated with the Card. We may from time to time amend
                                       the Fee Schedule, at our sole discretion as set forth in
                                       the Section of this Agreement titled “Amendment and
                                       Cancellation.”</p>
-                                    <h6 style={{ letterSpacing: 'normal' }}>4. Authorized Users:
-                                    </h6>
-                                    <p><span style={{ color: 'var( --e-global-color-text )', fontFamily: 'var( --e-global-typography-text-font-family ), Sans-serif', letterSpacing: '0px' }}>You
+                                    <div >4. Authorized Users:
+                                    </div>
+                                    <p><span >You
                                       may not request an additional Card (“Secondary
                                       Card”) to allow another person to access the funds
                                       in your Card Account. If you permit another person
@@ -171,7 +171,7 @@ export default function Legal() {
                                       Number or Account Number, and all related fees
                                       incurred, by those persons. To cancel a Card,
                                       telephone the toll-free number on the back of your
-                                      Card or&nbsp;</span>1-866-400-2712<span style={{ color: 'var( --e-global-color-text )', fontFamily: 'var( --e-global-typography-text-font-family ), Sans-serif', letterSpacing: '0px' }}>&nbsp;and
+                                      Card or&nbsp;</span>1-866-400-2712<span >&nbsp;and
                                         you must follow-up not later than 10 business days
                                         with the written notification to revoke (cancel)
                                         permission for any person you previously authorized
@@ -188,8 +188,8 @@ export default function Legal() {
                                         this Agreement, subject to the section labeled “Lost
                                         or Stolen Cards/Unauthorized Transfers” below, and
                                         other applicable laws.</span></p>
-                                    <h6 style={{ letterSpacing: 'normal' }}>5. Card Account Use and
-                                      Purpose:</h6>
+                                    <div >5. Card Account Use and
+                                      Purpose:</div>
                                     <p>Subject to the limitations set forth in this Agreement,
                                       you may use your Card, Card Number, or Account Number,
                                       as applicable, to (1) add funds to your Card Account (as
@@ -223,8 +223,8 @@ export default function Legal() {
                                       payment will not be processed. You also may be assessed
                                       an ACH Decline Fee (see the “Schedule of Fees and
                                       Charges” attached to this Agreement).</p>
-                                    <h6 style={{ letterSpacing: 'normal' }}>6. Limitations on
-                                      Frequency and Dollar Amounts of Transactions:</h6>
+                                    <div >6. Limitations on
+                                      Frequency and Dollar Amounts of Transactions:</div>
                                     <p>The total amount of purchases that you can perform in any
                                       single day is limited to the Daily Purchase Limit and
                                       the total amount of cash withdrawals (including
@@ -246,9 +246,9 @@ export default function Legal() {
                                       <table id="tablepress-1" className="tablepress tablepress-id-1 dataTable no-footer" role="grid">
                                         <thead>
                                           <tr className="row-1 odd" role="row">
-                                            <th className="column-1 sorting_disabled" rowSpan={1} colSpan={1} style={{ width: '438px' }}>Transaction/Load
+                                            <th className="column-1 sorting_disabled" rowSpan={1} colSpan={1} >Transaction/Load
                                               Type</th>
-                                            <th className="column-2 sorting_disabled" rowSpan={1} colSpan={1} style={{ width: '650px' }}>Maximum Amount per
+                                            <th className="column-2 sorting_disabled" rowSpan={1} colSpan={1} >Maximum Amount per
                                               day</th>
                                           </tr>
                                         </thead>
@@ -340,7 +340,7 @@ export default function Legal() {
                                       </table>
                                     </div>
                                     <p>&nbsp;</p>
-                                    <h6>7. Personal Identification Number (“PIN”):</h6>
+                                    <div>7. Personal Identification Number (“PIN”):</div>
                                     <p>We will give you a PIN that you may use with your Card
                                       once your identity has been verified. Only one PIN will
                                       be issued for each Card Account. You will need a PIN to
@@ -353,8 +353,8 @@ export default function Legal() {
                                       through&nbsp;support@payquicker.com or write to the
                                       Program Manager at PayQuicker LLC 400 Linden Oaks Suite
                                       320, Rochester, New York 14625, USA.</p>
-                                    <h6 style={{ letterSpacing: 'normal' }}>8. Adding Funds to Your
-                                      Card Account:</h6>
+                                    <div >8. Adding Funds to Your
+                                      Card Account:</div>
                                     <p>You may add funds to your Card (called “value loading” or
                                       “loading”) at any time. The maximum load amount is
                                       $5,000 per day. Note: Some reload locations may have
@@ -373,8 +373,8 @@ export default function Legal() {
                                       the Section above titled “Card Account Use and
                                       Purpose”). You cannot load your Card Account by check or
                                       money order.</p>
-                                    <h6 style={{ letterSpacing: 'normal' }}>9. Using Your Card to
-                                      Get Cash:</h6>
+                                    <div >9. Using Your Card to
+                                      Get Cash:</div>
                                     <p>With a PIN, you may use your Card to (i) obtain cash or
                                       check your balance at any Automated Teller Machine
                                       (“ATM”) that bears the Visa®&nbsp;or PLUS®&nbsp;brands,
@@ -397,8 +397,8 @@ export default function Legal() {
                                       the ATM operator or any network used (and you may be
                                       charged a fee for a balance inquiry even if you do not
                                       complete a fund transfer).</p>
-                                    <h6 style={{ letterSpacing: 'normal' }}>10. Split Transactions:
-                                    </h6>
+                                    <div >10. Split Transactions:
+                                    </div>
                                     <p>If you do not have enough value loaded on your Card you
                                       can instruct the merchant to charge a part of the
                                       purchase to the Card and pay the remaining amount with
@@ -410,14 +410,14 @@ export default function Legal() {
                                       merchant that you would like to complete a split
                                       transaction before swiping your Card, your Card is
                                       likely to be declined.</p>
-                                    <h6 style={{ letterSpacing: 'normal' }}>11. Transactions Using
-                                      Your Card Number:</h6>
+                                    <div >11. Transactions Using
+                                      Your Card Number:</div>
                                     <p>If you initiate a transaction without presenting your
                                       Card (such as for a mail order, internet or telephone
                                       purchase, or an ACH debit purchase), the legal effect
                                       will be the same as if you used the Card itself.</p>
-                                    <h6 style={{ letterSpacing: 'normal' }}>12. Your Obligation for
-                                      Negative Balance Transactions:</h6>
+                                    <div >12. Your Obligation for
+                                      Negative Balance Transactions:</div>
                                     <p>Each time you initiate a Card transaction, you authorize
                                       us to reduce the funds available in your Card Account by
                                       the amount of the transaction and all associated fees.
@@ -439,12 +439,12 @@ export default function Legal() {
                                       fees. We also reserve the right to cancel your Card if
                                       you create one or more negative balances with your Card.
                                     </p>
-                                    <h6 style={{ letterSpacing: 'normal' }}>13. Business Days:</h6>
+                                    <div >13. Business Days:</div>
                                     <p>Our business days are Monday through Friday, excluding
                                       federal and legal banking holidays in the State of New
                                       York.</p>
-                                    <h6 style={{ letterSpacing: 'normal' }}>14. Authorization Holds:
-                                    </h6>
+                                    <div >14. Authorization Holds:
+                                    </div>
                                     <p>You do not have the right to stop payment on any purchase
                                       transaction originated by use of your Card, other than a
                                       Recurring Transaction as described in the Section below
@@ -486,8 +486,8 @@ export default function Legal() {
                                       ensure that your Card has an available balance that is
                                       20% (or more) greater than your total bill before using
                                       your Card.</p>
-                                    <h6 style={{ letterSpacing: 'normal' }}>15. Recurring
-                                      Transactions:</h6>
+                                    <div >15. Recurring
+                                      Transactions:</div>
                                     <p>If you intend to use your Card for recurring
                                       transactions, you should monitor your balance and ensure
                                       you have funds available in your Card Account to cover
@@ -504,9 +504,9 @@ export default function Legal() {
                                       notice only when the payment would differ by more than a
                                       certain amount from the previous payment, or when the
                                       amount would fall outside certain limits that you
-                                      set.)&nbsp;<b><i>If your Card was obtained through your
+                                      set.)&nbsp;<span>If your Card was obtained through your
                                         employer or you receive electronic deposits of
-                                        federal payments to your Card:</i></b>&nbsp;If
+                                        federal payments to your Card:</span>&nbsp;If
                                       you have told us in advance to make regular payments
                                       (i.e., recurring transactions) from your Card Account,
                                       you can stop the payment by calling the number on the
@@ -524,16 +524,16 @@ export default function Legal() {
                                       merchant to make the recurring transaction, you also
                                       should contact the applicable merchant in order to stop
                                       the recurring transaction.</p>
-                                    <h6 style={{ letterSpacing: 'normal' }}>16. Preauthorized
-                                      Credits:</h6>
+                                    <div >16. Preauthorized
+                                      Credits:</div>
                                     <p>If you have arranged to have direct deposits made to your
                                       Card Account at least once every 60 days from the same
                                       person or company and you do not receive a
                                       receipt/statement (or paystub), you can call the number
                                       on the back of your Card or&nbsp;1-866-400-2712&nbsp;to
                                       find out whether or not the deposit was made.</p>
-                                    <h6 style={{ letterSpacing: 'normal' }}>17. Returns and Refunds:
-                                    </h6>
+                                    <div >17. Returns and Refunds:
+                                    </div>
                                     <p>If you are entitled to a refund for any reason for goods
                                       or services obtained with your Card, you agree to accept
                                       credits to your Card Account for such refunds. You are
@@ -541,8 +541,8 @@ export default function Legal() {
                                       closed. The amounts credited to your Card for refunds
                                       may not be available for up to five days from the date
                                       the refund transaction occurs.</p>
-                                    <h6 style={{ letterSpacing: 'normal' }}>18. Card Cancellation
-                                      and Suspension; Limits:</h6>
+                                    <div >18. Card Cancellation
+                                      and Suspension; Limits:</div>
                                     <p>We reserve the right, in our sole discretion, to limit
                                       your use of the Card, including limiting or prohibiting
                                       specific types of transactions. We may refuse to issue a
@@ -566,8 +566,8 @@ export default function Legal() {
                                       this Agreement shall be deemed void where prohibited. We
                                       can waive or delay enforcement of any of our rights
                                       under this Agreement without losing them.</p>
-                                    <h6 style={{ letterSpacing: 'normal' }}>19. International
-                                      Transaction Fee:</h6>
+                                    <div >19. International
+                                      Transaction Fee:</div>
                                     <p>If you initiate a transaction in a currency or country
                                       other than the currency or country in which your Card
                                       was issued, you will be charged a fee on the transaction
@@ -589,15 +589,15 @@ export default function Legal() {
                                       may vary from the rate Visa itself receives, or the
                                       government mandated rate in effect for the applicable
                                       central processing date.</p>
-                                    <h6 style={{ letterSpacing: 'normal' }}>20. Receipts:</h6>
+                                    <div >20. Receipts:</div>
                                     <p>You should get or request a receipt at the time you make
                                       a transaction or obtain cash using your Card. You agree
                                       to retain your receipts to verify your transactions. You
                                       can get a receipt at the time you make any transfer from
                                       your Card Account using one of our ATM terminals.</p>
-                                    <h6 style={{ letterSpacing: 'normal' }}>21. Obtaining Balance
+                                    <div >21. Obtaining Balance
                                       and Transaction Information for Your Card; Periodic
-                                      Statements Alternative.</h6>
+                                      Statements Alternative.</div>
                                     <p>You should keep track of the amount of funds available in
                                       your Card Account. You may obtain information about the
                                       amount of funds you have remaining in your Card Account
@@ -611,8 +611,8 @@ export default function Legal() {
                                       or by visiting support@payquicker.com, or by writing to
                                       PayQuicker LLC, 400 Linden Oaks, Suite 320, Rochester,
                                       New York 14625, USA</p>
-                                    <h6 style={{ letterSpacing: 'normal' }}>22. Confidentiality:
-                                    </h6>
+                                    <div >22. Confidentiality:
+                                    </div>
                                     <p>We may disclose information to third parties about your
                                       Card or the transactions you make using your Card: (1)
                                       where it is necessary for completing transactions; (2)
@@ -624,8 +624,8 @@ export default function Legal() {
                                       employees, auditors, affiliates, service providers, or
                                       attorneys as needed; and (6) as otherwise provided in
                                       our Privacy Policy Notice below.</p>
-                                    <h6 style={{ letterSpacing: 'normal' }}>23. Our Liability for
-                                      Failure to Complete Transactions:</h6>
+                                    <div >23. Our Liability for
+                                      Failure to Complete Transactions:</div>
                                     <p>In no event will we or the Program Manager be liable for
                                       consequential damages (including lost profits),
                                       extraordinary damages, special or punitive damages. We
@@ -653,8 +653,8 @@ export default function Legal() {
                                       precautions that we or the Program Manager have taken;
                                       or (9) for any other exception stated in our Agreement
                                       with you.</p>
-                                    <h6 style={{ letterSpacing: 'normal' }}>24. In Case of Errors or
-                                      Questions about your Card Account:</h6>
+                                    <div >24. In Case of Errors or
+                                      Questions about your Card Account:</div>
                                     <p>If you think an error has occurred in your Card Account,
                                       promptly call the number on the back of your
                                       Card,&nbsp;1-866-400-2712, provide notice through
@@ -712,8 +712,8 @@ export default function Legal() {
                                       you need more information about our error-resolution
                                       procedures, call the Program Manager at the number on
                                       the back of your Card.</p>
-                                    <h6 style={{ letterSpacing: 'normal' }}>25. Lost or Stolen
-                                      Cards/Unauthorized Transfers:</h6>
+                                    <div >25. Lost or Stolen
+                                      Cards/Unauthorized Transfers:</div>
                                     <p>If you believe your Card, Access Code(s), or PIN has been
                                       lost or stolen, call the number on the back of your
                                       Card, or&nbsp;1-866-400-2712, or send notice through
@@ -725,8 +725,8 @@ export default function Legal() {
                                       electronic transfer has been made using the information
                                       from your Card, Access Code(s), or PIN without your
                                       permission.</p>
-                                    <h6 style={{ letterSpacing: 'normal' }}>26. Your Liability for
-                                      Unauthorized Transfers:</h6>
+                                    <div >26. Your Liability for
+                                      Unauthorized Transfers:</div>
                                     <p>You agree to exercise reasonable control over the
                                       information related to your Card Account, including your
                                       Card, Access Code(s) and PIN. Tell us AT ONCE if you
@@ -755,8 +755,8 @@ export default function Legal() {
                                       money if you had told us in time. If a good, documented,
                                       reason (such as a long trip or a hospital stay) kept you
                                       from telling us, we will extend the time periods.</p>
-                                    <h6 style={{ letterSpacing: 'normal' }}>Visa’s Zero Liability
-                                      Policy:</h6>
+                                    <div >Visa’s Zero Liability
+                                      Policy:</div>
                                     <p>In addition to the limitations on liability described
                                       above, you will not be liable for unauthorized use that
                                       occurs after you notify us of the loss, theft or
@@ -783,13 +783,13 @@ export default function Legal() {
                                       unauthorized if it is not initiated by you, you did not
                                       give permission to make the transaction and you do not
                                       benefit from the transaction in any
-                                      way.&nbsp;<strong>Visa’s Zero Liability policy covers
+                                      way.&nbsp;Visa’s Zero Liability policy covers
                                         U.S.–issued cards only and does not apply to ATM
                                         transactions outside the Visa and PLUS networks, PIN
                                         transactions not processed by Visa, or certain
                                         commercial card transactions. Cardholder must notify
-                                        us promptly of any unauthorized use.</strong></p>
-                                    <h6 style={{ letterSpacing: 'normal' }}>27. Other Terms:</h6>
+                                        us promptly of any unauthorized use.</p>
+                                    <div >27. Other Terms:</div>
                                     <p>Your Card and your obligations under this Agreement may
                                       not be assigned. We may transfer our rights under this
                                       Agreement. Use of your Card is subject to all applicable
@@ -804,8 +804,8 @@ export default function Legal() {
                                       shall not be affected. This Agreement shall be governed
                                       by the law of the State of New York except to the extent
                                       preempted or governed by federal law.</p>
-                                    <h6 style={{ letterSpacing: 'normal' }}>28. Amendment and
-                                      Cancellation:</h6>
+                                    <div >28. Amendment and
+                                      Cancellation:</div>
                                     <p>We may amend or change the terms and conditions of this
                                       Agreement at any time. You will be notified of any
                                       change in the manner provided by applicable law before
@@ -828,29 +828,29 @@ export default function Legal() {
                                       our records. Your termination of this Agreement will not
                                       affect any of our rights or your obligations arising
                                       under this Agreement before termination.</p>
-                                    <h6 style={{ letterSpacing: 'normal' }}>29. Telephone
-                                      Monitoring/Recording:</h6>
+                                    <div >29. Telephone
+                                      Monitoring/Recording:</div>
                                     <p>From time to time we may monitor and/or record telephone
                                       calls between you and us to assure the quality of our
                                       customer service or as required by applicable law.</p>
-                                    <h6 style={{ letterSpacing: 'normal' }}>30. No Warranty
-                                      Regarding Goods and Services:</h6>
+                                    <div >30. No Warranty
+                                      Regarding Goods and Services:</div>
                                     <p>We are not responsible for the quality, safety, legality,
                                       or any other aspect of any goods or services you
                                       purchase with your Card.</p>
-                                    <h6 style={{ letterSpacing: 'normal' }}>31. Arbitration
-                                      Provision:</h6>
+                                    <div >31. Arbitration
+                                      Provision:</div>
                                     <p>This Arbitration Provision sets forth the circumstances
                                       and procedures under which claims (as defined below)
                                       shall be arbitrated instead of litigated in court upon
                                       the election of either party.</p>
-                                    <p style={{ letterSpacing: 'normal' }}><strong>(a)
-                                      Definitions:</strong>&nbsp;As used in this
+                                    <p >(a)
+                                      Definitions:&nbsp;As used in this
                                       Arbitration Provision, the term “Claim” means any claim,
                                       dispute or controversy between you and us, or between
                                       you and Attain Finance, LLC as Program Manager
-                                      for&nbsp;<strong>Zippy Cash Prepaid
-                                        Visa®&nbsp;Card&nbsp;</strong>or any of its agents
+                                      for&nbsp;Zippy Cash Prepaid
+                                        Visa®&nbsp;Card&nbsp;or any of its agents
                                       or retailers, arising from or relating to the Card or
                                       this Agreement as well as any related or prior agreement
                                       that you may have had with us or the relationships
@@ -897,9 +897,9 @@ export default function Legal() {
                                       and/or use a Card, including but not limited to all
                                       persons or entities contractually obligated under any of
                                       the Agreements and all additional cardholders.</p>
-                                    <p><strong>(b) Initiation of Arbitration
+                                    <p>(b) Initiation of Arbitration
                                       Proceeding/Selection of
-                                      Administrator:</strong>&nbsp;Any Claim shall be
+                                      Administrator:&nbsp;Any Claim shall be
                                       resolved, upon the election by you or us, by arbitration
                                       pursuant to this Arbitration Provision and the code of
                                       procedures of the national arbitration organization to
@@ -919,7 +919,7 @@ export default function Legal() {
                                       92614; website at&nbsp;www.jamsadr.com; and (ii) AAA at
                                       335 Madison Avenue, New York, NY 10017; website
                                       at&nbsp;www.adr.org.</p>
-                                    <p><strong>(c) Significance of Arbitration:</strong>&nbsp;IF
+                                    <p>(c) Significance of Arbitration:&nbsp;IF
                                       ARBITRATION IS CHOSEN BY ANY PARTY WITH RESPECT TO A
                                       CLAIM, NEITHER YOU NOR WE WILL HAVE THE RIGHT TO
                                       LITIGATE THAT CLAIM IN COURT OR HAVE A JURY TRIAL ON
@@ -934,7 +934,7 @@ export default function Legal() {
                                       WILL BE FINAL AND BINDING. NOTE THAT OTHER RIGHTS THAT
                                       YOU WOULD HAVE IF YOU WENT TO COURT ALSO MAY NOT BE
                                       AVAILABLE IN ARBITRATION.</p>
-                                    <p><strong>(d) Restrictions on Arbitration:</strong>&nbsp;If
+                                    <p>(d) Restrictions on Arbitration:&nbsp;If
                                       either party elects to resolve a Claim by arbitration,
                                       that Claim shall be arbitrated on an individual basis.
                                       There shall be no right or authority for any Claims to
@@ -951,8 +951,8 @@ export default function Legal() {
                                       other than you, unless otherwise agreed to in writing by
                                       all parties. This section of this Arbitration Provision
                                       is the “Class Action Waiver.”</p>
-                                    <p><strong>(e) Location of Arbitration/Payment of
-                                      Fees:</strong>&nbsp;Any arbitration hearing that you
+                                    <p>(e) Location of Arbitration/Payment of
+                                      Fees:&nbsp;Any arbitration hearing that you
                                       attend shall take place in the federal judicial district
                                       of your residence. At your written request, we will
                                       consider in good faith making a temporary advance of all
@@ -972,7 +972,7 @@ export default function Legal() {
                                       unless the arbitrator (or panel) determines that the
                                       fees were incurred without any substantial
                                       justification.</p>
-                                    <p><strong>(f) Arbitration Procedures:</strong>&nbsp;This
+                                    <p>(f) Arbitration Procedures:&nbsp;This
                                       Arbitration Provision is made pursuant to a transaction
                                       involving interstate commerce, and shall be governed by
                                       the Federal Arbitration Act, 9 U.S.C. Sections 1-16, as
@@ -1021,7 +1021,7 @@ export default function Legal() {
                                       days of the date of the appellant’s written notice. The
                                       decision of the panel shall be by majority vote and
                                       shall be final and binding.</p>
-                                    <p><strong>(g) Public Injunctive Relief</strong>: If a Claim
+                                    <p>(g) Public Injunctive Relief: If a Claim
                                       is brought seeking public injunctive relief and a court
                                       determines that the restrictions in the Class Action
                                       Waiver and/or elsewhere in this Arbitration Provision
@@ -1036,7 +1036,7 @@ export default function Legal() {
                                       until the arbitration award pertaining to individual
                                       relief has been entered in court. In no event will a
                                       Claim for public injunctive relief be arbitrated.</p>
-                                    <p><strong>(h) No Preclusive Effect:</strong>&nbsp;No
+                                    <p>(h) No Preclusive Effect:&nbsp;No
                                       arbitration award involving the parties will have any
                                       preclusive effect as to issues or claims in any dispute
                                       involving anyone who is not a party to the arbitration,
@@ -1044,7 +1044,7 @@ export default function Legal() {
                                       involving other parties have preclusive effect in an
                                       arbitration between the parties to this Arbitration
                                       Provision.</p>
-                                    <p><strong>(i) Continuation:</strong>&nbsp;This Arbitration
+                                    <p>(i) Continuation:&nbsp;This Arbitration
                                       Provision shall survive termination of your Card as well
                                       as voluntary payment of the debt in full by you, any
                                       legal proceeding by us to collect a debt owed by you,
@@ -1056,20 +1056,20 @@ export default function Legal() {
                                       Agreement or any prior agreement you may have had with
                                       us, each of which shall be enforceable regardless of
                                       such invalidity.</p>
-                                    <h6 style={{ letterSpacing: 'normal' }}>33. Delivery of
-                                      Electronic Communications:</h6>
+                                    <div >33. Delivery of
+                                      Electronic Communications:</div>
                                     <p>The following E-Communication Disclosure
-                                      (“<b>Disclosure</b>“) applies to any and all
+                                      (“<span>Disclosure</span>“) applies to any and all
                                       communications or disclosures that we are legally
                                       required to provide to you in writing in connection with
                                       your Card Account and any related products and services
-                                      (“<b>Communications</b>“), to the extent you have
+                                      (“<span>Communications</span>“), to the extent you have
                                       consented to receiving such Communications
                                       electronically and failure to consent will result in a
                                       declined application for an Zippy Cash Prepaid Visa
                                       Card, except as provided below.</p>
-                                    <p><i><b>Scope of Communications to Be Provided in
-                                      Electronic Form.</b></i>&nbsp;When you use a
+                                    <p><span>Scope of Communications to Be Provided in
+                                      Electronic Form.</span>&nbsp;When you use a
                                       product or service to which this Disclosure applies, you
                                       agree that we may provide you with any Communications in
                                       electronic format, and that we may discontinue sending
@@ -1090,8 +1090,8 @@ export default function Legal() {
                                       <li>Notices regarding insufficient funds or negative
                                         balances</li>
                                     </ul>
-                                    <p><b><i>Method of Providing Communications to You in
-                                      Electronic Form.</i></b> All Communications that
+                                    <p><span>Method of Providing Communications to You in
+                                      Electronic Form.</span> All Communications that
                                       we provide to you in electronic form will be provided
                                       either (1) by access to a web site that we will
                                       designate in an e-mail notice we send to you at the time
@@ -1114,18 +1114,18 @@ export default function Legal() {
                                       continue to receive Communications in electronic form.
                                       If you withdraw your consent, the legal validity and
                                       enforceability of prior Communications delivered in
-                                      electronic form will not be affected.<br /><b>How to
-                                        Update Your Records.</b> It is your responsibility
+                                      electronic form will not be affected.<br /><span>How to
+                                        Update Your Records.</span> It is your responsibility
                                       to provide us with your true, accurate and complete
                                       e-mail address (if you have elected to receive e-mail
                                       messages from us), your contact information, and other
                                       information related to this Disclosure and your Card
                                       Account, and to maintain and update promptly any changes
                                       in this information. You can update information (such as
-                                      your e-mail address) through <var>support@payquicker.com
-                                      </var>or by calling the number on the back of your Card
-                                      or&nbsp;1-866-400-2712.<br /><b><i>Hardware and Software
-                                        Requirements.</i></b>&nbsp;In order to access,
+                                      your e-mail address) through support@payquicker.com
+                                      or by calling the number on the back of your Card
+                                      or&nbsp;1-866-400-2712.<br /><span>Hardware and Software
+                                        Requirements.</span>&nbsp;In order to access,
                                       view, and retain Communications that we make available
                                       to you electronically, you must have:</p>
                                     <ul>
@@ -1148,7 +1148,7 @@ export default function Legal() {
                                         software.</li>
                                       <li>Adobe Reader version 9.0 or higher</li>
                                     </ul>
-                                    <p><b><i>R</i></b><i><b>equesting Paper Copies.</b></i> We
+                                    <p><span>R</span><span>equesting Paper Copies.</span> We
                                       will not send you a paper copy of any Communication,
                                       unless you request it or we otherwise deem it
                                       appropriate to do so. You can obtain a paper copy of an
@@ -1158,22 +1158,22 @@ export default function Legal() {
                                       first provided the electronic Communication to you. To
                                       request a paper copy, call the number on the back of
                                       your Card, 1-866-400-2712, or visit
-                                      <var>support @payquicker.com </var>or write to the
+                                      support @payquicker.com or write to the
                                       Program Manager at PayQuicker LLC,400 Linden Oaks, Suite
                                       320, Rochester, New York 14625, USA.
                                     </p>
-                                    <p><b><i>Termination/Changes.</i></b>&nbsp;We reserve the
+                                    <p><span>Termination/Changes.</span>&nbsp;We reserve the
                                       right, in our sole discretion, to discontinue the
                                       provision of your electronic Communications, or to
                                       terminate or change the terms and conditions on which we
                                       provide electronic Communications. We will provide you
                                       with notice of any such termination or change as
                                       required by law.</p>
-                                    <h6 style={{ letterSpacing: 'normal' }}>Metropolitan Commercial
-                                      Bank Privacy Policy Notice:</h6>
-                                    <h4 style={{ letterSpacing: 'normal' }}>FACTS</h4>
-                                    <p><strong>WHAT DOES Metropolitan Commercial Bank DO WITH
-                                      YOUR&nbsp;PERSONAL INFORMATION?</strong></p>
+                                    <div >Metropolitan Commercial
+                                      Bank Privacy Policy Notice:</div>
+                                    <div >FACTS</div>
+                                    <p>WHAT DOES Metropolitan Commercial Bank DO WITH
+                                      YOUR&nbsp;PERSONAL INFORMATION?</p>
                                     <p>Financial companies choose how they share your personal
                                       information. Federal law gives consumers the right to
                                       limit some but not all sharing. Federal law also
@@ -1204,11 +1204,11 @@ export default function Legal() {
                                       <table id="tablepress-2" className="tablepress tablepress-id-2 dataTable no-footer" role="grid">
                                         <thead>
                                           <tr className="row-1 odd" role="row">
-                                            <th className="column-1 sorting_disabled" rowSpan={1} colSpan={1} style={{ width: '441.312px' }}>Reasons we can
+                                            <th className="column-1 sorting_disabled" rowSpan={1} colSpan={1} >Reasons we can
                                               share your personal information</th>
-                                            <th className="column-2 sorting_disabled" rowSpan={1} colSpan={1} style={{ width: '388.263px' }}>Does
+                                            <th className="column-2 sorting_disabled" rowSpan={1} colSpan={1} >Does
                                               Metropolitan Commercial Bank share</th>
-                                            <th className="column-3 sorting_disabled" rowSpan={1} colSpan={1} style={{ width: '242.425px' }}>Can you limit
+                                            <th className="column-3 sorting_disabled" rowSpan={1} colSpan={1} >Can you limit
                                               this sharing?</th>
                                           </tr>
                                         </thead>
@@ -1255,7 +1255,7 @@ export default function Legal() {
                                     <p>Questions?&nbsp;Call&nbsp;<a href="tel:8663638226">1-866-363-8226</a>&nbsp;or
                                       visit&nbsp;<a href="http://metropolitanbankny.com/">www.metropolitanbankny.com</a>
                                     </p>
-                                    <h4 style={{ letterSpacing: 'normal' }}>What We Do</h4>
+                                    <div >What We Do</div>
                                     <p>To protect your personal information from unauthorized
                                       access and use, we use security measures that comply
                                       with federal law. These measures include computer
@@ -1276,8 +1276,8 @@ export default function Legal() {
                                     <p>We also collect your personal information from others,
                                       such as credit bureaus, affiliates or other companies
                                     </p>
-                                    <p><strong>Federal law gives you the right to limit
-                                      only:</strong></p>
+                                    <p>Federal law gives you the right to limit
+                                      only:</p>
                                     <ul>
                                       <li>sharing for affiliates’ everyday business purposes –
                                         information about your credit worthiness</li>
@@ -1287,42 +1287,42 @@ export default function Legal() {
                                     </ul>
                                     <p>State laws and individual companies may give you
                                       additional rights to limit sharing.</p>
-                                    <h4 style={{ letterSpacing: 'normal' }}>Definitions</h4>
+                                    <div >Definitions</div>
                                     <p>Companies related by common ownership or control. They
                                       can be financial and non-financial
-                                      companies.&nbsp;<strong><em>Metropolitan Commercial Bank
+                                      companies.&nbsp;<em>Metropolitan Commercial Bank
                                         does not share with our Affiliates so they can
-                                        market to you.</em></strong></p>
+                                        market to you.</em></p>
                                     <p>Companies not related by common ownership or control.
                                       They can be financial and non-financial
-                                      companies.&nbsp;<strong><em>Metropolitan Commercial Bank
+                                      companies.&nbsp;<em>Metropolitan Commercial Bank
                                         does not share with non-affiliates so they can
-                                        market to you.</em></strong></p>
+                                        market to you.</em></p>
                                     <p>A formal agreement between non-affiliated financial
                                       companies that together market financial products or
-                                      services to you.&nbsp;<strong><em>Our joint marketing
+                                      services to you.&nbsp;<em>Our joint marketing
                                         partners include credit card account
-                                        companies.</em></strong></p>
-                                    <h4 style={{ letterSpacing: 'normal' }}>Other Important
-                                      Information</h4>
-                                    <p><strong>For Alaska, Illinois, Maryland and North Dakota
-                                      Customers.</strong> We will not share personal
+                                        companies.</em></p>
+                                    <div >Other Important
+                                      Information</div>
+                                    <p>For Alaska, Illinois, Maryland and North Dakota
+                                      Customers. We will not share personal
                                       information with non-affiliates either for them to
                                       market to you or for joint marketing – without your
                                       authorization.</p>
-                                    <p><strong>For California Customers.</strong> We will not
+                                    <p>For California Customers. We will not
                                       share personal information with non-affiliates either
                                       for them to market to you or for joint marketing –
                                       without your authorization. We will also limit our
                                       sharing of personal information about you with our
                                       affiliates to comply with all California privacy laws
                                       that apply to us.</p>
-                                    <p><strong>For Massachusetts, Mississippi and New Jersey
-                                      Customers.</strong> We will not share personal
+                                    <p>For Massachusetts, Mississippi and New Jersey
+                                      Customers. We will not share personal
                                       information from deposit or share relationships with
                                       non-affiliates either for them to market to you or for
                                       joint marketing – without your authorization.</p>
-                                    <p><strong>For Texas Customers.</strong>&nbsp;If you have a
+                                    <p>For Texas Customers.&nbsp;If you have a
                                       complaint, first contact the customer service division
                                       of Attain Finance, LLC at&nbsp;<a href="tel:8663638226">1-866-363-8226</a>. If you
                                       still have an unresolved complaint regarding the
@@ -1331,16 +1331,16 @@ export default function Legal() {
                                       North Lamar Boulevard, Austin, Texas 78705,&nbsp;<a href="tel:8772765554">1-877-276-5554</a>&nbsp;(toll
                                       free),&nbsp;<a href="https://www.dob.texas.gov/">www.dob.texas.gov</a>.
                                     </p>
-                                    <p><strong>For Vermont Customers.</strong> We will not share
+                                    <p>For Vermont Customers. We will not share
                                       personal information with non-affiliates either for them
                                       to market to you or for joint marketing without your
                                       authorization, and we will not share personal
                                       information with affiliates about your creditworthiness
                                       without your authorization.</p>
-                                    <h4 style={{ letterSpacing: 'normal' }}>Schedule A</h4>
-                                    <h6 style={{ letterSpacing: 'normal' }}>SCHEDULE OF ALL FEES AND
-                                      CHARGES FOR Zippy Cash Prepaid Visa®&nbsp;Card</h6>
-                                    <p><strong>State:</strong>&nbsp;All</p>
+                                    <div >Schedule A</div>
+                                    <div >SCHEDULE OF ALL FEES AND
+                                      CHARGES FOR Zippy Cash Prepaid Visa®&nbsp;Card</div>
+                                    <p>State:&nbsp;All</p>
 
                                     <table id="tablepress-3" className="tablepress tablepress-id-3">
                                       <thead>
@@ -1995,9 +1995,9 @@ export default function Legal() {
                                       visit&nbsp;<a href="https://www.consumerfinance.gov/consumer-tools/prepaid-cards/?utm_source=prepaid&amp;utm_medium=redirect&amp;utm_campaign=PrepaidRedirects" target="_blank" rel="noopener">cfpb.gov/prepaid</a>.
                                       If you have a complaint about a prepaid account, call
                                       the Consumer Financial Protection Bureau at&nbsp;<a href="http://tel:8554112372" target="_blank" rel="noopener">1-855-411-2372</a>&nbsp;or
-                                      visit&nbsp;<a style={{ fontFamily: 'var( --e-global-typography-text-font-family ), Sans-serif', backgroundColor: '#ffffff', letterSpacing: '0px' }} href="https://www.consumerfinance.gov/complaint/" target="_blank" rel="noopener">cfpb.gov/complaint</a></p>
+                                      visit&nbsp;<a  href="https://www.consumerfinance.gov/complaint/" target="_blank" rel="noopener">cfpb.gov/complaint</a></p>
                                     <p>&nbsp;</p>
-                                    <h3><b>Privacy Policy</b></h3>
+                                    <div><span>Privacy Policy</span></div>
                                     <p>In this Policy, the terms “PayQuicker,” “we”, “us” or
                                       “our” shall refer to PayQuicker LLC. The terms “you”,
                                       “your” shall refer to any individual or entity who
@@ -2032,7 +2032,7 @@ export default function Legal() {
                                       understanding of how we collect, use, protect or
                                       otherwise handle your Personal Data in accordance with
                                       the Services.</p>
-                                    <h4>Your Consent</h4>
+                                    <div>Your Consent</div>
                                     <p>We process your Personal Data pursuant to contractual
                                       necessity to carry out the Services for you, and further
                                       pursuant to your consent. Your use of the PayQuicker
@@ -2041,7 +2041,7 @@ export default function Legal() {
                                       the terms of the Privacy Policy, you do not have the
                                       right to access or otherwise use the Applications or
                                       Services.</p>
-                                    <h4>What Personal Data do we collect from you?</h4>
+                                    <div>What Personal Data do we collect from you?</div>
                                     <p>Personal Data is personal information that can be
                                       associated with an identified or identifiable person.
                                       “Personal Data” can include name, postal address,
@@ -2052,7 +2052,7 @@ export default function Legal() {
                                       does not identify a specific User.<br />We collect
                                       Personal Data when you visit our website or utilize our
                                       Services, including the following:</p>
-                                    <p><strong>Registration and use information:</strong> we
+                                    <p>Registration and use information: we
                                       collect Personal Data when you apply for a PayQuicker
                                       account or if you otherwise use our platform, website,
                                       or phone application to send or receive funds. This
@@ -2076,7 +2076,7 @@ export default function Legal() {
                                         security questions and answers associated with your
                                         linked Bank Account(s); and</li>
                                     </ul>
-                                    <p><strong>Transaction Information:</strong> As you use your
+                                    <p>Transaction Information: As you use your
                                       PayQuicker account, or otherwise send or receive funds
                                       through our or our Corporate Clients and Partners
                                       websites or applications, we collect Personal Data in
@@ -2085,15 +2085,15 @@ export default function Legal() {
                                       relating to the sender or receiver of funds. We may also
                                       collect receipts, contracts, photos, memos or other
                                       information relating to your transactions.</p>
-                                    <p><strong>Corporate Client and Partner
-                                      Information:</strong> When you communicate with us
+                                    <p>Corporate Client and Partner
+                                      Information: When you communicate with us
                                       or our Corporate Client and Partners about these
                                       services, we may collect this information.</p>
-                                    <p><strong>Customer Support:</strong> Information you
+                                    <p>Customer Support: Information you
                                       provide to our customer support may be collected in
                                       order to provide Services or assistance requested by
                                       you.</p>
-                                    <p><strong>Digital identity information:</strong> Your
+                                    <p>Digital identity information: Your
                                       access to the Services is primarily limited to your
                                       internet connected devices. As a result, we may collect
                                       some Personal Data relating to your digital identity
@@ -2102,7 +2102,7 @@ export default function Legal() {
                                       version, unique device identifiers and mobile network
                                       information), browser type, pages visited on our website
                                       and pages visited before visiting our website.</p>
-                                    <p><strong>Third party sources:</strong> When you create a
+                                    <p>Third party sources: When you create a
                                       PayQuicker Account or otherwise send or receive funds
                                       through PayQuicker or our Corporate Client’s and
                                       Partner’s websites or phone applications, we may collect
@@ -2116,8 +2116,8 @@ export default function Legal() {
                                       account balances, transaction details, identity related
                                       information and your contact details associated with the
                                       account).</p>
-                                    <p><strong>Publicly&nbsp;shared
-                                      information:</strong>&nbsp;Additionally, we may
+                                    <p>Publicly&nbsp;shared
+                                      information:&nbsp;Additionally, we may
                                       collect information you share publicly on your social
                                       media accounts. If you do not wish to share this
                                       information publicly on your social media accounts, you
@@ -2128,14 +2128,14 @@ export default function Legal() {
                                       your ability to use your PayQuicker account or other
                                       services offered by us or our Corporate Clients and
                                       Partners.</p>
-                                    <p><strong>If you choose not to give personal
-                                      information</strong><br />If you choose not to give us
+                                    <p>If you choose not to give personal
+                                      information<br />If you choose not to give us
                                       your personal information, it may mean that we cannot
                                       perform services needed to run your account. It could
                                       mean that we cancel your account or services you have
                                       with us.</p>
-                                    <p><strong>How do we use Cookies and tracking
-                                      technology?</strong><br />If you visit our website, we
+                                    <p>How do we use Cookies and tracking
+                                      technology?<br />If you visit our website, we
                                       use various technologies to collect information on our
                                       services and other websites, and this may include
                                       sending cookies to your computer or mobile device.
@@ -2158,8 +2158,8 @@ export default function Legal() {
                                     <p>We honor Do Not Track signals and Do Not Track, plant
                                       cookies, or use advertising when a Do Not Track (DNT)
                                       browser mechanism is in place.</p>
-                                    <h4>How do we use your information?</h4>
-                                    <p><strong>Data retention<br /></strong>We retain Personal
+                                    <div>How do we use your information?</div>
+                                    <p>Data retention<br />We retain Personal
                                       Data to fulfill our legal or regulatory obligations and
                                       for our business purposes. We may retain Personal Data
                                       for longer periods than required by law if it is in our
@@ -2170,7 +2170,7 @@ export default function Legal() {
                                       required to comply with applicable laws. We will
                                       continue to use and disclose such Personal Data in
                                       accordance with this Privacy Policy.</p>
-                                    <p><strong>Processing of Personal Data<br /></strong>We may
+                                    <p>Processing of Personal Data<br />We may
                                       act in different roles, either as a data controller or
                                       data processor, when processing your Personal Data. In
                                       general, a data controller is the person or entity that
@@ -2220,11 +2220,11 @@ export default function Legal() {
                                         determination to provide location based services.
                                       </li>
                                     </ul>
-                                    <h4>How do we share your Personal Data?</h4>
-                                    <p><strong>We may disclose any information we collect about
+                                    <div>How do we share your Personal Data?</div>
+                                    <p>We may disclose any information we collect about
                                       current and former customers, including Personal
                                       Data, to affiliates and non-affiliated third parties
-                                      as follows:</strong></p>
+                                      as follows:</p>
                                     <ul>
                                       <li>With financial institutions and financial services
                                         providers, including the Partner that provides
@@ -2275,14 +2275,14 @@ export default function Legal() {
                                         </ul>
                                       </li>
                                     </ul>
-                                    <p><strong>Aggregated Data:</strong> We may also share
+                                    <p>Aggregated Data: We may also share
                                       aggregated or de-identified Information, which cannot
                                       reasonably be used to identify you and which does not
                                       include Personal Data. For example, we may share certain
                                       transaction details such as amounts and zip codes in a
                                       pseudo-anonymous fashion to promote security and
                                       validity of PayQuicker’s services.</p>
-                                    <p><strong>Financial crime prevention:</strong>&nbsp;We will
+                                    <p>Financial crime prevention:&nbsp;We will
                                       use your personal information to help decide if your
                                       accounts may be being used for fraud or
                                       money-laundering. We may detect that an account is being
@@ -2295,7 +2295,7 @@ export default function Legal() {
                                       agencies may keep a record of that information and we
                                       may refuse to provide any services. Law enforcement
                                       agencies may access and use this information.</p>
-                                    <h4>How do we protect your information?</h4>
+                                    <div>How do we protect your information?</div>
                                     <p>We take commercially reasonable measures to help protect
                                       your Personal Data from loss, theft, misuse and
                                       unauthorized access, disclosure, alteration and
@@ -2320,7 +2320,7 @@ export default function Legal() {
                                       maintain the safety of your information.</p>
                                     <p>All transactions are processed through a gateway provider
                                       and are not stored or processed on our servers.</p>
-                                    <h4>California Online Privacy Protection Act</h4>
+                                    <div>California Online Privacy Protection Act</div>
                                     <p>CalOPPA is the first state law in the nation to require
                                       commercial websites and online services to post a
                                       privacy policy. The law’s reach stretches well beyond
@@ -2341,7 +2341,7 @@ export default function Legal() {
                                       <li>Our Policy link includes the word ‘Privacy’ and can
                                         be easily be found on the page specified</li>
                                     </ul>
-                                    <h4>Children’s Privacy</h4>
+                                    <div>Children’s Privacy</div>
                                     <p>The Services are not directed to or provided to
                                       individuals under eighteen (18) years of age.<br />This
                                       website is not directed to children under 13. We do not
@@ -2353,7 +2353,7 @@ export default function Legal() {
                                       aware that a child under 13 has provided us with
                                       Personal Data, we will delete such information from our
                                       files.</p>
-                                    <h4>Changes to and Scope of our Policy</h4>
+                                    <div>Changes to and Scope of our Policy</div>
                                     <p>We may, in our sole and absolute discretion, change or
                                       modify this Policy, and any policies or agreements which
                                       are incorporated herein, at any time, and such changes
@@ -2370,7 +2370,7 @@ export default function Legal() {
                                       last revised, do not use (or continue to use) the
                                       Services.</p>
                                     <h5>Choice relating to your Personal Data:</h5>
-                                    <p><strong>Personal Data:</strong> You may have the ability
+                                    <p>Personal Data: You may have the ability
                                       review, update, correct or delete all or some of the
                                       Personal Data in your PayQuicker account by contacting
                                       us or by editing your profile via the website. If you
@@ -2381,15 +2381,15 @@ export default function Legal() {
                                       Swiss individual, please see our&nbsp;Privacy Shield
                                       Policy&nbsp;for information on exercising your right to
                                       access your personal data.</p>
-                                    <p><strong>Location and other device-level
-                                      information:</strong> The device you use to access
+                                    <p>Location and other device-level
+                                      information: The device you use to access
                                       the Services may collect information about you,
                                       including geolocation information and usage data that
                                       PayQuicker may then collect and use. For information
                                       about your ability to restrict the collection and use of
                                       such information, please use the settings available in
                                       the device.</p>
-                                    <p><strong>Marketing Communication Notices:</strong>&nbsp;We
+                                    <p>Marketing Communication Notices:&nbsp;We
                                       may send you marketing content about our Applications
                                       and Services, through various communication channels,
                                       for example, email, text, pop-ups, push notifications,
@@ -2400,13 +2400,13 @@ export default function Legal() {
                                       communication preferences in your Account settings. For
                                       messages sent via push notifications, you may manage
                                       your preferences in your device.</p>
-                                    <h4>Does our site allow third-party behavioral tracking?
-                                    </h4>
+                                    <div>Does our site allow third-party behavioral tracking?
+                                    </div>
                                     <p>It’s also important to note that we allow third-party
                                       behavioral tracking for purposes of security and fraud
                                       prevention in connection with providing the Services.
                                     </p>
-                                    <h6>Third party links</h6>
+                                    <div>Third party links</div>
                                     <p>Occasionally, at our discretion, we may include or offer
                                       third party products or services on our website. These
                                       third party sites have separate and independent privacy
@@ -2414,8 +2414,8 @@ export default function Legal() {
                                       liability for the content and activities of these linked
                                       sites. Nonetheless, we seek to protect the integrity of
                                       our site and welcome any feedback about these sites.</p>
-                                    <h6>Transfers of Your Personal Data to Other Countries;
-                                      International Data Transfers</h6>
+                                    <div>Transfers of Your Personal Data to Other Countries;
+                                      International Data Transfers</div>
                                     <p>Our operations are supported by a network of computers,
                                       cloud-based servers, and other infrastructure and
                                       information technology, including, but not limited to,
@@ -2443,7 +2443,7 @@ export default function Legal() {
                                       rules than your country. We do not represent that our
                                       Applications and Services are appropriate or available
                                       in any particular jurisdiction.</p>
-                                    <h6>Your Rights</h6>
+                                    <div>Your Rights</div>
                                     <p>The General Data Protection Regulation or “GDPR” give
                                       certain rights to individuals in relation to their
                                       personal data. If the GDPR applies to you or your
@@ -2496,7 +2496,7 @@ export default function Legal() {
                                       deliver the services you have requested. Where this is
                                       the case, we will inform you of specific details in
                                       response to your request.</p>
-                                    <h6>Limitations</h6>
+                                    <div>Limitations</div>
                                     <p id="EULA">PayQuicker strives to protect your information
                                       and data; however, some privacy issues may be
                                       unintentionally missed, so PayQuicker cannot guarantee
@@ -2504,7 +2504,7 @@ export default function Legal() {
                                       for any damages, including incidental, consequential, or
                                       punitive damages, relating to the practices described in
                                       this Privacy Policy.</p>
-                                    <h6>English Language Controls</h6>
+                                    <div>English Language Controls</div>
                                     <p>Translations of this Agreement that may have been
                                       provided are for your convenience only and may not
                                       accurately reflect the original English meaning. The
@@ -2512,7 +2512,7 @@ export default function Legal() {
                                       herein are subject to definitions and interpretations in
                                       the English language</p>
                                     <p>&nbsp;</p>
-                                    <h3>End-User License Agreement</h3>
+                                    <div>End-User License Agreement</div>
                                     <p>The Program Manager for the Zippy Cash® Prepaid Visa
                                       Debit Card is PayQuicker, LLC</p>
                                     <p>Zippy Cash® is a registered trademark of Zippy Cash, LLC
