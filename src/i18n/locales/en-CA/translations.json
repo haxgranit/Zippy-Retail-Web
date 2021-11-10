@@ -18,7 +18,16 @@
   "about.our_partner": "OUR PARTNERS",
   "about.our_partner_description": "We work hand in hand with government bodies and financial industry partners to ensure our customers get the best of the best. Check out who's on our roster.",
 
-  "business.header_title": "business banking",
+  "common.business_title": "business banking",
+  "common.sign_up": "Sign Up",
+  "common.first_name": "First Name",
+  "common.last_name": "Last Name",
+  "common.email": "Email",
+  "common.password": "Password",
+  "common.confirm_password": "Confirm Password",
+  "common.agree_title": "I agree to lorem ipsum dolor sit amet",
+  "common.create_your_account": "Create your account",
+  
   "business.header_desc": "Make your money work your way!",
   "business.sign_up_btn_title": "Sign up for a business account",
   "business.business_description_1": "No matter how big or small your business is, everyone is in the global market. That's why you need the best rates and lowest fees for you brand. Zippy Cash gives you the best rates available every time and takes the complexity out of international commerce. Our fees can't be beat.",
