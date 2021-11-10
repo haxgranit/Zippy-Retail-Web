@@ -1,8 +1,11 @@
+import { useTranslation } from 'react-i18next';
 import Circle_White_01 from './assets/img/background/Circle_White-01.jpg';
 import David_Magnus_White from './assets/img/roundicons/profile/David_Magnus_White.jpg';
 import profileframe from './assets/img/roundicons/profile/profileframe.png';
 
 export default function PersonalProfile() {
+  const { t } = useTranslation();
+
   return (
     <main>
       <div className="bg-light" style={{ backgroundImage: `url(${Circle_White_01})`, backgroundSize: 'cover' }}>
@@ -17,19 +20,19 @@ export default function PersonalProfile() {
                 </div>
                 <div className="spacing"></div>
                 <div className="col-12 mb-4">
-                  <h5 className="fw-bold text-light text-center text-uppercase ">Profile Name</h5>
+                  <h5 className="fw-bold text-light text-center text-uppercase ">{t('profile.profile_name')}</h5>
                 </div>
                 <div className="col-6 col-md-12 mb-3 text-center">
-                  <a href="#" className="text-light text-uppercase text-decoration-none">Contact Info</a>
+                  <a href="#" className="text-light text-uppercase text-decoration-none">{t('profile.contact_info')}</a>
                 </div>
                 <div className="col-6 col-md-12 mb-3 text-center">
-                  <a href="#" className="text-light text-uppercase text-decoration-none">Account Info</a>
+                  <a href="#" className="text-light text-uppercase text-decoration-none">{t('profile.account_info')}</a>
                 </div>
                 <div className="col-6 col-md-12 mb-3 text-center">
-                  <a href="#" className="text-light text-uppercase text-decoration-none">Language</a>
+                  <a href="#" className="text-light text-uppercase text-decoration-none">{t('profile.language')}</a>
                 </div>
                 <div className="col-6 col-md-12 mb-3 text-center">
-                  <a href="#" className="text-light text-uppercase text-decoration-none">Lorem Ipsum</a>
+                  <a href="#" className="text-light text-uppercase text-decoration-none">{t('profile.lorem_ipsum')}</a>
                 </div>
                 <div className="spacingsmall"></div>
               </div>
@@ -40,31 +43,31 @@ export default function PersonalProfile() {
                   <form action="#" method="post">
                     <div className="row">
                       <div className="col-12 col-md-6 mb-4">
-                        <label htmlFor="fname" className="text-light fw-bold">First Name</label>
+                        <label htmlFor="fname" className="text-light fw-bold">{t('profile.first_name')}</label>
                         <input type="text" id="fname" className="form-control formcurve" />
                       </div>
                       <div className="col-12 col-md-6 mb-4">
-                        <label htmlFor="lname" className="text-light fw-bold">Last Name</label>
+                        <label htmlFor="lname" className="text-light fw-bold">{t('profile.last_name')}</label>
                         <input type="password" id="lname" className="form-control formcurve" />
                       </div>
                       <div className="col-12 mb-4">
-                        <label htmlFor="Email" className="text-light fw-bold">Email</label>
+                        <label htmlFor="Email" className="text-light fw-bold">{t('profile.email')}</label>
                         <input type="email" id="Email" className="form-control formcurve" />
                       </div>
                       <div className="col-12 mb-4">
-                        <label htmlFor="Address" className="text-light fw-bold">Address</label>
+                        <label htmlFor="Address" className="text-light fw-bold">{t('profile.address')}</label>
                         <input type="email" id="Address" className="form-control formcurve" />
                       </div>
                       <div className="col-12 col-md-6 mb-4">
-                        <label htmlFor="city" className="text-light fw-bold">City</label>
+                        <label htmlFor="city" className="text-light fw-bold">{t('profile.city')}</label>
                         <input type="text" id="city" className="form-control formcurve" />
                       </div>
                       <div className="col-12 col-md-6 mb-4">
-                        <label htmlFor="province" className="text-light fw-bold">Province</label>
+                        <label htmlFor="province" className="text-light fw-bold">{t('profile.province')}</label>
                         <input type="text" id="province" className="form-control formcurve" />
                       </div>
                       <div className="col-12 col-md-6 mb-4">
-                        <label htmlFor="postalcode" className="text-light fw-bold">Postal Code</label>
+                        <label htmlFor="postalcode" className="text-light fw-bold">{t('profile.first_name')}</label>
                         <input type="text" id="postalcode" className="form-control formcurve" />
                       </div>
                       <div className="col-12 col-md-6 mb-4">

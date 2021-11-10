@@ -27,7 +27,7 @@ export default function Home() {
               <div className="container">
                 <div className="row">
                   <div className="col-12">
-                    <h2 className="sliderh2">{t('common.personal_banking')}</h2>
+                    <h2 className="sliderh2">{t('home.personal_banking')}</h2>
                     <h1 className="hero-heading display-3 fw-bold">
                       <Trans
                         i18nKey="home.zip_it"
@@ -44,7 +44,7 @@ export default function Home() {
               <div className="container">
                 <div className="row">
                   <div className="col-12">
-                    <h2 className="sliderh2">{t('common.personal_banking')}</h2>
+                    <h2 className="sliderh2">{t('home.personal_banking')}</h2>
                     <h1 className="hero-heading display-3 fw-bold">
                       <Trans
                         i18nKey="home.zip_it"
@@ -112,7 +112,7 @@ export default function Home() {
           <div className="container">
             <div className="row align-items-center py-4">
               <div className="col-12 col-md-6 col-lg-3 text-end position-relative" data-aos="flip-left">
-                <img src={ZippyCash_Icons_B} alt={t('home.image_alt_1')} className="img-fluid position-absolute top-0 start-50 translate-middle" data-aos="flip-left" />
+                <img src={ZippyCash_Icons_B} alt={t('home.image_alt_2')} className="img-fluid position-absolute top-0 start-50 translate-middle" data-aos="flip-left" />
               </div>
               <div className="col-12 col-md-6 col-lg-9 circleoverlap">
                 <br />
@@ -131,7 +131,7 @@ export default function Home() {
           <div className="container">
             <div className="row align-items-center py-4 flex-md-row-reverse">
               <div className="col-12 col-md-6 col-lg-3">
-                <img src={ZippyCash_Icons_C} alt="smiling young woman" className="img-fluid centerimage" data-aos="flip-left" />
+                <img src={ZippyCash_Icons_C} alt={t('home.image_alt_3')} className="img-fluid centerimage" data-aos="flip-left" />
               </div>
               <div className="col-12 col-md-6 col-lg-9">
                 <h2 className="redtitle">{t('home.question_2')}</h2>

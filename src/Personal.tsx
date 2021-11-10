@@ -16,7 +16,7 @@ export default function Personal() {
           <div className="row py-5">
             <div className="col">
               <div className="mb-3">
-                <h2 style={{ color: '#FF1926' }}>{t('common.personal_banking')}</h2>
+                <h2 style={{ color: '#FF1926' }}>{t('personal.personal_banking')}</h2>
                 <h1 className="redtitle hero-heading display-3" style={{ fontSize: '4em', paddingBottom: '20px' }}>{t('personal.header_title')}</h1>
                 <Link to="/personal-signup" className="btn rounded-0 my-buttonred">{t('personal.sign_up_btn')}</Link>
               </div>
@@ -29,7 +29,7 @@ export default function Personal() {
                 <img src={ZippyCash_Icons_H} alt={t('personal.image_alt_1')} className="img-fluid centerimage" data-aos="flip-left" />
               </div>
               <div>
-                <h3 className="redtitle text-center">{t('common.send_btn')}</h3>
+                <h3 className="redtitle text-center">{t('personal.send_btn')}</h3>
                 <p className="content-home">{t('personal.send_description')}</p>
               </div>
             </div>
@@ -38,7 +38,7 @@ export default function Personal() {
                 <img src={ZippyCash_Icons_I} alt={t('personal.image_alt_2')} className="img-fluid centerimage" data-aos="flip-left" />
               </div>
               <div>
-                <h3 className="bluetitle text-center">{t('common.spend_btn')}</h3>
+                <h3 className="bluetitle text-center">{t('personal.spend_btn')}</h3>
                 <p className="content-home">{t('personal.spend_description')}</p>
               </div>
             </div>
