@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next';
 import AboutUs_Hero from './assets/img/background/AboutUs_Hero.jpg';
 import bluestrip from './assets/img/background/bluestrip.jpg';
 import Logo_AboutUs from './assets/img/general/Logo_AboutUs.png';
@@ -7,6 +8,8 @@ import ZippyCash_Icons_F from './assets/img/roundicons/aboutus/ZippyCash_Icons_F
 import ZippyCash_Icons_G from './assets/img/roundicons/aboutus/ZippyCash_Icons_G.png'
 
 export default function About() {
+  const { t } = useTranslation();
+
   return (
     <main>
       <div>
@@ -15,14 +18,14 @@ export default function About() {
             <div className="row">
               <div className="col-12 col-md-5 col-lg-4">
                 <br /><br />
-                <h2 className="redsubtitle">Who is</h2>
+                <h2 className="redsubtitle">{t('about.who_is')}</h2>
                 <img src={Logo_AboutUs} alt="zippy.cash?" className="img-fluid" /><br /><br />
-                <p className="content-home" style={{ fontWeight: 600 }}>We're finance geeks who know the system. And we think it's too complicated, too expensive and too difficult. Just because it's always been that way doesn't mean we can't do better. We're passionate about working the system to make it rewarding for everyone. We created Zippy Cash to deliver on that promise.
+                <p className="content-home" style={{ fontWeight: 600 }}>
+                  {t("about.who_is_description_1")}
                 </p>
                 <br />
                 <p className="content-home">
-                  In a fair world, transparent and affordable financial services would be accessible to all, regardless of who they are. But… you need a law degree to understand the fine print and in the end, consumers end up getting ripped off -
-                  especially those who have less. Zippy Cash exists to break these chains and make easy, fast, secure payments a reality for anyone who wants them!
+                  {t("about.who_is_description_2")}
                 </p>
                 <div>
                 </div>
@@ -41,9 +44,8 @@ export default function About() {
                         className="img-fluid centerimage" data-aos="flip-left" />
                     </div>
                     <div>
-                      <h4 className="redtitle text-center">THE TEAM</h4>
-                      <p className="content-home">We're finance and tech geeks who are passionate about the freedom of choice the digital world has made possible. We love other out-of-the-box thinkers and FinTech wizards so if that's you, check out Zippy Cash
-                        employment opportunities here.</p>
+                      <h4 className="redtitle text-center">{t('about.the_team')}</h4>
+                      <p className="content-home">{t('about.the_team_description')}</p>
                     </div>
                   </div>
                   <div className="col-12 col-md-6 col-lg-3">
@@ -52,9 +54,8 @@ export default function About() {
                         className="img-fluid  centerimage" data-aos="flip-left" />
                     </div>
                     <div>
-                      <h4 className="redtitle text-center">OUR MISSION</h4>
-                      <p className="content-home">Our mission is to level the playing field and reward customers for doing the things they do every day - even the small stuff. We do this through expertise, partnerships and best-in-class tech that allows us
-                        to power up your money - faster, easier, safer... and fun too - that's Zippy!</p>
+                      <h4 className="redtitle text-center">{t('about.our_mission')}</h4>
+                      <p className="content-home">{t('about.our_mission_description')}</p>
                     </div>
                   </div>
                   <div className="col-12 col-md-6 col-lg-3">
@@ -63,8 +64,8 @@ export default function About() {
                         className="img-fluid  centerimage" data-aos="flip-left" />
                     </div>
                     <div>
-                      <h4 className="redtitle text-center">OUR VALUES</h4>
-                      <p className="content-home">We believe our customers deserve the utmost in security and transparency. We believe in choices for everyone, regardless of how big your bank account is. We believe in rewarding our customers every day, because we know a little more money can give folks a lot more power. And it's about time that power was accessible to everyone.</p>
+                      <h4 className="redtitle text-center">{t('about.our_values')}</h4>
+                      <p className="content-home">{t('about.our_values_description')}</p>
                     </div>
                   </div>
                   <div className="col-12 col-md-6 col-lg-3">
@@ -73,8 +74,8 @@ export default function About() {
                         className="img-fluid  centerimage" data-aos="flip-left" />
                     </div>
                     <div>
-                      <h4 className="redtitle text-center">OUR PARTNERS</h4>
-                      <p className="content-home">We work hand in hand with government bodies and financial industry partners to ensure our customers get the best of the best. Check out who's on our roster.</p>
+                      <h4 className="redtitle text-center">{t('about.our_partner')}</h4>
+                      <p className="content-home">{t('about.our_partner_description')}</p>
                     </div>
                   </div>
                 </div>

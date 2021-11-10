@@ -4,5 +4,17 @@
   "header.about": "about Us",
   "header.personal": "personal",
   "header.business": "business",
-  "header.personal-profile": "dev docs"
+  "header.personal-profile": "dev docs",
+  
+  "about.who_is": "Who Is",
+  "about.who_is_description_1": "We're finance geeks who know the system. And we think it's too complicated, too expensive and too difficult. Just because it's always been that way doesn't mean we can't do better. We're passionate about working the system to make it rewarding for everyone. We created Zippy Cash to deliver on that promise.",
+  "about.who_is_description_2": "In a fair world, transparent and affordable financial services would be accessible to all, regardless of who they are. But… you need a law degree to understand the fine print and in the end, consumers end up getting ripped off - especially those who have less. Zippy Cash exists to break these chains and make easy, fast, secure payments a reality for anyone who wants them!",
+  "about.the_team": "THE TEAM",
+  "about.the_team_description": "We're finance and tech geeks who are passionate about the freedom of choice the digital world has made possible. We love other out-of-the-box thinkers and FinTech wizards so if that's you, check out Zippy Cash employment opportunities here.",
+  "about.our_mission": "OUR MISSION",
+  "about.our_mission_description": "Our mission is to level the playing field and reward customers for doing the things they do every day - even the small stuff. We do this through expertise, partnerships and best-in-class tech that allows us to power up your money - faster, easier, safer... and fun too - that's Zippy!",
+  "about.our_values": "OUR VALUES",
+  "about.our_values_description": "We believe our customers deserve the utmost in security and transparency. We believe in choices for everyone, regardless of how big your bank account is. We believe in rewarding our customers every day, because we know a little more money can give folks a lot more power. And it's about time that power was accessible to everyone.",
+  "about.our_partner": "OUR PARTNERS",
+  "about.our_partner_description": "We work hand in hand with government bodies and financial industry partners to ensure our customers get the best of the best. Check out who's on our roster."
 }

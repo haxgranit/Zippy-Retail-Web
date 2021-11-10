@@ -4,5 +4,17 @@
   "header.about": "à propos de nous",
   "header.personal": "personnel",
   "header.business": "Entreprise",
-  "header.personal-profile": "documents de développement"
+  "header.personal-profile": "documents de développement",
+  
+  "about.who_is": "QUI EST",
+  "about.who_is_description_1": "Nous sommes des geeks de la finance qui connaissent le système. Et nous pensons que c'est trop compliqué, trop cher et trop difficile. Ce n'est pas parce qu'il en a toujours été ainsi que nous ne pouvons pas faire mieux. Nous sommes passionnés par le travail du système pour le rendre gratifiant pour tout le monde. Nous avons créé Zippy Cash pour tenir cette promesse.",
+  "about.who_is_description_2": "Dans un monde équitable, des services financiers transparents et abordables seraient accessibles à tous, peu importe qui ils sont. Mais… vous avez besoin d'un diplôme en droit pour comprendre les petits caractères et à la fin, les consommateurs finissent par se faire arnaquer - surtout ceux qui en ont moins. Zippy Cash existe pour briser ces chaînes et faire des paiements faciles, rapides et sécurisés une réalité pour tous ceux qui le souhaitent !",
+  "about.the_team": "L'ÉQUIPE",
+  "about.the_team_description": "Nous sommes des geeks de la finance et de la technologie passionnés par la liberté de choix que le monde numérique a rendue possible. Nous aimons les autres penseurs et sorciers de la technologie financière, alors si c'est vous, consultez les opportunités d'emploi chez Zippy Cash ici.",
+  "about.our_mission": "NOTRE MISSION",
+  "about.our_mission_description": "Notre mission est d'uniformiser les règles du jeu et de récompenser les clients pour ce qu'ils font tous les jours, même les plus petits. Nous y parvenons grâce à une expertise, des partenariats et une technologie de pointe qui nous permet d'augmenter votre argent - plus rapidement, plus facilement, plus sûr... et aussi amusant - c'est Zippy !",
+  "about.our_values": "NOS VALEURS",
+  "about.our_values_description": "Nous pensons que nos clients méritent le maximum de sécurité et de transparence. Nous croyons aux choix pour tout le monde, quelle que soit la taille de votre compte bancaire. Nous croyons qu'il faut récompenser nos clients chaque jour, car nous savons qu'un peu plus d'argent peut donner aux gens beaucoup plus de pouvoir. Et il était temps que le pouvoir soit accessible à tous.",
+  "about.our_partner": "NOS PARTENAIRES",
+  "about.our_partner_description": "Nous travaillons main dans la main avec les organismes gouvernementaux et les partenaires du secteur financier pour garantir que nos clients obtiennent le meilleur des meilleurs. Découvrez qui est sur notre liste."
 }
