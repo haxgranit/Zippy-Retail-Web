@@ -72,5 +72,15 @@
   "profile.address": "NEEDS_LOC",
   "profile.City": "NEEDS_LOC",
   "profile.province": "NEEDS_LOC",
-  "profile.postal_code": "NEEDS_LOC"
+  "profile.postal_code": "NEEDS_LOC",
+
+  "personal_signup.personal_banking": "NEEDS_LOC",
+  "personal_signup.signup_title": "NEEDS_LOC",
+  "personal_signup.first_name": "NEEDS_LOC",
+  "personal_signup.last_name": "NEEDS_LOC",
+  "personal_signup.email": "NEEDS_LOC",
+  "personal_signup.password": "NEEDS_LOC",
+  "personal_signup.confirm_password": "NEEDS_LOC",
+  "personal_signup.agree_title": "NEEDS_LOC",
+  "personal_signup.create_your_account": "NEEDS_LOC"
 }

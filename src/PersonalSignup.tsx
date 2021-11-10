@@ -1,6 +1,9 @@
+import { useTranslation } from 'react-i18next';
 import Personal_SignUp_Hero from './assets/img/background/Personal_SignUp_Hero.jpg';
 
 export default function PersonalSignup() {
+  const { t } = useTranslation();
+
   return (
     <main>
       <div className="bg-light" style={{ backgroundImage: `url(${Personal_SignUp_Hero})`, backgroundSize: 'cover', backgroundPositionX: 'left' }}>
@@ -9,8 +12,8 @@ export default function PersonalSignup() {
             <div className="col-12 col-md-9">
               <div className="spacingsmall"></div>
               <div className="mb-3">
-                <h2 className="redtitle" style={{ fontWeight: 500 }}>personal banking</h2>
-                <h1 className="redtitle hero-heading display-3 ">Sign Up</h1>
+                <h2 className="redtitle" style={{ fontWeight: 500 }}>{t('personal_signup.personal_banking')}</h2>
+                <h1 className="redtitle hero-heading display-3 ">{t('personal_signup.signup_title')}</h1>
               </div>
               <div className="spacingsmall"></div>
               <div className="cardbusiness formcurve border-0 p-4 mt-4">
@@ -18,34 +21,34 @@ export default function PersonalSignup() {
                   <form action="#" method="post">
                     <div className="row">
                       <div className="col-12 col-md-6 mb-4">
-                        <label htmlFor="fname" className="text-light fw-bold">First Name</label>
+                        <label htmlFor="fname" className="text-light fw-bold">{t('personal_signup.first_name')}</label>
                         <input type="text" id="fname" className="form-control formcurve" />
                       </div>
                       <div className="col-12 col-md-6 mb-4">
-                        <label htmlFor="lname" className="text-light fw-bold">Last Name</label>
+                        <label htmlFor="lname" className="text-light fw-bold">{t('personal_signup.last_name')}</label>
                         <input type="password" id="lname" className="form-control formcurve" />
                       </div>
                       <div className="col-12 mb-4">
-                        <label htmlFor="Email" className="text-light fw-bold">Email</label>
+                        <label htmlFor="Email" className="text-light fw-bold">{t('personal_signup.email')}</label>
                         <input type="email" id="Email" className="form-control formcurve" />
                       </div>
                       <div className="col-12 col-md-6 mb-4">
-                        <label htmlFor="password" className="text-light fw-bold">Password</label>
+                        <label htmlFor="password" className="text-light fw-bold">{t('personal_signup.password')}</label>
                         <input type="text" id="password" className="form-control formcurve" />
                       </div>
                       <div className="col-12 col-md-6 mb-4">
-                        <label htmlFor="password-confirm" className="text-light fw-bold">Confirm Password</label>
+                        <label htmlFor="password-confirm" className="text-light fw-bold">{t('personal_signup.confirm_password')}</label>
                         <input type="password" id="password-confirm" className="form-control formcurve" />
                       </div>
                       <div className="col-12 mb-4">
                         <input type="checkbox" id="tos" className="me-2 form-check-input formcurve" />{' '}
-                        <label htmlFor="tos" className="text-light">I agree to lorem ipsum dolor sit amet</label>
+                        <label htmlFor="tos" className="text-light">{t('personal_signup.agree_title')}</label>
                       </div>
                     </div>
                     <div className="row">
                       <div className="col-12 text-center">
                         <button className="py-2 btn btn-dark formcurve" style={{ fontSize: '22px', fontWeight: 700, backgroundColor: '#5E7472' }} type="submit">
-                          Create your account
+                        {t('personal_signup.create_your_account')}
                         </button>
                       </div>
                     </div>

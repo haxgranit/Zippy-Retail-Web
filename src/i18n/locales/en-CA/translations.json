@@ -72,5 +72,15 @@
   "profile.address": "Address",
   "profile.City": "City",
   "profile.province": "Province",
-  "profile.postal_code": "Postal Code"
+  "profile.postal_code": "Postal Code",
+
+  "personal_signup.personal_banking": "personal banking",
+  "personal_signup.signup_title": "Sign Up",
+  "personal_signup.first_name": "First Name",
+  "personal_signup.last_name": "Last Name",
+  "personal_signup.email": "Email",
+  "personal_signup.password": "Password",
+  "personal_signup.confirm_password": "Confirm Password",
+  "personal_signup.agree_title": "I agree to lorem ipsum dolor sit amet",
+  "personal_signup.create_your_account": "Create your account"
 }
