@@ -1,10 +1,10 @@
 {
-  "header.language": "IDIOMA",
-  "header.login": "ACCESO",
-  "header.about": "Sobre nosotras",
-  "header.personal": "personal",
-  "header.business": "negocio",
-  "header.personal-profile": "dev docs",
+  "header.language": "NEEDS_LOC",
+  "header.login": "NEEDS_LOC",
+  "header.about": "NEEDS_LOC",
+  "header.personal": "NEEDS_LOC",
+  "header.business": "NEEDS_LOC",
+  "header.personal-profile": "NEEDS_LOC",
   
   "about.who_is": "NEEDS_LOC",
   "about.who_is_description_1": "NEEDS_LOC",

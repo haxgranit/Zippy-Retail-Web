@@ -1,10 +1,10 @@
 {
-  "header.language": "LANGUE",
-  "header.login": "CONNEXION",
-  "header.about": "à propos de nous",
-  "header.personal": "personnel",
-  "header.business": "Entreprise",
-  "header.personal-profile": "documents de développement",
+  "header.language": "NEEDS_LOC",
+  "header.login": "NEEDS_LOC",
+  "header.about": "NEEDS_LOC",
+  "header.personal": "NEEDS_LOC",
+  "header.business": "NEEDS_LOC",
+  "header.personal-profile": "NEEDS_LOC",
   
   "about.who_is": "NEEDS_LOC",
   "about.who_is_description_1": "NEEDS_LOC",
