@@ -1,4 +1,4 @@
-import { useTranslation } from 'react-i18next';
+import { useTranslation, Trans } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import Circle_White_01 from './assets/img/background/Circle_White-01.jpg';
 import ZippyCash_Icons_K from './assets/img/roundicons/business/ZippyCash_Icons_K.png';
@@ -30,7 +30,9 @@ export default function Business() {
               </div>
               <div className="col-12 col-md-9">
                 <p className="m-0 content-home">
-                  {t('business.business_description_1')}
+                  <Trans
+                    i18nKey="business.business_description_1"
+                  />
                 </p>
               </div>
             </div>
@@ -44,7 +46,9 @@ export default function Business() {
               </div>
               <div className="col-12 col-md-9 circleoverlap">
                 <p className="m-0 whitecopy">
-                  {t('business.business_description_2')}
+                  <Trans
+                    i18nKey="business.business_description_2"
+                  />
                 </p>
               </div>
             </div>
@@ -58,7 +62,9 @@ export default function Business() {
               </div>
               <div className="col-12 col-md-9">
                 <p className="m-0 content-home">
-                  {t('business.business_description_3')}
+                  <Trans
+                    i18nKey="business.business_description_3"
+                  />
                 </p>
               </div>
             </div>

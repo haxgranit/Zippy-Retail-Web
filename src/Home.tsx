@@ -6,8 +6,10 @@ import ZippyCash_Icons_A from './assets/img/roundicons/home/ZippyCash_Icons_A.pn
 import ZippyCash_Icons_B from './assets/img/roundicons/home/ZippyCash_Icons_B.png';
 import ZippyCash_Icons_C from './assets/img/roundicons/home/ZippyCash_Icons_C.png';
 import { Link } from 'react-router-dom';
+import { useTranslation, Trans } from 'react-i18next';
 
 export default function Home() {
+  const { t } = useTranslation();
   const sliderSettings = {
     autoplay: true,
     autoplaySpeed: 3000,
@@ -25,9 +27,13 @@ export default function Home() {
               <div className="container">
                 <div className="row">
                   <div className="col-12">
-                    <h2 className="sliderh2">personal banking</h2>
-                    <h1 className="hero-heading display-3 fw-bold">Zipp it<br />to me!</h1>
-                    <Link to="/personal-signup" className="hero-button btn btn-light rounded-0">SIGN UP!</Link>
+                    <h2 className="sliderh2">{t('common.personal_banking')}</h2>
+                    <h1 className="hero-heading display-3 fw-bold">
+                      <Trans
+                        i18nKey="home.zip_it"
+                      />
+                      </h1>
+                    <Link to="/personal-signup" className="hero-button btn btn-light rounded-0">{t('home.sign_up_btn')}</Link>
                   </div>
                 </div>
               </div>
@@ -38,9 +44,13 @@ export default function Home() {
               <div className="container">
                 <div className="row">
                   <div className="col-12">
-                    <h2 className="sliderh2">personal banking</h2>
-                    <h1 className="hero-heading display-3 fw-bold">Zipp it<br />to me!</h1>
-                    <Link to="/personal-signup" className="hero-button btn btn-light rounded-0">SIGN UP!</Link>
+                    <h2 className="sliderh2">{t('common.personal_banking')}</h2>
+                    <h1 className="hero-heading display-3 fw-bold">
+                      <Trans
+                        i18nKey="home.zip_it"
+                      />
+                    </h1>
+                    <Link to="/personal-signup" className="hero-button btn btn-light rounded-0">{t('home.sign_up_btn')}</Link>
                   </div>
                 </div>
               </div>
@@ -51,9 +61,13 @@ export default function Home() {
               <div className="container">
                 <div className="row">
                   <div className="col-12">
-                    <h2 className="sliderh2">personal sign up</h2>
-                    <h1 className="hero-heading display-3 fw-bold">Zipp it<br />to me!</h1>
-                    <Link to="/business-signup" className="hero-button btn btn-light rounded-0">SIGN UP!</Link>
+                    <h2 className="sliderh2">{t('home.personal_sign_up')}</h2>
+                    <h1 className="hero-heading display-3 fw-bold">
+                      <Trans
+                        i18nKey="home.zip_it"
+                      />  
+                    </h1>
+                    <Link to="/business-signup" className="hero-button btn btn-light rounded-0">{t('home.sign_up_btn')}</Link>
                   </div>
                 </div>
               </div>
@@ -66,11 +80,11 @@ export default function Home() {
           <div className="container py-4">
             <div className="row align-items-center">
               <div className="col-12 col-md-6 col-lg-8"  >
-                <h2>business banking</h2>
-                <h1 className="fw-bold">A little more money. A lot more power.</h1>
+                <h2>{t("home.business_banking")}</h2>
+                <h1 className="fw-bold">{t('home.business_banking_desc')}</h1>
               </div>
               <div className="col-12 col-md-6 col-lg-4">
-                <Link to="/business-signup" className="btn btn-light rounded-0 my-button">SIGN UP!</Link>
+                <Link to="/business-signup" className="btn btn-light rounded-0 my-button">{t('home.sign_up_btn')}</Link>
               </div>
             </div>
           </div>
@@ -84,9 +98,11 @@ export default function Home() {
                 <img src={ZippyCash_Icons_A} alt="happy young woman on her phone" className="img-fluid centerimage" data-aos="flip-left" />
               </div>
               <div className="col-12 col-md-6 col-lg-9">
-                <h2 className="redtitle">Want to get more out of your money?</h2>
+                <h2 className="redtitle">{t('home.question_1')}</h2>
                 <p className="m-0 content-home">
-                  Yes, you can! There is a better way. We make it easier for you to do what you really want with your money: earn it, keep it, send it, save it, use it with as much ease and security as you want - and get rewarded on top of that. Why? Because it's your money and you should have options.<strong> You've got them with Zippy.</strong>
+                  <Trans
+                    i18nKey="home.answer_1"
+                  />
                 </p>
               </div>
             </div>
@@ -100,9 +116,11 @@ export default function Home() {
               </div>
               <div className="col-12 col-md-6 col-lg-9 circleoverlap">
                 <br />
-                <h2 className="whitetitle">How do we make it so cheap?</h2>
+                <h2 className="whitetitle">{t('home.question_2')}</h2>
                 <p className="m-0 whitecopy">
-                  We think financial services should be a win-win. We take less of your money because fees just don't need to be that high. <strong>It's that simple.</strong>
+                  <Trans
+                    i18nKey="home.answer_2"
+                  />
                 </p>
                 <br />
               </div>
@@ -116,9 +134,11 @@ export default function Home() {
                 <img src={ZippyCash_Icons_C} alt="smiling young woman" className="img-fluid centerimage" data-aos="flip-left" />
               </div>
               <div className="col-12 col-md-6 col-lg-9">
-                <h2 className="redtitle">Our name isn’t just for show.</h2>
+                <h2 className="redtitle">{t('home.question_2')}</h2>
                 <p className="m-0 content-home">
-                  Zippy is zippier. A lot zippier. Almost instantaneous, even across borders. We doubled down on speed and security to make sure your money goes where you want it, when you want it, with nothing getting in the way. <strong>You've got places to go after all, so go on!</strong>
+                  <Trans
+                    i18nKey="home.answer_3"
+                  />
                 </p>
               </div>
             </div>

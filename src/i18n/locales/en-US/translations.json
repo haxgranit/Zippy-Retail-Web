@@ -27,10 +27,23 @@
   "common.confirm_password": "Confirm Password",
   "common.agree_title": "I agree to lorem ipsum dolor sit amet",
   "common.create_your_account": "Create your account",
+  "common.personal_banking": "personal banking",
 
   "business.header_desc": "Make your money work your way!",
   "business.sign_up_btn_title": "Sign up for a business account",
   "business.business_description_1": "No matter how big or small your business is, everyone is in the global market. That's why you need the best rates and lowest fees for you brand. Zippy Cash gives you the best rates available every time and takes the complexity out of international commerce. Our fees can't be beat.",
   "business.business_description_2": "Setting up international bank accounts may sound daunting but with Zippy we deliver everything you need to start managing accounts abroad in minutes. How is it this easy? We have excellent partnerships with international financial brands, tech solutions that serve as an efficient connector, prioritizing ease, speed and security.",
-  "business.business_description_3": "Paying invoices, people and employees just got zippier. We always give you the lowest transaction fees and make it easy (dare we say even fun?) to manage your payments.<br />Find out more here."
+  "business.business_description_3": "Paying invoices, people and employees just got zippier. We always give you the lowest transaction fees and make it easy (dare we say even fun?) to manage your payments.<br />Find out more here.",
+
+  "home.sign_up_btn": "SIGN UP!",
+  "home.zip_it": "Zipp it<br />to me!",
+  "home.personal_sign_up": "personal sign up",
+  "home.business_banking": "business banking",
+  "home.business_banking_desc": "A little more money. A lot more power.",
+  "home.question_1": "Want to get more out of your money?",
+  "home.question_2": "How do we make it so cheap?",
+  "home.question_3": "Our name isn’t just for show.",
+  "home.answer_1": "Yes, you can! There is a better way. We make it easier for you to do what you really want with your money: earn it, keep it, send it, save it, use it with as much ease and security as you want - and get rewarded on top of that. Why? Because it's your money and you should have options.<strong> You've got them with Zippy.</strong>",
+  "home.answer_2": "We think financial services should be a win-win. We take less of your money because fees just don't need to be that high. <strong>It's that simple.</strong>",
+  "home.answer_3": "Zippy is zippier. A lot zippier. Almost instantaneous, even across borders. We doubled down on speed and security to make sure your money goes where you want it, when you want it, with nothing getting in the way. <strong>You've got places to go after all, so go on!</strong>"
 }
