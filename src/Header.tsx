@@ -1,5 +1,3 @@
-import { faSearch } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import ZippyCash_Logo from './assets/img/general/ZippyCash_Logo.png';
@@ -35,11 +33,6 @@ export default function Header() {
             </li>
             <li className="nav-item">
               <Link to="/business" className="nav-link" aria-current="page">{t('header.business')}</Link>
-            </li>
-            <li className="nav-item">
-              <Link to="/search" className="nav-link" aria-current="page">
-                <FontAwesomeIcon icon={faSearch} />
-              </Link>
             </li>
           </ul>
         </div>
