@@ -16,5 +16,12 @@
   "about.our_values": "NUESTROS VALORES",
   "about.our_values_description": "Creemos que nuestros clientes merecen la máxima seguridad y transparencia. Creemos en las opciones para todos, independientemente del tamaño de su cuenta bancaria. Creemos en recompensar a nuestros clientes todos los días, porque sabemos que un poco más de dinero puede dar a la gente mucho más poder. Y ya es hora de que el poder sea accesible para todos.",
   "about.our_partner": "NUESTROS COMPAÑEROS",
-  "about.our_partner_description": "Trabajamos de la mano con organismos gubernamentales y socios de la industria financiera para garantizar que nuestros clientes obtengan lo mejor de lo mejor. Mira quién está en nuestra lista."
+  "about.our_partner_description": "Trabajamos de la mano con organismos gubernamentales y socios de la industria financiera para garantizar que nuestros clientes obtengan lo mejor de lo mejor. Mira quién está en nuestra lista.",
+  
+  "business.header_title": "NEEDS_LOC", 
+  "business.header_desc": "NEEDS_LOC",
+  "business.sign_up_btn_title": "NEEDS_LOC",
+  "business.business_description_1": "NEEDS_LOC",
+  "business.business_description_2": "NEEDS_LOC",
+  "business.business_description_3": "NEEDS_LOC"
 }
