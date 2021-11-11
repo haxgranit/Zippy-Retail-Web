@@ -1,4 +1,5 @@
-import { useTranslation } from 'react-i18next';
+import { useTranslation, Trans } from 'react-i18next';
+import { Link } from 'react-router-dom';
 import Personal_SignUp_Hero from './assets/img/background/Personal_SignUp_Hero.jpg';
 
 export default function PersonalSignup() {
@@ -42,7 +43,11 @@ export default function PersonalSignup() {
                       </div>
                       <div className="col-12 mb-4">
                         <input type="checkbox" id="tos" className="me-2 form-check-input formcurve" />{' '}
-                        <label htmlFor="tos" className="text-light">{t('personal_signup.agree_title')}</label>
+                        <label htmlFor="tos" className="text-light">
+                          <Trans i18nKey="personal_signup.agree_title">
+                            I agree to the {<Link to="/legal" className="text-decoration-none">terms and conditions</Link>}
+                          </Trans>
+                        </label>
                       </div>
                     </div>
                     <div className="row">

@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import Circle_White_01 from './assets/img/background/Circle_White-01.jpg';
 
 export default function Login() {
@@ -37,7 +38,9 @@ export default function Login() {
                       </div>
                       <div className="col-12 mb-4">
                         <input type="checkbox" id="tos" className="me-2 form-check-input formcurve" />{' '}
-                        <label htmlFor="tos" className="text-light">I agree to lorem ipsum dolor sit amet</label>
+                        <label htmlFor="tos" className="text-light">
+                          I agree to the {<Link to="/legal" className="text-decoration-none">terms and conditions</Link>}
+                        </label>
                       </div>
                     </div>
                     <div className="row">
