@@ -30,7 +30,7 @@
   "business.email": "Email",
   "business.password": "Password",
   "business.confirm_password": "Confirm Password",
-  "business.agree_title": "I agree to lorem ipsum dolor sit amet",
+  "business.agree_title": "I agree to the <1>terms and conditions</1>",
   "business.create_your_account": "Create your account",
   "business.personal_banking": "personal banking",
 
@@ -82,6 +82,6 @@
   "personal_signup.email": "Email",
   "personal_signup.password": "Password",
   "personal_signup.confirm_password": "Confirm Password",
-  "personal_signup.agree_title": "I agree to lorem ipsum dolor sit amet",
+  "personal_signup.agree_title": "I agree to the <1>terms and conditions</1>",
   "personal_signup.create_your_account": "Create your account"
 }
