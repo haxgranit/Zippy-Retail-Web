@@ -1,3 +1,4 @@
+import React from 'react';
 import { useTranslation, Trans } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import Circle_White_01 from './assets/img/background/Circle_White-01.jpg';
@@ -16,7 +17,7 @@ export default function Business() {
             <div className="col">
               <div className="mb-3">
                 <h2 style={{ color: '#FF1926' }}>{t('business.business_title')}</h2>
-                <h1 className="redtitle hero-heading display-3" style={{ fontSize: '4em', paddingBottom: '20px' }}>{t("business.header_desc")}</h1>
+                <h1 className="redtitle hero-heading display-3" style={{ fontSize: '4em', paddingBottom: '20px' }}>{t('business.header_desc')}</h1>
                 <Link to="/business-signup" className="btn rounded-0 my-buttonred">{t('business.sign_up_btn_title')}</Link>
               </div>
             </div>
@@ -26,7 +27,7 @@ export default function Business() {
           <div className="container">
             <div className="row align-items-center py-4">
               <div className="col-12 col-md-3">
-                <img src={ZippyCash_Icons_K} alt="an illustration of a woman holding dollar signs" className="img-fluid centerimage"  data-aos="flip-left" />
+                <img src={ZippyCash_Icons_K} alt="an illustration of a woman holding dollar signs" className="img-fluid centerimage" data-aos="flip-left" />
               </div>
               <div className="col-12 col-md-9">
                 <p className="m-0 content-home">
@@ -41,8 +42,8 @@ export default function Business() {
         <div id="bluegradient" className="bg-light">
           <div className="container">
             <div className="row align-items-center py-4  flex-md-row-reverse">
-              <div className="col-12 col-md-3 text-end position-relative"  data-aos="flip-left">
-                <img src={ZippyCash_Icons_L} alt="illustrated image of young people all touching a large light bulb" className="img-fluid position-absolute top-0 start-50 translate-middle " />
+              <div className="col-12 col-md-3 text-end position-relative" data-aos="flip-left">
+                <img src={ZippyCash_Icons_L} alt="illustrated of young people all touching a large light bulb" className="img-fluid position-absolute top-0 start-50 translate-middle " />
               </div>
               <div className="col-12 col-md-9 circleoverlap">
                 <p className="m-0 whitecopy">
@@ -58,7 +59,7 @@ export default function Business() {
           <div className="container">
             <div className="row align-items-center py-4">
               <div className="col-12 col-md-3">
-                <img src={ZippyCash_Icons_M} alt="illustrated image of a young woman jumping in the air" className="img-fluid centerimage"  data-aos="flip-left" />
+                <img src={ZippyCash_Icons_M} alt="illustrated of a young woman jumping in the air" className="img-fluid centerimage" data-aos="flip-left" />
               </div>
               <div className="col-12 col-md-9">
                 <p className="m-0 content-home">
