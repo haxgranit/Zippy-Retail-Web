@@ -1,10 +1,10 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import Nav from 'react-bootstrap/Nav';
 
 export default function HomeLoggedIn() {
   const [expand, setExpand] = useState<string>();
   const toggleExpand = (name: string) => {
-    setExpand(expand != name ? name : undefined);
+    setExpand(expand !== name ? name : undefined);
   };
 
   return (
@@ -13,7 +13,7 @@ export default function HomeLoggedIn() {
         <div className="col-12">
           <Nav className="flex-column">
             <Nav.Link onClick={() => toggleExpand('My Accounts')}>My Accounts</Nav.Link>
-            {expand == 'My Accounts' && (
+            {expand === 'My Accounts' && (
               <Nav className="flex-column" style={{ marginLeft: '20px' }}>
                 <Nav.Link>View Account Details</Nav.Link>
                 <Nav.Link>Download Translations</Nav.Link>
@@ -22,7 +22,7 @@ export default function HomeLoggedIn() {
               </Nav>
             )}
             <Nav.Link onClick={() => toggleExpand('Bill Payments')}>Bill Payments</Nav.Link>
-            {expand == 'Bill Payments' && (
+            {expand === 'Bill Payments' && (
               <Nav className="flex-column" style={{ marginLeft: '20px' }}>
                 <Nav.Link>Set Up Bill Payments</Nav.Link>
                 <Nav.Link>Review and Cancel Bill Payments</Nav.Link>
@@ -32,13 +32,13 @@ export default function HomeLoggedIn() {
               </Nav>
             )}
             <Nav.Link onClick={() => toggleExpand('Transfer Funds')}>Transfer Funds</Nav.Link>
-            {expand == 'Transfer Funds' && (
+            {expand === 'Transfer Funds' && (
               <Nav className="flex-column" style={{ marginLeft: '20px' }}>
                 <Nav.Link>Review and Cancel Transfers</Nav.Link>
               </Nav>
             )}
             <Nav.Link onClick={() => toggleExpand('Interac e-Transfer')}>Interac e-Transfer</Nav.Link>
-            {expand == 'Interac e-Transfer' && (
+            {expand === 'Interac e-Transfer' && (
               <Nav className="flex-column" style={{ marginLeft: '20px' }}>
                 <Nav.Link>Status</Nav.Link>
                 <Nav.Link>Send Money</Nav.Link>

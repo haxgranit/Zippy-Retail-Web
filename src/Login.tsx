@@ -1,4 +1,4 @@
-import { FormEvent, useState } from 'react';
+import React, { FormEvent, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useAppDispatch } from './app/hooks';
 import { login } from './features/auth/authSlice';
@@ -31,8 +31,14 @@ export default function Login() {
             <div className="col-12 col-md-12 col-lg-4">
               <div className="row">
                 <div className="col-12">
-                  <p className="fw-bold text-dark line-height-double">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse ac justo odio. Sed a tellus ut mi facilisis dapibus non vitae leo. Donec porttitor turpis accumsan dui feugiat
-                    facilisis. Aenean maximus augue vel eros maximus, sit amet pulvinar nisl iaculis.</p>
+                  <p className="fw-bold text-dark line-height-double">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Suspendisse ac justo odio.
+                    Sed a tellus ut mi facilisis dapibus non vitae leo.
+                    Donec porttitor turpis accumsan dui feugiat
+                    facilisis. Aenean maximus augue vel eros maximus,
+                    sit amet pulvinar nisl iaculis.
+                  </p>
                 </div>
               </div>
             </div>
@@ -42,17 +48,24 @@ export default function Login() {
                   <form onSubmit={handleSubmit}>
                     <div className="row">
                       <div className="col-12 col-md-6 mb-4">
-                        <label htmlFor="username" className="text-light fw-bold">Username</label>
-                        <input type="text" id="username" value={username} onChange={e => setUsername(e.target.value)} className="form-control formcurve" />
+                        <label htmlFor="username" className="text-light fw-bold">
+                          Username
+                          <input type="text" id="username" value={username} onChange={(e) => setUsername(e.target.value)} className="form-control formcurve" />
+                        </label>
                       </div>
                       <div className="col-12 col-md-6 mb-4">
-                        <label htmlFor="password" className="text-light fw-bold">Password</label>
-                        <input type="password" id="password" className="form-control formcurve" />
+                        <label htmlFor="password" className="text-light fw-bold">
+                          Password
+                          <input type="password" id="password" className="form-control formcurve" />
+                        </label>
                       </div>
                       <div className="col-12 mb-4">
-                        <input type="checkbox" id="tos" className="me-2 form-check-input formcurve" />{' '}
+                        <input type="checkbox" id="tos" className="me-2 form-check-input formcurve" />
+                        {' '}
                         <label htmlFor="tos" className="text-light">
-                          I agree to the {<Link to="/legal" className="text-decoration-none">terms and conditions</Link>}
+                          I agree to the
+                          {' '}
+                          <Link to="/legal" className="text-decoration-none">terms and conditions</Link>
                         </label>
                       </div>
                     </div>
@@ -69,7 +82,7 @@ export default function Login() {
             </div>
           </div>
         </div>
-        <div className="spacingmedium"></div>
+        <div className="spacingmedium" />
       </div>
     </main>
   );

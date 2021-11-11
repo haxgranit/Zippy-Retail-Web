@@ -1,4 +1,5 @@
-import { Link } from "react-router-dom";
+import React from 'react';
+import { Link } from 'react-router-dom';
 
 export default function QuickLinks() {
   return (
@@ -15,7 +16,8 @@ export default function QuickLinks() {
               </Link>
             </li>
             <li>
-              Please Review Our Legal Stuff by visiting our{' '}
+              Please Review Our Legal Stuff by visiting our
+              {' '}
               <Link to="/legal">
                 Privacy Policy | TOU | EULA | CardHolder T&amp;C Pages
               </Link>

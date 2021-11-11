@@ -1,3 +1,4 @@
+import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import Circle_Grey_01 from './assets/img/background/Circle_Grey-01.jpg';
@@ -8,7 +9,7 @@ import ZippyCash_Icons_J from './assets/img/roundicons/personal/ZippyCash_Icons_
 
 export default function Personal() {
   const { t } = useTranslation();
-  
+
   return (
     <main>
       <div className="bg-light" style={{ backgroundImage: `url(${Circle_Grey_01})`, backgroundSize: 'cover' }}>
@@ -53,7 +54,7 @@ export default function Personal() {
             </div>
           </div>
         </div>
-        <div className="spacing"></div>
+        <div className="spacing" />
       </div>
     </main>
   );
