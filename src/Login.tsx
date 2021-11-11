@@ -1,7 +1,18 @@
+import { FormEvent, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { useAppDispatch } from './app/hooks';
+import { login } from './features/auth/authSlice';
 import Circle_White_01 from './assets/img/background/Circle_White-01.jpg';
 
 export default function Login() {
+  const dispatch = useAppDispatch();
+  const [username, setUsername] = useState<string>('');
+
+  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    dispatch(login(username))
+  };
+
   return (
     <main>
       <div className="bg-light" style={{ backgroundImage: `url(${Circle_White_01})`, backgroundSize: 'cover' }}>
@@ -26,11 +37,11 @@ export default function Login() {
             <div className="col-12 col-md-12 col-lg-8">
               <div className="card formcurve border-0 p-4 shadow">
                 <div className="card-body">
-                  <form action="#" method="post">
+                  <form onSubmit={handleSubmit}>
                     <div className="row">
                       <div className="col-12 col-md-6 mb-4">
                         <label htmlFor="username" className="text-light fw-bold">Username</label>
-                        <input type="text" id="username" className="form-control formcurve" />
+                        <input type="text" id="username" value={username} onChange={e => setUsername(e.target.value)} className="form-control formcurve" />
                       </div>
                       <div className="col-12 col-md-6 mb-4">
                         <label htmlFor="password" className="text-light fw-bold">Password</label>
