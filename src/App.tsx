@@ -1,5 +1,5 @@
+import React, { useEffect } from 'react';
 import AOS from 'aos';
-import { useEffect } from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import About from './About';
 import Business from './Business';

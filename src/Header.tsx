@@ -1,4 +1,5 @@
-import NavDropdown from 'react-bootstrap/NavDropdown'
+import React from 'react';
+import NavDropdown from 'react-bootstrap/NavDropdown';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import ZippyCash_Logo from './assets/img/general/ZippyCash_Logo.png';
@@ -12,9 +13,16 @@ export default function Header() {
         <Link to="/" className="navbar-brand">
           <img src={ZippyCash_Logo} alt="" />
         </Link>
-        <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span className="navbar-toggler-icon"></span>
+        <button
+          className="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span className="navbar-toggler-icon" />
         </button>
         <div className="collapse navbar-collapse flex-md-column nav-uppercase" id="navbarSupportedContent">
           <ul className="navbar-nav ms-auto mb-2 mb-lg-0 me-md-5">

@@ -1,27 +1,27 @@
+import React from 'react';
 import Slider from 'react-slick';
+import { Link } from 'react-router-dom';
+import { useTranslation, Trans } from 'react-i18next';
 import ZippyCash_Landing_Slider_01 from './assets/img/slider/ZippyCash_Landing_Slider-01.jpg';
 import ZippyCash_Landing_Slider_02 from './assets/img/slider/ZippyCash_Landing_Slider-02.jpg';
 import ZippyCash_Landing_Slider_03 from './assets/img/slider/ZippyCash_Landing_Slider-03.jpg';
 import ZippyCash_Icons_A from './assets/img/roundicons/home/ZippyCash_Icons_A.png';
 import ZippyCash_Icons_B from './assets/img/roundicons/home/ZippyCash_Icons_B.png';
 import ZippyCash_Icons_C from './assets/img/roundicons/home/ZippyCash_Icons_C.png';
-import { Link } from 'react-router-dom';
-import { useTranslation, Trans } from 'react-i18next';
 
 export default function Home() {
   const { t } = useTranslation();
-  const sliderSettings = {
-    autoplay: true,
-    autoplaySpeed: 3000,
-    arrows: false,
-    dots: false,
-    dotsClass: 'slick-dots'
-  };
 
   return (
     <div>
       <section className="hero slider">
-        <Slider {...sliderSettings}>
+        <Slider
+          autoplay
+          autoplaySpeed={3000}
+          arrows={false}
+          dots={false}
+          dotsClass="slick-dots"
+        >
           <div>
             <div className="slider-slide" style={{ backgroundImage: `url(${ZippyCash_Landing_Slider_01})` }}>
               <div className="container">
@@ -32,7 +32,7 @@ export default function Home() {
                       <Trans
                         i18nKey="home.zip_it"
                       />
-                      </h1>
+                    </h1>
                     <Link to="/personal-signup" className="hero-button btn btn-light rounded-0">{t('home.sign_up_btn')}</Link>
                   </div>
                 </div>
@@ -65,7 +65,7 @@ export default function Home() {
                     <h1 className="hero-heading display-3 fw-bold">
                       <Trans
                         i18nKey="home.zip_it"
-                      />  
+                      />
                     </h1>
                     <Link to="/business-signup" className="hero-button btn btn-light rounded-0">{t('home.sign_up_btn')}</Link>
                   </div>
@@ -76,11 +76,11 @@ export default function Home() {
         </Slider>
       </section>
       <section className="header-cta text-light mb-4">
-        <div id="redgradient" className="ctaband" >
+        <div id="redgradient" className="ctaband">
           <div className="container py-4">
             <div className="row align-items-center">
-              <div className="col-12 col-md-6 col-lg-8"  >
-                <h2>{t("home.business_banking")}</h2>
+              <div className="col-12 col-md-6 col-lg-8">
+                <h2>{t('home.business_banking')}</h2>
                 <h1 className="fw-bold">{t('home.business_banking_desc')}</h1>
               </div>
               <div className="col-12 col-md-6 col-lg-4">

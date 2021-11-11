@@ -1,3 +1,4 @@
+import React from 'react';
 import { useTranslation, Trans } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import Business_SignUp_Hero from './assets/img/background/Business_SignUp_Hero.png';
@@ -11,12 +12,12 @@ export default function BusinessSignup() {
         <div className="container">
           <div className="row align-items-center pt-5">
             <div className="col-12 col-md-9">
-              <div className="spacingsmall"></div>
+              <div className="spacingsmall" />
               <div className="mb-3">
                 <h2 className="redtitle" style={{ fontWeight: 500 }}>{t('business_signup.business_title')}</h2>
                 <h1 className="redtitle hero-heading display-3 ">{t('business_signup.sign_up')}</h1>
               </div>
-              <div className="spacingsmall"></div>
+              <div className="spacingsmall" />
               <div className="cardbusiness formcurve border-0 p-4 mt-4">
                 <div className="card-body">
                   <form action="#" method="post">
@@ -42,10 +43,13 @@ export default function BusinessSignup() {
                         <input type="password" id="password-confirm" className="form-control formcurve" />
                       </div>
                       <div className="col-12 mb-4">
-                        <input type="checkbox" id="tos" className="me-2 form-check-input formcurve" />{' '}
+                        <input type="checkbox" id="tos" className="me-2 form-check-input formcurve" />
+                        {' '}
                         <label htmlFor="tos" className="text-light">
                           <Trans i18nKey="business_signup.agree_title">
-                            I agree to the {<Link to="/legal" className="text-decoration-none">terms and conditions</Link>}
+                            I agree to the
+                            {' '}
+                            <Link to="/legal" className="text-decoration-none">terms and conditions</Link>
                           </Trans>
                         </label>
                       </div>
@@ -63,7 +67,7 @@ export default function BusinessSignup() {
             </div>
           </div>
         </div>
-        <div className="spacingsmall"></div>
+        <div className="spacingsmall" />
       </div>
     </main>
   );
