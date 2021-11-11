@@ -60,13 +60,11 @@ export default function Login() {
                         </label>
                       </div>
                       <div className="col-12 mb-4">
-                        <input type="checkbox" id="tos" className="me-2 form-check-input formcurve" />
-                        {' '}
-                        <label htmlFor="tos" className="text-light">
-                          I agree to the
+                        <span className="text-light">
+                          By logging in you agree to the
                           {' '}
                           <Link to="/legal" className="text-decoration-none">terms and conditions</Link>
-                        </label>
+                        </span>
                       </div>
                     </div>
                     <div className="row">

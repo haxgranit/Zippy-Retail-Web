@@ -43,15 +43,12 @@ export default function BusinessSignup() {
                         <input type="password" id="password-confirm" className="form-control formcurve" />
                       </div>
                       <div className="col-12 mb-4">
-                        <input type="checkbox" id="tos" className="me-2 form-check-input formcurve" />
-                        {' '}
-                        <label htmlFor="tos" className="text-light">
+                        <span className="text-light">
                           <Trans i18nKey="business_signup.agree_title">
-                            I agree to the
-                            {' '}
+                            By signing up you agree to the
                             <Link to="/legal" className="text-decoration-none">terms and conditions</Link>
                           </Trans>
-                        </label>
+                        </span>
                       </div>
                     </div>
                     <div className="row">
