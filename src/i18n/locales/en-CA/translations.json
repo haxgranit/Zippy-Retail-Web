@@ -5,8 +5,8 @@
   "header.personal": "personal",
   "header.business": "business",
   "header.personal-profile": "dev docs",
-  
-  "about.who_is": "Who Is",
+
+  "about.who_is": "WHO IS",
   "about.who_is_description_1": "We're finance geeks who know the system. And we think it's too complicated, too expensive and too difficult. Just because it's always been that way doesn't mean we can't do better. We're passionate about working the system to make it rewarding for everyone. We created Zippy Cash to deliver on that promise.",
   "about.who_is_description_2": "In a fair world, transparent and affordable financial services would be accessible to all, regardless of who they are. But… you need a law degree to understand the fine print and in the end, consumers end up getting ripped off - especially those who have less. Zippy Cash exists to break these chains and make easy, fast, secure payments a reality for anyone who wants them!",
   "about.the_team": "THE TEAM",
@@ -17,7 +17,7 @@
   "about.our_values_description": "We believe our customers deserve the utmost in security and transparency. We believe in choices for everyone, regardless of how big your bank account is. We believe in rewarding our customers every day, because we know a little more money can give folks a lot more power. And it's about time that power was accessible to everyone.",
   "about.our_partner": "OUR PARTNERS",
   "about.our_partner_description": "We work hand in hand with government bodies and financial industry partners to ensure our customers get the best of the best. Check out who's on our roster.",
-  
+
   "business.header_desc": "Make your money work your way!",
   "business.sign_up_btn_title": "Sign up for a business account",
   "business.business_description_1": "No matter how big or small your business is, everyone is in the global market. That's why you need the best rates and lowest fees for you brand. Zippy Cash gives you the best rates available every time and takes the complexity out of international commerce. Our fees can't be beat.",
@@ -32,6 +32,7 @@
   "business.confirm_password": "Confirm Password",
   "business.agree_title": "I agree to lorem ipsum dolor sit amet",
   "business.create_your_account": "Create your account",
+  "business.personal_banking": "personal banking",
 
   "home.sign_up_btn": "SIGN UP!",
   "home.zip_it": "Zipp it<br />to me!",
