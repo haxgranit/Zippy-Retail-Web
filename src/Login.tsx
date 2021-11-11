@@ -1,16 +1,18 @@
 import { FormEvent, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useAppDispatch } from './app/hooks';
 import { login } from './features/auth/authSlice';
 import Circle_White_01 from './assets/img/background/Circle_White-01.jpg';
 
 export default function Login() {
   const dispatch = useAppDispatch();
+  const navigate = useNavigate();
   const [username, setUsername] = useState<string>('');
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    dispatch(login(username))
+    dispatch(login(username));
+    navigate('/');
   };
 
   return (

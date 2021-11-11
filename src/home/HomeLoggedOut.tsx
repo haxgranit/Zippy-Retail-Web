@@ -1,14 +1,14 @@
 import Slider from 'react-slick';
-import ZippyCash_Landing_Slider_01 from './assets/img/slider/ZippyCash_Landing_Slider-01.jpg';
-import ZippyCash_Landing_Slider_02 from './assets/img/slider/ZippyCash_Landing_Slider-02.jpg';
-import ZippyCash_Landing_Slider_03 from './assets/img/slider/ZippyCash_Landing_Slider-03.jpg';
-import ZippyCash_Icons_A from './assets/img/roundicons/home/ZippyCash_Icons_A.png';
-import ZippyCash_Icons_B from './assets/img/roundicons/home/ZippyCash_Icons_B.png';
-import ZippyCash_Icons_C from './assets/img/roundicons/home/ZippyCash_Icons_C.png';
+import ZippyCash_Landing_Slider_01 from '../assets/img/slider/ZippyCash_Landing_Slider-01.jpg';
+import ZippyCash_Landing_Slider_02 from '../assets/img/slider/ZippyCash_Landing_Slider-02.jpg';
+import ZippyCash_Landing_Slider_03 from '../assets/img/slider/ZippyCash_Landing_Slider-03.jpg';
+import ZippyCash_Icons_A from '../assets/img/roundicons/home/ZippyCash_Icons_A.png';
+import ZippyCash_Icons_B from '../assets/img/roundicons/home/ZippyCash_Icons_B.png';
+import ZippyCash_Icons_C from '../assets/img/roundicons/home/ZippyCash_Icons_C.png';
 import { Link } from 'react-router-dom';
 import { useTranslation, Trans } from 'react-i18next';
 
-export default function Home() {
+export default function HomeLoggedOut() {
   const { t } = useTranslation();
   const sliderSettings = {
     autoplay: true,
