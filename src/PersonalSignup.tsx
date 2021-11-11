@@ -1,10 +1,20 @@
-import React from 'react';
+import React, { FormEvent } from 'react';
 import { useTranslation, Trans } from 'react-i18next';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { useAppDispatch } from './app/hooks';
 import Personal_SignUp_Hero from './assets/img/background/Personal_SignUp_Hero.jpg';
+import { signUpPersonal } from './features/user/userSlice';
 
 export default function PersonalSignup() {
+  const dispatch = useAppDispatch();
+  const navigate = useNavigate();
   const { t } = useTranslation();
+
+  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    dispatch(signUpPersonal());
+    navigate('/');
+  };
 
   return (
     <main>
@@ -20,7 +30,7 @@ export default function PersonalSignup() {
               <div className="spacingsmall" />
               <div className="cardbusiness formcurve border-0 p-4 mt-4">
                 <div className="card-body">
-                  <form action="#" method="post">
+                  <form onSubmit={handleSubmit}>
                     <div className="row">
                       <div className="col-12 col-md-6 mb-4">
                         <label htmlFor="fname" className="text-light fw-bold">{t('personal_signup.first_name')}</label>

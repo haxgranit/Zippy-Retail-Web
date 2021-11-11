@@ -1,10 +1,10 @@
 import React from 'react';
 import { useAppSelector } from '../app/hooks';
-import { selectAuth } from '../features/auth/authSlice';
+import { selectUser } from '../features/user/userSlice';
 import HomeLoggedIn from './HomeLoggedIn';
 import HomeLoggedOut from './HomeLoggedOut';
 
 export default function Home() {
-  const auth = useAppSelector(selectAuth);
-  return auth.username ? <HomeLoggedIn /> : <HomeLoggedOut />;
+  const auth = useAppSelector(selectUser);
+  return auth.loggedIn ? <HomeLoggedIn /> : <HomeLoggedOut />;
 }

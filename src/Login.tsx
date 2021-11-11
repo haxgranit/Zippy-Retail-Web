@@ -1,17 +1,16 @@
-import React, { FormEvent, useState } from 'react';
+import React, { FormEvent } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useAppDispatch } from './app/hooks';
-import { login } from './features/auth/authSlice';
+import { login } from './features/user/userSlice';
 import Circle_White_01 from './assets/img/background/Circle_White-01.jpg';
 
 export default function Login() {
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
-  const [username, setUsername] = useState<string>('');
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    dispatch(login(username));
+    dispatch(login());
     navigate('/');
   };
 
@@ -50,7 +49,7 @@ export default function Login() {
                       <div className="col-12 col-md-6 mb-4">
                         <label htmlFor="username" className="text-light fw-bold">
                           Username
-                          <input type="text" id="username" value={username} onChange={(e) => setUsername(e.target.value)} className="form-control formcurve" />
+                          <input type="text" id="username" className="form-control formcurve" />
                         </label>
                       </div>
                       <div className="col-12 col-md-6 mb-4">
