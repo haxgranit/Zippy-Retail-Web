@@ -47,8 +47,8 @@ export default function Personal() {
                 <img src={ZippyCash_Icons_J} alt={t('personal.image_alt_3')} className="img-fluid centerimage" data-aos="flip-left" />
               </div>
               <div>
-                <h3 className="redtitle text-center">{t('personal.hunzpoints')}</h3>
-                <p className="content-home">{t('personal.hunzpoints_description')}</p>
+                <h3 className="redtitle text-center">{t('personal.funzpoints')}</h3>
+                <p className="content-home">{t('personal.funzpoints_description')}</p>
               </div>
             </div>
           </div>
