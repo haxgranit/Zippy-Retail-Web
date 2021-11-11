@@ -1,8 +1,19 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { FormEvent } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import { useAppDispatch } from './app/hooks';
+import { login } from './features/user/userSlice';
 import Circle_White_01 from './assets/img/background/Circle_White-01.jpg';
 
 export default function Login() {
+  const dispatch = useAppDispatch();
+  const navigate = useNavigate();
+
+  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    dispatch(login());
+    navigate('/');
+  };
+
   return (
     <main>
       <div className="bg-light" style={{ backgroundImage: `url(${Circle_White_01})`, backgroundSize: 'cover' }}>
@@ -33,7 +44,7 @@ export default function Login() {
             <div className="col-12 col-md-12 col-lg-8">
               <div className="card formcurve border-0 p-4 shadow">
                 <div className="card-body">
-                  <form action="#" method="post">
+                  <form onSubmit={handleSubmit}>
                     <div className="row">
                       <div className="col-12 col-md-6 mb-4">
                         <label htmlFor="username" className="text-light fw-bold">
@@ -48,13 +59,11 @@ export default function Login() {
                         </label>
                       </div>
                       <div className="col-12 mb-4">
-                        <input type="checkbox" id="tos" className="me-2 form-check-input formcurve" />
-                        {' '}
-                        <label htmlFor="tos" className="text-light">
-                          I agree to the
+                        <span className="text-light">
+                          By logging in you agree to the
                           {' '}
                           <Link to="/legal" className="text-decoration-none">terms and conditions</Link>
-                        </label>
+                        </span>
                       </div>
                     </div>
                     <div className="row">

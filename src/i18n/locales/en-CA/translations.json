@@ -41,7 +41,7 @@
   "business_signup.email": "Email",
   "business_signup.password": "Password",
   "business_signup.confirm_password": "Confirm Password",
-  "business_signup.agree_title": "I agree to the <1>terms and conditions</1>",
+  "business_signup.agree_title": "By signing up you agree to the <1>terms and conditions</1>",
   "business_signup.create_your_account": "Create your account",
 
   "home.sign_up_btn": "SIGN UP!",
@@ -92,6 +92,6 @@
   "personal_signup.email": "Email",
   "personal_signup.password": "Password",
   "personal_signup.confirm_password": "Confirm Password",
-  "personal_signup.agree_title": "I agree to the <1>terms and conditions</1>",
+  "personal_signup.agree_title": "By signing up you agree to the <1>terms and conditions</1>",
   "personal_signup.create_your_account": "Create your account"
 }

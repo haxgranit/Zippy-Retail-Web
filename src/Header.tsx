@@ -2,9 +2,12 @@ import React from 'react';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
+import { useAppSelector } from './app/hooks';
 import ZippyCash_Logo from './assets/img/general/ZippyCash_Logo.png';
+import { selectUser } from './features/user/userSlice';
 
 export default function Header() {
+  const user = useAppSelector(selectUser);
   const { i18n, t } = useTranslation();
 
   return (
@@ -37,15 +40,21 @@ export default function Header() {
             </li>
           </ul>
           <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
-            <li className="nav-item">
-              <Link to="/about" className="nav-link" aria-current="page">{t('header.about')}</Link>
-            </li>
-            <li className="nav-item">
-              <Link to="/personal" className="nav-link" aria-current="page">{t('header.personal')}</Link>
-            </li>
-            <li className="nav-item">
-              <Link to="/business" className="nav-link" aria-current="page">{t('header.business')}</Link>
-            </li>
+            {!user.loggedIn && (
+              <li className="nav-item">
+                <Link to="/about" className="nav-link" aria-current="page">{t('header.about')}</Link>
+              </li>
+            )}
+            {(!user.loggedIn || !user.personal) && (
+              <li className="nav-item">
+                <Link to="/personal" className="nav-link" aria-current="page">{t('header.personal')}</Link>
+              </li>
+            )}
+            {(!user.loggedIn || !user.business) && (
+              <li className="nav-item">
+                <Link to="/business" className="nav-link" aria-current="page">{t('header.business')}</Link>
+              </li>
+            )}
           </ul>
         </div>
       </div>

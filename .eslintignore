@@ -1,4 +1,4 @@
 src/serviceWorker.ts
 src/app/*
-src/features/counter/*
+src/features/user/userSlice.ts
 src/i18n/config.js

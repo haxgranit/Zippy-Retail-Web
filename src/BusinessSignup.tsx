@@ -1,10 +1,20 @@
-import React from 'react';
+import React, { FormEvent } from 'react';
 import { useTranslation, Trans } from 'react-i18next';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { useAppDispatch } from './app/hooks';
 import Business_SignUp_Hero from './assets/img/background/Business_SignUp_Hero.png';
+import { signUpBusiness } from './features/user/userSlice';
 
 export default function BusinessSignup() {
+  const dispatch = useAppDispatch();
+  const navigate = useNavigate();
   const { t } = useTranslation();
+
+  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    dispatch(signUpBusiness());
+    navigate('/');
+  };
 
   return (
     <main>
@@ -20,7 +30,7 @@ export default function BusinessSignup() {
               <div className="spacingsmall" />
               <div className="cardbusiness formcurve border-0 p-4 mt-4">
                 <div className="card-body">
-                  <form action="#" method="post">
+                  <form onSubmit={handleSubmit}>
                     <div className="row">
                       <div className="col-12 col-md-6 mb-4">
                         <label htmlFor="fname" className="text-light fw-bold">{t('business_signup.first_name')}</label>
@@ -43,15 +53,12 @@ export default function BusinessSignup() {
                         <input type="password" id="password-confirm" className="form-control formcurve" />
                       </div>
                       <div className="col-12 mb-4">
-                        <input type="checkbox" id="tos" className="me-2 form-check-input formcurve" />
-                        {' '}
-                        <label htmlFor="tos" className="text-light">
+                        <span className="text-light">
                           <Trans i18nKey="business_signup.agree_title">
-                            I agree to the
-                            {' '}
+                            By signing up you agree to the
                             <Link to="/legal" className="text-decoration-none">terms and conditions</Link>
                           </Trans>
-                        </label>
+                        </span>
                       </div>
                     </div>
                     <div className="row">

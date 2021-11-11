@@ -6,7 +6,7 @@ import Business from './Business';
 import BusinessSignup from './BusinessSignup';
 import Footer from './footer/Footer';
 import Header from './Header';
-import Home from './Home';
+import Home from './home/Home';
 import Legal from './Legal';
 import Login from './Login';
 import Personal from './Personal';
