@@ -36,13 +36,13 @@ export default function Login() {
                   <form action="#" method="post">
                     <div className="row">
                       <div className="col-12 col-md-6 mb-4">
-                        <label htmlFor="username" className="text-light fw-bold">
+                        <label htmlFor="username" className="text-light fw-bold w-100">
                           Username
                           <input type="text" id="username" className="form-control formcurve" />
                         </label>
                       </div>
                       <div className="col-12 col-md-6 mb-4">
-                        <label htmlFor="password" className="text-light fw-bold">
+                        <label htmlFor="password" className="text-light fw-bold w-100">
                           Password
                           <input type="password" id="password" className="form-control formcurve" />
                         </label>
