@@ -1,8 +1,8 @@
 import React from 'react';
+import { Outlet } from 'react-router-dom';
 import AccountPlaceholders from './AccountPlaceholders';
 import HorizontalNavLinks from './HorizontalNavLinks';
 import VerticalNavLinks from './VerticalNavLinks';
-import downloadTransactions from './DownloadTransactions.png';
 
 export default function HomeLoggedIn() {
   return (
@@ -18,7 +18,7 @@ export default function HomeLoggedIn() {
           <VerticalNavLinks />
         </div>
         <div className="col-8">
-          <img src={downloadTransactions} alt="placeholder" style={{ width: '100%' }} />
+          <Outlet />
         </div>
         <div className="col-2">
           <AccountPlaceholders />

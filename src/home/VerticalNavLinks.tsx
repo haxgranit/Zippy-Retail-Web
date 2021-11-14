@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Nav from 'react-bootstrap/Nav';
+import { NavLink, useLocation } from 'react-router-dom';
 
 export default function VerticalNavLinks() {
   const [expand, setExpand] = useState<string>();
@@ -7,13 +8,15 @@ export default function VerticalNavLinks() {
     setExpand(expand !== name ? name : undefined);
   };
 
+  const { pathname } = useLocation();
+
   return (
     <Nav className="flex-column">
-      <Nav.Link onClick={() => toggleExpand('My Accounts')}>My Accounts</Nav.Link>
-      {expand === 'My Accounts' && (
+      <Nav.Link as={NavLink} to="/my-accounts">My Accounts</Nav.Link>
+      {pathname.startsWith('/my-accounts') && (
         <Nav className="flex-column" style={{ marginLeft: '20px' }}>
           <Nav.Link>View Account Details</Nav.Link>
-          <Nav.Link>Download Transactions</Nav.Link>
+          <Nav.Link as={NavLink} to="/my-accounts/download-transactions">Download Transactions</Nav.Link>
           <Nav.Link>View eStatements</Nav.Link>
           <Nav.Link>Upcoming Bill Payments and Transfers</Nav.Link>
         </Nav>
