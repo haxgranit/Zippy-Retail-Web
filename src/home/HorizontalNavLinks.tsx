@@ -7,32 +7,29 @@ export default function HorizontalNavLinks() {
     <Nav className="me-auto">
       <NavDropdown title="Accounts">
         <NavDropdown.Item>Accounts Overview</NavDropdown.Item>
-        <NavDropdown.Item>Checking Account</NavDropdown.Item>
-        <NavDropdown.Item>Savings Account</NavDropdown.Item>
         <NavDropdown.Divider />
         <NavDropdown.Item>View all accounts</NavDropdown.Item>
         <NavDropdown.Divider />
         <NavDropdown.Item>Statements & Documents</NavDropdown.Item>
         <NavDropdown.Item>Spending & Budgeting</NavDropdown.Item>
-        <NavDropdown.Item>Life Plan</NavDropdown.Item>
-        <NavDropdown.Item>Goals</NavDropdown.Item>
         <NavDropdown.Item>Alerts</NavDropdown.Item>
         <NavDropdown.Item>My Financial Picture</NavDropdown.Item>
-        <NavDropdown.Item>Manage card settings</NavDropdown.Item>
+        <NavDropdown.Item>Manage account settings</NavDropdown.Item>
         <NavDropdown.Item>Open an account</NavDropdown.Item>
       </NavDropdown>
       <NavDropdown title="Bill Pay">
+        <NavDropdown.Item>Pay a Bill</NavDropdown.Item>
         <NavDropdown.Item>Payment Center</NavDropdown.Item>
         <NavDropdown.Item>Activity</NavDropdown.Item>
         <NavDropdown.Item>Manage accounts</NavDropdown.Item>
         <NavDropdown.Item>Help</NavDropdown.Item>
       </NavDropdown>
-      <NavDropdown title="Transfer | Zelle">
-        <NavDropdown.Item>Between my BofA accounts</NavDropdown.Item>
-        <NavDropdown.Item>To someone&apos;s BofA account</NavDropdown.Item>
+      <NavDropdown title="Send | Receive">
+        <NavDropdown.Item>Between my accounts</NavDropdown.Item>
+        <NavDropdown.Item>To someone else&apos;s account</NavDropdown.Item>
         <NavDropdown.Item>To/from other banks (including wires)</NavDropdown.Item>
         <NavDropdown.Divider />
-        <NavDropdown.Item>Zelle</NavDropdown.Item>
+        <NavDropdown.Item>Interac</NavDropdown.Item>
         <NavDropdown.Item>Send money</NavDropdown.Item>
         <NavDropdown.Item>Activity</NavDropdown.Item>
         <NavDropdown.Item>Recipients</NavDropdown.Item>
@@ -41,14 +38,7 @@ export default function HorizontalNavLinks() {
       <NavDropdown title="Rewards & Deals">
         <NavDropdown.Item>Special offers</NavDropdown.Item>
         <NavDropdown.Item>My Rewards</NavDropdown.Item>
-        <NavDropdown.Item>Cash back deals</NavDropdown.Item>
-      </NavDropdown>
-      <NavDropdown title="Tools & Investing">
-        <NavDropdown.Item>My Financial Picture</NavDropdown.Item>
-        <NavDropdown.Item>Net Worth</NavDropdown.Item>
-        <NavDropdown.Item>Activity</NavDropdown.Item>
-        <NavDropdown.Item>Budget</NavDropdown.Item>
-        <NavDropdown.Item>Manage</NavDropdown.Item>
+        <NavDropdown.Item>Funzpoints</NavDropdown.Item>
       </NavDropdown>
       <NavDropdown title="Security Center">
         <NavDropdown.Item>Overview</NavDropdown.Item>
@@ -67,12 +57,11 @@ export default function HorizontalNavLinks() {
         <NavDropdown.Item>Contact us</NavDropdown.Item>
         <NavDropdown.Item>Message center</NavDropdown.Item>
         <NavDropdown.Item>Schedule an appointment</NavDropdown.Item>
-        <NavDropdown.Item>Locations</NavDropdown.Item>
         <NavDropdown.Divider />
         <NavDropdown.Item>Change Online ID</NavDropdown.Item>
         <NavDropdown.Item>Change Passcode</NavDropdown.Item>
         <NavDropdown.Item>Manage Balance Connect (TM) for overdraft protection</NavDropdown.Item>
-        <NavDropdown.Item>Set Travel Notice</NavDropdown.Item>
+        <NavDropdown.Item>Set Security Preferences</NavDropdown.Item>
         <NavDropdown.Item>Update my contact information</NavDropdown.Item>
         <NavDropdown.Item>Manage alerts</NavDropdown.Item>
         <NavDropdown.Item>Report suspicious activity</NavDropdown.Item>
