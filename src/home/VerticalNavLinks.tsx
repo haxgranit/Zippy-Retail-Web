@@ -15,7 +15,7 @@ export default function VerticalNavLinks() {
       <Nav.Link as={NavLink} to="/my-accounts">My Accounts</Nav.Link>
       {pathname.startsWith('/my-accounts') && (
         <Nav className="flex-column" style={{ marginLeft: '20px' }}>
-          <Nav.Link>View Account Details</Nav.Link>
+          <Nav.Link as={NavLink} to="/my-accounts/view-account-details">View Account Details</Nav.Link>
           <Nav.Link as={NavLink} to="/my-accounts/download-transactions">Download Transactions</Nav.Link>
           <Nav.Link>View eStatements</Nav.Link>
           <Nav.Link>Upcoming Bill Payments and Transfers</Nav.Link>

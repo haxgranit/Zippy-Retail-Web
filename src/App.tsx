@@ -15,6 +15,7 @@ import Personal from './Personal';
 import PersonalProfile from './PersonalProfile';
 import PersonalSignup from './PersonalSignup';
 import ScrollToTop from './ScrollToTop';
+import ViewAccountDetails from './my-accounts/routes/ViewAccountDetails';
 
 export default function App() {
   useEffect(() => AOS.init(), []);
@@ -25,7 +26,9 @@ export default function App() {
       <Header />
       <Routes>
         <Route path="/" element={<Home />}>
-          <Route path="my-accounts" element={<MyAccounts />}>
+          <Route path="my-accounts">
+            <Route path="/my-accounts" element={<MyAccounts />} />
+            <Route path="view-account-details" element={<ViewAccountDetails />} />
             <Route path="download-transactions" element={<DownloadTransactions />} />
           </Route>
         </Route>

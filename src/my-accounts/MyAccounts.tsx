@@ -1,8 +1,8 @@
 import React from 'react';
-import { Outlet } from 'react-router-dom';
+import myAccounts from './MyAccounts.png';
 
 export default function MyAccounts() {
   return (
-    <Outlet />
+    <img src={myAccounts} alt="placeholder" style={{ width: '100%' }} />
   );
 }
