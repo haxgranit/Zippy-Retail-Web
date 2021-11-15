@@ -31,12 +31,12 @@ export default function VerticalNavLinks() {
         <Nav className="flex-column" style={{ marginLeft: '20px' }}>
           <Nav.Link as={NavLink} to="/interac-etransfer/status">Status</Nav.Link>
           <Nav.Link as={NavLink} to="/interac-etransfer/send-money">Send Money</Nav.Link>
-          <Nav.Link>Request Money</Nav.Link>
-          <Nav.Link>Contact List</Nav.Link>
-          <Nav.Link>Edit My Profile</Nav.Link>
-          <Nav.Link>Autodeposit Settings</Nav.Link>
-          <Nav.Link>Receive Money</Nav.Link>
-          <Nav.Link>Learn More</Nav.Link>
+          <Nav.Link as={NavLink} to="/interac-etransfer/request-money">Request Money</Nav.Link>
+          <Nav.Link as={NavLink} to="/interac-etransfer/contact-list">Contact List</Nav.Link>
+          <Nav.Link as={NavLink} to="/interac-etransfer/edit-my-profile">Edit My Profile</Nav.Link>
+          <Nav.Link as={NavLink} to="/interac-etransfer/autodeposit-settings">Autodeposit Settings</Nav.Link>
+          <Nav.Link as={NavLink} to="/interac-etransfer/receive-money">Receive Money</Nav.Link>
+          <Nav.Link as={NavLink} to="/interac-etransfer/learn-more">Learn More</Nav.Link>
         </Nav>
       )}
       <Nav.Link onClick={() => toggleExpand('Bill Payments')}>Bill Payments</Nav.Link>

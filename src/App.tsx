@@ -11,6 +11,12 @@ import Business from './Business';
 import BusinessSignup from './BusinessSignup';
 import Footer from './footer/Footer';
 import Header from './Header';
+import AutodepositSettings from './interac-etransfer/AutodepositSettings';
+import ContactList from './interac-etransfer/ContactList';
+import EditMyProfile from './interac-etransfer/EditMyProfile';
+import RequestMoney from './interac-etransfer/RequestMoney';
+import SendMoney from './interac-etransfer/SendMoney';
+import Status from './interac-etransfer/Status';
 import Home from './home/Home';
 import Legal from './Legal';
 import Login from './Login';
@@ -24,8 +30,8 @@ import Personal from './Personal';
 import PersonalProfile from './PersonalProfile';
 import PersonalSignup from './PersonalSignup';
 import ScrollToTop from './ScrollToTop';
-import Status from './interac-etransfer/Status';
-import SendMoney from './interac-etransfer/SendMoney';
+import ReceiveMoney from './interac-etransfer/ReceiveMoney';
+import LearnMore from './interac-etransfer/LearnMore';
 
 export default function App() {
   useEffect(() => AOS.init(), []);
@@ -40,6 +46,12 @@ export default function App() {
             <Route path="/interac-etransfer" element={<Navigate to="/interac-etransfer/status" />} />
             <Route path="status" element={<Status />} />
             <Route path="send-money" element={<SendMoney />} />
+            <Route path="request-money" element={<RequestMoney />} />
+            <Route path="contact-list" element={<ContactList />} />
+            <Route path="edit-my-profile" element={<EditMyProfile />} />
+            <Route path="autodeposit-settings" element={<AutodepositSettings />} />
+            <Route path="receive-money" element={<ReceiveMoney />} />
+            <Route path="learn-more" element={<LearnMore />} />
           </Route>
           <Route path="my-accounts">
             <Route path="/my-accounts" element={<MyAccounts />} />
