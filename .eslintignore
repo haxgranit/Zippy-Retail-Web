@@ -2,3 +2,5 @@ src/serviceWorker.ts
 src/app/*
 src/features/counter/*
 src/i18n/config.js
+.storybook/*
+src/storyshot-test/*
