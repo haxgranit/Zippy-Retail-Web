@@ -2,5 +2,4 @@ src/serviceWorker.ts
 src/app/*
 src/features/user/userSlice.ts
 src/i18n/config.js
-.storybook/*
-src/storyshot-test/*
+src/stories/*

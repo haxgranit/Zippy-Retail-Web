@@ -31,7 +31,11 @@ export default function HomeLoggedOut() {
                     <h1 className="hero-heading display-3 fw-bold">
                       <Trans
                         i18nKey="home.zip_it"
-                      />
+                      >
+                        Zipp it
+                        <br />
+                        to me!
+                      </Trans>
                     </h1>
                     <Link to="/personal-signup" className="hero-button btn btn-light rounded-0">{t('home.sign_up_btn')}</Link>
                   </div>
@@ -48,7 +52,11 @@ export default function HomeLoggedOut() {
                     <h1 className="hero-heading display-3 fw-bold">
                       <Trans
                         i18nKey="home.zip_it"
-                      />
+                      >
+                        Zipp it
+                        <br />
+                        to me!
+                      </Trans>
                     </h1>
                     <Link to="/personal-signup" className="hero-button btn btn-light rounded-0">{t('home.sign_up_btn')}</Link>
                   </div>
@@ -65,7 +73,11 @@ export default function HomeLoggedOut() {
                     <h1 className="hero-heading display-3 fw-bold">
                       <Trans
                         i18nKey="home.zip_it"
-                      />
+                      >
+                        Zipp it
+                        <br />
+                        to me!
+                      </Trans>
                     </h1>
                     <Link to="/business-signup" className="hero-button btn btn-light rounded-0">{t('home.sign_up_btn')}</Link>
                   </div>
@@ -102,7 +114,20 @@ export default function HomeLoggedOut() {
                 <p className="m-0 content-home">
                   <Trans
                     i18nKey="home.answer_1"
-                  />
+                  >
+                    Yes, you can! There is a better way. We make it easier for
+                    you to do what you really want with your money: earn it,
+                    keep it, send it, save it, use it with as much ease and
+                    security as you want - and get rewarded on top of that. Why?
+                    Because it
+                    {'&apos;'}
+                    s your money and you should have options.
+                    <strong>
+                      You
+                      {'&apos;'}
+                      ve got them with Zippy.
+                    </strong>
+                  </Trans>
                 </p>
               </div>
             </div>
@@ -120,7 +145,18 @@ export default function HomeLoggedOut() {
                 <p className="m-0 whitecopy">
                   <Trans
                     i18nKey="home.answer_2"
-                  />
+                  >
+                    We think financial services should be a win-win. We take less of your money
+                    {' '}
+                    because fees just don
+                    {'&apos;'}
+                    t need to be that high.
+                    <strong>
+                      It
+                      {'&apos;'}
+                      s that simple.
+                    </strong>
+                  </Trans>
                 </p>
                 <br />
               </div>
@@ -134,11 +170,23 @@ export default function HomeLoggedOut() {
                 <img src={ZippyCash_Icons_C} alt={t('home.image_alt_3')} className="img-fluid centerimage" data-aos="flip-left" />
               </div>
               <div className="col-12 col-md-6 col-lg-9">
-                <h2 className="redtitle">{t('home.question_2')}</h2>
+                <h2 className="redtitle">{t('home.question_3')}</h2>
                 <p className="m-0 content-home">
                   <Trans
                     i18nKey="home.answer_3"
-                  />
+                  >
+                    Zippy is zippier. A lot zippier. Almost instantaneous, even across borders.
+                    {' '}
+                    We doubled down on speed and security to make sure your money goes where you
+                    {' '}
+                    want it, when you want it, with nothing getting in the way.
+                    {' '}
+                    <strong>
+                      You
+                      {'&apos;'}
+                      ve got places to go after all, so go on!
+                    </strong>
+                  </Trans>
                 </p>
               </div>
             </div>
