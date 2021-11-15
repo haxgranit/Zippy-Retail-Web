@@ -52,10 +52,10 @@ export default function VerticalNavLinks() {
           <Nav.Link as={NavLink} to="/transfer-funds/review-and-cancel-transfers">Review and Cancel Transfers</Nav.Link>
         </Nav>
       )}
-      <Nav.Link>Account Security</Nav.Link>
-      <Nav.Link>Customer Services</Nav.Link>
-      <Nav.Link>Manage My Alerts</Nav.Link>
-      <Nav.Link>Contact Us</Nav.Link>
+      <Nav.Link as={NavLink} to="/account-security">Account Security</Nav.Link>
+      <Nav.Link as={NavLink} to="/customer-services">Customer Services</Nav.Link>
+      <Nav.Link as={NavLink} to="/manage-my-alerts">Manage My Alerts</Nav.Link>
+      <Nav.Link as={NavLink} to="/contact-us">Contact Us</Nav.Link>
     </Nav>
   );
 }

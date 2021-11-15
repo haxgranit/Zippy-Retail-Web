@@ -42,6 +42,10 @@ import EFT from './transfer-funds/EFT';
 import ReviewAndCancelTransfers from './transfer-funds/ReviewAndCancelTransfers';
 import TransferFunds from './transfer-funds/TransferFunds';
 import VisaDirect from './transfer-funds/VisaDirect';
+import AccountSecurity from './account-security/AccountSecurity';
+import CustomerServices from './customer-services/CustomerServices';
+import ContactUs from './contact-us/ContactUs';
+import ManageMyAlerts from './manage-my-alerts/ManageMyAlerts';
 
 export default function App() {
   useEffect(() => AOS.init(), []);
@@ -52,6 +56,17 @@ export default function App() {
       <Header />
       <Routes>
         <Route path="/" element={<Home />}>
+          <Route path="account-security" element={<AccountSecurity />} />
+          <Route path="contact-us" element={<ContactUs />} />
+          <Route path="customer-services" element={<CustomerServices />} />
+          <Route path="bill-payments">
+            <Route path="/bill-payments" element={<BillPayments />} />
+            <Route path="set-up-bill-payments" element={<SetUpBillPayments />} />
+            <Route path="review-and-cancel-bill-payments" element={<ReviewAndCancelBillPayments />} />
+            <Route path="add-or-edit-billers" element={<AddOrEditBillers />} />
+            <Route path="biller-details" element={<BillerDetails />} />
+            <Route path="view-ebills" element={<ViewEBills />} />
+          </Route>
           <Route path="interac-etransfer">
             <Route path="/interac-etransfer" element={<Navigate to="/interac-etransfer/status" />} />
             <Route path="status" element={<Status />} />
@@ -63,14 +78,7 @@ export default function App() {
             <Route path="receive-money" element={<ReceiveMoney />} />
             <Route path="learn-more" element={<LearnMore />} />
           </Route>
-          <Route path="bill-payments">
-            <Route path="/bill-payments" element={<BillPayments />} />
-            <Route path="set-up-bill-payments" element={<SetUpBillPayments />} />
-            <Route path="review-and-cancel-bill-payments" element={<ReviewAndCancelBillPayments />} />
-            <Route path="add-or-edit-billers" element={<AddOrEditBillers />} />
-            <Route path="biller-details" element={<BillerDetails />} />
-            <Route path="view-ebills" element={<ViewEBills />} />
-          </Route>
+          <Route path="manage-my-alerts" element={<ManageMyAlerts />} />
           <Route path="my-accounts">
             <Route path="/my-accounts" element={<MyAccounts />} />
             <Route path="view-account-details" element={<ViewAccountDetails />} />
