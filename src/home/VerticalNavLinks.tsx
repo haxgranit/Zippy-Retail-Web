@@ -17,8 +17,13 @@ export default function VerticalNavLinks() {
         <Nav className="flex-column" style={{ marginLeft: '20px' }}>
           <Nav.Link as={NavLink} to="/my-accounts/view-account-details">View Account Details</Nav.Link>
           <Nav.Link as={NavLink} to="/my-accounts/download-transactions">Download Transactions</Nav.Link>
-          <Nav.Link>View eStatements</Nav.Link>
-          <Nav.Link>Upcoming Bill Payments and Transfers</Nav.Link>
+          <Nav.Link as={NavLink} to="/my-accounts/view-estatements">View eStatements</Nav.Link>
+          {pathname.startsWith('/my-accounts/view-estatements') && (
+            <Nav className="flex-column" style={{ marginLeft: '20px' }}>
+              <Nav.Link as={NavLink} to="/my-accounts/view-estatements/statement-preferences">Statement Preferences</Nav.Link>
+            </Nav>
+          )}
+          <Nav.Link as={NavLink} to="/my-accounts/upcoming-bill-payments-and-transfers">Upcoming Bill Payments and Transfers</Nav.Link>
         </Nav>
       )}
       <Nav.Link onClick={() => toggleExpand('Interac e-Transfer')}>Interac e-Transfer</Nav.Link>
