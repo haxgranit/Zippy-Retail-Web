@@ -26,11 +26,11 @@ export default function VerticalNavLinks() {
           <Nav.Link as={NavLink} to="/my-accounts/upcoming-bill-payments-and-transfers">Upcoming Bill Payments and Transfers</Nav.Link>
         </Nav>
       )}
-      <Nav.Link onClick={() => toggleExpand('Interac e-Transfer')}>Interac e-Transfer</Nav.Link>
-      {expand === 'Interac e-Transfer' && (
+      <Nav.Link as={NavLink} to="/interac-etransfer">Interac e-Transfer</Nav.Link>
+      {pathname.startsWith('/interac-etransfer') && (
         <Nav className="flex-column" style={{ marginLeft: '20px' }}>
-          <Nav.Link>Status</Nav.Link>
-          <Nav.Link>Send Money</Nav.Link>
+          <Nav.Link as={NavLink} to="/interac-etransfer/status">Status</Nav.Link>
+          <Nav.Link as={NavLink} to="/interac-etransfer/send-money">Send Money</Nav.Link>
           <Nav.Link>Request Money</Nav.Link>
           <Nav.Link>Contact List</Nav.Link>
           <Nav.Link>Edit My Profile</Nav.Link>

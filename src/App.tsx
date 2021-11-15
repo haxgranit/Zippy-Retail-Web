@@ -1,6 +1,11 @@
 import React, { useEffect } from 'react';
 import AOS from 'aos';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import {
+  BrowserRouter,
+  Navigate,
+  Route,
+  Routes,
+} from 'react-router-dom';
 import About from './About';
 import Business from './Business';
 import BusinessSignup from './BusinessSignup';
@@ -19,6 +24,8 @@ import Personal from './Personal';
 import PersonalProfile from './PersonalProfile';
 import PersonalSignup from './PersonalSignup';
 import ScrollToTop from './ScrollToTop';
+import Status from './interac-etransfer/Status';
+import SendMoney from './interac-etransfer/SendMoney';
 
 export default function App() {
   useEffect(() => AOS.init(), []);
@@ -29,6 +36,11 @@ export default function App() {
       <Header />
       <Routes>
         <Route path="/" element={<Home />}>
+          <Route path="interac-etransfer">
+            <Route path="/interac-etransfer" element={<Navigate to="/interac-etransfer/status" />} />
+            <Route path="status" element={<Status />} />
+            <Route path="send-money" element={<SendMoney />} />
+          </Route>
           <Route path="my-accounts">
             <Route path="/my-accounts" element={<MyAccounts />} />
             <Route path="view-account-details" element={<ViewAccountDetails />} />
