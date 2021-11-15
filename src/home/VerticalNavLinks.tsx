@@ -1,13 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Nav from 'react-bootstrap/Nav';
 import { NavLink, useLocation } from 'react-router-dom';
 
 export default function VerticalNavLinks() {
-  const [expand, setExpand] = useState<string>();
-  const toggleExpand = (name: string) => {
-    setExpand(expand !== name ? name : undefined);
-  };
-
   const { pathname } = useLocation();
 
   return (
@@ -49,12 +44,12 @@ export default function VerticalNavLinks() {
           <Nav.Link as={NavLink} to="/bill-payments/view-ebills">View eBills</Nav.Link>
         </Nav>
       )}
-      <Nav.Link onClick={() => toggleExpand('Transfer Funds')}>Transfer Funds</Nav.Link>
-      {expand === 'Transfer Funds' && (
+      <Nav.Link as={NavLink} to="/transfer-funds">Transfer Funds</Nav.Link>
+      {pathname.startsWith('/transfer-funds') && (
         <Nav className="flex-column" style={{ marginLeft: '20px' }}>
-          <Nav.Link>EFT</Nav.Link>
-          <Nav.Link>Visa Direct</Nav.Link>
-          <Nav.Link>Review and Cancel Transfers</Nav.Link>
+          <Nav.Link as={NavLink} to="/transfer-funds/eft">EFT</Nav.Link>
+          <Nav.Link as={NavLink} to="/transfer-funds/visa-direct">Visa Direct</Nav.Link>
+          <Nav.Link as={NavLink} to="/transfer-funds/review-and-cancel-transfers">Review and Cancel Transfers</Nav.Link>
         </Nav>
       )}
       <Nav.Link>Account Security</Nav.Link>

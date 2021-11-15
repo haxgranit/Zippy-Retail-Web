@@ -38,6 +38,10 @@ import Personal from './Personal';
 import PersonalProfile from './PersonalProfile';
 import PersonalSignup from './PersonalSignup';
 import ScrollToTop from './ScrollToTop';
+import EFT from './transfer-funds/EFT';
+import ReviewAndCancelTransfers from './transfer-funds/ReviewAndCancelTransfers';
+import TransferFunds from './transfer-funds/TransferFunds';
+import VisaDirect from './transfer-funds/VisaDirect';
 
 export default function App() {
   useEffect(() => AOS.init(), []);
@@ -76,6 +80,12 @@ export default function App() {
               <Route path="statement-preferences" element={<StatementPreferences />} />
             </Route>
             <Route path="upcoming-bill-payments-and-transfers" element={<UpcomingBillPaymentsAndTransfers />} />
+          </Route>
+          <Route path="transfer-funds">
+            <Route path="/transfer-funds" element={<TransferFunds />} />
+            <Route path="eft" element={<EFT />} />
+            <Route path="visa-direct" element={<VisaDirect />} />
+            <Route path="review-and-cancel-transfers" element={<ReviewAndCancelTransfers />} />
           </Route>
         </Route>
         <Route path="about" element={<About />} />
