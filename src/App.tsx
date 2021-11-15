@@ -7,6 +7,12 @@ import {
   Routes,
 } from 'react-router-dom';
 import About from './About';
+import AddOrEditBillers from './bill-payments/AddOrEditBillers';
+import BillerDetails from './bill-payments/BillerDetails';
+import BillPayments from './bill-payments/BillPayments';
+import ReviewAndCancelBillPayments from './bill-payments/ReviewAndCancelBillPayments';
+import SetUpBillPayments from './bill-payments/SetUpBillPayments';
+import ViewEBills from './bill-payments/ViewEBills';
 import Business from './Business';
 import BusinessSignup from './BusinessSignup';
 import Footer from './footer/Footer';
@@ -14,6 +20,8 @@ import Header from './Header';
 import AutodepositSettings from './interac-etransfer/AutodepositSettings';
 import ContactList from './interac-etransfer/ContactList';
 import EditMyProfile from './interac-etransfer/EditMyProfile';
+import LearnMore from './interac-etransfer/LearnMore';
+import ReceiveMoney from './interac-etransfer/ReceiveMoney';
 import RequestMoney from './interac-etransfer/RequestMoney';
 import SendMoney from './interac-etransfer/SendMoney';
 import Status from './interac-etransfer/Status';
@@ -30,8 +38,6 @@ import Personal from './Personal';
 import PersonalProfile from './PersonalProfile';
 import PersonalSignup from './PersonalSignup';
 import ScrollToTop from './ScrollToTop';
-import ReceiveMoney from './interac-etransfer/ReceiveMoney';
-import LearnMore from './interac-etransfer/LearnMore';
 
 export default function App() {
   useEffect(() => AOS.init(), []);
@@ -52,6 +58,14 @@ export default function App() {
             <Route path="autodeposit-settings" element={<AutodepositSettings />} />
             <Route path="receive-money" element={<ReceiveMoney />} />
             <Route path="learn-more" element={<LearnMore />} />
+          </Route>
+          <Route path="bill-payments">
+            <Route path="/bill-payments" element={<BillPayments />} />
+            <Route path="set-up-bill-payments" element={<SetUpBillPayments />} />
+            <Route path="review-and-cancel-bill-payments" element={<ReviewAndCancelBillPayments />} />
+            <Route path="add-or-edit-billers" element={<AddOrEditBillers />} />
+            <Route path="biller-details" element={<BillerDetails />} />
+            <Route path="view-ebills" element={<ViewEBills />} />
           </Route>
           <Route path="my-accounts">
             <Route path="/my-accounts" element={<MyAccounts />} />

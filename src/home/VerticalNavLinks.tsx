@@ -39,14 +39,14 @@ export default function VerticalNavLinks() {
           <Nav.Link as={NavLink} to="/interac-etransfer/learn-more">Learn More</Nav.Link>
         </Nav>
       )}
-      <Nav.Link onClick={() => toggleExpand('Bill Payments')}>Bill Payments</Nav.Link>
-      {expand === 'Bill Payments' && (
+      <Nav.Link as={NavLink} to="/bill-payments">Bill Payments</Nav.Link>
+      {pathname.startsWith('/bill-payments') && (
         <Nav className="flex-column" style={{ marginLeft: '20px' }}>
-          <Nav.Link>Set Up Bill Payments</Nav.Link>
-          <Nav.Link>Review and Cancel Bill Payments</Nav.Link>
-          <Nav.Link>Add or Edit Billers</Nav.Link>
-          <Nav.Link>Biller Details</Nav.Link>
-          <Nav.Link>View eBills</Nav.Link>
+          <Nav.Link as={NavLink} to="/bill-payments/set-up-bill-payments">Set Up Bill Payments</Nav.Link>
+          <Nav.Link as={NavLink} to="/bill-payments/review-and-cancel-bill-payments">Review and Cancel Bill Payments</Nav.Link>
+          <Nav.Link as={NavLink} to="/bill-payments/add-or-edit-billers">Add or Edit Billers</Nav.Link>
+          <Nav.Link as={NavLink} to="/bill-payments/biller-details">Biller Details</Nav.Link>
+          <Nav.Link as={NavLink} to="/bill-payments/view-ebills">View eBills</Nav.Link>
         </Nav>
       )}
       <Nav.Link onClick={() => toggleExpand('Transfer Funds')}>Transfer Funds</Nav.Link>
