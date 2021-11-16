@@ -8,6 +8,7 @@ jobs:
   condition: eq(variables['docker.enabled'], 'true')
   variables:
     DOCKER_BUILDKIT: 1
+    DOCKER_REPOSITORY: zcorp-consumer
   steps:
   - task: Docker@2
     displayName: Login
@@ -15,10 +16,27 @@ jobs:
       command: login
       containerRegistry: $(docker.containerRegistry)
   - task: Docker@2
-    displayName: Build and Push
+    displayName: Build Initial
+    inputs:
+      command: build
+      repository: $(DOCKER_REPOSITORY)-build
+      tags: latest
+      arguments: --target build
+  - script: |
+      docker run --name test $(docker.containerRegistry)/$(DOCKER_REPOSITORY)-build npm test -- --coverage --coverageReporters=cobertura
+      docker cp test:/app/coverage coverage
+    displayName: Test
+  - task: PublishCodeCoverageResults@1
+    condition: succeededOrFailed()
+    displayName: Publish Code Coverage Results
+    inputs:
+      codeCoverageTool: Cobertura
+      summaryFileLocation: coverage/cobertura-coverage.xml
+  - task: Docker@2
+    displayName: Build Final and Push
     inputs:
       command: buildAndPush
-      repository: $(Build.Repository.Name)
+      repository: $(DOCKER_REPOSITORY)
       tags: |
         $(Build.BuildId)
         latest
