@@ -12,3 +12,5 @@ window.matchMedia =
       removeListener: function () {},
     };
   };
+
+window.scrollTo = jest.fn();

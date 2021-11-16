@@ -24,6 +24,14 @@
   "rules": {
     "linebreak-style": 0,
     "no-param-reassign": 0,
-    "import/no-cycle": 0
+    "import/no-cycle": 0,
+    "import/no-extraneous-dependencies": [
+      "error",
+      {
+        "devDependencies": [
+          "**/*.stories.tsx"
+        ]
+      }
+    ]
   }
 }
