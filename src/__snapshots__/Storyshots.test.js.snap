@@ -86,7 +86,7 @@ Array [
               href="/about"
               onClick={[Function]}
             >
-              about Us
+              about us
             </a>
           </li>
           <li
@@ -1096,7 +1096,7 @@ exports[`Storyshots Header Default 1`] = `
             href="/about"
             onClick={[Function]}
           >
-            about Us
+            about us
           </a>
         </li>
         <li
