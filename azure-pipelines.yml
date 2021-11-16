@@ -8,7 +8,7 @@ jobs:
   condition: eq(variables['docker.enabled'], 'true')
   variables:
     DOCKER_BUILDKIT: 1
-    REPOSITORY: $[lower($(Build.Repository.Name))]
+    REPOSITORY: $[lower(variables['Build.Repository.Name'])]
   steps:
   - task: Docker@2
     displayName: Login
