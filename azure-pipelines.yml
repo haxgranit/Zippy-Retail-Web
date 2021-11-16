@@ -24,14 +24,14 @@ jobs:
       arguments: --target build
   - script: |
       docker run --name test $(docker.containerRegistry)/$(DOCKER_REPOSITORY)-build npm test -- --coverage --coverageReporters=cobertura
-      docker cp test:/app/coverage coverage
+      docker cp test:/app app
     displayName: Test
   - task: PublishCodeCoverageResults@1
     condition: succeededOrFailed()
     displayName: Publish Code Coverage Results
     inputs:
       codeCoverageTool: Cobertura
-      summaryFileLocation: coverage/cobertura-coverage.xml
+      summaryFileLocation: app/coverage/cobertura-coverage.xml
   - task: Docker@2
     displayName: Build Final and Push
     inputs:
