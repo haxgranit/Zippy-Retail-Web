@@ -8,6 +8,7 @@ jobs:
   condition: eq(variables['docker.enabled'], 'true')
   variables:
     DOCKER_BUILDKIT: 1
+    DOCKER_REPOSITORY: zcorp-consumer
   steps:
   - task: Docker@2
     displayName: Login
@@ -18,16 +19,16 @@ jobs:
     displayName: Build Initial
     inputs:
       command: build
-      repository: ${{ lower(variables['Build.Repository.Name']) }}-build
+      repository: $(DOCKER_REPOSITORY)-build
       arguments: --target build
   - script: |
-      docker run ${{ lower(variables['Build.Repository.Name']) }}-build npm test
+      docker run $(DOCKER_REPOSITORY)-build npm test
     displayName: Test
   - task: Docker@2
     displayName: Build Final and Push
     inputs:
       command: buildAndPush
-      repository: ${{ lower(variables['Build.Repository.Name']) }}
+      repository: $(DOCKER_REPOSITORY)
       tags: |
         $(Build.BuildId)
         latest
