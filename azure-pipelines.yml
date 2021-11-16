@@ -20,6 +20,7 @@ jobs:
     inputs:
       command: build
       repository: $(DOCKER_REPOSITORY)-build
+      tags: latest
       arguments: --target build
   - script: |
       docker run $(DOCKER_REPOSITORY)-build npm test
