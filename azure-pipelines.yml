@@ -8,6 +8,7 @@ jobs:
   condition: eq(variables['docker.enabled'], 'true')
   variables:
     DOCKER_BUILDKIT: 1
+    REPOSITORY: $[lower($(Build.Repository.Name))]
   steps:
   - task: Docker@2
     displayName: Login
@@ -18,7 +19,7 @@ jobs:
     displayName: Build Initial
     inputs:
       command: build
-      repository: $(Build.Repository.Name)-build
+      repository: $(REPOSITORY)-build
       arguments: --target build
   - script: |
       docker run $(Build.Repository.Name)-build npm test
@@ -27,7 +28,7 @@ jobs:
     displayName: Build Final and Push
     inputs:
       command: buildAndPush
-      repository: $(Build.Repository.Name)
+      repository: $(REPOSITORY)
       tags: |
         $(Build.BuildId)
         latest
