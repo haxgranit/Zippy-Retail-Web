@@ -24,7 +24,7 @@ jobs:
       arguments: --target build
   - script: |
       set -e
-      docker run --rm $(docker.containerRegistry)/$(DOCKER_REPOSITORY)-build npm lint
+      docker run --rm $(docker.containerRegistry)/$(DOCKER_REPOSITORY)-build npm run lint
     displayName: Lint
   - script: |
       docker run --name test $(docker.containerRegistry)/$(DOCKER_REPOSITORY)-build npm test -- --coverage --coverageReporters=cobertura --reporters=default --reporters=jest-junit
