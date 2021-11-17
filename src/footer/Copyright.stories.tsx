@@ -10,7 +10,7 @@ export default {
 } as ComponentMeta<typeof Copyright>;
 
 const Template: ComponentStory<typeof Copyright> = () => (
-    <Copyright />
+  <Copyright />
 );
 
 export const Default = Template.bind({});

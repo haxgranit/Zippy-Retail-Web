@@ -29,7 +29,8 @@
       "error",
       {
         "devDependencies": [
-          "**/*.stories.tsx"
+          "**/*.stories.tsx",
+          "**/*.test.js"
         ]
       }
     ]
