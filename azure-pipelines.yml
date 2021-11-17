@@ -24,7 +24,7 @@ jobs:
       arguments: --target build
   - script: |
       set -e
-      docker run --name test $(docker.containerRegistry)/$(DOCKER_REPOSITORY)-build npm test -- --coverage --coverageReporters=cobertura --reporters=default --reporters=jest-junit"
+      docker run --name test $(docker.containerRegistry)/$(DOCKER_REPOSITORY)-build npm test -- --coverage --coverageReporters=cobertura --reporters=default --reporters=jest-junit
       docker cp test:/app $(Build.ArtifactStagingDirectory)/app
       docker rm test
       sed -i "s|<source>/app</source>|<source>$(Build.ArtifactStagingDirectory)/app</source>|g" $(Build.ArtifactStagingDirectory)/app/coverage/cobertura-coverage.xml
