@@ -1,12 +1,12 @@
-import React from "react";
+import React from 'react';
 import { BrowserRouter } from 'react-router-dom';
-import { ComponentStory, ComponentMeta } from "@storybook/react";
-import "./i18n/config";
-import "./index.css";
-import PersonalProfile from "./PersonalProfile";
+import { ComponentStory, ComponentMeta } from '@storybook/react';
+import './i18n/config';
+import './index.css';
+import PersonalProfile from './PersonalProfile';
 
 export default {
-  title: "PersonalProfile",
+  title: 'PersonalProfile',
   component: PersonalProfile,
 } as ComponentMeta<typeof PersonalProfile>;
 

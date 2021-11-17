@@ -1,12 +1,12 @@
-import React from "react";
+import React from 'react';
 import { BrowserRouter } from 'react-router-dom';
-import { ComponentStory, ComponentMeta } from "@storybook/react";
-import "../i18n/config";
-import "../index.css";
-import HomeLoggedOut from "./HomeLoggedOut";
+import { ComponentStory, ComponentMeta } from '@storybook/react';
+import '../i18n/config';
+import '../index.css';
+import HomeLoggedOut from './HomeLoggedOut';
 
 export default {
-  title: "HomeLoggedOut",
+  title: 'HomeLoggedOut',
   component: HomeLoggedOut,
 } as ComponentMeta<typeof HomeLoggedOut>;
 

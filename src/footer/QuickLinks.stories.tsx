@@ -1,12 +1,12 @@
-import React from "react";
+import React from 'react';
 import { BrowserRouter } from 'react-router-dom';
-import { ComponentStory, ComponentMeta } from "@storybook/react";
-import "../i18n/config";
-import "../index.css";
-import QuickLinks from "./QuickLinks";
+import { ComponentStory, ComponentMeta } from '@storybook/react';
+import '../i18n/config';
+import '../index.css';
+import QuickLinks from './QuickLinks';
 
 export default {
-  title: "QuickLinks",
+  title: 'QuickLinks',
   component: QuickLinks,
 } as ComponentMeta<typeof QuickLinks>;
 
