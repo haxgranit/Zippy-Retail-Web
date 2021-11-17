@@ -1,6 +1,8 @@
 import React from "react";
-import { BrowserRouter } from 'react-router-dom';
+import { Provider } from 'react-redux';
+import { BrowserRouter } from "react-router-dom";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
+import { store } from './app/store';
 import "./i18n/config";
 import "./index.css";
 import PersonalSignup from "./PersonalSignup";
@@ -11,9 +13,11 @@ export default {
 } as ComponentMeta<typeof PersonalSignup>;
 
 const Template: ComponentStory<typeof PersonalSignup> = () => (
-  <BrowserRouter>
-    <PersonalSignup />
-  </BrowserRouter>
+  <Provider store={store}>
+    <BrowserRouter>
+      <PersonalSignup />
+    </BrowserRouter>
+  </Provider>
 );
 
 export const Default = Template.bind({});
