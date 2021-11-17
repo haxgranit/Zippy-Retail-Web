@@ -20,7 +20,7 @@ jobs:
       command: build
       repository: $(DOCKER_REPOSITORY)-install
       tags: latest
-      arguments: --target build
+      arguments: --target install
   - script: |
       set -e
       docker run --rm $(docker.containerRegistry)/$(DOCKER_REPOSITORY)-install npm run lint
