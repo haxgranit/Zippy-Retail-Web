@@ -23,21 +23,22 @@ jobs:
       tags: latest
       arguments: --target build
   - script: |
-      set -e
       docker run --name test $(docker.containerRegistry)/$(DOCKER_REPOSITORY)-build npm test -- --coverage --coverageReporters=cobertura --reporters=default --reporters=jest-junit
+      set -e
       docker cp test:/app $(Build.ArtifactStagingDirectory)/app
       docker rm test
       sed -i "s|<source>/app</source>|<source>$(Build.ArtifactStagingDirectory)/app</source>|g" $(Build.ArtifactStagingDirectory)/app/coverage/cobertura-coverage.xml
     displayName: Test
-  - task: PublishTestResults@2
-    displayName: Publish Test Results
-    inputs:
-      testResultsFiles: $(Build.ArtifactStagingDirectory)/app/junit.xml
   - task: PublishCodeCoverageResults@1
     displayName: Publish Code Coverage Results
     inputs:
       codeCoverageTool: Cobertura
       summaryFileLocation: $(Build.ArtifactStagingDirectory)/app/coverage/cobertura-coverage.xml
+  - task: PublishTestResults@2
+    displayName: Publish Test Results
+    inputs:
+      failTaskOnFailedTests: true
+      testResultsFiles: $(Build.ArtifactStagingDirectory)/app/junit.xml
   - task: Docker@2
     displayName: Build Final and Push
     inputs:
