@@ -1,14 +1,14 @@
-import React from "react";
+import React from 'react';
 import { Provider } from 'react-redux';
-import { BrowserRouter } from "react-router-dom";
-import { ComponentStory, ComponentMeta } from "@storybook/react";
+import { BrowserRouter } from 'react-router-dom';
+import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { store } from './app/store';
-import "./i18n/config";
-import "./index.css";
-import PersonalSignup from "./PersonalSignup";
+import './i18n/config';
+import './index.css';
+import PersonalSignup from './PersonalSignup';
 
 export default {
-  title: "PersonalSignup",
+  title: 'PersonalSignup',
   component: PersonalSignup,
 } as ComponentMeta<typeof PersonalSignup>;
 
