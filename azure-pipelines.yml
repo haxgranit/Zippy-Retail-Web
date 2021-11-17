@@ -5,7 +5,6 @@ pool:
 
 jobs:
 - job: Docker
-  condition: eq(variables['docker.enabled'], 'true')
   variables:
     DOCKER_BUILDKIT: 1
     DOCKER_REPOSITORY: zcorp-consumer
@@ -19,15 +18,15 @@ jobs:
     displayName: Build Initial
     inputs:
       command: build
-      repository: $(DOCKER_REPOSITORY)-build
+      repository: $(DOCKER_REPOSITORY)-install
       tags: latest
       arguments: --target build
   - script: |
       set -e
-      docker run --rm $(docker.containerRegistry)/$(DOCKER_REPOSITORY)-build npm run lint
+      docker run --rm $(docker.containerRegistry)/$(DOCKER_REPOSITORY)-install npm run lint
     displayName: Lint
   - script: |
-      docker run --name test $(docker.containerRegistry)/$(DOCKER_REPOSITORY)-build npm test -- --coverage --coverageReporters=cobertura --reporters=default --reporters=jest-junit
+      docker run --name test $(docker.containerRegistry)/$(DOCKER_REPOSITORY)-install npm test -- --coverage --coverageReporters=cobertura --reporters=default --reporters=jest-junit
       set -e
       docker cp test:/app $(Build.ArtifactStagingDirectory)/app
       docker rm test
@@ -44,6 +43,7 @@ jobs:
       failTaskOnFailedTests: true
       testResultsFiles: $(Build.ArtifactStagingDirectory)/app/junit.xml
   - task: Docker@2
+    condition: eq(variables['docker.push'], 'true')
     displayName: Build Final and Push
     inputs:
       command: buildAndPush
