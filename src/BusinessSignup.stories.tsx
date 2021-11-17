@@ -3,19 +3,19 @@ import { Provider } from "react-redux";
 import { BrowserRouter } from "react-router-dom";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 import { store } from "./app/store";
-import Header from "./Header";
 import "./i18n/config";
 import "./index.css";
+import BusinessSignup from "./BusinessSignup";
 
 export default {
-  title: "Header",
-  component: Header,
-} as ComponentMeta<typeof Header>;
+  title: "BusinessSignup",
+  component: BusinessSignup,
+} as ComponentMeta<typeof BusinessSignup>;
 
-const Template: ComponentStory<typeof Header> = () => (
+const Template: ComponentStory<typeof BusinessSignup> = () => (
   <Provider store={store}>
     <BrowserRouter>
-      <Header />
+      <BusinessSignup />
     </BrowserRouter>
   </Provider>
 );

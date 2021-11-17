@@ -1,21 +1,21 @@
 import React from "react";
-import { Provider } from "react-redux";
+import { Provider } from 'react-redux';
 import { BrowserRouter } from "react-router-dom";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
-import { store } from "./app/store";
-import Header from "./Header";
+import { store } from './app/store';
 import "./i18n/config";
 import "./index.css";
+import PersonalSignup from "./PersonalSignup";
 
 export default {
-  title: "Header",
-  component: Header,
-} as ComponentMeta<typeof Header>;
+  title: "PersonalSignup",
+  component: PersonalSignup,
+} as ComponentMeta<typeof PersonalSignup>;
 
-const Template: ComponentStory<typeof Header> = () => (
+const Template: ComponentStory<typeof PersonalSignup> = () => (
   <Provider store={store}>
     <BrowserRouter>
-      <Header />
+      <PersonalSignup />
     </BrowserRouter>
   </Provider>
 );
