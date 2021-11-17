@@ -44,7 +44,7 @@ jobs:
       failTaskOnFailedTests: true
       testResultsFiles: $(Build.ArtifactStagingDirectory)/app/junit.xml
   - task: Docker@2
-    condition: eq(variables['docker.push'], 'true')
+    condition: and(succeeded(), eq(variables['docker.push'], 'true'))
     displayName: Build Final and Push
     inputs:
       command: buildAndPush
