@@ -4,13 +4,14 @@
 // learn more: https://github.com/testing-library/jest-dom
 import '@testing-library/jest-dom/extend-expect';
 
-window.matchMedia = window.matchMedia
-  || function matchMedia() {
-    return {
-      matches: false,
-      addListener() {},
-      removeListener() {},
-    };
+function customMatchMedia() {
+  return {
+    matches: false,
+    addListener: () => {},
+    removeListener: () => {},
   };
+}
+
+window.matchMedia = window.matchMedia || customMatchMedia;
 
 window.scrollTo = jest.fn();

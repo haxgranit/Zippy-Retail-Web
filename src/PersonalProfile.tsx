@@ -30,10 +30,7 @@ export default function PersonalProfile() {
                     id="profilepicture"
                     src={David_Magnus_White}
                     alt=""
-                    className="
-                     profilephoto rounded-circle position-absolute
-                     top-50 start-50 translate-middle
-                    "
+                    className="profilephoto rounded-circle position-absolute top-50 start-50 translate-middle"
                   />
                   <img
                     id="profilepicture"
@@ -169,10 +166,7 @@ export default function PersonalProfile() {
                         />
                       </div>
                       <div className="col-12 col-md-6 mb-4">
-                        <label
-                          htmlFor="submit"
-                          className="text-light fw-bold"
-                        >
+                        <label htmlFor="submit" className="text-light fw-bold">
                           {' '}
                           <input
                             type="submit"

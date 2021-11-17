@@ -1,0 +1,157 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Business Default 1`] = `
+<main>
+  <div
+    className="bg-light"
+    style={
+      Object {
+        "backgroundImage": "url(Circle_White-01.jpg)",
+        "backgroundSize": "cover",
+      }
+    }
+  >
+    <div
+      className="container"
+    >
+      <div
+        className="row py-5"
+      >
+        <div
+          className="col"
+        >
+          <div
+            className="mb-3"
+          >
+            <h2
+              style={
+                Object {
+                  "color": "#FF1926",
+                }
+              }
+            >
+              business banking
+            </h2>
+            <h1
+              className="redtitle hero-heading display-3"
+              style={
+                Object {
+                  "fontSize": "4em",
+                  "paddingBottom": "20px",
+                }
+              }
+            >
+              Make your money work your way!
+            </h1>
+            <a
+              className="btn rounded-0 my-buttonred"
+              href="/business-signup"
+              onClick={[Function]}
+            >
+              Sign up for a business account
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div
+        className="container"
+      >
+        <div
+          className="row align-items-center py-4"
+        >
+          <div
+            className="col-12 col-md-3"
+          >
+            <img
+              alt="an illustration of a woman holding dollar signs"
+              className="img-fluid centerimage"
+              data-aos="flip-left"
+              src="ZippyCash_Icons_K.png"
+            />
+          </div>
+          <div
+            className="col-12 col-md-9"
+          >
+            <p
+              className="m-0 content-home"
+            >
+              No matter how big or small your business is, everyone is in the global market. That's why you need the best rates and lowest fees for you brand. Zippy Cash gives you the best rates available every time and takes the complexity out of international commerce. Our fees can't be beat.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      className="bg-light"
+      id="bluegradient"
+    >
+      <div
+        className="container"
+      >
+        <div
+          className="row align-items-center py-4  flex-md-row-reverse"
+        >
+          <div
+            className="col-12 col-md-3 text-end position-relative"
+            data-aos="flip-left"
+          >
+            <img
+              alt="illustrated of young people all touching a large light bulb"
+              className="img-fluid position-absolute top-0 start-50 translate-middle "
+              src="ZippyCash_Icons_L.png"
+            />
+          </div>
+          <div
+            className="col-12 col-md-9 circleoverlap"
+          >
+            <p
+              className="m-0 whitecopy"
+            >
+              Setting up international bank accounts may sound daunting but with Zippy we deliver everything you need to start managing accounts abroad in minutes. How is it this easy? We have excellent partnerships with international financial brands, tech solutions that serve as an efficient connector, prioritizing ease, speed and security.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      style={
+        Object {
+          "backgroundColor": "#EDF5F5",
+        }
+      }
+    >
+      <div
+        className="container"
+      >
+        <div
+          className="row align-items-center py-4"
+        >
+          <div
+            className="col-12 col-md-3"
+          >
+            <img
+              alt="illustrated of a young woman jumping in the air"
+              className="img-fluid centerimage"
+              data-aos="flip-left"
+              src="ZippyCash_Icons_M.png"
+            />
+          </div>
+          <div
+            className="col-12 col-md-9"
+          >
+            <p
+              className="m-0 content-home"
+            >
+              Paying invoices, people and employees just got zippier. We always give you the lowest transaction fees and make it easy (dare we say even fun?) to manage your payments.
+              <br />
+              Find out more here.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+`;
