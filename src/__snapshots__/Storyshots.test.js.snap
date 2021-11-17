@@ -6937,10 +6937,7 @@ exports[`Storyshots PersonalProfile Default 1`] = `
             >
               <img
                 alt=""
-                className="
- profilephoto rounded-circle position-absolute
- top-50 start-50 translate-middle
- "
+                className=" profilephoto rounded-circle position-absolute top-50 start-50 translate-middle "
                 id="profilepicture"
                 src="David_Magnus_White.jpg"
               />
