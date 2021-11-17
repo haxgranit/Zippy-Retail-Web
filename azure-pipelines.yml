@@ -28,6 +28,7 @@ jobs:
   - script: |
       docker run --name test $(docker.containerRegistry)/$(DOCKER_REPOSITORY)-install npm test -- --coverage --coverageReporters=cobertura --reporters=default --reporters=jest-junit
       set -e
+      mkdir $(Build.ArtifactStagingDirectory)/app
       docker cp test:/app/coverage $(Build.ArtifactStagingDirectory)/app/coverage
       docker cp test:/app/src $(Build.ArtifactStagingDirectory)/app/src
       docker rm test
