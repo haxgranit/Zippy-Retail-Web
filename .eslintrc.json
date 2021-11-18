@@ -29,6 +29,7 @@
       "error",
       {
         "devDependencies": [
+          "src/Storyshots.test.js",
           "**/*.stories.tsx"
         ]
       }

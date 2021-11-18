@@ -1,8 +1,10 @@
-FROM node:14.18-alpine AS build
+FROM node:14.18-alpine AS install
 WORKDIR /app
 COPY package*.json .
 RUN npm ci
 COPY . .
+
+FROM install AS build
 RUN npm run build
 
 FROM nginx:1.21.3-alpine

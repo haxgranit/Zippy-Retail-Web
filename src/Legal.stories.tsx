@@ -1,12 +1,12 @@
-import React from "react";
+import React from 'react';
 import { BrowserRouter } from 'react-router-dom';
-import { ComponentStory, ComponentMeta } from "@storybook/react";
-import "./i18n/config";
-import "./index.css";
-import Legal from "./Legal";
+import { ComponentStory, ComponentMeta } from '@storybook/react';
+import './i18n/config';
+import './index.css';
+import Legal from './Legal';
 
 export default {
-  title: "Legal",
+  title: 'Legal',
   component: Legal,
 } as ComponentMeta<typeof Legal>;
 
