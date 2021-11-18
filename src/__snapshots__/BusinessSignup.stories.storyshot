@@ -141,7 +141,7 @@ exports[`Storyshots BusinessSignup Default 1`] = `
                     >
                       By signing up you agree to the 
                       <a
-                        className="text-decoration-none"
+                        className="text-white fw-bold"
                         href="/legal"
                         onClick={[Function]}
                       >

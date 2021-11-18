@@ -116,7 +116,7 @@ exports[`Storyshots Login Default 1`] = `
                       By logging in you agree to the
                        
                       <a
-                        className="text-decoration-none"
+                        className="text-white fw-bold"
                         href="/legal"
                         onClick={[Function]}
                       >

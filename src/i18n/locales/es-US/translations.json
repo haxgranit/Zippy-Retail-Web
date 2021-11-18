@@ -6,7 +6,7 @@
   "header.business": "coorporativa",
   "header.personal_profile": "NEEDS_LOC",
   
-  "about.who_is": "QUIENES SOMOS",
+  "about.who_is": "quienes somos",
   "about.who_is_description_1": "Somos Geeks financieros que conocen el sistema. Y creemos que es demasiado complicado, costoso y difícil. Simplemente porque siempre haya sido así no significa que no podamos hacerlo mejor. Somos apasionados acerca de trabajar el sistema para lograr hacerlos gratificante para todos. Hemos creado Zippy Cash para cumplir con esa promesa.",
   "about.who_is_description_2": "En un mundo perfecto, la trasparencia y bajos costos deberían ser accesibles a todo el mundo, independientemente de quien sea. Pero… se necesita un titulo en derecho para entender la letra fina y, al final, los consumidores son los que terminan siendo estafados, en especial aquellos que tienen menos recursos. Zyppy Cash existe para romper esas cadenas y permitir hacer tus pagos de manera sencilla, rápida y segura para todos sus usuarios.",
   "about.the_team": "Nuestro Equipo",
@@ -30,7 +30,7 @@
   "business.email": "Correo electronico",
   "business.password": "Contraseña",
   "business.confirm_password": "Confirmar contraseña",
-  "business.agree_title": "Acepta los terminos y condiciones",
+  "business.agree_title": "Acepta los <1>terminos y condiciones</1>",
   "business.create_your_account": "Crear su cuenta",
   "business.personal_banking": "banca personal",
 
@@ -41,7 +41,7 @@
   "business_signup.email": "Correo electronico",
   "business_signup.password": "Contraseña",
   "business_signup.confirm_password": "Confirmar contraseña",
-  "business_signup.agree_title": "Firmando aca acepta los terminos y condiciones ",
+  "business_signup.agree_title": "Firmando aca acepta los <1>terminos y condiciones</1> ",
   "business_signup.create_your_account": "Crear su cuenta",
 
   "home.sign_up_btn": "REGISTRATE",
@@ -92,6 +92,6 @@
   "personal_signup.email": "Correo electronico",
   "personal_signup.password": "Contraseña",
   "personal_signup.confirm_password": "Confirmar contraseña",
-  "personal_signup.agree_title": "Al firmar acepta los terminos y condiciones ",
+  "personal_signup.agree_title": "Al firmar acepta los <1>terminos y condiciones</1>",
   "personal_signup.create_your_account": "Crea tu cuenta"
 }

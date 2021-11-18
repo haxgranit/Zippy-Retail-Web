@@ -62,7 +62,7 @@ export default function Login() {
                         <span className="text-light">
                           By logging in you agree to the
                           {' '}
-                          <Link to="/legal" className="text-decoration-none">terms and conditions</Link>
+                          <Link to="/legal" className="text-white fw-bold">terms and conditions</Link>
                         </span>
                       </div>
                     </div>
