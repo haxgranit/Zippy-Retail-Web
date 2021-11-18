@@ -14,7 +14,6 @@ import ReviewAndCancelBillPayments from './bill-payments/ReviewAndCancelBillPaym
 import SetUpBillPayments from './bill-payments/SetUpBillPayments';
 import ViewEBills from './bill-payments/ViewEBills';
 import Business from './Business';
-import BusinessSignup from './BusinessSignup';
 import Footer from './footer/Footer';
 import Header from './Header';
 import AutodepositSettings from './interac-etransfer/AutodepositSettings';
@@ -37,7 +36,6 @@ import ViewAccountDetails from './my-accounts/ViewAccountDetails';
 import ViewEStatements from './my-accounts/ViewEStatements';
 import Personal from './Personal';
 import PersonalProfile from './PersonalProfile';
-import PersonalSignup from './PersonalSignup';
 import ScrollToTop from './ScrollToTop';
 import EFT from './transfer-funds/EFT';
 import ReviewAndCancelTransfers from './transfer-funds/ReviewAndCancelTransfers';
@@ -102,13 +100,11 @@ export default function App() {
         </Route>
         <Route path="about" element={<About />} />
         <Route path="business" element={<Business />} />
-        <Route path="business-signup" element={<BusinessSignup />} />
         <Route path="legal" element={<Legal />} />
         <Route path="login" element={<Login />} />
         <Route path="logout" element={<Logout />} />
         <Route path="personal" element={<Personal />} />
         <Route path="personal-profile" element={<PersonalProfile />} />
-        <Route path="personal-signup" element={<PersonalSignup />} />
       </Routes>
       {!isLoginOrLogout && <Footer />}
     </div>

@@ -92,7 +92,7 @@ exports[`Storyshots Home Default 1`] = `
                         </h1>
                         <a
                           className="hero-button btn btn-light rounded-0"
-                          href="/business-signup"
+                          href="/login"
                           onClick={[Function]}
                         >
                           SIGN UP!
@@ -158,7 +158,7 @@ exports[`Storyshots Home Default 1`] = `
                         </h1>
                         <a
                           className="hero-button btn btn-light rounded-0"
-                          href="/personal-signup"
+                          href="/login"
                           onClick={[Function]}
                         >
                           SIGN UP!
@@ -224,7 +224,7 @@ exports[`Storyshots Home Default 1`] = `
                         </h1>
                         <a
                           className="hero-button btn btn-light rounded-0"
-                          href="/personal-signup"
+                          href="/login"
                           onClick={[Function]}
                         >
                           SIGN UP!
@@ -290,7 +290,7 @@ exports[`Storyshots Home Default 1`] = `
                         </h1>
                         <a
                           className="hero-button btn btn-light rounded-0"
-                          href="/business-signup"
+                          href="/login"
                           onClick={[Function]}
                         >
                           SIGN UP!
@@ -355,7 +355,7 @@ exports[`Storyshots Home Default 1`] = `
                         </h1>
                         <a
                           className="hero-button btn btn-light rounded-0"
-                          href="/personal-signup"
+                          href="/login"
                           onClick={[Function]}
                         >
                           SIGN UP!
@@ -420,7 +420,7 @@ exports[`Storyshots Home Default 1`] = `
                         </h1>
                         <a
                           className="hero-button btn btn-light rounded-0"
-                          href="/personal-signup"
+                          href="/login"
                           onClick={[Function]}
                         >
                           SIGN UP!
@@ -485,7 +485,7 @@ exports[`Storyshots Home Default 1`] = `
                         </h1>
                         <a
                           className="hero-button btn btn-light rounded-0"
-                          href="/business-signup"
+                          href="/login"
                           onClick={[Function]}
                         >
                           SIGN UP!
@@ -531,7 +531,7 @@ exports[`Storyshots Home Default 1`] = `
           >
             <a
               className="btn btn-light rounded-0 my-button"
-              href="/business-signup"
+              href="/login"
               onClick={[Function]}
             >
               SIGN UP!
