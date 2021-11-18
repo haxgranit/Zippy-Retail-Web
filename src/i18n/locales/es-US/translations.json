@@ -30,7 +30,7 @@
   "business.email": "Correo electronico",
   "business.password": "Contraseña",
   "business.confirm_password": "Confirmar contraseña",
-  "business.agree_title": "Acepta los terminos y condiciones",
+  "business.agree_title": "Acepta los <1>terminos y condiciones</1>",
   "business.create_your_account": "Crear su cuenta",
   "business.personal_banking": "banca personal",
 
@@ -41,7 +41,7 @@
   "business_signup.email": "Correo electronico",
   "business_signup.password": "Contraseña",
   "business_signup.confirm_password": "Confirmar contraseña",
-  "business_signup.agree_title": "Firmando aca acepta los terminos y condiciones ",
+  "business_signup.agree_title": "Firmando aca acepta los <1>terminos y condiciones</1> ",
   "business_signup.create_your_account": "Crear su cuenta",
 
   "home.sign_up_btn": "REGISTRATE",
@@ -92,6 +92,6 @@
   "personal_signup.email": "Correo electronico",
   "personal_signup.password": "Contraseña",
   "personal_signup.confirm_password": "Confirmar contraseña",
-  "personal_signup.agree_title": "Al firmar acepta los terminos y condiciones ",
+  "personal_signup.agree_title": "Al firmar acepta los <1>terminos y condiciones</1>",
   "personal_signup.create_your_account": "Crea tu cuenta"
 }

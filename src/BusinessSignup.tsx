@@ -56,7 +56,7 @@ export default function BusinessSignup() {
                         <span className="text-light">
                           <Trans i18nKey="business_signup.agree_title">
                             By signing up you agree to the
-                            <Link to="/legal" className="text-decoration-none">terms and conditions</Link>
+                            <Link to="/legal" className="text-white fw-bold">terms and conditions</Link>
                           </Trans>
                         </span>
                       </div>
