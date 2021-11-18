@@ -1,6 +1,7 @@
 {
   "header.language": "LANGUAGE",
   "header.login": "LOGIN",
+  "header.logout": "LOGOUT",
   "header.about": "about us",
   "header.personal": "personal",
   "header.business": "business",

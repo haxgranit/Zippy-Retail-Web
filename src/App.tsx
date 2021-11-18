@@ -1,10 +1,10 @@
 import React, { useEffect } from 'react';
 import AOS from 'aos';
 import {
-  BrowserRouter,
   Navigate,
   Route,
   Routes,
+  useLocation,
 } from 'react-router-dom';
 import About from './About';
 import AddOrEditBillers from './bill-payments/AddOrEditBillers';
@@ -28,6 +28,7 @@ import Status from './interac-etransfer/Status';
 import Home from './home/Home';
 import Legal from './Legal';
 import Login from './Login';
+import Logout from './Logout';
 import DownloadTransactions from './my-accounts/DownloadTransactions';
 import MyAccounts from './my-accounts/MyAccounts';
 import StatementPreferences from './my-accounts/StatementPreferences';
@@ -50,10 +51,13 @@ import ManageMyAlerts from './manage-my-alerts/ManageMyAlerts';
 export default function App() {
   useEffect(() => AOS.init(), []);
 
+  const { pathname } = useLocation();
+  const isLoginOrLogout = pathname === '/login' || pathname === '/logout';
+
   return (
-    <BrowserRouter>
+    <div>
       <ScrollToTop />
-      <Header />
+      {!isLoginOrLogout && <Header />}
       <Routes>
         <Route path="/" element={<Home />}>
           <Route path="account-security" element={<AccountSecurity />} />
@@ -101,11 +105,12 @@ export default function App() {
         <Route path="business-signup" element={<BusinessSignup />} />
         <Route path="legal" element={<Legal />} />
         <Route path="login" element={<Login />} />
+        <Route path="logout" element={<Logout />} />
         <Route path="personal" element={<Personal />} />
         <Route path="personal-profile" element={<PersonalProfile />} />
         <Route path="personal-signup" element={<PersonalSignup />} />
       </Routes>
-      <Footer />
-    </BrowserRouter>
+      {!isLoginOrLogout && <Footer />}
+    </div>
   );
 }

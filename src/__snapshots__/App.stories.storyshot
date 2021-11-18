@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots App Default 1`] = `
-Array [
+<div>
   <nav
     className="navbar navbar-expand-lg navbar-light"
   >
@@ -116,7 +116,7 @@ Array [
         </ul>
       </div>
     </div>
-  </nav>,
+  </nav>
   <div>
     <section
       className="hero slider"
@@ -776,7 +776,7 @@ Array [
         </div>
       </div>
     </main>
-  </div>,
+  </div>
   <div>
     <div
       className="container"
@@ -1007,6 +1007,6 @@ Array [
         </div>
       </div>
     </footer>
-  </div>,
-]
+  </div>
+</div>
 `;

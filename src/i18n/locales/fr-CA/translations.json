@@ -1,6 +1,7 @@
 {
   "header.language": "NEEDS_LOC",
   "header.login": "NEEDS_LOC",
+  "header.logout": "NEEDS_LOC",
   "header.about": "NEEDS_LOC",
   "header.personal": "NEEDS_LOC",
   "header.business": "NEEDS_LOC",

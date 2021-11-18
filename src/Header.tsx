@@ -1,3 +1,5 @@
+import { InteractionStatus } from '@azure/msal-browser';
+import { useIsAuthenticated, useMsal } from '@azure/msal-react';
 import React from 'react';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import { useTranslation } from 'react-i18next';
@@ -8,6 +10,8 @@ import { selectUser } from './features/user/userSlice';
 
 export default function Header() {
   const user = useAppSelector(selectUser);
+  const isAuthenticated = useIsAuthenticated();
+  const { inProgress } = useMsal();
   const { i18n, t } = useTranslation();
 
   return (
@@ -36,7 +40,13 @@ export default function Header() {
               <NavDropdown.Item onClick={() => i18n.changeLanguage('es-US')}>Spanish (US)</NavDropdown.Item>
             </NavDropdown>
             <li className="nav-item">
-              <Link to="/login" className="nav-link fw-bold" aria-current="page">{t('header.login')}</Link>
+              {(isAuthenticated
+                && <Link to="/logout" className="nav-link fw-bold" aria-current="page">{t('header.logout')}</Link>
+              ) || (
+                inProgress !== InteractionStatus.Startup
+                && inProgress !== InteractionStatus.HandleRedirect
+                && <Link to="/login" className="nav-link fw-bold" aria-current="page">{t('header.login')}</Link>
+              )}
             </li>
           </ul>
           <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
