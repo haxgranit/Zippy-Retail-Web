@@ -1,0 +1,67 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots my-accounts/view-account-details/ViewAccountDetails Default 1`] = `
+<div>
+  <h2>
+    DEPOSIT ACCOUNT DETAILS
+  </h2>
+  <p>
+    Receive notifications when
+     
+    <u>
+      held funds are released
+    </u>
+     
+    and are available to you; when you exceed your bank machine withdrawal and your Point of Sale daily limit.
+  </p>
+  <div
+    style={
+      Object {
+        "display": "flex",
+        "justifyContent": "space-between",
+      }
+    }
+  >
+    <select
+      className="form-select"
+      style={
+        Object {
+          "flex": "0 0 50%",
+        }
+      }
+    >
+      <option>
+        Chequing (01702-81-99639) $2,260.57
+      </option>
+    </select>
+    <div
+      className="dropdown btn-group"
+      role="group"
+      style={
+        Object {
+          "flex": "0 0 25%",
+        }
+      }
+    >
+      <button
+        aria-expanded={false}
+        className="dropdown-toggle btn btn-outline-primary"
+        disabled={false}
+        onClick={[Function]}
+        type="button"
+      >
+        Manage My Account
+      </button>
+    </div>
+  </div>
+  <img
+    alt="placeholder"
+    src="ViewAccountDetails.png"
+    style={
+      Object {
+        "width": "100%",
+      }
+    }
+  />
+</div>
+`;
