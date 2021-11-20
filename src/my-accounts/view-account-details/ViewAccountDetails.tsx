@@ -29,7 +29,7 @@ export default function ViewAccountDetails() {
         </div>
       </div>
       <div className="border-primary mt-4 pt-4 pb-2" style={{ backgroundColor: '#f4f4f4', borderTop: '3px solid' }}>
-        <div className="row" style={{ marginLeft: 0, marginRight: 0 }}>
+        <div className="row mx-0">
           <div className="col-6">
             <div className="d-flex justify-content-between">
               <h3>Balance:</h3>
@@ -44,31 +44,31 @@ export default function ViewAccountDetails() {
               <span>N/A</span>
             </div>
             <div className="d-flex justify-content-between">
-              <strong>Available Funds:</strong>
-              <strong>$2,260.57</strong>
+              <b>Available Funds:</b>
+              <b>$2,260.57</b>
             </div>
           </div>
           <div className="col-6">
             <div className="row">
               <div className="col-6">
-                <div><strong>Product Name:</strong></div>
+                <div><b>Product Name:</b></div>
                 <div>Everyday® Checking</div>
-                <div><strong>Statement Option:</strong></div>
+                <div><b>Statement Option:</b></div>
                 <div>View and Edit</div>
               </div>
               <div className="col-6">
                 <div>
-                  <strong>Transit Number:</strong>
+                  <b>Transit Number:</b>
                   {' '}
                   01702
                 </div>
                 <div>
-                  <strong>Institution Number:</strong>
+                  <b>Institution Number:</b>
                   {' '}
                   010
                 </div>
                 <div>
-                  <strong>Account Number:</strong>
+                  <b>Account Number:</b>
                   {' '}
                   8199639
                 </div>
@@ -76,20 +76,52 @@ export default function ViewAccountDetails() {
             </div>
             <div className="row mt-4">
               <div className="col-6">
-                <div><strong>Daily ATM Widthdrawal Limit</strong></div>
+                <div><b>Daily ATM Widthdrawal Limit</b></div>
                 <div>$3,000.00</div>
               </div>
               <div className="col-6">
-                <div><strong>Daily Debit Purchase Limit</strong></div>
+                <div><b>Daily Debit Purchase Limit</b></div>
                 <div>$3,000.00</div>
               </div>
             </div>
           </div>
         </div>
-        <div className="row">
+        <div className="row mx-0">
           <div className="col-12">
             <Button variant="outline-primary">View Upcoming Bills and Transfers</Button>
           </div>
+        </div>
+      </div>
+      <div className="row mt-4">
+        <div className="col-9 px-4">
+          <h3 className="d-inline">PAST TRANSACTIONS</h3>
+          {' '}
+          (October 12, 2021 to November 14, 2021)
+        </div>
+        <div className="col-3 text-end">
+          <Button variant="outline-primary">Transaction Glossary</Button>
+        </div>
+      </div>
+      <div className="border-primary my-2" style={{ borderTop: '3px solid' }} />
+      <div className="row align-items-center">
+        <div className="col-3">
+          <Button variant="outline-primary">Custom Search</Button>
+        </div>
+        <div className="col-9 text-end">
+          <span className="px-4">View:</span>
+          <b>Last 4 weeks</b>
+          <span className="px-4">|</span>
+          <u>Last 3 months</u>
+          <span className="px-4">|</span>
+          <u>Last 6 months</u>
+          <span className="px-4">|</span>
+          <u>Last 12 months</u>
+        </div>
+      </div>
+      <div className="border-primary my-2" style={{ borderTop: '1px solid' }} />
+      <div className="row">
+        <div className="col-12 text-end">
+          <u>Questions about your transactions?</u>
         </div>
       </div>
     </div>
