@@ -1,4 +1,3 @@
-import React from 'react';
 import placeholder from './BillerDetails.png';
 
 export default function BillerDetails() {

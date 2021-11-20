@@ -1,4 +1,3 @@
-import React from 'react';
 import placeholder from './TransferFunds.png';
 
 export default function TransferFunds() {

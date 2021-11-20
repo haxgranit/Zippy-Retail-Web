@@ -1,4 +1,3 @@
-import React from 'react';
 import placeholder from './ContactList.png';
 
 export default function ContactList() {
