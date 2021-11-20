@@ -1,4 +1,3 @@
-import React from 'react';
 import placeholder from './ContactUs.png';
 
 export default function ContactUs() {

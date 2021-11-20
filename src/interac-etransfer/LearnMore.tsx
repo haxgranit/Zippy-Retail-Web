@@ -1,4 +1,3 @@
-import React from 'react';
 import placeholder from './LearnMore.png';
 
 export default function LearnMore() {

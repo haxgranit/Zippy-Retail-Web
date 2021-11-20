@@ -1,4 +1,3 @@
-import React from 'react';
 import placeholder from './ViewEStatements.png';
 
 export default function ViewEStatements() {

@@ -1,4 +1,3 @@
-import React from 'react';
 import placeholder from './ReviewAndCancelTransfers.png';
 
 export default function ReviewAndCancelTransfers() {
