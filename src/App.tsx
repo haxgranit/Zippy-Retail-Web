@@ -28,7 +28,7 @@ import Status from './interac-etransfer/Status';
 import Home from './home/Home';
 import Legal from './Legal';
 import Login from './Login';
-import DownloadTransactions from './my-accounts/DownloadTransactions';
+import DownloadTransactions from './my-accounts/download-transactions/DownloadTransactions';
 import MyAccounts from './my-accounts/MyAccounts';
 import StatementPreferences from './my-accounts/StatementPreferences';
 import UpcomingBillPaymentsAndTransfers from './my-accounts/UpcomingBillPaymentsAndTransfers';
