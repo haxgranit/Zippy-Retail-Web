@@ -8,7 +8,7 @@ import transactions from './transactions';
 
 export default function ViewAccountDetails() {
   return (
-    <div className="container">
+    <div>
       <h2>DEPOSIT ACCOUNT DETAILS</h2>
       <p>
         Receive notifications when
@@ -110,13 +110,13 @@ export default function ViewAccountDetails() {
           <Button variant="outline-primary">Custom Search</Button>
         </div>
         <div className="col-9 text-end">
-          <span className="px-4">View:</span>
+          <span className="px-3">View:</span>
           <b>Last 4 weeks</b>
-          <span className="px-4">|</span>
+          <span className="px-3">|</span>
           <u>Last 3 months</u>
-          <span className="px-4">|</span>
+          <span className="px-3">|</span>
           <u>Last 6 months</u>
-          <span className="px-4">|</span>
+          <span className="px-3">|</span>
           <u>Last 12 months</u>
         </div>
       </div>
@@ -150,6 +150,34 @@ export default function ViewAccountDetails() {
               ))}
             </tbody>
           </Table>
+        </div>
+      </div>
+      <div className="row mt-4">
+        <div className="col-12">
+          <p>
+            For a description of transactions that are included in the CIBC SmartTM Account monthly
+            fee and the fees for other Personal Banking Services, visit a CIBC Banking Centre or
+            review Personal Account Service Fees (PDF, 210 KB).
+          </p>
+          <p>
+            * Foreign Currency Conversion Fee - If you withdraw foreign currency from a bank machine
+            located outside of Canada, you are charged the same conversion rate CIBC is required to
+            pay, plus an administration fee of 2.5% of the converted amount (this is in addition to
+            any transaction fee applicable to the withdrawal and the network fee).
+          </p>
+          <div className="border-primary my-1" style={{ borderTop: '1px solid' }} />
+          <p className="mt-4">
+            <b>Note:</b>
+          </p>
+          <p>
+            Transactions from today that are reflected in your balance may not be displayed on this
+            page if a paper statement was recently issued, or if a transaction is backdated. These
+            transactions will appear in your history the following business day.
+          </p>
+          <p>
+            For questions about service fees or Non-Sufficient Fund (NSF) charges, review a list of
+            service charges and account fees.
+          </p>
         </div>
       </div>
     </div>
