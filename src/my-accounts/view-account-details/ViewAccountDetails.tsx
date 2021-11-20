@@ -2,7 +2,9 @@ import Button from 'react-bootstrap/Button';
 import ButtonGroup from 'react-bootstrap/ButtonGroup';
 import Dropdown from 'react-bootstrap/Dropdown';
 import DropdownButton from 'react-bootstrap/DropdownButton';
+import Table from 'react-bootstrap/Table';
 import Form from 'react-bootstrap/Form';
+import transactions from './transactions';
 
 export default function ViewAccountDetails() {
   return (
@@ -28,7 +30,7 @@ export default function ViewAccountDetails() {
           </DropdownButton>
         </div>
       </div>
-      <div className="border-primary mt-4 pt-4 pb-2" style={{ backgroundColor: '#f4f4f4', borderTop: '3px solid' }}>
+      <div className="border-primary mt-2 pt-4 pb-2" style={{ backgroundColor: '#f4f4f4', borderTop: '3px solid' }}>
         <div className="row mx-0">
           <div className="col-6">
             <div className="d-flex justify-content-between">
@@ -119,9 +121,35 @@ export default function ViewAccountDetails() {
         </div>
       </div>
       <div className="border-primary my-2" style={{ borderTop: '1px solid' }} />
-      <div className="row">
+      <div className="row my-2">
         <div className="col-12 text-end">
           <u>Questions about your transactions?</u>
+        </div>
+      </div>
+      <div className="row">
+        <div className="col-12">
+          <Table>
+            <thead style={{ backgroundColor: '#f4f4f4' }}>
+              <tr>
+                <th>DATE</th>
+                <th>TRANSACTIONS</th>
+                <th>DEBIT</th>
+                <th>CREDIT</th>
+                <th>RUNNING BALANCE</th>
+              </tr>
+            </thead>
+            <tbody className="border-top-0">
+              {transactions.map((transaction) => (
+                <tr>
+                  <td>{transaction[0]}</td>
+                  <td>{transaction[1]}</td>
+                  <td>{transaction[2]}</td>
+                  <td>{transaction[3]}</td>
+                  <td>{transaction[4]}</td>
+                </tr>
+              ))}
+            </tbody>
+          </Table>
         </div>
       </div>
     </div>
