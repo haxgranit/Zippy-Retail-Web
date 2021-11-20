@@ -15,3 +15,7 @@ function customMatchMedia() {
 window.matchMedia = window.matchMedia || customMatchMedia;
 
 window.scrollTo = jest.fn();
+
+window.console.warn = (message) => { throw message; };
+
+window.console.error = (message) => { throw message; };

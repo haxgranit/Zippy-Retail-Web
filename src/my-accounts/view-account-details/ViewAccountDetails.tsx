@@ -140,7 +140,7 @@ export default function ViewAccountDetails() {
             </thead>
             <tbody className="border-top-0">
               {transactions.map((transaction) => (
-                <tr>
+                <tr key={transaction.join()}>
                   <td>{transaction[0]}</td>
                   <td>{transaction[1]}</td>
                   <td>{transaction[2]}</td>
