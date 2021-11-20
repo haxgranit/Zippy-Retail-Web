@@ -1,4 +1,3 @@
-import React from 'react';
 import placeholder from './ViewAccountDetails.png';
 
 export default function ViewAccountDetails() {

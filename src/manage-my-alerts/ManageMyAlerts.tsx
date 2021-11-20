@@ -1,4 +1,3 @@
-import React from 'react';
 import placeholder from './ManageMyAlerts.png';
 
 export default function ManageMyAlerts() {

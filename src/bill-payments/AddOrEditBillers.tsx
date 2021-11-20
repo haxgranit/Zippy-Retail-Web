@@ -1,4 +1,3 @@
-import React from 'react';
 import placeholder from './AddOrEditBillers.png';
 
 export default function AddOrEditBillers() {
