@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import AOS from 'aos';
 import {
   Navigate,
@@ -32,7 +32,7 @@ import DownloadTransactions from './my-accounts/DownloadTransactions';
 import MyAccounts from './my-accounts/MyAccounts';
 import StatementPreferences from './my-accounts/StatementPreferences';
 import UpcomingBillPaymentsAndTransfers from './my-accounts/UpcomingBillPaymentsAndTransfers';
-import ViewAccountDetails from './my-accounts/ViewAccountDetails';
+import ViewAccountDetails from './my-accounts/view-account-details/ViewAccountDetails';
 import ViewEStatements from './my-accounts/ViewEStatements';
 import Personal from './Personal';
 import PersonalProfile from './PersonalProfile';

@@ -1,4 +1,3 @@
-import React from 'react';
 import placeholder from './AccountSecurity.png';
 
 export default function AccountSecurity() {

@@ -1,4 +1,3 @@
-import React from 'react';
 import placeholder from './ReviewAndCancelBillPayments.png';
 
 export default function ReviewAndCancelBillPayments() {

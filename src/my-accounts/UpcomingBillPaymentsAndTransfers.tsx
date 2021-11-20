@@ -1,4 +1,3 @@
-import React from 'react';
 import placeholder from './UpcomingBillPaymentsAndTransfers.png';
 
 export default function UpcomingBillPaymentsAndTransfers() {

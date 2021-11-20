@@ -1,5 +1,4 @@
 import { useIsAuthenticated } from '@azure/msal-react';
-import React from 'react';
 import HomeLoggedIn from './HomeLoggedIn';
 import HomeLoggedOut from './HomeLoggedOut';
 

@@ -1,4 +1,3 @@
-import React from 'react';
 import { useTranslation, Trans } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import Circle_White_01 from './assets/img/background/Circle_White-01.jpg';
