@@ -1,10 +1,9 @@
-import React from 'react';
 import { BrowserRouter } from 'react-router-dom';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import ContactUs from './ContactUs';
 
 export default {
-  title: 'ContactUs',
+  title: 'contact-us/ContactUs',
   component: ContactUs,
 } as ComponentMeta<typeof ContactUs>;
 
