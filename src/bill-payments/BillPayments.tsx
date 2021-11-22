@@ -1,4 +1,3 @@
-import React from 'react';
 import placeholder from './BillPayments.png';
 
 export default function BillPayments() {

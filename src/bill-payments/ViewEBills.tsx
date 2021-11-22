@@ -1,4 +1,3 @@
-import React from 'react';
 import placeholder from './ViewEBills.png';
 
 export default function ViewEBills() {

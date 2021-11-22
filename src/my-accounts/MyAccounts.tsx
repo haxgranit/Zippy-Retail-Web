@@ -1,4 +1,3 @@
-import React from 'react';
 import placeholder from './MyAccounts.png';
 
 export default function MyAccounts() {

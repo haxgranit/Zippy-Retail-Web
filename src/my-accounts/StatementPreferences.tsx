@@ -1,4 +1,3 @@
-import React from 'react';
 import placeholder from './StatementPreferences.png';
 
 export default function StatementPreferences() {

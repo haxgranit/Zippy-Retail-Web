@@ -1,4 +1,3 @@
-import React from 'react';
 import placeholder from './AutodepositSettings.png';
 
 export default function AutodepositSettings() {

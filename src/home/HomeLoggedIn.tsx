@@ -1,4 +1,3 @@
-import React from 'react';
 import { Outlet } from 'react-router-dom';
 import AccountPlaceholders from './AccountPlaceholders';
 import HorizontalNavLinks from './HorizontalNavLinks';
