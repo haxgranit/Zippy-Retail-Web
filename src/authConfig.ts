@@ -10,14 +10,14 @@ import { Configuration, LogLevel } from '@azure/msal-browser';
 export const b2cPolicies = {
   names: {
     signIn: 'B2C_1_SignIn',
-    signUp: 'B2C_1_SignUp',
+    signUpPersonal: 'B2C_1_SignUp_Personal',
   },
   authorities: {
     signIn: {
       authority: 'https://zippycashdev.b2clogin.com/zippycashdev.onmicrosoft.com/B2C_1_SignIn',
     },
-    signUp: {
-      authority: 'https://zippycashdev.b2clogin.com/zippycashdev.onmicrosoft.com/B2C_1_SignUp',
+    signUpPersonal: {
+      authority: 'https://zippycashdev.b2clogin.com/zippycashdev.onmicrosoft.com/B2C_1_SignUp_Personal',
     },
   },
   authorityDomain: 'zippycashdev.b2clogin.com',

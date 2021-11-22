@@ -15,7 +15,7 @@ export default function Signup() {
       && inProgress !== InteractionStatus.HandleRedirect) {
       instance.loginRedirect({
         ...loginRequest,
-        authority: b2cPolicies.authorities.signUp.authority,
+        authority: b2cPolicies.authorities.signUpPersonal.authority,
       });
     } else {
       instance.handleRedirectPromise();
