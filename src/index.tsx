@@ -7,12 +7,10 @@ import {
 import { MsalProvider } from '@azure/msal-react';
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
 import './i18n/config';
 import './index.css';
 import App from './App';
-import { store } from './app/store';
 import { msalConfig } from './authConfig';
 import * as serviceWorker from './serviceWorker';
 
@@ -32,13 +30,11 @@ msalInstance.addEventCallback((event: EventMessage) => {
 
 ReactDOM.render(
   <React.StrictMode>
-    <Provider store={store}>
-      <MsalProvider instance={msalInstance}>
-        <BrowserRouter>
-          <App />
-        </BrowserRouter>
-      </MsalProvider>
-    </Provider>
+    <MsalProvider instance={msalInstance}>
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
+    </MsalProvider>
   </React.StrictMode>,
   document.getElementById('root'),
 );
