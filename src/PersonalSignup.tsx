@@ -4,7 +4,7 @@ import { InteractionStatus } from '@azure/msal-browser';
 import { useNavigate } from 'react-router-dom';
 import { b2cPolicies, loginRequest } from './authConfig';
 
-export default function Signup() {
+export default function PersonalSignup() {
   const { inProgress, instance } = useMsal();
   const isAuthenticated = useIsAuthenticated();
   const navigate = useNavigate();
