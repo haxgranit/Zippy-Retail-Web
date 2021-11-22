@@ -9,11 +9,11 @@ import { Configuration, LogLevel } from '@azure/msal-browser';
  */
 export const b2cPolicies = {
   names: {
-    signUpSignIn: 'B2C_1_SignUpAndSignIn',
+    signIn: 'B2C_1_SignIn',
   },
   authorities: {
-    signUpSignIn: {
-      authority: 'https://zippycashdev.b2clogin.com/zippycashdev.onmicrosoft.com/B2C_1_SignUpAndSignIn',
+    signIn: {
+      authority: 'https://zippycashdev.b2clogin.com/zippycashdev.onmicrosoft.com/B2C_1_SignIn',
     },
   },
   authorityDomain: 'zippycashdev.b2clogin.com',
@@ -29,7 +29,7 @@ export const msalConfig: Configuration = {
     // This is the ONLY mandatory field that you need to supply.
     clientId: '682965b8-8f23-4561-a62c-c82a40aa511d',
     // Use a sign-up/sign-in user-flow as a default authority.
-    authority: b2cPolicies.authorities.signUpSignIn.authority,
+    authority: b2cPolicies.authorities.signIn.authority,
     // Mark your B2C tenant's domain as trusted.
     knownAuthorities: [b2cPolicies.authorityDomain],
     // Points to window.location.origin. You must register this URI on Azure Portal/App
