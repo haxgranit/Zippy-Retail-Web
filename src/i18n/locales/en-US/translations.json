@@ -93,5 +93,31 @@
   "personal_signup.password": "Password",
   "personal_signup.confirm_password": "Confirm Password",
   "personal_signup.agree_title": "By signing up you agree to the <1>terms and conditions</1>",
-  "personal_signup.create_your_account": "Create your account"
+  "personal_signup.create_your_account": "Create your account",
+
+  "contact-us":{
+      "CONTACT-US":"CONTACT US",
+      "Welcomin-Msg":"We welcome your comments and suggestions.Contact us in a way that's convenient for you" , 
+      "Have-Question":"Have a question?" , 
+      "Automated-Help":"Use our automated help for immediate answers to your questions." , 
+      "ChatWithUs":"Chat with us" , 
+      "Virtual-Assistant":"CIBC's Virtual Assistant is available 24/7 to answer your questions about everyday banking and is able to perfom banking transactions on your behalf." , 
+      "MeetWithUs":"Meet with us" , 
+      "Meeting-Schedule":"Schedule your meeting online - find the time and place that work for you " , 
+      "Meeting-Review-Cancel":"Review/Cancel a meeting" , 
+      "Find-Banking":"Find a banking center or ATM" , 
+      "Banking-Services":"More than 1,100 CIBC banking Centres and 3,500 bank machines across Canada offer the banking services you need " , 
+      "Banking-Branches":"Find a branch or ATM" ,
+      "Call-Number":"Find the right number to call" ,
+      "Contact-Details-Options":"Select an option to view the contact details" ,
+      "Select-Category":"Select an category" ,
+      "Asked-Questions":"Frequently Asked Questions" ,
+      "Online-Banking":"Online Banking" ,
+      "Start-Chatting":"Start chatting", 
+      "Book-Meeting":"Book a meeting",
+      "Ask":"Ask" 
+
+
+
+  }
 }
