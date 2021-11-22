@@ -1,4 +1,3 @@
-import React from 'react';
 import { useTranslation } from 'react-i18next';
 import AboutUs_Hero from './assets/img/background/AboutUs_Hero.jpg';
 import bluestrip from './assets/img/background/bluestrip.jpg';

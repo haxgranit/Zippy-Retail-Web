@@ -22,9 +22,7 @@
     "@typescript-eslint"
   ],
   "rules": {
-    "linebreak-style": 0,
-    "no-param-reassign": 0,
-    "import/no-cycle": 0,
+    "import/no-cycle": "off",
     "import/no-extraneous-dependencies": [
       "error",
       {
@@ -33,6 +31,9 @@
           "**/*.stories.tsx"
         ]
       }
-    ]
+    ],
+    "linebreak-style": "off",
+    "no-param-reassign": "off",
+    "react/react-in-jsx-scope": "off"
   }
 }

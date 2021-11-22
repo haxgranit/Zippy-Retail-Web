@@ -1,4 +1,4 @@
-import React, { FormEvent } from 'react';
+import { FormEvent } from 'react';
 import { useTranslation, Trans } from 'react-i18next';
 import { Link, useNavigate } from 'react-router-dom';
 import { useAppDispatch } from './app/hooks';
