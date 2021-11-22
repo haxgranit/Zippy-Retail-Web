@@ -17,11 +17,11 @@ interface QuestionLink {
 }
 
 const QuestionElement = ({ url, text, id }: QuestionLink): JSX.Element => (
-  <a href={url} key={id}>{text}</a>
+  <a href={url} key={id} style={{ textDecoration: 'none', padding: '8px 8px', color: 'black' }}>{text}</a>
 );
 
 export default function ContactUs(): JSX.Element {
-  const FAQs: QuestionLink[] = [{ text: 'question1', url: 'url1', id: 1 }, { text: 'question1', url: 'url1', id: 2 }];
+  const FAQs: QuestionLink[] = [{ text: 'What hapend when I link an account to my card', url: 'url1', id: 1 }, { text: 'question1', url: 'url1', id: 2 }];
   const moreQuestions: QuestionLink[] = [{ text: 'question1', url: 'url1', id: 3 }, { text: 'question1', url: 'url1', id: 4 }];
   return (
     <Container>
@@ -161,12 +161,18 @@ export default function ContactUs(): JSX.Element {
           </Row>
         </Col>
         <Col md={3}>
-          <div style={{ border: 'solid #AAAAAA 1px' }}>
-            <h6>Frequently Asked Questions</h6>
+          <Row style={{ border: 'solid #AAAAAA 1px', justifyItems: 'space-between' }}>
+            <h6 style={{ paddingTop: '10px' }}>Frequently Asked Questions</h6>
             <h6>Online Banking</h6>
             {FAQs.map((q) => (QuestionElement(q)))}
+            <hr style={
+              {
+                marginTop: '0px', height: '1px', width: '75%', margin: '10px auto',
+              }
+            }
+            />
             {moreQuestions.map((q) => (QuestionElement(q)))}
-          </div>
+          </Row>
         </Col>
       </Row>
     </Container>
