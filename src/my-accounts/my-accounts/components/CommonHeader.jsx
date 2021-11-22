@@ -6,7 +6,7 @@ import QuestionIcon from '../icons/question.png';
 function CommonHeader({ title, print }) {
   return (
     <div className="d-flex justify-content-between align-items-center">
-      <h1>{title.toUpperCase()}</h1>
+      <h3>{title.toUpperCase()}</h3>
       <div className="d-flex">
         {print && (
           <img src={PrintIcon} alt="placeholder" style={{ width: 20, height: 25, marginRight: 10 }} />
