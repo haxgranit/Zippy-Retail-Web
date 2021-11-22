@@ -36,7 +36,7 @@ export default function HomeLoggedOut() {
                         to me!
                       </Trans>
                     </h1>
-                    <Link to="/login" className="hero-button btn btn-light rounded-0">{t('home.sign_up_btn')}</Link>
+                    <Link to="/signup" className="hero-button btn btn-light rounded-0">{t('home.sign_up_btn')}</Link>
                   </div>
                 </div>
               </div>
@@ -57,7 +57,7 @@ export default function HomeLoggedOut() {
                         to me!
                       </Trans>
                     </h1>
-                    <Link to="/login" className="hero-button btn btn-light rounded-0">{t('home.sign_up_btn')}</Link>
+                    <Link to="/signup" className="hero-button btn btn-light rounded-0">{t('home.sign_up_btn')}</Link>
                   </div>
                 </div>
               </div>
@@ -78,7 +78,7 @@ export default function HomeLoggedOut() {
                         to me!
                       </Trans>
                     </h1>
-                    <Link to="/login" className="hero-button btn btn-light rounded-0">{t('home.sign_up_btn')}</Link>
+                    <Link to="/signup" className="hero-button btn btn-light rounded-0">{t('home.sign_up_btn')}</Link>
                   </div>
                 </div>
               </div>
@@ -95,7 +95,7 @@ export default function HomeLoggedOut() {
                 <h1 className="fw-bold">{t('home.business_banking_desc')}</h1>
               </div>
               <div className="col-12 col-md-6 col-lg-4">
-                <Link to="/login" className="btn btn-light rounded-0 my-button">{t('home.sign_up_btn')}</Link>
+                <Link to="/signup" className="btn btn-light rounded-0 my-button">{t('home.sign_up_btn')}</Link>
               </div>
             </div>
           </div>

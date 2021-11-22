@@ -45,17 +45,18 @@ import AccountSecurity from './account-security/AccountSecurity';
 import CustomerServices from './customer-services/CustomerServices';
 import ContactUs from './contact-us/ContactUs';
 import ManageMyAlerts from './manage-my-alerts/ManageMyAlerts';
+import Signup from './Signup';
 
 export default function App() {
   useEffect(() => AOS.init(), []);
 
   const { pathname } = useLocation();
-  const isLoginOrLogout = pathname === '/login' || pathname === '/logout';
+  const isRedirect = pathname === '/login' || pathname === '/logout' || pathname === '/signup';
 
   return (
     <div>
       <ScrollToTop />
-      {!isLoginOrLogout && <Header />}
+      {!isRedirect && <Header />}
       <Routes>
         <Route path="/" element={<Home />}>
           <Route path="account-security" element={<AccountSecurity />} />
@@ -105,8 +106,9 @@ export default function App() {
         <Route path="logout" element={<Logout />} />
         <Route path="personal" element={<Personal />} />
         <Route path="personal-profile" element={<PersonalProfile />} />
+        <Route path="signup" element={<Signup />} />
       </Routes>
-      {!isLoginOrLogout && <Footer />}
+      {!isRedirect && <Footer />}
     </div>
   );
 }

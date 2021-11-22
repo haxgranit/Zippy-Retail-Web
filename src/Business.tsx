@@ -17,7 +17,7 @@ export default function Business() {
               <div className="mb-3">
                 <h2 style={{ color: '#FF1926' }}>{t('business.business_title')}</h2>
                 <h1 className="redtitle hero-heading display-3" style={{ fontSize: '4em', paddingBottom: '20px' }}>{t('business.header_desc')}</h1>
-                <Link to="/login" className="btn rounded-0 my-buttonred">{t('business.sign_up_btn_title')}</Link>
+                <Link to="/signup" className="btn rounded-0 my-buttonred">{t('business.sign_up_btn_title')}</Link>
               </div>
             </div>
           </div>
