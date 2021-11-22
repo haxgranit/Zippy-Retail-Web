@@ -14,17 +14,18 @@ margin:1rem;
 
 interface QuestionLink {
   text: string;
-  url: string
+  url: string;
+  id:number;
 }
 
-const QuestionElement = ({ url, text } : QuestionLink): JSX.Element => (
-  <a href={url} key={url}>{text}</a>
+const QuestionElement = ({ url, text, id } : QuestionLink): JSX.Element => (
+  <a href={url} key={id}>{text}</a>
 );
 
 export default function ContactUs(): JSX.Element {
   const { t } = useTranslation();
-  const FAQs: QuestionLink[] = [{ text: 'question1', url: 'url1' }, { text: 'question1', url: 'url1' }];
-  const moreQuestions: QuestionLink[] = [{ text: 'question1', url: 'url1' }, { text: 'question1', url: 'url1' }];
+  const FAQs: QuestionLink[] = [{ text: 'question1', url: 'url1', id: 1 }, { text: 'question1', url: 'url1', id: 2 }];
+  const moreQuestions: QuestionLink[] = [{ text: 'question1', url: 'url1', id: 3 }, { text: 'question1', url: 'url1', id: 4 }];
   return (
     <Container>
       <Row>
