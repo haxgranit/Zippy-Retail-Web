@@ -1,4 +1,3 @@
-import React from 'react';
 import {
   Alert,
   Card,
@@ -10,17 +9,11 @@ import {
 } from 'react-bootstrap';
 import CommonHeader from './components/CommonHeader';
 import PanelHeader from './components/PanelHeader';
-import PrintIcon from './icons/print.png';
-import SampleImg from './icons/sample.png';
-import TargetIcon from './icons/target.png';
-import StoreMoneyIcon from './icons/store_money.png';
-import HeartIcon from './icons/heart.png';
-import CardImageContent from './icons/card_image.png';
 
 export default function MyAccounts() {
   return (
     <>
-      <CommonHeader title="My Accounts" print />
+      <CommonHeader title="My Accounts" print={false} />
       <div>
         <div className="d-flex justify-content-between">
           <p>
@@ -28,11 +21,17 @@ export default function MyAccounts() {
             ET
           </p>
           <div className="d-flex">
-            <img
-              src={PrintIcon}
-              alt="placeholder"
-              style={{ width: 20, height: 25, marginRight: 10 }}
-            />
+            <div
+              style={{
+                width: 20,
+                height: 25,
+                border: '1px dotted grey',
+                textAlign: 'center',
+                marginRight: 10,
+              }}
+            >
+              P
+            </div>
             <p>Online Security Guarantee</p>
           </div>
         </div>
@@ -40,11 +39,16 @@ export default function MyAccounts() {
           <div className="col-md-9">
             <Alert variant="primary">
               <div className="d-flex align-items-center">
-                <img
-                  src={PrintIcon}
-                  alt="placeholder"
-                  style={{ width: 40, height: 45, marginRight: 10 }}
-                />
+                <div
+                  style={{
+                    width: 40,
+                    height: 45,
+                    border: '1px dotted grey',
+                    textAlign: 'center',
+                  }}
+                >
+                  P
+                </div>
                 <div>
                   <h3>COVID-19 Support</h3>
                   <p>
@@ -92,7 +96,7 @@ export default function MyAccounts() {
             </div>
             <PanelHeader
               title="Deposite Accounts"
-              sub_title="Get up to $300 back with CIBC Global Money Transfer. > "
+              sub_title="Get up to $300 back with CIBC Global Money Transfer. "
             />
             <div className="row">
               <div className="col-md-9">
@@ -146,6 +150,7 @@ export default function MyAccounts() {
             </div>
             <PanelHeader
               title="Non-Registered Investments"
+              sub_title=""
               border_color="#B23C54"
             />
             <div style={{ padding: 10 }}>
@@ -159,6 +164,7 @@ export default function MyAccounts() {
             </div>
             <PanelHeader
               title="Registered Investments"
+              sub_title=""
               border_color="#BC6800"
             />
             <div style={{ padding: 10 }}>
@@ -168,7 +174,7 @@ export default function MyAccounts() {
                 {' > '}
               </a>
             </div>
-            <PanelHeader title="Credit" border_color="#0163A6" />
+            <PanelHeader title="Credit" border_color="#0163A6" sub_title="" />
             <div style={{ padding: 10 }}>
               <div className="d-flex justify-content-end">
                 <span style={{ color: 'grey' }}>Icon</span>
@@ -193,11 +199,17 @@ export default function MyAccounts() {
                   paddingTop: 25,
                 }}
               >
-                <img
-                  src={TargetIcon}
-                  alt="placeholder"
-                  style={{ width: 40, height: 45, marginRight: 10 }}
-                />
+                <div
+                  style={{
+                    width: 40,
+                    height: 45,
+                    border: '1px dotted grey',
+                    textAlign: 'center',
+                    marginRight: 10,
+                  }}
+                >
+                  P
+                </div>
                 <p style={{ fontWeight: 'bold', marginTop: 10 }}>
                   Create a savings goal
                 </p>
@@ -214,11 +226,17 @@ export default function MyAccounts() {
                   paddingTop: 25,
                 }}
               >
-                <img
-                  src={StoreMoneyIcon}
-                  alt="placeholder"
-                  style={{ width: 40, height: 45, marginRight: 10 }}
-                />
+                <div
+                  style={{
+                    width: 40,
+                    height: 45,
+                    border: '1px dotted grey',
+                    textAlign: 'center',
+                    marginRight: 10,
+                  }}
+                >
+                  P
+                </div>
                 <span style={{ fontWeight: 'bold', marginTop: 12 }}>
                   Your net worth:
                 </span>
@@ -258,11 +276,17 @@ export default function MyAccounts() {
                   paddingTop: 25,
                 }}
               >
-                <img
-                  src={HeartIcon}
-                  alt="placeholder"
-                  style={{ width: 40, height: 45, marginRight: 10 }}
-                />
+                <div
+                  style={{
+                    width: 40,
+                    height: 45,
+                    border: '1px dotted grey',
+                    textAlign: 'center',
+                    marginRight: 10,
+                  }}
+                >
+                  P
+                </div>
                 <p
                   style={{
                     fontWeight: 'bold',
@@ -281,11 +305,17 @@ export default function MyAccounts() {
               className="d-flex"
               style={{ padding: 25, marginTop: 15, backgroundColor: '#F2F3F2' }}
             >
-              <img
-                src={CardImageContent}
-                alt="placeholder"
-                style={{ width: 145, height: 160, marginRight: 10 }}
-              />
+              <div
+                style={{
+                  width: 145,
+                  height: 160,
+                  border: '1px dotted grey',
+                  textAlign: 'center',
+                  marginRight: 10,
+                }}
+              >
+                P
+              </div>
               <div style={{ paddingLeft: 15 }}>
                 <p style={{ fontWeight: 'bold', fontSize: 20, marginTop: 10 }}>
                   Save up to 10 cents per litre on gas(1)
@@ -323,11 +353,16 @@ export default function MyAccounts() {
                   height: 50,
                 }}
               >
-                <img
-                  src={PrintIcon}
-                  style={{ width: 20, marginRight: 5 }}
-                  alt="placeholder"
-                />
+                <div
+                  style={{
+                    width: 20,
+                    border: '1px dotted grey',
+                    textAlign: 'center',
+                    marginRight: 5,
+                  }}
+                >
+                  P
+                </div>
                 <div className="d-flex flex-column align-items-start justify-content-start">
                   <span style={{ fontSize: 13 }}>DEPOSIT</span>
                   <span style={{ fontSize: 13 }}>PROTETION</span>
@@ -342,9 +377,17 @@ export default function MyAccounts() {
                 Online Banking support line at 1-888-872-2422
               </p>
             </div>
-            <div style={{ padding: 10, backgroundColor: '#F2F3F2', borderBottom: '1px solid grey' }}>
+            <div
+              style={{
+                padding: 10,
+                backgroundColor: '#F2F3F2',
+                borderBottom: '1px solid grey',
+              }}
+            >
               <span style={{ color: 'rgb(220, 53, 69)' }}>+</span>
-              <span style={{ fontWeight: 500 }}>Trademarks and Disclaimers</span>
+              <span style={{ fontWeight: 500 }}>
+                Trademarks and Disclaimers
+              </span>
             </div>
           </div>
           <div className="col-md-3">
@@ -522,7 +565,17 @@ export default function MyAccounts() {
               </Card.Body>
             </Card>
             <Card style={{ marginTop: 10, backgroundColor: '#F2F3F2' }}>
-              <Card.Img variant="top" src={SampleImg} />
+              <div
+                style={{
+                  width: 195,
+                  height: 145,
+                  border: '1px dotted grey',
+                  textAlign: 'center',
+                  marginRight: 10,
+                }}
+              >
+                P
+              </div>
               <Card.Body>
                 <Card.Text>
                   Travelling out of province or the country?

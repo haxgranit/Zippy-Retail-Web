@@ -1,7 +1,4 @@
-import React from 'react';
-import CopyIcon from '../icons/copy.png';
-import PrintIcon from '../icons/print.png';
-import QuestionIcon from '../icons/question.png';
+import PropTypes from 'prop-types';
 
 function CommonHeader({ title, print }) {
   return (
@@ -9,18 +6,51 @@ function CommonHeader({ title, print }) {
       <h3>{title.toUpperCase()}</h3>
       <div className="d-flex">
         {print && (
-          <img src={PrintIcon} alt="placeholder" style={{ width: 20, height: 25, marginRight: 10 }} />
+          <div
+            style={{
+              width: 20,
+              height: 25,
+              border: '1px dotted grey',
+              textAlign: 'center',
+              marginRight: 10,
+            }}
+            title="print"
+          >
+            P
+          </div>
         )}
-        <img src={CopyIcon} alt="placeholder" style={{ width: 20, height: 25, marginRight: 10 }} />
-        <img src={QuestionIcon} alt="placeholder" style={{ width: 20, height: 25, marginRight: 10 }} />
+        <div
+          style={{
+            width: 20,
+            height: 25,
+            border: '1px dotted grey',
+            textAlign: 'center',
+            marginRight: 10,
+          }}
+          title="copy"
+        >
+          P
+        </div>
+        <div
+          style={{
+            width: 20,
+            height: 25,
+            border: '1px dotted grey',
+            textAlign: 'center',
+            marginRight: 10,
+          }}
+          title="question"
+        >
+          P
+        </div>
       </div>
     </div>
   );
 }
 
 CommonHeader.propTypes = {
-  title: String,
-  print: Boolean,
+  title: PropTypes.string,
+  print: PropTypes.bool,
 };
 
 CommonHeader.defaultProps = {

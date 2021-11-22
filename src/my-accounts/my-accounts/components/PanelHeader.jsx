@@ -1,4 +1,4 @@
-import React from 'react';
+import PropTypes from 'prop-types';
 
 function PanelHeader({ title, sub_title, border_color }) {
   return (
@@ -28,13 +28,12 @@ function PanelHeader({ title, sub_title, border_color }) {
 }
 
 PanelHeader.propTypes = {
-  title: String,
-  border_color: String,
-  sub_title: String,
+  title: PropTypes.string.isRequired,
+  border_color: PropTypes.string,
+  sub_title: PropTypes.string,
 };
 
 PanelHeader.defaultProps = {
-  title: '',
   border_color: 'green',
   sub_title: '',
 };

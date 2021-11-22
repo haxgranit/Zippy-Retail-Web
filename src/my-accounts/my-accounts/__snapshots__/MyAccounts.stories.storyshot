@@ -1,0 +1,1519 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots MyAccounts Default 1`] = `
+Array [
+  <div
+    className="d-flex justify-content-between align-items-center"
+  >
+    <h3>
+      MY ACCOUNTS
+    </h3>
+    <div
+      className="d-flex"
+    >
+      <div
+        style={
+          Object {
+            "border": "1px dotted grey",
+            "height": 25,
+            "marginRight": 10,
+            "textAlign": "center",
+            "width": 20,
+          }
+        }
+        title="copy"
+      >
+        P
+      </div>
+      <div
+        style={
+          Object {
+            "border": "1px dotted grey",
+            "height": 25,
+            "marginRight": 10,
+            "textAlign": "center",
+            "width": 20,
+          }
+        }
+        title="question"
+      >
+        P
+      </div>
+    </div>
+  </div>,
+  <div>
+    <div
+      className="d-flex justify-content-between"
+    >
+      <p>
+        Welcome DUANE TOUGH. Your last visit: November 9, 2021 at 4:54 p.m. ET
+      </p>
+      <div
+        className="d-flex"
+      >
+        <div
+          style={
+            Object {
+              "border": "1px dotted grey",
+              "height": 25,
+              "marginRight": 10,
+              "textAlign": "center",
+              "width": 20,
+            }
+          }
+        >
+          P
+        </div>
+        <p>
+          Online Security Guarantee
+        </p>
+      </div>
+    </div>
+    <div
+      className="row"
+    >
+      <div
+        className="col-md-9"
+      >
+        <div
+          className="fade alert alert-primary show"
+          role="alert"
+        >
+          <div
+            className="d-flex align-items-center"
+          >
+            <div
+              style={
+                Object {
+                  "border": "1px dotted grey",
+                  "height": 45,
+                  "textAlign": "center",
+                  "width": 40,
+                }
+              }
+            >
+              P
+            </div>
+            <div>
+              <h3>
+                COVID-19 Support
+              </h3>
+              <p>
+                We
+                &apos;
+                re commited to supporting you. Find the latest information and available resources.
+              </p>
+              <div
+                className="d-flex justify-content-end"
+              >
+                <a
+                  className="text-danger"
+                  href="/home"
+                >
+                  Go to COVID-19 Support
+                   &gt;
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          className="fade alert alert-primary alert-dismissible show"
+          role="alert"
+        >
+          <button
+            aria-label="Close alert"
+            className="btn-close"
+            onClick={[Function]}
+            type="button"
+          />
+          <p
+            style={
+              Object {
+                "marginTop": 10,
+              }
+            }
+          >
+            You
+            &lsquo;
+            ve been rewarded with a new offer.
+            <a
+              href="/"
+            >
+              Check out your offer now before it expires!
+            </a>
+          </p>
+        </div>
+        <div
+          className="row"
+        >
+          <div
+            className="col-md-3 text-center d-flex flex-column align-items-center justify-content-center border-right"
+          >
+            <p>
+              Deposit Accounts
+            </p>
+            <p>
+              $37,139.59
+            </p>
+          </div>
+          <div
+            className="col-md-3 text-center d-flex flex-column align-items-center justify-content-center border-left"
+          >
+            <p>
+              +
+            </p>
+            <p>
+              Apply for a new product
+            </p>
+          </div>
+        </div>
+        <div
+          className="d-flex justify-content-between"
+        >
+          <div
+            className="d-flex"
+          >
+            <p
+              style={
+                Object {
+                  "margin": "auto",
+                }
+              }
+            >
+              View: 
+            </p>
+            <div
+              className="nav"
+              onKeyDown={[Function]}
+            >
+              <a
+                className="nav-link"
+                data-rr-ui-event-key={null}
+                onClick={[Function]}
+                onKeyDown={[Function]}
+                role="button"
+                tabIndex={0}
+              >
+                List
+              </a>
+              <a
+                className="nav-link"
+                data-rr-ui-event-key={null}
+                onClick={[Function]}
+                onKeyDown={[Function]}
+                role="button"
+                tabIndex={0}
+              >
+                Pie Charts
+              </a>
+            </div>
+          </div>
+          <h5>
+            Balance
+          </h5>
+        </div>
+        <div
+          className="d-flex align-items-center"
+          style={
+            Object {
+              "backgroundColor": "#F2F3F2",
+              "borderBottom": "2px solid grey",
+              "borderTop": "3px solid green",
+              "marginTop": 10,
+              "paddingBottom": 10,
+              "paddingLeft": 5,
+              "paddingTop": 10,
+            }
+          }
+        >
+          <span
+            style={
+              Object {
+                "fontWeight": 500,
+              }
+            }
+          >
+            Deposite Accounts
+             
+            |
+             
+          </span>
+          <a
+            className="text-decoration-none"
+            href="/"
+            style={
+              Object {
+                "color": "rgb(220, 53, 69)",
+                "fontSize": 14,
+                "marginLeft": 5,
+              }
+            }
+          >
+            Get up to $300 back with CIBC Global Money Transfer. 
+          </a>
+        </div>
+        <div
+          className="row"
+        >
+          <div
+            className="col-md-9"
+          >
+            <div
+              className="d-flex justify-content-between align-items-center"
+              style={
+                Object {
+                  "paddingBottom": 10,
+                  "paddingTop": 10,
+                }
+              }
+            >
+              <div
+                className="d-flex flex-column"
+                style={
+                  Object {
+                    "borderLeft": "2px solid green",
+                    "paddingLeft": 10,
+                  }
+                }
+              >
+                <a
+                  href="/"
+                  style={
+                    Object {
+                      "color": "rgb(220, 53, 69)",
+                    }
+                  }
+                >
+                  Chequing
+                </a>
+                <span
+                  style={
+                    Object {
+                      "fontSize": 12,
+                    }
+                  }
+                >
+                  01702-81-99639
+                </span>
+              </div>
+              <span>
+                $ 2,260.57
+              </span>
+            </div>
+            <div
+              className="d-flex justify-content-between align-items-center"
+              style={
+                Object {
+                  "paddingBottom": 10,
+                  "paddingTop": 10,
+                }
+              }
+            >
+              <div
+                className="d-flex flex-column"
+                style={
+                  Object {
+                    "borderLeft": "2px solid green",
+                    "paddingLeft": 10,
+                  }
+                }
+              >
+                <a
+                  href="/"
+                  style={
+                    Object {
+                      "color": "rgb(220, 53, 69)",
+                    }
+                  }
+                >
+                  Chequing
+                </a>
+                <span
+                  style={
+                    Object {
+                      "fontSize": 12,
+                    }
+                  }
+                >
+                  01702-81-99639
+                </span>
+              </div>
+              <span>
+                $ 2,260.57
+              </span>
+            </div>
+            <div
+              className="d-flex justify-content-between align-items-center"
+              style={
+                Object {
+                  "paddingBottom": 10,
+                  "paddingTop": 10,
+                }
+              }
+            >
+              <div
+                className="d-flex flex-column"
+                style={
+                  Object {
+                    "borderLeft": "2px solid green",
+                    "paddingLeft": 10,
+                  }
+                }
+              >
+                <a
+                  href="/"
+                  style={
+                    Object {
+                      "color": "rgb(220, 53, 69)",
+                    }
+                  }
+                >
+                  Chequing
+                </a>
+                <span
+                  style={
+                    Object {
+                      "fontSize": 12,
+                    }
+                  }
+                >
+                  01702-81-99639
+                </span>
+              </div>
+              <span>
+                $ 2,260.57
+              </span>
+            </div>
+          </div>
+          <div
+            className="col-md-3"
+          >
+            Graph Here
+          </div>
+        </div>
+        <div
+          className="d-flex align-items-center"
+          style={
+            Object {
+              "backgroundColor": "#F2F3F2",
+              "borderBottom": "2px solid grey",
+              "borderTop": "3px solid #B23C54",
+              "marginTop": 10,
+              "paddingBottom": 10,
+              "paddingLeft": 5,
+              "paddingTop": 10,
+            }
+          }
+        >
+          <span
+            style={
+              Object {
+                "fontWeight": 500,
+              }
+            }
+          >
+            Non-Registered Investments
+             
+            |
+             
+          </span>
+          <a
+            className="text-decoration-none"
+            href="/"
+            style={
+              Object {
+                "color": "rgb(220, 53, 69)",
+                "fontSize": 14,
+                "marginLeft": 5,
+              }
+            }
+          >
+            
+          </a>
+        </div>
+        <div
+          style={
+            Object {
+              "padding": 10,
+            }
+          }
+        >
+          <p>
+            You don't have any non-registered investments with CIBC
+          </p>
+          <a
+            href="/"
+            style={
+              Object {
+                "color": "rgb(220, 53, 69)",
+                "fontSize": 14,
+              }
+            }
+          >
+            Kick-start your investing with CIBC Investor's Edge
+             &gt; 
+          </a>
+        </div>
+        <div
+          className="d-flex align-items-center"
+          style={
+            Object {
+              "backgroundColor": "#F2F3F2",
+              "borderBottom": "2px solid grey",
+              "borderTop": "3px solid #BC6800",
+              "marginTop": 10,
+              "paddingBottom": 10,
+              "paddingLeft": 5,
+              "paddingTop": 10,
+            }
+          }
+        >
+          <span
+            style={
+              Object {
+                "fontWeight": 500,
+              }
+            }
+          >
+            Registered Investments
+             
+            |
+             
+          </span>
+          <a
+            className="text-decoration-none"
+            href="/"
+            style={
+              Object {
+                "color": "rgb(220, 53, 69)",
+                "fontSize": 14,
+                "marginLeft": 5,
+              }
+            }
+          >
+            
+          </a>
+        </div>
+        <div
+          style={
+            Object {
+              "padding": 10,
+            }
+          }
+        >
+          <a
+            href="/"
+            style={
+              Object {
+                "color": "rgb(220, 53, 69)",
+                "fontSize": 14,
+              }
+            }
+          >
+            Grow your money with special interest rates on our TFSA and RRSP savings accounts
+             &gt; 
+          </a>
+        </div>
+        <div
+          className="d-flex align-items-center"
+          style={
+            Object {
+              "backgroundColor": "#F2F3F2",
+              "borderBottom": "2px solid grey",
+              "borderTop": "3px solid #0163A6",
+              "marginTop": 10,
+              "paddingBottom": 10,
+              "paddingLeft": 5,
+              "paddingTop": 10,
+            }
+          }
+        >
+          <span
+            style={
+              Object {
+                "fontWeight": 500,
+              }
+            }
+          >
+            Credit
+             
+            |
+             
+          </span>
+          <a
+            className="text-decoration-none"
+            href="/"
+            style={
+              Object {
+                "color": "rgb(220, 53, 69)",
+                "fontSize": 14,
+                "marginLeft": 5,
+              }
+            }
+          >
+            
+          </a>
+        </div>
+        <div
+          style={
+            Object {
+              "padding": 10,
+            }
+          }
+        >
+          <div
+            className="d-flex justify-content-end"
+          >
+            <span
+              style={
+                Object {
+                  "color": "grey",
+                }
+              }
+            >
+              Icon
+            </span>
+            <span>
+              Active Card
+            </span>
+          </div>
+          <a
+            href="/"
+            style={
+              Object {
+                "color": "rgb(220, 53, 69)",
+                "fontSize": 14,
+              }
+            }
+          >
+            Join and get up to $1,200 in value with the CIBC Aventura Visa Infinite Card Conditions apply.
+             &gt; 
+          </a>
+        </div>
+        <div
+          className="d-flex"
+        >
+          <div
+            className="d-flex flex-column align-items-center"
+            style={
+              Object {
+                "backgroundColor": "#F2F3F2",
+                "borderTop": "3px solid grey",
+                "flex": 1,
+                "marginLeft": 5,
+                "padding": 10,
+                "paddingBottom": 40,
+                "paddingTop": 25,
+              }
+            }
+          >
+            <div
+              style={
+                Object {
+                  "border": "1px dotted grey",
+                  "height": 45,
+                  "marginRight": 10,
+                  "textAlign": "center",
+                  "width": 40,
+                }
+              }
+            >
+              P
+            </div>
+            <p
+              style={
+                Object {
+                  "fontWeight": "bold",
+                  "marginTop": 10,
+                }
+              }
+            >
+              Create a savings goal
+            </p>
+          </div>
+          <div
+            className="d-flex flex-column align-items-center"
+            style={
+              Object {
+                "backgroundColor": "#F2F3F2",
+                "borderTop": "3px solid grey",
+                "flex": 1,
+                "marginLeft": 5,
+                "padding": 10,
+                "paddingBottom": 40,
+                "paddingTop": 25,
+              }
+            }
+          >
+            <div
+              style={
+                Object {
+                  "border": "1px dotted grey",
+                  "height": 45,
+                  "marginRight": 10,
+                  "textAlign": "center",
+                  "width": 40,
+                }
+              }
+            >
+              P
+            </div>
+            <span
+              style={
+                Object {
+                  "fontWeight": "bold",
+                  "marginTop": 12,
+                }
+              }
+            >
+              Your net worth:
+            </span>
+            <span
+              style={
+                Object {
+                  "fontWeight": "bold",
+                }
+              }
+            >
+              $337,139.59
+            </span>
+            <div
+              className="d-flex flex-column justify-content-start"
+              style={
+                Object {
+                  "marginTop": 15,
+                  "width": "100%",
+                }
+              }
+            >
+              <span
+                style={
+                  Object {
+                    "fontWeight": "bold",
+                  }
+                }
+              >
+                Assets:
+              </span>
+              <span>
+                $337,139.59
+              </span>
+              <div
+                style={
+                  Object {
+                    "backgroundColor": "#5E5C99",
+                    "borderRadius": 3,
+                    "height": 10,
+                    "width": "100%",
+                  }
+                }
+              />
+            </div>
+            <div
+              className="d-flex flex-column justify-content-start"
+              style={
+                Object {
+                  "marginTop": 15,
+                  "width": "100%",
+                }
+              }
+            >
+              <span
+                style={
+                  Object {
+                    "fontWeight": "bold",
+                  }
+                }
+              >
+                Liabilities:
+              </span>
+              <span>
+                $0.00
+              </span>
+            </div>
+          </div>
+          <div
+            className="d-flex flex-column align-items-center"
+            style={
+              Object {
+                "backgroundColor": "#F2F3F2",
+                "borderTop": "3px solid grey",
+                "flex": 1,
+                "marginLeft": 5,
+                "padding": 10,
+                "paddingBottom": 40,
+                "paddingTop": 25,
+              }
+            }
+          >
+            <div
+              style={
+                Object {
+                  "border": "1px dotted grey",
+                  "height": 45,
+                  "marginRight": 10,
+                  "textAlign": "center",
+                  "width": 40,
+                }
+              }
+            >
+              P
+            </div>
+            <p
+              style={
+                Object {
+                  "fontWeight": "bold",
+                  "marginTop": 10,
+                  "textAlign": "center",
+                }
+              }
+            >
+              Your CIBC Financial HealthCheck goal is to manage your money better
+            </p>
+            <span
+              style={
+                Object {
+                  "fontWeight": "bold",
+                }
+              }
+            >
+              Last completed:
+            </span>
+            <span>
+              September 16, 2021
+            </span>
+          </div>
+        </div>
+        <div
+          className="d-flex"
+          style={
+            Object {
+              "backgroundColor": "#F2F3F2",
+              "marginTop": 15,
+              "padding": 25,
+            }
+          }
+        >
+          <div
+            style={
+              Object {
+                "border": "1px dotted grey",
+                "height": 160,
+                "marginRight": 10,
+                "textAlign": "center",
+                "width": 145,
+              }
+            }
+          >
+            P
+          </div>
+          <div
+            style={
+              Object {
+                "paddingLeft": 15,
+              }
+            }
+          >
+            <p
+              style={
+                Object {
+                  "fontSize": 20,
+                  "fontWeight": "bold",
+                  "marginTop": 10,
+                }
+              }
+            >
+              Save up to 10 cents per litre on gas(1)
+            </p>
+            <p>
+              Link and use your CIBC card with Journie Rewards to save on gas at participating Pioneer, Fas Gas, Ultramar and Chevron gas stations.(2)
+            </p>
+            <a
+              href="/"
+              style={
+                Object {
+                  "color": "rgb(220, 53, 69)",
+                }
+              }
+            >
+              Link your card
+               &gt;
+            </a>
+          </div>
+        </div>
+        <div
+          className="d-flex"
+          style={
+            Object {
+              "borderBottom": "2px solid grey",
+              "borderTop": "1px solid grey",
+              "marginTop": 10,
+              "paddingBottom": 10,
+              "paddingTop": 15,
+            }
+          }
+        >
+          <p
+            style={
+              Object {
+                "color": "#5A5F61",
+              }
+            }
+          >
+            CIBC is a member of Canada Deposit Insurance Corporation (CDIC)
+          </p>
+          <button
+            className="d-flex align-items-center btn btn-primary"
+            disabled={false}
+            style={
+              Object {
+                "backgroundColor": "#64296D",
+                "border": "none",
+                "borderRadius": 50,
+                "height": 50,
+              }
+            }
+            type="button"
+          >
+            <div
+              style={
+                Object {
+                  "border": "1px dotted grey",
+                  "marginRight": 5,
+                  "textAlign": "center",
+                  "width": 20,
+                }
+              }
+            >
+              P
+            </div>
+            <div
+              className="d-flex flex-column align-items-start justify-content-start"
+            >
+              <span
+                style={
+                  Object {
+                    "fontSize": 13,
+                  }
+                }
+              >
+                DEPOSIT
+              </span>
+              <span
+                style={
+                  Object {
+                    "fontSize": 13,
+                  }
+                }
+              >
+                PROTETION
+              </span>
+            </div>
+          </button>
+        </div>
+        <div
+          style={
+            Object {
+              "marginTop": 10,
+            }
+          }
+        >
+          <p
+            style={
+              Object {
+                "fontWeight": "bold",
+              }
+            }
+          >
+            Note:
+          </p>
+          <p
+            style={
+              Object {
+                "color": "#5A5F61",
+              }
+            }
+          >
+            "My Accounts" includes the online accounts you hold with CIBC and its affilliates. For help, please contact the CIBC Online Banking support line at 1-888-872-2422
+          </p>
+        </div>
+        <div
+          style={
+            Object {
+              "backgroundColor": "#F2F3F2",
+              "borderBottom": "1px solid grey",
+              "padding": 10,
+            }
+          }
+        >
+          <span
+            style={
+              Object {
+                "color": "rgb(220, 53, 69)",
+              }
+            }
+          >
+            +
+          </span>
+          <span
+            style={
+              Object {
+                "fontWeight": 500,
+              }
+            }
+          >
+            Trademarks and Disclaimers
+          </span>
+        </div>
+      </div>
+      <div
+        className="col-md-3"
+      >
+        <div
+          className="p-3 bg-white card"
+        >
+          <div
+            className="card-title h5"
+          >
+            Quick Transfer
+          </div>
+          <div
+            className="card-body"
+          >
+            <p>
+              Cant find your account in the list?
+            </p>
+            <label
+              className="form-label"
+            >
+              From:
+            </label>
+            <select
+              className="form-select"
+            >
+              <option>
+                Choose an account
+              </option>
+              <option
+                value="1"
+              >
+                One
+              </option>
+              <option
+                value="2"
+              >
+                Two
+              </option>
+              <option
+                value="3"
+              >
+                Three
+              </option>
+            </select>
+            <label
+              className="form-label"
+            >
+              To:
+            </label>
+            <select
+              className="form-select"
+            >
+              <option>
+                Choose an account
+              </option>
+              <option
+                value="1"
+              >
+                One
+              </option>
+              <option
+                value="2"
+              >
+                Two
+              </option>
+              <option
+                value="3"
+              >
+                Three
+              </option>
+            </select>
+            <label
+              className="form-label"
+            >
+              Amount:
+            </label>
+            <div
+              className="mb-3 input-group"
+            >
+              <span
+                className="input-group-text"
+                id="basic-addon1"
+              >
+                $
+              </span>
+              <input
+                aria-describedby="basic-addon1"
+                aria-label="Username"
+                className="form-control"
+                placeholder="Username"
+              />
+            </div>
+            <button
+              className="btn btn-danger"
+              disabled={false}
+              type="button"
+            >
+              Next
+            </button>
+          </div>
+        </div>
+        <div
+          className="bg-white card"
+          style={
+            Object {
+              "marginTop": 10,
+            }
+          }
+        >
+          <div
+            className="card-body"
+          >
+            <p>
+              My Profile
+            </p>
+            <div
+              style={
+                Object {
+                  "borderBottom": "1px solid grey",
+                }
+              }
+            >
+              <div
+                className="d-flex justify-content-between"
+              >
+                <p>
+                  <span
+                    style={
+                      Object {
+                        "color": "rgb(220, 53, 69)",
+                      }
+                    }
+                  >
+                    -
+                  </span>
+                  <span
+                    style={
+                      Object {
+                        "fontSize": 14,
+                        "fontWeight": "bold",
+                      }
+                    }
+                  >
+                    Home Address
+                  </span>
+                </p>
+                <span>
+                  Edit
+                </span>
+              </div>
+              <div
+                style={
+                  Object {
+                    "paddingLeft": 10,
+                  }
+                }
+              >
+                <p
+                  style={
+                    Object {
+                      "fontSize": 14,
+                    }
+                  }
+                >
+                  717-257 ADELAIDE ST W TORONTO, ON M5H 4E7
+                </p>
+              </div>
+            </div>
+            <div>
+              <div
+                className="d-flex justify-content-between"
+              >
+                <p>
+                  <span
+                    style={
+                      Object {
+                        "color": "rgb(220, 53, 69)",
+                      }
+                    }
+                  >
+                    -
+                  </span>
+                  <span
+                    style={
+                      Object {
+                        "fontSize": 14,
+                        "fontWeight": "bold",
+                      }
+                    }
+                  >
+                    Contact Details
+                  </span>
+                </p>
+                <span>
+                  Edit
+                </span>
+              </div>
+              <div
+                style={
+                  Object {
+                    "paddingLeft": 10,
+                  }
+                }
+              >
+                <span
+                  style={
+                    Object {
+                      "fontSize": 14,
+                      "fontWeight": "bold",
+                    }
+                  }
+                >
+                  Email
+                </span>
+                <p
+                  style={
+                    Object {
+                      "fontSize": 14,
+                    }
+                  }
+                >
+                  dtough@hotmail.com
+                </p>
+                <span
+                  style={
+                    Object {
+                      "fontSize": 14,
+                      "fontWeight": "bold",
+                    }
+                  }
+                >
+                  Home
+                </span>
+                <p
+                  style={
+                    Object {
+                      "fontSize": 14,
+                    }
+                  }
+                >
+                  410-553-1372
+                </p>
+                <span
+                  style={
+                    Object {
+                      "fontSize": 14,
+                      "fontWeight": "bold",
+                    }
+                  }
+                >
+                  Mobile
+                </span>
+                <p
+                  style={
+                    Object {
+                      "fontSize": 14,
+                    }
+                  }
+                >
+                  410-553-1372
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          className="bg-white card"
+          style={
+            Object {
+              "marginTop": 10,
+            }
+          }
+        >
+          <div
+            className="d-flex flex-column card-body"
+          >
+            <p>
+              Quick Links
+            </p>
+            <a
+              className="text-decoration-none text-black"
+              href="/"
+              style={
+                Object {
+                  "fontSize": 12,
+                  "marginBottom": 5,
+                  "marginTop": 5,
+                }
+              }
+            >
+              Stop payments
+              <span
+                style={
+                  Object {
+                    "color": "rgb(220, 53, 69)",
+                    "marginLeft": 5,
+                  }
+                }
+              >
+                &gt;
+              </span>
+            </a>
+            <a
+              className="text-decoration-none text-black"
+              href="/"
+              style={
+                Object {
+                  "fontSize": 12,
+                  "marginBottom": 5,
+                  "marginTop": 5,
+                }
+              }
+            >
+              Change your password
+              <span
+                style={
+                  Object {
+                    "color": "rgb(220, 53, 69)",
+                    "marginLeft": 5,
+                  }
+                }
+              >
+                &gt;
+              </span>
+            </a>
+            <a
+              className="text-decoration-none text-black"
+              href="/"
+              style={
+                Object {
+                  "fontSize": 12,
+                  "marginBottom": 5,
+                  "marginTop": 5,
+                }
+              }
+            >
+              Void Cheque / Direct Deposit Form (PDF, 510KB)
+              <span
+                style={
+                  Object {
+                    "color": "rgb(220, 53, 69)",
+                    "marginLeft": 5,
+                  }
+                }
+              >
+                &gt;
+              </span>
+            </a>
+            <a
+              className="text-decoration-none text-black"
+              href="/"
+              style={
+                Object {
+                  "fontSize": 12,
+                  "marginBottom": 5,
+                  "marginTop": 5,
+                }
+              }
+            >
+              Sign up for and view your eStatements
+              <span
+                style={
+                  Object {
+                    "color": "rgb(220, 53, 69)",
+                    "marginLeft": 5,
+                  }
+                }
+              >
+                &gt;
+              </span>
+            </a>
+            <a
+              className="text-decoration-none text-black"
+              href="/"
+              style={
+                Object {
+                  "fontSize": 12,
+                  "marginBottom": 5,
+                  "marginTop": 5,
+                }
+              }
+            >
+              Go to CIBC Rewards
+              <span
+                style={
+                  Object {
+                    "color": "rgb(220, 53, 69)",
+                    "marginLeft": 5,
+                  }
+                }
+              >
+                &gt;
+              </span>
+            </a>
+            <a
+              className="text-decoration-none text-black"
+              href="/"
+              style={
+                Object {
+                  "fontSize": 12,
+                  "marginBottom": 5,
+                  "marginTop": 5,
+                }
+              }
+            >
+              Apply for a credit limit increase
+              <span
+                style={
+                  Object {
+                    "color": "rgb(220, 53, 69)",
+                    "marginLeft": 5,
+                  }
+                }
+              >
+                &gt;
+              </span>
+            </a>
+            <a
+              className="text-decoration-none text-black"
+              href="/"
+              style={
+                Object {
+                  "fontSize": 12,
+                  "marginBottom": 5,
+                  "marginTop": 5,
+                }
+              }
+            >
+              Register for FREE SPC (Student and Youth Clients)
+              <span
+                style={
+                  Object {
+                    "color": "rgb(220, 53, 69)",
+                    "marginLeft": 5,
+                  }
+                }
+              >
+                &gt;
+              </span>
+            </a>
+            <a
+              className="text-decoration-none text-black"
+              href="/"
+              style={
+                Object {
+                  "fontSize": 12,
+                  "marginBottom": 5,
+                  "marginTop": 5,
+                }
+              }
+            >
+              Link my cards to Journie Rewards
+              <span
+                style={
+                  Object {
+                    "color": "rgb(220, 53, 69)",
+                    "marginLeft": 5,
+                  }
+                }
+              >
+                &gt;
+              </span>
+            </a>
+            <div
+              className="d-flex flex-column justify-content-center align-items-center"
+            >
+              <button
+                className="btn btn-outline-danger"
+                disabled={false}
+                style={
+                  Object {
+                    "fontSize": 13,
+                  }
+                }
+                type="button"
+              >
+                Show more
+              </button>
+              <a
+                className="text-decoration-none text-black"
+                href="/"
+                style={
+                  Object {
+                    "fontSize": 13,
+                    "marginTop": 5,
+                  }
+                }
+              >
+                Show all
+              </a>
+            </div>
+          </div>
+        </div>
+        <div
+          className="card"
+          style={
+            Object {
+              "backgroundColor": "#F2F3F2",
+              "marginTop": 10,
+            }
+          }
+        >
+          <div
+            style={
+              Object {
+                "border": "1px dotted grey",
+                "height": 145,
+                "marginRight": 10,
+                "textAlign": "center",
+                "width": 195,
+              }
+            }
+          >
+            P
+          </div>
+          <div
+            className="card-body"
+          >
+            <p
+              className="card-text"
+            >
+              Travelling out of province or the country?
+            </p>
+            <p
+              style={
+                Object {
+                  "fontSize": 13,
+                }
+              }
+            >
+              Make sure you're protected. Consider CIBC Travel Medical Insurancce
+            </p>
+            <a
+              href="/"
+              style={
+                Object {
+                  "color": "rgb(220, 53, 69)",
+                }
+              }
+            >
+              Learn More
+               &gt; 
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>,
+]
+`;
