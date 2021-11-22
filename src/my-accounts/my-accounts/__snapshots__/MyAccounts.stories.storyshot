@@ -99,9 +99,7 @@ Array [
                 COVID-19 Support
               </h3>
               <p>
-                We
-                &apos;
-                re commited to supporting you. Find the latest information and available resources.
+                We're commited to supporting you. Find the latest information and available resources.
               </p>
               <div
                 className="d-flex justify-content-end"
@@ -134,9 +132,7 @@ Array [
               }
             }
           >
-            You
-            &lsquo;
-            ve been rewarded with a new offer.
+            You‘ve been rewarded with a new offer.
             <a
               href="/"
             >
