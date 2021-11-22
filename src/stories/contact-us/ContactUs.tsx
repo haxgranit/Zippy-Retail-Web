@@ -14,11 +14,11 @@ margin:1rem;
 
 interface QuestionLink {
   text: string;
-  url: string;
+  url: string
 }
 
 const QuestionElement = ({ url, text } : QuestionLink): JSX.Element => (
-  <a href={url}>{text}</a>
+  <a href={url} key={url}>{text}</a>
 );
 
 export default function ContactUs(): JSX.Element {
