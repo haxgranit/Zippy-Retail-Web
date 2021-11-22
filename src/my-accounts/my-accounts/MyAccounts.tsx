@@ -52,9 +52,7 @@ export default function MyAccounts() {
                 <div>
                   <h3>COVID-19 Support</h3>
                   <p>
-                    We
-                    {'&apos;'}
-                    re commited to supporting you. Find the latest information
+                    We&apos;re commited to supporting you. Find the latest information
                     and available resources.
                   </p>
                   <div className="d-flex justify-content-end">
@@ -68,9 +66,7 @@ export default function MyAccounts() {
             </Alert>
             <Alert variant="primary" dismissible>
               <p style={{ marginTop: 10 }}>
-                You
-                {'&lsquo;'}
-                ve been rewarded with a new offer.
+                You&lsquo;ve been rewarded with a new offer.
                 <a href="/">Check out your offer now before it expires!</a>
               </p>
             </Alert>
