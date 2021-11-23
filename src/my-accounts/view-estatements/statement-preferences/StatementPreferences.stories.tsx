@@ -3,7 +3,7 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 import StatementPreferences from './StatementPreferences';
 
 export default {
-  title: 'view-estatements/statement-preferences/StatementPreferences',
+  title: 'my-accounts/view-estatements/statement-preferences/StatementPreferences',
   component: StatementPreferences,
 } as ComponentMeta<typeof StatementPreferences>;
 
