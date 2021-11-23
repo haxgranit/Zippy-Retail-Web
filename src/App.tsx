@@ -33,7 +33,7 @@ import DownloadTransactions from './my-accounts/download-transactions/DownloadTr
 import StatementPreferences from './my-accounts/StatementPreferences';
 import UpcomingBillPaymentsAndTransfers from './my-accounts/UpcomingBillPaymentsAndTransfers';
 import ViewAccountDetails from './my-accounts/view-account-details/ViewAccountDetails';
-import ViewEStatements from './my-accounts/ViewEStatements';
+import ViewEStatements from './my-accounts/view-estatements/ViewEStatements';
 import Personal from './Personal';
 import PersonalProfile from './PersonalProfile';
 import PersonalSignup from './PersonalSignup';
