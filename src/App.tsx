@@ -24,7 +24,7 @@ import LearnMore from './interac-etransfer/LearnMore';
 import ReceiveMoney from './interac-etransfer/ReceiveMoney';
 import RequestMoney from './interac-etransfer/RequestMoney';
 import SendMoney from './interac-etransfer/SendMoney';
-import Status from './interac-etransfer/Status';
+import Status from './interac-etransfer/status/Status';
 import Home from './home/Home';
 import Legal from './Legal';
 import Login from './Login';
