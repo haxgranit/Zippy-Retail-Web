@@ -5,7 +5,7 @@ import '../../index.css';
 import MyAccounts from './MyAccounts';
 
 export default {
-  title: 'MyAccounts',
+  title: 'my-accounts/MyAccounts',
   component: MyAccounts,
 } as ComponentMeta<typeof MyAccounts>;
 

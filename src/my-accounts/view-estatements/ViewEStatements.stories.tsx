@@ -4,7 +4,7 @@ import '../../index.css';
 import ViewEStatements from './ViewEStatements';
 
 export default {
-  title: 'ViewEstatements',
+  title: 'my-accounts/view-estatements/ViewEstatements',
   component: ViewEStatements,
 } as ComponentMeta<typeof ViewEStatements>;
 

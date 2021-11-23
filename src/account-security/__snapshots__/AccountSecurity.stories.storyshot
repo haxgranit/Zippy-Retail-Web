@@ -1,0 +1,648 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots account-security/AccountSecurity Default 1`] = `
+<div
+  className="container-fluid"
+>
+  <div
+    className="row"
+  >
+    <h1
+      style={
+        Object {
+          "marginBottom": "16px",
+          "marginTop": "10px",
+          "padding": 0,
+        }
+      }
+    >
+      ACCOUNT SECURITY
+    </h1>
+    <div
+      className="col"
+    >
+      <div
+        className="row"
+        style={
+          Object {
+            "alignItems": "center",
+          }
+        }
+      >
+        <div
+          className="col-8"
+        >
+          <h6
+            style={
+              Object {
+                "fontWeight": 400,
+                "marginBottom": 0,
+                "marginLeft": "-12px",
+                "padding": 0,
+              }
+            }
+          >
+            Review and update your security settings to protect your account.
+          </h6>
+        </div>
+        <div
+          className="col"
+          style={
+            Object {
+              "display": "flex",
+              "justifyContent": "flex-end",
+            }
+          }
+        >
+          <div
+            className="row"
+            style={
+              Object {
+                "alignItems": "center",
+                "border": "2px dashed black",
+                "display": "flex",
+                "fontSize": "12px",
+                "justifyContent": "center",
+                "maxWidth": "200px",
+                "padding": "5px",
+              }
+            }
+          >
+            Online btn
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      className="row"
+    >
+      <h4
+        style={
+          Object {
+            "borderBottom": "3px solid black",
+            "lineHeight": "40px",
+            "marginTop": "50px",
+            "padding": 0,
+          }
+        }
+      >
+        Identity verification
+      </h4>
+    </div>
+  </div>
+  <div
+    className="row"
+  >
+    <div
+      className="col"
+      style={
+        Object {
+          "border": "2px solid rgba(0, 0, 0, 0.1)",
+          "display": "flex",
+          "flexDirection": "column",
+          "justifyContent": "space-between",
+          "marginRight": "10px",
+          "marginTop": "14px",
+          "minHeight": "220px",
+        }
+      }
+    >
+      <div
+        className="row"
+      >
+        <div
+          style={
+            Object {
+              "display": "inline-block",
+              "width": "100px",
+            }
+          }
+        >
+          <div
+            className="container"
+            style={
+              Object {
+                "alignItems": "center",
+                "border": "2px dashed black",
+                "borderRadius": "50%",
+                "display": "flex",
+                "justifyContent": "center",
+                "marginTop": "20px",
+                "minHeight": "80px",
+                "width": "100%",
+              }
+            }
+          >
+            <div
+              className="row"
+              style={
+                Object {
+                  "fontSize": "12px",
+                  "textAlign": "center",
+                  "width": "70px",
+                }
+              }
+            >
+              user icon
+            </div>
+          </div>
+        </div>
+        <div
+          className="col"
+          style={
+            Object {
+              "marginTop": "18px",
+            }
+          }
+        >
+          <h5
+            style={
+              Object {
+                "fontWeight": 600,
+                "paddingBottom": "15px",
+              }
+            }
+          >
+            Verification contact info
+          </h5>
+          <p>
+            Keep your email and phone numbers up to date so we can properly verify your account.
+          </p>
+          <p>
+            
+          </p>
+        </div>
+      </div>
+      <div
+        className="col-12"
+        style={
+          Object {
+            "display": "flex",
+            "justifyContent": "flex-end",
+            "paddingBottom": "15px",
+            "paddingRight": "25px",
+          }
+        }
+      >
+        <div
+          className="row"
+          style={
+            Object {
+              "alignItems": "center",
+              "border": "2px dashed black",
+              "display": "flex",
+              "fontSize": "12px",
+              "justifyContent": "center",
+              "maxWidth": "200px",
+              "padding": "5px",
+            }
+          }
+        >
+          Update btn
+        </div>
+      </div>
+    </div>
+    <div
+      className="col"
+      style={
+        Object {
+          "border": "2px solid rgba(0, 0, 0, 0.1)",
+          "display": "flex",
+          "flexDirection": "column",
+          "justifyContent": "space-between",
+          "marginLeft": "10px",
+          "marginTop": "14px",
+          "minHeight": "220px",
+        }
+      }
+    >
+      <div
+        className="row"
+      >
+        <div
+          style={
+            Object {
+              "display": "inline-block",
+              "width": "100px",
+            }
+          }
+        >
+          <div
+            className="container"
+            style={
+              Object {
+                "alignItems": "center",
+                "border": "2px dashed black",
+                "borderRadius": "50%",
+                "display": "flex",
+                "justifyContent": "center",
+                "marginTop": "20px",
+                "minHeight": "80px",
+                "width": "100%",
+              }
+            }
+          >
+            <div
+              className="row"
+              style={
+                Object {
+                  "fontSize": "12px",
+                  "textAlign": "center",
+                  "width": "70px",
+                }
+              }
+            >
+              pass icon
+            </div>
+          </div>
+        </div>
+        <div
+          className="col"
+          style={
+            Object {
+              "marginTop": "18px",
+            }
+          }
+        >
+          <h5
+            style={
+              Object {
+                "fontWeight": 600,
+                "paddingBottom": "15px",
+              }
+            }
+          >
+            Change password
+          </h5>
+          <p>
+            Ensure you have a unique password to protect your account.
+          </p>
+          <p>
+            
+          </p>
+        </div>
+      </div>
+      <div
+        className="col-12"
+        style={
+          Object {
+            "display": "flex",
+            "justifyContent": "flex-end",
+            "paddingBottom": "15px",
+            "paddingRight": "25px",
+          }
+        }
+      >
+        <div
+          className="row"
+          style={
+            Object {
+              "alignItems": "center",
+              "border": "2px dashed black",
+              "display": "flex",
+              "fontSize": "12px",
+              "justifyContent": "center",
+              "maxWidth": "200px",
+              "padding": "5px",
+            }
+          }
+        >
+          Update btn
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    className="row"
+  >
+    <h4
+      style={
+        Object {
+          "borderBottom": "3px solid black",
+          "lineHeight": "40px",
+          "marginTop": "50px",
+          "padding": 0,
+        }
+      }
+    >
+      Get push verification codes to your device
+    </h4>
+  </div>
+  <div
+    className="row"
+  >
+    <div
+      className="col"
+      style={
+        Object {
+          "border": "2px solid rgba(0, 0, 0, 0.1)",
+          "display": "flex",
+          "flexDirection": "column",
+          "justifyContent": "space-between",
+          "marginTop": "14px",
+          "minHeight": "220px",
+        }
+      }
+    >
+      <div
+        className="row"
+      >
+        <div
+          style={
+            Object {
+              "display": "inline-block",
+              "width": "100px",
+            }
+          }
+        >
+          <div
+            className="container"
+            style={
+              Object {
+                "alignItems": "center",
+                "border": "2px dashed black",
+                "borderRadius": "50%",
+                "display": "flex",
+                "justifyContent": "center",
+                "marginTop": "20px",
+                "minHeight": "80px",
+                "width": "100%",
+              }
+            }
+          >
+            <div
+              className="row"
+              style={
+                Object {
+                  "fontSize": "12px",
+                  "textAlign": "center",
+                  "width": "70px",
+                }
+              }
+            >
+              device icon
+            </div>
+          </div>
+        </div>
+        <div
+          className="col"
+          style={
+            Object {
+              "marginTop": "18px",
+            }
+          }
+        >
+          <h5
+            style={
+              Object {
+                "fontWeight": 600,
+                "paddingBottom": "15px",
+              }
+            }
+          >
+            Registered device: Samsung Duane's Note10+
+          </h5>
+          <p>
+            This device is registered to receive your one-time verification codes by push notification. For your security, only one device can be registered at a time.
+          </p>
+          <p>
+            Note: Unregister your device if it gets lost or stolen or if it is no longer secure enough for identity verification.
+          </p>
+        </div>
+      </div>
+      <div
+        className="col-12"
+        style={
+          Object {
+            "display": "flex",
+            "justifyContent": "flex-end",
+            "paddingBottom": "15px",
+            "paddingRight": "25px",
+          }
+        }
+      >
+        <div
+          className="row"
+          style={
+            Object {
+              "alignItems": "center",
+              "border": "2px dashed black",
+              "display": "flex",
+              "fontSize": "12px",
+              "justifyContent": "center",
+              "maxWidth": "200px",
+              "padding": "5px",
+            }
+          }
+        >
+          Unregister device btn
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    className="row"
+  >
+    <h4
+      style={
+        Object {
+          "borderBottom": "3px solid black",
+          "lineHeight": "40px",
+          "marginTop": "50px",
+          "padding": 0,
+        }
+      }
+    >
+      Security Alerts
+    </h4>
+  </div>
+  <div
+    className="row"
+  >
+    <div
+      className="col"
+      style={
+        Object {
+          "border": "2px solid rgba(0, 0, 0, 0.1)",
+          "display": "flex",
+          "flexDirection": "column",
+          "justifyContent": "space-between",
+          "marginTop": "14px",
+          "minHeight": "220px",
+        }
+      }
+    >
+      <div
+        className="row"
+      >
+        <div
+          style={
+            Object {
+              "display": "inline-block",
+              "width": "100px",
+            }
+          }
+        >
+          <div
+            className="container"
+            style={
+              Object {
+                "alignItems": "center",
+                "border": "2px dashed black",
+                "borderRadius": "50%",
+                "display": "flex",
+                "justifyContent": "center",
+                "marginTop": "20px",
+                "minHeight": "80px",
+                "width": "100%",
+              }
+            }
+          >
+            <div
+              className="row"
+              style={
+                Object {
+                  "fontSize": "12px",
+                  "textAlign": "center",
+                  "width": "70px",
+                }
+              }
+            >
+              security icon
+            </div>
+          </div>
+        </div>
+        <div
+          className="col"
+          style={
+            Object {
+              "marginTop": "18px",
+            }
+          }
+        >
+          <h5
+            style={
+              Object {
+                "fontWeight": 600,
+                "paddingBottom": "15px",
+              }
+            }
+          >
+            Fraud Prevention
+          </h5>
+          <p>
+            Get alerts when there's unusual activity on your account by text, email, push notification or My Messages.
+          </p>
+          <p>
+            
+          </p>
+        </div>
+      </div>
+      <div
+        className="col-12"
+        style={
+          Object {
+            "display": "flex",
+            "justifyContent": "flex-end",
+            "paddingBottom": "15px",
+            "paddingRight": "25px",
+          }
+        }
+      >
+        <div
+          className="row"
+          style={
+            Object {
+              "alignItems": "center",
+              "border": "2px dashed black",
+              "display": "flex",
+              "fontSize": "12px",
+              "justifyContent": "center",
+              "maxWidth": "200px",
+              "padding": "5px",
+            }
+          }
+        >
+          Update btn
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    className="row"
+    style={
+      Object {
+        "borderTop": "2px solid rgba(0, 0, 0, 0.1)",
+        "marginTop": "53px",
+      }
+    }
+  />
+  <div
+    className="row"
+    style={
+      Object {
+        "alignItems": "center",
+        "display": "flex",
+        "flexDirection": "row",
+        "flexWrap": "nowrap",
+        "marginLeft": 0,
+        "marginTop": "8px",
+      }
+    }
+  >
+    <div
+      className="row"
+      style={
+        Object {
+          "alignItems": "center",
+          "border": "2px dashed black",
+          "display": "flex",
+          "fontSize": "12px",
+          "justifyContent": "center",
+          "maxWidth": "50px",
+        }
+      }
+    >
+      Icon
+    </div>
+    <h5
+      style={
+        Object {
+          "fontSize": "16px",
+          "margin": 0,
+          "paddingLeft": "20px",
+        }
+      }
+    >
+      Note:
+    </h5>
+  </div>
+  <div
+    className="row"
+  >
+    <div
+      className="col"
+    >
+      <h6
+        style={
+          Object {
+            "color": "rgba(0, 0, 0, 0.5)",
+            "fontSize": "14px",
+            "fontWeight": 400,
+            "marginLeft": "-12px",
+            "marginTop": "15px",
+          }
+        }
+      >
+        To learn more about CIBC protects you from fraud, and how you can protect yourself, visit
+        <a
+          href="#"
+        >
+           Privacy and Security
+        </a>
+        .
+      </h6>
+    </div>
+  </div>
+</div>
+`;
