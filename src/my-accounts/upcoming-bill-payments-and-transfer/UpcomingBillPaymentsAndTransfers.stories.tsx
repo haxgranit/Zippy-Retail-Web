@@ -4,7 +4,7 @@ import '../../index.css';
 import UpcomingBillPaymentsAndTransfers from './UpcomingBillPaymentsAndTransfers';
 
 export default {
-  title: 'my-accounts/view-estatements/UpcomingBillPaymentsAndTransfers',
+  title: 'my-accounts/upcoming-bill-payments-and-transfer/UpcomingBillPaymentsAndTransfers',
   component: UpcomingBillPaymentsAndTransfers,
 } as ComponentMeta<typeof UpcomingBillPaymentsAndTransfers>;
 

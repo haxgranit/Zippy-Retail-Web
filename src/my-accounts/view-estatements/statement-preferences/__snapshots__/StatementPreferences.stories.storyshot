@@ -1,0 +1,392 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots view-estatements/statement-preferences/StatementPreferences Default 1`] = `
+<div>
+  <div
+    className="row"
+    style={
+      Object {
+        "justifyContent": "space-between",
+        "marginTop": "15px",
+      }
+    }
+  >
+    <h3>
+      STATEMENT PREFERENCES
+    </h3>
+    <div
+      style={
+        Object {
+          "marginTop": "20px",
+        }
+      }
+    >
+      <span>
+        <h6>
+          BANK ACCOUNTS
+        </h6>
+        <i />
+      </span>
+    </div>
+    <hr
+      style={
+        Object {
+          "color": "C4C4C4",
+          "height": "3px",
+          "margin": "0px",
+        }
+      }
+    />
+    <div
+      className="row"
+    >
+      <table
+        className="table table-borderless table"
+      >
+        <thead
+          style={
+            Object {
+              "background": "#EEEEEE",
+              "height": "40px",
+              "margin": "0px",
+            }
+          }
+        >
+          <tr>
+            <th
+              scope="col"
+              style={
+                Object {
+                  "width": "25%",
+                }
+              }
+            >
+              Account
+            </th>
+            <th
+              scope="col"
+              style={
+                Object {
+                  "width": "25%",
+                }
+              }
+            >
+              STATEMENT OPTION
+            </th>
+            <th
+              scope="col"
+              style={
+                Object {
+                  "width": "15%",
+                }
+              }
+            >
+               
+            </th>
+            <th
+              scope="col"
+              style={
+                Object {
+                  "width": "35%",
+                }
+              }
+            >
+              <span>
+                CONTACT METHODS FOR ALERTS
+                <i />
+              </span>
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr
+            style={
+              Object {
+                "borderBottom": "1px solid #EEEEEE",
+              }
+            }
+          >
+            <td>
+              <span
+                style={
+                  Object {
+                    "marginTop": "20px",
+                  }
+                }
+              >
+                <h6>
+                  Chequing 
+                </h6>
+                <h6>
+                  (01702-81-99639)
+                </h6>
+              </span>
+            </td>
+            <td>
+              <span>
+                <h6>
+                  eStatement
+                </h6>
+                <h6>
+                  (Alerts: Inactive)
+                </h6>
+              </span>
+            </td>
+            <td>
+              <h6>
+                <a
+                  href="./"
+                  style={
+                    Object {
+                      "color": "black",
+                      "verticalAlign": "center",
+                    }
+                  }
+                >
+                  Edit Preferences
+                </a>
+              </h6>
+            </td>
+            <td>
+              <span
+                style={
+                  Object {
+                    "marginTop": "20px",
+                  }
+                }
+              >
+                <h6>
+                  Message Center Primary email (email@gmail.com)
+                </h6>
+              </span>
+            </td>
+          </tr>
+          <tr
+            style={
+              Object {
+                "borderBottom": "1px solid #EEEEEE",
+              }
+            }
+          >
+            <td>
+              <span
+                style={
+                  Object {
+                    "marginTop": "20px",
+                  }
+                }
+              >
+                <h6>
+                  Savings 
+                </h6>
+                <h6>
+                  (01702-81-99639)
+                </h6>
+              </span>
+            </td>
+            <td>
+              <span>
+                <h6>
+                  eStatement
+                </h6>
+                <h6>
+                  (Alerts: Inactive)
+                </h6>
+              </span>
+            </td>
+            <td>
+              <h6>
+                <a
+                  href="./"
+                  style={
+                    Object {
+                      "color": "black",
+                      "verticalAlign": "center",
+                    }
+                  }
+                >
+                  Edit Preferences
+                </a>
+              </h6>
+            </td>
+            <td>
+              <span
+                style={
+                  Object {
+                    "marginTop": "20px",
+                  }
+                }
+              >
+                <h6>
+                  
+                </h6>
+              </span>
+            </td>
+          </tr>
+          <tr
+            style={
+              Object {
+                "borderBottom": "",
+              }
+            }
+          >
+            <td>
+              <span
+                style={
+                  Object {
+                    "marginTop": "20px",
+                  }
+                }
+              >
+                <h6>
+                  Other 
+                </h6>
+                <h6>
+                  (01702-81-99639)
+                </h6>
+              </span>
+            </td>
+            <td>
+              <span>
+                <h6>
+                  eStatement
+                </h6>
+                <h6>
+                  (Alerts: Inactive)
+                </h6>
+              </span>
+            </td>
+            <td>
+              <h6>
+                <a
+                  href="./"
+                  style={
+                    Object {
+                      "color": "black",
+                      "verticalAlign": "center",
+                    }
+                  }
+                >
+                  Edit Preferences
+                </a>
+              </h6>
+            </td>
+            <td>
+              <span
+                style={
+                  Object {
+                    "marginTop": "20px",
+                  }
+                }
+              >
+                <h6>
+                  
+                </h6>
+              </span>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <hr
+      style={
+        Object {
+          "height": "1px",
+        }
+      }
+    />
+    <button
+      style={
+        Object {
+          "alignSelf": "flex-end",
+          "marginBottom": "10px",
+          "marginLeft": "80%",
+          "marginTop": "10px",
+          "width": "20%",
+        }
+      }
+      type="button"
+    >
+      My Account
+    </button>
+    <hr
+      style={
+        Object {
+          "height": "1px",
+        }
+      }
+    />
+    <div
+      className="row"
+    >
+      <i />
+      <h6
+        style={
+          Object {
+            "fontWeight": "bold",
+          }
+        }
+      >
+        Note:
+      </h6>
+      <ul>
+        <li>
+          An inactive alert status applies to bank accounts that were automatically transferred from Paperless to eStatements. If your alert status is displayed as inactive, it means you have not agreed to the terms and conditions for eStatements.
+        </li>
+        <li>
+          If you opened your account within the last 30 days and requested mailed quarterly statements,you may still see Mailed Statement as your statement option. Your preferences will display correctly after the next statement cycle
+        </li>
+        <li>
+          Changes to your preferences for bankbooks will not be reflected until processing is complete.
+        </li>
+        <li
+          style={
+            Object {
+              "listStyle": "none",
+            }
+          }
+        >
+          <i />
+          Bank Accounts eStatement Terms and Conditions (May 2016) (PDF, 146 KB)
+        </li>
+        <li
+          style={
+            Object {
+              "listStyle": "none",
+            }
+          }
+        >
+          <i />
+          Credit Card eStatement Terms and Conditions (May 2016) (PDF, 127 KB)
+        </li>
+        <li
+          style={
+            Object {
+              "listStyle": "none",
+            }
+          }
+        >
+          <i />
+          Personal Line of Credit eStatement Terms and Conditions (PDF, 100 KB) Last updated October 2019
+        </li>
+        <li
+          style={
+            Object {
+              "listStyle": "none",
+            }
+          }
+        >
+          <i />
+          CIBC Securities Inc. and PPS Consent to Electronic Delivery (November 2014) (PDF, 47 KB)
+        </li>
+      </ul>
+      <p>
+        To view or save a eStatement as a PDF you will need Adobe Acrobat Reader°. Please download it before opening your eStatement.
+      </p>
+      <p>
+        Portable Document Format (PDF) is a standard form of printable web document. With a PDF, you can save and print your statements for your personal record keeping.
+      </p>
+    </div>
+  </div>
+</div>
+`;
