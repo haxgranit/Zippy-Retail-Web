@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots view-estatements/statement-preferences/StatementPreferences Default 1`] = `
+exports[`Storyshots my-accounts/view-estatements/statement-preferences/StatementPreferences Default 1`] = `
 <div>
   <div
     className="row"
