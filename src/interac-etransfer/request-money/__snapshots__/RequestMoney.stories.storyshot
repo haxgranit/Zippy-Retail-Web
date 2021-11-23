@@ -291,5 +291,112 @@ exports[`Storyshots interac-etransfer/request-money/RequestMoney Default 1`] = `
       dtough@hotmail.com
     </div>
   </div>
+  <div
+    className="align-items-center mt-4 row"
+  >
+    <div
+      className="col"
+    >
+      <div
+        className="px-4 py-2"
+        style={
+          Object {
+            "backgroundColor": "#606366",
+            "color": "#fff",
+          }
+        }
+      >
+        <div
+          className="form-check"
+        >
+          <input
+            className="form-check-input"
+            disabled={false}
+            id="confirm"
+            type="checkbox"
+          />
+          <label
+            className="form-check-label"
+            htmlFor="confirm"
+            title=""
+          >
+            I confirm that I have an existing relationship with this contact.
+          </label>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    className="align-items-center mt-4 row"
+  >
+    <div
+      className="col"
+    >
+      <b>
+        Note: You may be charged a fee when your request for money is completed. Fee may not apply depending on account terms.
+         
+        <u>
+          Review fee details
+        </u>
+        .
+      </b>
+    </div>
+  </div>
+  <div
+    className="border-primary my-3"
+    style={
+      Object {
+        "borderTop": "1px solid",
+      }
+    }
+  />
+  <div
+    className="row"
+  >
+    <div
+      className="text-end col"
+    >
+      <button
+        className="btn btn-primary"
+        disabled={false}
+        type="button"
+      >
+        Send Request
+      </button>
+    </div>
+  </div>
+  <div
+    className="border-primary my-3"
+    style={
+      Object {
+        "borderTop": "1px solid",
+      }
+    }
+  />
+  <div
+    className="row"
+  >
+    <div
+      className="col"
+    >
+      <b>
+        Note:
+      </b>
+      <br />
+      Your use of
+       
+      <i>
+        Interac
+      </i>
+       
+      e-Transfer is subject to the
+       
+      <i>
+        Interac
+      </i>
+       
+      e-Transfer Terms and conditions (PDF, 197 KB).
+    </div>
+  </div>
 </div>
 `;

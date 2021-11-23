@@ -1,4 +1,9 @@
-import { Col, Form, Row } from 'react-bootstrap';
+import {
+  Button,
+  Col,
+  Form,
+  Row,
+} from 'react-bootstrap';
 
 const Divider = () => <div className="border-primary my-3" style={{ borderTop: '1px solid' }} />;
 
@@ -124,6 +129,50 @@ export default function RequestMoney() {
         </Col>
         <Col xs={6}>
           dtough@hotmail.com
+        </Col>
+      </Row>
+      <Row className="align-items-center mt-4">
+        <Col>
+          <div className="px-4 py-2" style={{ backgroundColor: '#606366', color: '#fff' }}>
+            <Form.Check
+              id="confirm"
+              type="checkbox"
+              label="I confirm that I have an existing relationship with this contact."
+            />
+          </div>
+        </Col>
+      </Row>
+      <Row className="align-items-center mt-4">
+        <Col>
+          <b>
+            Note: You may be charged a fee when your request for money is completed. Fee may not
+            apply depending on account terms.
+            {' '}
+            <u>Review fee details</u>
+            .
+          </b>
+        </Col>
+      </Row>
+      <Divider />
+      <Row>
+        <Col className="text-end">
+          <Button>Send Request</Button>
+        </Col>
+      </Row>
+      <Divider />
+      <Row>
+        <Col>
+          <b>Note:</b>
+          <br />
+          Your use of
+          {' '}
+          <i>Interac</i>
+          {' '}
+          e-Transfer is subject to the
+          {' '}
+          <i>Interac</i>
+          {' '}
+          e-Transfer Terms and conditions (PDF, 197 KB).
         </Col>
       </Row>
     </div>
