@@ -1,4 +1,3 @@
-import { BrowserRouter } from 'react-router-dom';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import ReviewAndCancelTransfers from './ReviewAndCancelTransfers';
 
@@ -8,9 +7,7 @@ export default {
 } as ComponentMeta<typeof ReviewAndCancelTransfers>;
 
 const Template: ComponentStory<typeof ReviewAndCancelTransfers> = () => (
-  <BrowserRouter>
-    <ReviewAndCancelTransfers />
-  </BrowserRouter>
+  <ReviewAndCancelTransfers />
 );
 
 export const Default = Template.bind({});
