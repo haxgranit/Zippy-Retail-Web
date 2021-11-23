@@ -4,7 +4,6 @@ import {
   Navigate,
   Route,
   Routes,
-  useLocation,
 } from 'react-router-dom';
 import About from './About';
 import AddOrEditBillers from './bill-payments/AddOrEditBillers';
@@ -14,7 +13,6 @@ import ReviewAndCancelBillPayments from './bill-payments/ReviewAndCancelBillPaym
 import SetUpBillPayments from './bill-payments/SetUpBillPayments';
 import ViewEBills from './bill-payments/ViewEBills';
 import Business from './Business';
-import BusinessSignup from './BusinessSignup';
 import Footer from './footer/Footer';
 import Header from './Header';
 import AutodepositSettings from './interac-etransfer/AutodepositSettings';
@@ -27,8 +25,6 @@ import SendMoney from './interac-etransfer/SendMoney';
 import Status from './interac-etransfer/Status';
 import Home from './home/Home';
 import Legal from './Legal';
-import Login from './Login';
-import Logout from './Logout';
 import MyAccounts from './my-accounts/my-accounts/MyAccounts';
 import DownloadTransactions from './my-accounts/download-transactions/DownloadTransactions';
 import StatementPreferences from './my-accounts/StatementPreferences';
@@ -37,7 +33,6 @@ import ViewAccountDetails from './my-accounts/view-account-details/ViewAccountDe
 import ViewEStatements from './my-accounts/ViewEStatements';
 import Personal from './Personal';
 import PersonalProfile from './PersonalProfile';
-import PersonalSignup from './PersonalSignup';
 import ScrollToTop from './ScrollToTop';
 import EFT from './transfer-funds/EFT';
 import ReviewAndCancelTransfers from './transfer-funds/ReviewAndCancelTransfers';
@@ -51,16 +46,10 @@ import ManageMyAlerts from './manage-my-alerts/ManageMyAlerts';
 export default function App() {
   useEffect(() => AOS.init(), []);
 
-  const { pathname } = useLocation();
-  const isRedirect = pathname === '/login'
-    || pathname === '/logout'
-    || pathname === '/personal-signup'
-    || pathname === '/business-signup';
-
   return (
     <div>
       <ScrollToTop />
-      {!isRedirect && <Header />}
+      <Header />
       <Routes>
         <Route path="/" element={<Home />}>
           <Route path="account-security" element={<AccountSecurity />} />
@@ -105,15 +94,11 @@ export default function App() {
         </Route>
         <Route path="about" element={<About />} />
         <Route path="business" element={<Business />} />
-        <Route path="business-signup" element={<BusinessSignup />} />
         <Route path="legal" element={<Legal />} />
-        <Route path="login" element={<Login />} />
-        <Route path="logout" element={<Logout />} />
         <Route path="personal" element={<Personal />} />
         <Route path="personal-profile" element={<PersonalProfile />} />
-        <Route path="personal-signup" element={<PersonalSignup />} />
       </Routes>
-      {!isRedirect && <Footer />}
+      <Footer />
     </div>
   );
 }

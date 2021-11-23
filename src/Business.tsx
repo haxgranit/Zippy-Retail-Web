@@ -1,11 +1,13 @@
+import { useMsal } from '@azure/msal-react';
 import { useTranslation, Trans } from 'react-i18next';
-import { Link } from 'react-router-dom';
 import Circle_White_01 from './assets/img/background/Circle_White-01.jpg';
 import ZippyCash_Icons_K from './assets/img/roundicons/business/ZippyCash_Icons_K.png';
 import ZippyCash_Icons_L from './assets/img/roundicons/business/ZippyCash_Icons_L.png';
 import ZippyCash_Icons_M from './assets/img/roundicons/business/ZippyCash_Icons_M.png';
+import { b2cPolicies, loginRequest } from './authConfig';
 
 export default function Business() {
+  const { instance } = useMsal();
   const { t } = useTranslation();
 
   return (
@@ -17,7 +19,16 @@ export default function Business() {
               <div className="mb-3">
                 <h2 style={{ color: '#FF1926' }}>{t('business.business_title')}</h2>
                 <h1 className="redtitle hero-heading display-3" style={{ fontSize: '4em', paddingBottom: '20px' }}>{t('business.header_desc')}</h1>
-                <Link to="/business-signup" className="btn rounded-0 my-buttonred">{t('business.sign_up_btn_title')}</Link>
+                <button
+                  type="button"
+                  className="btn rounded-0 my-buttonred"
+                  onClick={() => instance.loginRedirect({
+                    ...loginRequest,
+                    authority: b2cPolicies.authorities.signUpBusiness.authority,
+                  })}
+                >
+                  {t('business.sign_up_btn_title')}
+                </button>
               </div>
             </div>
           </div>

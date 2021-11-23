@@ -1,12 +1,14 @@
+import { useMsal } from '@azure/msal-react';
 import { useTranslation } from 'react-i18next';
-import { Link } from 'react-router-dom';
 import Circle_Grey_01 from './assets/img/background/Circle_Grey-01.jpg';
 import orangered from './assets/img/background/orangered.jpg';
 import ZippyCash_Icons_H from './assets/img/roundicons/personal/ZippyCash_Icons_H.png';
 import ZippyCash_Icons_I from './assets/img/roundicons/personal/ZippyCash_Icons_I.png';
 import ZippyCash_Icons_J from './assets/img/roundicons/personal/ZippyCash_Icons_J.png';
+import { b2cPolicies, loginRequest } from './authConfig';
 
 export default function Personal() {
+  const { instance } = useMsal();
   const { t } = useTranslation();
 
   return (
@@ -18,7 +20,16 @@ export default function Personal() {
               <div className="mb-3">
                 <h2 style={{ color: '#FF1926' }}>{t('personal.personal_banking')}</h2>
                 <h1 className="redtitle hero-heading display-3" style={{ fontSize: '4em', paddingBottom: '20px' }}>{t('personal.header_title')}</h1>
-                <Link to="/personal-signup" className="btn rounded-0 my-buttonred">{t('personal.sign_up_btn')}</Link>
+                <button
+                  type="button"
+                  className="btn rounded-0 my-buttonred"
+                  onClick={() => instance.loginRedirect({
+                    ...loginRequest,
+                    authority: b2cPolicies.authorities.signUpPersonal.authority,
+                  })}
+                >
+                  {t('personal.sign_up_btn')}
+                </button>
               </div>
             </div>
           </div>

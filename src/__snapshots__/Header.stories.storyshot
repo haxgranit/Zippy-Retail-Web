@@ -63,14 +63,13 @@ exports[`Storyshots Header Default 1`] = `
         <li
           className="nav-item"
         >
-          <a
-            aria-current="page"
-            className="nav-link fw-bold"
-            href="/login"
+          <button
+            className="btn btn-link nav-link fw-bold shadow-none"
             onClick={[Function]}
+            type="button"
           >
             LOGIN
-          </a>
+          </button>
         </li>
       </ul>
       <ul

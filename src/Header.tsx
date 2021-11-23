@@ -4,10 +4,11 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import ZippyCash_Logo from './assets/img/general/ZippyCash_Logo.png';
+import { loginRequest } from './authConfig';
 
 export default function Header() {
   const isAuthenticated = useIsAuthenticated();
-  const { inProgress } = useMsal();
+  const { inProgress, instance } = useMsal();
   const { i18n, t } = useTranslation();
 
   return (
@@ -36,12 +37,26 @@ export default function Header() {
               <NavDropdown.Item onClick={() => i18n.changeLanguage('es-US')}>Spanish (US)</NavDropdown.Item>
             </NavDropdown>
             <li className="nav-item">
-              {(isAuthenticated
-                && <Link to="/logout" className="nav-link fw-bold" aria-current="page">{t('header.logout')}</Link>
-              ) || (
+              {(isAuthenticated && (
+                <button
+                  type="button"
+                  className="btn btn-link nav-link fw-bold shadow-none"
+                  onClick={() => instance.logoutRedirect()}
+                >
+                  {t('header.logout')}
+                </button>
+              )) || (
                 inProgress !== InteractionStatus.Startup
                 && inProgress !== InteractionStatus.HandleRedirect
-                && <Link to="/login" className="nav-link fw-bold" aria-current="page">{t('header.login')}</Link>
+                && (
+                  <button
+                    type="button"
+                    className="btn btn-link nav-link fw-bold shadow-none"
+                    onClick={() => instance.loginRedirect(loginRequest)}
+                  >
+                    {t('header.login')}
+                  </button>
+                )
               )}
             </li>
           </ul>

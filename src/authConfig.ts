@@ -42,7 +42,7 @@ export const msalConfig: Configuration = {
     knownAuthorities: [b2cPolicies.authorityDomain],
     // Points to window.location.origin. You must register this URI on Azure Portal/App
     // Registration.
-    redirectUri: '/login',
+    redirectUri: '/',
     // Indicates the page to navigate after logout.
     postLogoutRedirectUri: '/',
     // If 'true', will navigate back to the original request location before processing the auth
