@@ -4,7 +4,7 @@ import '../../index.css';
 import Status from './Status';
 
 export default {
-  title: 'ViewEstatements',
+  title: 'interac-etransfer/status/Status',
   component: Status,
 } as ComponentMeta<typeof Status>;
 
