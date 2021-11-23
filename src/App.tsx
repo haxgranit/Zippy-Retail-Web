@@ -39,7 +39,7 @@ import PersonalProfile from './PersonalProfile';
 import PersonalSignup from './PersonalSignup';
 import ScrollToTop from './ScrollToTop';
 import EFT from './transfer-funds/EFT';
-import ReviewAndCancelTransfers from './transfer-funds/ReviewAndCancelTransfers';
+import ReviewAndCancelTransfers from './transfer-funds/review-and-cancel-transfers/ReviewAndCancelTransfers';
 import TransferFunds from './transfer-funds/TransferFunds';
 import VisaDirect from './transfer-funds/VisaDirect';
 import AccountSecurity from './account-security/AccountSecurity';
