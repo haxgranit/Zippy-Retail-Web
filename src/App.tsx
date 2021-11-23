@@ -31,7 +31,7 @@ import Login from './Login';
 import MyAccounts from './my-accounts/my-accounts/MyAccounts';
 import DownloadTransactions from './my-accounts/download-transactions/DownloadTransactions';
 import StatementPreferences from './my-accounts/view-estatements/statement-preferences/StatementPreferences';
-import UpcomingBillPaymentsAndTransfers from './my-accounts/UpcomingBillPaymentsAndTransfers';
+import UpcomingBillPaymentsAndTransfers from './my-accounts/upcoming-bill-payments-and-transfer/UpcomingBillPaymentsAndTransfers';
 import ViewAccountDetails from './my-accounts/view-account-details/ViewAccountDetails';
 import ViewEStatements from './my-accounts/view-estatements/ViewEStatements';
 import Personal from './Personal';
