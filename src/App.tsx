@@ -7,11 +7,11 @@ import {
   Routes,
 } from 'react-router-dom';
 import About from './About';
-import AddOrEditBillers from './bill-payments/AddOrEditBillers';
 import BillerDetails from './bill-payments/biller-details/BillerDetails';
+import AddOrEditBillers from './bill-payments/add-or-edit-billers/AddOrEditBillers';
 import BillPayments from './bill-payments/bill-payments/BillPayments';
-import ReviewAndCancelBillPayments from './bill-payments/ReviewAndCancelBillPayments';
-import SetUpBillPayments from './bill-payments/SetUpBillPayments';
+import ReviewAndCancelBillPayments from './bill-payments/review-and-cancel-bill-payments/ReviewAndCancelBillPayments';
+import SetUpBillPayments from './bill-payments/set-up-bill-payments/SetUpBillPayments';
 import ViewEBills from './bill-payments/ViewEBills';
 import Business from './Business';
 import BusinessSignup from './BusinessSignup';
@@ -40,7 +40,7 @@ import PersonalSignup from './PersonalSignup';
 import ScrollToTop from './ScrollToTop';
 import EFT from './transfer-funds/EFT';
 import ReviewAndCancelTransfers from './transfer-funds/review-and-cancel-transfers/ReviewAndCancelTransfers';
-import TransferFunds from './transfer-funds/TransferFunds';
+import TransferFunds from './transfer-funds/transfer-funds/TransferFunds';
 import VisaDirect from './transfer-funds/VisaDirect';
 import AccountSecurity from './account-security/AccountSecurity';
 import CustomerServices from './customer-services/CustomerServices';
