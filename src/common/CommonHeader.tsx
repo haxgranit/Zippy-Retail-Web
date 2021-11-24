@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 
-function CommonHeader({ title, print }) {
+function CommonHeader({ title, print }: { title: string; print: boolean }) {
   return (
     <div className="d-flex justify-content-between align-items-center">
       <h3>{title.toUpperCase()}</h3>

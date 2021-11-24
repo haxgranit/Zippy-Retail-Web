@@ -1,6 +1,14 @@
 import PropTypes from 'prop-types';
 
-function PanelHeader({ title, sub_title, border_color }) {
+function PanelHeader({
+  title,
+  sub_title,
+  border_color,
+}: {
+  title: string;
+  sub_title: string;
+  border_color: string;
+}) {
   return (
     <div
       className="d-flex align-items-center"
@@ -20,7 +28,11 @@ function PanelHeader({ title, sub_title, border_color }) {
         |
         {' '}
       </span>
-      <a href="/" className="text-decoration-none" style={{ marginLeft: 5, fontSize: 14, color: 'rgb(220, 53, 69)' }}>
+      <a
+        href="/"
+        className="text-decoration-none"
+        style={{ marginLeft: 5, fontSize: 14, color: 'rgb(220, 53, 69)' }}
+      >
         {sub_title}
       </a>
     </div>
