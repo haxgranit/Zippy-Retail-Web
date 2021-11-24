@@ -1050,9 +1050,9 @@ Array [
               </span>
               <input
                 aria-describedby="basic-addon1"
-                aria-label="Username"
+                aria-label="Amount"
                 className="form-control"
-                placeholder="Username"
+                placeholder="Amount"
               />
             </div>
             <button
