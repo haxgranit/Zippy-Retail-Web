@@ -22,7 +22,7 @@ exports[`Storyshots interac-etransfer/request-money/RequestMoney Default 1`] = `
         Request Money Details
       </h4>
       <div
-        className="align-items-center row"
+        className="align-items-center mt-4 row"
       >
         <div
           className="col-3"
