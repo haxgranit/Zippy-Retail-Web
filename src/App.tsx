@@ -7,8 +7,8 @@ import {
   Routes,
 } from 'react-router-dom';
 import About from './About';
+import BillerDetails from './bill-payments/biller-details/BillerDetails';
 import AddOrEditBillers from './bill-payments/add-or-edit-billers/AddOrEditBillers';
-import BillerDetails from './bill-payments/BillerDetails';
 import BillPayments from './bill-payments/bill-payments/BillPayments';
 import ReviewAndCancelBillPayments from './bill-payments/review-and-cancel-bill-payments/ReviewAndCancelBillPayments';
 import SetUpBillPayments from './bill-payments/set-up-bill-payments/SetUpBillPayments';
