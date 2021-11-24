@@ -17,7 +17,7 @@ import Business from './Business';
 import BusinessSignup from './BusinessSignup';
 import Footer from './footer/Footer';
 import Header from './Header';
-import AutodepositSettings from './interac-etransfer/AutodepositSettings';
+import AutodepositSettings from './interac-etransfer/autodeposit-settings/AutodepositSettings';
 import ContactList from './interac-etransfer/contact-list/ContactList';
 import EditMyProfile from './interac-etransfer/edit-my-profile/EditMyProfile';
 import LearnMore from './interac-etransfer/LearnMore';
