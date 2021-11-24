@@ -7,7 +7,7 @@ import {
   Button,
   Nav,
 } from 'react-bootstrap';
-import CommonHeader from './components/CommonHeader';
+import CommonHeader from '../../common/CommonHeader';
 import PanelHeader from './components/PanelHeader';
 
 export default function MyAccounts() {

@@ -4,7 +4,7 @@ import {
   Card,
   Button,
 } from 'react-bootstrap';
-import CommonHeader from '../../my-accounts/my-accounts/components/CommonHeader';
+import CommonHeader from '../../common/CommonHeader';
 
 export default function BillPayments() {
   return (
