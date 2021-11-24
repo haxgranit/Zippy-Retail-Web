@@ -21,7 +21,7 @@ import AutodepositSettings from './interac-etransfer/AutodepositSettings';
 import ContactList from './interac-etransfer/ContactList';
 import EditMyProfile from './interac-etransfer/EditMyProfile';
 import LearnMore from './interac-etransfer/LearnMore';
-import ReceiveMoney from './interac-etransfer/ReceiveMoney';
+import ReceiveMoney from './interac-etransfer/receive-money/ReceiveMoney';
 import RequestMoney from './interac-etransfer/request-money/RequestMoney';
 import SendMoney from './interac-etransfer/send-money/SendMoney';
 import Status from './interac-etransfer/status/Status';
