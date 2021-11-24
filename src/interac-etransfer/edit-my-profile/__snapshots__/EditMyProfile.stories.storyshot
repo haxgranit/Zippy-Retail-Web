@@ -61,12 +61,7 @@ exports[`Storyshots interac-etransfer/edit-my-profile/EditMyProfile Default 1`] 
         </div>
       </div>
       <div
-        className="border-primary my-3"
-        style={
-          Object {
-            "borderTop": "1px solid",
-          }
-        }
+        className="border-top my-3"
       />
       <div
         className="align-items-center row"
@@ -87,12 +82,7 @@ exports[`Storyshots interac-etransfer/edit-my-profile/EditMyProfile Default 1`] 
         </div>
       </div>
       <div
-        className="border-primary my-3"
-        style={
-          Object {
-            "borderTop": "1px solid",
-          }
-        }
+        className="border-top my-3"
       />
       <div
         className="align-items-center row"
@@ -129,12 +119,7 @@ exports[`Storyshots interac-etransfer/edit-my-profile/EditMyProfile Default 1`] 
         </div>
       </div>
       <div
-        className="border-primary my-3"
-        style={
-          Object {
-            "borderTop": "1px solid",
-          }
-        }
+        className="border-top my-3"
       />
       <div
         className="align-items-center row"
@@ -167,12 +152,7 @@ exports[`Storyshots interac-etransfer/edit-my-profile/EditMyProfile Default 1`] 
         </div>
       </div>
       <div
-        className="border-primary my-3"
-        style={
-          Object {
-            "borderTop": "1px solid",
-          }
-        }
+        className="border-top my-3"
       />
       <div
         className="row"
@@ -201,12 +181,7 @@ exports[`Storyshots interac-etransfer/edit-my-profile/EditMyProfile Default 1`] 
         </div>
       </div>
       <div
-        className="border-primary my-3"
-        style={
-          Object {
-            "borderTop": "1px solid",
-          }
-        }
+        className="border-top my-3"
       />
       <div
         className="row"
@@ -238,7 +213,7 @@ exports[`Storyshots interac-etransfer/edit-my-profile/EditMyProfile Default 1`] 
       className="col-3"
     >
       <div
-        className="border border-primary p-2 rounded"
+        className="border p-2 rounded"
       >
         <b>
           You can also:

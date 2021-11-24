@@ -11,7 +11,7 @@ import AddOrEditBillers from './bill-payments/AddOrEditBillers';
 import BillerDetails from './bill-payments/BillerDetails';
 import BillPayments from './bill-payments/bill-payments/BillPayments';
 import ReviewAndCancelBillPayments from './bill-payments/review-and-cancel-bill-payments/ReviewAndCancelBillPayments';
-import SetUpBillPayments from './bill-payments/SetUpBillPayments';
+import SetUpBillPayments from './bill-payments/set-up-bill-payments/SetUpBillPayments';
 import ViewEBills from './bill-payments/ViewEBills';
 import Business from './Business';
 import BusinessSignup from './BusinessSignup';
