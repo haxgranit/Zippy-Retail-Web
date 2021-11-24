@@ -8,7 +8,7 @@ import {
 } from 'react-router-dom';
 import About from './About';
 import AddOrEditBillers from './bill-payments/AddOrEditBillers';
-import BillerDetails from './bill-payments/BillerDetails';
+import BillerDetails from './bill-payments/biller-details/BillerDetails';
 import BillPayments from './bill-payments/bill-payments/BillPayments';
 import ReviewAndCancelBillPayments from './bill-payments/ReviewAndCancelBillPayments';
 import SetUpBillPayments from './bill-payments/SetUpBillPayments';
