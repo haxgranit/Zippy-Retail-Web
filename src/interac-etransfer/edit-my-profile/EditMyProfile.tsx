@@ -9,7 +9,11 @@ const Divider = () => <div className="border-primary my-3" style={{ borderTop: '
 
 const LeftCol = () => (
   <Col xs={9}>
-    <b>Step: 1 - 2</b>
+    <Row>
+      <Col>
+        <b>Step: 1 - 2</b>
+      </Col>
+    </Row>
     <Row className="mt-4">
       <Col>
         <ul>
@@ -106,7 +110,11 @@ const RightCol = () => (
 export default function EditMyProfile() {
   return (
     <div>
-      <Row as="h2">EDIT MY PROFILE</Row>
+      <Row>
+        <Col>
+          <h2>EDIT MY PROFILE</h2>
+        </Col>
+      </Row>
       <Row>
         <LeftCol />
         <RightCol />
