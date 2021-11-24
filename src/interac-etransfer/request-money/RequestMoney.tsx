@@ -9,9 +9,17 @@ const Divider = () => <div className="border-primary my-3" style={{ borderTop: '
 
 const LeftCol = () => (
   <Col xs={9}>
-    <b>Step: 1 - 2</b>
-    <h4 className="mt-4">Request Money Details</h4>
-    <Row className="align-items-center">
+    <Row>
+      <Col>
+        <b>Step: 1 - 2</b>
+      </Col>
+    </Row>
+    <Row>
+      <Col>
+        <h4 className="mt-4">Request Money Details</h4>
+      </Col>
+    </Row>
+    <Row className="align-items-center mt-4">
       <Col xs={3}>Request Money From:</Col>
       <Col xs={6}>
         <Form.Select>
@@ -192,7 +200,11 @@ const RightCol = () => (
 export default function RequestMoney() {
   return (
     <div>
-      <Row as="h2">REQUEST MONEY</Row>
+      <Row>
+        <Col>
+          <h2>REQUEST MONEY</h2>
+        </Col>
+      </Row>
       <Row>
         <LeftCol />
         <RightCol />
