@@ -23,7 +23,7 @@ import EditMyProfile from './interac-etransfer/EditMyProfile';
 import LearnMore from './interac-etransfer/LearnMore';
 import ReceiveMoney from './interac-etransfer/ReceiveMoney';
 import RequestMoney from './interac-etransfer/request-money/RequestMoney';
-import SendMoney from './interac-etransfer/SendMoney';
+import SendMoney from './interac-etransfer/send-money/SendMoney';
 import Status from './interac-etransfer/status/Status';
 import Home from './home/Home';
 import Legal from './Legal';
