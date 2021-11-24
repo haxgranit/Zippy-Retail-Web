@@ -11,7 +11,7 @@ const LeftCol = () => (
   <Col xs={9}>
     <b>Step: 1 - 2</b>
     <h4 className="mt-4">Request Money Details</h4>
-    <Row className="align-items-center">
+    <Row className="align-items-center mt-4">
       <Col xs={3}>Request Money From:</Col>
       <Col xs={6}>
         <Form.Select>
