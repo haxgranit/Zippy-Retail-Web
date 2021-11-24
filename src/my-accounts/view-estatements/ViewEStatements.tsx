@@ -5,7 +5,7 @@ import {
   Form,
   Button,
 } from 'react-bootstrap';
-import CommonHeader from '../my-accounts/components/CommonHeader';
+import CommonHeader from '../../common/CommonHeader';
 import {
   ESTATEMENTS_2020,
   ESTATEMENTS_2021,

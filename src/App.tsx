@@ -9,7 +9,7 @@ import {
 import About from './About';
 import AddOrEditBillers from './bill-payments/AddOrEditBillers';
 import BillerDetails from './bill-payments/BillerDetails';
-import BillPayments from './bill-payments/BillPayments';
+import BillPayments from './bill-payments/bill-payments/BillPayments';
 import ReviewAndCancelBillPayments from './bill-payments/review-and-cancel-bill-payments/ReviewAndCancelBillPayments';
 import SetUpBillPayments from './bill-payments/SetUpBillPayments';
 import ViewEBills from './bill-payments/ViewEBills';
@@ -21,7 +21,7 @@ import AutodepositSettings from './interac-etransfer/autodeposit-settings/Autode
 import ContactList from './interac-etransfer/contact-list/ContactList';
 import EditMyProfile from './interac-etransfer/edit-my-profile/EditMyProfile';
 import LearnMore from './interac-etransfer/learn-more/LearnMore';
-import ReceiveMoney from './interac-etransfer/ReceiveMoney';
+import ReceiveMoney from './interac-etransfer/receive-money/ReceiveMoney';
 import RequestMoney from './interac-etransfer/request-money/RequestMoney';
 import SendMoney from './interac-etransfer/send-money/SendMoney';
 import Status from './interac-etransfer/status/Status';
