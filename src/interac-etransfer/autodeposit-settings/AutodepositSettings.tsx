@@ -5,7 +5,7 @@ import {
   Row,
 } from 'react-bootstrap';
 
-const Divider = () => <div className="border-primary my-3" style={{ borderTop: '1px solid' }} />;
+const Divider = () => <div className="border-top my-3" />;
 
 const LeftCol = () => (
   <Col xs={9}>
@@ -91,7 +91,7 @@ const LeftCol = () => (
 
 const RightCol = () => (
   <Col xs={3}>
-    <div className="border border-primary p-2 rounded">
+    <div className="border p-2 rounded">
       <b>You can also:</b>
       <br />
       Change your contact information &gt;

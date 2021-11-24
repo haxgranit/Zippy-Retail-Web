@@ -34,7 +34,7 @@ export default function ReviewAndCancelBillPayments() {
           </ul>
         </Col>
         <Col xs={3} className="mb-2">
-          <div className="border border-primary p-2 rounded">
+          <div className="border p-2 rounded">
             <b>You can also:</b>
             <br />
             Change your contact information &gt;
