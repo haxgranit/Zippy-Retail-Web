@@ -1,0 +1,1187 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots manage-my-alerts/ManageMyAlerts Default 1`] = `
+Array [
+  <div
+    className="d-flex justify-content-between align-items-center"
+  >
+    <h3>
+      MANAGE MY ALERTS
+    </h3>
+    <div
+      className="d-flex"
+    >
+      <div
+        style={
+          Object {
+            "border": "1px dotted grey",
+            "height": 25,
+            "marginRight": 10,
+            "textAlign": "center",
+            "width": 20,
+          }
+        }
+        title="print"
+      >
+        P
+      </div>
+      <div
+        style={
+          Object {
+            "border": "1px dotted grey",
+            "height": 25,
+            "marginRight": 10,
+            "textAlign": "center",
+            "width": 20,
+          }
+        }
+        title="copy"
+      >
+        P
+      </div>
+      <div
+        style={
+          Object {
+            "border": "1px dotted grey",
+            "height": 25,
+            "marginRight": 10,
+            "textAlign": "center",
+            "width": 20,
+          }
+        }
+        title="question"
+      >
+        P
+      </div>
+    </div>
+  </div>,
+  <div
+    className="mt-3 row"
+  >
+    <div
+      className="col-md-8"
+    >
+      <ul>
+        <li>
+          Alerts are notifictions that CIBC sends to keep you informed of transactions and monitor your CIBC accounts.
+        </li>
+        <li>
+          Most alerts are sent automatically to My Messages by default and to any other additional contact methods you select and save.
+        </li>
+        <li>
+          If you choose to activate Push Notifications, you must also enable them on your mobile device.
+        </li>
+        <li>
+          Push Notifications are personalized alerts sent directly to your mobile device that can help you stay on top of your CIBC accounts. If you sign into CIBC Mobile Banking from a mobile device other than your own, Your alerts may be sent to that device until another user signs in to the application.
+        </li>
+        <li>
+          Some fraud prevention alerts cannot be turned off.
+        </li>
+      </ul>
+      <ul
+        className="mt-2 mb-3 nav nav-tabs"
+        onKeyDown={[Function]}
+        role="tablist"
+      >
+        <li
+          className="nav-item"
+          role="presentation"
+        >
+          <button
+            aria-controls="status-tab-tabpane-fraud"
+            aria-selected={true}
+            className="nav-link active"
+            data-rr-ui-event-key="fraud"
+            disabled={false}
+            id="status-tab-tab-fraud"
+            onClick={[Function]}
+            role="tab"
+            type="button"
+          >
+            FRAUD PREVENTION
+          </button>
+        </li>
+        <li
+          className="nav-item"
+          role="presentation"
+        >
+          <button
+            aria-controls="status-tab-tabpane-transactions"
+            className="nav-link"
+            data-rr-ui-event-key="transactions"
+            disabled={false}
+            id="status-tab-tab-transactions"
+            onClick={[Function]}
+            role="tab"
+            tabIndex={-1}
+            type="button"
+          >
+            TRANSACTIONS
+          </button>
+        </li>
+        <li
+          className="nav-item"
+          role="presentation"
+        >
+          <button
+            aria-controls="status-tab-tabpane-reminders"
+            className="nav-link"
+            data-rr-ui-event-key="reminders"
+            disabled={false}
+            id="status-tab-tab-reminders"
+            onClick={[Function]}
+            role="tab"
+            tabIndex={-1}
+            type="button"
+          >
+            REMINDERS
+          </button>
+        </li>
+      </ul>
+      <div
+        className="tab-content"
+      >
+        <div
+          aria-labelledby="status-tab-tab-fraud"
+          className="tab-pane active"
+          id="status-tab-tabpane-fraud"
+        >
+          <div
+            className="row"
+            style={
+              Object {
+                "backgroundColor": "#EFEFEF",
+                "borderBottom": "1px solid grey",
+              }
+            }
+          >
+            <div
+              className="col-md-8"
+            >
+              <p
+                style={
+                  Object {
+                    "marginTop": 12,
+                  }
+                }
+              >
+                GET ALERTED WHEN...
+              </p>
+            </div>
+            <div
+              className="col-md-4"
+            >
+              <p
+                style={
+                  Object {
+                    "marginTop": 12,
+                  }
+                }
+              >
+                SEND ALERT TO...
+              </p>
+            </div>
+          </div>
+          <div
+            className="row"
+            style={
+              Object {
+                "borderBottom": "1px solid grey",
+                "padding": 10,
+              }
+            }
+          >
+            <div
+              className="col-md-8"
+            >
+              <div
+                className="d-flex"
+                style={
+                  Object {
+                    "fontWeight": "bold",
+                  }
+                }
+              >
+                There was unusual activity on my card
+                <div
+                  style={
+                    Object {
+                      "border": "1px dotted grey",
+                      "height": 25,
+                      "marginRight": 10,
+                      "textAlign": "center",
+                      "width": 20,
+                    }
+                  }
+                >
+                  P
+                </div>
+              </div>
+            </div>
+            <div
+              className="col-md-4"
+            >
+              <div
+                className="form-check"
+              >
+                <input
+                  className="form-check-input"
+                  disabled={false}
+                  type="checkbox"
+                />
+                <label
+                  className="form-check-label"
+                  title=""
+                >
+                  My Messages
+                </label>
+              </div>
+              <div
+                className="form-check"
+              >
+                <input
+                  className="form-check-input"
+                  disabled={false}
+                  type="checkbox"
+                />
+                <label
+                  className="form-check-label"
+                  title=""
+                >
+                  Email
+                </label>
+              </div>
+              <div
+                className="form-check"
+              >
+                <input
+                  className="form-check-input"
+                  disabled={false}
+                  type="checkbox"
+                />
+                <label
+                  className="form-check-label"
+                  title=""
+                >
+                  Text Message
+                </label>
+              </div>
+              <div
+                className="form-check"
+              >
+                <input
+                  className="form-check-input"
+                  disabled={false}
+                  type="checkbox"
+                />
+                <label
+                  className="form-check-label"
+                  title=""
+                >
+                  Push Notification
+                </label>
+              </div>
+            </div>
+          </div>
+          <div
+            className="row"
+            style={
+              Object {
+                "borderBottom": "1px solid grey",
+                "padding": 10,
+              }
+            }
+          >
+            <div
+              className="col-md-8"
+            >
+              <div
+                className="d-flex"
+                style={
+                  Object {
+                    "fontWeight": "bold",
+                  }
+                }
+              >
+                Changes have been made to my Online, Mobile and Telephone Banking passwords
+                <div
+                  style={
+                    Object {
+                      "border": "1px dotted grey",
+                      "height": 25,
+                      "marginRight": 10,
+                      "textAlign": "center",
+                      "width": 20,
+                    }
+                  }
+                >
+                  P
+                </div>
+              </div>
+            </div>
+            <div
+              className="col-md-4"
+            >
+              <div
+                className="form-check"
+              >
+                <input
+                  className="form-check-input"
+                  disabled={false}
+                  type="checkbox"
+                />
+                <label
+                  className="form-check-label"
+                  title=""
+                >
+                  My Messages
+                </label>
+              </div>
+              <div
+                className="form-check"
+              >
+                <input
+                  className="form-check-input"
+                  disabled={false}
+                  type="checkbox"
+                />
+                <label
+                  className="form-check-label"
+                  title=""
+                >
+                  Email
+                </label>
+              </div>
+              <div
+                className="form-check"
+              >
+                <input
+                  className="form-check-input"
+                  disabled={false}
+                  type="checkbox"
+                />
+                <label
+                  className="form-check-label"
+                  title=""
+                >
+                  Text Message
+                </label>
+              </div>
+              <div
+                className="form-check"
+              >
+                <input
+                  className="form-check-input"
+                  disabled={false}
+                  type="checkbox"
+                />
+                <label
+                  className="form-check-label"
+                  title=""
+                >
+                  Push Notification
+                </label>
+              </div>
+            </div>
+          </div>
+          <div
+            className="row"
+            style={
+              Object {
+                "borderBottom": "1px solid grey",
+                "padding": 10,
+              }
+            }
+          >
+            <div
+              className="col-md-8"
+            >
+              <div
+                className="d-flex"
+                style={
+                  Object {
+                    "fontWeight": "bold",
+                  }
+                }
+              >
+                My personal information has been updated on my profile
+                <div
+                  style={
+                    Object {
+                      "border": "1px dotted grey",
+                      "height": 25,
+                      "marginRight": 10,
+                      "textAlign": "center",
+                      "width": 20,
+                    }
+                  }
+                >
+                  P
+                </div>
+              </div>
+            </div>
+            <div
+              className="col-md-4"
+            >
+              <div
+                className="form-check"
+              >
+                <input
+                  className="form-check-input"
+                  disabled={false}
+                  type="checkbox"
+                />
+                <label
+                  className="form-check-label"
+                  title=""
+                >
+                  My Messages
+                </label>
+              </div>
+              <div
+                className="form-check"
+              >
+                <input
+                  className="form-check-input"
+                  disabled={false}
+                  type="checkbox"
+                />
+                <label
+                  className="form-check-label"
+                  title=""
+                >
+                  Email
+                </label>
+              </div>
+              <div
+                className="form-check"
+              >
+                <input
+                  className="form-check-input"
+                  disabled={false}
+                  type="checkbox"
+                />
+                <label
+                  className="form-check-label"
+                  title=""
+                >
+                  Text Message
+                </label>
+              </div>
+              <div
+                className="form-check"
+              >
+                <input
+                  className="form-check-input"
+                  disabled={false}
+                  type="checkbox"
+                />
+                <label
+                  className="form-check-label"
+                  title=""
+                >
+                  Push Notification
+                </label>
+              </div>
+            </div>
+          </div>
+          <div
+            className="row"
+            style={
+              Object {
+                "borderBottom": "1px solid grey",
+                "padding": 10,
+              }
+            }
+          >
+            <div
+              className="col-md-8"
+            >
+              <div
+                className="d-flex"
+                style={
+                  Object {
+                    "fontWeight": "bold",
+                  }
+                }
+              >
+                A bill payee or Interac e-Transfer contact was added
+                <div
+                  style={
+                    Object {
+                      "border": "1px dotted grey",
+                      "height": 25,
+                      "marginRight": 10,
+                      "textAlign": "center",
+                      "width": 20,
+                    }
+                  }
+                >
+                  P
+                </div>
+              </div>
+            </div>
+            <div
+              className="col-md-4"
+            >
+              <div
+                className="form-check"
+              >
+                <input
+                  className="form-check-input"
+                  disabled={false}
+                  type="checkbox"
+                />
+                <label
+                  className="form-check-label"
+                  title=""
+                >
+                  My Messages
+                </label>
+              </div>
+              <div
+                className="form-check"
+              >
+                <input
+                  className="form-check-input"
+                  disabled={false}
+                  type="checkbox"
+                />
+                <label
+                  className="form-check-label"
+                  title=""
+                >
+                  Email
+                </label>
+              </div>
+              <div
+                className="form-check"
+              >
+                <input
+                  className="form-check-input"
+                  disabled={false}
+                  type="checkbox"
+                />
+                <label
+                  className="form-check-label"
+                  title=""
+                >
+                  Text Message
+                </label>
+              </div>
+              <div
+                className="form-check"
+              >
+                <input
+                  className="form-check-input"
+                  disabled={false}
+                  type="checkbox"
+                />
+                <label
+                  className="form-check-label"
+                  title=""
+                >
+                  Push Notification
+                </label>
+              </div>
+            </div>
+          </div>
+          <div
+            className="row"
+            style={
+              Object {
+                "borderBottom": "1px solid grey",
+                "padding": 10,
+              }
+            }
+          >
+            <div
+              className="col-md-12"
+            >
+              <div
+                className="form-check"
+              >
+                <input
+                  className="form-check-input"
+                  disabled={false}
+                  type="checkbox"
+                />
+                <label
+                  className="form-check-label"
+                  title=""
+                >
+                  There waas an attempt to exceed my ATM daily
+                </label>
+              </div>
+              <div
+                className="d-flex"
+                style={
+                  Object {
+                    "fontWeight": "bold",
+                  }
+                }
+              >
+                withdrawal limit
+                <div
+                  style={
+                    Object {
+                      "border": "1px dotted grey",
+                      "height": 25,
+                      "marginRight": 10,
+                      "textAlign": "center",
+                      "width": 20,
+                    }
+                  }
+                >
+                  P
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            className="row"
+            style={
+              Object {
+                "borderBottom": "1px solid grey",
+                "padding": 10,
+              }
+            }
+          >
+            <div
+              className="d-flex col-md-12"
+            >
+              <div
+                className="form-check"
+              >
+                <input
+                  className="form-check-input"
+                  disabled={false}
+                  type="checkbox"
+                />
+                <label
+                  className="form-check-label"
+                  title=""
+                >
+                  There was an attempt to exceed your Point of Sale daily limit
+                </label>
+              </div>
+              <div
+                style={
+                  Object {
+                    "fontWeight": "bold",
+                  }
+                }
+              >
+                <div
+                  style={
+                    Object {
+                      "border": "1px dotted grey",
+                      "height": 25,
+                      "marginRight": 10,
+                      "textAlign": "center",
+                      "width": 20,
+                    }
+                  }
+                >
+                  P
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            className="row"
+            style={
+              Object {
+                "borderBottom": "1px solid grey",
+                "padding": 10,
+              }
+            }
+          >
+            <div
+              className="col-md-12"
+            >
+              <div
+                className="form-check"
+              >
+                <input
+                  className="form-check-input"
+                  disabled={false}
+                  type="checkbox"
+                />
+                <label
+                  className="form-check-label"
+                  title=""
+                >
+                  A bank machine withdrawal is more than this amount:
+                </label>
+              </div>
+              <div
+                className="d-flex"
+                style={
+                  Object {
+                    "fontWeight": "bold",
+                  }
+                }
+              >
+                <div
+                  className="mb-3 input-group"
+                  style={
+                    Object {
+                      "width": 200,
+                    }
+                  }
+                >
+                  <span
+                    className="input-group-text"
+                    id="basic-addon1"
+                  >
+                    $
+                  </span>
+                  <input
+                    aria-describedby="basic-addon1"
+                    className="form-control"
+                  />
+                </div>
+                <div
+                  style={
+                    Object {
+                      "border": "1px dotted grey",
+                      "height": 25,
+                      "marginRight": 10,
+                      "textAlign": "center",
+                      "width": 20,
+                    }
+                  }
+                >
+                  P
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            className="row"
+            style={
+              Object {
+                "borderBottom": "1px solid grey",
+                "padding": 10,
+              }
+            }
+          >
+            <div
+              className="col-md-12"
+            >
+              <div
+                className="form-check"
+              >
+                <input
+                  className="form-check-input"
+                  disabled={false}
+                  type="checkbox"
+                />
+                <label
+                  className="form-check-label"
+                  title=""
+                >
+                  There was a debit card purchase more than:
+                </label>
+              </div>
+              <div
+                className="d-flex"
+                style={
+                  Object {
+                    "fontWeight": "bold",
+                  }
+                }
+              >
+                <div
+                  className="mb-3 input-group"
+                  style={
+                    Object {
+                      "width": 200,
+                    }
+                  }
+                >
+                  <span
+                    className="input-group-text"
+                    id="basic-addon1"
+                  >
+                    $
+                  </span>
+                  <input
+                    aria-describedby="basic-addon1"
+                    className="form-control"
+                  />
+                </div>
+                <div
+                  style={
+                    Object {
+                      "border": "1px dotted grey",
+                      "height": 25,
+                      "marginRight": 10,
+                      "textAlign": "center",
+                      "width": 20,
+                    }
+                  }
+                >
+                  P
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            className="mt-4 p-3"
+            style={
+              Object {
+                "borderBottom": "1px solid #e5e5e5",
+                "borderTop": "1px solid #e5e5e5",
+              }
+            }
+          >
+            <div
+              className="d-flex justify-content-end row"
+            >
+              <button
+                className="d-flex btn btn-outline-danger"
+                disabled={false}
+                style={
+                  Object {
+                    "marginRight": 10,
+                    "width": "auto",
+                  }
+                }
+                type="button"
+              >
+                Reset
+              </button>
+              <button
+                className="d-flex btn btn-danger"
+                disabled={false}
+                style={
+                  Object {
+                    "marginRight": 10,
+                    "width": "auto",
+                  }
+                }
+                type="button"
+              >
+                Save
+              </button>
+            </div>
+          </div>
+          <div
+            className="mt-2"
+          >
+            <div
+              className="d-flex"
+            >
+              <div
+                style={
+                  Object {
+                    "border": "1px dotted grey",
+                    "height": 25,
+                    "marginRight": 10,
+                    "textAlign": "center",
+                    "width": 20,
+                  }
+                }
+              >
+                P
+              </div>
+              <span
+                style={
+                  Object {
+                    "fontWeight": "bold",
+                  }
+                }
+              >
+                Note:
+              </span>
+            </div>
+            <p
+              className="d-flex flex-column"
+            >
+              <ul>
+                <li>
+                  An inactive alert status applies to bank accoiunts that were automatically transferred from Paperless to eStatements. If your alert status is displayed as 'Inactive', it means you have not agreed to the terms and conditions for eStatements. Once you have accepted the terms and conditions, you alerts will be activated and you will not see an 'Inactive' alert status.
+                </li>
+                <li>
+                  In the case of credit cards, your alerts status will always be active.
+                </li>
+                <li>
+                  CIBC Alerts Terms and Conditions are now a part of the
+                   
+                  <a
+                    className="text-black"
+                    href="/"
+                  >
+                    Electronic Access Agreement
+                  </a>
+                </li>
+              </ul>
+              <div
+                className="row"
+              >
+                <div
+                  className="d-flex align-items-center mt-2 col-md-12"
+                >
+                  <div
+                    style={
+                      Object {
+                        "border": "1px dotted grey",
+                        "height": 25,
+                        "marginRight": 10,
+                        "textAlign": "center",
+                        "width": 20,
+                      }
+                    }
+                  >
+                    P
+                  </div>
+                  <span>
+                    eStatement Terms and Conditions (last updated: November 2011) (PDF, 145KB).
+                  </span>
+                </div>
+              </div>
+            </p>
+          </div>
+        </div>
+        <div
+          aria-labelledby="status-tab-tab-transactions"
+          className="tab-pane"
+          id="status-tab-tabpane-transactions"
+        >
+          Transactions
+        </div>
+        <div
+          aria-labelledby="status-tab-tab-reminders"
+          className="tab-pane"
+          id="status-tab-tabpane-reminders"
+        >
+          Reminders
+        </div>
+      </div>
+    </div>
+    <div
+      className="col-md-4"
+    >
+      <div
+        className="bg-white card"
+      >
+        <div
+          className="card-body"
+        >
+          <h5
+            className="mt-4 mb-3"
+          >
+            Contact Information
+          </h5>
+          <div
+            className="d-flex justify-content-between"
+            style={
+              Object {
+                "borderBottom": "1px solid grey",
+                "paddingBottom": 5,
+                "paddingTop": 5,
+              }
+            }
+          >
+            <div>
+              <div
+                style={
+                  Object {
+                    "fontWeight": "bold",
+                  }
+                }
+              >
+                Email
+              </div>
+              <div
+                style={
+                  Object {
+                    "color": "grey",
+                  }
+                }
+              >
+                dtough@hotmail.com
+              </div>
+            </div>
+            <button
+              className="text-black btn btn-link"
+              disabled={false}
+              type="button"
+            >
+              Edit
+            </button>
+          </div>
+          <div
+            className="d-flex justify-content-between"
+            style={
+              Object {
+                "borderBottom": "1px solid grey",
+                "paddingBottom": 5,
+                "paddingTop": 5,
+              }
+            }
+          >
+            <div>
+              <div
+                style={
+                  Object {
+                    "fontWeight": "bold",
+                  }
+                }
+              >
+                SMS mobile phone
+              </div>
+              <div
+                style={
+                  Object {
+                    "color": "grey",
+                  }
+                }
+              >
+                410-553-1372
+              </div>
+            </div>
+            <button
+              className="text-black btn btn-link"
+              disabled={false}
+              type="button"
+            >
+              Edit
+            </button>
+          </div>
+          <div
+            className="d-flex justify-content-between"
+            style={
+              Object {
+                "borderBottom": "1px solid grey",
+                "paddingBottom": 5,
+                "paddingTop": 5,
+              }
+            }
+          >
+            <div>
+              <div
+                style={
+                  Object {
+                    "fontWeight": "bold",
+                  }
+                }
+              >
+                Home Phone
+              </div>
+              <div
+                style={
+                  Object {
+                    "color": "grey",
+                  }
+                }
+              >
+                410-553-1372
+              </div>
+            </div>
+            <button
+              className="text-black btn btn-link"
+              disabled={false}
+              type="button"
+            >
+              Edit
+            </button>
+          </div>
+          <div
+            className="d-flex justify-content-between"
+            style={
+              Object {
+                "paddingBottom": 5,
+                "paddingTop": 5,
+              }
+            }
+          >
+            <div>
+              <div
+                style={
+                  Object {
+                    "fontWeight": "bold",
+                  }
+                }
+              >
+                Business Phone
+              </div>
+            </div>
+            <button
+              className="text-black btn btn-link"
+              disabled={false}
+              type="button"
+            >
+              Edit
+            </button>
+          </div>
+        </div>
+      </div>
+      <div
+        className="bg-white mt-4 card"
+      >
+        <div
+          className="card-body"
+        >
+          <h5>
+            Did you know?
+          </h5>
+          <p>
+            You can avoid late credit card payments when you receive your credit card minimum payment amount and due date via email or SMS
+          </p>
+          <a
+            className="text-decoration-none text-black"
+            href="/"
+            style={
+              Object {
+                "display": "block",
+                "fontSize": 15,
+                "marginBottom": 5,
+                "marginTop": 10,
+              }
+            }
+          >
+            Turns on Minimum Payment Due alert now
+            <span
+              style={
+                Object {
+                  "color": "rgb(220, 53, 69)",
+                  "marginLeft": 5,
+                }
+              }
+            >
+              &gt;
+            </span>
+          </a>
+          <a
+            className="text-decoration-none text-black"
+            href="/"
+            style={
+              Object {
+                "display": "block",
+                "fontSize": 15,
+                "marginBottom": 5,
+                "marginTop": 10,
+              }
+            }
+          >
+            Apply for a CIBC Credit Card today
+            <span
+              style={
+                Object {
+                  "color": "rgb(220, 53, 69)",
+                  "marginLeft": 5,
+                }
+              }
+            >
+              &gt;
+            </span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>,
+]
+`;

@@ -7,7 +7,7 @@ import {
   Button,
   Nav,
 } from 'react-bootstrap';
-import CommonHeader from './components/CommonHeader';
+import CommonHeader from '../../common/CommonHeader';
 import PanelHeader from './components/PanelHeader';
 
 export default function MyAccounts() {
@@ -409,8 +409,8 @@ export default function MyAccounts() {
                 <InputGroup className="mb-3">
                   <InputGroup.Text id="basic-addon1">$</InputGroup.Text>
                   <FormControl
-                    placeholder="Username"
-                    aria-label="Username"
+                    placeholder="Amount"
+                    aria-label="Amount"
                     aria-describedby="basic-addon1"
                   />
                 </InputGroup>
