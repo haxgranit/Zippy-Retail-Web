@@ -17,6 +17,7 @@ import ViewEBills from './bill-payments/view-ebills/ViewEBills';
 import Business from './Business';
 import BusinessSignup from './BusinessSignup';
 import ContactUs from './contact-us/ContactUs';
+import CreateOrEditAccountNickname from './customer-services/create-or-edit-account-nickname/CreateOrEditAccountNickname';
 import CustomerServices from './customer-services/customer-services/CustomerServices';
 import Footer from './footer/Footer';
 import Header from './Header';
@@ -60,6 +61,7 @@ export default function App() {
           <Route path="contact-us" element={<ContactUs />} />
           <Route path="customer-services">
             <Route path="/customer-services" element={<CustomerServices />} />
+            <Route path="create-or-edit-account-nickname" element={<CreateOrEditAccountNickname />} />
           </Route>
           <Route path="bill-payments">
             <Route path="/bill-payments" element={<BillPayments />} />
