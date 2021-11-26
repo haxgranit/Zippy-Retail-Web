@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import { Col, Row, Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import CommonHeader from '../common/CommonHeader';
+import CommonHeader from '../../common/CommonHeader';
 import {
   PERSONAL_INFORMATION_OPTIONS,
   SECURE_MESSAGE_OPTIONS,

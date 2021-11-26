@@ -1,7 +1,7 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { BrowserRouter } from 'react-router-dom';
-import '../i18n/config';
-import '../index.css';
+import '../../i18n/config';
+import '../../index.css';
 import CustomerServices from './CustomerServices';
 
 export default {
