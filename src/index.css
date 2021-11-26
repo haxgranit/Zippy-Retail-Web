@@ -292,3 +292,31 @@ footer {
   border: 1px solid #ffffff;
   background-color: #a3c6e2;
 }
+
+.halfcirclecopy {
+  z-index: 5;
+  margin-top: 2.3rem;
+  width: 100%;
+  top: 0px;
+}
+
+.centerimage {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.bluecircle {
+  margin-bottom: 2.25rem;
+}
+
+.numbercicle {
+  transform: translate(-50%, -50%);
+  z-index: 10;
+}
+
+p.content-home {
+  font-size: 1rem;
+  font-weight: 400;
+  color: #5e7472;
+}
