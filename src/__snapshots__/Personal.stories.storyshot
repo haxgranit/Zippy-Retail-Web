@@ -150,5 +150,265 @@ exports[`Storyshots Personal Default 1`] = `
       className="spacing"
     />
   </div>
+  <div
+    style={
+      Object {
+        "backgroundColor": "white",
+      }
+    }
+  >
+    <div
+      className="container"
+    >
+      <div
+        className="row pt-5 pb-4"
+      >
+        <div
+          className="col-12 col-md-11 col-lg-9"
+        >
+          <div
+            className="mb-3"
+          >
+            <h1
+              className="redtitle hero-heading display-3 mb-4"
+              style={
+                Object {
+                  "fontSize": "4em",
+                }
+              }
+            >
+              How does Zippy work?
+            </h1>
+            <p
+              className="content-home"
+            >
+              There is no fee to sign up for Zippy. We will never surprise you with hidden fees or rates. We will always give you the lowest rate and lowest fee - and we will give you money back for zipping with us through funzpoints, referral rewards and cash back for every transaction you send through Zippy.
+            </p>
+          </div>
+        </div>
+        <div
+          className="col-12 col-md-1 col-lg-3"
+        />
+      </div>
+      <div
+        className="row"
+      >
+        <div
+          className="col-12 col-md-5 col-lg-6"
+        >
+          <h4
+            className="redtitle"
+          >
+            Request and send money (for free!)
+          </h4>
+          <ul>
+            <li>
+              Login to your acount, tap your contact and send them money or a request for money.
+            </li>
+            <li>
+              Easy, fast, free and issent within seconds
+            </li>
+            <li>
+              Send across borders with the best rates, lowest fees and super Zippt speed (in real time!)
+            </li>
+          </ul>
+          <br />
+          <h4
+            className="redtitle"
+          >
+            Pay bills (for free!)
+          </h4>
+          <ul>
+            <li>
+              Login to your account and add a bill.
+            </li>
+            <li>
+              Pay bills instantly, anytime, anywhere, with no fee!
+            </li>
+          </ul>
+          <h1
+            className="redtitle ms-4 mt-5"
+          >
+            Sign up free!
+          </h1>
+          <h2
+            className="redsubtitle mb-5 ms-4"
+          >
+            (no back account needed)
+          </h2>
+        </div>
+        <div
+          className="col-12 col-md-7 col-lg-6 backgroundimage"
+          style={
+            Object {
+              "backgroundImage": "url(help_my_per_hero.jpg)",
+              "backgroundSize": "cover",
+            }
+          }
+        />
+      </div>
+    </div>
+    <div
+      style={
+        Object {
+          "backgroundColor": "#51aad8",
+        }
+      }
+    >
+      <div
+        className="container"
+      >
+        <div
+          className="row"
+        >
+          <div
+            className="col-12 col-md-6 col-lg-3"
+          >
+            <div
+              className="position-relative top-0"
+              data-aos="flip-left"
+              data-aos-delay="0"
+            >
+              <img
+                alt=""
+                className="img-fluid centerimage bluecircle"
+                src="bluecircle.png"
+              />
+              <img
+                alt=""
+                className="position-absolute top-0 start-50 numbercicle"
+                src="numbercircle_1.png"
+              />
+              <div
+                className="position-absolute halfcirclecopy"
+              >
+                <h5
+                  className="whitetitle text-center"
+                >
+                  <a
+                    className="whitetitle"
+                    href="business-signup.html"
+                  >
+                    Sign up
+                    <br />
+                    here
+                  </a>
+                </h5>
+              </div>
+            </div>
+          </div>
+          <div
+            className="col-12 col-md-6 col-lg-3"
+          >
+            <div
+              className="position-relative top-0"
+              data-aos="flip-left"
+              data-aos-delay="200"
+            >
+              <img
+                alt=""
+                className="img-fluid centerimage bluecircle"
+                src="bluecircle.png"
+              />
+              <img
+                alt=""
+                className="position-absolute top-0 start-50 numbercicle"
+                src="numbercircle_2.png"
+              />
+              <div
+                className="position-absolute halfcirclecopy"
+              >
+                <h5
+                  className="whitetitle text-center"
+                >
+                  We will send you a
+                  <br />
+                   link via text or email
+                </h5>
+                <p
+                  className="whitecopy text-center"
+                >
+                  (you choose which
+                  <br />
+                   works for you)
+                </p>
+              </div>
+            </div>
+          </div>
+          <div
+            className="col-12 col-md-6 col-lg-3"
+          >
+            <div
+              className="position-relative top-0"
+              data-aos="flip-left"
+              data-aos-delay="400"
+            >
+              <img
+                alt=""
+                className="img-fluid centerimage bluecircle"
+                src="bluecircle.png"
+              />
+              <img
+                alt=""
+                className="position-absolute top-0 start-50 numbercicle"
+                src="numbercircle_3.png"
+              />
+              <div
+                className="position-absolute halfcirclecopy"
+              >
+                <h5
+                  className="whitetitle text-center"
+                >
+                  Click the link to
+                  <br />
+                   download the app
+                </h5>
+                <p
+                  className="whitecopy text-center"
+                >
+                  Zippy is available on over
+                  <br />
+                   400 smart devices
+                </p>
+              </div>
+            </div>
+          </div>
+          <div
+            className="col-12 col-md-6 col-lg-3"
+          >
+            <div
+              className="position-relative top-0"
+              data-aos="flip-left"
+              data-aos-delay="600"
+            >
+              <img
+                alt=""
+                className="img-fluid centerimage bluecircle"
+                src="bluecircle.png"
+              />
+              <img
+                alt=""
+                className="position-absolute top-0 start-50 numbercicle"
+                src="numbercircle_4.png"
+              />
+              <div
+                className="position-absolute halfcirclecopy"
+              >
+                <h5
+                  className="whitetitle text-center"
+                >
+                  Open the app
+                  <br />
+                   and start 
+                  <br />
+                   Zipping!
+                </h5>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </main>
 `;
