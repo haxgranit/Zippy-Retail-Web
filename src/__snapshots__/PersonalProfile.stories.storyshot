@@ -221,7 +221,7 @@ exports[`Storyshots PersonalProfile Default 1`] = `
                       className="text-light fw-bold"
                       htmlFor="postalcode"
                     >
-                      First Name
+                      Postal Code
                     </label>
                     <input
                       className="form-control formcurve"
