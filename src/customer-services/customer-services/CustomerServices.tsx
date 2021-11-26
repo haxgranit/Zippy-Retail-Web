@@ -1,6 +1,7 @@
-import { Col, Row, Button } from 'react-bootstrap';
 import PropTypes from 'prop-types';
-import CommonHeader from '../common/CommonHeader';
+import { Col, Row, Button } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
+import CommonHeader from '../../common/CommonHeader';
 import {
   PERSONAL_INFORMATION_OPTIONS,
   SECURE_MESSAGE_OPTIONS,
@@ -13,12 +14,12 @@ import {
 } from './ServiceOptions';
 
 const LinkItem = (props: any) => {
-  const { isNew, title } = props;
+  const { isNew, title, to } = props;
   return (
     <div style={{ paddingLeft: 5, paddingRight: 5 }}>
       <div style={{ padding: 10, borderBottom: '1px solid #d9d9d9' }}>
-        <a
-          href="/"
+        <Link
+          to={to}
           className="text-decoration-none text-black"
           style={{
             marginTop: 5,
@@ -47,7 +48,7 @@ const LinkItem = (props: any) => {
           <span style={{ color: 'rgb(220, 53, 69)', marginLeft: 5 }}>
             {'>'}
           </span>
-        </a>
+        </Link>
       </div>
     </div>
   );
@@ -55,6 +56,7 @@ const LinkItem = (props: any) => {
 
 LinkItem.propTypes = {
   title: PropTypes.string.isRequired,
+  to: PropTypes.string.isRequired,
   isNew: PropTypes.bool,
 };
 
@@ -74,7 +76,7 @@ export default function CustomerServices() {
               <h5>Personal information and Settings</h5>
             </div>
             {PERSONAL_INFORMATION_OPTIONS.map((item) => (
-              <LinkItem title={item.title} isNew={item.is_new} key={`personal_${item.key}`} />
+              <LinkItem to={item.to} title={item.title} isNew={item.is_new} key={`personal_${item.key}`} />
             ))}
           </Col>
           <Col md={6} style={{ padding: 0 }}>
@@ -82,7 +84,7 @@ export default function CustomerServices() {
               <h5>Secure messages and alerts</h5>
             </div>
             {SECURE_MESSAGE_OPTIONS.map((item) => (
-              <LinkItem title={item.title} isNew={item.is_new} key={`secure_${item.key}`} />
+              <LinkItem to={item.to} title={item.title} isNew={item.is_new} key={`secure_${item.key}`} />
             ))}
           </Col>
         </Row>
@@ -95,7 +97,7 @@ export default function CustomerServices() {
               <h5>Bank Accounts</h5>
             </div>
             {BANK_ACCOUNT_OPTIONS.map((item) => (
-              <LinkItem title={item.title} isNew={item.is_new} key={`bank_${item.key}`} />
+              <LinkItem to={item.to} title={item.title} isNew={item.is_new} key={`bank_${item.key}`} />
             ))}
           </Col>
           <Col md={6} style={{ padding: 0 }}>
@@ -103,7 +105,7 @@ export default function CustomerServices() {
               <h5>Credit Cards</h5>
             </div>
             {CREDIT_CARD_OPTIONS.map((item) => (
-              <LinkItem title={item.title} isNew={item.is_new} key={`credit_${item.key}`} />
+              <LinkItem to={item.to} title={item.title} isNew={item.is_new} key={`credit_${item.key}`} />
             ))}
           </Col>
         </Row>
@@ -113,7 +115,7 @@ export default function CustomerServices() {
               <h5>Exclusive offers and benefits</h5>
             </div>
             {OFFER_OPTIONS.map((item) => (
-              <LinkItem title={item.title} isNew={item.is_new} key={`offer_${item.key}`} />
+              <LinkItem to={item.to} title={item.title} isNew={item.is_new} key={`offer_${item.key}`} />
             ))}
           </Col>
         </Row>
@@ -123,7 +125,7 @@ export default function CustomerServices() {
               <h5>Mortagages and Loans</h5>
             </div>
             {LOAN_OPTIONS.map((item) => (
-              <LinkItem title={item.title} isNew={item.is_new} key={`loan_${item.key}`} />
+              <LinkItem to={item.to} title={item.title} isNew={item.is_new} key={`loan_${item.key}`} />
             ))}
           </Col>
           <Col md={6} style={{ padding: 0 }}>
@@ -131,7 +133,7 @@ export default function CustomerServices() {
               <h5>Investment Accounts</h5>
             </div>
             {INVESTMENT_OPTIONS.map((item) => (
-              <LinkItem title={item.title} isNew={item.is_new} key={`investment_${item.key}`} />
+              <LinkItem to={item.to} title={item.title} isNew={item.is_new} key={`investment_${item.key}`} />
             ))}
           </Col>
         </Row>
