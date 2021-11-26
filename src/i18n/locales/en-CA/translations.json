@@ -4,7 +4,6 @@
   "header.about": "about us",
   "header.personal": "personal",
   "header.business": "business",
-  "header.personal_profile": "dev docs",
 
   "about.who_is": "who is",
   "about.who_is_description_1": "We're finance geeks who know the system. And we think it's too complicated, too expensive and too difficult. Just because it's always been that way doesn't mean we can't do better. We're passionate about working the system to make it rewarding for everyone. We created Zippy Cash to deliver on that promise.",
@@ -24,15 +23,6 @@
   "business.business_description_2": "Setting up international bank accounts may sound daunting but with Zippy we deliver everything you need to start managing accounts abroad in minutes. How is it this easy? We have excellent partnerships with international financial brands, tech solutions that serve as an efficient connector, prioritizing ease, speed and security.",
   "business.business_description_3": "Paying invoices, people and employees just got zippier. We always give you the lowest transaction fees and make it easy (dare we say even fun?) to manage your payments.<br />Find out more here.",
   "business.business_title": "business banking",
-  "business.sign_up": "Sign Up",
-  "business.first_name": "First Name",
-  "business.last_name": "Last Name",
-  "business.email": "Email",
-  "business.password": "Password",
-  "business.confirm_password": "Confirm Password",
-  "business.agree_title": "I agree to the <1>terms and conditions</1>",
-  "business.create_your_account": "Create your account",
-  "business.personal_banking": "personal banking",
 
   "business_signup.business_title": "business banking",
   "business_signup.sign_up": "Sign Up",
