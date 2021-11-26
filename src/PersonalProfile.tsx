@@ -156,7 +156,7 @@ export default function PersonalProfile() {
                           htmlFor="postalcode"
                           className="text-light fw-bold"
                         >
-                          {t('profile.first_name')}
+                          {t('profile.postal_code')}
                         </label>
                         <input
                           type="text"
