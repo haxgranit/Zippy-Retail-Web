@@ -35,7 +35,7 @@
   "business_signup.create_your_account": "NEEDS_LOC",
 
   "home.sign_up_btn": "Ouvrez-moi un compte!",
-  "home.zip_it": "J’opte pour Zippy!",
+  "home.zip_it": "J’opte pour <br />Zippy!",
   "home.personal_sign_up": "Ouvrez-moi un compte!",
   "home.business_banking": "Activité bancaire professionnelle ",
   "home.business_banking_desc": "Un peu plus d’argent, beaucoup plus de pouvoir.",
