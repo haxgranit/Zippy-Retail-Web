@@ -48,6 +48,7 @@ import EFT from './transfer-funds/EFT';
 import ReviewAndCancelTransfers from './transfer-funds/review-and-cancel-transfers/ReviewAndCancelTransfers';
 import TransferFunds from './transfer-funds/transfer-funds/TransferFunds';
 import VisaDirect from './transfer-funds/VisaDirect';
+import ChangeYourPassword from './customer-services/change-your-password/ChangeYourPassword';
 
 export default function App() {
   useEffect(() => AOS.init(), []);
@@ -64,6 +65,7 @@ export default function App() {
             <Route path="/customer-services" element={<CustomerServices />} />
             <Route path="create-or-edit-account-nickname" element={<CreateOrEditAccountNickname />} />
             <Route path="change-your-address" element={<ChangeYourAddress />} />
+            <Route path="change-your-password" element={<ChangeYourPassword />} />
           </Route>
           <Route path="bill-payments">
             <Route path="/bill-payments" element={<BillPayments />} />
