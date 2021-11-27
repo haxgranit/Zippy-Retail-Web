@@ -6,6 +6,7 @@ import {
   Routes,
 } from 'react-router-dom';
 import About from './About';
+import AccountSecurity from './account-security/AccountSecurity';
 import BillerDetails from './bill-payments/biller-details/BillerDetails';
 import AddOrEditBillers from './bill-payments/add-or-edit-billers/AddOrEditBillers';
 import BillPayments from './bill-payments/bill-payments/BillPayments';
@@ -13,6 +14,10 @@ import ReviewAndCancelBillPayments from './bill-payments/review-and-cancel-bill-
 import SetUpBillPayments from './bill-payments/set-up-bill-payments/SetUpBillPayments';
 import ViewEBills from './bill-payments/view-ebills/ViewEBills';
 import Business from './Business';
+import ContactUs from './contact-us/ContactUs';
+import CreateOrEditAccountNickname from './customer-services/create-or-edit-account-nickname/CreateOrEditAccountNickname';
+import ChangeYourAddress from './customer-services/change-your-address/ChangeYourAddress';
+import CustomerServices from './customer-services/customer-services/CustomerServices';
 import Footer from './footer/Footer';
 import Header from './Header';
 import AutodepositSettings from './interac-etransfer/autodeposit-settings/AutodepositSettings';
@@ -25,6 +30,7 @@ import SendMoney from './interac-etransfer/send-money/SendMoney';
 import Status from './interac-etransfer/status/Status';
 import Home from './home/Home';
 import Legal from './Legal';
+import ManageMyAlerts from './manage-my-alerts/ManageMyAlerts';
 import MyAccounts from './my-accounts/my-accounts/MyAccounts';
 import DownloadTransactions from './my-accounts/download-transactions/DownloadTransactions';
 import StatementPreferences from './my-accounts/view-estatements/statement-preferences/StatementPreferences';
@@ -38,10 +44,8 @@ import EFT from './transfer-funds/EFT';
 import ReviewAndCancelTransfers from './transfer-funds/review-and-cancel-transfers/ReviewAndCancelTransfers';
 import TransferFunds from './transfer-funds/transfer-funds/TransferFunds';
 import VisaDirect from './transfer-funds/VisaDirect';
-import AccountSecurity from './account-security/AccountSecurity';
-import CustomerServices from './customer-services/CustomerServices';
-import ContactUs from './contact-us/ContactUs';
-import ManageMyAlerts from './manage-my-alerts/ManageMyAlerts';
+import ChangeYourPassword from './customer-services/change-your-password/ChangeYourPassword';
+import ChangeYourContactInformation from './customer-services/change-contact-information/ChangeYourContactInformation';
 
 export default function App() {
   useEffect(() => AOS.init(), []);
@@ -54,7 +58,13 @@ export default function App() {
         <Route path="/" element={<Home />}>
           <Route path="account-security" element={<AccountSecurity />} />
           <Route path="contact-us" element={<ContactUs />} />
-          <Route path="customer-services" element={<CustomerServices />} />
+          <Route path="customer-services">
+            <Route path="/customer-services" element={<CustomerServices />} />
+            <Route path="create-or-edit-account-nickname" element={<CreateOrEditAccountNickname />} />
+            <Route path="change-your-address" element={<ChangeYourAddress />} />
+            <Route path="change-your-password" element={<ChangeYourPassword />} />
+            <Route path="change-your-contact-information" element={<ChangeYourContactInformation />} />
+          </Route>
           <Route path="bill-payments">
             <Route path="/bill-payments" element={<BillPayments />} />
             <Route path="set-up-bill-payments" element={<SetUpBillPayments />} />

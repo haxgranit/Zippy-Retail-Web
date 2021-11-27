@@ -1,6 +1,7 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import '../i18n/config';
-import '../index.css';
+import { BrowserRouter } from 'react-router-dom';
+import '../../i18n/config';
+import '../../index.css';
 import CustomerServices from './CustomerServices';
 
 export default {
@@ -8,7 +9,11 @@ export default {
   component: CustomerServices,
 } as ComponentMeta<typeof CustomerServices>;
 
-const Template: ComponentStory<typeof CustomerServices> = () => <CustomerServices />;
+const Template: ComponentStory<typeof CustomerServices> = () => (
+  <BrowserRouter>
+    <CustomerServices />
+  </BrowserRouter>
+);
 
 export const Default = Template.bind({});
 Default.args = {};
