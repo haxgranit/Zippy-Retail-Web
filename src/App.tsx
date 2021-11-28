@@ -50,6 +50,7 @@ import TransferFunds from './transfer-funds/transfer-funds/TransferFunds';
 import VisaDirect from './transfer-funds/VisaDirect';
 import ChangeYourPassword from './customer-services/change-your-password/ChangeYourPassword';
 import ChangeYourContactInformation from './customer-services/change-contact-information/ChangeYourContactInformation';
+import AddCardHolder from './customer-services/add-cardholder/AddCardHolder';
 
 export default function App() {
   useEffect(() => AOS.init(), []);
@@ -68,6 +69,7 @@ export default function App() {
             <Route path="change-your-address" element={<ChangeYourAddress />} />
             <Route path="change-your-password" element={<ChangeYourPassword />} />
             <Route path="change-your-contact-information" element={<ChangeYourContactInformation />} />
+            <Route path="add-a-cardholder" element={<AddCardHolder />} />
           </Route>
           <Route path="bill-payments">
             <Route path="/bill-payments" element={<BillPayments />} />
