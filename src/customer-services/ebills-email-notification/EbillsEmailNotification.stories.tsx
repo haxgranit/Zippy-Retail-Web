@@ -1,5 +1,4 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { BrowserRouter } from 'react-router-dom';
 import '../../i18n/config';
 import '../../index.css';
 import EbillsEmailNotification from './EbillsEmailNotification';
@@ -10,9 +9,7 @@ export default {
 } as ComponentMeta<typeof EbillsEmailNotification>;
 
 const Template: ComponentStory<typeof EbillsEmailNotification> = () => (
-  <BrowserRouter>
-    <EbillsEmailNotification />
-  </BrowserRouter>
+  <EbillsEmailNotification />
 );
 
 export const Default = Template.bind({});
