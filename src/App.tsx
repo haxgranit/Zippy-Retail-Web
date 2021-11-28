@@ -1,5 +1,8 @@
-import { useEffect } from 'react';
+/* eslint-disable no-console */
+
 import AOS from 'aos';
+import { useIsAuthenticated, useMsal } from '@azure/msal-react';
+import { useEffect } from 'react';
 import {
   Navigate,
   Route,
@@ -39,6 +42,7 @@ import ViewAccountDetails from './my-accounts/view-account-details/ViewAccountDe
 import ViewEStatements from './my-accounts/view-estatements/ViewEStatements';
 import Personal from './Personal';
 import PersonalProfile from './PersonalProfile';
+import { fetchProfile } from './profile';
 import ScrollToTop from './ScrollToTop';
 import EFT from './transfer-funds/EFT';
 import ReviewAndCancelTransfers from './transfer-funds/review-and-cancel-transfers/ReviewAndCancelTransfers';
@@ -48,6 +52,15 @@ import ChangeYourPassword from './customer-services/change-your-password/ChangeY
 import ChangeYourContactInformation from './customer-services/change-contact-information/ChangeYourContactInformation';
 
 export default function App() {
+  const isAuthenticated = useIsAuthenticated();
+  const { instance, accounts } = useMsal();
+
+  useEffect(() => {
+    if (isAuthenticated) {
+      fetchProfile(instance, accounts[0]).then((profile) => console.log('profile', profile));
+    }
+  }, [isAuthenticated, instance, accounts]);
+
   useEffect(() => AOS.init(), []);
 
   return (
