@@ -52,6 +52,7 @@ import ChangeYourPassword from './customer-services/change-your-password/ChangeY
 import ChangeYourContactInformation from './customer-services/change-contact-information/ChangeYourContactInformation';
 import AddACardHolder from './customer-services/add-a-cardholder/AddACardHolder';
 import EbillsEmailNotification from './customer-services/ebills-email-notification/EbillsEmailNotification';
+import ChangeYourTaxResidency from './customer-services/change-your-tax-residency/ChangeYourTaxResidency';
 
 export default function App() {
   useEffect(() => AOS.init(), []);
@@ -72,6 +73,7 @@ export default function App() {
             <Route path="change-your-contact-information" element={<ChangeYourContactInformation />} />
             <Route path="add-a-cardholder" element={<AddACardHolder />} />
             <Route path="set-up-ebills-email-notification" element={<EbillsEmailNotification />} />
+            <Route path="change-your-tax-residency" element={<ChangeYourTaxResidency />} />
           </Route>
           <Route path="bill-payments">
             <Route path="/bill-payments" element={<BillPayments />} />
