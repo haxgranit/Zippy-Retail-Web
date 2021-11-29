@@ -63,6 +63,7 @@ import RemoveAssociationToOnlineInvestmentAccount from './customer-services/remo
 import RequestACreditCardBalanceTransfer from './customer-services/request-a-credit-card-balance-transfer/RequestACreditCardBalanceTransfer';
 import ApplyForACreditLimitIncrease from './customer-services/apply-for-a-credit-limit-increase/ApplyForACreditLimitIncrease';
 import SetUpDirectDepositWithCanadaRevenueAgency from './customer-services/set-up-direct-deposit-with-canada-revenue-agency/SetUpDirectDepositWithCanadaRevenueAgency';
+import StopPayments from './customer-services/stop-payments/StopPayments';
 import ApplyForCibcPaymentProtectorInsuranceForCreditCards from './customer-services/apply-for-cibc-payment-protector-insurance-for-credit-cards/ApplyForCibcPaymentProtectorInsuranceForCreditCards';
 
 export default function App() {
@@ -95,6 +96,7 @@ export default function App() {
             <Route path="request-a-credit-card-balance-transfer" element={<RequestACreditCardBalanceTransfer />} />
             <Route path="apply-for-a-credit-limit-increase" element={<ApplyForACreditLimitIncrease />} />
             <Route path="set-up-direct-deposit-with-canada-revenue-agency" element={<SetUpDirectDepositWithCanadaRevenueAgency />} />
+            <Route path="stop-payments" element={<StopPayments />} />
             <Route path="apply-for-cibc-payment-protector-insurance-for-credit-cards" element={<ApplyForCibcPaymentProtectorInsuranceForCreditCards />} />
           </Route>
           <Route path="bill-payments">
