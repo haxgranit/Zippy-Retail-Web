@@ -65,6 +65,7 @@ import ApplyForACreditLimitIncrease from './customer-services/apply-for-a-credit
 import SetUpDirectDepositWithCanadaRevenueAgency from './customer-services/set-up-direct-deposit-with-canada-revenue-agency/SetUpDirectDepositWithCanadaRevenueAgency';
 import PayAndFileBusinessTaxes from './customer-services/pay-and-file-business-taxes/PayAndFileBusinessTaxes';
 import ApplyForCibcPaymentProtectorInsuranceForCreditCards from './customer-services/apply-for-cibc-payment-protector-insurance-for-credit-cards/ApplyForCibcPaymentProtectorInsuranceForCreditCards';
+import ChangeMortgagePaymentAmount from './customer-services/change-mortgage-payment-details/ChangeMortgagePaymentDetails';
 
 export default function App() {
   useEffect(() => AOS.init(), []);
@@ -98,6 +99,7 @@ export default function App() {
             <Route path="set-up-direct-deposit-with-canada-revenue-agency" element={<SetUpDirectDepositWithCanadaRevenueAgency />} />
             <Route path="pay-and-file-business-taxes" element={<PayAndFileBusinessTaxes />} />
             <Route path="apply-for-cibc-payment-protector-insurance-for-credit-cards" element={<ApplyForCibcPaymentProtectorInsuranceForCreditCards />} />
+            <Route path="change-mortgage-payment-details" element={<ChangeMortgagePaymentAmount />} />
           </Route>
           <Route path="bill-payments">
             <Route path="/bill-payments" element={<BillPayments />} />
