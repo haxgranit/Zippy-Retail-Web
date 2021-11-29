@@ -53,6 +53,7 @@ import ChangeYourContactInformation from './customer-services/change-contact-inf
 import AddACardHolder from './customer-services/add-a-cardholder/AddACardHolder';
 import EbillsEmailNotification from './customer-services/ebills-email-notification/EbillsEmailNotification';
 import ChangeYourTaxResidency from './customer-services/change-your-tax-residency/ChangeYourTaxResidency';
+import CreateAClickToPayAccount from './customer-services/create-a-click-to-pay-account/CreateAClickToPayAccount';
 import MakeALoanPayment from './customer-services/make-a-loan-payment/MakeALoanPayment';
 import MakeAMortgagePayment from './customer-services/make-a-mortgage-payment/MakeAMortgagePayment';
 import ApplyForOrChangeCibcOverdraftProtectionService from './customer-services/apply-for-or-change-cibc-overdraft-protection-service/ApplyForOrChangeCibcOverdraftProtectionService';
@@ -80,6 +81,7 @@ export default function App() {
             <Route path="add-a-cardholder" element={<AddACardHolder />} />
             <Route path="set-up-ebills-email-notification" element={<EbillsEmailNotification />} />
             <Route path="change-your-tax-residency" element={<ChangeYourTaxResidency />} />
+            <Route path="create-a-click-to-pay-account" element={<CreateAClickToPayAccount />} />
             <Route path="make-a-loan-payment" element={<MakeALoanPayment />} />
             <Route path="make-a-mortgage-payment" element={<MakeAMortgagePayment />} />
             <Route path="apply-for-or-change-cibc-overdraft-protection-service" element={<ApplyForOrChangeCibcOverdraftProtectionService />} />
