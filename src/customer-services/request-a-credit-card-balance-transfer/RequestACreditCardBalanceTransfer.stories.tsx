@@ -8,7 +8,9 @@ export default {
   component: RequestACreditCardBalanceTransfer,
 } as ComponentMeta<typeof RequestACreditCardBalanceTransfer>;
 
-const Template: ComponentStory<typeof RequestACreditCardBalanceTransfer> = () => <RequestACreditCardBalanceTransfer />;
+const Template: ComponentStory<typeof RequestACreditCardBalanceTransfer> = () => (
+  <RequestACreditCardBalanceTransfer />
+);
 
 export const Default = Template.bind({});
 Default.args = {};
