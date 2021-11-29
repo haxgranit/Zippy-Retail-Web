@@ -57,6 +57,7 @@ import MakeALoanPayment from './customer-services/make-a-loan-payment/MakeALoanP
 import MakeAMortgagePayment from './customer-services/make-a-mortgage-payment/MakeAMortgagePayment';
 import ApplyForOrChangeCibcOverdraftProtectionService from './customer-services/apply-for-or-change-cibc-overdraft-protection-service/ApplyForOrChangeCibcOverdraftProtectionService';
 import MakeAPaymentWithPoints from './customer-services/make-a-payment-with-points/MakeAPaymentWithPoints';
+import RemoveAssociationToOnlineInvestmentAccount from './customer-services/remove-association-to-online-investment-account/RemoveAssociationToOnlineInvestmentAccount';
 
 export default function App() {
   useEffect(() => AOS.init(), []);
@@ -82,6 +83,7 @@ export default function App() {
             <Route path="make-a-mortgage-payment" element={<MakeAMortgagePayment />} />
             <Route path="apply-for-or-change-cibc-overdraft-protection-service" element={<ApplyForOrChangeCibcOverdraftProtectionService />} />
             <Route path="make-a-payment-with-points" element={<MakeAPaymentWithPoints />} />
+            <Route path="remove-association-to-online-investment-account" element={<RemoveAssociationToOnlineInvestmentAccount />} />
           </Route>
           <Route path="bill-payments">
             <Route path="/bill-payments" element={<BillPayments />} />
