@@ -55,6 +55,7 @@ import EbillsEmailNotification from './customer-services/ebills-email-notificati
 import ChangeYourTaxResidency from './customer-services/change-your-tax-residency/ChangeYourTaxResidency';
 import MakeALoanPayment from './customer-services/make-a-loan-payment/MakeALoanPayment';
 import MakeAMortgagePayment from './customer-services/make-a-mortgage-payment/MakeAMortgagePayment';
+import ApplyForOrChangeCibcOverdraftProtectionService from './customer-services/apply-for-or-change-cibc-overdraft-protection-service/ApplyForOrChangeCibcOverdraftProtectionService';
 
 export default function App() {
   useEffect(() => AOS.init(), []);
@@ -78,6 +79,7 @@ export default function App() {
             <Route path="change-your-tax-residency" element={<ChangeYourTaxResidency />} />
             <Route path="make-a-loan-payment" element={<MakeALoanPayment />} />
             <Route path="make-a-mortgage-payment" element={<MakeAMortgagePayment />} />
+            <Route path="apply-for-or-change-cibc-overdraft-protection-service" element={<ApplyForOrChangeCibcOverdraftProtectionService />} />
           </Route>
           <Route path="bill-payments">
             <Route path="/bill-payments" element={<BillPayments />} />
