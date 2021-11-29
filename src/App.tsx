@@ -63,9 +63,12 @@ import RemoveAssociationToOnlineInvestmentAccount from './customer-services/remo
 import RequestACreditCardBalanceTransfer from './customer-services/request-a-credit-card-balance-transfer/RequestACreditCardBalanceTransfer';
 import ApplyForACreditLimitIncrease from './customer-services/apply-for-a-credit-limit-increase/ApplyForACreditLimitIncrease';
 import SetUpDirectDepositWithCanadaRevenueAgency from './customer-services/set-up-direct-deposit-with-canada-revenue-agency/SetUpDirectDepositWithCanadaRevenueAgency';
+import StopPayments from './customer-services/stop-payments/StopPayments';
+import WithdrawFromATfsa from './customer-services/withdraw-from-a-tfsa/WithdrawFromATfsa';
 import PayAndFileBusinessTaxes from './customer-services/pay-and-file-business-taxes/PayAndFileBusinessTaxes';
 import ApplyForCibcPaymentProtectorInsuranceForCreditCards from './customer-services/apply-for-cibc-payment-protector-insurance-for-credit-cards/ApplyForCibcPaymentProtectorInsuranceForCreditCards';
 import UnlinkAccountsFromYourCibcDebitCard from './customer-services/unlink-accounts-from-your-cibc-debit-card/UnlinkAccountsFromYourCibcDebitCard';
+import DigitalVaultDocuments from './customer-services/digital-vault-documents/DigitalVaultDocuments';
 
 export default function App() {
   useEffect(() => AOS.init(), []);
@@ -97,9 +100,12 @@ export default function App() {
             <Route path="request-a-credit-card-balance-transfer" element={<RequestACreditCardBalanceTransfer />} />
             <Route path="apply-for-a-credit-limit-increase" element={<ApplyForACreditLimitIncrease />} />
             <Route path="set-up-direct-deposit-with-canada-revenue-agency" element={<SetUpDirectDepositWithCanadaRevenueAgency />} />
+            <Route path="stop-payments" element={<StopPayments />} />
+            <Route path="withdraw-from-a-tfsa" element={<WithdrawFromATfsa />} />
             <Route path="pay-and-file-business-taxes" element={<PayAndFileBusinessTaxes />} />
             <Route path="apply-for-cibc-payment-protector-insurance-for-credit-cards" element={<ApplyForCibcPaymentProtectorInsuranceForCreditCards />} />
             <Route path="unlink-accounts-from-your-cibc-debit-card" element={<UnlinkAccountsFromYourCibcDebitCard />} />
+            <Route path="digital-vault-documents" element={<DigitalVaultDocuments />} />
           </Route>
           <Route path="bill-payments">
             <Route path="/bill-payments" element={<BillPayments />} />
