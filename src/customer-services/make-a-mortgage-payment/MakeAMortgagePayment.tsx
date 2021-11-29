@@ -149,7 +149,7 @@ export default function MortgagePrepayment() {
           </Col>
         </Row>
       </div>
-      <Row className="mt-4 pb-4" style={{ borderBottom: '1px solid grey' }}>
+      <Row className="mt-4 pb-4">
         <Col
           md={12}
           className="bg-light p-3"

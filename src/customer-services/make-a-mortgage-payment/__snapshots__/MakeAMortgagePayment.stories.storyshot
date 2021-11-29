@@ -341,11 +341,6 @@ Array [
   </div>,
   <div
     className="mt-4 pb-4 row"
-    style={
-      Object {
-        "borderBottom": "1px solid grey",
-      }
-    }
   >
     <div
       className="bg-light p-3 col-md-12"
