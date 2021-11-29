@@ -62,6 +62,7 @@ import RemoveAssociationToOnlineInvestmentAccount from './customer-services/remo
 import RequestACreditCardBalanceTransfer from './customer-services/request-a-credit-card-balance-transfer/RequestACreditCardBalanceTransfer';
 import SetUpDirectDepositWithCanadaRevenueAgency from './customer-services/set-up-direct-deposit-with-canada-revenue-agency/SetUpDirectDepositWithCanadaRevenueAgency';
 import StopPayments from './customer-services/stop-payments/StopPayments';
+import WithdrawFromATfsa from './customer-services/withdraw-from-a-tfsa/WithdrawFromATfsa';
 
 export default function App() {
   useEffect(() => AOS.init(), []);
@@ -92,6 +93,7 @@ export default function App() {
             <Route path="request-a-credit-card-balance-transfer" element={<RequestACreditCardBalanceTransfer />} />
             <Route path="set-up-direct-deposit-with-canada-revenue-agency" element={<SetUpDirectDepositWithCanadaRevenueAgency />} />
             <Route path="stop-payments" element={<StopPayments />} />
+            <Route path="withdraw-from-a-tfsa" element={<WithdrawFromATfsa />} />
           </Route>
           <Route path="bill-payments">
             <Route path="/bill-payments" element={<BillPayments />} />
