@@ -8,7 +8,9 @@ export default {
   component: ApplyForOrChangeCibcOverdraftProtectionService,
 } as ComponentMeta<typeof ApplyForOrChangeCibcOverdraftProtectionService>;
 
-const Template: ComponentStory<typeof ApplyForOrChangeCibcOverdraftProtectionService> = () => <ApplyForOrChangeCibcOverdraftProtectionService />;
+const Template: ComponentStory<typeof ApplyForOrChangeCibcOverdraftProtectionService> = () => (
+  <ApplyForOrChangeCibcOverdraftProtectionService />
+);
 
 export const Default = Template.bind({});
 Default.args = {};
