@@ -71,7 +71,7 @@ Array [
   </div>,
   <div>
     <h5
-      className="pb-2 pt-2 mb-2"
+      className="pb-2 pt-2 mb-2 mt-3"
       style={
         Object {
           "borderBottom": "1px solid grey",
@@ -183,7 +183,7 @@ Array [
   </div>,
   <div>
     <h5
-      className="pb-2 pt-2 mb-2"
+      className="pb-2 pt-2 mb-2 mt-3"
       style={
         Object {
           "borderBottom": "1px solid grey",

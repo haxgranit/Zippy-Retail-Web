@@ -48,7 +48,7 @@ export default function SetUpDirectDepositWithCanadaRevenueAgency() {
       </div>
       <div>
         <h5
-          className="pb-2 pt-2 mb-2"
+          className="pb-2 pt-2 mb-2 mt-3"
           style={{ borderBottom: '1px solid grey' }}
         >
           Personal information
@@ -92,7 +92,7 @@ export default function SetUpDirectDepositWithCanadaRevenueAgency() {
       </div>
       <div>
         <h5
-          className="pb-2 pt-2 mb-2"
+          className="pb-2 pt-2 mb-2 mt-3"
           style={{ borderBottom: '1px solid grey' }}
         >
           Set up direct deposit
