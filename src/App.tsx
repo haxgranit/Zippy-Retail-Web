@@ -61,6 +61,7 @@ import MakeAPaymentWithPoints from './customer-services/make-a-payment-with-poin
 import RemoveAssociationToOnlineInvestmentAccount from './customer-services/remove-association-to-online-investment-account/RemoveAssociationToOnlineInvestmentAccount';
 import RequestACreditCardBalanceTransfer from './customer-services/request-a-credit-card-balance-transfer/RequestACreditCardBalanceTransfer';
 import ApplyForACreditLimitIncrease from './customer-services/apply-for-a-credit-limit-increase/ApplyForACreditLimitIncrease';
+import SetUpDirectDepositWithCanadaRevenueAgency from './customer-services/set-up-direct-deposit-with-canada-revenue-agency/SetUpDirectDepositWithCanadaRevenueAgency';
 
 export default function App() {
   useEffect(() => AOS.init(), []);
@@ -90,6 +91,7 @@ export default function App() {
             <Route path="remove-association-to-online-investment-account" element={<RemoveAssociationToOnlineInvestmentAccount />} />
             <Route path="request-a-credit-card-balance-transfer" element={<RequestACreditCardBalanceTransfer />} />
             <Route path="apply-for-a-credit-limit-increase" element={<ApplyForACreditLimitIncrease />} />
+            <Route path="set-up-direct-deposit-with-canada-revenue-agency" element={<SetUpDirectDepositWithCanadaRevenueAgency />} />
           </Route>
           <Route path="bill-payments">
             <Route path="/bill-payments" element={<BillPayments />} />
