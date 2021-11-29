@@ -7,7 +7,7 @@ import {
 } from 'react-bootstrap';
 import CommonHeader from '../../common/CommonHeader';
 
-export default function SignupForClickToPay() {
+export default function CreateAClickToPayAccount() {
   return (
     <>
       <CommonHeader title="Signup For Click to Pay" print />

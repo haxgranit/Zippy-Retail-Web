@@ -53,7 +53,7 @@ import ChangeYourContactInformation from './customer-services/change-contact-inf
 import AddACardHolder from './customer-services/add-a-cardholder/AddACardHolder';
 import EbillsEmailNotification from './customer-services/ebills-email-notification/EbillsEmailNotification';
 import ChangeYourTaxResidency from './customer-services/change-your-tax-residency/ChangeYourTaxResidency';
-import SignupForClickToPay from './customer-services/signup-for-click-to-pay/SignupForClickToPay';
+import CreateAClickToPayAccount from './customer-services/create-a-click-to-pay-account/CreateAClickToPayAccount';
 
 export default function App() {
   useEffect(() => AOS.init(), []);
@@ -75,7 +75,7 @@ export default function App() {
             <Route path="add-a-cardholder" element={<AddACardHolder />} />
             <Route path="set-up-ebills-email-notification" element={<EbillsEmailNotification />} />
             <Route path="change-your-tax-residency" element={<ChangeYourTaxResidency />} />
-            <Route path="create-a-click-to-pay-account" element={<SignupForClickToPay />} />
+            <Route path="create-a-click-to-pay-account" element={<CreateAClickToPayAccount />} />
           </Route>
           <Route path="bill-payments">
             <Route path="/bill-payments" element={<BillPayments />} />
