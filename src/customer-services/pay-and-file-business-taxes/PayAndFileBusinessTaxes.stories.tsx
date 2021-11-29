@@ -4,7 +4,7 @@ import '../../index.css';
 import PayAndFileBusinessTaxes from './PayAndFileBusinessTaxes';
 
 export default {
-  title: 'customer-services/PayAndFileBusinessTaxes/PayAndFileBusinessTaxes',
+  title: 'customer-services/pay-and-file-business-taxes/PayAndFileBusinessTaxes',
   component: PayAndFileBusinessTaxes,
 } as ComponentMeta<typeof PayAndFileBusinessTaxes>;
 
