@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots customer-services/PayAndFileBusinessTaxes/PayAndFileBusinessTaxes Default 1`] = `
+exports[`Storyshots customer-services/pay-and-file-business-taxes/PayAndFileBusinessTaxes Default 1`] = `
 <div>
   <div
     className="row"
