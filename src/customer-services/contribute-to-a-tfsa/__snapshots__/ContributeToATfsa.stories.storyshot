@@ -639,5 +639,171 @@ exports[`Storyshots customer-services/contribute-to-a-tfsa Default 1`] = `
       Investor profile tool
     </a>
   </div>
+  <div
+    className="row"
+    style={
+      Object {
+        "backgroundColor": "rgba(242,243,242,0.9)",
+        "marginTop": 50,
+        "padding": 15,
+      }
+    }
+  >
+    <div
+      className="col"
+      style={
+        Object {
+          "alignItems": "center",
+          "display": "flex",
+          "flexDirection": "row",
+        }
+      }
+    >
+      <div
+        className="row"
+        style={
+          Object {
+            "alignItems": "center",
+            "border": "2px dashed black",
+            "display": "flex",
+            "fontSize": "12px",
+            "justifyContent": "center",
+            "marginRight": "15px",
+            "maxWidth": "200px",
+            "padding": "5px",
+          }
+        }
+      >
+        <h1
+          style={
+            Object {
+              "marginBottom": 0,
+            }
+          }
+        >
+          ?
+        </h1>
+      </div>
+      <h1
+        style={
+          Object {
+            "fontSize": 22,
+            "fontWeight": 100,
+            "marginBottom": 0,
+            "textAlign": "center",
+          }
+        }
+      >
+        Have a question?
+      </h1>
+      <div
+        style={
+          Object {
+            "border": "1px solid black",
+            "height": "100%",
+            "marginLeft": 15,
+            "marginRight": 15,
+            "width": 2,
+          }
+        }
+      />
+      <p
+        style={
+          Object {
+            "fontSize": 14,
+            "fontWeight": 100,
+            "marginBottom": 0,
+          }
+        }
+      >
+        Use our automated help for immediate answers to your questions
+      </p>
+    </div>
+    <div
+      className="col-2"
+      style={
+        Object {
+          "alignItems": "center",
+          "display": "flex",
+          "justifyContent": "flex-end",
+        }
+      }
+    >
+      <button
+        className="btn btn-danger"
+        disabled={false}
+        style={
+          Object {
+            "fontSize": 14,
+            "paddingLeft": 20,
+            "paddingRight": 20,
+          }
+        }
+        type="button"
+      >
+        Ask
+      </button>
+    </div>
+  </div>
+  <div
+    className="row"
+    style={
+      Object {
+        "backgroundColor": "rgba(242,243,242,0.9)",
+        "borderBottom": "2px solid rgba(0,0,0,0.5)",
+        "marginTop": 30,
+        "padding": 8,
+      }
+    }
+  >
+    <div
+      style={
+        Object {
+          "alignItems": "center",
+          "border": "2px dashed black",
+          "display": "flex",
+          "justifyContent": "center",
+          "marginRight": "4px",
+          "padding": "5px",
+          "width": 30,
+        }
+      }
+    >
+      <h1
+        style={
+          Object {
+            "color": "red",
+            "fontSize": 28,
+            "marginBottom": 0,
+            "marginLeft": 5,
+            "marginRight": 5,
+          }
+        }
+      >
+        +
+      </h1>
+    </div>
+    <div
+      className="col"
+      style={
+        Object {
+          "alignItems": "center",
+          "display": "flex",
+        }
+      }
+    >
+      <h1
+        style={
+          Object {
+            "fontSize": 18,
+            "fontWeight": 100,
+            "marginBottom": 0,
+          }
+        }
+      >
+        Terms and conditions
+      </h1>
+    </div>
+  </div>
 </div>
 `;
