@@ -51,6 +51,7 @@ import VisaDirect from './transfer-funds/VisaDirect';
 import ChangeYourPassword from './customer-services/change-your-password/ChangeYourPassword';
 import ChangeYourContactInformation from './customer-services/change-contact-information/ChangeYourContactInformation';
 import AddACardHolder from './customer-services/add-a-cardholder/AddACardHolder';
+import OrderCheques from './customer-services/order-cheques/OrderCheques';
 import EbillsEmailNotification from './customer-services/ebills-email-notification/EbillsEmailNotification';
 import ChangeYourTaxResidency from './customer-services/change-your-tax-residency/ChangeYourTaxResidency';
 import CreateAClickToPayAccount from './customer-services/create-a-click-to-pay-account/CreateAClickToPayAccount';
@@ -59,6 +60,17 @@ import MakeAMortgagePayment from './customer-services/make-a-mortgage-payment/Ma
 import ApplyForOrChangeCibcOverdraftProtectionService from './customer-services/apply-for-or-change-cibc-overdraft-protection-service/ApplyForOrChangeCibcOverdraftProtectionService';
 import MakeAPaymentWithPoints from './customer-services/make-a-payment-with-points/MakeAPaymentWithPoints';
 import RemoveAssociationToOnlineInvestmentAccount from './customer-services/remove-association-to-online-investment-account/RemoveAssociationToOnlineInvestmentAccount';
+import RequestACreditCardBalanceTransfer from './customer-services/request-a-credit-card-balance-transfer/RequestACreditCardBalanceTransfer';
+import ApplyForACreditLimitIncrease from './customer-services/apply-for-a-credit-limit-increase/ApplyForACreditLimitIncrease';
+import SetUpDirectDepositWithCanadaRevenueAgency from './customer-services/set-up-direct-deposit-with-canada-revenue-agency/SetUpDirectDepositWithCanadaRevenueAgency';
+import StopPayments from './customer-services/stop-payments/StopPayments';
+import WithdrawFromATfsa from './customer-services/withdraw-from-a-tfsa/WithdrawFromATfsa';
+import PayAndFileBusinessTaxes from './customer-services/pay-and-file-business-taxes/PayAndFileBusinessTaxes';
+import ApplyForCibcPaymentProtectorInsuranceForCreditCards from './customer-services/apply-for-cibc-payment-protector-insurance-for-credit-cards/ApplyForCibcPaymentProtectorInsuranceForCreditCards';
+import ChangeMortgagePaymentAmount from './customer-services/change-mortgage-payment-details/ChangeMortgagePaymentDetails';
+import UnlinkAccountsFromYourCibcDebitCard from './customer-services/unlink-accounts-from-your-cibc-debit-card/UnlinkAccountsFromYourCibcDebitCard';
+import DigitalVaultDocuments from './customer-services/digital-vault-documents/DigitalVaultDocuments';
+import ContributeToTfsa from './customer-services/contribute-to-a-tfsa/ContributeToATfsa';
 
 export default function App() {
   const isAuthenticated = useIsAuthenticated();
@@ -87,6 +99,7 @@ export default function App() {
             <Route path="change-your-password" element={<ChangeYourPassword />} />
             <Route path="change-your-contact-information" element={<ChangeYourContactInformation />} />
             <Route path="add-a-cardholder" element={<AddACardHolder />} />
+            <Route path="order-cheques" element={<OrderCheques />} />
             <Route path="set-up-ebills-email-notification" element={<EbillsEmailNotification />} />
             <Route path="change-your-tax-residency" element={<ChangeYourTaxResidency />} />
             <Route path="create-a-click-to-pay-account" element={<CreateAClickToPayAccount />} />
@@ -95,6 +108,17 @@ export default function App() {
             <Route path="apply-for-or-change-cibc-overdraft-protection-service" element={<ApplyForOrChangeCibcOverdraftProtectionService />} />
             <Route path="make-a-payment-with-points" element={<MakeAPaymentWithPoints />} />
             <Route path="remove-association-to-online-investment-account" element={<RemoveAssociationToOnlineInvestmentAccount />} />
+            <Route path="request-a-credit-card-balance-transfer" element={<RequestACreditCardBalanceTransfer />} />
+            <Route path="apply-for-a-credit-limit-increase" element={<ApplyForACreditLimitIncrease />} />
+            <Route path="set-up-direct-deposit-with-canada-revenue-agency" element={<SetUpDirectDepositWithCanadaRevenueAgency />} />
+            <Route path="stop-payments" element={<StopPayments />} />
+            <Route path="withdraw-from-a-tfsa" element={<WithdrawFromATfsa />} />
+            <Route path="pay-and-file-business-taxes" element={<PayAndFileBusinessTaxes />} />
+            <Route path="apply-for-cibc-payment-protector-insurance-for-credit-cards" element={<ApplyForCibcPaymentProtectorInsuranceForCreditCards />} />
+            <Route path="change-mortgage-payment-details" element={<ChangeMortgagePaymentAmount />} />
+            <Route path="unlink-accounts-from-your-cibc-debit-card" element={<UnlinkAccountsFromYourCibcDebitCard />} />
+            <Route path="digital-vault-documents" element={<DigitalVaultDocuments />} />
+            <Route path="contribute-to-a-tfsa" element={<ContributeToTfsa />} />
           </Route>
           <Route path="bill-payments">
             <Route path="/bill-payments" element={<BillPayments />} />
