@@ -1,0 +1,281 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots customer-services/change-your-tax-residency/ChangeYourTaxResidency Default 1`] = `
+Array [
+  <div
+    className="d-flex justify-content-between align-items-center"
+  >
+    <h3>
+      CHANGE YOUR TAX RESIDENCY
+    </h3>
+    <div
+      className="d-flex"
+    >
+      <div
+        style={
+          Object {
+            "border": "1px dotted grey",
+            "height": 25,
+            "marginRight": 10,
+            "textAlign": "center",
+            "width": 20,
+          }
+        }
+        title="print"
+      >
+        P
+      </div>
+      <div
+        style={
+          Object {
+            "border": "1px dotted grey",
+            "height": 25,
+            "marginRight": 10,
+            "textAlign": "center",
+            "width": 20,
+          }
+        }
+        title="copy"
+      >
+        P
+      </div>
+      <div
+        style={
+          Object {
+            "border": "1px dotted grey",
+            "height": 25,
+            "marginRight": 10,
+            "textAlign": "center",
+            "width": 20,
+          }
+        }
+        title="question"
+      >
+        P
+      </div>
+    </div>
+  </div>,
+  <b>
+    Step: 1 - 2
+  </b>,
+  <div
+    className="pt-3 pb-3"
+  >
+    Tax residency is a method used by the Candada Revenue Agency (CRA) and by other countries to determine how much tax you should pay. Most countries, including Canada, determine taxes based on the amount of time you spend in the country, rather than your citizenship. For instance, some Canadians spend the winter months outside of Canada. The U.S., however, taxes all U.S. citizens as U.S. residents. It is your responsibility to determine your tax residency status in other countries.
+  </div>,
+  <form
+    className=""
+  >
+    <div
+      className="pt-3 pb-3 row"
+    >
+      <div
+        className="col-md-4"
+      >
+        Are you a tax resident of Candada?
+      </div>
+      <div
+        className="col-md-8"
+      >
+        <div
+          className="form-check"
+        >
+          <input
+            className="form-check-input"
+            disabled={false}
+            id="is-resident-yes"
+            name="is-resident"
+            type="radio"
+          />
+          <label
+            className="form-check-label"
+            htmlFor="is-resident-yes"
+            title=""
+          >
+            Yes
+          </label>
+        </div>
+        <div
+          className="form-check"
+        >
+          <input
+            className="form-check-input"
+            disabled={false}
+            id="is-resident-no"
+            name="is-resident"
+            type="radio"
+          />
+          <label
+            className="form-check-label"
+            htmlFor="is-resident-no"
+            title=""
+          >
+            No
+          </label>
+        </div>
+      </div>
+    </div>
+    <div
+      className="pt-3 pb-3 row"
+      style={
+        Object {
+          "borderTop": "1px solid #c5c1c1",
+        }
+      }
+    >
+      <div
+        className="col-md-4"
+      >
+        Are you a U.S. person for tax purposes?
+      </div>
+      <div
+        className="col-md-8"
+      >
+        <div
+          className="form-check"
+        >
+          <input
+            className="form-check-input"
+            disabled={false}
+            id="is-person-for-tax-yes"
+            name="is-us-person-for-tax"
+            type="radio"
+          />
+          <label
+            className="form-check-label"
+            htmlFor="is-person-for-tax-yes"
+            title=""
+          >
+            Yes
+          </label>
+        </div>
+        <div
+          className="form-check"
+        >
+          <input
+            className="form-check-input"
+            disabled={false}
+            id="is-person-for-tax-no"
+            name="is-us-person-for-tax"
+            type="radio"
+          />
+          <label
+            className="form-check-label"
+            htmlFor="is-person-for-tax-no"
+            title=""
+          >
+            No
+          </label>
+        </div>
+      </div>
+    </div>
+    <div
+      className="pt-3 pb-3 row"
+      style={
+        Object {
+          "borderTop": "1px solid #c5c1c1",
+        }
+      }
+    >
+      <div
+        className="col-md-4"
+      >
+        Do you pay taxes in any other countries?
+      </div>
+      <div
+        className="col-md-8"
+      >
+        <div
+          className="form-check"
+        >
+          <input
+            className="form-check-input"
+            disabled={false}
+            id="do-play-yes"
+            name="do-pay-in-any-other-countries"
+            type="radio"
+          />
+          <label
+            className="form-check-label"
+            htmlFor="do-play-yes"
+            title=""
+          >
+            Yes
+          </label>
+        </div>
+        <div
+          className="form-check"
+        >
+          <input
+            className="form-check-input"
+            disabled={false}
+            id="do-play-no"
+            name="do-pay-in-any-other-countries"
+            type="radio"
+          />
+          <label
+            className="form-check-label"
+            htmlFor="do-play-no"
+            title=""
+          >
+            No
+          </label>
+        </div>
+      </div>
+    </div>
+  </form>,
+  <p>
+    By selecting Continue I declare, as required by Cannadian law, that the tax residency information and U.S. Person status provided (including any Tax Identification Number) are, to the best of my knowledge and belief, correct and complete.
+  </p>,
+  <p>
+    If any of this information changes, I will provide CIBC with the updated information within 30 days.
+  </p>,
+  <p>
+    Failure to provide satisfactory self-certification of Tax residency or U.S. Person status may result in my account information being reported to the relevant tax authority and I may be subject to penalty under the income Tax Act
+  </p>,
+  <div
+    className="pt-3 pb-3 row"
+    style={
+      Object {
+        "borderTop": "1px solid #c5c1c1",
+      }
+    }
+  >
+    <div
+      className="col"
+    >
+      <button
+        className="d-flex btn btn-light"
+        disabled={false}
+        type="button"
+      >
+        <div
+          style={
+            Object {
+              "border": "1px dotted grey",
+              "height": 25,
+              "marginRight": 10,
+              "textAlign": "center",
+              "width": 20,
+            }
+          }
+        >
+          P
+        </div>
+        Cancel
+      </button>
+    </div>
+    <div
+      className="d-flex justify-content-end col"
+    >
+      <button
+        className="d-flex btn btn-danger"
+        disabled={false}
+        type="button"
+      >
+        Register for eBills
+      </button>
+    </div>
+  </div>,
+]
+`;
