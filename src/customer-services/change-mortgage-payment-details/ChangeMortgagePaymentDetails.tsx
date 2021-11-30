@@ -7,7 +7,6 @@ import {
   Row,
   Stack,
 } from 'react-bootstrap';
-import 'bootstrap/dist/css/bootstrap.min.css';
 
 export interface IProps {
   title: string,
