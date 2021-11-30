@@ -51,6 +51,7 @@ import VisaDirect from './transfer-funds/VisaDirect';
 import ChangeYourPassword from './customer-services/change-your-password/ChangeYourPassword';
 import ChangeYourContactInformation from './customer-services/change-contact-information/ChangeYourContactInformation';
 import AddACardHolder from './customer-services/add-a-cardholder/AddACardHolder';
+import ContributeToTfsa from './customer-services/contribute-to-a-tfsa/ContributeToATfsa';
 
 export default function App() {
   useEffect(() => AOS.init(), []);
@@ -70,6 +71,7 @@ export default function App() {
             <Route path="change-your-password" element={<ChangeYourPassword />} />
             <Route path="change-your-contact-information" element={<ChangeYourContactInformation />} />
             <Route path="add-a-cardholder" element={<AddACardHolder />} />
+            <Route path="contribute-to-a-tfsa" element={<ContributeToTfsa />} />
           </Route>
           <Route path="bill-payments">
             <Route path="/bill-payments" element={<BillPayments />} />
