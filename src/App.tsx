@@ -67,6 +67,9 @@ import StopPayments from './customer-services/stop-payments/StopPayments';
 import WithdrawFromATfsa from './customer-services/withdraw-from-a-tfsa/WithdrawFromATfsa';
 import PayAndFileBusinessTaxes from './customer-services/pay-and-file-business-taxes/PayAndFileBusinessTaxes';
 import ApplyForCibcPaymentProtectorInsuranceForCreditCards from './customer-services/apply-for-cibc-payment-protector-insurance-for-credit-cards/ApplyForCibcPaymentProtectorInsuranceForCreditCards';
+import ChangeMortgagePaymentAmount from './customer-services/change-mortgage-payment-details/ChangeMortgagePaymentDetails';
+import UnlinkAccountsFromYourCibcDebitCard from './customer-services/unlink-accounts-from-your-cibc-debit-card/UnlinkAccountsFromYourCibcDebitCard';
+import DigitalVaultDocuments from './customer-services/digital-vault-documents/DigitalVaultDocuments';
 
 export default function App() {
   useEffect(() => AOS.init(), []);
@@ -102,6 +105,9 @@ export default function App() {
             <Route path="withdraw-from-a-tfsa" element={<WithdrawFromATfsa />} />
             <Route path="pay-and-file-business-taxes" element={<PayAndFileBusinessTaxes />} />
             <Route path="apply-for-cibc-payment-protector-insurance-for-credit-cards" element={<ApplyForCibcPaymentProtectorInsuranceForCreditCards />} />
+            <Route path="change-mortgage-payment-details" element={<ChangeMortgagePaymentAmount />} />
+            <Route path="unlink-accounts-from-your-cibc-debit-card" element={<UnlinkAccountsFromYourCibcDebitCard />} />
+            <Route path="digital-vault-documents" element={<DigitalVaultDocuments />} />
           </Route>
           <Route path="bill-payments">
             <Route path="/bill-payments" element={<BillPayments />} />
