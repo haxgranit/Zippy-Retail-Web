@@ -3,7 +3,6 @@ import {
   Alert,
   Button, Col, Form, Row,
 } from 'react-bootstrap';
-import 'bootstrap/dist/css/bootstrap.min.css';
 
 export interface IProps {
   title: string,
