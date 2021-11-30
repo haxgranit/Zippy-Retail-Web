@@ -70,6 +70,7 @@ import ApplyForCibcPaymentProtectorInsuranceForCreditCards from './customer-serv
 import ChangeMortgagePaymentAmount from './customer-services/change-mortgage-payment-details/ChangeMortgagePaymentDetails';
 import UnlinkAccountsFromYourCibcDebitCard from './customer-services/unlink-accounts-from-your-cibc-debit-card/UnlinkAccountsFromYourCibcDebitCard';
 import DigitalVaultDocuments from './customer-services/digital-vault-documents/DigitalVaultDocuments';
+import ContributeToTfsa from './customer-services/contribute-to-a-tfsa/ContributeToATfsa';
 
 export default function App() {
   useEffect(() => AOS.init(), []);
@@ -108,6 +109,7 @@ export default function App() {
             <Route path="change-mortgage-payment-details" element={<ChangeMortgagePaymentAmount />} />
             <Route path="unlink-accounts-from-your-cibc-debit-card" element={<UnlinkAccountsFromYourCibcDebitCard />} />
             <Route path="digital-vault-documents" element={<DigitalVaultDocuments />} />
+            <Route path="contribute-to-a-tfsa" element={<ContributeToTfsa />} />
           </Route>
           <Route path="bill-payments">
             <Route path="/bill-payments" element={<BillPayments />} />
