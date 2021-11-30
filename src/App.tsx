@@ -1,7 +1,4 @@
-/* eslint-disable no-console */
-
 import AOS from 'aos';
-import { useIsAuthenticated, useMsal } from '@azure/msal-react';
 import { useEffect } from 'react';
 import {
   Navigate,
@@ -10,7 +7,6 @@ import {
 } from 'react-router-dom';
 import About from './About';
 import AccountSecurity from './account-security/AccountSecurity';
-import Api from './api';
 import BillerDetails from './bill-payments/biller-details/BillerDetails';
 import AddOrEditBillers from './bill-payments/add-or-edit-billers/AddOrEditBillers';
 import BillPayments from './bill-payments/bill-payments/BillPayments';
@@ -73,17 +69,6 @@ import DigitalVaultDocuments from './customer-services/digital-vault-documents/D
 import ContributeToTfsa from './customer-services/contribute-to-a-tfsa/ContributeToATfsa';
 
 export default function App() {
-  const isAuthenticated = useIsAuthenticated();
-  const { instance, accounts: msalAccounts } = useMsal();
-
-  useEffect(() => {
-    if (isAuthenticated) {
-      const api = new Api(instance, msalAccounts[0]);
-      api.accounts().then((accounts) => console.log('accounts', accounts));
-      api.profile().then((profile) => console.log('profile', profile));
-    }
-  }, [isAuthenticated, instance, msalAccounts]);
-
   useEffect(() => AOS.init(), []);
 
   return (
