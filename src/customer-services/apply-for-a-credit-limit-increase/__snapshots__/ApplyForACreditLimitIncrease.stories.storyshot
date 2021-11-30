@@ -1,14 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots customer-services/apply-for-a-credit-limit-increase/ApplyForACreditLimitIncrease Default 1`] = `
-<div
-  style={
-    Object {
-      "fontSize": "90%",
-      "margin": "50px 200px",
-    }
-  }
->
+<div>
   <div
     className="row"
   >
