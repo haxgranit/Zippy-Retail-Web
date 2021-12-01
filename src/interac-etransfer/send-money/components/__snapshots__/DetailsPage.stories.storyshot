@@ -1,0 +1,348 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots interac-etransfer/send-money/components/DetailsPage Default 1`] = `
+Array [
+  <h4>
+    Your Interac e-Transfer Details
+  </h4>,
+  <ul>
+    <li>
+      Fees apply to Interac e-Transfer transactions.
+      <a
+        className="text-black"
+        href="/"
+      >
+        Learn more about Interac e-Transfer fees
+      </a>
+    </li>
+    <li>
+      There are limits on how much money you can send in a day, a week and a month.
+      <a
+        className="text-black"
+        href="/"
+      >
+        Learn more about Interac e-Transfer limits
+      </a>
+    </li>
+    <li>
+      Note: Sending money outside of Canada? Use the
+      <a
+        className="text-black"
+        href="/"
+      >
+         
+        CIBC Global Money Transfer Servicec
+      </a>
+    </li>
+  </ul>,
+  <div
+    className="mt-4 row"
+  >
+    <div
+      className="col-md-4"
+    >
+      <label
+        className="form-label"
+      >
+        Send Money To:
+      </label>
+    </div>
+    <div
+      className="col-md-8"
+    >
+      <input
+        className="form-control"
+        type="email"
+      />
+      <p>
+        Email: chelsea.tough@gmail.com
+      </p>
+      <p>
+        <a
+          className="text-black"
+          href="/"
+        >
+          Edit Contact
+        </a>
+      </p>
+      <p>
+        <a
+          className="text-black"
+          href="/"
+        >
+          New Contact
+        </a>
+      </p>
+    </div>
+  </div>,
+  <hr
+    style={
+      Object {
+        "height": "1px",
+        "width": "100%",
+      }
+    }
+  />,
+  <div
+    className="mt-2 row"
+  >
+    <div
+      className="col-md-4"
+    >
+      <label
+        className="form-label"
+      >
+        Amount:
+      </label>
+    </div>
+    <div
+      className="col-md-8"
+    >
+      <input
+        className="form-control"
+        type="email"
+      />
+      <label
+        className="form-label"
+      >
+        The maximum amount you can send in each transfer is $3,000.
+      </label>
+    </div>
+  </div>,
+  <hr
+    style={
+      Object {
+        "height": "1px",
+        "width": "100%",
+      }
+    }
+  />,
+  <div
+    className="mt-2 row"
+  >
+    <div
+      className="col-md-4"
+    >
+      <label
+        className="form-label"
+      >
+        From Account:
+      </label>
+    </div>
+    <div
+      className="col-md-8"
+    >
+      <select
+        className="form-select"
+      >
+        <option>
+          Cheguing (01702-81-99639) $2,260.57
+        </option>
+        <option>
+          Cheguing (01702-81-99639) $2,260.57
+        </option>
+      </select>
+    </div>
+  </div>,
+  <hr
+    style={
+      Object {
+        "height": "1px",
+        "width": "100%",
+      }
+    }
+  />,
+  <div
+    className="mt-2 row"
+  >
+    <div
+      className="col-md-4"
+    >
+      <label
+        className="form-label"
+      >
+        Transfer Method:
+      </label>
+    </div>
+    <div
+      className="col-md-8"
+    >
+      <select
+        className="form-select"
+      >
+        <option>
+          Email
+        </option>
+        <option>
+          Phone
+        </option>
+      </select>
+    </div>
+  </div>,
+  <hr
+    style={
+      Object {
+        "height": "1px",
+        "width": "100%",
+      }
+    }
+  />,
+  <div
+    className="mt-2 row"
+  >
+    <div
+      className="col-md-4"
+    >
+      <label
+        className="form-label"
+      >
+        Message (Optional):
+      </label>
+    </div>
+    <div
+      className="col-md-8"
+    >
+      <textarea
+        className="form-control"
+        rows={3}
+      />
+      <p>
+        Do not provide the security question, any part of the security answer or any confidential information in your message to the contact. This message will be viewable on the Interac e-Transfer Status page.
+      </p>
+    </div>
+  </div>,
+  <hr
+    style={
+      Object {
+        "height": "1px",
+        "width": "100%",
+      }
+    }
+  />,
+  <div
+    className="mt-2 row"
+  >
+    <div
+      className="col-md-12"
+    >
+      <p>
+        This is how you will appear in all emails to your Interac e-Transfer contacts. If incorrect,
+        <a
+          className="text-black"
+          href="/"
+        >
+          edit your profile.
+        </a>
+      </p>
+    </div>
+  </div>,
+  <hr
+    style={
+      Object {
+        "height": "1px",
+        "width": "100%",
+      }
+    }
+  />,
+  <div
+    className="mt-2 row"
+  >
+    <div
+      className="col-md-4"
+    >
+      <label
+        className="form-label"
+      >
+        Your Email Nickname:
+      </label>
+    </div>
+    <div
+      className="col-md-8"
+    >
+      <label
+        className="form-label"
+      >
+        DUANE TOUGH
+      </label>
+    </div>
+  </div>,
+  <hr
+    style={
+      Object {
+        "height": "1px",
+        "width": "100%",
+      }
+    }
+  />,
+  <div
+    className="mt-2 row"
+  >
+    <div
+      className="col-md-4"
+    >
+      <label
+        className="form-label"
+      >
+        Your Email Address:
+      </label>
+    </div>
+    <div
+      className="col-md-8"
+    >
+      <label
+        className="form-label"
+      >
+        dtough@hotmail.com
+      </label>
+    </div>
+  </div>,
+  <hr
+    style={
+      Object {
+        "height": "1px",
+        "width": "100%",
+      }
+    }
+  />,
+  <div
+    className="mt-4 mb-4 row"
+  >
+    <div
+      className="col"
+    >
+      <button
+        className="d-flex btn btn-light"
+        disabled={false}
+        type="button"
+      >
+        <div
+          style={
+            Object {
+              "border": "1px dotted grey",
+              "height": 25,
+              "marginRight": 10,
+              "textAlign": "center",
+              "width": 20,
+            }
+          }
+        >
+          P
+        </div>
+        Cancel
+      </button>
+    </div>
+    <div
+      className="d-flex justify-content-end col"
+    >
+      <button
+        className="d-flex btn btn-danger"
+        disabled={false}
+        onClick={[Function]}
+        type="button"
+      >
+        Next
+      </button>
+    </div>
+  </div>,
+]
+`;
