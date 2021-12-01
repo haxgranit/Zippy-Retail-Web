@@ -1,4 +1,17 @@
-import { Col, Row } from 'react-bootstrap';
+import { useState } from 'react';
+import {
+  Col,
+  Row,
+} from 'react-bootstrap';
+import CommonHeader from '../../common/CommonHeader';
+import {
+  StepComponent,
+  DetailsPage,
+  SecurityQuestionPage,
+  SecurityRecipientPage,
+  TransferSentCompletePage,
+  TransferSentPage,
+} from './components';
 
 interface QuickLink {
   id: number;
@@ -7,10 +20,18 @@ interface QuickLink {
 }
 
 const LinkElement = ({ url, text, id }: QuickLink): JSX.Element => (
-  <a href={url} key={id} style={{ textDecoration: 'none', padding: '8px 8px', color: 'black' }}>{text}</a>
+  <a
+    href={url}
+    key={id}
+    style={{ textDecoration: 'none', padding: '8px 8px', color: 'black' }}
+  >
+    {text}
+  </a>
 );
 
 export default function SendMoney() {
+  const [currentStep, setCurrentStep] = useState(1);
+  const [realStep, setRealStep] = useState(1);
   const quickLinks: QuickLink[] = [
     {
       id: 1,
@@ -28,49 +49,41 @@ export default function SendMoney() {
       url: './',
     },
   ];
-  const result: string = '{Result #0001}';
+
   return (
     <div>
-
-      <Row style={{ justifyContent: 'space-between', marginTop: '15px', marginBottom: '15px' }}>
-        <h3>SEND MONEY</h3>
-        <span>
-          <i />
-          <i />
-        </span>
-      </Row>
+      <CommonHeader title="SEND MONEY" print={false} />
       <Row>
-        <Col md={9}>
-          <Row
-            style={
-              {
-                border: '2px solid #8E1B4A', borderRadius: '5px', padding: '15px 0px', margin: '0px 2px',
-              }
-            }
-          >
+        <Col md={8}>
+          <Row>
             <Col>
-              <Row>
-                <i />
-                <p>A We&apos;ve encountered an unexpected error. Please try again later. </p>
-              </Row>
-              <Row style={{ justifyContent: 'flex-end', paddingRight: '15px' }}>
-
-                {result}
-
-              </Row>
+              <StepComponent
+                steps={3}
+                currentStep={currentStep}
+                setCurrentStep={setCurrentStep}
+                setRealStep={setRealStep}
+              />
             </Col>
           </Row>
-          <hr style={{ height: '1px', width: '100%' }} />
-          <button
-            type="button"
-            style={
-              {
-                width: '30%', alignSelf: 'flex-end', marginLeft: '70%', marginBottom: '10px', marginTop: '15px', borderRadius: '4px', padding: '6px 0px',
-              }
-            }
-          >
-            My Account
-          </button>
+          {currentStep === 1 && (
+            <DetailsPage
+              setRealStep={setRealStep}
+              setCurrentStep={setCurrentStep}
+            />
+          )}
+          {currentStep === 2 && realStep === 2 && (
+            <SecurityRecipientPage setRealStep={setRealStep} />
+          )}
+          {currentStep === 2 && realStep === 3 && (
+            <SecurityQuestionPage
+              setRealStep={setRealStep}
+              setCurrentStep={setCurrentStep}
+            />
+          )}
+          {currentStep === 3 && realStep === 4 && (
+            <TransferSentPage setRealStep={setRealStep} />
+          )}
+          {currentStep === 3 && realStep === 5 && <TransferSentCompletePage />}
           <hr style={{ height: '1px' }} />
           <Row>
             <i />
@@ -82,10 +95,32 @@ export default function SendMoney() {
             </p>
           </Row>
         </Col>
-        <Col md={3}>
-          <Row style={{ border: 'solid #AAAAAA 1px', justifyItems: 'space-between', margin: '0px 0px 20px 0px' }}>
+        <Col md={4}>
+          <Row>
+            <div className="d-flex">
+              <div
+                style={{
+                  width: 20,
+                  height: 25,
+                  border: '1px dotted grey',
+                  textAlign: 'center',
+                  marginRight: 10,
+                }}
+              >
+                P
+              </div>
+              <p>Online Security Guarantee</p>
+            </div>
+          </Row>
+          <Row
+            style={{
+              border: 'solid #AAAAAA 1px',
+              justifyItems: 'space-between',
+              margin: '0px 0px 20px 0px',
+            }}
+          >
             <h6 style={{ paddingTop: '10px' }}>You can also:</h6>
-            {quickLinks.map((q) => (LinkElement(q)))}
+            {quickLinks.map((q) => LinkElement(q))}
           </Row>
         </Col>
       </Row>

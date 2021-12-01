@@ -245,7 +245,7 @@ const EndSection = () => (
 
 function ApplyForCibcPaymentProtectorInsuranceForCreditCards() {
   return (
-    <div style={{ margin: '50px 200px', fontSize: '90%' }}>
+    <div>
       <Row>
         <Col xs={12}>
           <Title />

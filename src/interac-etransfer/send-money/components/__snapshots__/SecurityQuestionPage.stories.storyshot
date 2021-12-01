@@ -1,0 +1,218 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots interac-etransfer/send-money/components/SecurityQuestionPage Default 1`] = `
+Array [
+  <h4>
+    Security Question
+  </h4>,
+  <ul
+    className="mt-4 mb-4"
+  >
+    <li>
+      Enter a security question and response that only this contact can answer. They must answer the security question correctly to receive the Interac e-Transfer.
+    </li>
+    <li>
+      The security question can be up to 40 characters including spaces.
+    </li>
+    <li>
+      The security answer must be between 6 and 25 characters. It can contain letters and numbers, but not special characters such as "%" and "/"
+    </li>
+    <li>
+      The answer to the security question may not be part of the security question or the optional message
+    </li>
+    <li>
+      The security question can not contain the same words as the security answer
+    </li>
+    <li>
+      You are responsible for notifying the contact of the security question and exact answer
+    </li>
+  </ul>,
+  <h4
+    className="mt-4"
+  >
+    Details
+  </h4>,
+  <div
+    className="fade alert alert-info show"
+    role="alert"
+  >
+    <div
+      className="d-flex align-items-center"
+    >
+      <div
+        style={
+          Object {
+            "border": "1px dotted grey",
+            "height": 45,
+            "textAlign": "center",
+            "width": 40,
+          }
+        }
+      >
+        P
+      </div>
+      <div>
+        <p>
+          The security question and answer must be unique. Never share your security answer through email, text or social media
+        </p>
+      </div>
+    </div>
+  </div>,
+  <div
+    className="mt-2 row"
+  >
+    <div
+      className="col-md-4"
+    >
+      <label
+        className="form-label"
+      >
+        Create a security question:
+      </label>
+    </div>
+    <div
+      className="col-md-8"
+    >
+      <input
+        className="form-control"
+        type="text"
+      />
+    </div>
+  </div>,
+  <hr
+    style={
+      Object {
+        "height": "1px",
+        "width": "100%",
+      }
+    }
+  />,
+  <div
+    className="mt-2 row"
+  >
+    <div
+      className="col-md-4"
+    >
+      <label
+        className="form-label"
+      >
+        Security Answer(no spaces):
+      </label>
+    </div>
+    <div
+      className="col-md-8"
+    >
+      <input
+        className="form-control"
+        type="text"
+      />
+      <div
+        className="form-check"
+      >
+        <input
+          className="form-check-input"
+          disabled={false}
+          type="checkbox"
+        />
+        <label
+          className="form-check-label"
+          title=""
+        >
+          Show Answer
+        </label>
+      </div>
+    </div>
+  </div>,
+  <hr
+    style={
+      Object {
+        "height": "1px",
+        "width": "100%",
+      }
+    }
+  />,
+  <div
+    className="mt-2 row"
+  >
+    <div
+      className="col-md-4"
+    >
+      <label
+        className="form-label"
+      >
+        Re-enter Security Answer:
+      </label>
+    </div>
+    <div
+      className="col-md-8"
+    >
+      <input
+        className="form-control"
+        type="text"
+      />
+    </div>
+  </div>,
+  <hr
+    style={
+      Object {
+        "height": "1px",
+        "width": "100%",
+      }
+    }
+  />,
+  <div
+    className="mt-4 mb-4 row"
+  >
+    <div
+      className="col"
+    >
+      <button
+        className="d-flex btn btn-light"
+        disabled={false}
+        onClick={[Function]}
+        type="button"
+      >
+        <div
+          style={
+            Object {
+              "border": "1px dotted grey",
+              "height": 25,
+              "marginRight": 10,
+              "textAlign": "center",
+              "width": 20,
+            }
+          }
+        >
+          P
+        </div>
+        Cancel
+      </button>
+    </div>
+    <div
+      className="d-flex justify-content-end col"
+    >
+      <button
+        className="d-flex btn btn-outline-danger"
+        disabled={false}
+        onClick={[Function]}
+        style={
+          Object {
+            "marginRight": 10,
+          }
+        }
+        type="button"
+      >
+        Back
+      </button>
+      <button
+        className="d-flex btn btn-danger"
+        disabled={false}
+        onClick={[Function]}
+        type="button"
+      >
+        Next
+      </button>
+    </div>
+  </div>,
+]
+`;
