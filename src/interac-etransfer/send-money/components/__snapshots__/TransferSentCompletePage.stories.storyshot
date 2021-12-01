@@ -327,6 +327,7 @@ Array [
       <button
         className="d-flex btn btn-danger"
         disabled={false}
+        onClick={[Function]}
         type="button"
       >
         Send another transfer

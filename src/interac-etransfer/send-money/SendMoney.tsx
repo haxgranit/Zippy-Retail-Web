@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Col, Row } from 'react-bootstrap';
 import CommonHeader from '../../common/CommonHeader';
 import {
@@ -49,6 +49,10 @@ export default function SendMoney() {
       url: './',
     },
   ];
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [realStep]);
 
   return (
     <div>
@@ -106,9 +110,17 @@ export default function SendMoney() {
             />
           )}
           {currentStep === 3 && realStep === 4 && (
-            <TransferSentPage setRealStep={setRealStep} />
+            <TransferSentPage
+              setRealStep={setRealStep}
+              setCurrentStep={setCurrentStep}
+            />
           )}
-          {currentStep === 3 && realStep === 5 && <TransferSentCompletePage />}
+          {currentStep === 3 && realStep === 5 && (
+            <TransferSentCompletePage
+              setRealStep={setRealStep}
+              setCurrentStep={setCurrentStep}
+            />
+          )}
           <hr style={{ height: '1px' }} />
           <Row>
             <i />

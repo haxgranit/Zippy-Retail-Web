@@ -5,7 +5,10 @@ import {
   Button,
 } from 'react-bootstrap';
 
-const TransferSentCompletePage = (): JSX.Element => (
+const TransferSentCompletePage = ({
+  setCurrentStep,
+  setRealStep,
+}: any): JSX.Element => (
   <>
     <div className="d-flex align-items-center">
       <div
@@ -118,7 +121,14 @@ const TransferSentCompletePage = (): JSX.Element => (
         >
           Check Status
         </Button>
-        <Button variant="danger" className="d-flex">
+        <Button
+          variant="danger"
+          className="d-flex"
+          onClick={() => {
+            setRealStep(1);
+            setCurrentStep(1);
+          }}
+        >
           Send another transfer
         </Button>
       </Col>
