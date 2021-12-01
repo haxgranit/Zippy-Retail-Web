@@ -1,28 +1,15 @@
-/* eslint-disable no-console */
-
 import { InteractionStatus } from '@azure/msal-browser';
 import { useIsAuthenticated, useMsal } from '@azure/msal-react';
-import { useEffect, useState } from 'react';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
-import Api, { Account } from './api';
 import ZippyCash_Logo from './assets/img/general/ZippyCash_Logo.png';
 import { loginRequest } from './authConfig';
 
 export default function Header() {
   const isAuthenticated = useIsAuthenticated();
-  const { inProgress, instance, accounts: msalAccounts } = useMsal();
-  const [accounts, setAccounts] = useState<Account[]>([]);
+  const { inProgress, instance } = useMsal();
   const { i18n, t } = useTranslation();
-
-  useEffect(() => {
-    if (isAuthenticated) {
-      const api = new Api(instance, msalAccounts[0]);
-      api.profile().then((profileResponse) => console.log('profile', profileResponse));
-      api.accounts().then((accountsResponse) => setAccounts(accountsResponse!));
-    }
-  }, [isAuthenticated, instance, msalAccounts]);
 
   return (
     <nav className="navbar navbar-expand-lg navbar-light">
@@ -43,13 +30,6 @@ export default function Header() {
         </button>
         <div className="collapse navbar-collapse flex-md-column nav-uppercase" id="navbarSupportedContent">
           <ul className="navbar-nav ms-auto mb-2 mb-lg-0 me-md-5">
-            {(!!accounts.length && (
-              <NavDropdown title={<span style={{ color: 'inherit', fontWeight: 700 }}>{t('header.accounts')}</span>}>
-                {accounts.map((account) => (
-                  <NavDropdown.Item key={account.number}>{account.number}</NavDropdown.Item>
-                ))}
-              </NavDropdown>
-            ))}
             <NavDropdown title={<span style={{ color: 'inherit', fontWeight: 700 }}>{t('header.language')}</span>}>
               <NavDropdown.Item onClick={() => i18n.changeLanguage('en-CA')}>English (Canada)</NavDropdown.Item>
               <NavDropdown.Item onClick={() => i18n.changeLanguage('en-US')}>English (US)</NavDropdown.Item>
@@ -74,10 +54,7 @@ export default function Header() {
                   <button
                     type="button"
                     className="btn btn-link nav-link fw-bold shadow-none"
-                    onClick={() => {
-                      setAccounts([]);
-                      instance.loginRedirect(loginRequest);
-                    }}
+                    onClick={() => instance.loginRedirect(loginRequest)}
                   >
                     {t('header.login')}
                   </button>

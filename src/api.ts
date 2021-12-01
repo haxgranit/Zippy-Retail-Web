@@ -2,13 +2,12 @@
 
 import { AccountInfo, InteractionRequiredAuthError, IPublicClientApplication } from '@azure/msal-browser';
 
-export type Account = {
-  number: string;
-};
-
-export type Profile = {
-  userObjectId: string;
-  country: string;
+export type User = {
+  id: string,
+  country: string,
+  identities: string[],
+  signupIsPersonal: boolean;
+  signupIsBusiness: boolean;
 };
 
 export default class Api {
@@ -17,12 +16,12 @@ export default class Api {
     private readonly account: AccountInfo,
   ) { }
 
-  public accounts() {
-    return this.fetch<Account[]>('get', 'Accounts');
+  public getUser() {
+    return this.fetch<User>('get', 'User');
   }
 
-  public profile() {
-    return this.fetch<Profile>('get', 'Profile');
+  public postUser() {
+    return this.fetch<User>('post', 'User');
   }
 
   private async fetch<TResponse>(method: string, path: string) {
