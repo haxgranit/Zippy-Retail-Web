@@ -1,4 +1,3 @@
-import { BrowserRouter } from 'react-router-dom';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import './i18n/config';
 import './index.css';
@@ -9,11 +8,6 @@ export default {
   component: Personal,
 } as ComponentMeta<typeof Personal>;
 
-const Template: ComponentStory<typeof Personal> = () => (
-  <BrowserRouter>
-    <Personal />
-  </BrowserRouter>
-);
-
+const Template: ComponentStory<typeof Personal> = () => <Personal />;
 export const Default = Template.bind({});
 Default.args = {};

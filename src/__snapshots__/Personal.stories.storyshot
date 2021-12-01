@@ -43,13 +43,13 @@ exports[`Storyshots Personal Default 1`] = `
             >
               You can do that with Zippy!
             </h1>
-            <a
+            <button
               className="btn rounded-0 my-buttonred"
-              href="/personal-signup"
               onClick={[Function]}
+              type="button"
             >
               Sign up for a personal account
-            </a>
+            </button>
           </div>
         </div>
       </div>

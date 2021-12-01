@@ -1,5 +1,5 @@
+import { useMsal } from '@azure/msal-react';
 import { useTranslation, Trans } from 'react-i18next';
-import { Link } from 'react-router-dom';
 import Circle_Grey_01 from './assets/img/background/Circle_Grey-01.jpg';
 import orangered from './assets/img/background/orangered.jpg';
 import ZippyCash_Icons_H from './assets/img/roundicons/personal/ZippyCash_Icons_H.png';
@@ -11,8 +11,10 @@ import NumberCircle1 from './assets/img/roundicons/business/numbercircle_1.png';
 import NumberCircle2 from './assets/img/roundicons/business/numbercircle_2.png';
 import NumberCircle3 from './assets/img/roundicons/business/numbercircle_3.png';
 import NumberCircle4 from './assets/img/roundicons/business/numbercircle_4.png';
+import { b2cPolicies, loginRequest } from './authConfig';
 
 export default function Personal() {
+  const { instance } = useMsal();
   const { t } = useTranslation();
 
   return (
@@ -37,12 +39,16 @@ export default function Personal() {
                 >
                   {t('personal.header_title')}
                 </h1>
-                <Link
-                  to="/personal-signup"
+                <button
+                  type="button"
                   className="btn rounded-0 my-buttonred"
+                  onClick={() => instance.loginRedirect({
+                    ...loginRequest,
+                    authority: b2cPolicies.authorities.signUpPersonal.authority,
+                  })}
                 >
                   {t('personal.sign_up_btn')}
-                </Link>
+                </button>
               </div>
             </div>
           </div>

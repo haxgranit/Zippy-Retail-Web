@@ -1,6 +1,7 @@
 {
   "header.language": "Langue",
   "header.login": "Connexion",
+  "header.logout": "NEEDS_LOC",
   "header.about": "à propos de nous",
   "header.personal": "personnel",
   "header.business": "professionnel",

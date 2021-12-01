@@ -1,7 +1,6 @@
-import { useEffect } from 'react';
 import AOS from 'aos';
+import { useEffect } from 'react';
 import {
-  BrowserRouter,
   Navigate,
   Route,
   Routes,
@@ -15,7 +14,6 @@ import ReviewAndCancelBillPayments from './bill-payments/review-and-cancel-bill-
 import SetUpBillPayments from './bill-payments/set-up-bill-payments/SetUpBillPayments';
 import ViewEBills from './bill-payments/view-ebills/ViewEBills';
 import Business from './Business';
-import BusinessSignup from './BusinessSignup';
 import ContactUs from './contact-us/ContactUs';
 import CreateOrEditAccountNickname from './customer-services/create-or-edit-account-nickname/CreateOrEditAccountNickname';
 import ChangeYourAddress from './customer-services/change-your-address/ChangeYourAddress';
@@ -32,7 +30,6 @@ import SendMoney from './interac-etransfer/send-money/SendMoney';
 import Status from './interac-etransfer/status/Status';
 import Home from './home/Home';
 import Legal from './Legal';
-import Login from './Login';
 import ManageMyAlerts from './manage-my-alerts/ManageMyAlerts';
 import MyAccounts from './my-accounts/my-accounts/MyAccounts';
 import DownloadTransactions from './my-accounts/download-transactions/DownloadTransactions';
@@ -42,7 +39,6 @@ import ViewAccountDetails from './my-accounts/view-account-details/ViewAccountDe
 import ViewEStatements from './my-accounts/view-estatements/ViewEStatements';
 import Personal from './Personal';
 import PersonalProfile from './PersonalProfile';
-import PersonalSignup from './PersonalSignup';
 import ScrollToTop from './ScrollToTop';
 import EFT from './transfer-funds/EFT';
 import ReviewAndCancelTransfers from './transfer-funds/review-and-cancel-transfers/ReviewAndCancelTransfers';
@@ -76,7 +72,7 @@ export default function App() {
   useEffect(() => AOS.init(), []);
 
   return (
-    <BrowserRouter>
+    <div>
       <ScrollToTop />
       <Header />
       <Routes>
@@ -150,14 +146,11 @@ export default function App() {
         </Route>
         <Route path="about" element={<About />} />
         <Route path="business" element={<Business />} />
-        <Route path="business-signup" element={<BusinessSignup />} />
         <Route path="legal" element={<Legal />} />
-        <Route path="login" element={<Login />} />
         <Route path="personal" element={<Personal />} />
         <Route path="personal-profile" element={<PersonalProfile />} />
-        <Route path="personal-signup" element={<PersonalSignup />} />
       </Routes>
       <Footer />
-    </BrowserRouter>
+    </div>
   );
 }

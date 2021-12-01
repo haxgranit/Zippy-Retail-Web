@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots App Default 1`] = `
-Array [
+<div>
   <nav
     className="navbar navbar-expand-lg navbar-light"
   >
@@ -64,14 +64,13 @@ Array [
           <li
             className="nav-item"
           >
-            <a
-              aria-current="page"
-              className="nav-link fw-bold"
-              href="/login"
+            <button
+              className="btn btn-link nav-link fw-bold shadow-none"
               onClick={[Function]}
+              type="button"
             >
               LOGIN
-            </a>
+            </button>
           </li>
         </ul>
         <ul
@@ -116,7 +115,7 @@ Array [
         </ul>
       </div>
     </div>
-  </nav>,
+  </nav>
   <div>
     <section
       className="hero slider"
@@ -206,13 +205,13 @@ Array [
                             <br />
                             to me!
                           </h1>
-                          <a
+                          <button
                             className="hero-button btn btn-light rounded-0"
-                            href="/business-signup"
                             onClick={[Function]}
+                            type="button"
                           >
                             SIGN UP!
-                          </a>
+                          </button>
                         </div>
                       </div>
                     </div>
@@ -272,13 +271,13 @@ Array [
                             <br />
                             to me!
                           </h1>
-                          <a
+                          <button
                             className="hero-button btn btn-light rounded-0"
-                            href="/personal-signup"
                             onClick={[Function]}
+                            type="button"
                           >
                             SIGN UP!
-                          </a>
+                          </button>
                         </div>
                       </div>
                     </div>
@@ -338,13 +337,13 @@ Array [
                             <br />
                             to me!
                           </h1>
-                          <a
+                          <button
                             className="hero-button btn btn-light rounded-0"
-                            href="/personal-signup"
                             onClick={[Function]}
+                            type="button"
                           >
                             SIGN UP!
-                          </a>
+                          </button>
                         </div>
                       </div>
                     </div>
@@ -404,13 +403,13 @@ Array [
                             <br />
                             to me!
                           </h1>
-                          <a
+                          <button
                             className="hero-button btn btn-light rounded-0"
-                            href="/business-signup"
                             onClick={[Function]}
+                            type="button"
                           >
                             SIGN UP!
-                          </a>
+                          </button>
                         </div>
                       </div>
                     </div>
@@ -469,13 +468,13 @@ Array [
                             <br />
                             to me!
                           </h1>
-                          <a
+                          <button
                             className="hero-button btn btn-light rounded-0"
-                            href="/personal-signup"
                             onClick={[Function]}
+                            type="button"
                           >
                             SIGN UP!
-                          </a>
+                          </button>
                         </div>
                       </div>
                     </div>
@@ -534,13 +533,13 @@ Array [
                             <br />
                             to me!
                           </h1>
-                          <a
+                          <button
                             className="hero-button btn btn-light rounded-0"
-                            href="/personal-signup"
                             onClick={[Function]}
+                            type="button"
                           >
                             SIGN UP!
-                          </a>
+                          </button>
                         </div>
                       </div>
                     </div>
@@ -599,13 +598,13 @@ Array [
                             <br />
                             to me!
                           </h1>
-                          <a
+                          <button
                             className="hero-button btn btn-light rounded-0"
-                            href="/business-signup"
                             onClick={[Function]}
+                            type="button"
                           >
                             SIGN UP!
-                          </a>
+                          </button>
                         </div>
                       </div>
                     </div>
@@ -645,13 +644,13 @@ Array [
             <div
               className="col-12 col-md-6 col-lg-4"
             >
-              <a
+              <button
                 className="btn btn-light rounded-0 my-button"
-                href="/business-signup"
                 onClick={[Function]}
+                type="button"
               >
                 SIGN UP!
-              </a>
+              </button>
             </div>
           </div>
         </div>
@@ -776,7 +775,7 @@ Array [
         </div>
       </div>
     </main>
-  </div>,
+  </div>
   <div>
     <div
       className="container"
@@ -1007,6 +1006,6 @@ Array [
         </div>
       </div>
     </footer>
-  </div>,
-]
+  </div>
+</div>
 `;
