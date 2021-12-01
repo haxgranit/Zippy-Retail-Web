@@ -10,6 +10,7 @@ import {
 const SecurityQuestionPage = ({
   setRealStep,
   setCurrentStep,
+  showModal,
 }: any): JSX.Element => (
   <>
     <h4>Security Question</h4>
@@ -115,7 +116,10 @@ const SecurityQuestionPage = ({
           variant="outline-danger"
           className="d-flex"
           style={{ marginRight: 10 }}
-          onClick={() => setRealStep(2)}
+          onClick={() => {
+            setRealStep(1);
+            setCurrentStep(1);
+          }}
         >
           Back
         </Button>
@@ -123,8 +127,7 @@ const SecurityQuestionPage = ({
           variant="danger"
           className="d-flex"
           onClick={() => {
-            setRealStep(4);
-            setCurrentStep(3);
+            showModal(true);
           }}
         >
           Next

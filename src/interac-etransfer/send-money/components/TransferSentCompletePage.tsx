@@ -25,7 +25,6 @@ const TransferSentCompletePage = (): JSX.Element => (
       If you opted to send a notification of your transfer, your contact will
       receive it shortly.
     </p>
-    <p>This transfer is final and can&apos;t be recalled.</p>
     <Row className="mt-4">
       <Col md={4}>
         <Form.Label>From:</Form.Label>
