@@ -147,8 +147,8 @@ export default function Personal() {
                 <li>{t('personal.personal_sub_desc_4')}</li>
                 <li>{t('personal.personal_sub_desc_5')}</li>
               </ul>
-              <h1 className="redtitle ms-4 mt-5">{t('personal.signup_free')}</h1>
-              <h2 className="redsubtitle mb-5 ms-4">
+              <h1 className="redtitle mt-5">{t('personal.signup_free')}</h1>
+              <h2 className="redsubtitle mb-5">
                 {t('personal.no_need_back')}
               </h2>
             </div>

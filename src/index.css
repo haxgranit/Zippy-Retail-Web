@@ -33,11 +33,15 @@ body {
 .hero .hero-button, .my-button {
   width: 230px;
   font-weight: bold;
-  font-size: 2em;
+  font-size: 1.6em;
   padding: 0px 8px;
   box-shadow: 5px 5px #88888840;
   border-radius: 10px !important;
   color: #FF1926;
+}
+
+.hero .hero-button{
+  margin-top: 30px;
 }
 
 .my-buttonred {
