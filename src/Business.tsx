@@ -22,7 +22,7 @@ export default function Business() {
         className="bg-light"
         style={{
           backgroundImage: `url(${Circle_White_01})`,
-          backgroundSize: 'cover',
+          backgroundSize: '146.5%',
         }}
       >
         <div className="container">
@@ -143,7 +143,7 @@ export default function Business() {
                 {t('business.make_payment_desc')}
               </p>
               <br />
-              <h1 className="redtitle mb-5 ms-4">{t('business.signup_free')}</h1>
+              <h1 className="redtitle mb-5">{t('business.signup_free')}</h1>
             </div>
             <div
               className="col-12 col-md-7 col-lg-8 backgroundimage"
