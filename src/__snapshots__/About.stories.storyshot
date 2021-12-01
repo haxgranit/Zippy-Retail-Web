@@ -107,6 +107,7 @@ exports[`Storyshots About Default 1`] = `
                     alt="styled icon of a man holding a light bulb"
                     className="img-fluid  centerimage"
                     data-aos="flip-left"
+                    data-aos-delay="200"
                     src="ZippyCash_Icons_E.png"
                   />
                 </div>
@@ -133,6 +134,7 @@ exports[`Storyshots About Default 1`] = `
                     alt="styled icon of a woman holding a heart"
                     className="img-fluid  centerimage"
                     data-aos="flip-left"
+                    data-aos-delay="400"
                     src="ZippyCash_Icons_F.png"
                   />
                 </div>
@@ -159,6 +161,7 @@ exports[`Storyshots About Default 1`] = `
                     alt="styled icon of a person holding a mechnical gear"
                     className="img-fluid  centerimage"
                     data-aos="flip-left"
+                    data-aos-delay="600"
                     src="ZippyCash_Icons_G.png"
                   />
                 </div>

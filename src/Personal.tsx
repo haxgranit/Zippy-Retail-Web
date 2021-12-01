@@ -53,7 +53,7 @@ export default function Personal() {
           />
           <div className="row mt-4 justify-content-center">
             <div
-              className="col-12 col-md-6 col-lg-4 mb-4 position-relative"
+              className="col-12 col-md-6 col-lg-4 mb-4 position-relative px-5"
               style={{ zIndex: 1 }}
             >
               <div className="mb-4">
@@ -71,13 +71,14 @@ export default function Personal() {
                 <p className="content-home">{t('personal.send_description')}</p>
               </div>
             </div>
-            <div className="col-12 col-md-6 col-lg-4 mb-4 position-relative">
+            <div className="col-12 col-md-6 col-lg-4 mb-4 position-relative px-5">
               <div className="mb-4">
                 <img
                   src={ZippyCash_Icons_I}
                   alt={t('personal.image_alt_2')}
                   className="img-fluid centerimage"
                   data-aos="flip-left"
+                  data-aos-delay="200"
                 />
               </div>
               <div>
@@ -89,13 +90,14 @@ export default function Personal() {
                 </p>
               </div>
             </div>
-            <div className="col-12 col-md-6 col-lg-4 mb-4  position-relative">
+            <div className="col-12 col-md-6 col-lg-4 mb-4  position-relative px-5">
               <div className="mb-4">
                 <img
                   src={ZippyCash_Icons_J}
                   alt={t('personal.image_alt_3')}
                   className="img-fluid centerimage"
                   data-aos="flip-left"
+                  data-aos-delay="400"
                 />
               </div>
               <div>
@@ -109,7 +111,6 @@ export default function Personal() {
             </div>
           </div>
         </div>
-        <div className="spacing" />
       </div>
       <div style={{ backgroundColor: 'white' }}>
         <div className="container">
@@ -147,8 +148,8 @@ export default function Personal() {
                 <li>{t('personal.personal_sub_desc_4')}</li>
                 <li>{t('personal.personal_sub_desc_5')}</li>
               </ul>
-              <h1 className="redtitle ms-4 mt-5">{t('personal.signup_free')}</h1>
-              <h2 className="redsubtitle mb-5 ms-4">
+              <h1 className="redtitle mt-5">{t('personal.signup_free')}</h1>
+              <h2 className="redsubtitle mb-5">
                 {t('personal.no_need_back')}
               </h2>
             </div>

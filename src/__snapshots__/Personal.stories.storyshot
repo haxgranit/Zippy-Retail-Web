@@ -62,7 +62,7 @@ exports[`Storyshots Personal Default 1`] = `
         className="row mt-4 justify-content-center"
       >
         <div
-          className="col-12 col-md-6 col-lg-4 mb-4 position-relative"
+          className="col-12 col-md-6 col-lg-4 mb-4 position-relative px-5"
           style={
             Object {
               "zIndex": 1,
@@ -93,7 +93,7 @@ exports[`Storyshots Personal Default 1`] = `
           </div>
         </div>
         <div
-          className="col-12 col-md-6 col-lg-4 mb-4 position-relative"
+          className="col-12 col-md-6 col-lg-4 mb-4 position-relative px-5"
         >
           <div
             className="mb-4"
@@ -102,6 +102,7 @@ exports[`Storyshots Personal Default 1`] = `
               alt="a zippy card tapping a debt machine"
               className="img-fluid centerimage"
               data-aos="flip-left"
+              data-aos-delay="200"
               src="ZippyCash_Icons_I.png"
             />
           </div>
@@ -119,7 +120,7 @@ exports[`Storyshots Personal Default 1`] = `
           </div>
         </div>
         <div
-          className="col-12 col-md-6 col-lg-4 mb-4  position-relative"
+          className="col-12 col-md-6 col-lg-4 mb-4  position-relative px-5"
         >
           <div
             className="mb-4"
@@ -128,6 +129,7 @@ exports[`Storyshots Personal Default 1`] = `
               alt="young woman playfully showing her zippy card"
               className="img-fluid centerimage"
               data-aos="flip-left"
+              data-aos-delay="400"
               src="ZippyCash_Icons_J.png"
             />
           </div>
@@ -146,9 +148,6 @@ exports[`Storyshots Personal Default 1`] = `
         </div>
       </div>
     </div>
-    <div
-      className="spacing"
-    />
   </div>
   <div
     style={
@@ -227,12 +226,12 @@ exports[`Storyshots Personal Default 1`] = `
             </li>
           </ul>
           <h1
-            className="redtitle ms-4 mt-5"
+            className="redtitle mt-5"
           >
             Sign up free!
           </h1>
           <h2
-            className="redsubtitle mb-5 ms-4"
+            className="redsubtitle mb-5"
           >
             (no back account needed)
           </h2>
