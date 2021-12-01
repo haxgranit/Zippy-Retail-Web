@@ -191,10 +191,21 @@ exports[`Storyshots interac-etransfer/send-money/SendMoney Default 1`] = `
         <div
           className="col-md-8"
         >
-          <input
-            className="form-control"
-            type="email"
-          />
+          <select
+            className="form-select"
+            onChange={[Function]}
+          >
+            <option
+              value={1}
+            >
+              Chelsea Tough
+            </option>
+            <option
+              value={2}
+            >
+              Cristian
+            </option>
+          </select>
           <p>
             Email: chelsea.tough@gmail.com
           </p>
