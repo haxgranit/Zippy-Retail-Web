@@ -1,5 +1,4 @@
 import AOS from 'aos';
-import { useIsAuthenticated, useMsal } from '@azure/msal-react';
 import { useEffect } from 'react';
 import {
   Navigate,
@@ -68,21 +67,8 @@ import ChangeMortgagePaymentAmount from './customer-services/change-mortgage-pay
 import UnlinkAccountsFromYourCibcDebitCard from './customer-services/unlink-accounts-from-your-cibc-debit-card/UnlinkAccountsFromYourCibcDebitCard';
 import DigitalVaultDocuments from './customer-services/digital-vault-documents/DigitalVaultDocuments';
 import ContributeToTfsa from './customer-services/contribute-to-a-tfsa/ContributeToATfsa';
-import Api from './api';
 
 export default function App() {
-  const isAuthenticated = useIsAuthenticated();
-  const { instance, accounts: msalAccounts } = useMsal();
-
-  useEffect(() => {
-    if (isAuthenticated) {
-      new Api(instance, msalAccounts[0]).postUser().then((user) => {
-        /* eslint-disable-next-line no-console */
-        console.log('user', user);
-      });
-    }
-  }, [isAuthenticated, instance, msalAccounts]);
-
   useEffect(() => AOS.init(), []);
 
   return (
