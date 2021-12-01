@@ -148,9 +148,6 @@ exports[`Storyshots Personal Default 1`] = `
         </div>
       </div>
     </div>
-    <div
-      className="spacing"
-    />
   </div>
   <div
     style={

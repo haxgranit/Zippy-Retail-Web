@@ -111,7 +111,6 @@ export default function Personal() {
             </div>
           </div>
         </div>
-        <div className="spacing" />
       </div>
       <div style={{ backgroundColor: 'white' }}>
         <div className="container">
