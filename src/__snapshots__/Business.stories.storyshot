@@ -7,7 +7,7 @@ exports[`Storyshots Business Default 1`] = `
     style={
       Object {
         "backgroundImage": "url(Circle_White-01.jpg)",
-        "backgroundSize": "147%",
+        "backgroundSize": "146.5%",
       }
     }
   >
