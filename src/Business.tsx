@@ -20,7 +20,7 @@ export default function Business() {
         className="bg-light"
         style={{
           backgroundImage: `url(${Circle_White_01})`,
-          backgroundSize: 'cover',
+          backgroundSize: '147%',
         }}
       >
         <div className="container">
