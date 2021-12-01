@@ -1,9 +1,9 @@
 {
   "header.language": "Langue",
   "header.login": "Connexion",
-  "header.about": "À PROPOS DE NOUS",
-  "header.personal": "PERSONNEL",
-  "header.business": "PROFESSIONNEL",
+  "header.about": "à propos de nous",
+  "header.personal": "personnel",
+  "header.business": "professionnel",
   
   "about.who_is": "Qui est Zippy Cash?",
   "about.who_is_description_1": "Nous sommes des geeks de finances qui connaissent le système et qui le trouvent trop compliqué, trop cher et trop rigide. Ce n’est pas parce qu’il a été construit ainsi que nous ne pouvons pas faire mieux. Nous veillons à l’améliorer pour que chacun puisse en bénéficier. Nous avons fondé Zippy Cash pour respecter cette promesse.",
@@ -22,7 +22,7 @@
   "business.business_description_1": "Peu importe la grandeur de votre entreprise, on la retrouve sur le marché mondial comme toutes les entreprises. C’est pourquoi vous avez besoin des meilleurs tarifs et des frais les plus bas possible pour votre marque et Zippy Cash vous les offre en tout temps. Il simplifie le commerce international. Nos frais sont imbattables, point.  ",
   "business.business_description_2": "Il peut sembler intimidant de créer des comptes bancaires internationaux, mais avec Zippy, vous recevrez tout ce dont vous avez besoin pour commencer à gérer des comptes à l’international, en quelques minutes. Comment est-ce aussi simple? Nous avons établi d’excellents partenariats avec des marques financières internationales et des solutions technologiques qui servent de médiateurs efficaces privilégiant la facilité, la rapidité et la sécurité.",
   "business.business_description_3": "Zippy englobe tout : la facturation, l’équipe et les gens. Nous vous donnons toujours les frais de transaction les plus bas et nous vous facilitons la vie (voire la pigmentons?) en ce qui concerne la gestion de vos paiements. Renseignez-vous ici.",
-  "business.business_title": "Zippy Cash Professionnel",
+  "business.business_title": "zippy cash professionnel",
   "business.how_can_help": "Comment Zippy peut-il aider mon entreprise?",
   "business.integrate_payment": "Intégrer des systèmes de paiement",
   "business.integrate_payment_desc": "Grâce à Zippy, vous pouvez tout mettre au même endroit pour faciliter la comptabilité et la gestion financière de votre entreprise.",
