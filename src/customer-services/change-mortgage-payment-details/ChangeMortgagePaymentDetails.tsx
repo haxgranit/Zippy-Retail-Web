@@ -7,7 +7,6 @@ import {
   Row,
   Stack,
 } from 'react-bootstrap';
-import 'bootstrap/dist/css/bootstrap.min.css';
 
 export interface IProps {
   title: string,
@@ -152,7 +151,7 @@ const EndSection = () => (
 
 function ChangeMortgagePaymentAmount() {
   return (
-    <div style={{ margin: '50px 200px', fontSize: '90%' }}>
+    <div>
       <Row>
         <Col xs={12}>
           <AlertsSection />
