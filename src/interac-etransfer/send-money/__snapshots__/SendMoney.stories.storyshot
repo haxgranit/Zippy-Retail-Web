@@ -252,6 +252,7 @@ exports[`Storyshots interac-etransfer/send-money/SendMoney Default 1`] = `
         >
           <input
             className="form-control"
+            onChange={[Function]}
             type="email"
           />
           <label
@@ -286,10 +287,8 @@ exports[`Storyshots interac-etransfer/send-money/SendMoney Default 1`] = `
         >
           <select
             className="form-select"
+            onChange={[Function]}
           >
-            <option>
-              Cheguing (01702-81-99639) $2,260.57
-            </option>
             <option>
               Cheguing (01702-81-99639) $2,260.57
             </option>
@@ -321,12 +320,10 @@ exports[`Storyshots interac-etransfer/send-money/SendMoney Default 1`] = `
         >
           <select
             className="form-select"
+            onChange={[Function]}
           >
             <option>
               Email
-            </option>
-            <option>
-              Phone
             </option>
           </select>
         </div>
@@ -356,6 +353,7 @@ exports[`Storyshots interac-etransfer/send-money/SendMoney Default 1`] = `
         >
           <textarea
             className="form-control"
+            onChange={[Function]}
             rows={3}
           />
           <p>

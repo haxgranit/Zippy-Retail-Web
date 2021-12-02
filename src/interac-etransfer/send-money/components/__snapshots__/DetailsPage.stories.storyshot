@@ -111,6 +111,7 @@ Array [
     >
       <input
         className="form-control"
+        onChange={[Function]}
         type="email"
       />
       <label
@@ -145,10 +146,8 @@ Array [
     >
       <select
         className="form-select"
+        onChange={[Function]}
       >
-        <option>
-          Cheguing (01702-81-99639) $2,260.57
-        </option>
         <option>
           Cheguing (01702-81-99639) $2,260.57
         </option>
@@ -180,12 +179,10 @@ Array [
     >
       <select
         className="form-select"
+        onChange={[Function]}
       >
         <option>
           Email
-        </option>
-        <option>
-          Phone
         </option>
       </select>
     </div>
@@ -215,6 +212,7 @@ Array [
     >
       <textarea
         className="form-control"
+        onChange={[Function]}
         rows={3}
       />
       <p>

@@ -32,6 +32,8 @@ export default function SendMoney() {
   const [realStep, setRealStep] = useState(1);
   const [showVerifyModal, setShowVerifyModal] = useState(false);
   const [selectedUser, setUserToSend] = useState(1);
+  const [mainInfo, setMainInfo] = useState({});
+
   const quickLinks: QuickLink[] = [
     {
       id: 1,
@@ -93,6 +95,8 @@ export default function SendMoney() {
               setCurrentStep={setCurrentStep}
               selectedUser={selectedUser}
               setUserToSend={setUserToSend}
+              mainInfo={mainInfo}
+              setMainInfo={setMainInfo}
             />
           )}
           {currentStep === 2 && realStep === 2 && (
@@ -107,18 +111,24 @@ export default function SendMoney() {
               setRealStep={setRealStep}
               setCurrentStep={setCurrentStep}
               showModal={setShowVerifyModal}
+              mainInfo={mainInfo}
+              setMainInfo={setMainInfo}
             />
           )}
           {currentStep === 3 && realStep === 4 && (
             <TransferSentPage
               setRealStep={setRealStep}
               setCurrentStep={setCurrentStep}
+              mainInfo={mainInfo}
+              setMainInfo={setMainInfo}
             />
           )}
           {currentStep === 3 && realStep === 5 && (
             <TransferSentCompletePage
               setRealStep={setRealStep}
               setCurrentStep={setCurrentStep}
+              mainInfo={mainInfo}
+              setMainInfo={setMainInfo}
             />
           )}
           <hr style={{ height: '1px' }} />

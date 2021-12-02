@@ -5,7 +5,10 @@ import {
   Button,
 } from 'react-bootstrap';
 
-const TransferSentPage = ({ setRealStep, setCurrentStep }: any): JSX.Element => (
+const TransferSentPage = ({
+  setRealStep,
+  setCurrentStep,
+}: any): JSX.Element => (
   <>
     <div className="d-flex align-items-center">
       <div

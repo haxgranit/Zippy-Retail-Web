@@ -11,6 +11,8 @@ const DetailsPage = ({
   setCurrentStep,
   selectedUser,
   setUserToSend,
+  mainInfo,
+  setMainInfo,
 }: any): JSX.Element => (
   <>
     <h4>Your Interac e-Transfer Details</h4>
@@ -66,7 +68,11 @@ const DetailsPage = ({
         <Form.Label>Amount:</Form.Label>
       </Col>
       <Col md={8}>
-        <FormControl type="email" />
+        <FormControl
+          type="email"
+          value={mainInfo?.email}
+          onChange={(evt) => setMainInfo({ ...mainInfo, email: evt.target.value })}
+        />
         <Form.Label>
           The maximum amount you can send in each transfer is $3,000.
         </Form.Label>
@@ -78,8 +84,10 @@ const DetailsPage = ({
         <Form.Label>From Account:</Form.Label>
       </Col>
       <Col md={8}>
-        <Form.Select>
-          <option>Cheguing (01702-81-99639) $2,260.57</option>
+        <Form.Select
+          onChange={(evt) => setMainInfo({ ...mainInfo, from: evt.target.value })}
+          value={mainInfo?.from}
+        >
           <option>Cheguing (01702-81-99639) $2,260.57</option>
         </Form.Select>
       </Col>
@@ -90,9 +98,11 @@ const DetailsPage = ({
         <Form.Label>Transfer Method:</Form.Label>
       </Col>
       <Col md={8}>
-        <Form.Select>
+        <Form.Select
+          onChange={(evt) => setMainInfo({ ...mainInfo, transfer_method: evt.target.value })}
+          value={mainInfo?.transfer_method}
+        >
           <option>Email</option>
-          <option>Phone</option>
         </Form.Select>
       </Col>
     </Row>
@@ -102,7 +112,12 @@ const DetailsPage = ({
         <Form.Label>Message (Optional):</Form.Label>
       </Col>
       <Col md={8}>
-        <Form.Control as="textarea" rows={3} />
+        <Form.Control
+          as="textarea"
+          rows={3}
+          onChange={(evt) => setMainInfo({ ...mainInfo, message: evt.target.value })}
+          value={mainInfo?.message}
+        />
         <p>
           Do not provide the security question, any part of the security answer
           or any confidential information in your message to the contact. This
