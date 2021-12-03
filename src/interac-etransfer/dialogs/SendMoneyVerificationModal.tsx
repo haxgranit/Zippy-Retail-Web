@@ -8,8 +8,15 @@ import {
 export interface SendMoneyVerificationModalProps {
   show: boolean;
   handleClose: () => void;
+  handleNext: () => void;
+  handleBack: () => void;
 }
-const SendMoneyVerificationModal = ({ show, handleClose }: SendMoneyVerificationModalProps) => (
+const SendMoneyVerificationModal = ({
+  show,
+  handleClose,
+  handleNext,
+  handleBack,
+}: SendMoneyVerificationModalProps) => (
   <Modal show={show} size="lg">
     <Modal.Body style={{ padding: '0px' }}>
       <Row style={{ padding: '15px' }}>
@@ -113,6 +120,7 @@ const SendMoneyVerificationModal = ({ show, handleClose }: SendMoneyVerification
               color: '#C41F3E',
               padding: '5px 12px',
             }}
+            onClick={handleBack}
           >
             Back
           </button>
@@ -125,6 +133,7 @@ const SendMoneyVerificationModal = ({ show, handleClose }: SendMoneyVerification
               borderColor: '#C41F3E',
               color: 'white',
             }}
+            onClick={handleNext}
           >
             Send Money
           </button>

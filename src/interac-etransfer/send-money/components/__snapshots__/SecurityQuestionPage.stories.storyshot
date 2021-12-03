@@ -75,6 +75,7 @@ Array [
     >
       <input
         className="form-control"
+        onChange={[Function]}
         type="text"
       />
     </div>
@@ -104,6 +105,7 @@ Array [
     >
       <input
         className="form-control"
+        onChange={[Function]}
         type="text"
       />
       <div
@@ -112,6 +114,7 @@ Array [
         <input
           className="form-check-input"
           disabled={false}
+          onChange={[Function]}
           type="checkbox"
         />
         <label
@@ -148,6 +151,7 @@ Array [
     >
       <input
         className="form-control"
+        onChange={[Function]}
         type="text"
       />
     </div>

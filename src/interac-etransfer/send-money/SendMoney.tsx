@@ -1,8 +1,5 @@
-import { useState } from 'react';
-import {
-  Col,
-  Row,
-} from 'react-bootstrap';
+import { useEffect, useState } from 'react';
+import { Col, Row } from 'react-bootstrap';
 import CommonHeader from '../../common/CommonHeader';
 import {
   StepComponent,
@@ -12,6 +9,7 @@ import {
   TransferSentCompletePage,
   TransferSentPage,
 } from './components';
+import SendMoneyVerificationModal from '../dialogs/SendMoneyVerificationModal';
 
 interface QuickLink {
   id: number;
@@ -32,6 +30,10 @@ const LinkElement = ({ url, text, id }: QuickLink): JSX.Element => (
 export default function SendMoney() {
   const [currentStep, setCurrentStep] = useState(1);
   const [realStep, setRealStep] = useState(1);
+  const [showVerifyModal, setShowVerifyModal] = useState(false);
+  const [selectedUser, setUserToSend] = useState(1);
+  const [mainInfo, setMainInfo] = useState({});
+
   const quickLinks: QuickLink[] = [
     {
       id: 1,
@@ -50,8 +52,30 @@ export default function SendMoney() {
     },
   ];
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [realStep]);
+
   return (
     <div>
+      <SendMoneyVerificationModal
+        show={showVerifyModal}
+        handleClose={() => setShowVerifyModal(false)}
+        handleNext={() => {
+          if (selectedUser === 1) {
+            setRealStep(4);
+          } else {
+            setRealStep(5);
+          }
+          setCurrentStep(3);
+          setShowVerifyModal(false);
+        }}
+        handleBack={() => {
+          setRealStep(1);
+          setCurrentStep(1);
+          setShowVerifyModal(false);
+        }}
+      />
       <CommonHeader title="SEND MONEY" print={false} />
       <Row>
         <Col md={8}>
@@ -69,21 +93,44 @@ export default function SendMoney() {
             <DetailsPage
               setRealStep={setRealStep}
               setCurrentStep={setCurrentStep}
+              selectedUser={selectedUser}
+              setUserToSend={setUserToSend}
+              mainInfo={mainInfo}
+              setMainInfo={setMainInfo}
             />
           )}
           {currentStep === 2 && realStep === 2 && (
-            <SecurityRecipientPage setRealStep={setRealStep} />
+            <SecurityRecipientPage
+              setRealStep={setRealStep}
+              setCurrentStep={setCurrentStep}
+              showModal={setShowVerifyModal}
+            />
           )}
           {currentStep === 2 && realStep === 3 && (
             <SecurityQuestionPage
               setRealStep={setRealStep}
               setCurrentStep={setCurrentStep}
+              showModal={setShowVerifyModal}
+              mainInfo={mainInfo}
+              setMainInfo={setMainInfo}
             />
           )}
           {currentStep === 3 && realStep === 4 && (
-            <TransferSentPage setRealStep={setRealStep} />
+            <TransferSentPage
+              setRealStep={setRealStep}
+              setCurrentStep={setCurrentStep}
+              mainInfo={mainInfo}
+              setMainInfo={setMainInfo}
+            />
           )}
-          {currentStep === 3 && realStep === 5 && <TransferSentCompletePage />}
+          {currentStep === 3 && realStep === 5 && (
+            <TransferSentCompletePage
+              setRealStep={setRealStep}
+              setCurrentStep={setCurrentStep}
+              mainInfo={mainInfo}
+              setMainInfo={setMainInfo}
+            />
+          )}
           <hr style={{ height: '1px' }} />
           <Row>
             <i />
