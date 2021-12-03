@@ -1,17 +1,40 @@
+import {
+  AuthenticationResult,
+  EventMessage,
+  EventType,
+  PublicClientApplication,
+} from '@azure/msal-browser';
+import { MsalProvider } from '@azure/msal-react';
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { BrowserRouter } from 'react-router-dom';
 import './i18n/config';
 import './index.css';
-import { Provider } from 'react-redux';
 import App from './App';
-import { store } from './app/store';
+import { msalConfig } from './authConfig';
 import * as serviceWorker from './serviceWorker';
+
+const msalInstance = new PublicClientApplication(msalConfig);
+const accounts = msalInstance.getAllAccounts();
+if (accounts.length > 0) {
+  msalInstance.setActiveAccount(accounts[0]);
+}
+
+msalInstance.addEventCallback((event: EventMessage) => {
+  if (event.eventType === EventType.LOGIN_SUCCESS && event.payload) {
+    const payload = event.payload as AuthenticationResult;
+    const { account } = payload;
+    msalInstance.setActiveAccount(account);
+  }
+});
 
 ReactDOM.render(
   <React.StrictMode>
-    <Provider store={store}>
-      <App />
-    </Provider>
+    <MsalProvider instance={msalInstance}>
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
+    </MsalProvider>
   </React.StrictMode>,
   document.getElementById('root'),
 );

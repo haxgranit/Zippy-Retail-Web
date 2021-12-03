@@ -1,5 +1,5 @@
+import { useMsal } from '@azure/msal-react';
 import { useTranslation, Trans } from 'react-i18next';
-import { Link } from 'react-router-dom';
 import Circle_White_01 from './assets/img/background/Circle_White-01.jpg';
 import ZippyCash_Icons_K from './assets/img/roundicons/business/ZippyCash_Icons_K.png';
 import ZippyCash_Icons_L from './assets/img/roundicons/business/ZippyCash_Icons_L.png';
@@ -10,8 +10,10 @@ import NumberCircle1 from './assets/img/roundicons/business/numbercircle_1.png';
 import NumberCircle2 from './assets/img/roundicons/business/numbercircle_2.png';
 import NumberCircle3 from './assets/img/roundicons/business/numbercircle_3.png';
 import NumberCircle4 from './assets/img/roundicons/business/numbercircle_4.png';
+import { b2cPolicies, loginRequest } from './authConfig';
 
 export default function Business() {
+  const { instance } = useMsal();
   const { t } = useTranslation();
 
   return (
@@ -20,7 +22,7 @@ export default function Business() {
         className="bg-light"
         style={{
           backgroundImage: `url(${Circle_White_01})`,
-          backgroundSize: 'cover',
+          backgroundSize: '146.5%',
         }}
       >
         <div className="container">
@@ -36,12 +38,16 @@ export default function Business() {
                 >
                   {t('business.header_desc')}
                 </h1>
-                <Link
-                  to="/business-signup"
+                <button
+                  type="button"
                   className="btn rounded-0 my-buttonred"
+                  onClick={() => instance.loginRedirect({
+                    ...loginRequest,
+                    authority: b2cPolicies.authorities.signUpBusiness.authority,
+                  })}
                 >
                   {t('business.sign_up_btn_title')}
-                </Link>
+                </button>
               </div>
             </div>
           </div>
@@ -137,7 +143,7 @@ export default function Business() {
                 {t('business.make_payment_desc')}
               </p>
               <br />
-              <h1 className="redtitle mb-5 ms-4">{t('business.signup_free')}</h1>
+              <h1 className="redtitle mb-5">{t('business.signup_free')}</h1>
             </div>
             <div
               className="col-12 col-md-7 col-lg-8 backgroundimage"

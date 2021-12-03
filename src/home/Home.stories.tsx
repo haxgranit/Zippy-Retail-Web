@@ -1,7 +1,5 @@
-import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { store } from '../app/store';
 import '../i18n/config';
 import '../index.css';
 import Home from './Home';
@@ -12,11 +10,9 @@ export default {
 } as ComponentMeta<typeof Home>;
 
 const Template: ComponentStory<typeof Home> = () => (
-  <Provider store={store}>
-    <BrowserRouter>
-      <Home />
-    </BrowserRouter>
-  </Provider>
+  <BrowserRouter>
+    <Home />
+  </BrowserRouter>
 );
 
 export const Default = Template.bind({});

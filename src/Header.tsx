@@ -1,12 +1,14 @@
+import { InteractionStatus } from '@azure/msal-browser';
+import { useIsAuthenticated, useMsal } from '@azure/msal-react';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
-import { useAppSelector } from './app/hooks';
 import ZippyCash_Logo from './assets/img/general/ZippyCash_Logo.png';
-import { selectUser } from './features/user/userSlice';
+import { loginRequest } from './authConfig';
 
 export default function Header() {
-  const user = useAppSelector(selectUser);
+  const isAuthenticated = useIsAuthenticated();
+  const { inProgress, instance } = useMsal();
   const { i18n, t } = useTranslation();
 
   return (
@@ -34,27 +36,45 @@ export default function Header() {
               <NavDropdown.Item onClick={() => i18n.changeLanguage('fr-CA')}>French (Canada)</NavDropdown.Item>
               <NavDropdown.Item onClick={() => i18n.changeLanguage('es-US')}>Spanish (US)</NavDropdown.Item>
             </NavDropdown>
-            <li className="nav-item">
-              <Link to="/login" className="nav-link fw-bold" aria-current="page">{t('header.login')}</Link>
-            </li>
+            {(isAuthenticated && (
+              <li className="nav-item">
+                <button
+                  type="button"
+                  className="btn btn-link nav-link fw-bold shadow-none"
+                  onClick={() => instance.logoutRedirect()}
+                >
+                  {t('header.logout')}
+                </button>
+              </li>
+            )) || (
+              inProgress !== InteractionStatus.Startup
+              && inProgress !== InteractionStatus.HandleRedirect
+              && (
+                <li className="nav-item">
+                  <button
+                    type="button"
+                    className="btn btn-link nav-link fw-bold shadow-none"
+                    onClick={() => instance.loginRedirect(loginRequest)}
+                  >
+                    {t('header.login')}
+                  </button>
+                </li>
+              )
+            )}
           </ul>
-          <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
-            {!user.loggedIn && (
+          {!isAuthenticated && (
+            <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
               <li className="nav-item">
                 <Link to="/about" className="nav-link" aria-current="page">{t('header.about')}</Link>
               </li>
-            )}
-            {(!user.loggedIn || !user.personal) && (
               <li className="nav-item">
                 <Link to="/personal" className="nav-link" aria-current="page">{t('header.personal')}</Link>
               </li>
-            )}
-            {(!user.loggedIn || !user.business) && (
               <li className="nav-item">
                 <Link to="/business" className="nav-link" aria-current="page">{t('header.business')}</Link>
               </li>
-            )}
-          </ul>
+            </ul>
+          )}
         </div>
       </div>
     </nav>
