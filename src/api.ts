@@ -2,12 +2,11 @@
 
 import { AccountInfo, InteractionRequiredAuthError, IPublicClientApplication } from '@azure/msal-browser';
 
-export type User = {
-  id: string,
-  country: string,
-  identities: string[],
-  signupIsPersonal: boolean;
-  signupIsBusiness: boolean;
+export type Region = {
+  id: number;
+  regionCode: string;
+  name: string;
+  countryId: number;
 };
 
 export default class Api {
@@ -16,17 +15,13 @@ export default class Api {
     private readonly account: AccountInfo,
   ) { }
 
-  public getUser() {
-    return this.fetch<User>('get', 'User');
-  }
-
-  public postUser() {
-    return this.fetch<User>('post', 'User');
+  public getRegions() {
+    return this.fetch<Region>('get', 'Region');
   }
 
   private async fetch<TResponse>(method: string, path: string) {
     const accessTokenRequest = {
-      scopes: ['https://zippycashdev.onmicrosoft.com/6128490c-c59f-4323-9343-8d233c26a00c/access_as_user'],
+      scopes: ['https://zippycashdev.onmicrosoft.com/0f2b00c3-dc2e-4ce6-ab2b-f4830c77a432/api'],
       account: this.account,
     };
 
@@ -43,10 +38,14 @@ export default class Api {
       return null;
     }
 
-    const response = await fetch(`https://zippy-accounts-dev.azurewebsites.net/${path}`, {
+    const response = await fetch(`https://zippy-cash-api-dev.azurewebsites.net/api/v1/${path}`, {
       method,
       headers: new Headers({ Authorization: `Bearer ${accessToken}` }),
     });
+
+    if (!response.ok) {
+      throw Error(`${response.status} ${response.statusText}`);
+    }
 
     return await response.json() as TResponse;
   }

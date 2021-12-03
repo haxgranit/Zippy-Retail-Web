@@ -1,4 +1,5 @@
 import AOS from 'aos';
+import { useIsAuthenticated, useMsal } from '@azure/msal-react';
 import { useEffect } from 'react';
 import {
   Navigate,
@@ -7,6 +8,7 @@ import {
 } from 'react-router-dom';
 import About from './About';
 import AccountSecurity from './account-security/AccountSecurity';
+import Api from './api';
 import BillerDetails from './bill-payments/biller-details/BillerDetails';
 import AddOrEditBillers from './bill-payments/add-or-edit-billers/AddOrEditBillers';
 import BillPayments from './bill-payments/bill-payments/BillPayments';
@@ -69,6 +71,25 @@ import DigitalVaultDocuments from './customer-services/digital-vault-documents/D
 import ContributeToTfsa from './customer-services/contribute-to-a-tfsa/ContributeToATfsa';
 
 export default function App() {
+  const isAuthenticated = useIsAuthenticated();
+  const { instance, accounts: msalAccounts } = useMsal();
+
+  useEffect(() => {
+    if (isAuthenticated) {
+      // TODO: replace this placeholder request with a real post-login request to get account info,
+      // user info, etc.
+      new Api(instance, msalAccounts[0]).getRegions()
+        .then((regions) => {
+          /* eslint-disable-next-line no-console */
+          console.log('regions', regions);
+        })
+        .catch((error) => {
+          /* eslint-disable-next-line no-console */
+          console.error('regions', error);
+        });
+    }
+  }, [isAuthenticated, instance, msalAccounts]);
+
   useEffect(() => AOS.init(), []);
 
   return (
