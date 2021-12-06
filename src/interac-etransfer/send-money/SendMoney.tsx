@@ -1,11 +1,11 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import {
   Col,
   Row,
 } from 'react-bootstrap';
 import CommonHeader from '../../common/CommonHeader';
+import StepComponent from '../../common/StepComponent';
 import {
-  StepComponent,
   DetailsPage,
   SecurityQuestionPage,
   SecurityRecipientPage,
@@ -49,6 +49,10 @@ export default function SendMoney() {
       url: './',
     },
   ];
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [realStep]);
 
   return (
     <div>

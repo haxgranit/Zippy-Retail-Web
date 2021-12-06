@@ -54,7 +54,9 @@ const StepComponent = ({
         onKeyPress={KeyPressHandler}
         onClick={() => {
           setCurrentStep(i + 1);
-          setRealStep(i * 2);
+          if (setRealStep) {
+            setRealStep(i * 2);
+          }
         }}
         key={`step_${i}`}
       >
