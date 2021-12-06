@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import {
   Row,
   Col,
@@ -10,10 +11,25 @@ import {
   FormControl,
 } from 'react-bootstrap';
 import CommonHeader from '../common/CommonHeader';
+import EditBusinessPhone from './edit-business-phone/EditBusinessPhone';
+import EditHomePhone from './edit-home-phone/EditHomePhone';
 
 export default function ManageMyAlerts() {
+  const [showEditHomeModal, setShowEditHomeModal] = useState(false);
+  const [showEditBusinessPhone, setShowEditBusinessPhone] = useState(false);
+
   return (
     <>
+      <EditHomePhone
+        show={showEditHomeModal}
+        handleCancel={() => setShowEditHomeModal(false)}
+        handleSave={() => {}}
+      />
+      <EditBusinessPhone
+        show={showEditBusinessPhone}
+        handleCancel={() => setShowEditBusinessPhone(false)}
+        handleSave={() => {}}
+      />
       <CommonHeader title="MANAGE MY ALERTS" print />
       <Row className="mt-3">
         <Col md={8}>
@@ -383,7 +399,7 @@ export default function ManageMyAlerts() {
                   <div style={{ fontWeight: 'bold' }}>Home Phone</div>
                   <div style={{ color: 'grey' }}>410-553-1372</div>
                 </div>
-                <Button variant="link" className="text-black">
+                <Button variant="link" className="text-black" onClick={() => setShowEditHomeModal(true)}>
                   Edit
                 </Button>
               </div>
@@ -394,7 +410,7 @@ export default function ManageMyAlerts() {
                 <div>
                   <div style={{ fontWeight: 'bold' }}>Business Phone</div>
                 </div>
-                <Button variant="link" className="text-black">
+                <Button variant="link" className="text-black" onClick={() => setShowEditBusinessPhone(true)}>
                   Edit
                 </Button>
               </div>
