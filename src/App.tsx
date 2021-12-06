@@ -46,6 +46,7 @@ import EFT from './transfer-funds/EFT';
 import ReviewAndCancelTransfers from './transfer-funds/review-and-cancel-transfers/ReviewAndCancelTransfers';
 import TransferFunds from './transfer-funds/transfer-funds/TransferFunds';
 import VisaDirect from './transfer-funds/VisaDirect';
+import ZippyToZippy from './transfer-funds/ZippyToZippy';
 import ChangeYourPassword from './customer-services/change-your-password/ChangeYourPassword';
 import ChangeYourContactInformation from './customer-services/change-contact-information/ChangeYourContactInformation';
 import AddACardHolder from './customer-services/add-a-cardholder/AddACardHolder';
@@ -160,6 +161,7 @@ export default function App() {
           </Route>
           <Route path="transfer-funds">
             <Route path="/transfer-funds" element={<TransferFunds />} />
+            <Route path="zippy-to-zippy" element={<ZippyToZippy />} />
             <Route path="eft" element={<EFT />} />
             <Route path="visa-direct" element={<VisaDirect />} />
             <Route path="review-and-cancel-transfers" element={<ReviewAndCancelTransfers />} />

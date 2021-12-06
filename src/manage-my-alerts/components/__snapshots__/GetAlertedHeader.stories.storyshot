@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots manage-my-alerts/components/GetAlertedHeader Default 1`] = `
+<div
+  className="row"
+  style={
+    Object {
+      "backgroundColor": "#EFEFEF",
+      "borderBottom": "1px solid grey",
+    }
+  }
+>
+  <div
+    className="col-md-8"
+  >
+    <p
+      style={
+        Object {
+          "marginTop": 12,
+        }
+      }
+    >
+      GET ALERTED WHEN...
+    </p>
+  </div>
+  <div
+    className="col-md-4"
+  >
+    <p
+      style={
+        Object {
+          "marginTop": 12,
+        }
+      }
+    >
+      SEND ALERT TO...
+    </p>
+  </div>
+</div>
+`;
