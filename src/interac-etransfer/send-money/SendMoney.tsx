@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
 import { Col, Row } from 'react-bootstrap';
 import CommonHeader from '../../common/CommonHeader';
+import StepComponent from '../../common/StepComponent';
 import {
-  StepComponent,
   DetailsPage,
   SecurityQuestionPage,
   SecurityRecipientPage,

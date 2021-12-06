@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots interac-etransfer/send-money/components/StepComponent Default 1`] = `
+exports[`Storyshots common/StepComponent Default 1`] = `
 <div
   className="d-flex align-items-center mt-3 mb-3"
 >
