@@ -1,6 +1,5 @@
 import Enzyme, { shallow } from 'enzyme';
 import Adapter from '@wojtekmaj/enzyme-adapter-react-17';
-import { Modal } from 'react-bootstrap';
 import ManageMyAlerts from './ManageMyAlerts';
 import EditBusinessPhone from './edit-business-phone/EditBusinessPhone';
 import EditHomePhone from './edit-home-phone/EditHomePhone';
