@@ -13,12 +13,12 @@ describe('Manage Alert Component', () => {
     const wrapper = shallow(<ManageMyAlerts />);
     expect(wrapper.find(EditHomePhone).prop('show')).toBe(false);
     wrapper.find('Button[variant="link"]').at(2).simulate('click');
-    expect(wrapper.find(Modal).prop('show')).toBe(true);
+    expect(wrapper.find(EditHomePhone).prop('show')).toBe(true);
   });
   it('Click Edit Business Phone  button ', () => {
     const wrapper = shallow(<ManageMyAlerts />);
     expect(wrapper.find(EditBusinessPhone).prop('show')).toBe(false);
     wrapper.find('Button[variant="link"]').at(3).simulate('click');
-    expect(wrapper.find(Modal).prop('show')).toBe(true);
+    expect(wrapper.find(EditBusinessPhone).prop('show')).toBe(true);
   });
 });
