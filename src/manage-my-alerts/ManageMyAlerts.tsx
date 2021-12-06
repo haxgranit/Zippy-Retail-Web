@@ -10,6 +10,7 @@ import {
   FormControl,
 } from 'react-bootstrap';
 import CommonHeader from '../common/CommonHeader';
+import Transactions from './Transactions';
 
 export default function ManageMyAlerts() {
   return (
@@ -328,7 +329,7 @@ export default function ManageMyAlerts() {
               </div>
             </Tab>
             <Tab eventKey="transactions" title="TRANSACTIONS">
-              Transactions
+              <Transactions />
             </Tab>
             <Tab eventKey="reminders" title="REMINDERS">
               Reminders
