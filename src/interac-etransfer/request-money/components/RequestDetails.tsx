@@ -75,8 +75,8 @@ export default function RequestDetail({ setCurrentStep }: any) {
         <Col xs={9}>
           <Form.Select>
             <option>Select</option>
-            <option value="Chequing (01802-81-33299302) $1,747.46 (Personal)">Chequing (01802-81-33299302) $1,747.46 (Personal)</option>
-            <option value="Chequing (01802-81-33299302) $1,747.46 (Business)">Chequing (01802-81-33299302) $1,747.46 (Business)</option>
+            <option value="Personal (8000 001 000000000) $1,747.46">Personal (8000 001 000000000) $1,747.46</option>
+            <option value="Business (7000 001 000000000) $1,747.46">Business (7000 001 000000000) $1,747.46</option>
           </Form.Select>
         </Col>
       </Row>
