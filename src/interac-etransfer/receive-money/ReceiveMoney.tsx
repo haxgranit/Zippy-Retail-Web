@@ -1,4 +1,5 @@
 import { Col, Row } from 'react-bootstrap';
+import { useNavigate } from 'react-router-dom';
 
 interface QuickLink {
   id: number;
@@ -7,10 +8,17 @@ interface QuickLink {
 }
 
 const LinkElement = ({ url, text, id }: QuickLink): JSX.Element => (
-  <a href={url} key={id} style={{ textDecoration: 'none', padding: '8px 8px', color: 'black' }}>{text}</a>
+  <a
+    href={url}
+    key={id}
+    style={{ textDecoration: 'none', padding: '8px 8px', color: 'black' }}
+  >
+    {text}
+  </a>
 );
 
 export default function ReceiveMoney() {
+  const navigate = useNavigate();
   const quickLinks: QuickLink[] = [
     {
       id: 1,
@@ -31,8 +39,13 @@ export default function ReceiveMoney() {
 
   return (
     <div>
-
-      <Row style={{ justifyContent: 'space-between', marginTop: '15px', marginBottom: '15px' }}>
+      <Row
+        style={{
+          justifyContent: 'space-between',
+          marginTop: '15px',
+          marginBottom: '15px',
+        }}
+      >
         <h3>RECEIVE MONEY</h3>
         <span>
           <i />
@@ -42,55 +55,60 @@ export default function ReceiveMoney() {
       <Row>
         <Col md={9}>
           <Row
-            style={
-              {
-                padding: '15px 0px', margin: '0px 2px',
-              }
-            }
+            style={{
+              padding: '15px 0px',
+              margin: '0px 2px',
+            }}
           >
             <Col>
               <Row>
                 <i />
                 <p>
-                  To collect an Interac e-Transfers®&sup1;,
-                  check your email and en your Interac e-Transfer notice.
-                  Select the link included in the body of the text to
-                  begin the deposit process.
+                  To collect an Interac e-Transfers®&sup1;, check your email and
+                  en your Interac e-Transfer notice. Select the link included in
+                  the body of the text to begin the deposit process.
                 </p>
                 <br />
                 <p>
-                  Deposits made after
-                  6:00 pm ET will be processed
-                  the next business day.
+                  Deposits made after 6:00 pm ET will be processed the next
+                  business day.
                 </p>
               </Row>
             </Col>
           </Row>
           <hr style={{ height: '1px', width: '100%' }} />
           <Col
-            style={
-              {
-                display: 'flex', justifyContent: 'flex-end', marginBottom: '10px', marginTop: '-18px', borderRadius: '4px', padding: '6px 0px',
-              }
-            }
+            style={{
+              display: 'flex',
+              justifyContent: 'flex-end',
+              marginBottom: '10px',
+              marginTop: '-18px',
+              borderRadius: '4px',
+              padding: '6px 0px',
+            }}
           >
             <button
               type="button"
-              style={
-                {
-                  marginRight: '15px', border: '2px solid grey', borderRadius: '4px', backgroundColor: 'white', color: 'black', padding: '5px 12px',
-                }
-              }
+              style={{
+                marginRight: '15px',
+                border: '2px solid grey',
+                borderRadius: '4px',
+                backgroundColor: 'white',
+                color: 'black',
+                padding: '5px 12px',
+              }}
+              onClick={() => {
+                navigate('/interac-etransfer/status', { state: { tabId: 'received' } });
+              }}
             >
               Check Status
             </button>
             <button
               type="button"
-              style={
-                {
-                  borderRadius: '4px', padding: '5px 12px',
-                }
-              }
+              style={{
+                borderRadius: '4px',
+                padding: '5px 12px',
+              }}
             >
               Learn More
             </button>
@@ -107,9 +125,15 @@ export default function ReceiveMoney() {
           </Row>
         </Col>
         <Col md={3}>
-          <Row style={{ border: 'solid #AAAAAA 1px', justifyItems: 'space-between', margin: '0px 0px 20px 0px' }}>
+          <Row
+            style={{
+              border: 'solid #AAAAAA 1px',
+              justifyItems: 'space-between',
+              margin: '0px 0px 20px 0px',
+            }}
+          >
             <h6 style={{ paddingTop: '10px' }}>You can also:</h6>
-            {quickLinks.map((q) => (LinkElement(q)))}
+            {quickLinks.map((q) => LinkElement(q))}
           </Row>
         </Col>
       </Row>

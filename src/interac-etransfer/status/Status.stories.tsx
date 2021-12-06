@@ -1,4 +1,5 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { BrowserRouter } from 'react-router-dom';
 import '../../i18n/config';
 import '../../index.css';
 import Status from './Status';
@@ -8,7 +9,11 @@ export default {
   component: Status,
 } as ComponentMeta<typeof Status>;
 
-const Template: ComponentStory<typeof Status> = () => <Status />;
+const Template: ComponentStory<typeof Status> = () => (
+  <BrowserRouter>
+    <Status />
+  </BrowserRouter>
+);
 
 export const Default = Template.bind({});
 Default.args = {};

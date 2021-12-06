@@ -7,9 +7,13 @@ import {
   Row,
   Col,
 } from 'react-bootstrap';
+import { useLocation } from 'react-router-dom';
 import CommonHeader from '../../common/CommonHeader';
 
 export default function Status() {
+  const { state } = useLocation();
+  const tabId = state ? state.tabId : null;
+
   return (
     <>
       <CommonHeader title="STATUS" print={false} />
@@ -34,7 +38,7 @@ export default function Status() {
         </p>
       </div>
       <Tabs
-        defaultActiveKey="sent"
+        defaultActiveKey={tabId || 'sent'}
         transition={false}
         id="status-tab"
         className="mt-2 mb-3"
