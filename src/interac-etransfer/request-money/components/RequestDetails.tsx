@@ -3,7 +3,6 @@ import {
   Button,
   Col,
   Form,
-  FormControl,
   Row,
 } from 'react-bootstrap';
 
@@ -33,24 +32,18 @@ export default function RequestDetail({ setCurrentStep }: any) {
           <Row className="align-items-center mt-4">
             <Col xs={3}>Notify By:</Col>
             <Col xs={9}>
-              <div className="d-flex align-items-center">
-                <div className="d-flex align-items-center">
-                  <div
-                    style={{
-                      width: 20,
-                      height: 25,
-                      border: '1px dotted grey',
-                      textAlign: 'center',
-                      marginRight: 10,
-                    }}
-                  >
-                    P
-                  </div>
-                  <span>Email</span>
-                </div>
-                <div style={{ marginLeft: 25 }}>kentu@shaw.ca</div>
-              </div>
-              <FormControl placeholder="Text Message" className="mt-2 mb-2" />
+              <Form.Check
+                type="checkbox"
+                id="email"
+                label="Email kentu@shaw.ca"
+                className="mt-2 mb-2"
+              />
+              <Form.Check
+                type="checkbox"
+                id="text"
+                label="Text Message"
+                className="mt-2 mb-2"
+              />
               <Button variant="link" className="text-black">Edit Notification Preferences</Button>
             </Col>
           </Row>
