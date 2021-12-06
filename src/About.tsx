@@ -60,6 +60,7 @@ export default function About() {
                         alt="styled icon of a man holding a light bulb"
                         className="img-fluid  centerimage"
                         data-aos="flip-left"
+                        data-aos-delay="200"
                       />
                     </div>
                     <div>
@@ -74,6 +75,7 @@ export default function About() {
                         alt="styled icon of a woman holding a heart"
                         className="img-fluid  centerimage"
                         data-aos="flip-left"
+                        data-aos-delay="400"
                       />
                     </div>
                     <div>
@@ -88,6 +90,7 @@ export default function About() {
                         alt="styled icon of a person holding a mechnical gear"
                         className="img-fluid  centerimage"
                         data-aos="flip-left"
+                        data-aos-delay="600"
                       />
                     </div>
                     <div>

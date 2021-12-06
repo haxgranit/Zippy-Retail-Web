@@ -7,7 +7,7 @@ exports[`Storyshots Business Default 1`] = `
     style={
       Object {
         "backgroundImage": "url(Circle_White-01.jpg)",
-        "backgroundSize": "cover",
+        "backgroundSize": "146.5%",
       }
     }
   >
@@ -43,13 +43,13 @@ exports[`Storyshots Business Default 1`] = `
             >
               Make your money work your way!
             </h1>
-            <a
+            <button
               className="btn rounded-0 my-buttonred"
-              href="/business-signup"
               onClick={[Function]}
+              type="button"
             >
               Sign up for a business account
-            </a>
+            </button>
           </div>
         </div>
       </div>
@@ -225,7 +225,7 @@ exports[`Storyshots Business Default 1`] = `
           </p>
           <br />
           <h1
-            className="redtitle mb-5 ms-4"
+            className="redtitle mb-5"
           >
             Sign up free!
           </h1>

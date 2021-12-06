@@ -1,10 +1,10 @@
-import {
-  Row,
-  Col,
-  Button,
-} from 'react-bootstrap';
+import { Row, Col, Button } from 'react-bootstrap';
 
-const SecurityRecipientPage = ({ setRealStep }: any): JSX.Element => (
+const SecurityRecipientPage = ({
+  setRealStep,
+  showModal,
+  setCurrentStep,
+}: any): JSX.Element => (
   <>
     <h4>Security Question for Recipient</h4>
     <p className="mt-4 mb-4">
@@ -34,14 +34,19 @@ const SecurityRecipientPage = ({ setRealStep }: any): JSX.Element => (
           variant="outline-danger"
           className="d-flex"
           style={{ marginRight: 10 }}
-          onClick={() => setRealStep(1)}
+          onClick={() => {
+            setRealStep(1);
+            setCurrentStep(1);
+          }}
         >
           Back
         </Button>
         <Button
           variant="danger"
           className="d-flex"
-          onClick={() => setRealStep(3)}
+          onClick={() => {
+            showModal(true);
+          }}
         >
           Continue
         </Button>

@@ -7,7 +7,9 @@
 body {
   font-family: 'Poppins', sans-serif;
 }
-
+a:hover {
+  color: #ffffff;
+}
 .slider-slide {
   background-position: center;
   background-size: cover;
@@ -33,11 +35,15 @@ body {
 .hero .hero-button, .my-button {
   width: 230px;
   font-weight: bold;
-  font-size: 2em;
+  font-size: 1.6em;
   padding: 0px 8px;
   box-shadow: 5px 5px #88888840;
   border-radius: 10px !important;
   color: #FF1926;
+}
+
+.hero .hero-button{
+  margin-top: 30px;
 }
 
 .my-buttonred {
@@ -83,6 +89,9 @@ body {
   background-image: linear-gradient(to right, #51aad8, #51aad8);
   margin-top: 18vh;
 }
+#redbar {
+  background: linear-gradient(to right, #ed4238 20% 70%, blue 70%);
+}
 
 .orangeredbar {
   display: none;
@@ -127,7 +136,11 @@ p.content-home {
   font-weight: 400;
   color: #5E7472;
 }
-
+.content-home li {
+  font-size: 1rem; /* 16px */
+  font-weight: 400;
+  color: #5e7472;
+}
 footer {
   margin-top: 80px;
   font-weight: 500;
@@ -213,6 +226,23 @@ footer {
 .profilephoto {
   width: 65%;
 }
+.img-fluid {
+  max-width: 100%;
+}
+.curveimage {
+  border-radius: 2rem;
+}
+.show-mobile {
+  display: block !important;
+}
+
+.hide-mobile {
+  display: none !important;
+}
+
+.backgroundimage {
+  height: 350px;
+}
 
 @media (min-width: 576px) {
   .spacingsmall {
@@ -234,7 +264,7 @@ footer {
   .sliderh2 {
     color: #ffffff;
     font-weight: 500;
-    font-size: 2.0em;
+    font-size: 2em;
     padding-top: 0em;
   }
   .hero-heading {
@@ -260,6 +290,32 @@ footer {
   }
   .profilephoto {
     width: 85%;
+  }
+
+  .img-fluid {
+    max-width: 90%;
+  }
+  ol {
+    counter-reset: item;
+    list-style-type: none;
+    padding-left: 0rem;
+    list-style-position: outside;
+  }
+
+  ol li:before {
+    content: "STEP " counter(item, decimal) " - ";
+    counter-increment: item;
+    font-weight: 600;
+  }
+
+  .hide-mobile {
+    display: block !important;
+  }
+  .show-mobile {
+    display: none !important;
+  }
+  .backgroundimage {
+    height: unset;
   }
 }
 

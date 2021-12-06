@@ -10,6 +10,9 @@ import {
 const SecurityQuestionPage = ({
   setRealStep,
   setCurrentStep,
+  showModal,
+  mainInfo,
+  setMainInfo,
 }: any): JSX.Element => (
   <>
     <h4>Security Question</h4>
@@ -66,7 +69,11 @@ const SecurityQuestionPage = ({
         <Form.Label>Create a security question:</Form.Label>
       </Col>
       <Col md={8}>
-        <FormControl type="text" />
+        <FormControl
+          type="text"
+          value={mainInfo?.security_question}
+          onChange={(evt) => setMainInfo({ ...mainInfo, security_question: evt.target.value })}
+        />
       </Col>
     </Row>
     <hr style={{ height: '1px', width: '100%' }} />
@@ -75,8 +82,17 @@ const SecurityQuestionPage = ({
         <Form.Label>Security Answer(no spaces):</Form.Label>
       </Col>
       <Col md={8}>
-        <FormControl type="text" />
-        <Form.Check type="checkbox" label="Show Answer" />
+        <FormControl
+          type="text"
+          value={mainInfo?.security_answer}
+          onChange={(evt) => setMainInfo({ ...mainInfo, security_answer: evt.target.value })}
+        />
+        <Form.Check
+          type="checkbox"
+          label="Show Answer"
+          value={mainInfo?.show_answer}
+          onChange={(evt) => setMainInfo({ ...mainInfo, show_answer: evt.target.checked })}
+        />
       </Col>
     </Row>
     <hr style={{ height: '1px', width: '100%' }} />
@@ -85,7 +101,14 @@ const SecurityQuestionPage = ({
         <Form.Label>Re-enter Security Answer:</Form.Label>
       </Col>
       <Col md={8}>
-        <FormControl type="text" />
+        <FormControl
+          type="text"
+          value={mainInfo?.confirm_security_answer}
+          onChange={(evt) => setMainInfo({
+            ...mainInfo,
+            confirm_security_answer: evt.target.value,
+          })}
+        />
       </Col>
     </Row>
     <hr style={{ height: '1px', width: '100%' }} />
@@ -115,7 +138,10 @@ const SecurityQuestionPage = ({
           variant="outline-danger"
           className="d-flex"
           style={{ marginRight: 10 }}
-          onClick={() => setRealStep(2)}
+          onClick={() => {
+            setRealStep(1);
+            setCurrentStep(1);
+          }}
         >
           Back
         </Button>
@@ -123,8 +149,7 @@ const SecurityQuestionPage = ({
           variant="danger"
           className="d-flex"
           onClick={() => {
-            setRealStep(4);
-            setCurrentStep(3);
+            showModal(true);
           }}
         >
           Next

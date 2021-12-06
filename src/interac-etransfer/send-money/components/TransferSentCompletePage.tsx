@@ -5,7 +5,10 @@ import {
   Button,
 } from 'react-bootstrap';
 
-const TransferSentCompletePage = (): JSX.Element => (
+const TransferSentCompletePage = ({
+  setCurrentStep,
+  setRealStep,
+}: any): JSX.Element => (
   <>
     <div className="d-flex align-items-center">
       <div
@@ -25,7 +28,6 @@ const TransferSentCompletePage = (): JSX.Element => (
       If you opted to send a notification of your transfer, your contact will
       receive it shortly.
     </p>
-    <p>This transfer is final and can&apos;t be recalled.</p>
     <Row className="mt-4">
       <Col md={4}>
         <Form.Label>From:</Form.Label>
@@ -119,7 +121,14 @@ const TransferSentCompletePage = (): JSX.Element => (
         >
           Check Status
         </Button>
-        <Button variant="danger" className="d-flex">
+        <Button
+          variant="danger"
+          className="d-flex"
+          onClick={() => {
+            setRealStep(1);
+            setCurrentStep(1);
+          }}
+        >
           Send another transfer
         </Button>
       </Col>

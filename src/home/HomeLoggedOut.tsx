@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { useMsal } from '@azure/msal-react';
 import { useTranslation, Trans } from 'react-i18next';
 import Slider from 'react-slick';
 import ZippyCash_Landing_Slider_01 from '../assets/img/slider/ZippyCash_Landing_Slider-01.jpg';
@@ -7,8 +7,10 @@ import ZippyCash_Landing_Slider_03 from '../assets/img/slider/ZippyCash_Landing_
 import ZippyCash_Icons_A from '../assets/img/roundicons/home/ZippyCash_Icons_A.png';
 import ZippyCash_Icons_B from '../assets/img/roundicons/home/ZippyCash_Icons_B.png';
 import ZippyCash_Icons_C from '../assets/img/roundicons/home/ZippyCash_Icons_C.png';
+import { b2cPolicies, loginRequest } from '../authConfig';
 
 export default function HomeLoggedOut() {
+  const { instance } = useMsal();
   const { t } = useTranslation();
 
   return (
@@ -36,7 +38,16 @@ export default function HomeLoggedOut() {
                         to me!
                       </Trans>
                     </h1>
-                    <Link to="/personal-signup" className="hero-button btn btn-light rounded-0">{t('home.sign_up_btn')}</Link>
+                    <button
+                      type="button"
+                      className="hero-button btn btn-light rounded-0"
+                      onClick={() => instance.loginRedirect({
+                        ...loginRequest,
+                        authority: b2cPolicies.authorities.signUpPersonal.authority,
+                      })}
+                    >
+                      {t('home.sign_up_btn')}
+                    </button>
                   </div>
                 </div>
               </div>
@@ -57,7 +68,16 @@ export default function HomeLoggedOut() {
                         to me!
                       </Trans>
                     </h1>
-                    <Link to="/personal-signup" className="hero-button btn btn-light rounded-0">{t('home.sign_up_btn')}</Link>
+                    <button
+                      type="button"
+                      className="hero-button btn btn-light rounded-0"
+                      onClick={() => instance.loginRedirect({
+                        ...loginRequest,
+                        authority: b2cPolicies.authorities.signUpPersonal.authority,
+                      })}
+                    >
+                      {t('home.sign_up_btn')}
+                    </button>
                   </div>
                 </div>
               </div>
@@ -78,7 +98,16 @@ export default function HomeLoggedOut() {
                         to me!
                       </Trans>
                     </h1>
-                    <Link to="/business-signup" className="hero-button btn btn-light rounded-0">{t('home.sign_up_btn')}</Link>
+                    <button
+                      type="button"
+                      className="hero-button btn btn-light rounded-0"
+                      onClick={() => instance.loginRedirect({
+                        ...loginRequest,
+                        authority: b2cPolicies.authorities.signUpPersonal.authority,
+                      })}
+                    >
+                      {t('home.sign_up_btn')}
+                    </button>
                   </div>
                 </div>
               </div>
@@ -95,7 +124,16 @@ export default function HomeLoggedOut() {
                 <h1 className="fw-bold">{t('home.business_banking_desc')}</h1>
               </div>
               <div className="col-12 col-md-6 col-lg-4">
-                <Link to="/business-signup" className="btn btn-light rounded-0 my-button">{t('home.sign_up_btn')}</Link>
+                <button
+                  type="button"
+                  className="btn btn-light rounded-0 my-button"
+                  onClick={() => instance.loginRedirect({
+                    ...loginRequest,
+                    authority: b2cPolicies.authorities.signUpBusiness.authority,
+                  })}
+                >
+                  {t('home.sign_up_btn')}
+                </button>
               </div>
             </div>
           </div>

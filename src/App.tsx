@@ -1,13 +1,14 @@
-import { useEffect } from 'react';
 import AOS from 'aos';
+import { useIsAuthenticated, useMsal } from '@azure/msal-react';
+import { useEffect } from 'react';
 import {
-  BrowserRouter,
   Navigate,
   Route,
   Routes,
 } from 'react-router-dom';
 import About from './About';
 import AccountSecurity from './account-security/AccountSecurity';
+import Api from './api';
 import BillerDetails from './bill-payments/biller-details/BillerDetails';
 import AddOrEditBillers from './bill-payments/add-or-edit-billers/AddOrEditBillers';
 import BillPayments from './bill-payments/bill-payments/BillPayments';
@@ -15,7 +16,6 @@ import ReviewAndCancelBillPayments from './bill-payments/review-and-cancel-bill-
 import SetUpBillPayments from './bill-payments/set-up-bill-payments/SetUpBillPayments';
 import ViewEBills from './bill-payments/view-ebills/ViewEBills';
 import Business from './Business';
-import BusinessSignup from './BusinessSignup';
 import ContactUs from './contact-us/ContactUs';
 import CreateOrEditAccountNickname from './customer-services/create-or-edit-account-nickname/CreateOrEditAccountNickname';
 import ChangeYourAddress from './customer-services/change-your-address/ChangeYourAddress';
@@ -32,7 +32,6 @@ import SendMoney from './interac-etransfer/send-money/SendMoney';
 import Status from './interac-etransfer/status/Status';
 import Home from './home/Home';
 import Legal from './Legal';
-import Login from './Login';
 import ManageMyAlerts from './manage-my-alerts/ManageMyAlerts';
 import MyAccounts from './my-accounts/my-accounts/MyAccounts';
 import DownloadTransactions from './my-accounts/download-transactions/DownloadTransactions';
@@ -42,12 +41,12 @@ import ViewAccountDetails from './my-accounts/view-account-details/ViewAccountDe
 import ViewEStatements from './my-accounts/view-estatements/ViewEStatements';
 import Personal from './Personal';
 import PersonalProfile from './PersonalProfile';
-import PersonalSignup from './PersonalSignup';
 import ScrollToTop from './ScrollToTop';
 import EFT from './transfer-funds/EFT';
 import ReviewAndCancelTransfers from './transfer-funds/review-and-cancel-transfers/ReviewAndCancelTransfers';
 import TransferFunds from './transfer-funds/transfer-funds/TransferFunds';
 import VisaDirect from './transfer-funds/VisaDirect';
+import ZippyToZippy from './transfer-funds/ZippyToZippy';
 import ChangeYourPassword from './customer-services/change-your-password/ChangeYourPassword';
 import ChangeYourContactInformation from './customer-services/change-contact-information/ChangeYourContactInformation';
 import AddACardHolder from './customer-services/add-a-cardholder/AddACardHolder';
@@ -73,10 +72,29 @@ import DigitalVaultDocuments from './customer-services/digital-vault-documents/D
 import ContributeToTfsa from './customer-services/contribute-to-a-tfsa/ContributeToATfsa';
 
 export default function App() {
+  const isAuthenticated = useIsAuthenticated();
+  const { instance, accounts: msalAccounts } = useMsal();
+
+  useEffect(() => {
+    if (isAuthenticated) {
+      // TODO: replace this placeholder request with a real post-login request to get account info,
+      // user info, etc.
+      new Api(instance, msalAccounts[0]).getRegions()
+        .then((regions) => {
+          /* eslint-disable-next-line no-console */
+          console.log('regions', regions);
+        })
+        .catch((error) => {
+          /* eslint-disable-next-line no-console */
+          console.error('regions', error);
+        });
+    }
+  }, [isAuthenticated, instance, msalAccounts]);
+
   useEffect(() => AOS.init(), []);
 
   return (
-    <BrowserRouter>
+    <div>
       <ScrollToTop />
       <Header />
       <Routes>
@@ -143,6 +161,7 @@ export default function App() {
           </Route>
           <Route path="transfer-funds">
             <Route path="/transfer-funds" element={<TransferFunds />} />
+            <Route path="zippy-to-zippy" element={<ZippyToZippy />} />
             <Route path="eft" element={<EFT />} />
             <Route path="visa-direct" element={<VisaDirect />} />
             <Route path="review-and-cancel-transfers" element={<ReviewAndCancelTransfers />} />
@@ -150,14 +169,11 @@ export default function App() {
         </Route>
         <Route path="about" element={<About />} />
         <Route path="business" element={<Business />} />
-        <Route path="business-signup" element={<BusinessSignup />} />
         <Route path="legal" element={<Legal />} />
-        <Route path="login" element={<Login />} />
         <Route path="personal" element={<Personal />} />
         <Route path="personal-profile" element={<PersonalProfile />} />
-        <Route path="personal-signup" element={<PersonalSignup />} />
       </Routes>
       <Footer />
-    </BrowserRouter>
+    </div>
   );
 }

@@ -1,9 +1,8 @@
-import { useAppSelector } from '../app/hooks';
-import { selectUser } from '../features/user/userSlice';
+import { useIsAuthenticated } from '@azure/msal-react';
 import HomeLoggedIn from './HomeLoggedIn';
 import HomeLoggedOut from './HomeLoggedOut';
 
 export default function Home() {
-  const auth = useAppSelector(selectUser);
-  return auth.loggedIn ? <HomeLoggedIn /> : <HomeLoggedOut />;
+  const isAuthenticated = useIsAuthenticated();
+  return isAuthenticated ? <HomeLoggedIn /> : <HomeLoggedOut />;
 }

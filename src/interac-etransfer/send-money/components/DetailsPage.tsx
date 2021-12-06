@@ -6,7 +6,14 @@ import {
   Button,
 } from 'react-bootstrap';
 
-const DetailsPage = ({ setRealStep, setCurrentStep }: any): JSX.Element => (
+const DetailsPage = ({
+  setRealStep,
+  setCurrentStep,
+  selectedUser,
+  setUserToSend,
+  mainInfo,
+  setMainInfo,
+}: any): JSX.Element => (
   <>
     <h4>Your Interac e-Transfer Details</h4>
     <ul>
@@ -36,7 +43,12 @@ const DetailsPage = ({ setRealStep, setCurrentStep }: any): JSX.Element => (
         <Form.Label>Send Money To:</Form.Label>
       </Col>
       <Col md={8}>
-        <FormControl type="email" />
+        <Form.Select
+          onChange={(evt) => setUserToSend(Number(evt.target.value))}
+        >
+          <option value={1}>Chelsea Tough</option>
+          <option value={2}>Cristian</option>
+        </Form.Select>
         <p>Email: chelsea.tough@gmail.com</p>
         <p>
           <a href="/" className="text-black">
@@ -56,7 +68,11 @@ const DetailsPage = ({ setRealStep, setCurrentStep }: any): JSX.Element => (
         <Form.Label>Amount:</Form.Label>
       </Col>
       <Col md={8}>
-        <FormControl type="email" />
+        <FormControl
+          type="email"
+          value={mainInfo?.email}
+          onChange={(evt) => setMainInfo({ ...mainInfo, email: evt.target.value })}
+        />
         <Form.Label>
           The maximum amount you can send in each transfer is $3,000.
         </Form.Label>
@@ -68,8 +84,10 @@ const DetailsPage = ({ setRealStep, setCurrentStep }: any): JSX.Element => (
         <Form.Label>From Account:</Form.Label>
       </Col>
       <Col md={8}>
-        <Form.Select>
-          <option>Cheguing (01702-81-99639) $2,260.57</option>
+        <Form.Select
+          onChange={(evt) => setMainInfo({ ...mainInfo, from: evt.target.value })}
+          value={mainInfo?.from}
+        >
           <option>Cheguing (01702-81-99639) $2,260.57</option>
         </Form.Select>
       </Col>
@@ -80,9 +98,11 @@ const DetailsPage = ({ setRealStep, setCurrentStep }: any): JSX.Element => (
         <Form.Label>Transfer Method:</Form.Label>
       </Col>
       <Col md={8}>
-        <Form.Select>
+        <Form.Select
+          onChange={(evt) => setMainInfo({ ...mainInfo, transfer_method: evt.target.value })}
+          value={mainInfo?.transfer_method}
+        >
           <option>Email</option>
-          <option>Phone</option>
         </Form.Select>
       </Col>
     </Row>
@@ -92,7 +112,12 @@ const DetailsPage = ({ setRealStep, setCurrentStep }: any): JSX.Element => (
         <Form.Label>Message (Optional):</Form.Label>
       </Col>
       <Col md={8}>
-        <Form.Control as="textarea" rows={3} />
+        <Form.Control
+          as="textarea"
+          rows={3}
+          onChange={(evt) => setMainInfo({ ...mainInfo, message: evt.target.value })}
+          value={mainInfo?.message}
+        />
         <p>
           Do not provide the security question, any part of the security answer
           or any confidential information in your message to the contact. This
@@ -153,8 +178,13 @@ const DetailsPage = ({ setRealStep, setCurrentStep }: any): JSX.Element => (
           variant="danger"
           className="d-flex"
           onClick={() => {
-            setCurrentStep(2);
-            setRealStep(2);
+            if (selectedUser === 1) {
+              setCurrentStep(2);
+              setRealStep(2);
+            } else {
+              setCurrentStep(2);
+              setRealStep(3);
+            }
           }}
         >
           Next

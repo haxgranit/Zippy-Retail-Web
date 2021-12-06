@@ -10,6 +10,8 @@ import {
   FormControl,
 } from 'react-bootstrap';
 import CommonHeader from '../common/CommonHeader';
+import Reminders from './tabs/Reminders';
+import Transactions from './tabs/Transactions';
 
 export default function ManageMyAlerts() {
   return (
@@ -294,16 +296,21 @@ export default function ManageMyAlerts() {
                       An inactive alert status applies to bank accoiunts that
                       were automatically transferred from Paperless to
                       eStatements. If your alert status is displayed as
-                      &apos;Inactive&apos;, it means you have not agreed to the terms and
-                      conditions for eStatements. Once you have accepted the
-                      terms and conditions, you alerts will be activated and you
-                      will not see an &apos;Inactive&apos; alert status.
+                      &apos;Inactive&apos;, it means you have not agreed to the
+                      terms and conditions for eStatements. Once you have
+                      accepted the terms and conditions, you alerts will be
+                      activated and you will not see an &apos;Inactive&apos;
+                      alert status.
                     </li>
-                    <li>In the case of credit cards, your alerts status will always be active.</li>
+                    <li>
+                      In the case of credit cards, your alerts status will
+                      always be active.
+                    </li>
                     <li>
                       CIBC Alerts Terms and Conditions are now a part of the
-                      {' '}
-                      <a href="/" className="text-black">Electronic Access Agreement</a>
+                      <a href="/" className="text-black">
+                        Electronic Access Agreement
+                      </a>
                     </li>
                   </ul>
                   <Row>
@@ -320,7 +327,8 @@ export default function ManageMyAlerts() {
                         P
                       </div>
                       <span>
-                        eStatement Terms and Conditions (last updated: November 2011) (PDF, 145KB).
+                        eStatement Terms and Conditions (last updated: November
+                        2011) (PDF, 145KB).
                       </span>
                     </Col>
                   </Row>
@@ -328,10 +336,10 @@ export default function ManageMyAlerts() {
               </div>
             </Tab>
             <Tab eventKey="transactions" title="TRANSACTIONS">
-              Transactions
+              <Transactions />
             </Tab>
             <Tab eventKey="reminders" title="REMINDERS">
-              Reminders
+              <Reminders />
             </Tab>
           </Tabs>
         </Col>

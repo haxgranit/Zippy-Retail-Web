@@ -1,6 +1,7 @@
 {
   "header.language": "IDIOMA",
   "header.login": "LOGIN",
+  "header.logout": "NEEDS_LOC",
   "header.about": "acerca de nosotros",
   "header.personal": "personal",
   "header.business": "coorporativa",
@@ -22,7 +23,7 @@
   "business.business_description_1": "Sin importar que tan pequeño sea tu negocio, todos estamos en un mercado global. Es por esto que necesitas las tarifas y comisiones mas bajas para tu marca. Zippy Cash te da las mejores tasas disponibles en todo momento y quita la complexidad del comercio internacional. Nuestras tasas son inmejorables.",
   "business.business_description_2": "La apertura de cuentas bancarias internacionales puede sonar desafiante, pero con Zippy nosotros te entregamos todo lo que necesitas para comenzar a manejar tus cuentas en el exterior en minutos. ¿Como puede ser tan fácil? Gracias a las excelentes relaciones que tenemos con las marcas financieras internacionales y soluciones tecnológicas que sirven como un conector eficiente con la prioridad en la simpleza, la velocidad y la seguridad.",
   "business.business_description_3": "Cancelar sus facturas, planilla e incluso enviar dinero ahora es mas fácil con Zippy. Nosotros siempre te ofrecemos las tasas mas bajas por tus transacciones y lo asemos sencillo. (hasta nos atrevemos a decir divertido) el manejar tus pagos.<br />Obtén más información acá.",
-  "business.business_title": "Banca Corporativa",
+  "business.business_title": "banca corporativa",
   "business.how_can_help": "Como puede Zippy ayudar mi negocio",
   "business.integrate_payment": "Sistemas de pago integrados",
   "business.integrate_payment_desc": "Con Zippy puedes tener todo en un mismo lugar, lo que permite un manejo de tu contabilidad y finanzas mucho mas sencillo",
