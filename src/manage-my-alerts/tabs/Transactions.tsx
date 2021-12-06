@@ -1,7 +1,7 @@
 import { Button, Row } from 'react-bootstrap';
-import AlertElement from './components/AlertElement';
-import GetAlertedHeader from './components/GetAlertedHeader';
-import InactiveAlertNote from './components/InactiveAlertNote';
+import AlertElement from '../components/AlertElement';
+import GetAlertedHeader from '../components/GetAlertedHeader';
+import InactiveAlertNote from '../components/InactiveAlertNote';
 
 interface AlertMessage {
   id: number;
