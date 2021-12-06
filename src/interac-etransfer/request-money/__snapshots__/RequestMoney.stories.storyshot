@@ -227,9 +227,14 @@ exports[`Storyshots interac-etransfer/request-money/RequestMoney Default 1`] = `
               Select
             </option>
             <option
-              value="Chequing (01802-81-33299302) $1,747.46"
+              value="Personal (8000 001 000000000) $1,747.46"
             >
-              Chequing (01802-81-33299302) $1,747.46
+              Personal (8000 001 000000000) $1,747.46
+            </option>
+            <option
+              value="Business (7000 001 000000000) $1,747.46"
+            >
+              Business (7000 001 000000000) $1,747.46
             </option>
           </select>
         </div>
