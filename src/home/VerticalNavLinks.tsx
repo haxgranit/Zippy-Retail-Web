@@ -46,6 +46,7 @@ export default function VerticalNavLinks() {
       <Nav.Link as={NavLink} to="/transfer-funds">Transfer Funds</Nav.Link>
       {pathname.startsWith('/transfer-funds') && (
         <Nav className="flex-column" style={{ marginLeft: '20px' }}>
+          <Nav.Link as={NavLink} to="/transfer-funds/zippy-to-zippy">Zippy to Zippy</Nav.Link>
           <Nav.Link as={NavLink} to="/transfer-funds/eft">EFT</Nav.Link>
           <Nav.Link as={NavLink} to="/transfer-funds/visa-direct">Visa Direct</Nav.Link>
           <Nav.Link as={NavLink} to="/transfer-funds/review-and-cancel-transfers">Review and Cancel Transfers</Nav.Link>
