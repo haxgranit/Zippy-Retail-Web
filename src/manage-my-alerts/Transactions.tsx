@@ -3,21 +3,26 @@ import AlertElement from './common/AlertElement';
 import GetAlertedHeader from './common/GetAlertedHeader';
 import InactiveAlertNote from './common/InactiveAlertNote';
 
+interface AlertMessage {
+  id: number;
+  text: string;
+}
+
 export default function Transactions() {
-  const transactionAlertes = [
-    'A scheduled bill payment has failed',
-    'A scheduled bill payment was successful',
-    'A scheduled transfer has failed',
-    'A scheduled transfer was successful',
-    'An interac e-Transfer was sent',
-    'A return has been made',
-    'Held funds are now available',
+  const transactionAlertes: AlertMessage[] = [
+    { id: 1, text: 'A scheduled bill payment has failed' },
+    { id: 2, text: 'A scheduled bill payment was successful' },
+    { id: 3, text: 'A scheduled transfer has failed' },
+    { id: 4, text: 'A scheduled transfer was successful' },
+    { id: 5, text: 'An interac e-Transfer was sent' },
+    { id: 6, text: 'A return has been made' },
+    { id: 7, text: 'Held funds are now available' },
   ];
   return (
     <>
       <GetAlertedHeader />
-      {transactionAlertes.map((val) => (
-        <AlertElement text={val} />
+      {transactionAlertes.map((alert) => (
+        <AlertElement key={alert.id} text={alert.text} />
       ))}
       <Row className="d-flex justify-content-end">
         <Button
