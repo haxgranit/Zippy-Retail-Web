@@ -132,9 +132,11 @@ exports[`Storyshots interac-etransfer/request-sent/RequestSent Default 1`] = `
             className="form-check"
           >
             <input
+              checked={true}
               className="form-check-input"
               disabled={false}
               name="Actions"
+              onClick={[Function]}
               type="radio"
             />
             <label
@@ -148,9 +150,11 @@ exports[`Storyshots interac-etransfer/request-sent/RequestSent Default 1`] = `
             className="form-check"
           >
             <input
+              checked={false}
               className="form-check-input"
               disabled={false}
               name="Actions"
+              onClick={[Function]}
               type="radio"
             />
             <label
@@ -171,6 +175,7 @@ exports[`Storyshots interac-etransfer/request-sent/RequestSent Default 1`] = `
         <button
           className="btn btn-outline-primary ms-auto"
           disabled={false}
+          onClick={[Function]}
           type="button"
         >
           Back
@@ -178,6 +183,7 @@ exports[`Storyshots interac-etransfer/request-sent/RequestSent Default 1`] = `
         <button
           className="btn btn-primary"
           disabled={false}
+          onClick={[Function]}
           type="button"
         >
           Next

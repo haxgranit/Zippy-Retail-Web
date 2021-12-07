@@ -1,4 +1,5 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { BrowserRouter } from 'react-router-dom';
 import RequestSent from './RequestSent';
 
 export default {
@@ -6,7 +7,11 @@ export default {
   component: RequestSent,
 } as ComponentMeta<typeof RequestSent>;
 
-const Template: ComponentStory<typeof RequestSent> = () => <RequestSent />;
+const Template: ComponentStory<typeof RequestSent> = () => (
+  <BrowserRouter>
+    <RequestSent />
+  </BrowserRouter>
+);
 
 export const Default = Template.bind({});
 Default.args = {};
