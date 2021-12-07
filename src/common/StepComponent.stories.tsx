@@ -2,7 +2,7 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 import StepComponent from './StepComponent';
 
 export default {
-  title: 'interac-etransfer/send-money/components/StepComponent',
+  title: 'common/StepComponent',
   component: StepComponent,
 } as ComponentMeta<typeof StepComponent>;
 
