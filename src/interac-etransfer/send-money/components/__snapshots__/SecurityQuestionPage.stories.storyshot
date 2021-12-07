@@ -109,7 +109,7 @@ Array [
         type="text"
       />
       <div
-        className="form-check"
+        className="is-show-answer form-check"
       >
         <input
           className="form-check-input"
