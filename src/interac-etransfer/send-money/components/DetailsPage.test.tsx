@@ -35,6 +35,23 @@ describe('DetailsPage Component', () => {
     expect(setUserToSend).toBeCalledTimes(1);
   });
 
+  it('Click next button on DetailsPage with option 2', () => {
+    const setRealStep = jest.fn();
+    const setUserToSend = jest.fn();
+    const wrapper = shallow(
+      <DetailsPage
+        setCurrentStep={jest.fn()}
+        setRealStep={setRealStep}
+        setUserToSend={setUserToSend}
+        selectedUser={2}
+      />,
+    );
+
+    const mEvent = { preventDefault: jest.fn() };
+    wrapper.find('Button[variant="danger"]').simulate('click', mEvent);
+    expect(setRealStep).toBeCalledTimes(1);
+  });
+
   it('change FormControl text values', () => {
     const setRealStep = jest.fn();
     const setMainInfo = jest.fn();
