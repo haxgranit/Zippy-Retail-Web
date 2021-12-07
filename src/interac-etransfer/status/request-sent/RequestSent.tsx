@@ -26,6 +26,7 @@ const LeftCol = () => {
   };
   const handleCancelRequestForMoneyConfirmed = () => {
     setShowCancelRequestForMoney(false);
+    navigate('/interac-etransfer/request-canceled');
   };
 
   return (

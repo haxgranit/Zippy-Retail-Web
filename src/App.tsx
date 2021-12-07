@@ -72,6 +72,7 @@ import DigitalVaultDocuments from './customer-services/digital-vault-documents/D
 import ContributeToTfsa from './customer-services/contribute-to-a-tfsa/ContributeToATfsa';
 import RequestSent from './interac-etransfer/status/request-sent/RequestSent';
 import RequestReminder from './interac-etransfer/status/request-reminder/RequestReminder';
+import RequestCanceled from './interac-etransfer/status/request-canceled/RequestCanceled';
 
 export default function App() {
   const isAuthenticated = useIsAuthenticated();
@@ -151,6 +152,7 @@ export default function App() {
             <Route path="learn-more" element={<LearnMore />} />
             <Route path="request-sent" element={<RequestSent />} />
             <Route path="request-reminder" element={<RequestReminder />} />
+            <Route path="request-canceled" element={<RequestCanceled />} />
           </Route>
           <Route path="manage-my-alerts" element={<ManageMyAlerts />} />
           <Route path="my-accounts">
