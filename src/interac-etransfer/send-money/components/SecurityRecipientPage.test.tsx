@@ -14,4 +14,17 @@ describe('Security Recipient Page Component', () => {
     wrapper.find('Button[variant="danger"]').simulate('click', mEvent);
     expect(showModal).toBeCalledTimes(1);
   });
+
+  it('Click back button on Security Recipient Page', () => {
+    const setRealStep = jest.fn();
+    const wrapper = shallow(
+      <SecurityRecipientPage
+        setRealStep={setRealStep}
+        setCurrentStep={jest.fn()}
+      />,
+    );
+    const mEvent = { preventDefault: jest.fn() };
+    wrapper.find('Button[variant="outline-danger"]').simulate('click', mEvent);
+    expect(setRealStep).toBeCalledTimes(1);
+  });
 });

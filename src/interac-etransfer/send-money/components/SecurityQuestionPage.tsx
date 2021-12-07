@@ -88,6 +88,7 @@ const SecurityQuestionPage = ({
           onChange={(evt) => setMainInfo({ ...mainInfo, security_answer: evt.target.value })}
         />
         <Form.Check
+          className="is-show-answer"
           type="checkbox"
           label="Show Answer"
           value={mainInfo?.show_answer}

@@ -14,4 +14,37 @@ describe('Security Question Page Component', () => {
     wrapper.find('Button[variant="danger"]').simulate('click', mEvent);
     expect(showModal).toBeCalledTimes(1);
   });
+
+  it('Click back button on Security Question Page', () => {
+    const setRealStep = jest.fn();
+    const wrapper = shallow(
+      <SecurityQuestionPage
+        setRealStep={setRealStep}
+        setCurrentStep={jest.fn()}
+      />,
+    );
+    const mEvent = { preventDefault: jest.fn() };
+    wrapper.find('Button[variant="outline-danger"]').simulate('click', mEvent);
+    expect(setRealStep).toBeCalledTimes(1);
+  });
+
+  it('change FormControl text values', () => {
+    const setRealStep = jest.fn();
+    const setMainInfo = jest.fn();
+    const wrapper = shallow(
+      <SecurityQuestionPage
+        setRealStep={setRealStep}
+        setMainInfo={setMainInfo}
+        mainInfo={{}}
+      />,
+    );
+    wrapper.find('FormControl').at(0).simulate('change', { target: { value: 'Test Text' } });
+    wrapper.find('FormControl').at(1).simulate('change', { target: { value: 'Test Text' } });
+    wrapper.find('FormControl').at(2).simulate('change', { target: { value: 'Test Text' } });
+    wrapper.find('.is-show-answer').simulate('change', { target: { value: true } });
+    expect(setMainInfo).toBeCalledTimes(4);
+
+    wrapper.find('Button[variant="light"]').simulate('click');
+    expect(setRealStep).toBeCalledTimes(1);
+  });
 });

@@ -172,7 +172,7 @@ exports[`Storyshots interac-etransfer/send-money/SendMoney Default 1`] = `
             href="/"
           >
              
-            ZippyX Global Money Transfer Service
+            CIBC Global Money Transfer Servicec
           </a>
         </li>
       </ul>
@@ -192,7 +192,7 @@ exports[`Storyshots interac-etransfer/send-money/SendMoney Default 1`] = `
           className="col-md-8"
         >
           <select
-            className="form-select"
+            className="send-account-select form-select"
             onChange={[Function]}
           >
             <option
@@ -286,7 +286,7 @@ exports[`Storyshots interac-etransfer/send-money/SendMoney Default 1`] = `
           className="col-md-8"
         >
           <select
-            className="form-select"
+            className="from-account-info form-select"
             onChange={[Function]}
           >
             <option>
@@ -319,7 +319,7 @@ exports[`Storyshots interac-etransfer/send-money/SendMoney Default 1`] = `
           className="col-md-8"
         >
           <select
-            className="form-select"
+            className="transfer-method form-select"
             onChange={[Function]}
           >
             <option>
