@@ -1,0 +1,230 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots interac-etransfer/request-sent/RequestSent Default 1`] = `
+<div>
+  <div
+    className="row"
+  >
+    <div
+      className="col"
+    >
+      <h2>
+        STATUS
+      </h2>
+    </div>
+  </div>
+  <div
+    className="row"
+  >
+    <div
+      className="col-9"
+    >
+      REQUEST SENT
+      <br />
+      The request for money was sent.
+      <div
+        className="mt-4 row"
+      >
+        <div
+          className="col"
+        >
+          <ul>
+            <li>
+              The request was sent but the contact has not yet sent the transfer
+            </li>
+            <li>
+              You can send your contact a reminder or cancel the request
+            </li>
+            <li>
+              Note: The optional Issue Date and Document Number fields may display. These are the same as invoice Due Date and invoice Number.
+            </li>
+          </ul>
+        </div>
+      </div>
+      <h6>
+        Request Details
+      </h6>
+      <div
+        className="border-top my-3"
+      />
+      <div
+        className="align-items-center mt-4 row"
+      >
+        <div
+          className="col-4"
+        >
+          TO:
+        </div>
+        <div
+          className="col-6"
+        >
+          Kent Ulrich
+          <br />
+          kentu@shw.ca
+        </div>
+      </div>
+      <div
+        className="border-top my-3"
+      />
+      <div
+        className="align-items-center row"
+      >
+        <div
+          className="col-4"
+        >
+          Amount:
+        </div>
+        <div
+          className="col-6"
+        >
+          $10.00
+        </div>
+      </div>
+      <div
+        className="border-top my-3"
+      />
+      <div
+        className="align-items-center row"
+      >
+        <div
+          className="col-4"
+        >
+          Deposit to:
+        </div>
+        <div
+          className="col-6"
+        >
+          010-01702-9199639
+        </div>
+      </div>
+      <div
+        className="border-top my-3"
+      />
+      <div
+        className="mt-2 row"
+      >
+        <div
+          className="col-4"
+        >
+          This Request Will Expire On
+        </div>
+        <div
+          className="col-6"
+        >
+          Jan 2,2022
+        </div>
+      </div>
+      <div
+        className="border-top my-3"
+      />
+      <div
+        className="align-items-center row"
+      >
+        <div
+          className="col-4"
+        >
+          Actions
+        </div>
+        <div
+          className="col-6"
+        >
+          <div
+            className="form-check"
+          >
+            <input
+              className="form-check-input"
+              disabled={false}
+              name="Actions"
+              type="radio"
+            />
+            <label
+              className="form-check-label"
+              title=""
+            >
+              Send Reminder to Contact
+            </label>
+          </div>
+          <div
+            className="form-check"
+          >
+            <input
+              className="form-check-input"
+              disabled={false}
+              name="Actions"
+              type="radio"
+            />
+            <label
+              className="form-check-label"
+              title=""
+            >
+              Cancel the Request
+            </label>
+          </div>
+        </div>
+      </div>
+      <div
+        className="border-top my-3"
+      />
+      <div
+        className="hstack gap-3"
+      >
+        <button
+          className="btn btn-outline-primary ms-auto"
+          disabled={false}
+          type="button"
+        >
+          Back
+        </button>
+        <button
+          className="btn btn-primary"
+          disabled={false}
+          type="button"
+        >
+          Next
+        </button>
+      </div>
+      <div
+        className="border-top my-3"
+      />
+      <div
+        className="row"
+      >
+        <div
+          className="col"
+        >
+          <b>
+            Note:
+          </b>
+          <br />
+          Your use of
+          <i>
+             Interac
+          </i>
+          e-Transfer is subject to the
+          <i>
+             Interac
+          </i>
+          e-Transfer Terms and conditions (PDF, 197 KB).
+        </div>
+      </div>
+    </div>
+    <div
+      className="col-3"
+    >
+      <div
+        className="border p-2 rounded"
+      >
+        <b>
+          You can also:
+        </b>
+        <br />
+        View upcoming bills payments and transfers &gt;
+        <br />
+        Stop a payment &gt;
+        <br />
+        Change your statment preferences &gt;
+      </div>
+    </div>
+  </div>
+</div>
+`;
