@@ -1802,6 +1802,7 @@ Array [
             <button
               className="text-black btn btn-link"
               disabled={false}
+              onClick={[Function]}
               type="button"
             >
               Edit
