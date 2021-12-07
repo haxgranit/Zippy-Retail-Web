@@ -1,4 +1,5 @@
-import {
+import
+{
   Tabs,
   Tab,
   Form,
@@ -7,9 +8,11 @@ import {
   Row,
   Col,
 } from 'react-bootstrap';
+import { useNavigate } from 'react-router-dom';
 import CommonHeader from '../../common/CommonHeader';
 
 export default function Status() {
+  const navigate = useNavigate();
   return (
     <>
       <CommonHeader title="STATUS" print={false} />
@@ -249,6 +252,7 @@ export default function Status() {
                 variant="danger"
                 className="d-flex"
                 style={{ width: 'auto', marginRight: 10 }}
+                onClick={() => navigate('/interac-etransfer/request-money')}
               >
                 Request Money
               </Button>
