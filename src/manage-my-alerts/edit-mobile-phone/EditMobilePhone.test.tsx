@@ -17,7 +17,7 @@ describe('EditMobilePhone Component', () => {
     wrapper.findWhere((node : any) => node.type() === 'button' && node.text() === 'Cancel').simulate('click', mEvent);
     expect(handleCancel).toBeCalledTimes(1);
   });
-  it('Click save button on EditHomePhone', () => {
+  it('Click save button on EditMobilePhone', () => {
     const handleClose = jest.fn();
     const handleNext = jest.fn();
     const wrapper = shallow(
