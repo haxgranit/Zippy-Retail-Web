@@ -562,6 +562,7 @@ Array [
           <button
             className="d-flex btn btn-danger"
             disabled={false}
+            onClick={[Function]}
             style={
               Object {
                 "marginRight": 10,
