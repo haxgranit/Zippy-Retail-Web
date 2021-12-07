@@ -52,6 +52,24 @@ export default function SendMoney() {
     },
   ];
 
+  const handleNext = () => {
+    if (selectedUser === 1) {
+      setRealStep(4);
+    } else {
+      setRealStep(5);
+    }
+    setCurrentStep(3);
+    setShowVerifyModal(false);
+  };
+
+  const handleClose = () => setShowVerifyModal(false);
+
+  const handleBack = () => {
+    setRealStep(1);
+    setCurrentStep(1);
+    setShowVerifyModal(false);
+  };
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [realStep]);
@@ -60,21 +78,9 @@ export default function SendMoney() {
     <div>
       <SendMoneyVerificationModal
         show={showVerifyModal}
-        handleClose={() => setShowVerifyModal(false)}
-        handleNext={() => {
-          if (selectedUser === 1) {
-            setRealStep(4);
-          } else {
-            setRealStep(5);
-          }
-          setCurrentStep(3);
-          setShowVerifyModal(false);
-        }}
-        handleBack={() => {
-          setRealStep(1);
-          setCurrentStep(1);
-          setShowVerifyModal(false);
-        }}
+        handleClose={handleClose}
+        handleNext={handleNext}
+        handleBack={handleBack}
       />
       <CommonHeader title="SEND MONEY" print={false} />
       <Row>
