@@ -22,22 +22,48 @@ export default function ManageMyAlerts() {
   const [showEditBusinessPhone, setShowEditBusinessPhone] = useState(false);
   const [showEditMobilePhone, setShowEditMobilePhone] = useState(false);
 
+  const closeEditHomeModal = () => {
+    setShowEditHomeModal(false);
+  };
+
+  const openEditHomeModal = () => {
+    setShowEditHomeModal(true);
+  };
+
+  const closeEditBusinessPhone = () => {
+    setShowEditBusinessPhone(false);
+  };
+
+  const openEditBusinessPhone = () => {
+    setShowEditBusinessPhone(true);
+  };
+
+  const closeEditMobilePhone = () => {
+    setShowEditMobilePhone(false);
+  };
+
+  const openEditMobilePhone = () => {
+    setShowEditMobilePhone(true);
+  };
+
+  const handleSave = () => { };
+
   return (
     <>
       <EditHomePhone
         show={showEditHomeModal}
-        handleCancel={() => setShowEditHomeModal(false)}
-        handleSave={() => {}}
+        handleCancel={closeEditHomeModal}
+        handleSave={handleSave}
       />
       <EditBusinessPhone
         show={showEditBusinessPhone}
-        handleCancel={() => setShowEditBusinessPhone(false)}
-        handleSave={() => {}}
+        handleCancel={closeEditBusinessPhone}
+        handleSave={handleSave}
       />
       <EditMobilePhone
         show={showEditMobilePhone}
-        handleCancel={() => setShowEditMobilePhone(false)}
-        handleNext={() => {}}
+        handleCancel={closeEditMobilePhone}
+        handleNext={handleSave}
       />
       <CommonHeader title="MANAGE MY ALERTS" print />
       <Row className="mt-3">
@@ -398,7 +424,11 @@ export default function ManageMyAlerts() {
                   <div style={{ fontWeight: 'bold' }}>SMS mobile phone</div>
                   <div style={{ color: 'grey' }}>410-553-1372</div>
                 </div>
-                <Button variant="link" className="text-black" onClick={() => setShowEditMobilePhone(true)}>
+                <Button
+                  variant="link"
+                  className="text-black"
+                  onClick={openEditMobilePhone}
+                >
                   Edit
                 </Button>
               </div>
@@ -414,7 +444,11 @@ export default function ManageMyAlerts() {
                   <div style={{ fontWeight: 'bold' }}>Home Phone</div>
                   <div style={{ color: 'grey' }}>410-553-1372</div>
                 </div>
-                <Button variant="link" className="text-black" onClick={() => setShowEditHomeModal(true)}>
+                <Button
+                  variant="link"
+                  className="text-black"
+                  onClick={openEditHomeModal}
+                >
                   Edit
                 </Button>
               </div>
@@ -425,7 +459,11 @@ export default function ManageMyAlerts() {
                 <div>
                   <div style={{ fontWeight: 'bold' }}>Business Phone</div>
                 </div>
-                <Button variant="link" className="text-black" onClick={() => setShowEditBusinessPhone(true)}>
+                <Button
+                  variant="link"
+                  className="text-black"
+                  onClick={openEditBusinessPhone}
+                >
                   Edit
                 </Button>
               </div>

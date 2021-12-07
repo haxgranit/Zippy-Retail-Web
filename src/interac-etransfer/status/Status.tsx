@@ -7,12 +7,15 @@ import
   Row,
   Col,
 } from 'react-bootstrap';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import CommonHeader from '../../common/CommonHeader';
 import MonthSelectComponent from '../../common/MonthSelectComponent';
 
 export default function Status() {
   const navigate = useNavigate();
+  const { state } = useLocation();
+  const tabId = state ? state.tabId : null;
+
   return (
     <>
       <CommonHeader title="STATUS" print={false} />
@@ -37,7 +40,7 @@ export default function Status() {
         </p>
       </div>
       <Tabs
-        defaultActiveKey="sent"
+        defaultActiveKey={tabId || 'sent'}
         transition={false}
         id="status-tab"
         className="mt-2 mb-3"

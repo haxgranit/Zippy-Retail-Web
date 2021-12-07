@@ -74,6 +74,7 @@ exports[`Storyshots interac-etransfer/receive-money/ReceiveMoney Default 1`] = `
         }
       >
         <button
+          onClick={[Function]}
           style={
             Object {
               "backgroundColor": "white",

@@ -1,4 +1,5 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { BrowserRouter } from 'react-router-dom';
 import ReceiveMoney from './ReceiveMoney';
 
 export default {
@@ -7,7 +8,9 @@ export default {
 } as ComponentMeta<typeof ReceiveMoney>;
 
 const Template: ComponentStory<typeof ReceiveMoney> = () => (
-  <ReceiveMoney />
+  <BrowserRouter>
+    <ReceiveMoney />
+  </BrowserRouter>
 );
 
 export const Default = Template.bind({});
