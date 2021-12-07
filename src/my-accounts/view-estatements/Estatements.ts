@@ -107,6 +107,6 @@ export const DOCUMENT_LINKS = [
   },
   {
     key: 4,
-    title: 'CIBC securities Inc. and PPS Consent to Electronic Delivery (November 2014) (PDF, 47KB)',
+    title: 'ZippyX securities Inc. and PPS Consent to Electronic Delivery (November 2014) (PDF, 47KB)',
   },
 ];

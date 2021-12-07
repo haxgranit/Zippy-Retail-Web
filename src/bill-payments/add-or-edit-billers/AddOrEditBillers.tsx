@@ -23,10 +23,10 @@ export default function AddOrEditBillers() {
           </a>
         </li>
         <li>
-          If you&apos;re trying to pay a CIBC bill, you may need to
+          If you&apos;re trying to pay a ZippyX bill, you may need to
           {' '}
           <a href="/" className="text-black">
-            link your CIBC Account
+            link your ZippyX Account
           </a>
         </li>
       </ul>

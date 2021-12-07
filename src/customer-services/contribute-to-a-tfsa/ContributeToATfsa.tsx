@@ -380,7 +380,7 @@ const ContributeToTfsa = () => (
     <SectionHeader title="Market Linked GICs(TFSA eligible)" />
     <Row>
       <Card
-        cardName={<CardTitleLink text="CIBC Market Linked GICs" href="/#" />}
+        cardName={<CardTitleLink text="ZippyX Market Linked GICs" href="/#" />}
         cardText={
           <DefaultCardText text="The interest rate is linked to market performance, so the potential for growth is higher than a fixed-rate GIC" />
         }

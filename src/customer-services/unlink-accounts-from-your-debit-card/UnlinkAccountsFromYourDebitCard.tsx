@@ -40,7 +40,7 @@ const LinkElement = ({ url, text, id }: QuickLink): JSX.Element => (
     {text}
   </a>
 );
-export default function UnlinkAccountsFromYourCibcDebitCard() {
+export default function UnlinkAccountsFromYourDebitCard() {
   const quickLinks: QuickLink[] = [
     {
       id: 1,
@@ -138,7 +138,7 @@ export default function UnlinkAccountsFromYourCibcDebitCard() {
               <ul>
                 <li>
                   You may not able to access the unlinked account or perfom
-                  certain atlas (e.g., transfer funds) through CIBC Online
+                  certain atlas (e.g., transfer funds) through ZippyX Online
                   Banking®, Mobile Banking, Telephone Banking or at bank
                   machines.
                 </li>
@@ -151,7 +151,7 @@ export default function UnlinkAccountsFromYourCibcDebitCard() {
               <ul>
                 <li>
                   You will not be able to transfer funds between your credit
-                  card and bank account(s) through CIBC Online Banking, Mobile
+                  card and bank account(s) through ZippyX Online Banking, Mobile
                   Banking, Telephone Banking, or at bank machines.
                 </li>
                 <li>
@@ -165,7 +165,7 @@ export default function UnlinkAccountsFromYourCibcDebitCard() {
                 on the &quot;My Account&quot; page
               </p>
               <p style={{ fontWeight: 'bold' }}>
-                Accounts currently linked to CIBC debit card 4506 4457 3443 3434
+                Accounts currently linked to ZippyX debit card 4506 4457 3443 3434
               </p>
             </Row>
           </Row>

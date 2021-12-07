@@ -34,7 +34,7 @@ export default function PayAndFileBusinessTaxes() {
               <p>To register for the service select : &quot;Next&quot;</p>
               <p>
                 if you are already register. select &quot;Next&quot; to connect
-                to the CIBC Govemment Payment and Filing service website.
+                to the ZippyX Govemment Payment and Filing service website.
               </p>
               <p>
                 You will need to sign on again ff you would like to continue

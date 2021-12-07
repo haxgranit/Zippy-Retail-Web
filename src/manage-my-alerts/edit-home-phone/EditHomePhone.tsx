@@ -21,13 +21,13 @@ const EditHomePhone = ({
         <h3>HOME PHONE NUMBER UPDATE </h3>
         <ul style={{ marginLeft: '25px' }}>
           <li style={{ marginBottom: '6px' }}>
-            This is your home phone number on file with CIBC.
+            This is your home phone number on file with ZippyX.
           </li>
           <li style={{ marginBottom: '6px' }}>
-            CIBC will use this phone number to contact you or send you alerts.
+            ZippyX will use this phone number to contact you or send you alerts.
           </li>
           <li style={{ marginBottom: '6px' }}>
-            Phone numbers with extension cannot be used to recieve CIBC alerts.
+            Phone numbers with extension cannot be used to recieve ZippyX alerts.
           </li>
         </ul>
         <Row

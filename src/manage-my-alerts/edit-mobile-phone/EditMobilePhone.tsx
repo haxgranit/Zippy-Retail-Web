@@ -22,10 +22,10 @@ const EditMobilePhone = ({
         <ul style={{ marginLeft: '25px' }}>
           <li style={{ marginBottom: '6px' }}>
             This will be your SMS (Short Message Service) mobile phone
-            number on file with CIBC.
+            number on file with ZippyX.
           </li>
           <li style={{ marginBottom: '6px' }}>
-            If you choose to recieve SMS alerts, CIBC will use this number
+            If you choose to recieve SMS alerts, ZippyX will use this number
             to send alerts to you.
           </li>
           <li style={{ marginBottom: '6px' }}>
@@ -33,7 +33,7 @@ const EditMobilePhone = ({
             numbers.
           </li>
           <li style={{ marginBottom: '6px' }}>
-            Standard messaging and data rates may apply, CIBC will send you
+            Standard messaging and data rates may apply, ZippyX will send you
             a monthly reminder through SMS text message to allow you to opt
             out of recieving SMS text message from us.
           </li>

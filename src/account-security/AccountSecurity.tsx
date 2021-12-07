@@ -230,7 +230,7 @@ const AccountSecurity = () => (
             color: 'rgba(0, 0, 0, 0.5)',
           }}
         >
-          To learn more about CIBC protects you from fraud, and how you can
+          To learn more about ZippyX protects you from fraud, and how you can
           protect yourself, visit
           {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
           <a href="#"> Privacy and Security</a>

@@ -59,7 +59,7 @@ export default function CreateAClickToPayAccount() {
             >
               P
             </div>
-            Print or save CIBC Terms and Conditions for Click to Pay (PDF, 15
+            Print or save ZippyX Terms and Conditions for Click to Pay (PDF, 15
             KB)
           </Button>
         </Col>
@@ -67,26 +67,26 @@ export default function CreateAClickToPayAccount() {
       <Row style={{ border: '1px solid grey' }}>
         <Col md="12">
           <div className="p-4">
-            <h6 className="text-uppercase">CIBC Terms & Conditions</h6>
+            <h6 className="text-uppercase">ZippyX Terms & Conditions</h6>
             <ol>
               <li>
                 These terms and conditions apply to the use of Click to Pay
-                through CIBC Online Banking. Click to Pay is a service provided
+                through ZippyX Online Banking. Click to Pay is a service provided
                 by EMVCo, By agreeing to these terms and conditions, you are
                 agreeing to link directly to Visa&apos;s Click to Pay website
-                from CIBC Online Banking. You must also agree to the Click to
+                from ZippyX Online Banking. You must also agree to the Click to
                 Pay terms and conditions to use Click to Pay.
               </li>
               <li>
                 Once you register fo Click to pay, your Click to Pay account
-                will be linked to CIBC Online Banking. This means that when you
-                access your Click to Pay account through CIBC Online Banking,
+                will be linked to ZippyX Online Banking. This means that when you
+                access your Click to Pay account through ZippyX Online Banking,
                 you will not be required to log in separately.
               </li>
               <li>
-                CIBC will provide Click to Pay with your CIBC payment card
+                ZippyX will provide Click to Pay with your ZippyX payment card
                 information when you register for Click to Pay. This includes
-                any CIBC Visa or MasterCard credit cards and CIBC Advantage
+                any ZippyX Visa or MasterCard credit cards and ZippyX Advantage
                 Debit Cards that you have and that are in good standing. You can
                 choose which of these cards you want to add your Click to Pay
                 account while enrolling for Click to Pay

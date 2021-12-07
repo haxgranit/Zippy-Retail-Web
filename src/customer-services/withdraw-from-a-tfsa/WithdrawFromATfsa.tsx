@@ -59,7 +59,7 @@ export default function WithdrawFromATfsa() {
               <p>
                 For example, your monthly RIP of $1,000 is deposited for a total
                 TFSA balance of $10,000. Until the $1,000 clears on the 5th
-                business day, CIBC will only process a withdrawal of up to
+                business day, ZippyX will only process a withdrawal of up to
                 $9,000.
               </p>
             </li>

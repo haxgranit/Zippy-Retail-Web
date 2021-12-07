@@ -109,7 +109,7 @@ const BeforYouBeginSection = () => (
                 <Form.Control type="text" placeholder="Optional" />
               </Col>
             </Row>
-            If we need more information, a CIBC Mortgage Representative will
+            If we need more information, a ZippyX Mortgage Representative will
             contact you within 2 business days at the above number.
           </div>
         </Col>

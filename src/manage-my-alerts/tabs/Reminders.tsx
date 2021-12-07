@@ -16,7 +16,7 @@ export default function Reminders() {
     { id: 4, text: 'A scheduled transfer was successful' },
     {
       id: 5,
-      text: 'There are new documents available in your CIBC Dgital Vault',
+      text: 'There are new documents available in your ZippyX Dgital Vault',
     },
   ];
   return (

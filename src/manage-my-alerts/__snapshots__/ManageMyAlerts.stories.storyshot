@@ -63,7 +63,7 @@ Array [
     >
       <ul>
         <li>
-          Alerts are notifictions that CIBC sends to keep you informed of transactions and monitor your CIBC accounts.
+          Alerts are notifictions that ZippyX sends to keep you informed of transactions and monitor your ZippyX accounts.
         </li>
         <li>
           Most alerts are sent automatically to My Messages by default and to any other additional contact methods you select and save.
@@ -72,7 +72,7 @@ Array [
           If you choose to activate Push Notifications, you must also enable them on your mobile device.
         </li>
         <li>
-          Push Notifications are personalized alerts sent directly to your mobile device that can help you stay on top of your CIBC accounts. If you sign into CIBC Mobile Banking from a mobile device other than your own, Your alerts may be sent to that device until another user signs in to the application.
+          Push Notifications are personalized alerts sent directly to your mobile device that can help you stay on top of your ZippyX accounts. If you sign into ZippyX Mobile Banking from a mobile device other than your own, Your alerts may be sent to that device until another user signs in to the application.
         </li>
         <li>
           Some fraud prevention alerts cannot be turned off.
@@ -908,7 +908,7 @@ Array [
                   In the case of credit cards, your alerts status will always be active.
                 </li>
                 <li>
-                  CIBC Alerts Terms and Conditions are now a part of the
+                  ZippyX Alerts Terms and Conditions are now a part of the
                   <a
                     className="text-black"
                     href="/"
@@ -1316,7 +1316,7 @@ Array [
                   In the case of credit cards, your alerts status will always be active.
                 </li>
                 <li>
-                  CIBC Alerts Terms and Conditions are now a part of the
+                  ZippyX Alerts Terms and Conditions are now a part of the
                   <a
                     className="text-black"
                     href="/"
@@ -1559,7 +1559,7 @@ Array [
                   className="form-check-label"
                   title=""
                 >
-                  There are new documents available in your CIBC Dgital Vault
+                  There are new documents available in your ZippyX Dgital Vault
                 </label>
               </div>
               <i />
@@ -1679,7 +1679,7 @@ Array [
                   In the case of credit cards, your alerts status will always be active.
                 </li>
                 <li>
-                  CIBC Alerts Terms and Conditions are now a part of the
+                  ZippyX Alerts Terms and Conditions are now a part of the
                   <a
                     className="text-black"
                     href="/"
@@ -1764,6 +1764,7 @@ Array [
             <button
               className="text-black btn btn-link"
               disabled={false}
+              onClick={[Function]}
               type="button"
             >
               Edit
@@ -1926,7 +1927,7 @@ Array [
               }
             }
           >
-            Apply for a CIBC Credit Card today
+            Apply for a ZippyX Credit Card today
             <span
               style={
                 Object {
