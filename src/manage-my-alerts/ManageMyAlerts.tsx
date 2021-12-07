@@ -22,34 +22,48 @@ export default function ManageMyAlerts() {
   const [showEditBusinessPhone, setShowEditBusinessPhone] = useState(false);
   const [showEditMobilePhone, setShowEditMobilePhone] = useState(false);
 
-  const toggleEditHomeModal = (flag: any) => {
-    setShowEditHomeModal(flag);
+  const closeEditHomeModal = () => {
+    setShowEditHomeModal(false);
   };
 
-  const toggleEditBusinessPhone = (flag: any) => {
-    setShowEditBusinessPhone(flag);
+  const openEditHomeModal = () => {
+    setShowEditHomeModal(true);
   };
 
-  const toggleEditMobilePhone = (flag: any) => {
-    setShowEditMobilePhone(flag);
+  const closeEditBusinessPhone = () => {
+    setShowEditBusinessPhone(false);
   };
+
+  const openEditBusinessPhone = () => {
+    setShowEditBusinessPhone(true);
+  };
+
+  const closeEditMobilePhone = () => {
+    setShowEditMobilePhone(false);
+  };
+
+  const openEditMobilePhone = () => {
+    setShowEditMobilePhone(true);
+  };
+
+  const handleSave = () => { };
 
   return (
     <>
       <EditHomePhone
         show={showEditHomeModal}
-        handleCancel={() => toggleEditHomeModal(false)}
-        handleSave={() => {}}
+        handleCancel={closeEditHomeModal}
+        handleSave={handleSave}
       />
       <EditBusinessPhone
         show={showEditBusinessPhone}
-        handleCancel={() => toggleEditBusinessPhone(false)}
-        handleSave={() => {}}
+        handleCancel={closeEditBusinessPhone}
+        handleSave={handleSave}
       />
       <EditMobilePhone
         show={showEditMobilePhone}
-        handleCancel={() => toggleEditMobilePhone(false)}
-        handleNext={() => {}}
+        handleCancel={closeEditMobilePhone}
+        handleNext={handleSave}
       />
       <CommonHeader title="MANAGE MY ALERTS" print />
       <Row className="mt-3">
@@ -413,7 +427,7 @@ export default function ManageMyAlerts() {
                 <Button
                   variant="link"
                   className="text-black"
-                  onClick={() => toggleEditMobilePhone(true)}
+                  onClick={openEditMobilePhone}
                 >
                   Edit
                 </Button>
@@ -433,7 +447,7 @@ export default function ManageMyAlerts() {
                 <Button
                   variant="link"
                   className="text-black"
-                  onClick={() => toggleEditHomeModal(true)}
+                  onClick={openEditHomeModal}
                 >
                   Edit
                 </Button>
@@ -448,7 +462,7 @@ export default function ManageMyAlerts() {
                 <Button
                   variant="link"
                   className="text-black"
-                  onClick={() => toggleEditBusinessPhone(true)}
+                  onClick={openEditBusinessPhone}
                 >
                   Edit
                 </Button>
