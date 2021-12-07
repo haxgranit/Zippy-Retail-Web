@@ -12,6 +12,7 @@ import {
 } from 'react-bootstrap';
 import CommonHeader from '../common/CommonHeader';
 import EditBusinessPhone from './edit-business-phone/EditBusinessPhone';
+import EditEmailAccount from './edit-email-account/EditEmailAccount';
 import EditHomePhone from './edit-home-phone/EditHomePhone';
 import EditMobilePhone from './edit-mobile-phone/EditMobilePhone';
 import Reminders from './tabs/Reminders';
@@ -21,6 +22,7 @@ export default function ManageMyAlerts() {
   const [showEditHomeModal, setShowEditHomeModal] = useState(false);
   const [showEditBusinessPhone, setShowEditBusinessPhone] = useState(false);
   const [showEditMobilePhone, setShowEditMobilePhone] = useState(false);
+  const [showEditEmailAccount, setShowEditEmailAccount] = useState(false);
 
   return (
     <>
@@ -38,6 +40,11 @@ export default function ManageMyAlerts() {
         show={showEditMobilePhone}
         handleCancel={() => setShowEditMobilePhone(false)}
         handleNext={() => {}}
+      />
+      <EditEmailAccount
+        show={showEditEmailAccount}
+        handleCancel={() => setShowEditEmailAccount(false)}
+        handleSave={() => {}}
       />
       <CommonHeader title="MANAGE MY ALERTS" print />
       <Row className="mt-3">
@@ -382,7 +389,7 @@ export default function ManageMyAlerts() {
                   <div style={{ fontWeight: 'bold' }}>Email</div>
                   <div style={{ color: 'grey' }}>dtough@hotmail.com</div>
                 </div>
-                <Button variant="link" className="text-black">
+                <Button variant="link" className="text-black" onClick={() => setShowEditEmailAccount(true)}>
                   Edit
                 </Button>
               </div>
