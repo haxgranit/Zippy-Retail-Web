@@ -1,4 +1,3 @@
-/* eslint-disable react/destructuring-assignment */
 import {
   Col,
   Row,
@@ -11,73 +10,91 @@ import { useState } from 'react';
 import CONTACTS from './Contacts';
 import CommonHeader from '../../common/CommonHeader';
 
-function RemoveContactModal(props:any) {
-  return (
-    <Modal
-      // eslint-disable-next-line react/jsx-props-no-spreading
-      {...props}
-      size="lg"
-      aria-labelledby="contained-modal-title-vcenter"
-      centered
-    >
-      <Modal.Body>
-        <h4 style={{ marginTop: 20 }}>Delete Contact - Verification</h4>
-        <p>
-          Are you sure you want to remove the contact below from your contact list?
-        </p>
-        <Row style={{ marginTop: 50, marginBottom: 20 }}>
-          <Col>
-            <span>Name:</span>
-          </Col>
-          <Col>
-            {props.selectedContact?.name}
-          </Col>
-        </Row>
-        <hr style={{
-          height: '2px',
-          borderWidth: '0px',
-          color: 'gray',
-          background: 'gray',
-        }}
-        />
-        <Row style={{ marginTop: 20, marginBottom: 20 }}>
-          <Col>
-            <span>Email Address:</span>
-          </Col>
-          <Col>
-            {props.selectedContact?.email}
-          </Col>
-        </Row>
-        <Row style={{ marginTop: 50 }}>
-          <Col style={{ padding: 0, background: 'white' }}>
-            <Button onClick={props.onHide} style={{ margin: 0, background: 'white', border: 'none' }} variant="light" className="d-flex">
-              <div
-                style={{
-                  width: 20,
-                  height: 25,
-                  border: '1px dotted grey',
-                  textAlign: 'center',
-                  marginRight: 10,
-                }}
-              >
-                P
-              </div>
-              Cancel
-            </Button>
-          </Col>
-          <Col style={{ display: 'flex', justifyContent: 'flex-end' }}>
-            <Button variant="outline-danger" onClick={props.onHide}>Close</Button>
-            <Button className="btn btn-danger" style={{ marginLeft: 15 }} onClick={props.onDeleteConfirm}>Delete</Button>
-          </Col>
-        </Row>
-      </Modal.Body>
-    </Modal>
-  );
-}
+type Contact = {
+  key: number,
+  name: string,
+  lang: string,
+  email: string,
+  phone: string,
+};
 
-export default function ContactList() {
+const RemoveContactModal: React.FC<{
+  show: boolean;
+  selectedContact: Contact;
+  onHide: VoidFunction;
+  onDeleteConfirm: VoidFunction;
+}> = ({
+  show,
+  selectedContact,
+  onHide,
+  onDeleteConfirm,
+}) => (
+  <Modal
+    show={show}
+    size="lg"
+    aria-labelledby="contained-modal-title-vcenter"
+    centered
+    id="remove-contact-modal"
+  >
+    <Modal.Body>
+      <h4 style={{ marginTop: 20 }}>Delete Contact - Verification</h4>
+      <p>
+        Are you sure you want to remove the contact below from your contact list?
+      </p>
+      <Row style={{ marginTop: 50, marginBottom: 20 }}>
+        <Col>
+          <span>Name:</span>
+        </Col>
+        <Col>
+          {selectedContact?.name}
+        </Col>
+      </Row>
+      <hr style={{
+        height: '2px',
+        borderWidth: '0px',
+        color: 'gray',
+        background: 'gray',
+      }}
+      />
+      <Row style={{ marginTop: 20, marginBottom: 20 }}>
+        <Col>
+          <span>Email Address:</span>
+        </Col>
+        <Col>
+          {selectedContact?.email}
+        </Col>
+      </Row>
+      <Row style={{ marginTop: 50 }}>
+        <Col style={{ padding: 0, background: 'white' }}>
+          <Button onClick={onHide} style={{ margin: 0, background: 'white', border: 'none' }} variant="light" className="d-flex">
+            <div
+              style={{
+                width: 20,
+                height: 25,
+                border: '1px dotted grey',
+                textAlign: 'center',
+                marginRight: 10,
+              }}
+            >
+              P
+            </div>
+            Cancel
+          </Button>
+        </Col>
+        <Col style={{ display: 'flex', justifyContent: 'flex-end' }}>
+          <Button variant="outline-danger" onClick={onHide}>Close</Button>
+          <Button id="remove-contact-button" className="btn btn-danger" style={{ marginLeft: 15 }} onClick={onDeleteConfirm}>Delete</Button>
+        </Col>
+      </Row>
+    </Modal.Body>
+  </Modal>
+);
+
+// As we are using TypeScript - there are no need to use propTypes package.
+// eslint-disable-next-line react/prop-types
+const ContactList: React.FC<{ initialContacts?: Array<Contact> }> = ({ initialContacts }) => {
   const [modalShow, setModalShow] = useState(false);
-  const [contacts, setContacts] = useState(CONTACTS);
+  const [contacts, setContacts] = useState(initialContacts ?? CONTACTS);
   const [selectedContact, setSelectedContact] = useState<{ email:string }>();
   const onDeletePressed = (contact:any) => () => {
     setModalShow(true);
@@ -195,7 +212,7 @@ export default function ContactList() {
                     )}
                   </td>
                   <td>
-                    <Button onClick={onDeletePressed(item)} variant="light" className="text-black d-flex">
+                    <Button onClick={onDeletePressed(item)} variant="light" className="text-black d-flex" id={`contact-list-${item.key}`}>
                       <div
                         style={{
                           width: 20,
@@ -216,7 +233,7 @@ export default function ContactList() {
               <RemoveContactModal
                 show={modalShow}
                 onHide={() => setModalShow(false)}
-                selectedContact={selectedContact}
+                selectedContact={selectedContact as Contact}
                 onDeleteConfirm={onDeleteConfirm}
               />
             </tbody>
@@ -279,4 +296,6 @@ export default function ContactList() {
       </Row>
     </>
   );
-}
+};
+
+export default ContactList;
