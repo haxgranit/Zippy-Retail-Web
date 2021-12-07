@@ -13,12 +13,14 @@ import {
 import CommonHeader from '../common/CommonHeader';
 import EditBusinessPhone from './edit-business-phone/EditBusinessPhone';
 import EditHomePhone from './edit-home-phone/EditHomePhone';
+import EditMobilePhone from './edit-mobile-phone/EditMobilePhone';
 import Reminders from './tabs/Reminders';
 import Transactions from './tabs/Transactions';
 
 export default function ManageMyAlerts() {
   const [showEditHomeModal, setShowEditHomeModal] = useState(false);
   const [showEditBusinessPhone, setShowEditBusinessPhone] = useState(false);
+  const [showEditMobilePhone, setShowEditMobilePhone] = useState(false);
 
   return (
     <>
@@ -31,6 +33,11 @@ export default function ManageMyAlerts() {
         show={showEditBusinessPhone}
         handleCancel={() => setShowEditBusinessPhone(false)}
         handleSave={() => {}}
+      />
+      <EditMobilePhone
+        show={showEditMobilePhone}
+        handleCancel={() => setShowEditMobilePhone(false)}
+        handleNext={() => {}}
       />
       <CommonHeader title="MANAGE MY ALERTS" print />
       <Row className="mt-3">
@@ -391,7 +398,7 @@ export default function ManageMyAlerts() {
                   <div style={{ fontWeight: 'bold' }}>SMS mobile phone</div>
                   <div style={{ color: 'grey' }}>410-553-1372</div>
                 </div>
-                <Button variant="link" className="text-black">
+                <Button variant="link" className="text-black" onClick={() => setShowEditMobilePhone(true)}>
                   Edit
                 </Button>
               </div>
