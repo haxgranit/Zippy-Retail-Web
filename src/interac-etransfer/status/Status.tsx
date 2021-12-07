@@ -218,7 +218,7 @@ export default function Status() {
                 </td>
                 <td>$2,000.00</td>
                 <td>
-                  <Button variant="link" className="text-black">
+                  <Button variant="link" className="text-black" onClick={() => navigate('/interac-etransfer/request-sent')}>
                     Requested
                   </Button>
                 </td>
