@@ -20,11 +20,11 @@ export default function ChangeYourContactInformation() {
           </Row>
           <h4 className="mt-4">Enter and verify your contact information</h4>
           <p className="mt-3">
-            CIBC will use this new email address to communicate with you for
+            ZippyX will use this new email address to communicate with you for
             many reasons including sending you promotional materials,
             eStatements, alerts, Interac e-Transfer messages and one-time
             verification codes. Choose an email address provided by a
-            corporation or educational institution; for account security, CIBC
+            corporation or educational institution; for account security, ZippyX
             doesn&apos;t send one-time verification codes to personal or free
             email services.
           </p>
@@ -74,7 +74,7 @@ export default function ChangeYourContactInformation() {
                 </Col>
               </Row>
               <p style={{ fontSize: 14, marginTop: 10 }}>
-                CIBC will use this new email address to communicate with you for
+                ZippyX will use this new email address to communicate with you for
                 many reasons including sending you promotional materials,
                 eBills, alerts and Interac e-Transfer messages.
               </p>

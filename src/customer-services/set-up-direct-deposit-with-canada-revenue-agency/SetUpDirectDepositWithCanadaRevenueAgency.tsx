@@ -110,7 +110,7 @@ export default function SetUpDirectDepositWithCanadaRevenueAgency() {
           <Col md="12">
             <div className="p-4" style={{ border: '1px solid grey' }}>
               <p>
-                I authorize CIBC to share my banking information, date of birth,
+                I authorize ZippyX to share my banking information, date of birth,
                 Social Insurance Number(SIN) and full name with the Canada
                 Revenue Agency (CRA) for the purposes of establishing direct
                 deposit, including to identify me. By Providing my banking

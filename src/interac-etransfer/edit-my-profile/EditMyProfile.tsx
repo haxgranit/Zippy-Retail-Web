@@ -22,7 +22,7 @@ const LeftCol = () => (
             &quot;Next&quot;
           </li>
           <li>
-            Updating this page will change the personal information you have on record with CIBC
+            Updating this page will change the personal information you have on record with ZippyX
           </li>
         </ul>
       </Col>

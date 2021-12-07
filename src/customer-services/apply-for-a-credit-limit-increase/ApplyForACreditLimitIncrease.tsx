@@ -20,7 +20,7 @@ const Title = () => (
     <Col>
       <div className="border-top border-2 border-danger" />
       <h1>
-        CIBC
+        ZippyX
         <i />
       </h1>
     </Col>

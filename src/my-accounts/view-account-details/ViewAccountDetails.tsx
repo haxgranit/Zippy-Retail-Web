@@ -155,15 +155,15 @@ export default function ViewAccountDetails() {
       <div className="row mt-4">
         <div className="col-12">
           <p>
-            For a description of transactions that are included in the CIBC SmartTM Account monthly
-            fee and the fees for other Personal Banking Services, visit a CIBC Banking Centre or
-            review Personal Account Service Fees (PDF, 210 KB).
+            For a description of transactions that are included in the ZippyX SmartTM Account
+            monthly fee and the fees for other Personal Banking Services, visit a ZippyX Banking
+            Centre or review Personal Account Service Fees (PDF, 210 KB).
           </p>
           <p>
             * Foreign Currency Conversion Fee - If you withdraw foreign currency from a bank machine
-            located outside of Canada, you are charged the same conversion rate CIBC is required to
-            pay, plus an administration fee of 2.5% of the converted amount (this is in addition to
-            any transaction fee applicable to the withdrawal and the network fee).
+            located outside of Canada, you are charged the same conversion rate ZippyX is required
+            to pay, plus an administration fee of 2.5% of the converted amount (this is in addition
+            to any transaction fee applicable to the withdrawal and the network fee).
           </p>
           <div className="border-primary my-1" style={{ borderTop: '1px solid' }} />
           <p className="mt-4">

@@ -219,7 +219,7 @@ Array [
               id="transfer_from"
             >
               <option>
-                 - Non-CIBC card account - 
+                 - Non-ZippyX card account - 
               </option>
             </select>
           </div>
@@ -230,14 +230,14 @@ Array [
       >
         <label
           className="form-label"
-          htmlFor="non_cibc_card_number"
+          htmlFor="non_zippyx_card_number"
         >
-          Non-CIBC card number
+          Non-ZippyX card number
         </label>
         <input
-          aria-describedby="non_cibc_card_number"
+          aria-describedby="non_zippyx_card_number"
           className="form-control"
-          id="non_cibc_card_number"
+          id="non_zippyx_card_number"
         />
       </div>
     </div>

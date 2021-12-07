@@ -39,7 +39,7 @@ export default function InactiveAlertNote() {
             active.
           </li>
           <li>
-            CIBC Alerts Terms and Conditions are now a part of the
+            ZippyX Alerts Terms and Conditions are now a part of the
             <a href="/" className="text-black">
               Electronic Access Agreement
             </a>

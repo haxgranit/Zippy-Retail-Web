@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots customer-services/apply-for-or-change-cibc-overdraft-protection-service/ApplyForOrChangeCibcOverdraftProtectionService Default 1`] = `
+exports[`Storyshots customer-services/apply-for-or-change-overdraft-protection-service/ApplyForOrChangeOverdraftProtectionService Default 1`] = `
 Array [
   <div
     style={

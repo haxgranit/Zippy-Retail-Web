@@ -141,7 +141,7 @@ export default function ReviewAndCancelBillPayments() {
         <Col>
           <b>Note:</b>
           <br />
-          Payments made to CIBC credit cards are treated as transfers and are displayed on the
+          Payments made to ZippyX credit cards are treated as transfers and are displayed on the
           &quot;Account Details&quot; page under &quot;My Accounts.&quot;
         </Col>
       </Row>

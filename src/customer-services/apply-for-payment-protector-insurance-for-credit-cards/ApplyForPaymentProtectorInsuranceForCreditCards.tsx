@@ -20,7 +20,7 @@ const Title = () => (
     <Col>
       <div className="border-top border-2 border-danger" />
       <h1>
-        CIBC
+        ZippyX
         <i />
       </h1>
     </Col>
@@ -34,7 +34,7 @@ const AlertsSection = () => (
     <Row>
       <Col>
         <Alert variant="secondary" className="mb-0 rounded-0 text-dark text-center py-3" style={{ fontSize: 15 }}>
-          Apply for CIBC Payment Protector
+          Apply for ZippyX Payment Protector
           <sup>
             TM
           </sup>
@@ -145,7 +145,7 @@ const CoverageCostSection = () => (
       <b>
         Primary Cardholder Coverage Plan&nbsp;
       </b>
-      of CIBC
+      of ZippyX
       Payment Protector Insurance for the credit card selected above.
       Monthly cost is $0.99 per $100 of the amount owing
       on the insured credit card on its statement date,
@@ -169,7 +169,7 @@ const TermsConditionsSection = () => (
         </Col>
         <Col className="text-end my-2">
           <i />
-          CIBC Payment Protector Terms and Conditions (PDF, 1355KB)
+          ZippyX Payment Protector Terms and Conditions (PDF, 1355KB)
         </Col>
       </Row>
       <Row>
@@ -182,7 +182,7 @@ const TermsConditionsSection = () => (
             }
             className="p-3 border border-secondary border-bottom-0"
           >
-            Purchasing this insurance is optional, and is not required to obtain any CIBC product
+            Purchasing this insurance is optional, and is not required to obtain any ZippyX product
             or service.
             <br />
             <br />
@@ -243,7 +243,7 @@ const EndSection = () => (
   </Row>
 );
 
-function ApplyForCibcPaymentProtectorInsuranceForCreditCards() {
+function ApplyForPaymentProtectorInsuranceForCreditCards() {
   return (
     <div>
       <Row>
@@ -264,4 +264,4 @@ function ApplyForCibcPaymentProtectorInsuranceForCreditCards() {
   );
 }
 
-export default ApplyForCibcPaymentProtectorInsuranceForCreditCards;
+export default ApplyForPaymentProtectorInsuranceForCreditCards;

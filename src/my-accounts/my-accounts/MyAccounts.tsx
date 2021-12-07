@@ -92,7 +92,7 @@ export default function MyAccounts() {
             </div>
             <PanelHeader
               title="Deposite Accounts"
-              sub_title="Get up to $300 back with CIBC Global Money Transfer. "
+              sub_title="Get up to $300 back with ZippyX Global Money Transfer. "
             />
             <div className="row">
               <div className="col-md-9">
@@ -151,10 +151,10 @@ export default function MyAccounts() {
             />
             <div style={{ padding: 10 }}>
               <p>
-                You don&apos;t have any non-registered investments with CIBC
+                You don&apos;t have any non-registered investments with ZippyX
               </p>
               <a href="/" style={{ color: 'rgb(220, 53, 69)', fontSize: 14 }}>
-                Kick-start your investing with CIBC Investor&apos;s Edge
+                Kick-start your investing with ZippyX Investor&apos;s Edge
                 {' > '}
               </a>
             </div>
@@ -177,7 +177,7 @@ export default function MyAccounts() {
                 <span>Active Card</span>
               </div>
               <a href="/" style={{ color: 'rgb(220, 53, 69)', fontSize: 14 }}>
-                Join and get up to $1,200 in value with the CIBC Aventura Visa
+                Join and get up to $1,200 in value with the ZippyX Aventura Visa
                 Infinite Card Conditions apply.
                 {' > '}
               </a>
@@ -290,7 +290,7 @@ export default function MyAccounts() {
                     textAlign: 'center',
                   }}
                 >
-                  Your CIBC Financial HealthCheck goal is to manage your money
+                  Your ZippyX Financial HealthCheck goal is to manage your money
                   better
                 </p>
                 <span style={{ fontWeight: 'bold' }}>Last completed:</span>
@@ -317,7 +317,7 @@ export default function MyAccounts() {
                   Save up to 10 cents per litre on gas(1)
                 </p>
                 <p>
-                  Link and use your CIBC card with Journie Rewards to save on
+                  Link and use your ZippyX card with Journie Rewards to save on
                   gas at participating Pioneer, Fas Gas, Ultramar and Chevron
                   gas stations.(2)
                 </p>
@@ -338,7 +338,7 @@ export default function MyAccounts() {
               }}
             >
               <p style={{ color: '#5A5F61' }}>
-                CIBC is a member of Canada Deposit Insurance Corporation (CDIC)
+                ZippyX is a member of Canada Deposit Insurance Corporation (CDIC)
               </p>
               <Button
                 className="d-flex align-items-center"
@@ -369,7 +369,7 @@ export default function MyAccounts() {
               <p style={{ fontWeight: 'bold' }}>Note:</p>
               <p style={{ color: '#5A5F61' }}>
                 &quot;My Accounts&quot; includes the online accounts you hold
-                with CIBC and its affilliates. For help, please contact the CIBC
+                with ZippyX and its affilliates. For help, please contact the ZippyX
                 Online Banking support line at 1-888-872-2422
               </p>
             </div>
@@ -511,7 +511,7 @@ export default function MyAccounts() {
                   className="text-decoration-none text-black"
                   style={{ fontSize: 12, marginTop: 5, marginBottom: 5 }}
                 >
-                  Go to CIBC Rewards
+                  Go to ZippyX Rewards
                   <span style={{ color: 'rgb(220, 53, 69)', marginLeft: 5 }}>
                     {'>'}
                   </span>
@@ -577,7 +577,7 @@ export default function MyAccounts() {
                   Travelling out of province or the country?
                 </Card.Text>
                 <p style={{ fontSize: 13 }}>
-                  Make sure you&apos;re protected. Consider CIBC Travel Medical
+                  Make sure you&apos;re protected. Consider ZippyX Travel Medical
                   Insurancce
                 </p>
                 <a href="/" style={{ color: 'rgb(220, 53, 69)' }}>

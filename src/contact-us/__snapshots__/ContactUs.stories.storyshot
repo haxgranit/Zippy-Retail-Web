@@ -143,7 +143,7 @@ exports[`Storyshots contact-us/ContactUs Default 1`] = `
           <div
             className="col-md-10"
           >
-            CIBC's Virtual Assistant is available 24/7 to answer your questions about everyday banking and is able to perfom banking transactions on your behalf.
+            ZippyX's Virtual Assistant is available 24/7 to answer your questions about everyday banking and is able to perfom banking transactions on your behalf.
           </div>
         </div>
         <div
@@ -273,7 +273,7 @@ exports[`Storyshots contact-us/ContactUs Default 1`] = `
           className="col-md-12"
         >
           <p>
-            More than 1,100 CIBC banking Centres and 3,500 bank machines across Canada offer the banking services you need
+            More than 1,100 ZippyX banking Centres and 3,500 bank machines across Canada offer the banking services you need
           </p>
         </div>
         <div

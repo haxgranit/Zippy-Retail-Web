@@ -51,8 +51,8 @@ export default function CreateOrEditAccountNickname() {
         <Col>
           <b>Note:</b>
           <br />
-          You can add nicknames to all your accounts in CIBC Online Banking. You&apos;ll see the
-          nickname instead of the account name in CIBC Online Banking. However, on CIBC ATMs, on
+          You can add nicknames to all your accounts in ZippyX Online Banking. You&apos;ll see the
+          nickname instead of the account name in ZippyX Online Banking. However, on ZippyX ATMs, on
           the phone or in Banking Centres we&apos;ll be using the account name, not the nickname.
         </Col>
       </Row>
