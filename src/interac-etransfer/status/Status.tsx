@@ -2,7 +2,6 @@ import
 {
   Tabs,
   Tab,
-  Form,
   Table,
   Button,
   Row,
@@ -10,6 +9,7 @@ import
 } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 import CommonHeader from '../../common/CommonHeader';
+import MonthSelectComponent from '../../common/MonthSelectComponent';
 
 export default function Status() {
   const navigate = useNavigate();
@@ -43,12 +43,7 @@ export default function Status() {
         className="mt-2 mb-3"
       >
         <Tab eventKey="sent" title="Sent">
-          <Form.Select style={{ maxWidth: 300 }}>
-            <option>November 2021</option>
-            <option value="1">October 2021</option>
-            <option value="2">September 2021</option>
-            <option value="3">August 2021</option>
-          </Form.Select>
+          <MonthSelectComponent />
           <Table className="mt-2">
             <thead>
               <tr
@@ -133,12 +128,7 @@ export default function Status() {
           </div>
         </Tab>
         <Tab eventKey="received" title="Received">
-          <Form.Select style={{ maxWidth: 300 }}>
-            <option>November 2021</option>
-            <option value="1">October 2021</option>
-            <option value="2">September 2021</option>
-            <option value="3">August 2021</option>
-          </Form.Select>
+          <MonthSelectComponent />
           <Table className="mt-2">
             <thead>
               <tr
@@ -206,12 +196,7 @@ export default function Status() {
           </div>
         </Tab>
         <Tab eventKey="requested" title="Requested">
-          <Form.Select style={{ maxWidth: 300 }}>
-            <option>November 2021</option>
-            <option value="1">October 2021</option>
-            <option value="2">September 2021</option>
-            <option value="3">August 2021</option>
-          </Form.Select>
+          <MonthSelectComponent />
           <Table className="mt-2">
             <thead>
               <tr
