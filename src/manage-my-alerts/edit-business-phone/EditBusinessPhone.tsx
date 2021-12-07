@@ -20,12 +20,12 @@ const EditBusinessPhone = ({
       <Row style={{ padding: '30px' }}>
         <h3>BUSINESS PHONE NUMBER UPDATE</h3>
         <ul style={{ marginLeft: '25px' }}>
-          <li style={{ marginBottom: '6px' }}>This is your business phone number on file with CIBC.</li>
+          <li style={{ marginBottom: '6px' }}>This is your business phone number on file with ZippyX.</li>
           <li style={{ marginBottom: '6px' }}>
-            CIBC will use this phone number to contact you or send you alerts.
+            ZippyX will use this phone number to contact you or send you alerts.
           </li>
           <li style={{ marginBottom: '6px' }}>
-            Phone numbers with extension cannot be used to recieve CIBC alerts.
+            Phone numbers with extension cannot be used to recieve ZippyX alerts.
           </li>
         </ul>
         <Row

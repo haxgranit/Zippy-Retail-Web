@@ -78,7 +78,7 @@ export default function StopPayments() {
               notice that the payment was prcessed and then returned.
             </li>
             <li>
-              If you would like to stop a CIBC payment, you can call Telephone
+              If you would like to stop a ZippyX payment, you can call Telephone
               Banking at 1-800-465-2422
             </li>
           </ul>
@@ -249,7 +249,7 @@ export default function StopPayments() {
                   <h4>Stop Payment Terms and Conditions</h4>
                   <p>
                     (Not applicable to stop payments on pre-authorized payments
-                    set up using CIBC Advantage Debit Card
+                    set up using ZippyX Advantage Debit Card
                     <sup>TM1</sup>
                     details
                     <sup>1</sup>
@@ -257,7 +257,7 @@ export default function StopPayments() {
                   </p>
                   <ul>
                     <li>
-                      CIBC will attempt to stop payment of the cheque or
+                      ZippyX will attempt to stop payment of the cheque or
                       pre-authorized debit described below(&quot;item&quot;) and will
                       require a reasonable period to process your stop payment
                       order (&quot;order&quot;).
@@ -350,22 +350,22 @@ export default function StopPayments() {
               Full details on a pre-authorized payment are Payee and Amount.
             </p>
             <p>
-              This fee doesn&apos;t apply to CIBC Smart
+              This fee doesn&apos;t apply to ZippyX Smart
               <sup>TM</sup>
               Plus Accounts or Wood Gundy Asset Advantage Accounts.
             </p>
             <p>
               <sup>1</sup>
               For stop payments on pre-authorized debits or recurring payments
-              set up with CIBC Advantage Debit Card details, contact the
+              set up with ZippyX Advantage Debit Card details, contact the
               merchant, biller or payee directly and tell them to stop charging
-              your account through your CIBC Advantage Debit Card. If they
-              don&apos;t stop, CIBC may be able to work with Visa* to request a
+              your account through your ZippyX Advantage Debit Card. If they
+              don&apos;t stop, ZippyX may be able to work with Visa* to request a
               refund for you.
             </p>
             <p>
               <sup>TM 1</sup>
-              Trandemark of CIBC.
+              Trandemark of ZippyX.
             </p>
             <p>
               <sup>*</sup>

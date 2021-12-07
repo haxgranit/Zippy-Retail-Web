@@ -80,7 +80,7 @@ Array [
       <p
         className="mt-3"
       >
-        CIBC will use this new email address to communicate with you for many reasons including sending you promotional materials, eStatements, alerts, Interac e-Transfer messages and one-time verification codes. Choose an email address provided by a corporation or educational institution; for account security, CIBC doesn't send one-time verification codes to personal or free email services.
+        ZippyX will use this new email address to communicate with you for many reasons including sending you promotional materials, eStatements, alerts, Interac e-Transfer messages and one-time verification codes. Choose an email address provided by a corporation or educational institution; for account security, ZippyX doesn't send one-time verification codes to personal or free email services.
       </p>
       <p>
         All fields are mandatory unless indicated (optional).
@@ -195,7 +195,7 @@ Array [
               }
             }
           >
-            CIBC will use this new email address to communicate with you for many reasons including sending you promotional materials, eBills, alerts and Interac e-Transfer messages.
+            ZippyX will use this new email address to communicate with you for many reasons including sending you promotional materials, eBills, alerts and Interac e-Transfer messages.
           </p>
         </div>
       </div>

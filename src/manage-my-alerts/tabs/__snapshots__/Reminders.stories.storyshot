@@ -204,7 +204,7 @@ Array [
           className="form-check-label"
           title=""
         >
-          There are new documents available in your CIBC Dgital Vault
+          There are new documents available in your ZippyX Dgital Vault
         </label>
       </div>
       <i />
@@ -324,7 +324,7 @@ Array [
           In the case of credit cards, your alerts status will always be active.
         </li>
         <li>
-          CIBC Alerts Terms and Conditions are now a part of the
+          ZippyX Alerts Terms and Conditions are now a part of the
           <a
             className="text-black"
             href="/"

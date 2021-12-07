@@ -13,9 +13,11 @@ describe('Manage Alert Component', () => {
     const initialStateForshowEditHomeModal = false;
     const initialStateForshowEditBusinessPhone = false;
     const initialStateForShowEditMobilePhone = false;
+    const initialStateForShowEditEmailAccount = false;
     React.useState = jest.fn()
       .mockReturnValueOnce([initialStateForshowEditHomeModal, {}])
       .mockReturnValueOnce([initialStateForshowEditBusinessPhone, {}])
+      .mockReturnValueOnce([initialStateForShowEditEmailAccount, {}])
       .mockImplementationOnce((x) => [x, initialStateForShowEditMobilePhone]);
     const wrapper = shallow(<ManageMyAlerts />);
     expect(wrapper.find(EditHomePhone).prop('show')).toBe(false);
@@ -25,10 +27,12 @@ describe('Manage Alert Component', () => {
     const setShowEditHomeModal = jest.fn();
     const setShowEditBusinessPhone = jest.fn();
     const setShowEditMobilePhone = jest.fn();
+    const setShowEditEmailAccount = jest.fn();
     React.useState = jest
       .fn()
       .mockImplementationOnce((x) => [x, setShowEditHomeModal])
       .mockImplementationOnce((x) => [x, setShowEditBusinessPhone])
+      .mockImplementationOnce((x) => [x, setShowEditEmailAccount])
       .mockImplementationOnce((x) => [x, setShowEditMobilePhone]);
     const wrapper = shallow(<ManageMyAlerts />);
     wrapper.find('Button[variant="link"]').at(2).simulate('click');
@@ -38,10 +42,12 @@ describe('Manage Alert Component', () => {
     const setShowEditHomeModal = jest.fn();
     const setShowEditBusinessPhone = jest.fn();
     const setShowEditMobilePhone = jest.fn();
+    const setShowEditEmailAccount = jest.fn();
     React.useState = jest
       .fn()
       .mockImplementationOnce((x) => [x, setShowEditHomeModal])
       .mockImplementationOnce((x) => [x, setShowEditBusinessPhone])
+      .mockImplementationOnce((x) => [x, setShowEditEmailAccount])
       .mockImplementationOnce((x) => [x, setShowEditMobilePhone]);
     const wrapper = shallow(<ManageMyAlerts />);
     wrapper.find('Button[variant="link"]').at(3).simulate('click');

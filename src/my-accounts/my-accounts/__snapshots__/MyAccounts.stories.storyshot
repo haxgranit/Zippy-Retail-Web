@@ -246,7 +246,7 @@ Array [
               }
             }
           >
-            Get up to $300 back with CIBC Global Money Transfer. 
+            Get up to $300 back with ZippyX Global Money Transfer. 
           </a>
         </div>
         <div
@@ -436,7 +436,7 @@ Array [
           }
         >
           <p>
-            You don't have any non-registered investments with CIBC
+            You don't have any non-registered investments with ZippyX
           </p>
           <a
             href="/"
@@ -447,7 +447,7 @@ Array [
               }
             }
           >
-            Kick-start your investing with CIBC Investor's Edge
+            Kick-start your investing with ZippyX Investor's Edge
              &gt; 
           </a>
         </div>
@@ -583,7 +583,7 @@ Array [
               }
             }
           >
-            Join and get up to $1,200 in value with the CIBC Aventura Visa Infinite Card Conditions apply.
+            Join and get up to $1,200 in value with the ZippyX Aventura Visa Infinite Card Conditions apply.
              &gt; 
           </a>
         </div>
@@ -765,7 +765,7 @@ Array [
                 }
               }
             >
-              Your CIBC Financial HealthCheck goal is to manage your money better
+              Your ZippyX Financial HealthCheck goal is to manage your money better
             </p>
             <span
               style={
@@ -823,7 +823,7 @@ Array [
               Save up to 10 cents per litre on gas(1)
             </p>
             <p>
-              Link and use your CIBC card with Journie Rewards to save on gas at participating Pioneer, Fas Gas, Ultramar and Chevron gas stations.(2)
+              Link and use your ZippyX card with Journie Rewards to save on gas at participating Pioneer, Fas Gas, Ultramar and Chevron gas stations.(2)
             </p>
             <a
               href="/"
@@ -857,7 +857,7 @@ Array [
               }
             }
           >
-            CIBC is a member of Canada Deposit Insurance Corporation (CDIC)
+            ZippyX is a member of Canada Deposit Insurance Corporation (CDIC)
           </p>
           <button
             className="d-flex align-items-center btn btn-primary"
@@ -931,7 +931,7 @@ Array [
               }
             }
           >
-            "My Accounts" includes the online accounts you hold with CIBC and its affilliates. For help, please contact the CIBC Online Banking support line at 1-888-872-2422
+            "My Accounts" includes the online accounts you hold with ZippyX and its affilliates. For help, please contact the ZippyX Online Banking support line at 1-888-872-2422
           </p>
         </div>
         <div
@@ -1345,7 +1345,7 @@ Array [
                 }
               }
             >
-              Go to CIBC Rewards
+              Go to ZippyX Rewards
               <span
                 style={
                   Object {
@@ -1493,7 +1493,7 @@ Array [
                 }
               }
             >
-              Make sure you're protected. Consider CIBC Travel Medical Insurancce
+              Make sure you're protected. Consider ZippyX Travel Medical Insurancce
             </p>
             <a
               href="/"

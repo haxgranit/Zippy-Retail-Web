@@ -155,7 +155,7 @@ export default function StatementPreferences() {
             </li>
             <li style={{ listStyle: 'none' }}>
               <i />
-              CIBC Securities Inc. and PPS Consent
+              ZippyX Securities Inc. and PPS Consent
               to Electronic Delivery (November 2014) (PDF, 47 KB)
             </li>
           </ul>

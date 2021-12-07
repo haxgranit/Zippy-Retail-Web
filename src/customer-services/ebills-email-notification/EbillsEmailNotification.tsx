@@ -14,7 +14,7 @@ export default function EbillsEmailNotification() {
         <p>
           In partnership with epost from Canada Post, you can receive, view and
           pay bills from participating companies in personal inbox accessible
-          through CIBC Banking.
+          through ZippyX Banking.
         </p>
         <p>
           When you access the eBills service, your customer, bill and payment
@@ -22,7 +22,7 @@ export default function EbillsEmailNotification() {
         </p>
         <p>
           To register for eBills, you must have a valid home phone number or
-          business phone numberr on file with CIBC. Please make sure your
+          business phone numberr on file with ZippyX. Please make sure your
           profile is up to date with this information before you continue
         </p>
       </div>

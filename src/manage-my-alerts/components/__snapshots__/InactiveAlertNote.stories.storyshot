@@ -50,7 +50,7 @@ exports[`Storyshots manage-my-alerts/components/InactiveAlertNote Default 1`] = 
         In the case of credit cards, your alerts status will always be active.
       </li>
       <li>
-        CIBC Alerts Terms and Conditions are now a part of the
+        ZippyX Alerts Terms and Conditions are now a part of the
         <a
           className="text-black"
           href="/"

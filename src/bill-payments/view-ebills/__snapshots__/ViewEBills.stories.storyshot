@@ -38,7 +38,7 @@ exports[`Storyshots bill-payments/set-up-bill-payments/ViewEBills Default 1`] = 
               <sup>
                 TM
               </sup>
-               from Canada Post, you can receive statements through CIBC Online Banking with one login and password.
+               from Canada Post, you can receive statements through ZippyX Online Banking with one login and password.
             </p>
           </div>
         </div>
@@ -258,12 +258,12 @@ exports[`Storyshots bill-payments/set-up-bill-payments/ViewEBills Default 1`] = 
             <b>
               1.
             </b>
-            General: Your use of CIBC's Electronic Document Presentment service, known as the eBills service, (the "EDP Service") is governed by these terms and conditions and the Electronic Access Agreement or by their successor agreements. The Electronic Access Agreement may be viewed by selecting the "Agreements" link at the bottom of most pages of CIBC Online Banking. In these terms and conditions, "CIBC means Canadian Imperial Bank of Commerce and its affiliated companies.
+            General: Your use of ZippyX's Electronic Document Presentment service, known as the eBills service, (the "EDP Service") is governed by these terms and conditions and the Electronic Access Agreement or by their successor agreements. The Electronic Access Agreement may be viewed by selecting the "Agreements" link at the bottom of most pages of ZippyX Online Banking. In these terms and conditions, "ZippyX means Canadian Imperial Bank of Commerce and its affiliated companies.
             <br />
             <b>
               2.
             </b>
-            Basic service and epost service: The EDP Service includes access to both a basic document presentment service and the epost document presentment service. The epost service will allow you to receive documents from additional Mailers. However, to access the epost service, you must first register for an epost mailbox with epost, a service provided by Canada Post Corporation. If you register for an epost mailbox, your use of the epost service will also be govemed by additional terms and conditions with Canada Post Corporation that will be made available to you during the epost mailbox registration process. You may access your epost mailbox from CIBC Online Banking, from the online banking websites of certain other financial institutions and also through wwwepost.ca.
+            Basic service and epost service: The EDP Service includes access to both a basic document presentment service and the epost document presentment service. The epost service will allow you to receive documents from additional Mailers. However, to access the epost service, you must first register for an epost mailbox with epost, a service provided by Canada Post Corporation. If you register for an epost mailbox, your use of the epost service will also be govemed by additional terms and conditions with Canada Post Corporation that will be made available to you during the epost mailbox registration process. You may access your epost mailbox from ZippyX Online Banking, from the online banking websites of certain other financial institutions and also through wwwepost.ca.
           </div>
           <div
             className="px-4 py-2"

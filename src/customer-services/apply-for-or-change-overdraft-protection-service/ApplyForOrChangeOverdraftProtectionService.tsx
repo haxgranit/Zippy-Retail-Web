@@ -5,7 +5,7 @@ import {
   Button,
 } from 'react-bootstrap';
 
-export default function ApplyForOrChangeCibcOverdraftProtectionService() {
+export default function ApplyForOrChangeOverdraftProtectionService() {
   return (
     <>
       <div style={{ padding: 10, backgroundColor: '#F2F3F2' }}>

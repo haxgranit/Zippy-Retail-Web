@@ -12,6 +12,7 @@ import {
 } from 'react-bootstrap';
 import CommonHeader from '../common/CommonHeader';
 import EditBusinessPhone from './edit-business-phone/EditBusinessPhone';
+import EditEmailAccount from './edit-email-account/EditEmailAccount';
 import EditHomePhone from './edit-home-phone/EditHomePhone';
 import EditMobilePhone from './edit-mobile-phone/EditMobilePhone';
 import Reminders from './tabs/Reminders';
@@ -21,6 +22,7 @@ export default function ManageMyAlerts() {
   const [showEditHomeModal, setShowEditHomeModal] = useState(false);
   const [showEditBusinessPhone, setShowEditBusinessPhone] = useState(false);
   const [showEditMobilePhone, setShowEditMobilePhone] = useState(false);
+  const [showEditEmailAccount, setShowEditEmailAccount] = useState(false);
 
   const closeEditHomeModal = () => {
     setShowEditHomeModal(false);
@@ -65,13 +67,18 @@ export default function ManageMyAlerts() {
         handleCancel={closeEditMobilePhone}
         handleNext={handleSave}
       />
+      <EditEmailAccount
+        show={showEditEmailAccount}
+        handleCancel={() => setShowEditEmailAccount(false)}
+        handleSave={() => {}}
+      />
       <CommonHeader title="MANAGE MY ALERTS" print />
       <Row className="mt-3">
         <Col md={8}>
           <ul>
             <li>
-              Alerts are notifictions that CIBC sends to keep you informed of
-              transactions and monitor your CIBC accounts.
+              Alerts are notifictions that ZippyX sends to keep you informed of
+              transactions and monitor your ZippyX accounts.
             </li>
             <li>
               Most alerts are sent automatically to My Messages by default and
@@ -83,8 +90,8 @@ export default function ManageMyAlerts() {
             </li>
             <li>
               Push Notifications are personalized alerts sent directly to your
-              mobile device that can help you stay on top of your CIBC accounts.
-              If you sign into CIBC Mobile Banking from a mobile device other
+              mobile device that can help you stay on top of your ZippyX accounts.
+              If you sign into ZippyX Mobile Banking from a mobile device other
               than your own, Your alerts may be sent to that device until
               another user signs in to the application.
             </li>
@@ -356,7 +363,7 @@ export default function ManageMyAlerts() {
                       always be active.
                     </li>
                     <li>
-                      CIBC Alerts Terms and Conditions are now a part of the
+                      ZippyX Alerts Terms and Conditions are now a part of the
                       <a href="/" className="text-black">
                         Electronic Access Agreement
                       </a>
@@ -408,7 +415,7 @@ export default function ManageMyAlerts() {
                   <div style={{ fontWeight: 'bold' }}>Email</div>
                   <div style={{ color: 'grey' }}>dtough@hotmail.com</div>
                 </div>
-                <Button variant="link" className="text-black">
+                <Button variant="link" className="text-black" onClick={() => setShowEditEmailAccount(true)}>
                   Edit
                 </Button>
               </div>
@@ -501,7 +508,7 @@ export default function ManageMyAlerts() {
                   fontSize: 15,
                 }}
               >
-                Apply for a CIBC Credit Card today
+                Apply for a ZippyX Credit Card today
                 <span style={{ color: 'rgb(220, 53, 69)', marginLeft: 5 }}>
                   {'>'}
                 </span>
