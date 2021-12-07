@@ -22,21 +22,33 @@ export default function ManageMyAlerts() {
   const [showEditBusinessPhone, setShowEditBusinessPhone] = useState(false);
   const [showEditMobilePhone, setShowEditMobilePhone] = useState(false);
 
+  const toggleEditHomeModal = (flag: any) => {
+    setShowEditHomeModal(flag);
+  };
+
+  const toggleEditBusinessPhone = (flag: any) => {
+    setShowEditBusinessPhone(flag);
+  };
+
+  const toggleEditMobilePhone = (flag: any) => {
+    setShowEditMobilePhone(flag);
+  };
+
   return (
     <>
       <EditHomePhone
         show={showEditHomeModal}
-        handleCancel={() => setShowEditHomeModal(false)}
+        handleCancel={() => toggleEditHomeModal(false)}
         handleSave={() => {}}
       />
       <EditBusinessPhone
         show={showEditBusinessPhone}
-        handleCancel={() => setShowEditBusinessPhone(false)}
+        handleCancel={() => toggleEditBusinessPhone(false)}
         handleSave={() => {}}
       />
       <EditMobilePhone
         show={showEditMobilePhone}
-        handleCancel={() => setShowEditMobilePhone(false)}
+        handleCancel={() => toggleEditMobilePhone(false)}
         handleNext={() => {}}
       />
       <CommonHeader title="MANAGE MY ALERTS" print />
@@ -398,7 +410,11 @@ export default function ManageMyAlerts() {
                   <div style={{ fontWeight: 'bold' }}>SMS mobile phone</div>
                   <div style={{ color: 'grey' }}>410-553-1372</div>
                 </div>
-                <Button variant="link" className="text-black" onClick={() => setShowEditMobilePhone(true)}>
+                <Button
+                  variant="link"
+                  className="text-black"
+                  onClick={() => toggleEditMobilePhone(true)}
+                >
                   Edit
                 </Button>
               </div>
@@ -414,7 +430,11 @@ export default function ManageMyAlerts() {
                   <div style={{ fontWeight: 'bold' }}>Home Phone</div>
                   <div style={{ color: 'grey' }}>410-553-1372</div>
                 </div>
-                <Button variant="link" className="text-black" onClick={() => setShowEditHomeModal(true)}>
+                <Button
+                  variant="link"
+                  className="text-black"
+                  onClick={() => toggleEditHomeModal(true)}
+                >
                   Edit
                 </Button>
               </div>
@@ -425,7 +445,11 @@ export default function ManageMyAlerts() {
                 <div>
                   <div style={{ fontWeight: 'bold' }}>Business Phone</div>
                 </div>
-                <Button variant="link" className="text-black" onClick={() => setShowEditBusinessPhone(true)}>
+                <Button
+                  variant="link"
+                  className="text-black"
+                  onClick={() => toggleEditBusinessPhone(true)}
+                >
                   Edit
                 </Button>
               </div>
