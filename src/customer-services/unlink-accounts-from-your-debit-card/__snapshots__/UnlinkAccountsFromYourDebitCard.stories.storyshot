@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots customer-services/unlink-accounts-from-your-cibc-debit-card/UnlinkAccountsFromYourCibcDebitCard Default 1`] = `
+exports[`Storyshots customer-services/unlink-accounts-from-your-debit-card/UnlinkAccountsFromYourDebitCard Default 1`] = `
 <div>
   <div
     className="row"
@@ -114,7 +114,7 @@ exports[`Storyshots customer-services/unlink-accounts-from-your-cibc-debit-card/
           </p>
           <ul>
             <li>
-              You may not able to access the unlinked account or perfom certain atlas (e.g., transfer funds) through CIBC Online Banking®, Mobile Banking, Telephone Banking or at bank machines.
+              You may not able to access the unlinked account or perfom certain atlas (e.g., transfer funds) through ZippyX Online Banking®, Mobile Banking, Telephone Banking or at bank machines.
             </li>
             <li>
               You will not be able to use the account for interac® point of sale transactions.
@@ -125,7 +125,7 @@ exports[`Storyshots customer-services/unlink-accounts-from-your-cibc-debit-card/
           </p>
           <ul>
             <li>
-              You will not be able to transfer funds between your credit card and bank account(s) through CIBC Online Banking, Mobile Banking, Telephone Banking, or at bank machines.
+              You will not be able to transfer funds between your credit card and bank account(s) through ZippyX Online Banking, Mobile Banking, Telephone Banking, or at bank machines.
             </li>
             <li>
               You will not be able to access your credit card at bank machines when using your debit card.
@@ -141,7 +141,7 @@ exports[`Storyshots customer-services/unlink-accounts-from-your-cibc-debit-card/
               }
             }
           >
-            Accounts currently linked to CIBC debit card 4506 4457 3443 3434
+            Accounts currently linked to ZippyX debit card 4506 4457 3443 3434
           </p>
         </div>
       </div>

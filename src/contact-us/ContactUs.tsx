@@ -71,7 +71,7 @@ export default function ContactUs(): JSX.Element {
                 </div>
               </Col>
               <Col md={10}>
-                CIBC&apos;s Virtual Assistant is available 24/7 to answer your questions
+                ZippyX&apos;s Virtual Assistant is available 24/7 to answer your questions
                 about everyday banking and is able to perfom banking transactions
                 on your behalf.
               </Col>
@@ -114,7 +114,7 @@ export default function ContactUs(): JSX.Element {
             </Col>
             <Col md={12}>
               <p>
-                More than 1,100 CIBC banking Centres and 3,500 bank machines across Canada
+                More than 1,100 ZippyX banking Centres and 3,500 bank machines across Canada
                 offer the banking services you need
               </p>
             </Col>

@@ -12,7 +12,7 @@ export default function ChangeYourPassword() {
       <CommonHeader title="CHANGE YOUR PASSWORD" print />
       <div>
         <p>
-          Create a password to use when you sign on to CIBC Online and Mobile
+          Create a password to use when you sign on to ZippyX Online and Mobile
           Banking.
         </p>
         <Row className="mt-3">

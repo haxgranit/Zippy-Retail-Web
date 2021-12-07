@@ -103,18 +103,18 @@ export default function RequestACreditCardBalanceTransfer() {
             <Row>
               <Col md="12">
                 <Form.Select id="transfer_from">
-                  <option> - Non-CIBC card account - </option>
+                  <option> - Non-ZippyX card account - </option>
                 </Form.Select>
               </Col>
             </Row>
           </Col>
           <Col md={6}>
-            <Form.Label htmlFor="non_cibc_card_number">
-              Non-CIBC card number
+            <Form.Label htmlFor="non_zippyx_card_number">
+              Non-ZippyX card number
             </Form.Label>
             <FormControl
-              id="non_cibc_card_number"
-              aria-describedby="non_cibc_card_number"
+              id="non_zippyx_card_number"
+              aria-describedby="non_zippyx_card_number"
             />
           </Col>
         </Row>

@@ -275,7 +275,7 @@ Array [
           >
             <a
               className="text-decoration-none text-black"
-              href="/unlink-accounts-from-your-cibc-debit-card"
+              href="/unlink-accounts-from-your-debit-card"
               onClick={[Function]}
               style={
                 Object {
@@ -285,7 +285,7 @@ Array [
                 }
               }
             >
-              Unlink accounts from your CIBC debit card
+              Unlink accounts from your ZippyX debit card
               <span
                 style={
                   Object {
@@ -709,7 +709,7 @@ Array [
           >
             <a
               className="text-decoration-none text-black"
-              href="/apply-for-or-change-cibc-overdraft-protection-service"
+              href="/apply-for-or-change-overdraft-protection-service"
               onClick={[Function]}
               style={
                 Object {
@@ -719,7 +719,7 @@ Array [
                 }
               }
             >
-              Apply for or change CIBC Overdraft Protection Service
+              Apply for or change ZippyX Overdraft Protection Service
               <span
                 style={
                   Object {
@@ -1125,7 +1125,7 @@ Array [
           >
             <a
               className="text-decoration-none text-black"
-              href="/apply-for-cibc-payment-protector-insurance-for-credit-cards"
+              href="/apply-for-payment-protector-insurance-for-credit-cards"
               onClick={[Function]}
               style={
                 Object {
@@ -1135,7 +1135,7 @@ Array [
                 }
               }
             >
-              Apply for CIBC Payment Protector Insurance for Credit Cards
+              Apply for ZippyX Payment Protector Insurance for Credit Cards
               <span
                 style={
                   Object {
@@ -1712,7 +1712,7 @@ Array [
                 }
               }
             >
-              How do I find statements and tax slips for my other CIBC accounts?
+              How do I find statements and tax slips for my other ZippyX accounts?
               <span
                 style={
                   Object {
@@ -1738,7 +1738,7 @@ Array [
                 }
               }
             >
-              What happens when I link an account to my debit card or CIBC Credit Card?
+              What happens when I link an account to my debit card or ZippyX Credit Card?
               <span
                 style={
                   Object {
@@ -1790,7 +1790,7 @@ Array [
                 }
               }
             >
-              How do I link another CIBC account to my CIBC debit card?
+              How do I link another ZippyX account to my ZippyX debit card?
               <span
                 style={
                   Object {

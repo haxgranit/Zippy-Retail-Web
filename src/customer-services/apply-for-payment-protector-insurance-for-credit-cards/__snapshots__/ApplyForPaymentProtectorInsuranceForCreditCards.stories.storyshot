@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots customer-services/apply-for-cibc-payment-protector-insurance-for-credit-cards/ApplyForCibcPaymentProtectorInsuranceForCreditCards Default 1`] = `
+exports[`Storyshots customer-services/apply-for-payment-protector-insurance-for-credit-cards/ApplyForPaymentProtectorInsuranceForCreditCards Default 1`] = `
 <div>
   <div
     className="row"
@@ -18,7 +18,7 @@ exports[`Storyshots customer-services/apply-for-cibc-payment-protector-insurance
             className="border-top border-2 border-danger"
           />
           <h1>
-            CIBC
+            ZippyX
             <i />
           </h1>
         </div>
@@ -39,7 +39,7 @@ exports[`Storyshots customer-services/apply-for-cibc-payment-protector-insurance
                 }
               }
             >
-              Apply for CIBC Payment Protector
+              Apply for ZippyX Payment Protector
               <sup>
                 TM
               </sup>
@@ -263,7 +263,7 @@ exports[`Storyshots customer-services/apply-for-cibc-payment-protector-insurance
           <b>
             Primary Cardholder Coverage Plan 
           </b>
-          of CIBC Payment Protector Insurance for the credit card selected above. Monthly cost is $0.99 per $100 of the amount owing on the insured credit card on its statement date, plus applicable taxes.
+          of ZippyX Payment Protector Insurance for the credit card selected above. Monthly cost is $0.99 per $100 of the amount owing on the insured credit card on its statement date, plus applicable taxes.
         </div>
       </div>
       <div
@@ -298,7 +298,7 @@ exports[`Storyshots customer-services/apply-for-cibc-payment-protector-insurance
               className="text-end my-2 col"
             >
               <i />
-              CIBC Payment Protector Terms and Conditions (PDF, 1355KB)
+              ZippyX Payment Protector Terms and Conditions (PDF, 1355KB)
             </div>
           </div>
           <div
@@ -325,7 +325,7 @@ exports[`Storyshots customer-services/apply-for-cibc-payment-protector-insurance
                   }
                 }
               >
-                Purchasing this insurance is optional, and is not required to obtain any CIBC product or service.
+                Purchasing this insurance is optional, and is not required to obtain any ZippyX product or service.
                 <br />
                 <br />
                 Individual circumstances may vary. You may wish to contact the licensed insurer's representative, or a licensed insurance agent if you need advice about your insurance needs.

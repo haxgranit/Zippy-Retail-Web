@@ -65,7 +65,7 @@ export default function MortgagePrepayment() {
             </li>
             <li>
               All fields are required unless stated as optional. If you need
-              help, contact CIBC Mortgage at 1-888-264-6843 or
+              help, contact ZippyX Mortgage at 1-888-264-6843 or
               {' '}
               <span style={{ textDecoration: 'underline' }}>write to us</span>
               .

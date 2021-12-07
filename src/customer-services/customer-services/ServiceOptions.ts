@@ -25,8 +25,8 @@ export const PERSONAL_INFORMATION_OPTIONS = [
   },
   {
     key: 5,
-    to: 'unlink-accounts-from-your-cibc-debit-card',
-    title: 'Unlink accounts from your CIBC debit card',
+    to: 'unlink-accounts-from-your-debit-card',
+    title: 'Unlink accounts from your ZippyX debit card',
     is_new: false,
   },
   {
@@ -85,8 +85,8 @@ export const BANK_ACCOUNT_OPTIONS = [
   },
   {
     key: 3,
-    to: 'apply-for-or-change-cibc-overdraft-protection-service',
-    title: 'Apply for or change CIBC Overdraft Protection Service',
+    to: 'apply-for-or-change-overdraft-protection-service',
+    title: 'Apply for or change ZippyX Overdraft Protection Service',
     is_new: false,
   },
   {
@@ -142,8 +142,8 @@ export const CREDIT_CARD_OPTIONS = [
   },
   {
     key: 4,
-    to: 'apply-for-cibc-payment-protector-insurance-for-credit-cards',
-    title: 'Apply for CIBC Payment Protector Insurance for Credit Cards',
+    to: 'apply-for-payment-protector-insurance-for-credit-cards',
+    title: 'Apply for ZippyX Payment Protector Insurance for Credit Cards',
     is_new: false,
   },
   {
@@ -220,11 +220,11 @@ export const INVESTMENT_OPTIONS = [
 export const FREQUENT_QUESTIONS = [
   {
     key: 1,
-    title: 'How do I find statements and tax slips for my other CIBC accounts?',
+    title: 'How do I find statements and tax slips for my other ZippyX accounts?',
   },
   {
     key: 2,
-    title: 'What happens when I link an account to my debit card or CIBC Credit Card?',
+    title: 'What happens when I link an account to my debit card or ZippyX Credit Card?',
   },
   {
     key: 3,
@@ -232,7 +232,7 @@ export const FREQUENT_QUESTIONS = [
   },
   {
     key: 4,
-    title: 'How do I link another CIBC account to my CIBC debit card?',
+    title: 'How do I link another ZippyX account to my ZippyX debit card?',
   },
   {
     key: 5,

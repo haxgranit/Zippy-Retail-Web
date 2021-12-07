@@ -81,7 +81,7 @@ export default function ChangeYourTaxResidency() {
         correct and complete.
       </p>
       <p>
-        If any of this information changes, I will provide CIBC with the updated
+        If any of this information changes, I will provide ZippyX with the updated
         information within 30 days.
       </p>
       <p>
