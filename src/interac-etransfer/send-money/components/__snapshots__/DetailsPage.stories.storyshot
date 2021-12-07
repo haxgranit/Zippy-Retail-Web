@@ -51,7 +51,7 @@ Array [
       className="col-md-8"
     >
       <select
-        className="form-select"
+        className="send-account-select form-select"
         onChange={[Function]}
       >
         <option
@@ -145,7 +145,7 @@ Array [
       className="col-md-8"
     >
       <select
-        className="form-select"
+        className="from-account-info form-select"
         onChange={[Function]}
       >
         <option>
@@ -178,7 +178,7 @@ Array [
       className="col-md-8"
     >
       <select
-        className="form-select"
+        className="transfer-method form-select"
         onChange={[Function]}
       >
         <option>

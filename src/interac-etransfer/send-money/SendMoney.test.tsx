@@ -28,4 +28,18 @@ describe('SendMoney Component', () => {
     buttons.at(1).simulate('click');
     modalWrapper.find('Button[variant="link"]').simulate('click');
   });
+
+  it('change user account and click buttons', () => {
+    const wrapper = shallow(<SendMoney />);
+    const detailsPage = wrapper.find('DetailsPage');
+    const detailsWrapper = detailsPage.dive();
+    const accountSelect = detailsWrapper.find('.send-account-select');
+    accountSelect.simulate('change', { target: { value: 2 } });
+    const modal = wrapper.find('SendMoneyVerificationModal');
+    const modalWrapper = modal.dive().childAt(0);
+    const buttons = modalWrapper.find('button');
+    buttons.at(0).simulate('click');
+    buttons.at(1).simulate('click');
+    modalWrapper.find('Button[variant="link"]').simulate('click');
+  });
 });
