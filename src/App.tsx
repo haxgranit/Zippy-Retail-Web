@@ -70,6 +70,8 @@ import ChangeMortgagePaymentAmount from './customer-services/change-mortgage-pay
 import UnlinkAccountsFromYourCibcDebitCard from './customer-services/unlink-accounts-from-your-cibc-debit-card/UnlinkAccountsFromYourCibcDebitCard';
 import DigitalVaultDocuments from './customer-services/digital-vault-documents/DigitalVaultDocuments';
 import ContributeToTfsa from './customer-services/contribute-to-a-tfsa/ContributeToATfsa';
+import RequestSent from './interac-etransfer/status/request-sent/RequestSent';
+import RequestReminder from './interac-etransfer/status/request-reminder/RequestReminder';
 
 export default function App() {
   const isAuthenticated = useIsAuthenticated();
@@ -147,6 +149,8 @@ export default function App() {
             <Route path="autodeposit-settings" element={<AutodepositSettings />} />
             <Route path="receive-money" element={<ReceiveMoney />} />
             <Route path="learn-more" element={<LearnMore />} />
+            <Route path="request-sent" element={<RequestSent />} />
+            <Route path="request-reminder" element={<RequestReminder />} />
           </Route>
           <Route path="manage-my-alerts" element={<ManageMyAlerts />} />
           <Route path="my-accounts">
