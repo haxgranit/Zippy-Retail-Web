@@ -126,7 +126,7 @@ Array [
       id="status-tab-tabpane-sent"
     >
       <select
-        className="form-select"
+        className="month-select-comp form-select"
         style={
           Object {
             "maxWidth": 300,
@@ -356,7 +356,7 @@ Array [
       id="status-tab-tabpane-received"
     >
       <select
-        className="form-select"
+        className="month-select-comp form-select"
         style={
           Object {
             "maxWidth": 300,
@@ -559,7 +559,7 @@ Array [
       id="status-tab-tabpane-requested"
     >
       <select
-        className="form-select"
+        className="month-select-comp form-select"
         style={
           Object {
             "maxWidth": 300,

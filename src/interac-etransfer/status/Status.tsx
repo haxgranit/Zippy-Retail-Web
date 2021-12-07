@@ -1,73 +1,15 @@
 import {
   Tabs,
   Tab,
-  Form,
   Table,
   Button,
   Row,
   Col,
 } from 'react-bootstrap';
 import CommonHeader from '../../common/CommonHeader';
-
-const MONTH_NAMES = [
-  'January',
-  'February',
-  'March',
-  'April',
-  'May',
-  'June',
-  'July',
-  'August',
-  'September',
-  'October',
-  'November',
-  'December',
-];
-
-const getDateAry = () => {
-  const dateVal = new Date();
-  const year = dateVal.getFullYear();
-  const prevYear = year * 1 - 1;
-  const currMonth = dateVal.getMonth();
-  const result: any = [{
-    label: year,
-    items: [],
-  }, {
-    label: prevYear,
-    items: [],
-  }];
-
-  for (let i = 0; i < 12; i += 1) {
-    let dateStr = '';
-    if (currMonth - i < 0) {
-      dateStr = `${MONTH_NAMES[currMonth - i]} ${prevYear}`;
-      const item = {
-        value: dateStr,
-        currMonth,
-        currYear: year,
-      };
-      if (!result[0]) {
-        result[0] = [];
-      }
-      result[0].items.push(item);
-    } else {
-      dateStr = `${MONTH_NAMES[currMonth - i]} ${year}`;
-      const item = {
-        value: dateStr,
-        currMonth,
-        currYear: year,
-      };
-      if (!result[1]) {
-        result[1] = [];
-      }
-      result[1].items.push(item);
-    }
-  }
-  return result;
-};
+import MonthSelectComponent from '../../common/MonthSelectComponent';
 
 export default function Status() {
-  const dateAry = getDateAry();
   return (
     <>
       <CommonHeader title="STATUS" print={false} />
@@ -98,15 +40,7 @@ export default function Status() {
         className="mt-2 mb-3"
       >
         <Tab eventKey="sent" title="Sent">
-          <Form.Select style={{ maxWidth: 300 }}>
-            {dateAry.map((item: any) => (
-              <optgroup label={`${item.label}`} key={`sent_${item.label}`}>
-                {item.items.map((dateValue: any) => (
-                  <option value={dateValue.value} key={`sent_${dateValue.value}`}>{dateValue.value}</option>
-                ))}
-              </optgroup>
-            ))}
-          </Form.Select>
+          <MonthSelectComponent />
           <Table className="mt-2">
             <thead>
               <tr
@@ -191,15 +125,7 @@ export default function Status() {
           </div>
         </Tab>
         <Tab eventKey="received" title="Received">
-          <Form.Select style={{ maxWidth: 300 }}>
-            {dateAry.map((item: any) => (
-              <optgroup label={`${item.label}`} key={`received_${item.label}`}>
-                {item.items.map((dateValue: any) => (
-                  <option value={dateValue.value} key={`received_${dateValue.value}`}>{dateValue.value}</option>
-                ))}
-              </optgroup>
-            ))}
-          </Form.Select>
+          <MonthSelectComponent />
           <Table className="mt-2">
             <thead>
               <tr
@@ -267,15 +193,7 @@ export default function Status() {
           </div>
         </Tab>
         <Tab eventKey="requested" title="Requested">
-          <Form.Select style={{ maxWidth: 300 }}>
-            {dateAry.map((item: any) => (
-              <optgroup label={`${item.label}`} key={`requested_${item.label}`}>
-                {item.items.map((dateValue: any) => (
-                  <option value={dateValue.value} key={`requested_${dateValue.value}`}>{dateValue.value}</option>
-                ))}
-              </optgroup>
-            ))}
-          </Form.Select>
+          <MonthSelectComponent />
           <Table className="mt-2">
             <thead>
               <tr
