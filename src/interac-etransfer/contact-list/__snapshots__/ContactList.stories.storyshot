@@ -235,6 +235,7 @@ Array [
               <button
                 className="text-black d-flex btn btn-light"
                 disabled={false}
+                onClick={[Function]}
                 type="button"
               >
                 <div
@@ -272,6 +273,7 @@ Array [
               <button
                 className="text-black d-flex btn btn-light"
                 disabled={false}
+                onClick={[Function]}
                 type="button"
               >
                 <div
@@ -309,6 +311,7 @@ Array [
               <button
                 className="text-black d-flex btn btn-light"
                 disabled={false}
+                onClick={[Function]}
                 type="button"
               >
                 <div
@@ -346,6 +349,7 @@ Array [
               <button
                 className="text-black d-flex btn btn-light"
                 disabled={false}
+                onClick={[Function]}
                 type="button"
               >
                 <div
@@ -383,6 +387,7 @@ Array [
               <button
                 className="text-black d-flex btn btn-light"
                 disabled={false}
+                onClick={[Function]}
                 type="button"
               >
                 <div
@@ -420,6 +425,7 @@ Array [
               <button
                 className="text-black d-flex btn btn-light"
                 disabled={false}
+                onClick={[Function]}
                 type="button"
               >
                 <div
@@ -457,6 +463,7 @@ Array [
               <button
                 className="text-black d-flex btn btn-light"
                 disabled={false}
+                onClick={[Function]}
                 type="button"
               >
                 <div
@@ -496,6 +503,7 @@ Array [
               <button
                 className="text-black d-flex btn btn-light"
                 disabled={false}
+                onClick={[Function]}
                 type="button"
               >
                 <div
@@ -533,6 +541,7 @@ Array [
               <button
                 className="text-black d-flex btn btn-light"
                 disabled={false}
+                onClick={[Function]}
                 type="button"
               >
                 <div
@@ -570,6 +579,7 @@ Array [
               <button
                 className="text-black d-flex btn btn-light"
                 disabled={false}
+                onClick={[Function]}
                 type="button"
               >
                 <div
@@ -607,6 +617,7 @@ Array [
               <button
                 className="text-black d-flex btn btn-light"
                 disabled={false}
+                onClick={[Function]}
                 type="button"
               >
                 <div
@@ -644,6 +655,7 @@ Array [
               <button
                 className="text-black d-flex btn btn-light"
                 disabled={false}
+                onClick={[Function]}
                 type="button"
               >
                 <div
@@ -681,6 +693,7 @@ Array [
               <button
                 className="text-black d-flex btn btn-light"
                 disabled={false}
+                onClick={[Function]}
                 type="button"
               >
                 <div
@@ -718,6 +731,7 @@ Array [
               <button
                 className="text-black d-flex btn btn-light"
                 disabled={false}
+                onClick={[Function]}
                 type="button"
               >
                 <div
@@ -755,6 +769,7 @@ Array [
               <button
                 className="text-black d-flex btn btn-light"
                 disabled={false}
+                onClick={[Function]}
                 type="button"
               >
                 <div
@@ -792,6 +807,7 @@ Array [
               <button
                 className="text-black d-flex btn btn-light"
                 disabled={false}
+                onClick={[Function]}
                 type="button"
               >
                 <div
@@ -829,6 +845,7 @@ Array [
               <button
                 className="text-black d-flex btn btn-light"
                 disabled={false}
+                onClick={[Function]}
                 type="button"
               >
                 <div
@@ -866,6 +883,7 @@ Array [
               <button
                 className="text-black d-flex btn btn-light"
                 disabled={false}
+                onClick={[Function]}
                 type="button"
               >
                 <div

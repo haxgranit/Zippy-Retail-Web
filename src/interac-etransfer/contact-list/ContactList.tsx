@@ -1,14 +1,95 @@
+/* eslint-disable react/destructuring-assignment */
 import {
   Col,
   Row,
   Card,
   Table,
   Button,
+  Modal,
 } from 'react-bootstrap';
+import { useState } from 'react';
 import CONTACTS from './Contacts';
 import CommonHeader from '../../common/CommonHeader';
 
+function RemoveContactModal(props:any) {
+  return (
+    <Modal
+      // eslint-disable-next-line react/jsx-props-no-spreading
+      {...props}
+      size="lg"
+      aria-labelledby="contained-modal-title-vcenter"
+      centered
+    >
+      <Modal.Body>
+        <h4 style={{ marginTop: 20 }}>Delete Contact - Verification</h4>
+        <p>
+          Are you sure you want to remove the contact below from your contact list?
+        </p>
+        <Row style={{ marginTop: 50, marginBottom: 20 }}>
+          <Col>
+            <span>Name:</span>
+          </Col>
+          <Col>
+            {props.selectedContact?.name}
+          </Col>
+        </Row>
+        <hr style={{
+          height: '2px',
+          borderWidth: '0px',
+          color: 'gray',
+          background: 'gray',
+        }}
+        />
+        <Row style={{ marginTop: 20, marginBottom: 20 }}>
+          <Col>
+            <span>Email Address:</span>
+          </Col>
+          <Col>
+            {props.selectedContact?.email}
+          </Col>
+        </Row>
+        <Row style={{ marginTop: 50 }}>
+          <Col style={{ padding: 0, background: 'white' }}>
+            <Button onClick={props.onHide} style={{ margin: 0, background: 'white', border: 'none' }} variant="light" className="d-flex">
+              <div
+                style={{
+                  width: 20,
+                  height: 25,
+                  border: '1px dotted grey',
+                  textAlign: 'center',
+                  marginRight: 10,
+                }}
+              >
+                P
+              </div>
+              Cancel
+            </Button>
+          </Col>
+          <Col style={{ display: 'flex', justifyContent: 'flex-end' }}>
+            <Button variant="outline-danger" onClick={props.onHide}>Close</Button>
+            <Button className="btn btn-danger" style={{ marginLeft: 15 }} onClick={props.onDeleteConfirm}>Delete</Button>
+          </Col>
+        </Row>
+      </Modal.Body>
+    </Modal>
+  );
+}
+
 export default function ContactList() {
+  const [modalShow, setModalShow] = useState(false);
+  const [contacts, setContacts] = useState(CONTACTS);
+  const [selectedContact, setSelectedContact] = useState<{ email:string }>();
+  const onDeletePressed = (contact:any) => () => {
+    setModalShow(true);
+    setSelectedContact(contact);
+  };
+  const onDeleteConfirm = () => {
+    setContacts(
+      (prevContacts) => prevContacts.filter(({ email }) => email !== selectedContact?.email),
+    );
+    setModalShow(false);
+  };
+
   return (
     <>
       <CommonHeader title="CONTACT LIST" print />
@@ -101,7 +182,7 @@ export default function ContactList() {
               </tr>
             </thead>
             <tbody style={{ borderTop: 'none' }}>
-              {CONTACTS.map((item) => (
+              {contacts.map((item) => (
                 <tr key={item.key}>
                   <td>{item.name}</td>
                   <td>{item.lang}</td>
@@ -114,7 +195,7 @@ export default function ContactList() {
                     )}
                   </td>
                   <td>
-                    <Button variant="light" className="text-black d-flex">
+                    <Button onClick={onDeletePressed(item)} variant="light" className="text-black d-flex">
                       <div
                         style={{
                           width: 20,
@@ -132,6 +213,12 @@ export default function ContactList() {
                   </td>
                 </tr>
               ))}
+              <RemoveContactModal
+                show={modalShow}
+                onHide={() => setModalShow(false)}
+                selectedContact={selectedContact}
+                onDeleteConfirm={onDeleteConfirm}
+              />
             </tbody>
           </Table>
           <div
