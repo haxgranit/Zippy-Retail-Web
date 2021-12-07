@@ -18,4 +18,14 @@ describe('SendMoney Component', () => {
     const header = wrapper.find('DetailsPage');
     expect(header).toHaveLength(1);
   });
+
+  it('click buttons on SendMoneyVerificationModal', () => {
+    const wrapper = shallow(<SendMoney />);
+    const modal = wrapper.find('SendMoneyVerificationModal');
+    const modalWrapper = modal.dive().childAt(0);
+    const buttons = modalWrapper.find('button');
+    buttons.at(0).simulate('click');
+    buttons.at(1).simulate('click');
+    modalWrapper.find('Button[variant="link"]').simulate('click');
+  });
 });
