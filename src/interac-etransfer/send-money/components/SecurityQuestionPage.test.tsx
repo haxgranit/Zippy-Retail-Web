@@ -15,6 +15,19 @@ describe('Security Question Page Component', () => {
     expect(showModal).toBeCalledTimes(1);
   });
 
+  it('Click back button on Security Question Page', () => {
+    const setRealStep = jest.fn();
+    const wrapper = shallow(
+      <SecurityQuestionPage
+        setRealStep={setRealStep}
+        setCurrentStep={jest.fn()}
+      />,
+    );
+    const mEvent = { preventDefault: jest.fn() };
+    wrapper.find('Button[variant="outline-danger"]').simulate('click', mEvent);
+    expect(setRealStep).toBeCalledTimes(1);
+  });
+
   it('change FormControl text values', () => {
     const setRealStep = jest.fn();
     const setMainInfo = jest.fn();
