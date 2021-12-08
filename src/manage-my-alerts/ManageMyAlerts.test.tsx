@@ -4,6 +4,8 @@ import React from 'react';
 import ManageMyAlerts from './ManageMyAlerts';
 import EditBusinessPhone from './edit-business-phone/EditBusinessPhone';
 import EditHomePhone from './edit-home-phone/EditHomePhone';
+import EditMobilePhone from './edit-home-phone/EditHomePhone';
+import EditEmailAccount from './edit-home-phone/EditHomePhone';
 
 // Configure enzyme for react 17
 Enzyme.configure({ adapter: new Adapter() });
@@ -22,6 +24,8 @@ describe('Manage Alert Component', () => {
     const wrapper = shallow(<ManageMyAlerts />);
     expect(wrapper.find(EditHomePhone).prop('show')).toBe(false);
     expect(wrapper.find(EditBusinessPhone).prop('show')).toBe(false);
+    expect(wrapper.find(EditMobilePhone).prop('show')).toBe(false);
+    expect(wrapper.find(EditEmailAccount).prop('show')).toBe(false);
   });
   it('Click Edit Home Phone button  ', () => {
     const setShowEditHomeModal = jest.fn();
@@ -38,7 +42,7 @@ describe('Manage Alert Component', () => {
     wrapper.find('Button[variant="link"]').at(2).simulate('click');
     expect(setShowEditHomeModal).toHaveBeenCalled();
   });
-  it('Click Edit Mobile Phone button  ', () => {
+  it('Click Edit Mobile Phone button', () => {
     const setShowEditHomeModal = jest.fn();
     const setShowEditBusinessPhone = jest.fn();
     const setShowEditMobilePhone = jest.fn();
@@ -50,8 +54,8 @@ describe('Manage Alert Component', () => {
       .mockImplementationOnce((x) => [x, setShowEditEmailAccount])
       .mockImplementationOnce((x) => [x, setShowEditMobilePhone]);
     const wrapper = shallow(<ManageMyAlerts />);
-    wrapper.find('Button[variant="link"]').at(1).simulate('click');
-    expect(setShowEditHomeModal).toHaveBeenCalled();
+    wrapper.find('Button[variant="link"]').at(0).simulate('click');
+    expect(setShowEditMobilePhone).toHaveBeenCalled();
   });
   it('Click Edit Business Phone  button ', () => {
     const setShowEditHomeModal = jest.fn();
@@ -68,7 +72,7 @@ describe('Manage Alert Component', () => {
     wrapper.find('Button[variant="link"]').at(3).simulate('click');
     expect(setShowEditBusinessPhone).toHaveBeenCalled();
   });
-  it('Click Edit Email Account  button ', () => {
+  it('Click Edit Email Account button ', () => {
     const setShowEditHomeModal = jest.fn();
     const setShowEditBusinessPhone = jest.fn();
     const setShowEditMobilePhone = jest.fn();
@@ -80,8 +84,8 @@ describe('Manage Alert Component', () => {
       .mockImplementationOnce((x) => [x, setShowEditEmailAccount])
       .mockImplementationOnce((x) => [x, setShowEditMobilePhone]);
     const wrapper = shallow(<ManageMyAlerts />);
-    wrapper.find('Button[variant="link"]').at(0).simulate('click');
-    expect(setShowEditBusinessPhone).toHaveBeenCalled();
+    wrapper.find('Button[variant="link"]').at(1).simulate('click');
+    expect(setShowEditEmailAccount).toHaveBeenCalled();
   });
 
   it('Click OK&Cancel buttons on EditHomePhone', () => {
