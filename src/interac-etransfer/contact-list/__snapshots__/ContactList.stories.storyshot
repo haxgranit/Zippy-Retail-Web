@@ -220,7 +220,12 @@ Array [
         >
           <tr>
             <td>
-              392 Jones
+              <a
+                href="/edit"
+                onClick={[Function]}
+              >
+                392 Jones
+              </a>
             </td>
             <td>
               English
@@ -259,7 +264,12 @@ Array [
           </tr>
           <tr>
             <td>
-              Auto Island Inc
+              <a
+                href="/edit"
+                onClick={[Function]}
+              >
+                Auto Island Inc
+              </a>
             </td>
             <td>
               English
@@ -298,7 +308,12 @@ Array [
           </tr>
           <tr>
             <td>
-              BITVO
+              <a
+                href="/edit"
+                onClick={[Function]}
+              >
+                BITVO
+              </a>
             </td>
             <td>
               English
@@ -337,7 +352,12 @@ Array [
           </tr>
           <tr>
             <td>
-              BITVO.COM
+              <a
+                href="/edit"
+                onClick={[Function]}
+              >
+                BITVO.COM
+              </a>
             </td>
             <td>
               English
@@ -376,7 +396,12 @@ Array [
           </tr>
           <tr>
             <td>
-              Chelsea Tough
+              <a
+                href="/edit"
+                onClick={[Function]}
+              >
+                Chelsea Tough
+              </a>
             </td>
             <td>
               English
@@ -415,7 +440,12 @@ Array [
           </tr>
           <tr>
             <td>
-              Christian
+              <a
+                href="/edit"
+                onClick={[Function]}
+              >
+                Christian
+              </a>
             </td>
             <td>
               English
@@ -454,7 +484,12 @@ Array [
           </tr>
           <tr>
             <td>
-              DnF
+              <a
+                href="/edit"
+                onClick={[Function]}
+              >
+                DnF
+              </a>
             </td>
             <td>
               English
@@ -493,7 +528,12 @@ Array [
           </tr>
           <tr>
             <td>
-              DUANE TOUGH
+              <a
+                href="/edit"
+                onClick={[Function]}
+              >
+                DUANE TOUGH
+              </a>
             </td>
             <td>
               English
@@ -534,7 +574,12 @@ Array [
           </tr>
           <tr>
             <td>
-              Gigadat
+              <a
+                href="/edit"
+                onClick={[Function]}
+              >
+                Gigadat
+              </a>
             </td>
             <td>
               English
@@ -573,7 +618,12 @@ Array [
           </tr>
           <tr>
             <td>
-              J Grundy
+              <a
+                href="/edit"
+                onClick={[Function]}
+              >
+                J Grundy
+              </a>
             </td>
             <td>
               English
@@ -612,7 +662,12 @@ Array [
           </tr>
           <tr>
             <td>
-              JJJ
+              <a
+                href="/edit"
+                onClick={[Function]}
+              >
+                JJJ
+              </a>
             </td>
             <td>
               English
@@ -651,7 +706,12 @@ Array [
           </tr>
           <tr>
             <td>
-              Jon English
+              <a
+                href="/edit"
+                onClick={[Function]}
+              >
+                Jon English
+              </a>
             </td>
             <td>
               English
@@ -690,7 +750,12 @@ Array [
           </tr>
           <tr>
             <td>
-              Karen
+              <a
+                href="/edit"
+                onClick={[Function]}
+              >
+                Karen
+              </a>
             </td>
             <td>
               English
@@ -729,7 +794,12 @@ Array [
           </tr>
           <tr>
             <td>
-              Mathew
+              <a
+                href="/edit"
+                onClick={[Function]}
+              >
+                Mathew
+              </a>
             </td>
             <td>
               English
@@ -768,7 +838,12 @@ Array [
           </tr>
           <tr>
             <td>
-              Michael Sovereign Medical
+              <a
+                href="/edit"
+                onClick={[Function]}
+              >
+                Michael Sovereign Medical
+              </a>
             </td>
             <td>
               English
@@ -807,7 +882,12 @@ Array [
           </tr>
           <tr>
             <td>
-              Rishi
+              <a
+                href="/edit"
+                onClick={[Function]}
+              >
+                Rishi
+              </a>
             </td>
             <td>
               English
@@ -846,7 +926,12 @@ Array [
           </tr>
           <tr>
             <td>
-              Robb MacDonald
+              <a
+                href="/edit"
+                onClick={[Function]}
+              >
+                Robb MacDonald
+              </a>
             </td>
             <td>
               English
@@ -885,7 +970,12 @@ Array [
           </tr>
           <tr>
             <td>
-              RobnGeo
+              <a
+                href="/edit"
+                onClick={[Function]}
+              >
+                RobnGeo
+              </a>
             </td>
             <td>
               English

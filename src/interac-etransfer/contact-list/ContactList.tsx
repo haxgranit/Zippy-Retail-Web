@@ -7,6 +7,7 @@ import {
   Modal,
 } from 'react-bootstrap';
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import CONTACTS from './Contacts';
 import CommonHeader from '../../common/CommonHeader';
 
@@ -201,7 +202,7 @@ const ContactList: React.FC<{ initialContacts?: Array<Contact> }> = ({ initialCo
             <tbody style={{ borderTop: 'none' }}>
               {contacts.map((item) => (
                 <tr key={item.key}>
-                  <td>{item.name}</td>
+                  <td><Link to="edit" state={{ item }}>{item.name}</Link></td>
                   <td>{item.lang}</td>
                   <td>
                     {item.email && (

@@ -24,6 +24,7 @@ import Footer from './footer/Footer';
 import Header from './Header';
 import AutodepositSettings from './interac-etransfer/autodeposit-settings/AutodepositSettings';
 import ContactList from './interac-etransfer/contact-list/ContactList';
+import EditContact from './interac-etransfer/contact-list/edit/EditContact';
 import EditMyProfile from './interac-etransfer/edit-my-profile/EditMyProfile';
 import LearnMore from './interac-etransfer/learn-more/LearnMore';
 import ReceiveMoney from './interac-etransfer/receive-money/ReceiveMoney';
@@ -145,6 +146,7 @@ export default function App() {
             <Route path="send-money" element={<SendMoney />} />
             <Route path="request-money" element={<RequestMoney />} />
             <Route path="contact-list" element={<ContactList />} />
+            <Route path="contact-list/edit" element={<EditContact />} />
             <Route path="edit-my-profile" element={<EditMyProfile />} />
             <Route path="autodeposit-settings" element={<AutodepositSettings />} />
             <Route path="receive-money" element={<ReceiveMoney />} />
