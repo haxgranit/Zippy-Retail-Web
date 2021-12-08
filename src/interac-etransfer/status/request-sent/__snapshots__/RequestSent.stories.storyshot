@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots interac-etransfer/request-sent/RequestSent Default 1`] = `
+exports[`Storyshots interac-etransfer/status/request-sent/RequestSent Default 1`] = `
 <div>
   <div
     className="row"

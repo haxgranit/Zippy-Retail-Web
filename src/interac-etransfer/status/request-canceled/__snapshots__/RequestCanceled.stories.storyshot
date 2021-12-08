@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots interac-etransfer/status/request-reminder/RequestReminder Default 1`] = `
+exports[`Storyshots interac-etransfer/status/request-canceled/RequestCanceled Default 1`] = `
 <div>
   <div
     className="row"
@@ -9,7 +9,7 @@ exports[`Storyshots interac-etransfer/status/request-reminder/RequestReminder De
       className="col"
     >
       <h2>
-        REQUEST REMINDER
+        REQUEST MONEY
       </h2>
     </div>
   </div>
@@ -21,10 +21,8 @@ exports[`Storyshots interac-etransfer/status/request-reminder/RequestReminder De
     >
       <span>
         <i />
-        A reminder has been sent
+        Request Canceled
       </span>
-      <br />
-      Request Reminder Sent.
       <div
         className="align-items-center mt-4 row"
       >

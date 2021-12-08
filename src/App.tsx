@@ -74,6 +74,7 @@ import ContributeToTfsa from './customer-services/contribute-to-a-tfsa/Contribut
 import RequestSent from './interac-etransfer/status/request-sent/RequestSent';
 import RequestReminder from './interac-etransfer/status/request-reminder/RequestReminder';
 import i18n from './i18n/config';
+import RequestCanceled from './interac-etransfer/status/request-canceled/RequestCanceled';
 
 export default function App() {
   const isAuthenticated = useIsAuthenticated();
@@ -150,7 +151,12 @@ export default function App() {
           </Route>
           <Route path="interac-etransfer">
             <Route path="/interac-etransfer" element={<Navigate to="/interac-etransfer/status" />} />
-            <Route path="status" element={<Status />} />
+            <Route path="status">
+              <Route path="/interac-etransfer/status" element={<Status />} />
+              <Route path="request-sent" element={<RequestSent />} />
+              <Route path="request-reminder" element={<RequestReminder />} />
+              <Route path="request-canceled" element={<RequestCanceled />} />
+            </Route>
             <Route path="send-money" element={<SendMoney />} />
             <Route path="request-money" element={<RequestMoney />} />
             <Route path="contact-list" element={<ContactList />} />
@@ -158,8 +164,6 @@ export default function App() {
             <Route path="autodeposit-settings" element={<AutodepositSettings />} />
             <Route path="receive-money" element={<ReceiveMoney />} />
             <Route path="learn-more" element={<LearnMore />} />
-            <Route path="request-sent" element={<RequestSent />} />
-            <Route path="request-reminder" element={<RequestReminder />} />
           </Route>
           <Route path="manage-my-alerts" element={<ManageMyAlerts />} />
           <Route path="my-accounts">
