@@ -4,8 +4,8 @@ import React from 'react';
 import ManageMyAlerts from './ManageMyAlerts';
 import EditBusinessPhone from './edit-business-phone/EditBusinessPhone';
 import EditHomePhone from './edit-home-phone/EditHomePhone';
-import EditMobilePhone from './edit-home-phone/EditHomePhone';
-import EditEmailAccount from './edit-home-phone/EditHomePhone';
+import EditMobilePhone from './edit-mobile-phone/EditMobilePhone';
+import EditEmailAccount from './edit-email-account/EditEmailAccount';
 
 // Configure enzyme for react 17
 Enzyme.configure({ adapter: new Adapter() });
