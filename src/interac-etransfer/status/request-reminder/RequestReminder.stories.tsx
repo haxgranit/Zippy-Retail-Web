@@ -3,7 +3,7 @@ import { BrowserRouter } from 'react-router-dom';
 import RequestReminder from './RequestReminder';
 
 export default {
-  title: 'interac-etransfer/request-reminder/RequestReminder',
+  title: 'interac-etransfer/status/request-reminder/RequestReminder',
   component: RequestReminder,
 } as ComponentMeta<typeof RequestReminder>;
 

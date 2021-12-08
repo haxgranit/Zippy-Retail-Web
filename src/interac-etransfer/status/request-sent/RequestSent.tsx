@@ -18,7 +18,7 @@ const LeftCol = () => {
   const navigate = useNavigate();
 
   const handleNext = () => {
-    if (sendReminderChecked) navigate('/interac-etransfer/request-reminder');
+    if (sendReminderChecked) navigate('/interac-etransfer/status/request-reminder');
     else setShowCancelRequestForMoney(true);
   };
   const handleCancelRequestForMoneyBack = () => {
@@ -26,6 +26,7 @@ const LeftCol = () => {
   };
   const handleCancelRequestForMoneyConfirmed = () => {
     setShowCancelRequestForMoney(false);
+    navigate('/interac-etransfer/status/request-canceled');
   };
 
   return (
