@@ -6,8 +6,8 @@ import
   Stack,
 } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
-
-const Divider = () => <div className="border-top my-3" />;
+import Divider from '../components/Divider';
+import QuickLinks from '../components/QuickLinks';
 
 const LeftCol = () => {
   const navigate = useNavigate();
@@ -42,34 +42,9 @@ const LeftCol = () => {
           Send Another Request
         </Button>
       </Stack>
-      <Divider />
-      <Row>
-        <Col>
-          <b>Note:</b>
-          <br />
-          Your use of
-          <i> Interac</i>
-          e-Transfer is subject to the
-          <i> Interac</i>
-          e-Transfer Terms and conditions (PDF, 197 KB).
-        </Col>
-      </Row>
     </Col>
   );
 };
-const RightCol = () => (
-  <Col xs={3}>
-    <div className="border p-2 rounded">
-      <b>You can also:</b>
-      <br />
-      View upcoming bills payments and transfers &gt;
-      <br />
-      Stop a payment &gt;
-      <br />
-      Change your statment preferences &gt;
-    </div>
-  </Col>
-);
 
 export default function RequestCanceled() {
   return (
@@ -81,7 +56,7 @@ export default function RequestCanceled() {
       </Row>
       <Row>
         <LeftCol />
-        <RightCol />
+        <QuickLinks />
       </Row>
     </div>
   );
