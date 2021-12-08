@@ -48,7 +48,6 @@ export default function ManageMyAlerts() {
     setShowEditMobilePhone(true);
   };
   
-
   const closeEditEmailAccount = () => {
     setShowEditEmailAccount(false);
   };
