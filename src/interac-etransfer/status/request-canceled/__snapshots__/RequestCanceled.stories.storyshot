@@ -79,30 +79,6 @@ exports[`Storyshots interac-etransfer/status/request-canceled/RequestCanceled De
           Send Another Request
         </button>
       </div>
-      <div
-        className="border-top my-3"
-      />
-      <div
-        className="row"
-      >
-        <div
-          className="col"
-        >
-          <b>
-            Note:
-          </b>
-          <br />
-          Your use of
-          <i>
-             Interac
-          </i>
-          e-Transfer is subject to the
-          <i>
-             Interac
-          </i>
-          e-Transfer Terms and conditions (PDF, 197 KB).
-        </div>
-      </div>
     </div>
     <div
       className="col-3"

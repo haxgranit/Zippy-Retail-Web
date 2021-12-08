@@ -73,6 +73,7 @@ import ContributeToTfsa from './customer-services/contribute-to-a-tfsa/Contribut
 import RequestSent from './interac-etransfer/status/request-sent/RequestSent';
 import RequestReminder from './interac-etransfer/status/request-reminder/RequestReminder';
 import RequestCanceled from './interac-etransfer/status/request-canceled/RequestCanceled';
+import InteracETransferDetails from './interac-etransfer/status/interac-e-transfer-details/InteracETransferDetails';
 
 export default function App() {
   const isAuthenticated = useIsAuthenticated();
@@ -142,8 +143,8 @@ export default function App() {
           </Route>
           <Route path="interac-etransfer">
             <Route path="/interac-etransfer" element={<Navigate to="/interac-etransfer/status" />} />
-            <Route path="status">
-              <Route path="/interac-etransfer/status" element={<Status />} />
+            <Route path="status" element={<Status />}>
+              <Route path="/interac-etransfer/status" element={<InteracETransferDetails />} />
               <Route path="request-sent" element={<RequestSent />} />
               <Route path="request-reminder" element={<RequestReminder />} />
               <Route path="request-canceled" element={<RequestCanceled />} />

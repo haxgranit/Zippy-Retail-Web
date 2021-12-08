@@ -2,7 +2,7 @@ import Enzyme, { shallow } from 'enzyme';
 import { BrowserRouter } from 'react-router-dom';
 import Adapter from '@wojtekmaj/enzyme-adapter-react-17';
 
-import Status from './Status';
+import InteracETransferDetails from './InteracETransferDetails';
 
 // Configure enzyme for react 17
 Enzyme.configure({ adapter: new Adapter() });
@@ -16,21 +16,21 @@ jest.mock('react-router-dom', () => ({
   useNavigate: () => mockedUsedNavigate,
 }));
 
-describe('Status Component', () => {
-  it('should render Status', () => {
+describe('InteracETransferDetails Component', () => {
+  it('should render InteracETransferDetails', () => {
     const wrapper = shallow(
       <BrowserRouter>
-        <Status />
+        <InteracETransferDetails />
       </BrowserRouter>,
     );
-    const StatusComponent = wrapper.find('Status');
-    expect(StatusComponent).toHaveLength(1);
+    const InteracETransferDetailsComponent = wrapper.find('InteracETransferDetails');
+    expect(InteracETransferDetailsComponent).toHaveLength(1);
   });
 
-  it('should click buttons on status', () => {
+  it('should click buttons on InteracETransferDetails', () => {
     const wrapper = shallow(
       <BrowserRouter>
-        <Status />
+        <InteracETransferDetails />
       </BrowserRouter>,
     );
     const mEvent = { preventDefault: jest.fn() };
