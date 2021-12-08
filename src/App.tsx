@@ -5,6 +5,7 @@ import {
   Navigate,
   Route,
   Routes,
+  useLocation,
 } from 'react-router-dom';
 import About from './About';
 import AccountSecurity from './account-security/AccountSecurity';
@@ -72,11 +73,19 @@ import DigitalVaultDocuments from './customer-services/digital-vault-documents/D
 import ContributeToTfsa from './customer-services/contribute-to-a-tfsa/ContributeToATfsa';
 import RequestSent from './interac-etransfer/status/request-sent/RequestSent';
 import RequestReminder from './interac-etransfer/status/request-reminder/RequestReminder';
+import i18n from './i18n/config';
 import RequestCanceled from './interac-etransfer/status/request-canceled/RequestCanceled';
 
 export default function App() {
   const isAuthenticated = useIsAuthenticated();
   const { instance, accounts: msalAccounts } = useMsal();
+  const { search } = useLocation();
+  const languageCode = new URLSearchParams(search).get('language');
+  useEffect(() => {
+    if (languageCode) {
+      i18n.changeLanguage(languageCode);
+    }
+  }, [languageCode]);
 
   useEffect(() => {
     if (isAuthenticated) {
