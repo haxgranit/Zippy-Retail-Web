@@ -53,4 +53,80 @@ describe('Manage Alert Component', () => {
     wrapper.find('Button[variant="link"]').at(3).simulate('click');
     expect(setShowEditBusinessPhone).toHaveBeenCalled();
   });
+
+  it('Click OK&Cancel buttons on EditHomePhone', () => {
+    const setShowEditHomeModal = jest.fn();
+    const setShowEditBusinessPhone = jest.fn();
+    const setShowEditMobilePhone = jest.fn();
+    const setShowEditEmailAccount = jest.fn();
+    React.useState = jest
+      .fn()
+      .mockImplementationOnce((x) => [x, setShowEditHomeModal])
+      .mockImplementationOnce((x) => [x, setShowEditBusinessPhone])
+      .mockImplementationOnce((x) => [x, setShowEditEmailAccount])
+      .mockImplementationOnce((x) => [x, setShowEditMobilePhone]);
+    const wrapper = shallow(<ManageMyAlerts />);
+    const editHomePhoneModal = wrapper.find('EditHomePhone');
+    const editHomePhoneWrapper = editHomePhoneModal.dive();
+    const buttons = editHomePhoneWrapper.find('button');
+    buttons.at(0).simulate('click');
+    buttons.at(1).simulate('click');
+  });
+
+  it('Click OK&Cancel buttons on EditBusinessPhone', () => {
+    const setShowEditHomeModal = jest.fn();
+    const setShowEditBusinessPhone = jest.fn();
+    const setShowEditMobilePhone = jest.fn();
+    const setShowEditEmailAccount = jest.fn();
+    React.useState = jest
+      .fn()
+      .mockImplementationOnce((x) => [x, setShowEditHomeModal])
+      .mockImplementationOnce((x) => [x, setShowEditBusinessPhone])
+      .mockImplementationOnce((x) => [x, setShowEditEmailAccount])
+      .mockImplementationOnce((x) => [x, setShowEditMobilePhone]);
+    const wrapper = shallow(<ManageMyAlerts />);
+    const editBusinessPhoneModal = wrapper.find('EditBusinessPhone');
+    const editBusinessPhoneWrapper = editBusinessPhoneModal.dive();
+    const buttons = editBusinessPhoneWrapper.find('button');
+    buttons.at(0).simulate('click');
+    buttons.at(1).simulate('click');
+  });
+
+  it('Click OK&Cancel buttons on EditMobilePhone', () => {
+    const setShowEditHomeModal = jest.fn();
+    const setShowEditBusinessPhone = jest.fn();
+    const setShowEditMobilePhone = jest.fn();
+    const setShowEditEmailAccount = jest.fn();
+    React.useState = jest
+      .fn()
+      .mockImplementationOnce((x) => [x, setShowEditHomeModal])
+      .mockImplementationOnce((x) => [x, setShowEditBusinessPhone])
+      .mockImplementationOnce((x) => [x, setShowEditEmailAccount])
+      .mockImplementationOnce((x) => [x, setShowEditMobilePhone]);
+    const wrapper = shallow(<ManageMyAlerts />);
+    const editMobilePhoneModal = wrapper.find('EditMobilePhone');
+    const editMobilePhoneWrapper = editMobilePhoneModal.dive();
+    const buttons = editMobilePhoneWrapper.find('button');
+    buttons.at(0).simulate('click');
+    buttons.at(1).simulate('click');
+  });
+
+  it('Click OK&Cancel buttons on EditEmailAccount', () => {
+    const setShowEditHomeModal = jest.fn();
+    const setShowEditBusinessPhone = jest.fn();
+    const setShowEditMobilePhone = jest.fn();
+    const setShowEditEmailAccount = jest.fn();
+    React.useState = jest
+      .fn()
+      .mockImplementationOnce((x) => [x, setShowEditHomeModal])
+      .mockImplementationOnce((x) => [x, setShowEditBusinessPhone])
+      .mockImplementationOnce((x) => [x, setShowEditEmailAccount])
+      .mockImplementationOnce((x) => [x, setShowEditMobilePhone]);
+    const wrapper = shallow(<ManageMyAlerts />);
+    const editEmailAccountModal = wrapper.find('EditEmailAccount');
+    const editEmailAccountWrapper = editEmailAccountModal.dive();
+    const buttons = editEmailAccountWrapper.find('button');
+    buttons.at(0).simulate('click');
+    buttons.at(1).simulate('click');
+  });
 });

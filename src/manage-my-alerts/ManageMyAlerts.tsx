@@ -47,6 +47,15 @@ export default function ManageMyAlerts() {
   const openEditMobilePhone = () => {
     setShowEditMobilePhone(true);
   };
+  
+
+  const closeEditEmailAccount = () => {
+    setShowEditEmailAccount(false);
+  };
+
+  const openEditEmailAccount = () => {
+    setShowEditEmailAccount(true);
+  };
 
   const handleSave = () => { };
 
@@ -69,8 +78,8 @@ export default function ManageMyAlerts() {
       />
       <EditEmailAccount
         show={showEditEmailAccount}
-        handleCancel={() => setShowEditEmailAccount(false)}
-        handleSave={() => {}}
+        handleCancel={closeEditEmailAccount}
+        handleSave={handleSave}
       />
       <CommonHeader title="MANAGE MY ALERTS" print />
       <Row className="mt-3">
@@ -415,7 +424,7 @@ export default function ManageMyAlerts() {
                   <div style={{ fontWeight: 'bold' }}>Email</div>
                   <div style={{ color: 'grey' }}>dtough@hotmail.com</div>
                 </div>
-                <Button variant="link" className="text-black" onClick={() => setShowEditEmailAccount(true)}>
+                <Button variant="link" className="text-black" onClick={openEditEmailAccount}>
                   Edit
                 </Button>
               </div>
