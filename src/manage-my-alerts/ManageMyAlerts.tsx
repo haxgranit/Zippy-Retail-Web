@@ -47,7 +47,7 @@ export default function ManageMyAlerts() {
   const openEditMobilePhone = () => {
     setShowEditMobilePhone(true);
   };
-  
+
   const closeEditEmailAccount = () => {
     setShowEditEmailAccount(false);
   };
