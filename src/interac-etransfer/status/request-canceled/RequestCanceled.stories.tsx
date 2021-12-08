@@ -3,7 +3,7 @@ import { BrowserRouter } from 'react-router-dom';
 import RequestCanceled from './RequestCanceled';
 
 export default {
-  title: 'interac-etransfer/request-canceled/RequestCanceled',
+  title: 'interac-etransfer/status/request-canceled/RequestCanceled',
   component: RequestCanceled,
 } as ComponentMeta<typeof RequestCanceled>;
 
