@@ -6,7 +6,7 @@ import
   Stack,
 } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
-import Divider from '../../../components/Divider';
+import Divider from '../components/Divider';
 import QuickLinks from '../components/QuickLinks';
 
 const LeftCol = () => {

@@ -9,7 +9,7 @@ import
 } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 import CancelRequestForMoneyVerification from '../dialogs/cancel-request-for-money-verification/CancelRequestForMoneyVerification';
-import Divider from '../../../components/Divider';
+import Divider from '../components/Divider';
 import QuickLinks from '../components/QuickLinks';
 
 const LeftCol = () => {

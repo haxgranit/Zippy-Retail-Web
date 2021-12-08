@@ -1,6 +1,6 @@
 import { Row, Col } from 'react-bootstrap';
 import { Outlet } from 'react-router-dom';
-import Divider from '../../components/Divider';
+import Divider from './components/Divider';
 
 export default function Status() {
   return (
