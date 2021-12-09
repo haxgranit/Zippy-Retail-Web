@@ -1,13 +1,11 @@
-// import { useState } from 'react';
+import { useState } from 'react';
 import {
-  Col,
-  Row,
-  Form,
-  Button,
+  Col, Row, Form, Button,
 } from 'react-bootstrap';
 import { useLocation } from 'react-router-dom';
 import StepComponent from '../../../common/StepComponent';
 import CommonHeader from '../../../common/CommonHeader';
+import IdentityVerificationModal from './IdentityVerificationModal';
 
 const Divider = () => <div className="border-top my-3" />;
 const HorizontalLine = () => (
@@ -66,58 +64,22 @@ const RightCol = () => (
   </Col>
 );
 
-// Uncomment when will work on Modal(don't forget import after uncomment it) idea:
-// Have One modal and different body which you change in switch operator depending on step.
-// const StepOneBody: React.FC<{ onStepClick: Dispatch<SetStateAction<number>>; }> = (
-//   { onStepClick },
-// ) => (
-//   <>
-//     <Modal.Body
-//       onClick={() => onStepClick((prevStep: number) => prevStep + 1)}
-//     />
-//   </>
-// );
-
-// const StepTwoBody: React.FC<{ onStepClick: Dispatch<SetStateAction<number>>; }> = (
-//   { onStepClick },
-// ) => (
-//   <>
-//     <Modal.Body
-//       onClick={() => onStepClick((prevStep: number) => prevStep + 1)}
-//     />
-//   </>
-// );
-
-// const ModalRoot = () => {
-//   const [currentStep, setCurrentStep] = useState(1);
-
-//   const getStepToRender = () => {
-//     switch (currentStep) {
-//       case 1:
-//         return <StepOneBody onStepClick={setCurrentStep} />;
-
-//       case 2:
-//         return <StepTwoBody onStepClick={setCurrentStep} />;
-
-//       default:
-//         return null;
-//     }
-//   };
-
-//   return <Modal>{getStepToRender()}</Modal>;
-// };
-
 const EditContact: React.FC = () => {
-  const {
-    state: { item: selectedContact },
-  } = useLocation();
+  const { state } = useLocation();
+  const selectedContact = state?.item;
+  const [show, setShow] = useState(false);
 
   return (
     <>
       <div>
+        <IdentityVerificationModal
+          show={show}
+          handleClose={() => setShow(false)}
+          selectedContact={selectedContact}
+        />
         <Row>
           <Col>
-            <CommonHeader title="REQUEST MONEY" print={false} />
+            <CommonHeader title="EDIT CONTACT" print={false} />
           </Col>
         </Row>
         <Row>
@@ -133,7 +95,7 @@ const EditContact: React.FC = () => {
           <Col xs="4" style={{ display: 'flex', alignItems: 'center' }}>
             <Form.Control
               type="text"
-              value={selectedContact.name}
+              value={selectedContact?.name}
               style={{
                 display: 'inline-block',
                 width: 250,
@@ -180,7 +142,7 @@ const EditContact: React.FC = () => {
           <Col>
             <Form.Control
               type="text"
-              value={selectedContact.email}
+              value={selectedContact?.email}
               style={{
                 width: 250,
                 marginLeft: 10,
@@ -242,8 +204,7 @@ const EditContact: React.FC = () => {
           <Col style={{ display: 'flex', justifyContent: 'flex-end' }}>
             <Button
               className="btn btn-danger"
-            // Call modal from here
-            // onClick={ }
+              onClick={() => setShow(true)}
               style={{ marginLeft: 15 }}
             >
               Next
