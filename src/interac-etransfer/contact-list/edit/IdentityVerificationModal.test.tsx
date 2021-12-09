@@ -22,7 +22,7 @@ describe('IdentityVerificationModal Component', () => {
     React.useState = jest.fn().mockImplementationOnce((x) => [x, setStep]);
     const wrapper = shallow(
       <IdentityVerificationModal
-        show={true}
+        show
         handleClose={handleClose}
         selectedContact={CONTACT_MOCK}
       />,
@@ -37,7 +37,7 @@ describe('IdentityVerificationModal Component', () => {
     React.useState = jest.fn().mockImplementationOnce((x) => [x, setStep]);
     const wrapper = shallow(
       <IdentityVerificationModal
-        show={true}
+        show
         handleClose={handleClose}
         selectedContact={CONTACT_MOCK}
       />,
@@ -50,7 +50,6 @@ describe('IdentityVerificationModal Component', () => {
   });
 
   it('click SendCodeStep buttons', () => {
-    const setStep = jest.fn();
     const setShowOptions = jest.fn();
     const setIsSent = jest.fn();
     const handleClose = jest.fn();
@@ -62,7 +61,7 @@ describe('IdentityVerificationModal Component', () => {
       .mockImplementationOnce((x) => [x, setIsSent]);
     const wrapper = shallow(
       <IdentityVerificationModal
-        show={true}
+        show
         handleClose={handleClose}
         selectedContact={CONTACT_MOCK}
       />,
