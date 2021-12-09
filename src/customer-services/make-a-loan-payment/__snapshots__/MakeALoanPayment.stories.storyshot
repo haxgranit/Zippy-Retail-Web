@@ -194,7 +194,7 @@ Array [
           >
             <div
               aria-hidden="true"
-              className="p-5"
+              className="p-5 option-btn"
               onClick={[Function]}
               onKeyDown={[Function]}
               style={
@@ -218,7 +218,7 @@ Array [
           >
             <div
               aria-hidden="true"
-              className="p-5"
+              className="p-5 option-btn"
               onClick={[Function]}
               onKeyDown={[Function]}
               style={
