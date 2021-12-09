@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots interac-etransfer/request-sent/RequestSent Default 1`] = `
+exports[`Storyshots interac-etransfer/status/request-sent/RequestSent Default 1`] = `
 <div>
   <div
     className="row"
@@ -188,30 +188,6 @@ exports[`Storyshots interac-etransfer/request-sent/RequestSent Default 1`] = `
         >
           Next
         </button>
-      </div>
-      <div
-        className="border-top my-3"
-      />
-      <div
-        className="row"
-      >
-        <div
-          className="col"
-        >
-          <b>
-            Note:
-          </b>
-          <br />
-          Your use of
-          <i>
-             Interac
-          </i>
-          e-Transfer is subject to the
-          <i>
-             Interac
-          </i>
-          e-Transfer Terms and conditions (PDF, 197 KB).
-        </div>
       </div>
     </div>
     <div

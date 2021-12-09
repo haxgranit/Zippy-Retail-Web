@@ -2,11 +2,9 @@
 
 import { AccountInfo, InteractionRequiredAuthError, IPublicClientApplication } from '@azure/msal-browser';
 
-export type Region = {
-  id: number;
-  regionCode: string;
-  name: string;
-  countryId: number;
+export type User = {
+  givenName: string;
+  surname: number;
 };
 
 export default class Api {
@@ -15,13 +13,13 @@ export default class Api {
     private readonly account: AccountInfo,
   ) { }
 
-  public getRegions() {
-    return this.fetch<Region>('get', 'Region');
+  public putUser() {
+    return this.fetch<User>('put', 'User');
   }
 
   private async fetch<TResponse>(method: string, path: string) {
     const accessTokenRequest = {
-      scopes: ['https://zippycashdev.onmicrosoft.com/0f2b00c3-dc2e-4ce6-ab2b-f4830c77a432/api'],
+      scopes: ['https://zippycashdev.onmicrosoft.com/b0b070aa-4e90-4015-af46-59d0ceed5ecc/access_as_user'],
       account: this.account,
     };
 
@@ -38,7 +36,7 @@ export default class Api {
       return null;
     }
 
-    const response = await fetch(`https://zippy-cash-api-dev.azurewebsites.net/api/v1/${path}`, {
+    const response = await fetch(`https://zippy-retail-api-dev.azurewebsites.net/${path}`, {
       method,
       headers: new Headers({ Authorization: `Bearer ${accessToken}` }),
     });

@@ -15,10 +15,8 @@ const LeftCol = () => {
     <Col xs={9}>
       <span>
         <i />
-        A reminder has been sent
+        Request Canceled
       </span>
-      <br />
-      Request Reminder Sent.
       <Row className="align-items-center mt-4">
         <Col xs={4}>TO:</Col>
         <Col xs={6}>
@@ -48,12 +46,12 @@ const LeftCol = () => {
   );
 };
 
-export default function RequestReminder() {
+export default function RequestCanceled() {
   return (
     <div>
       <Row>
         <Col>
-          <h2>REQUEST REMINDER</h2>
+          <h2>REQUEST MONEY</h2>
         </Col>
       </Row>
       <Row>

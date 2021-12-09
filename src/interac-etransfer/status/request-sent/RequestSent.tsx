@@ -9,8 +9,8 @@ import
 } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 import CancelRequestForMoneyVerification from '../dialogs/cancel-request-for-money-verification/CancelRequestForMoneyVerification';
-
-const Divider = () => <div className="border-top my-3" />;
+import Divider from '../components/Divider';
+import QuickLinks from '../components/QuickLinks';
 
 const LeftCol = () => {
   const [sendReminderChecked, setSendReminderChecked] = useState(true);
@@ -18,7 +18,7 @@ const LeftCol = () => {
   const navigate = useNavigate();
 
   const handleNext = () => {
-    if (sendReminderChecked) navigate('/interac-etransfer/request-reminder');
+    if (sendReminderChecked) navigate('/interac-etransfer/status/request-reminder');
     else setShowCancelRequestForMoney(true);
   };
   const handleCancelRequestForMoneyBack = () => {
@@ -26,6 +26,7 @@ const LeftCol = () => {
   };
   const handleCancelRequestForMoneyConfirmed = () => {
     setShowCancelRequestForMoney(false);
+    navigate('/interac-etransfer/status/request-canceled');
   };
 
   return (
@@ -112,36 +113,10 @@ const LeftCol = () => {
           </Button>
           <Button onClick={handleNext}>Next</Button>
         </Stack>
-        <Divider />
-        <Row>
-          <Col>
-            <b>Note:</b>
-            <br />
-            Your use of
-            <i> Interac</i>
-            e-Transfer is subject to the
-            <i> Interac</i>
-            e-Transfer Terms and conditions (PDF, 197 KB).
-          </Col>
-        </Row>
       </Col>
     </>
   );
 };
-
-const RightCol = () => (
-  <Col xs={3}>
-    <div className="border p-2 rounded">
-      <b>You can also:</b>
-      <br />
-      View upcoming bills payments and transfers &gt;
-      <br />
-      Stop a payment &gt;
-      <br />
-      Change your statment preferences &gt;
-    </div>
-  </Col>
-);
 
 export default function RequestSent() {
   return (
@@ -153,7 +128,7 @@ export default function RequestSent() {
       </Row>
       <Row>
         <LeftCol />
-        <RightCol />
+        <QuickLinks />
       </Row>
     </div>
   );
