@@ -90,16 +90,14 @@ export default function App() {
 
   useEffect(() => {
     if (isAuthenticated) {
-      // TODO: replace this placeholder request with a real post-login request to get account info,
-      // user info, etc.
-      new Api(instance, msalAccounts[0]).getRegions()
-        .then((regions) => {
+      new Api(instance, msalAccounts[0]).putUser()
+        .then((user) => {
           /* eslint-disable-next-line no-console */
-          console.log('regions', regions);
+          console.log('user', user);
         })
         .catch((error) => {
           /* eslint-disable-next-line no-console */
-          console.error('regions', error);
+          console.error('user', error);
         });
     }
   }, [isAuthenticated, instance, msalAccounts]);
