@@ -17,8 +17,11 @@ describe('ContributeToATfsa Page Component', () => {
       .mockImplementationOnce((x) => [x, setSelectedRef]);
 
     const mEvent = { preventDefault: jest.fn() };
+    const keyEvent = { key: 'Enter' };
     wrapper.find('.option-btn').at(0).simulate('click', mEvent);
     wrapper.find('.option-btn').at(1).simulate('click', mEvent);
-    expect(setSelectedRef).toBeCalledTimes(1);
+    wrapper.find('.option-btn').at(0).simulate('keydown', keyEvent);
+    wrapper.find('.option-btn').at(1).simulate('keydown', keyEvent);
+    expect(setSelectedRef).toBeCalledTimes(3);
   });
 });
