@@ -1,0 +1,555 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots interac-etransfer/contact-list/edit/EditContact Default 1`] = `
+<div>
+  <div
+    className="row"
+  >
+    <div
+      className="col"
+    >
+      <div
+        className="d-flex justify-content-between align-items-center"
+      >
+        <h3>
+          EDIT CONTACT
+        </h3>
+        <div
+          className="d-flex"
+        >
+          <div
+            style={
+              Object {
+                "border": "1px dotted grey",
+                "height": 25,
+                "marginRight": 10,
+                "textAlign": "center",
+                "width": 20,
+              }
+            }
+            title="copy"
+          >
+            P
+          </div>
+          <div
+            style={
+              Object {
+                "border": "1px dotted grey",
+                "height": 25,
+                "marginRight": 10,
+                "textAlign": "center",
+                "width": 20,
+              }
+            }
+            title="question"
+          >
+            P
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    className="row"
+  >
+    <div
+      className="col-9"
+    >
+      <div
+        className="row"
+      >
+        <div
+          className="col"
+        >
+          <div
+            className="d-flex align-items-center mt-3 mb-3"
+          >
+            <span
+              style={
+                Object {
+                  "fontWeight": "bold",
+                  "marginRight": 10,
+                }
+              }
+            >
+              Steps: 
+            </span>
+            <div
+              onClick={[Function]}
+              onKeyPress={[Function]}
+              role="button"
+              style={
+                Object {
+                  "alignItems": "center",
+                  "backgroundColor": "#C41F3E",
+                  "border": "2px solid #C41F3E",
+                  "borderRadius": 50,
+                  "color": "white",
+                  "display": "flex",
+                  "height": 25,
+                  "justifyContent": "center",
+                  "width": 25,
+                }
+              }
+            >
+              1
+            </div>
+            <div
+              style={
+                Object {
+                  "backgroundColor": "grey",
+                  "height": 2,
+                  "width": 15,
+                }
+              }
+            />
+            <div
+              onClick={[Function]}
+              onKeyPress={[Function]}
+              role="button"
+              style={
+                Object {
+                  "alignItems": "center",
+                  "border": "2px solid grey",
+                  "borderRadius": 50,
+                  "display": "flex",
+                  "height": 25,
+                  "justifyContent": "center",
+                  "width": 25,
+                }
+              }
+            >
+              2
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        className="border-top my-3"
+      />
+      <div
+        className="row"
+      >
+        <div
+          className="col"
+        >
+          <h3>
+            Contact Profile:
+          </h3>
+          <ul
+            style={
+              Object {
+                "marginTop": 50,
+              }
+            }
+          >
+            <li>
+              Change the contact profile by deleting or typing over the existing content then selecting Next
+            </li>
+            <li>
+              Enter an email address or mobile phone number for your contact
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div
+      className="col-3"
+    >
+      <div
+        className="border p-2 rounded"
+      >
+        <b>
+          You can also:
+        </b>
+        <br />
+        View upcoming bill payments and transfers &gt;
+        <br />
+        Stop a payment &gt;
+        <br />
+        Change your statement preferences &gt;
+      </div>
+    </div>
+  </div>
+  <div
+    className="row"
+    style={
+      Object {
+        "marginTop": 100,
+      }
+    }
+  >
+    <div
+      className="col-4"
+      style={
+        Object {
+          "alignItems": "center",
+          "display": "flex",
+        }
+      }
+    >
+      <span
+        style={
+          Object {
+            "display": "inline-block",
+            "width": "fit-content",
+          }
+        }
+      >
+        Name:
+      </span>
+    </div>
+    <div
+      className="col-4"
+      style={
+        Object {
+          "alignItems": "center",
+          "display": "flex",
+        }
+      }
+    >
+      <input
+        className="form-control"
+        style={
+          Object {
+            "display": "inline-block",
+            "marginLeft": 10,
+            "marginRight": 10,
+            "width": 250,
+          }
+        }
+        type="text"
+      />
+    </div>
+    <div
+      className="col-4"
+      style={
+        Object {
+          "alignItems": "center",
+          "display": "flex",
+        }
+      }
+    />
+  </div>
+  <hr
+    style={
+      Object {
+        "background": "gray",
+        "borderWidth": "0px",
+        "color": "gray",
+        "height": "2px",
+        "marginTop": 40,
+      }
+    }
+  />
+  <div
+    className="row"
+    style={
+      Object {
+        "marginTop": 30,
+      }
+    }
+  >
+    <div
+      className="col"
+    >
+      <span>
+        Details
+      </span>
+    </div>
+    <div
+      className="col"
+    >
+      <div
+        className="d-flex"
+      >
+        <div
+          style={
+            Object {
+              "border": "1px dotted grey",
+              "height": 25,
+              "marginLeft": 10,
+              "marginRight": 10,
+              "textAlign": "center",
+              "width": 20,
+            }
+          }
+        >
+          P
+        </div>
+        <a
+          href="/"
+        >
+          Mobile phone
+        </a>
+      </div>
+    </div>
+    <div
+      className="col"
+    />
+  </div>
+  <hr
+    style={
+      Object {
+        "background": "gray",
+        "borderWidth": "0px",
+        "color": "gray",
+        "height": "2px",
+        "marginTop": 40,
+      }
+    }
+  />
+  <div
+    className="row"
+    style={
+      Object {
+        "marginTop": 30,
+      }
+    }
+  >
+    <div
+      className="col-4"
+    >
+      <span
+        style={
+          Object {
+            "alignItems": "center",
+            "display": "flex",
+          }
+        }
+      >
+        Email Address:
+      </span>
+    </div>
+    <div
+      className="col"
+    >
+      <input
+        className="form-control"
+        style={
+          Object {
+            "marginLeft": 10,
+            "marginRight": 10,
+            "width": 250,
+          }
+        }
+        type="text"
+      />
+    </div>
+    <div
+      className="col"
+      style={
+        Object {
+          "alignItems": "center",
+          "display": "flex",
+          "justifyContent": "left",
+        }
+      }
+    >
+      <a
+        href="/"
+      >
+        Delete
+      </a>
+    </div>
+  </div>
+  <hr
+    style={
+      Object {
+        "background": "gray",
+        "borderWidth": "0px",
+        "color": "gray",
+        "height": "2px",
+        "marginTop": 40,
+      }
+    }
+  />
+  <div
+    className="row"
+    style={
+      Object {
+        "marginTop": 30,
+      }
+    }
+  >
+    <div
+      className="col"
+    >
+      <span>
+        Notification Language:
+      </span>
+    </div>
+    <div
+      className="col"
+    >
+      <select
+        className="form-select"
+        style={
+          Object {
+            "marginBottom": 50,
+            "marginLeft": 10,
+            "marginRight": 10,
+            "width": 250,
+          }
+        }
+      >
+        <option>
+          English
+        </option>
+      </select>
+    </div>
+    <div
+      className="col"
+    />
+  </div>
+  <hr
+    style={
+      Object {
+        "background": "gray",
+        "borderWidth": "0px",
+        "color": "gray",
+        "height": "2px",
+        "marginTop": 40,
+      }
+    }
+  />
+  <div
+    className="row"
+  >
+    <div
+      className="col"
+      style={
+        Object {
+          "background": "white",
+          "padding": 0,
+        }
+      }
+    >
+      <button
+        className="d-flex btn btn-light"
+        disabled={false}
+        style={
+          Object {
+            "background": "white",
+            "border": "none",
+            "margin": 0,
+          }
+        }
+        type="button"
+      >
+        <div
+          style={
+            Object {
+              "border": "1px dotted grey",
+              "height": 25,
+              "marginRight": 10,
+              "textAlign": "center",
+              "width": 20,
+            }
+          }
+        >
+          P
+        </div>
+        Cancel
+      </button>
+    </div>
+    <div
+      className="col"
+      style={
+        Object {
+          "display": "flex",
+          "justifyContent": "flex-end",
+        }
+      }
+    >
+      <button
+        className="btn btn-danger btn btn-primary"
+        disabled={false}
+        onClick={[Function]}
+        style={
+          Object {
+            "marginLeft": 15,
+          }
+        }
+        type="button"
+      >
+        Next
+      </button>
+    </div>
+  </div>
+  <hr
+    style={
+      Object {
+        "background": "gray",
+        "borderWidth": "0px",
+        "color": "gray",
+        "height": "2px",
+        "marginTop": 40,
+      }
+    }
+  />
+  <div
+    className="row"
+  >
+    <div
+      className="mt-4"
+    >
+      <div
+        className="d-flex"
+      >
+        <div
+          style={
+            Object {
+              "border": "1px dotted grey",
+              "height": 25,
+              "marginRight": 10,
+              "textAlign": "center",
+              "width": 20,
+            }
+          }
+        >
+          P
+        </div>
+        <span
+          style={
+            Object {
+              "fontWeight": "bold",
+            }
+          }
+        >
+          Note:
+        </span>
+      </div>
+      <p>
+        <span>
+          Your use of Interac e-Transfer is subject to the 
+        </span>
+        <div
+          className="row"
+        >
+          <div
+            className="d-flex align-items-center mt-2 col-md-12"
+          >
+            <div
+              style={
+                Object {
+                  "border": "1px dotted grey",
+                  "height": 25,
+                  "marginRight": 10,
+                  "textAlign": "center",
+                  "width": 20,
+                }
+              }
+            >
+              P
+            </div>
+            <span>
+              Interac e-Transfer Terms and Conditions (PDF, 197KB).
+            </span>
+          </div>
+        </div>
+      </p>
+    </div>
+  </div>
+</div>
+`;
