@@ -84,7 +84,7 @@ export default function MakeAPaymentWithPoints() {
           <Row>
             <Col md="6">
               <div
-                className="p-5 text-center"
+                className="p-5 text-center option-btn"
                 aria-hidden="true"
                 style={paymentWithPointsStyle}
                 onClick={() => handleToggleStyle('payment_with_points')}
@@ -106,7 +106,7 @@ export default function MakeAPaymentWithPoints() {
             </Col>
             <Col md="6">
               <div
-                className="p-5 text-center"
+                className="p-5 text-center option-btn"
                 aria-hidden="true"
                 style={financialProductsWithPointsStyle}
                 onClick={() => handleToggleStyle('financial_products_points')}

@@ -2,15 +2,15 @@ import React from 'react';
 import Enzyme, { shallow } from 'enzyme';
 import Adapter from '@wojtekmaj/enzyme-adapter-react-17';
 
-import MakeALoanPayment from './MakeALoanPayment';
+import MakeAPaymentWithPoints from './MakeAPaymentWithPoints';
 
 // Configure enzyme for react 17
 Enzyme.configure({ adapter: new Adapter() });
 
 describe('MakeAPaymentWithPoints Page Component', () => {
-  it('should render and click options MakeALoanPayment', () => {
+  it('should render MakeAPaymentWithPoints', () => {
     const setSelectedRef = jest.fn();
-    const wrapper = shallow(<MakeALoanPayment />);
+    const wrapper = shallow(<MakeAPaymentWithPoints />);
 
     React.useState = jest
       .fn()
