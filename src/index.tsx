@@ -1,3 +1,5 @@
+/* eslint-disable no-console */
+
 import {
   AuthenticationResult,
   EventMessage,
@@ -13,6 +15,7 @@ import './index.css';
 import App from './App';
 import { msalConfig } from './authConfig';
 import * as serviceWorker from './serviceWorker';
+import Api from './api';
 
 const msalInstance = new PublicClientApplication(msalConfig);
 const accounts = msalInstance.getAllAccounts();
@@ -24,7 +27,13 @@ msalInstance.addEventCallback((event: EventMessage) => {
   if (event.eventType === EventType.LOGIN_SUCCESS && event.payload) {
     const payload = event.payload as AuthenticationResult;
     const { account } = payload;
-    msalInstance.setActiveAccount(account);
+    if (account) {
+      const api = new Api(msalInstance, account);
+      api.putUser()
+        .then((user) => console.log('user', user))
+        .catch((error) => console.error('user', error));
+      msalInstance.setActiveAccount(account);
+    }
   }
 });
 

@@ -1,3 +1,6 @@
+/* eslint-disable no-console */
+
+import { useMsal } from '@azure/msal-react';
 import {
   Col,
   Row,
@@ -6,10 +9,11 @@ import {
   Button,
   Modal,
 } from 'react-bootstrap';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import CONTACTS from './Contacts';
 import CommonHeader from '../../common/CommonHeader';
+import Api from '../../api';
 
 type Contact = {
   key: number,
@@ -94,9 +98,17 @@ const RemoveContactModal: React.FC<{
 // As we are using TypeScript - there are no need to use propTypes package.
 // eslint-disable-next-line react/prop-types
 const ContactList: React.FC<{ initialContacts?: Array<Contact> }> = ({ initialContacts }) => {
+  const { instance, accounts } = useMsal();
+  useEffect(() => {
+    new Api(instance, accounts[0]).listContacts()
+      .then((contacts) => console.log('contacts', contacts))
+      .catch((error) => console.error('contacts', error));
+  }, []);
+
   const [modalShow, setModalShow] = useState(false);
   const [contacts, setContacts] = useState(initialContacts ?? CONTACTS);
   const [selectedContact, setSelectedContact] = useState<{ email:string }>();
+
   const onDeletePressed = (contact:any) => () => {
     setModalShow(true);
     setSelectedContact(contact);
