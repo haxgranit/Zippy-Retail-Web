@@ -64,7 +64,8 @@
   "jest": {
     "collectCoverageFrom": [
       "src/**/*.tsx",
-      "!src/**/*.stories.tsx"
+      "!src/**/*.stories.tsx",
+      "!src/index.tsx"
     ]
   },
   "browserslist": {

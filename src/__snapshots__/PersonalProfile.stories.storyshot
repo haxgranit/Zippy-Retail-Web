@@ -63,7 +63,7 @@ exports[`Storyshots PersonalProfile Default 1`] = `
               className="col-6 col-md-12 mb-3 text-center"
             >
               <a
-                className="text-light text-uppercase text-decoration-none"
+                className="text-light text-uppercase text-decoration-none link-item"
                 href="/"
                 onClick={[Function]}
               >
@@ -74,7 +74,7 @@ exports[`Storyshots PersonalProfile Default 1`] = `
               className="col-6 col-md-12 mb-3 text-center"
             >
               <a
-                className="text-light text-uppercase text-decoration-none"
+                className="text-light text-uppercase text-decoration-none link-item"
                 href="/"
                 onClick={[Function]}
               >
@@ -85,7 +85,7 @@ exports[`Storyshots PersonalProfile Default 1`] = `
               className="col-6 col-md-12 mb-3 text-center"
             >
               <a
-                className="text-light text-uppercase text-decoration-none"
+                className="text-light text-uppercase text-decoration-none link-item"
                 href="/"
                 onClick={[Function]}
               >
@@ -96,7 +96,7 @@ exports[`Storyshots PersonalProfile Default 1`] = `
               className="col-6 col-md-12 mb-3 text-center"
             >
               <a
-                className="text-light text-uppercase text-decoration-none"
+                className="text-light text-uppercase text-decoration-none link-item"
                 href="/"
                 onClick={[Function]}
               >
