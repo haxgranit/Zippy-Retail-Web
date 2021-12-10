@@ -53,5 +53,5 @@ describe('Header', () => {
     }));
     const wrapper = shallow(<Header />);
     wrapper.find('button').at(1).simulate('click');
-  })
+  });
 });

@@ -11,7 +11,7 @@ jest.mock('@azure/msal-react', () => ({
   ...(jest.requireActual('@azure/msal-react') as any),
   useMsal: () => ({
     instance: {
-      loginRedirect: mockLoginRedirect
+      loginRedirect: mockLoginRedirect,
     },
   }),
 }));
