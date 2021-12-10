@@ -13,15 +13,7 @@ import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import CONTACTS from './Contacts';
 import CommonHeader from '../../common/CommonHeader';
-import Api from '../../api';
-
-type Contact = {
-  key: number,
-  name: string,
-  lang: string,
-  email: string,
-  phone: string,
-};
+import Api, { Contact } from '../../api';
 
 const RemoveContactModal: React.FC<{
   show: boolean;
@@ -99,15 +91,16 @@ const RemoveContactModal: React.FC<{
 // eslint-disable-next-line react/prop-types
 const ContactList: React.FC<{ initialContacts?: Array<Contact> }> = ({ initialContacts }) => {
   const { instance, accounts } = useMsal();
-  useEffect(() => {
-    new Api(instance, accounts[0]).listContacts()
-      .then((contacts) => console.log('contacts', contacts))
-      .catch((error) => console.error('contacts', error));
-  }, []);
 
   const [modalShow, setModalShow] = useState(false);
   const [contacts, setContacts] = useState(initialContacts ?? CONTACTS);
   const [selectedContact, setSelectedContact] = useState<{ email:string }>();
+
+  useEffect(() => {
+    new Api(instance, accounts[0]).listContacts()
+      .then((result) => setContacts(result ?? []))
+      .catch((error) => console.error('contacts', error));
+  }, []);
 
   const onDeletePressed = (contact:any) => () => {
     setModalShow(true);
@@ -212,10 +205,10 @@ const ContactList: React.FC<{ initialContacts?: Array<Contact> }> = ({ initialCo
               </tr>
             </thead>
             <tbody style={{ borderTop: 'none' }}>
-              {contacts.map((item) => (
-                <tr key={item.key}>
+              {contacts.map((item, index) => (
+                <tr key={item.email ? item.email : item.phone}>
                   <td><Link to="edit" state={{ item }}>{item.name}</Link></td>
-                  <td>{item.lang}</td>
+                  <td>English</td>
                   <td>
                     {item.email && (
                       <div>{item.email}</div>
@@ -225,7 +218,7 @@ const ContactList: React.FC<{ initialContacts?: Array<Contact> }> = ({ initialCo
                     )}
                   </td>
                   <td>
-                    <Button onClick={onDeletePressed(item)} variant="light" className="text-black d-flex" id={`contact-list-${item.key}`}>
+                    <Button onClick={onDeletePressed(item)} variant="light" className="text-black d-flex" id={`contact-list-${index}`}>
                       <div
                         style={{
                           width: 20,
