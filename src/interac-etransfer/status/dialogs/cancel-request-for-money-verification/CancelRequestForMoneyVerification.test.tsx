@@ -47,7 +47,7 @@ describe('ٌRequest Sent Component', () => {
         handleBack={handleBack}
       />,
     );
-    
+
     const buttons = wrapper.find(Button);
     buttons.at(1).simulate('click');
     expect(handleCancelRequest).toBeCalled();
