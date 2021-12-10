@@ -8,7 +8,7 @@ import '../i18n/config';
 Enzyme.configure({ adapter: new Adapter() });
 
 describe('Footer Component', () => {
-  it('should delete contact', () => {
+  it('click footer links', () => {
     const wrapper = shallow(<Footer />);
     const preventMethod = jest.fn();
     const mEvent = { preventDefault: preventMethod };
