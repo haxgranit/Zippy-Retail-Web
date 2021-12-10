@@ -9,9 +9,7 @@ import '../i18n/config';
 Enzyme.configure({ adapter: new Adapter() });
 
 jest.mock('@azure/msal-react', () => ({
-  useIsAuthenticated: () => {
-    return true;
-  }
+  useIsAuthenticated: () => true,
 }));
 
 describe('Home Component', () => {

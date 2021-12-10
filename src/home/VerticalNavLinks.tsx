@@ -28,7 +28,7 @@ export default function VerticalNavLinks() {
           <Nav.Link as={NavLink} to="/interac-etransfer/request-money" className="nav-link">Request Money</Nav.Link>
           <Nav.Link as={NavLink} to="/interac-etransfer/contact-list" className="nav-link">Contact List</Nav.Link>
           <Nav.Link as={NavLink} to="/interac-etransfer/edit-my-profile" className="nav-link">Edit My Profile</Nav.Link>
-          <Nav.Link as={NavLink} to="/interac-etransfer/autodeposit-settings"> className="nav-link"Autodeposit Settings</Nav.Link>
+          <Nav.Link as={NavLink} to="/interac-etransfer/autodeposit-settings" className="nav-link">Autodeposit Settings</Nav.Link>
           <Nav.Link as={NavLink} to="/interac-etransfer/receive-money" className="nav-link">Receive Money</Nav.Link>
           <Nav.Link as={NavLink} to="/interac-etransfer/learn-more" className="nav-link">Learn More</Nav.Link>
         </Nav>

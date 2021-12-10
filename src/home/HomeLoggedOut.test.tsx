@@ -10,13 +10,11 @@ Enzyme.configure({ adapter: new Adapter() });
 
 const mockUseMsal = jest.fn();
 jest.mock('@azure/msal-react', () => ({
-  useMsal: () => {
-    return {
-      instance: {
-        loginRedirect: () => mockUseMsal
-      }
-    }
-  }
+  useMsal: () => ({
+    instance: {
+      loginRedirect: () => mockUseMsal,
+    },
+  }),
 }));
 
 describe('HomeLoggedOut Component', () => {

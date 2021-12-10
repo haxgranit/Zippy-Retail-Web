@@ -1,5 +1,4 @@
 import Enzyme, { shallow } from 'enzyme';
-import { BrowserRouter } from 'react-router-dom';
 import Adapter from '@wojtekmaj/enzyme-adapter-react-17';
 
 import Footer from './Footer';
