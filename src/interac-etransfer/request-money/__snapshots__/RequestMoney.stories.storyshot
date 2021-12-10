@@ -157,11 +157,6 @@ exports[`Storyshots interac-etransfer/request-money/RequestMoney Default 1`] = `
             >
               Select
             </option>
-            <option
-              value="1"
-            >
-              Kent Ulrich
-            </option>
           </select>
         </div>
       </div>

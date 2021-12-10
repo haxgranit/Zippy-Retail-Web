@@ -35,11 +35,6 @@ Array [
         >
           Select
         </option>
-        <option
-          value="1"
-        >
-          Kent Ulrich
-        </option>
       </select>
     </div>
   </div>,
