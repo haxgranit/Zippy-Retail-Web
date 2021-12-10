@@ -1,4 +1,4 @@
-import Enzyme, { mount, shallow } from 'enzyme';
+import Enzyme, { mount } from 'enzyme';
 import Adapter from '@wojtekmaj/enzyme-adapter-react-17';
 import React from 'react';
 import { BrowserRouter } from 'react-router-dom';
@@ -22,17 +22,12 @@ describe('Request Sent Component', () => {
   it('should render RequestSent', () => {
     const setSendReminderChecked = jest.fn();
     const setShowCancelRequestForMoney = jest.fn();
-    const wrapper = shallow(
-      <BrowserRouter>
-        <RequestSent />
-      </BrowserRouter>,
-    );
 
     React.useState = jest
       .fn()
       .mockImplementationOnce(() => [true, setSendReminderChecked])
       .mockImplementationOnce(() => [false, setShowCancelRequestForMoney]);
-    expect(wrapper.find('RequestSent').dive()).toHaveLength(1);
+    expect(wrapper.find('RequestSent')).toHaveLength(1);
   });
 
   it('should click buttons', () => {
