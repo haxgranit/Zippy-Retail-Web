@@ -1,0 +1,81 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots VerticalNavLinks Default 1`] = `
+<div
+  className="flex-column nav"
+  onKeyDown={[Function]}
+>
+  <a
+    className="nav-link nav-link"
+    data-rr-ui-event-key={null}
+    disabled={false}
+    href="/my-accounts"
+    onClick={[Function]}
+  >
+    My Accounts
+  </a>
+  <a
+    className="nav-link nav-link"
+    data-rr-ui-event-key={null}
+    disabled={false}
+    href="/interac-etransfer"
+    onClick={[Function]}
+  >
+    Interac e-Transfer
+  </a>
+  <a
+    className="nav-link nav-link"
+    data-rr-ui-event-key={null}
+    disabled={false}
+    href="/bill-payments"
+    onClick={[Function]}
+  >
+    Bill Payments
+  </a>
+  <a
+    className="nav-link nav-link"
+    data-rr-ui-event-key={null}
+    disabled={false}
+    href="/transfer-funds"
+    onClick={[Function]}
+  >
+    Transfer Funds
+  </a>
+  <a
+    className="nav-link nav-link"
+    data-rr-ui-event-key={null}
+    disabled={false}
+    href="/account-security"
+    onClick={[Function]}
+  >
+    Account Security
+  </a>
+  <a
+    className="nav-link nav-link"
+    data-rr-ui-event-key={null}
+    disabled={false}
+    href="/customer-services"
+    onClick={[Function]}
+  >
+    Customer Services
+  </a>
+  <a
+    className="nav-link nav-link"
+    data-rr-ui-event-key={null}
+    disabled={false}
+    href="/manage-my-alerts"
+    onClick={[Function]}
+  >
+    Manage My Alerts
+  </a>
+  <a
+    className="nav-link nav-link"
+    data-rr-ui-event-key={null}
+    disabled={false}
+    href="/contact-us"
+    onClick={[Function]}
+  >
+    Contact Us
+  </a>
+</div>
+`;
