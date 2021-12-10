@@ -30,10 +30,10 @@ export default function Header() {
         <div className="collapse navbar-collapse flex-md-column nav-uppercase" id="navbarSupportedContent">
           <ul className="navbar-nav ms-auto mb-2 mb-lg-0 me-md-5">
             <NavDropdown title={<span style={{ color: 'inherit', fontWeight: 700 }}>{t('header.language')}</span>}>
-              <NavDropdown.Item onClick={() => i18n.changeLanguage('en-CA')}>English (Canada)</NavDropdown.Item>
-              <NavDropdown.Item style={{ display: 'none' }} onClick={() => i18n.changeLanguage('en-US')}>English (US)</NavDropdown.Item>
-              <NavDropdown.Item onClick={() => i18n.changeLanguage('fr-CA')}>French (Canada)</NavDropdown.Item>
-              <NavDropdown.Item style={{ display: 'none' }} onClick={() => i18n.changeLanguage('es-US')}>Spanish (US)</NavDropdown.Item>
+              <NavDropdown.Item onClick={() => i18n.changeLanguage('en-CA')} className="nav-dropdown-item">English (Canada)</NavDropdown.Item>
+              <NavDropdown.Item style={{ display: 'none' }} onClick={() => i18n.changeLanguage('en-US')} className="nav-dropdown-item">English (US)</NavDropdown.Item>
+              <NavDropdown.Item onClick={() => i18n.changeLanguage('fr-CA')} className="nav-dropdown-item">French (Canada)</NavDropdown.Item>
+              <NavDropdown.Item style={{ display: 'none' }} onClick={() => i18n.changeLanguage('es-US')} className="nav-dropdown-item">Spanish (US)</NavDropdown.Item>
             </NavDropdown>
             {(isAuthenticated && (
               <li className="nav-item">
