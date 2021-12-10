@@ -105,7 +105,7 @@ export default function MakeALoanPayment() {
             <Row>
               <Col md="6">
                 <div
-                  className="p-5"
+                  className="p-5 option-btn"
                   aria-hidden="true"
                   style={payPartialAmountStyle}
                   onClick={() => handleToggleStyle('pay_partial_amount')}
@@ -120,7 +120,7 @@ export default function MakeALoanPayment() {
               </Col>
               <Col md="6">
                 <div
-                  className="p-5"
+                  className="p-5 option-btn"
                   aria-hidden="true"
                   style={payFullAmountStyle}
                   onClick={() => handleToggleStyle('pay_full_amount')}
