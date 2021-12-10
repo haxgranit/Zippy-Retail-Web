@@ -48,7 +48,7 @@ export default function PersonalProfile() {
                   <Link
                     to="/"
                     onClick={(e) => e.preventDefault()}
-                    className="text-light text-uppercase text-decoration-none"
+                    className="text-light text-uppercase text-decoration-none link-item"
                   >
                     {t('profile.contact_info')}
                   </Link>
@@ -57,7 +57,7 @@ export default function PersonalProfile() {
                   <Link
                     to="/"
                     onClick={(e) => e.preventDefault()}
-                    className="text-light text-uppercase text-decoration-none"
+                    className="text-light text-uppercase text-decoration-none link-item"
                   >
                     {t('profile.account_info')}
                   </Link>
@@ -66,7 +66,7 @@ export default function PersonalProfile() {
                   <Link
                     to="/"
                     onClick={(e) => e.preventDefault()}
-                    className="text-light text-uppercase text-decoration-none"
+                    className="text-light text-uppercase text-decoration-none link-item"
                   >
                     {t('profile.language')}
                   </Link>
@@ -75,7 +75,7 @@ export default function PersonalProfile() {
                   <Link
                     to="/"
                     onClick={(e) => e.preventDefault()}
-                    className="text-light text-uppercase text-decoration-none"
+                    className="text-light text-uppercase text-decoration-none link-item"
                   >
                     {t('profile.lorem_ipsum')}
                   </Link>
