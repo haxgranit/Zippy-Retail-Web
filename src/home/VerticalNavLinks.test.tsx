@@ -8,6 +8,13 @@ import '../i18n/config';
 // Configure enzyme for react 17
 Enzyme.configure({ adapter: new Adapter() });
 
+jest.mock('react-router-dom', () => ({
+  ...(jest.requireActual('react-router-dom') as any),
+  useLocation: () => ({
+    pathname: 'my-accounts',
+  }),
+}));
+
 describe('VerticalNavLinks Component', () => {
   it('click buttons on VerticalNavLinks', () => {
     const wrapper = shallow(
