@@ -20,7 +20,7 @@ describe('ٌRequest Sent Component', () => {
     );
     expect(wrapper.exists);
   });
-  it('should click buttons on CancelRequestForMoneyVerification', () => {
+  it('should click Back button on CancelRequestForMoneyVerification', () => {
     const show = true;
     const handleCancelRequest = jest.fn();
     const handleBack = jest.fn();
@@ -35,7 +35,20 @@ describe('ٌRequest Sent Component', () => {
     const buttons = wrapper.find(Button);
     buttons.at(0).simulate('click');
     expect(handleBack).toBeCalled();
-
+  });
+  it('should click CancelRequest button on CancelRequestForMoneyVerification', () => {
+    const show = true;
+    const handleCancelRequest = jest.fn();
+    const handleBack = jest.fn();
+    const wrapper = shallow(
+      <CancelRequestForMoneyVerification
+        show={show}
+        handleCancelRequest={handleCancelRequest}
+        handleBack={handleBack}
+      />,
+    );
+    
+    const buttons = wrapper.find(Button);
     buttons.at(1).simulate('click');
     expect(handleCancelRequest).toBeCalled();
   });
