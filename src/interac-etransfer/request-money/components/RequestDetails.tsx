@@ -1,15 +1,26 @@
-import { useState } from 'react';
+import { useMsal } from '@azure/msal-react';
+import { useEffect, useState } from 'react';
 import {
   Button,
   Col,
   Form,
   Row,
 } from 'react-bootstrap';
+import Api, { Contact } from '../../../api';
 
 const Divider = () => <div className="border-top my-3" />;
 
 export default function RequestDetail({ setCurrentStep }: any) {
   const [accountFrom, setAccountFrom] = useState('');
+  const [contacts, setContacts] = useState<Contact[] | null>([]);
+  const { instance, accounts } = useMsal();
+
+  useEffect(() => {
+    new Api(instance, accounts[0]).listContacts()
+      .then((contactsList) => {
+        setContacts(contactsList);
+      }).catch((error) => console.error('contacts', error));
+  }, []);
   return (
     <>
       <Row>
@@ -22,7 +33,11 @@ export default function RequestDetail({ setCurrentStep }: any) {
         <Col xs={6}>
           <Form.Select onChange={(evt) => setAccountFrom(evt.target.value)}>
             <option value="">Select</option>
-            <option value="1">Kent Ulrich</option>
+            {
+              contacts?.map((contact) => (
+                <option key={contact.email} value="index">{contact.name}</option>
+              ))
+            }
           </Form.Select>
         </Col>
       </Row>
