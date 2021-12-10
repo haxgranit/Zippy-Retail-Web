@@ -91,14 +91,14 @@ const LeftCol = () => {
               type="radio"
               label="Send Reminder to Contact"
               name="Actions"
-              onClick={() => setSendReminderChecked(true)}
+              onChange={() => setSendReminderChecked(true)}
               checked={sendReminderChecked}
             />
             <Form.Check
               type="radio"
               label="Cancel the Request"
               name="Actions"
-              onClick={() => setSendReminderChecked(false)}
+              onChange={() => setSendReminderChecked(false)}
               checked={!sendReminderChecked}
             />
           </Col>

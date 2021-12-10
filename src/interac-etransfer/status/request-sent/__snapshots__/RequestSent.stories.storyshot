@@ -136,7 +136,7 @@ exports[`Storyshots interac-etransfer/status/request-sent/RequestSent Default 1`
               className="form-check-input"
               disabled={false}
               name="Actions"
-              onClick={[Function]}
+              onChange={[Function]}
               type="radio"
             />
             <label
@@ -154,7 +154,7 @@ exports[`Storyshots interac-etransfer/status/request-sent/RequestSent Default 1`
               className="form-check-input"
               disabled={false}
               name="Actions"
-              onClick={[Function]}
+              onChange={[Function]}
               type="radio"
             />
             <label

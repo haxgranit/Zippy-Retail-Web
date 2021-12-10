@@ -2,6 +2,10 @@
 
 import { AccountInfo, InteractionRequiredAuthError, IPublicClientApplication } from '@azure/msal-browser';
 
+export type Account = {
+  name: string;
+};
+
 export type Contact = {
   name: string;
   email: string;
@@ -18,6 +22,10 @@ export default class Api {
     private readonly instance: IPublicClientApplication,
     private readonly account: AccountInfo,
   ) { }
+
+  public listAccounts() {
+    return this.fetch<Account[]>('get', 'Accounts');
+  }
 
   public listContacts() {
     return this.fetch<Contact[]>('get', 'Contacts');
