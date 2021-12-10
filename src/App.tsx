@@ -1,5 +1,4 @@
 import AOS from 'aos';
-import { useIsAuthenticated, useMsal } from '@azure/msal-react';
 import { useEffect } from 'react';
 import {
   Navigate,
@@ -9,7 +8,6 @@ import {
 } from 'react-router-dom';
 import About from './About';
 import AccountSecurity from './account-security/AccountSecurity';
-import Api from './api';
 import BillerDetails from './bill-payments/biller-details/BillerDetails';
 import AddOrEditBillers from './bill-payments/add-or-edit-billers/AddOrEditBillers';
 import BillPayments from './bill-payments/bill-payments/BillPayments';
@@ -79,8 +77,6 @@ import RequestCanceled from './interac-etransfer/status/request-canceled/Request
 import InteracETransferDetails from './interac-etransfer/status/interac-e-transfer-details/InteracETransferDetails';
 
 export default function App() {
-  const isAuthenticated = useIsAuthenticated();
-  const { instance, accounts: msalAccounts } = useMsal();
   const { search } = useLocation();
   const languageCode = new URLSearchParams(search).get('language');
   useEffect(() => {
@@ -88,20 +84,6 @@ export default function App() {
       i18n.changeLanguage(languageCode);
     }
   }, [languageCode]);
-
-  useEffect(() => {
-    if (isAuthenticated) {
-      new Api(instance, msalAccounts[0]).putUser()
-        .then((user) => {
-          /* eslint-disable-next-line no-console */
-          console.log('user', user);
-        })
-        .catch((error) => {
-          /* eslint-disable-next-line no-console */
-          console.error('user', error);
-        });
-    }
-  }, [isAuthenticated, instance, msalAccounts]);
 
   useEffect(() => AOS.init(), []);
 
