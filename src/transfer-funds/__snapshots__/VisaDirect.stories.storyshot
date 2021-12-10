@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots transfer-funds/VisaDirect Default 1`] = `
+<div
+  style={
+    Object {
+      "border": "dashed",
+      "height": "100%",
+      "padding": "20px",
+      "textAlign": "center",
+      "width": "100%",
+    }
+  }
+>
+  PLACEHOLDER: Visa Direct Screenshot
+</div>
+`;
