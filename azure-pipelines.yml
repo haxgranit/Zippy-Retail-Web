@@ -7,7 +7,7 @@ jobs:
 - job: Docker
   variables:
     DOCKER_BUILDKIT: 1
-    DOCKER_REPOSITORY: zcorp-consumer
+    DOCKER_REPOSITORY: zippy-retail-web
   steps:
   - task: Docker@2
     displayName: Login
