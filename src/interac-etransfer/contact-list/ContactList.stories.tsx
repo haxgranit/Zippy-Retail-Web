@@ -15,17 +15,13 @@ const Template: ComponentStory<typeof ContactList> = () => (<ContactList />);
 export const MockedSuccess = Template.bind({});
 MockedSuccess.parameters = {
   msw: [
-    rest.get('https://zippy-retail-api-dev.azurewebsites.net/Contacts', (_req, res, ctx) => {
-      return res(ctx.json(CONTACTS));
-    }),
+    rest.get('https://zippy-retail-api-dev.azurewebsites.net/Contacts', (_req, res, ctx) => res(ctx.json(CONTACTS))),
   ],
 };
 
 export const MockedError = Template.bind({});
 MockedError.parameters = {
   msw: [
-    rest.get('https://zippy-retail-api-dev.azurewebsites.net/Contacts', (_req, res, ctx) => {
-      return res(ctx.delay(800), ctx.status(403));
-    }),
+    rest.get('https://zippy-retail-api-dev.azurewebsites.net/Contacts', (_req, res, ctx) => res(ctx.delay(800), ctx.status(403))),
   ],
 };
