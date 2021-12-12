@@ -53,16 +53,19 @@ export default class Api {
       console.log(error);
       return null;
     }
+    try {
+      const response = await fetch(`https://zippy-retail-api-dev.azurewebsites.net/${path}`, {
+        method,
+        headers: new Headers({ Authorization: `Bearer ${accessToken}` }),
+      });
 
-    const response = await fetch(`https://zippy-retail-api-dev.azurewebsites.net/${path}`, {
-      method,
-      headers: new Headers({ Authorization: `Bearer ${accessToken}` }),
-    });
-
-    if (!response.ok) {
-      throw Error(`${response.status} ${response.statusText}`);
+      if (!response.ok) {
+        throw Error(`${response.status} ${response.statusText}`);
+      }
+      return await response.json() as TResponse;
+    } catch (error) {
+      console.log(error);
+      return null;
     }
-
-    return await response.json() as TResponse;
   }
 }

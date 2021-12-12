@@ -2,16 +2,10 @@
 
 import { useMsal } from '@azure/msal-react';
 import {
-  Col,
-  Row,
-  Card,
-  Table,
-  Button,
-  Modal,
+  Col, Row, Card, Table, Button, Modal,
 } from 'react-bootstrap';
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import CONTACTS from './Contacts';
 import CommonHeader from '../../common/CommonHeader';
 import Api, { Contact } from '../../api';
 
@@ -21,10 +15,7 @@ const RemoveContactModal: React.FC<{
   onHide: VoidFunction;
   onDeleteConfirm: VoidFunction;
 }> = ({
-  show,
-  selectedContact,
-  onHide,
-  onDeleteConfirm,
+  show, selectedContact, onHide, onDeleteConfirm,
 }) => (
   <Modal
     show={show}
@@ -36,34 +27,37 @@ const RemoveContactModal: React.FC<{
     <Modal.Body>
       <h4 style={{ marginTop: 20 }}>Delete Contact - Verification</h4>
       <p>
-        Are you sure you want to remove the contact below from your contact list?
+        Are you sure you want to remove the contact below from your contact
+        list?
       </p>
       <Row style={{ marginTop: 50, marginBottom: 20 }}>
         <Col>
           <span>Name:</span>
         </Col>
-        <Col>
-          {selectedContact?.name}
-        </Col>
+        <Col>{selectedContact?.name}</Col>
       </Row>
-      <hr style={{
-        height: '2px',
-        borderWidth: '0px',
-        color: 'gray',
-        background: 'gray',
-      }}
+      <hr
+        style={{
+          height: '2px',
+          borderWidth: '0px',
+          color: 'gray',
+          background: 'gray',
+        }}
       />
       <Row style={{ marginTop: 20, marginBottom: 20 }}>
         <Col>
           <span>Email Address:</span>
         </Col>
-        <Col>
-          {selectedContact?.email}
-        </Col>
+        <Col>{selectedContact?.email}</Col>
       </Row>
       <Row style={{ marginTop: 50 }}>
         <Col style={{ padding: 0, background: 'white' }}>
-          <Button onClick={onHide} style={{ margin: 0, background: 'white', border: 'none' }} variant="light" className="d-flex">
+          <Button
+            onClick={onHide}
+            style={{ margin: 0, background: 'white', border: 'none' }}
+            variant="light"
+            className="d-flex"
+          >
             <div
               style={{
                 width: 20,
@@ -79,8 +73,17 @@ const RemoveContactModal: React.FC<{
           </Button>
         </Col>
         <Col style={{ display: 'flex', justifyContent: 'flex-end' }}>
-          <Button variant="outline-danger" onClick={onHide}>Close</Button>
-          <Button id="remove-contact-button" className="btn btn-danger" style={{ marginLeft: 15 }} onClick={onDeleteConfirm}>Delete</Button>
+          <Button variant="outline-danger" onClick={onHide}>
+            Close
+          </Button>
+          <Button
+            id="remove-contact-button"
+            className="btn btn-danger"
+            style={{ marginLeft: 15 }}
+            onClick={onDeleteConfirm}
+          >
+            Delete
+          </Button>
         </Col>
       </Row>
     </Modal.Body>
@@ -89,27 +92,27 @@ const RemoveContactModal: React.FC<{
 
 // As we are using TypeScript - there are no need to use propTypes package.
 // eslint-disable-next-line react/prop-types
-const ContactList: React.FC<{ initialContacts?: Array<Contact> }> = ({ initialContacts }) => {
+const ContactList = () => {
   const { instance, accounts } = useMsal();
 
   const [modalShow, setModalShow] = useState(false);
-  const [contacts, setContacts] = useState(initialContacts ?? CONTACTS);
-  const [selectedContact, setSelectedContact] = useState<{ email:string }>();
+  const [contacts, setContacts] = useState<Contact[]>([]);
+  const [selectedContact, setSelectedContact] = useState<{ email: string }>();
 
   useEffect(() => {
-    new Api(instance, accounts[0]).listContacts()
+    new Api(instance, accounts[0])
+      .listContacts()
       .then((result) => setContacts(result ?? []))
-      .catch((error) => console.error('contacts', error));
+      .catch((error) => console.log('error', error));
   }, []);
 
-  const onDeletePressed = (contact:any) => () => {
+  const onDeletePressed = (contact: any) => () => {
     setModalShow(true);
     setSelectedContact(contact);
   };
   const onDeleteConfirm = () => {
-    setContacts(
-      (prevContacts) => prevContacts.filter(({ email }) => email !== selectedContact?.email),
-    );
+    const filtered = contacts?.filter(({ email }: Contact) => email !== selectedContact?.email);
+    setContacts(filtered || []);
     setModalShow(false);
   };
 
@@ -207,18 +210,23 @@ const ContactList: React.FC<{ initialContacts?: Array<Contact> }> = ({ initialCo
             <tbody style={{ borderTop: 'none' }}>
               {contacts.map((item, index) => (
                 <tr key={item.email ? item.email : item.phone}>
-                  <td><Link to="edit" state={{ item }}>{item.name}</Link></td>
+                  <td>
+                    <Link to="edit" state={{ item }}>
+                      {item.name}
+                    </Link>
+                  </td>
                   <td>English</td>
                   <td>
-                    {item.email && (
-                      <div>{item.email}</div>
-                    )}
-                    {item.phone && (
-                      <div>{item.phone}</div>
-                    )}
+                    {item.email && <div>{item.email}</div>}
+                    {item.phone && <div>{item.phone}</div>}
                   </td>
                   <td>
-                    <Button onClick={onDeletePressed(item)} variant="light" className="text-black d-flex" id={`contact-list-${index}`}>
+                    <Button
+                      onClick={onDeletePressed(item)}
+                      variant="light"
+                      className="text-black d-flex"
+                      id={`contact-list-${index}`}
+                    >
                       <div
                         style={{
                           width: 20,

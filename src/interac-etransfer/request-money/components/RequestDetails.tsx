@@ -19,7 +19,8 @@ export default function RequestDetail({ setCurrentStep }: any) {
     new Api(instance, accounts[0]).listContacts()
       .then((contactsList) => {
         setContacts(contactsList);
-      }).catch((error) => console.error('contacts', error));
+      })
+      .catch((error) => console.log('error', error));
   }, []);
   return (
     <>

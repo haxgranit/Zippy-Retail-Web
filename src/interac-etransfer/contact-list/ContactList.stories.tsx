@@ -1,21 +1,31 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { rest } from 'msw';
 import '../../i18n/config';
 import '../../index.css';
 import ContactList from './ContactList';
+import CONTACTS from './Contacts';
 
 export default {
   title: 'interac-etransfer/contact-list/ContactList',
   component: ContactList,
 } as ComponentMeta<typeof ContactList>;
 
-const Template: ComponentStory<typeof ContactList> = () => (
-  <BrowserRouter>
-    <Routes>
-      <Route path="/" element={<ContactList />} />
-    </Routes>
-  </BrowserRouter>
-);
+const Template: ComponentStory<typeof ContactList> = () => (<ContactList />);
 
-export const Default = Template.bind({});
-Default.args = {};
+export const MockedSuccess = Template.bind({});
+MockedSuccess.parameters = {
+  msw: [
+    rest.get('https://zippy-retail-api-dev.azurewebsites.net/Contacts', (_req, res, ctx) => {
+      return res(ctx.json(CONTACTS));
+    }),
+  ],
+};
+
+export const MockedError = Template.bind({});
+MockedError.parameters = {
+  msw: [
+    rest.get('https://zippy-retail-api-dev.azurewebsites.net/Contacts', (_req, res, ctx) => {
+      return res(ctx.delay(800), ctx.status(403));
+    }),
+  ],
+};
