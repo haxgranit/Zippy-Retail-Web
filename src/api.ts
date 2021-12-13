@@ -53,7 +53,6 @@ export default class Api {
       console.log(error);
       return null;
     }
-
     const apiUrl = (<any>window).API_URL;
     if (!apiUrl) {
       throw Error('window.API_URL is undefined');
