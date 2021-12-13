@@ -148,8 +148,10 @@ Array [
         className="from-account-info form-select"
         onChange={[Function]}
       >
-        <option>
-          Cheguing (01702-81-99639) $2,260.57
+        <option
+          value=""
+        >
+          Select
         </option>
       </select>
     </div>

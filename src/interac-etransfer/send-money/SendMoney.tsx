@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Col, Row } from 'react-bootstrap';
+import { useMsal } from '@azure/msal-react';
 import CommonHeader from '../../common/CommonHeader';
 import StepComponent from '../../common/StepComponent';
 import {
@@ -10,6 +11,7 @@ import {
   TransferSentPage,
 } from './components';
 import SendMoneyVerificationModal from '../dialogs/SendMoneyVerificationModal';
+import Api, { Account } from '../../api';
 
 interface QuickLink {
   id: number;
@@ -33,6 +35,16 @@ export default function SendMoney() {
   const [showVerifyModal, setShowVerifyModal] = useState(false);
   const [selectedUser, setUserToSend] = useState(1);
   const [mainInfo, setMainInfo] = useState({});
+
+  const [accountsList, setAccountsList] = useState<Account[] | null>([]);
+  const { instance, accounts } = useMsal();
+
+  useEffect(() => {
+    new Api(instance, accounts[0]).listAccounts()
+      .then((result) => {
+        setAccountsList(result);
+      }).catch((error) => console.error('accounts', error));
+  }, []);
 
   const quickLinks: QuickLink[] = [
     {
@@ -103,6 +115,7 @@ export default function SendMoney() {
               setUserToSend={setUserToSend}
               mainInfo={mainInfo}
               setMainInfo={setMainInfo}
+              accounts={accountsList}
             />
           )}
           {currentStep === 2 && realStep === 2 && (
