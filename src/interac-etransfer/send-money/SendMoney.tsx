@@ -43,7 +43,7 @@ export default function SendMoney() {
     new Api(instance, accounts[0]).listAccounts()
       .then((result) => {
         setAccountsList(result);
-      }).catch((error) => console.error('contacts', error));
+      }).catch((error) => console.error('accounts', error));
   }, []);
 
   const quickLinks: QuickLink[] = [
