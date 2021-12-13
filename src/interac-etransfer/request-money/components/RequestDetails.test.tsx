@@ -74,7 +74,7 @@ describe('RequestDetail Component', () => {
       .mockImplementationOnce((x) => [x, setContacts]);
     const wrapper = mount(<RequestDetails />);
     const emailOrPhoneForm = wrapper.find(Form);
-    const emailOrPhoneCheck = wrapper.find(Form.Check);
+    const emailOrPhoneCheck = wrapper.find(Form.Select);
     const mockedEvent = { target: { value: '' } };
     emailOrPhoneCheck.at(0).simulate('click', mockedEvent);
     expect(emailOrPhoneForm.exists()).toBeFalsy();
@@ -92,7 +92,7 @@ describe('RequestDetail Component', () => {
       .mockImplementationOnce(() => [initialContact, setAccountFrom])
       .mockImplementationOnce((x) => [x, setContacts]);
     const wrapper = mount(<RequestDetails />);
-    const emailOrPhoneCheck = wrapper.find(Form.Check);
+    const emailOrPhoneCheck = wrapper.find(Form.Select);
     const mockedEvent = { target: { value: JSON.stringify(initialContact) } };
     emailOrPhoneCheck.at(0).simulate('click', mockedEvent);
     const emailOrPhoneForm = wrapper.find(Form);
@@ -111,19 +111,30 @@ describe('RequestDetail Component', () => {
       .mockImplementationOnce(() => [initialContact, setAccountFrom])
       .mockImplementationOnce((x) => [x, setContacts]);
     const wrapper = mount(<RequestDetails />);
-    const emailOrPhoneCheck = wrapper.find(Form.Check);
+    const emailOrPhoneCheck = wrapper.find(Form.Select);
     const mockedEvent = { target: { value: JSON.stringify(initialContact) } };
     emailOrPhoneCheck.at(0).simulate('click', mockedEvent);
     const emailOrPhoneForm = wrapper.find(Form);
     expect(emailOrPhoneForm).toBeTruthy();
   });
   it('should click next step button', () => {
+    const initialContact = {
+      name: 'test',
+      email: 'test@test.com',
+      phone: '',
+    };
+    const setAccountFrom = jest.fn();
+    const setContacts = jest.fn();
+    React.useState = jest
+      .fn()
+      .mockImplementationOnce(() => [initialContact, setAccountFrom])
+      .mockImplementationOnce((x) => [x, setContacts]);
     const setCurrentStep = jest.fn();
     const wrapper = shallow(<RequestDetails setCurrentStep={setCurrentStep} />);
 
     wrapper
-      .find('.account-from')
-      .simulate('change', { target: { value: 'index' } });
+      .find(Form.Select).at(0)
+      .simulate('change', { target: { value: JSON.stringify(initialContact) } });
     wrapper.find('Button[variant="danger"]').simulate('click');
     expect(setCurrentStep).toHaveBeenCalled();
   });
