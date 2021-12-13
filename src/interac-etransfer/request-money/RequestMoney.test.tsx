@@ -10,15 +10,9 @@ Enzyme.configure({ adapter: new Adapter() });
 describe('Request Money Component', () => {
   it('should click next step button', () => {
     const wrapper = shallow(<RequestMoney />);
-    const setCurrentStep = jest.fn();
-
-    React.useState = jest
-      .fn()
-      .mockImplementationOnce((x) => [x, setCurrentStep]);
 
     const leftWrapper = wrapper.find('LeftCol').dive();
     const stepWrapper = leftWrapper.find('StepComponent').dive();
     stepWrapper.find('div[role="button"]').at(0).simulate('click');
-    expect(setCurrentStep).toHaveBeenCalled();
   });
 });

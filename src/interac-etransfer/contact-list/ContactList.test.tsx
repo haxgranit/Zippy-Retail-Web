@@ -15,9 +15,7 @@ describe('Contact List Component', () => {
   });
 
   it('click a close button on modal', () => {
-    const setModalShow = jest.fn();
-
-    const wrapper = shallow(<ContactList initialContacts={CONTACTS_MOCK} />);
+    const wrapper = shallow(<ContactList />);
     wrapper.find('Button').at(0).simulate('click');
     wrapper.update();
 
