@@ -24,5 +24,5 @@ describe('Contact List Component', () => {
     const modalWrapper = modal.dive();
     modalWrapper.find('Button').at(0).simulate('click');
     modalWrapper.find('Button').at(2).simulate('click');
-  })
+  });
 });

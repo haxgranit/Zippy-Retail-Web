@@ -55,7 +55,7 @@ describe('Request Sent Component', () => {
       .mockImplementationOnce(() => [false, setShowCancelRequestForMoney]);
 
     const actions = wrapper.childAt(0).find('.actions');
-    actions.at(0).simulate('change', { target: { value: 1 }});
-    actions.at(1).simulate('change', { target: { value: 1 }});
-  })
+    actions.at(0).simulate('change', { target: { value: 1 } });
+    actions.at(1).simulate('change', { target: { value: 1 } });
+  });
 });

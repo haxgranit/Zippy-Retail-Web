@@ -17,6 +17,5 @@ describe('Request Details Component', () => {
       .simulate('change', { target: { value: 'index' } });
     wrapper.find('Button[variant="danger"]').simulate('click');
     expect(setCurrentStep).toHaveBeenCalled();
-
   });
 });

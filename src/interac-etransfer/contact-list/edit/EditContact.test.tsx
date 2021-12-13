@@ -25,9 +25,7 @@ jest.mock('react-router-dom', () => ({
 describe('EditContact Component', () => {
   it('should render title', () => {
     const setShow = jest.fn();
-    React.useState = jest
-      .fn()
-      .mockImplementationOnce((x) => [x, setShow]);
+    React.useState = jest.fn().mockImplementationOnce((x) => [x, setShow]);
     const wrapper = shallow(<EditContact />);
     const header = wrapper.find('CommonHeader');
     expect(header).toHaveLength(1);
@@ -35,9 +33,7 @@ describe('EditContact Component', () => {
 
   it('click next button', () => {
     const setShow = jest.fn();
-    React.useState = jest
-      .fn()
-      .mockImplementationOnce((x) => [x, setShow]);
+    React.useState = jest.fn().mockImplementationOnce((x) => [x, setShow]);
     const wrapper = shallow(<EditContact />);
     wrapper.find('Button').at(1).simulate('click');
     expect(setShow).toHaveBeenCalled();
@@ -59,5 +55,5 @@ describe('EditContact Component', () => {
     firstStepWrapper.find('button').at(0).simulate('click');
     firstStepWrapper.find('button').at(1).simulate('click');
     expect(setShow).toHaveBeenCalled();
-  })
+  });
 });
