@@ -89,6 +89,7 @@ const LeftCol = () => {
           <Col xs={6}>
             <Form.Check
               type="radio"
+              className="actions"
               label="Send Reminder to Contact"
               name="Actions"
               onChange={() => setSendReminderChecked(true)}
@@ -96,6 +97,7 @@ const LeftCol = () => {
             />
             <Form.Check
               type="radio"
+              className="actions"
               label="Cancel the Request"
               name="Actions"
               onChange={() => setSendReminderChecked(false)}
