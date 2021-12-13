@@ -129,7 +129,7 @@ exports[`Storyshots interac-etransfer/status/request-sent/RequestSent Default 1`
           className="col-6"
         >
           <div
-            className="form-check"
+            className="actions form-check"
           >
             <input
               checked={true}
@@ -147,7 +147,7 @@ exports[`Storyshots interac-etransfer/status/request-sent/RequestSent Default 1`
             </label>
           </div>
           <div
-            className="form-check"
+            className="actions form-check"
           >
             <input
               checked={false}

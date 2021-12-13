@@ -44,4 +44,18 @@ describe('Request Sent Component', () => {
     Buttons.at(1).simulate('click');
     expect(mockedUsedNavigate).toBeCalledTimes(2);
   });
+
+  it('change actions on home', () => {
+    const setSendReminderChecked = jest.fn();
+    const setShowCancelRequestForMoney = jest.fn();
+
+    React.useState = jest
+      .fn()
+      .mockImplementationOnce(() => [true, setSendReminderChecked])
+      .mockImplementationOnce(() => [false, setShowCancelRequestForMoney]);
+
+    const actions = wrapper.childAt(0).find('.actions');
+    actions.at(0).simulate('change', { target: { value: 1 } });
+    actions.at(1).simulate('change', { target: { value: 1 } });
+  });
 });

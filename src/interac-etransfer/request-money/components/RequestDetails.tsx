@@ -19,7 +19,8 @@ export default function RequestDetail({ setCurrentStep }: any) {
     new Api(instance, accounts[0]).listContacts()
       .then((contactsList) => {
         setContacts(contactsList);
-      }).catch((error) => console.error('contacts', error));
+      })
+      .catch((error) => console.log('error', error));
   }, []);
   return (
     <>
@@ -31,7 +32,7 @@ export default function RequestDetail({ setCurrentStep }: any) {
       <Row className="align-items-center mt-4">
         <Col xs={3}>Request Money From:</Col>
         <Col xs={6}>
-          <Form.Select onChange={(evt) => setAccountFrom(evt.target.value)}>
+          <Form.Select className="account-from" onChange={(evt) => setAccountFrom(evt.target.value)}>
             <option value="">Select</option>
             {
               contacts?.map((contact) => (

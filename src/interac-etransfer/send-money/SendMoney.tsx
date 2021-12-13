@@ -45,7 +45,7 @@ export default function SendMoney() {
       .then((result) => {
         setError(null);
         setAccountsList(result);
-      }).catch(() => setError('Sorry! a problem has accrued when getting accounts.'));
+      }).catch(() => setError('Sorry! a problem has occurred when getting accounts.'));
   }, []);
 
   const quickLinks: QuickLink[] = [
