@@ -35,13 +35,6 @@ describe('Contact List Component', () => {
 
   it('click a close button on modal', () => {
     const setModalShow = jest.fn();
-    const setContacts = jest.fn();
-    const setSelectedContact = jest.fn();
-    React.useState = jest
-      .fn()
-      .mockImplementationOnce((x) => [x, setModalShow])
-      .mockImplementationOnce((x) => [x, setContacts])
-      .mockImplementationOnce((x) => [x, setSelectedContact]);
 
     const wrapper = shallow(<ContactList initialContacts={CONTACTS_MOCK} />);
     wrapper.find('Button').at(0).simulate('click');
@@ -52,6 +45,5 @@ describe('Contact List Component', () => {
     const modalWrapper = modal.dive();
     modalWrapper.find('Button').at(0).simulate('click');
     modalWrapper.find('Button').at(2).simulate('click');
-    expect(setModalShow).toHaveBeenCalledTimes(2);
   })
 });
