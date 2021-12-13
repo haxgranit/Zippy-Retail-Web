@@ -1,5 +1,618 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Storyshots interac-etransfer/send-money/SendMoney API Error 1`] = `
+<div>
+  <div
+    className="d-flex justify-content-between align-items-center"
+  >
+    <h3>
+      SEND MONEY
+    </h3>
+    <div
+      className="d-flex"
+    >
+      <div
+        style={
+          Object {
+            "border": "1px dotted grey",
+            "height": 25,
+            "marginRight": 10,
+            "textAlign": "center",
+            "width": 20,
+          }
+        }
+        title="copy"
+      >
+        P
+      </div>
+      <div
+        style={
+          Object {
+            "border": "1px dotted grey",
+            "height": 25,
+            "marginRight": 10,
+            "textAlign": "center",
+            "width": 20,
+          }
+        }
+        title="question"
+      >
+        P
+      </div>
+    </div>
+  </div>
+  <div
+    className="row"
+  >
+    <div
+      className="col-md-8"
+    >
+      <div
+        className="row"
+      >
+        <div
+          className="col"
+        >
+          <div
+            className="d-flex align-items-center mt-3 mb-3"
+          >
+            <span
+              style={
+                Object {
+                  "fontWeight": "bold",
+                  "marginRight": 10,
+                }
+              }
+            >
+              Steps: 
+            </span>
+            <div
+              onClick={[Function]}
+              onKeyPress={[Function]}
+              role="button"
+              style={
+                Object {
+                  "alignItems": "center",
+                  "backgroundColor": "#C41F3E",
+                  "border": "2px solid #C41F3E",
+                  "borderRadius": 50,
+                  "color": "white",
+                  "display": "flex",
+                  "height": 25,
+                  "justifyContent": "center",
+                  "width": 25,
+                }
+              }
+            >
+              1
+            </div>
+            <div
+              style={
+                Object {
+                  "backgroundColor": "grey",
+                  "height": 2,
+                  "width": 15,
+                }
+              }
+            />
+            <div
+              onClick={[Function]}
+              onKeyPress={[Function]}
+              role="button"
+              style={
+                Object {
+                  "alignItems": "center",
+                  "border": "2px solid grey",
+                  "borderRadius": 50,
+                  "display": "flex",
+                  "height": 25,
+                  "justifyContent": "center",
+                  "width": 25,
+                }
+              }
+            >
+              2
+            </div>
+            <div
+              style={
+                Object {
+                  "backgroundColor": "grey",
+                  "height": 2,
+                  "width": 15,
+                }
+              }
+            />
+            <div
+              onClick={[Function]}
+              onKeyPress={[Function]}
+              role="button"
+              style={
+                Object {
+                  "alignItems": "center",
+                  "border": "2px solid grey",
+                  "borderRadius": 50,
+                  "display": "flex",
+                  "height": 25,
+                  "justifyContent": "center",
+                  "width": 25,
+                }
+              }
+            >
+              3
+            </div>
+          </div>
+        </div>
+      </div>
+      <h4>
+        Your Interac e-Transfer Details
+      </h4>
+      <ul>
+        <li>
+          Fees apply to Interac e-Transfer transactions.
+          <a
+            className="text-black"
+            href="/"
+          >
+            Learn more about Interac e-Transfer fees
+          </a>
+        </li>
+        <li>
+          There are limits on how much money you can send in a day, a week and a month.
+          <a
+            className="text-black"
+            href="/"
+          >
+            Learn more about Interac e-Transfer limits
+          </a>
+        </li>
+        <li>
+          Note: Sending money outside of Canada? Use the
+          <a
+            className="text-black"
+            href="/"
+          >
+             
+            CIBC Global Money Transfer Servicec
+          </a>
+        </li>
+      </ul>
+      <div
+        className="mt-4 row"
+      >
+        <div
+          className="col-md-4"
+        >
+          <label
+            className="form-label"
+          >
+            Send Money To:
+          </label>
+        </div>
+        <div
+          className="col-md-8"
+        >
+          <select
+            className="send-account-select form-select"
+            onChange={[Function]}
+          >
+            <option
+              value={1}
+            >
+              Chelsea Tough
+            </option>
+            <option
+              value={2}
+            >
+              Cristian
+            </option>
+          </select>
+          <p>
+            Email: chelsea.tough@gmail.com
+          </p>
+          <p>
+            <a
+              className="text-black"
+              href="/"
+            >
+              Edit Contact
+            </a>
+          </p>
+          <p>
+            <a
+              className="text-black"
+              href="/"
+            >
+              New Contact
+            </a>
+          </p>
+        </div>
+      </div>
+      <hr
+        style={
+          Object {
+            "height": "1px",
+            "width": "100%",
+          }
+        }
+      />
+      <div
+        className="mt-2 row"
+      >
+        <div
+          className="col-md-4"
+        >
+          <label
+            className="form-label"
+          >
+            Amount:
+          </label>
+        </div>
+        <div
+          className="col-md-8"
+        >
+          <input
+            className="form-control"
+            onChange={[Function]}
+            type="email"
+          />
+          <label
+            className="form-label"
+          >
+            The maximum amount you can send in each transfer is $3,000.
+          </label>
+        </div>
+      </div>
+      <hr
+        style={
+          Object {
+            "height": "1px",
+            "width": "100%",
+          }
+        }
+      />
+      <div
+        className="mt-2 row"
+      >
+        <div
+          className="col-md-4"
+        >
+          <label
+            className="form-label"
+          >
+            From Account:
+          </label>
+        </div>
+        <div
+          className="col-md-8"
+        >
+          <select
+            className="from-account-info form-select"
+            onChange={[Function]}
+          >
+            <option
+              value=""
+            >
+              Select
+            </option>
+          </select>
+        </div>
+      </div>
+      <hr
+        style={
+          Object {
+            "height": "1px",
+            "width": "100%",
+          }
+        }
+      />
+      <div
+        className="mt-2 row"
+      >
+        <div
+          className="col-md-4"
+        >
+          <label
+            className="form-label"
+          >
+            Transfer Method:
+          </label>
+        </div>
+        <div
+          className="col-md-8"
+        >
+          <select
+            className="transfer-method form-select"
+            onChange={[Function]}
+          >
+            <option>
+              Email
+            </option>
+          </select>
+        </div>
+      </div>
+      <hr
+        style={
+          Object {
+            "height": "1px",
+            "width": "100%",
+          }
+        }
+      />
+      <div
+        className="mt-2 row"
+      >
+        <div
+          className="col-md-4"
+        >
+          <label
+            className="form-label"
+          >
+            Message (Optional):
+          </label>
+        </div>
+        <div
+          className="col-md-8"
+        >
+          <textarea
+            className="form-control"
+            onChange={[Function]}
+            rows={3}
+          />
+          <p>
+            Do not provide the security question, any part of the security answer or any confidential information in your message to the contact. This message will be viewable on the Interac e-Transfer Status page.
+          </p>
+        </div>
+      </div>
+      <hr
+        style={
+          Object {
+            "height": "1px",
+            "width": "100%",
+          }
+        }
+      />
+      <div
+        className="mt-2 row"
+      >
+        <div
+          className="col-md-12"
+        >
+          <p>
+            This is how you will appear in all emails to your Interac e-Transfer contacts. If incorrect,
+            <a
+              className="text-black"
+              href="/"
+            >
+              edit your profile.
+            </a>
+          </p>
+        </div>
+      </div>
+      <hr
+        style={
+          Object {
+            "height": "1px",
+            "width": "100%",
+          }
+        }
+      />
+      <div
+        className="mt-2 row"
+      >
+        <div
+          className="col-md-4"
+        >
+          <label
+            className="form-label"
+          >
+            Your Email Nickname:
+          </label>
+        </div>
+        <div
+          className="col-md-8"
+        >
+          <label
+            className="form-label"
+          >
+            DUANE TOUGH
+          </label>
+        </div>
+      </div>
+      <hr
+        style={
+          Object {
+            "height": "1px",
+            "width": "100%",
+          }
+        }
+      />
+      <div
+        className="mt-2 row"
+      >
+        <div
+          className="col-md-4"
+        >
+          <label
+            className="form-label"
+          >
+            Your Email Address:
+          </label>
+        </div>
+        <div
+          className="col-md-8"
+        >
+          <label
+            className="form-label"
+          >
+            dtough@hotmail.com
+          </label>
+        </div>
+      </div>
+      <hr
+        style={
+          Object {
+            "height": "1px",
+            "width": "100%",
+          }
+        }
+      />
+      <div
+        className="mt-4 mb-4 row"
+      >
+        <div
+          className="col"
+        >
+          <button
+            className="d-flex btn btn-light"
+            disabled={false}
+            type="button"
+          >
+            <div
+              style={
+                Object {
+                  "border": "1px dotted grey",
+                  "height": 25,
+                  "marginRight": 10,
+                  "textAlign": "center",
+                  "width": 20,
+                }
+              }
+            >
+              P
+            </div>
+            Cancel
+          </button>
+        </div>
+        <div
+          className="d-flex justify-content-end col"
+        >
+          <button
+            className="d-flex btn btn-danger"
+            disabled={false}
+            onClick={[Function]}
+            type="button"
+          >
+            Next
+          </button>
+        </div>
+      </div>
+      <hr
+        style={
+          Object {
+            "height": "1px",
+          }
+        }
+      />
+      <div
+        className="row"
+      >
+        <i />
+        <h6
+          style={
+            Object {
+              "fontWeight": "bold",
+            }
+          }
+        >
+          Note:
+        </h6>
+        <p>
+          Your use of lnterac e-Transfer® is subject to the 
+        </p>
+        <p>
+          <i />
+          lnterac e-Transferl Terms and conditions (PDF, 197 KB).
+        </p>
+      </div>
+    </div>
+    <div
+      className="col-md-4"
+    >
+      <div
+        className="row"
+      >
+        <div
+          className="d-flex"
+        >
+          <div
+            style={
+              Object {
+                "border": "1px dotted grey",
+                "height": 25,
+                "marginRight": 10,
+                "textAlign": "center",
+                "width": 20,
+              }
+            }
+          >
+            P
+          </div>
+          <p>
+            Online Security Guarantee
+          </p>
+        </div>
+      </div>
+      <div
+        className="row"
+        style={
+          Object {
+            "border": "solid #AAAAAA 1px",
+            "justifyItems": "space-between",
+            "margin": "0px 0px 20px 0px",
+          }
+        }
+      >
+        <h6
+          style={
+            Object {
+              "paddingTop": "10px",
+            }
+          }
+        >
+          You can also:
+        </h6>
+        <a
+          href="./"
+          style={
+            Object {
+              "color": "black",
+              "padding": "8px 8px",
+              "textDecoration": "none",
+            }
+          }
+        >
+          View upcoming bill payments and transfers
+        </a>
+        <a
+          href="./"
+          style={
+            Object {
+              "color": "black",
+              "padding": "8px 8px",
+              "textDecoration": "none",
+            }
+          }
+        >
+          Register for lnterac e-Transfer® Autodeposits
+        </a>
+        <a
+          href="./"
+          style={
+            Object {
+              "color": "black",
+              "padding": "8px 8px",
+              "textDecoration": "none",
+            }
+          }
+        >
+          Change your statement preferences
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Storyshots interac-etransfer/send-money/SendMoney Default 1`] = `
 <div>
   <div
