@@ -36,13 +36,13 @@ export default function SendMoney() {
   const [selectedUser, setUserToSend] = useState(1);
   const [mainInfo, setMainInfo] = useState({});
 
-  const [contacts, setContacts] = useState<Account[] | null>([]);
+  const [accountsList, setAccountsList] = useState<Account[] | null>([]);
   const { instance, accounts } = useMsal();
 
   useEffect(() => {
     new Api(instance, accounts[0]).listAccounts()
       .then((accountsList) => {
-        setContacts(accountsList);
+        setAccountsList(accountsList);
       }).catch((error) => console.error('contacts', error));
   }, []);
 
@@ -115,7 +115,7 @@ export default function SendMoney() {
               setUserToSend={setUserToSend}
               mainInfo={mainInfo}
               setMainInfo={setMainInfo}
-              contacts={contacts}
+              contacts={accountsList}
             />
           )}
           {currentStep === 2 && realStep === 2 && (
