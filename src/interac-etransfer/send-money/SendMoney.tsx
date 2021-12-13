@@ -11,7 +11,7 @@ import {
   TransferSentPage,
 } from './components';
 import SendMoneyVerificationModal from '../dialogs/SendMoneyVerificationModal';
-import Api, { Contact } from '../../api';
+import Api, { Account } from '../../api';
 
 interface QuickLink {
   id: number;
@@ -36,13 +36,13 @@ export default function SendMoney() {
   const [selectedUser, setUserToSend] = useState(1);
   const [mainInfo, setMainInfo] = useState({});
 
-  const [contacts, setContacts] = useState<Contact[] | null>([]);
+  const [contacts, setContacts] = useState<Account[] | null>([]);
   const { instance, accounts } = useMsal();
 
   useEffect(() => {
-    new Api(instance, accounts[0]).listContacts()
-      .then((contactsList) => {
-        setContacts(contactsList);
+    new Api(instance, accounts[0]).listAccounts()
+      .then((accountsList) => {
+        setContacts(accountsList);
       }).catch((error) => console.error('contacts', error));
   }, []);
 
