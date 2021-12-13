@@ -41,8 +41,8 @@ export default function SendMoney() {
 
   useEffect(() => {
     new Api(instance, accounts[0]).listAccounts()
-      .then((accountsList) => {
-        setAccountsList(accountsList);
+      .then((result) => {
+        setAccountsList(result);
       }).catch((error) => console.error('contacts', error));
   }, []);
 
@@ -115,7 +115,7 @@ export default function SendMoney() {
               setUserToSend={setUserToSend}
               mainInfo={mainInfo}
               setMainInfo={setMainInfo}
-              contacts={accountsList}
+              accounts={accountsList}
             />
           )}
           {currentStep === 2 && realStep === 2 && (

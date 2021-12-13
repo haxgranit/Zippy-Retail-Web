@@ -14,7 +14,7 @@ const DetailsPage = ({
   setUserToSend,
   mainInfo,
   setMainInfo,
-  contacts: accounts,
+  accounts,
 }: any): JSX.Element => {
   const handleAccountChange = (evt: any) => setUserToSend(Number(evt.target.value));
   return (
