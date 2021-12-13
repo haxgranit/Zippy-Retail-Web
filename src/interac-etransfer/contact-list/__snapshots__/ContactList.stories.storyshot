@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots interac-etransfer/contact-list/ContactList Default 1`] = `
+exports[`Storyshots interac-etransfer/contact-list/ContactList Mocked Error 1`] = `
 Array [
   <div
     className="d-flex justify-content-between align-items-center"
@@ -217,802 +217,318 @@ Array [
               "borderTop": "none",
             }
           }
+        />
+      </table>
+      <div
+        className="mt-4 p-3"
+        style={
+          Object {
+            "borderBottom": "1px solid #e5e5e5",
+            "borderTop": "1px solid #e5e5e5",
+          }
+        }
+      >
+        <div
+          className="d-flex justify-content-end row"
         >
-          <tr>
-            <td>
-              <a
-                href="/edit"
-                onClick={[Function]}
-              >
-                392 Jones
-              </a>
-            </td>
-            <td>
-              English
-            </td>
-            <td>
-              <div>
-                lu_ben2002@yahoo.com
-              </div>
-              
-            </td>
-            <td>
-              <button
-                className="text-black d-flex btn btn-light"
-                disabled={false}
-                id="contact-list-0"
-                onClick={[Function]}
-                type="button"
-              >
-                <div
-                  style={
-                    Object {
-                      "border": "1px dotted grey",
-                      "height": 25,
-                      "marginRight": 10,
-                      "textAlign": "center",
-                      "width": 20,
-                    }
+          <button
+            className="d-flex btn btn-danger"
+            disabled={false}
+            style={
+              Object {
+                "width": "auto",
+              }
+            }
+            type="button"
+          >
+            Add New Contact
+          </button>
+        </div>
+      </div>
+      <div
+        className="mt-2"
+      >
+        <div
+          className="d-flex"
+        >
+          <div
+            style={
+              Object {
+                "border": "1px dotted grey",
+                "height": 25,
+                "marginRight": 10,
+                "textAlign": "center",
+                "width": 20,
+              }
+            }
+          >
+            P
+          </div>
+          <span
+            style={
+              Object {
+                "fontWeight": "bold",
+              }
+            }
+          >
+            Note:
+          </span>
+        </div>
+        <p
+          className="d-flex align-items-end"
+        >
+          <span>
+            Your use of Interac e-Transfer is subject to the 
+          </span>
+          <div
+            className="row"
+          >
+            <div
+              className="d-flex align-items-center mt-2 col-md-12"
+            >
+              <div
+                style={
+                  Object {
+                    "border": "1px dotted grey",
+                    "height": 25,
+                    "marginRight": 10,
+                    "textAlign": "center",
+                    "width": 20,
                   }
-                  title="print"
-                >
-                  P
-                </div>
-                Delete
-              </button>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <a
-                href="/edit"
-                onClick={[Function]}
+                }
               >
-                Auto Island Inc
-              </a>
-            </td>
-            <td>
-              English
-            </td>
-            <td>
-              
-              <div>
-                647-747-6109
+                P
               </div>
-            </td>
-            <td>
-              <button
-                className="text-black d-flex btn btn-light"
-                disabled={false}
-                id="contact-list-1"
-                onClick={[Function]}
-                type="button"
-              >
-                <div
-                  style={
-                    Object {
-                      "border": "1px dotted grey",
-                      "height": 25,
-                      "marginRight": 10,
-                      "textAlign": "center",
-                      "width": 20,
-                    }
-                  }
-                  title="print"
-                >
-                  P
-                </div>
-                Delete
-              </button>
-            </td>
+              <span>
+                Interac e-Transfer Terms and Conditions (PDF, 197KB).
+              </span>
+            </div>
+          </div>
+        </p>
+      </div>
+    </div>
+  </div>,
+]
+`;
+
+exports[`Storyshots interac-etransfer/contact-list/ContactList Mocked Success 1`] = `
+Array [
+  <div
+    className="d-flex justify-content-between align-items-center"
+  >
+    <h3>
+      CONTACT LIST
+    </h3>
+    <div
+      className="d-flex"
+    >
+      <div
+        style={
+          Object {
+            "border": "1px dotted grey",
+            "height": 25,
+            "marginRight": 10,
+            "textAlign": "center",
+            "width": 20,
+          }
+        }
+        title="print"
+      >
+        P
+      </div>
+      <div
+        style={
+          Object {
+            "border": "1px dotted grey",
+            "height": 25,
+            "marginRight": 10,
+            "textAlign": "center",
+            "width": 20,
+          }
+        }
+        title="copy"
+      >
+        P
+      </div>
+      <div
+        style={
+          Object {
+            "border": "1px dotted grey",
+            "height": 25,
+            "marginRight": 10,
+            "textAlign": "center",
+            "width": 20,
+          }
+        }
+        title="question"
+      >
+        P
+      </div>
+    </div>
+  </div>,
+  <div
+    className="row"
+  >
+    <div
+      className="col-md-9"
+    >
+      <h4
+        className="mt-4"
+      >
+        Add, Edit or Delete a Contact
+      </h4>
+      <ul
+        className="mt-4"
+      >
+        <li>
+          To edit a contact's details, select the contact's name
+        </li>
+        <li>
+          <a
+            className="text-black"
+            href="/"
+          >
+            Edit your Interac e-Transfer alert preferences
+          </a>
+        </li>
+        <li>
+          <a
+            className="text-black"
+            href="/"
+          >
+            Add New Contact
+          </a>
+        </li>
+        <li>
+          Note: Contacts names can not be identical. Please verify and edit (if necessary)
+        </li>
+      </ul>
+    </div>
+    <div
+      className="col-md-3"
+    >
+      <div
+        className="p-3 bg-white mt-2 card"
+      >
+        <div
+          className="card-title h5"
+        >
+          You can also:
+        </div>
+        <div
+          className="card-body"
+        >
+          <a
+            className="text-decoration-none text-black"
+            href="/"
+            style={
+              Object {
+                "display": "block",
+                "fontSize": 12,
+                "marginBottom": 5,
+                "marginTop": 5,
+              }
+            }
+          >
+            Register for Interac e-Transfer Autodeposit
+            <span
+              style={
+                Object {
+                  "color": "rgb(220, 53, 69)",
+                  "marginLeft": 5,
+                }
+              }
+            >
+              &gt;
+            </span>
+          </a>
+          <a
+            className="text-decoration-none text-black"
+            href="/"
+            style={
+              Object {
+                "display": "block",
+                "fontSize": 12,
+                "marginBottom": 5,
+                "marginTop": 5,
+              }
+            }
+          >
+            Make an additional loan payment
+            <span
+              style={
+                Object {
+                  "color": "rgb(220, 53, 69)",
+                  "marginLeft": 5,
+                }
+              }
+            >
+              &gt;
+            </span>
+          </a>
+          <a
+            className="text-decoration-none text-black"
+            href="/"
+            style={
+              Object {
+                "display": "block",
+                "fontSize": 12,
+                "marginBottom": 5,
+                "marginTop": 5,
+              }
+            }
+          >
+            Order cheques
+            <span
+              style={
+                Object {
+                  "color": "rgb(220, 53, 69)",
+                  "marginLeft": 5,
+                }
+              }
+            >
+              &gt;
+            </span>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div
+      className="col-md-12"
+    >
+      <table
+        className="mt-4 table"
+      >
+        <thead>
+          <tr
+            className="bg-light"
+            style={
+              Object {
+                "borderTop": "1px solid #c5c5c5",
+              }
+            }
+          >
+            <th>
+              Contact Name
+            </th>
+            <th>
+              Notification Language
+            </th>
+            <th>
+              Details
+            </th>
+            <th>
+              Delete
+            </th>
           </tr>
-          <tr>
-            <td>
-              <a
-                href="/edit"
-                onClick={[Function]}
-              >
-                BITVO
-              </a>
-            </td>
-            <td>
-              English
-            </td>
-            <td>
-              <div>
-                42000023186@bitvodeposits.com
-              </div>
-              
-            </td>
-            <td>
-              <button
-                className="text-black d-flex btn btn-light"
-                disabled={false}
-                id="contact-list-2"
-                onClick={[Function]}
-                type="button"
-              >
-                <div
-                  style={
-                    Object {
-                      "border": "1px dotted grey",
-                      "height": 25,
-                      "marginRight": 10,
-                      "textAlign": "center",
-                      "width": 20,
-                    }
-                  }
-                  title="print"
-                >
-                  P
-                </div>
-                Delete
-              </button>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <a
-                href="/edit"
-                onClick={[Function]}
-              >
-                BITVO.COM
-              </a>
-            </td>
-            <td>
-              English
-            </td>
-            <td>
-              <div>
-                noreply@bitvo.com
-              </div>
-              
-            </td>
-            <td>
-              <button
-                className="text-black d-flex btn btn-light"
-                disabled={false}
-                id="contact-list-3"
-                onClick={[Function]}
-                type="button"
-              >
-                <div
-                  style={
-                    Object {
-                      "border": "1px dotted grey",
-                      "height": 25,
-                      "marginRight": 10,
-                      "textAlign": "center",
-                      "width": 20,
-                    }
-                  }
-                  title="print"
-                >
-                  P
-                </div>
-                Delete
-              </button>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <a
-                href="/edit"
-                onClick={[Function]}
-              >
-                Chelsea Tough
-              </a>
-            </td>
-            <td>
-              English
-            </td>
-            <td>
-              <div>
-                chelsea.tough@gmail.com
-              </div>
-              
-            </td>
-            <td>
-              <button
-                className="text-black d-flex btn btn-light"
-                disabled={false}
-                id="contact-list-4"
-                onClick={[Function]}
-                type="button"
-              >
-                <div
-                  style={
-                    Object {
-                      "border": "1px dotted grey",
-                      "height": 25,
-                      "marginRight": 10,
-                      "textAlign": "center",
-                      "width": 20,
-                    }
-                  }
-                  title="print"
-                >
-                  P
-                </div>
-                Delete
-              </button>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <a
-                href="/edit"
-                onClick={[Function]}
-              >
-                Christian
-              </a>
-            </td>
-            <td>
-              English
-            </td>
-            <td>
-              <div>
-                pratt540@gmail.com
-              </div>
-              
-            </td>
-            <td>
-              <button
-                className="text-black d-flex btn btn-light"
-                disabled={false}
-                id="contact-list-5"
-                onClick={[Function]}
-                type="button"
-              >
-                <div
-                  style={
-                    Object {
-                      "border": "1px dotted grey",
-                      "height": 25,
-                      "marginRight": 10,
-                      "textAlign": "center",
-                      "width": 20,
-                    }
-                  }
-                  title="print"
-                >
-                  P
-                </div>
-                Delete
-              </button>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <a
-                href="/edit"
-                onClick={[Function]}
-              >
-                DnF
-              </a>
-            </td>
-            <td>
-              English
-            </td>
-            <td>
-              <div>
-                franjessco@sympatico.ca
-              </div>
-              
-            </td>
-            <td>
-              <button
-                className="text-black d-flex btn btn-light"
-                disabled={false}
-                id="contact-list-6"
-                onClick={[Function]}
-                type="button"
-              >
-                <div
-                  style={
-                    Object {
-                      "border": "1px dotted grey",
-                      "height": 25,
-                      "marginRight": 10,
-                      "textAlign": "center",
-                      "width": 20,
-                    }
-                  }
-                  title="print"
-                >
-                  P
-                </div>
-                Delete
-              </button>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <a
-                href="/edit"
-                onClick={[Function]}
-              >
-                DUANE TOUGH
-              </a>
-            </td>
-            <td>
-              English
-            </td>
-            <td>
-              <div>
-                dtough@hotmail.com
-              </div>
-              <div>
-                647-857-6694
-              </div>
-            </td>
-            <td>
-              <button
-                className="text-black d-flex btn btn-light"
-                disabled={false}
-                id="contact-list-7"
-                onClick={[Function]}
-                type="button"
-              >
-                <div
-                  style={
-                    Object {
-                      "border": "1px dotted grey",
-                      "height": 25,
-                      "marginRight": 10,
-                      "textAlign": "center",
-                      "width": 20,
-                    }
-                  }
-                  title="print"
-                >
-                  P
-                </div>
-                Delete
-              </button>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <a
-                href="/edit"
-                onClick={[Function]}
-              >
-                Gigadat
-              </a>
-            </td>
-            <td>
-              English
-            </td>
-            <td>
-              <div>
-                etransfer@orderdeposit.com
-              </div>
-              
-            </td>
-            <td>
-              <button
-                className="text-black d-flex btn btn-light"
-                disabled={false}
-                id="contact-list-8"
-                onClick={[Function]}
-                type="button"
-              >
-                <div
-                  style={
-                    Object {
-                      "border": "1px dotted grey",
-                      "height": 25,
-                      "marginRight": 10,
-                      "textAlign": "center",
-                      "width": 20,
-                    }
-                  }
-                  title="print"
-                >
-                  P
-                </div>
-                Delete
-              </button>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <a
-                href="/edit"
-                onClick={[Function]}
-              >
-                J Grundy
-              </a>
-            </td>
-            <td>
-              English
-            </td>
-            <td>
-              <div>
-                jegrundy@rogers.com
-              </div>
-              
-            </td>
-            <td>
-              <button
-                className="text-black d-flex btn btn-light"
-                disabled={false}
-                id="contact-list-9"
-                onClick={[Function]}
-                type="button"
-              >
-                <div
-                  style={
-                    Object {
-                      "border": "1px dotted grey",
-                      "height": 25,
-                      "marginRight": 10,
-                      "textAlign": "center",
-                      "width": 20,
-                    }
-                  }
-                  title="print"
-                >
-                  P
-                </div>
-                Delete
-              </button>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <a
-                href="/edit"
-                onClick={[Function]}
-              >
-                JJJ
-              </a>
-            </td>
-            <td>
-              English
-            </td>
-            <td>
-              <div>
-                toughj@telus.net
-              </div>
-              
-            </td>
-            <td>
-              <button
-                className="text-black d-flex btn btn-light"
-                disabled={false}
-                id="contact-list-10"
-                onClick={[Function]}
-                type="button"
-              >
-                <div
-                  style={
-                    Object {
-                      "border": "1px dotted grey",
-                      "height": 25,
-                      "marginRight": 10,
-                      "textAlign": "center",
-                      "width": 20,
-                    }
-                  }
-                  title="print"
-                >
-                  P
-                </div>
-                Delete
-              </button>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <a
-                href="/edit"
-                onClick={[Function]}
-              >
-                Jon English
-              </a>
-            </td>
-            <td>
-              English
-            </td>
-            <td>
-              <div>
-                john.oliverscoffee@gmail.com
-              </div>
-              
-            </td>
-            <td>
-              <button
-                className="text-black d-flex btn btn-light"
-                disabled={false}
-                id="contact-list-11"
-                onClick={[Function]}
-                type="button"
-              >
-                <div
-                  style={
-                    Object {
-                      "border": "1px dotted grey",
-                      "height": 25,
-                      "marginRight": 10,
-                      "textAlign": "center",
-                      "width": 20,
-                    }
-                  }
-                  title="print"
-                >
-                  P
-                </div>
-                Delete
-              </button>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <a
-                href="/edit"
-                onClick={[Function]}
-              >
-                Karen
-              </a>
-            </td>
-            <td>
-              English
-            </td>
-            <td>
-              <div>
-                english_karen@yahoo.com
-              </div>
-              
-            </td>
-            <td>
-              <button
-                className="text-black d-flex btn btn-light"
-                disabled={false}
-                id="contact-list-12"
-                onClick={[Function]}
-                type="button"
-              >
-                <div
-                  style={
-                    Object {
-                      "border": "1px dotted grey",
-                      "height": 25,
-                      "marginRight": 10,
-                      "textAlign": "center",
-                      "width": 20,
-                    }
-                  }
-                  title="print"
-                >
-                  P
-                </div>
-                Delete
-              </button>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <a
-                href="/edit"
-                onClick={[Function]}
-              >
-                Mathew
-              </a>
-            </td>
-            <td>
-              English
-            </td>
-            <td>
-              <div>
-                mathewm1212@gmail.com
-              </div>
-              
-            </td>
-            <td>
-              <button
-                className="text-black d-flex btn btn-light"
-                disabled={false}
-                id="contact-list-13"
-                onClick={[Function]}
-                type="button"
-              >
-                <div
-                  style={
-                    Object {
-                      "border": "1px dotted grey",
-                      "height": 25,
-                      "marginRight": 10,
-                      "textAlign": "center",
-                      "width": 20,
-                    }
-                  }
-                  title="print"
-                >
-                  P
-                </div>
-                Delete
-              </button>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <a
-                href="/edit"
-                onClick={[Function]}
-              >
-                Michael Sovereign Medical
-              </a>
-            </td>
-            <td>
-              English
-            </td>
-            <td>
-              <div>
-                hello@sovereigncosmeticsurgery.com
-              </div>
-              
-            </td>
-            <td>
-              <button
-                className="text-black d-flex btn btn-light"
-                disabled={false}
-                id="contact-list-14"
-                onClick={[Function]}
-                type="button"
-              >
-                <div
-                  style={
-                    Object {
-                      "border": "1px dotted grey",
-                      "height": 25,
-                      "marginRight": 10,
-                      "textAlign": "center",
-                      "width": 20,
-                    }
-                  }
-                  title="print"
-                >
-                  P
-                </div>
-                Delete
-              </button>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <a
-                href="/edit"
-                onClick={[Function]}
-              >
-                Rishi
-              </a>
-            </td>
-            <td>
-              English
-            </td>
-            <td>
-              <div>
-                rishi.jokhu@gmail.com
-              </div>
-              
-            </td>
-            <td>
-              <button
-                className="text-black d-flex btn btn-light"
-                disabled={false}
-                id="contact-list-15"
-                onClick={[Function]}
-                type="button"
-              >
-                <div
-                  style={
-                    Object {
-                      "border": "1px dotted grey",
-                      "height": 25,
-                      "marginRight": 10,
-                      "textAlign": "center",
-                      "width": 20,
-                    }
-                  }
-                  title="print"
-                >
-                  P
-                </div>
-                Delete
-              </button>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <a
-                href="/edit"
-                onClick={[Function]}
-              >
-                Robb MacDonald
-              </a>
-            </td>
-            <td>
-              English
-            </td>
-            <td>
-              <div>
-                rm@lawintoronto.com
-              </div>
-              
-            </td>
-            <td>
-              <button
-                className="text-black d-flex btn btn-light"
-                disabled={false}
-                id="contact-list-16"
-                onClick={[Function]}
-                type="button"
-              >
-                <div
-                  style={
-                    Object {
-                      "border": "1px dotted grey",
-                      "height": 25,
-                      "marginRight": 10,
-                      "textAlign": "center",
-                      "width": 20,
-                    }
-                  }
-                  title="print"
-                >
-                  P
-                </div>
-                Delete
-              </button>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <a
-                href="/edit"
-                onClick={[Function]}
-              >
-                RobnGeo
-              </a>
-            </td>
-            <td>
-              English
-            </td>
-            <td>
-              <div>
-                robngeo@gmail.com
-              </div>
-              
-            </td>
-            <td>
-              <button
-                className="text-black d-flex btn btn-light"
-                disabled={false}
-                id="contact-list-17"
-                onClick={[Function]}
-                type="button"
-              >
-                <div
-                  style={
-                    Object {
-                      "border": "1px dotted grey",
-                      "height": 25,
-                      "marginRight": 10,
-                      "textAlign": "center",
-                      "width": 20,
-                    }
-                  }
-                  title="print"
-                >
-                  P
-                </div>
-                Delete
-              </button>
-            </td>
-          </tr>
-        </tbody>
+        </thead>
+        <tbody
+          style={
+            Object {
+              "borderTop": "none",
+            }
+          }
+        />
       </table>
       <div
         className="mt-4 p-3"

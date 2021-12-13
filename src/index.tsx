@@ -31,7 +31,7 @@ msalInstance.addEventCallback((event: EventMessage) => {
       const api = new Api(msalInstance, account);
       api.putUser()
         .then((user) => console.log('user', user))
-        .catch((error) => console.error('user', error));
+        .catch((error) => console.log('error', error));
       msalInstance.setActiveAccount(account);
     }
   }

@@ -149,7 +149,7 @@ exports[`Storyshots interac-etransfer/request-money/RequestMoney Default 1`] = `
           className="col-6"
         >
           <select
-            className="form-select"
+            className="account-from form-select"
             onChange={[Function]}
           >
             <option

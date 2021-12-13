@@ -1,20 +1,20 @@
-import Enzyme, { mount } from 'enzyme';
+import Enzyme, { mount, shallow } from 'enzyme';
 import Adapter from '@wojtekmaj/enzyme-adapter-react-17';
 import { Form } from 'react-bootstrap';
 import React from 'react';
-import RequestDetail from './RequestDetails';
+import RequestDetails from './RequestDetails';
 
 // Configure enzyme for react 17
 Enzyme.configure({ adapter: new Adapter() });
 
 describe('RequestDetail Component', () => {
   it('should render RequestDetail', () => {
-    const wrapper = mount(<RequestDetail />);
+    const wrapper = mount(<RequestDetails />);
     const title = wrapper.find('h4');
     expect(title.text()).toEqual('Request Money Details');
   });
   it('should not  render any form in beginging ', () => {
-    const wrapper = mount(<RequestDetail />);
+    const wrapper = mount(<RequestDetails />);
     const emailOrPhoneForm = wrapper.find(Form);
     expect(emailOrPhoneForm.exists()).toBeFalsy();
   });
@@ -30,7 +30,7 @@ describe('RequestDetail Component', () => {
       .fn()
       .mockImplementationOnce(() => [initialContact, setAccountFrom])
       .mockImplementationOnce((x) => [x, setContacts]);
-    const wrapper = mount(<RequestDetail />);
+    const wrapper = mount(<RequestDetails />);
     const emailOrPhoneCheck = wrapper.find(Form.Check);
     const mockedEvent = { target: { value: JSON.stringify(initialContact) } };
     emailOrPhoneCheck.at(0).simulate('click', mockedEvent);
@@ -51,7 +51,7 @@ describe('RequestDetail Component', () => {
       .fn()
       .mockImplementationOnce(() => [initialContact, setAccountFrom])
       .mockImplementationOnce((x) => [x, setContacts]);
-    const wrapper = mount(<RequestDetail />);
+    const wrapper = mount(<RequestDetails />);
     const emailOrPhoneCheck = wrapper.find(Form.Check);
     const mockedEvent = { target: { value: JSON.stringify(initialContact) } };
     emailOrPhoneCheck.at(0).simulate('click', mockedEvent);
@@ -72,7 +72,7 @@ describe('RequestDetail Component', () => {
       .fn()
       .mockImplementationOnce(() => [initialContact, setAccountFrom])
       .mockImplementationOnce((x) => [x, setContacts]);
-    const wrapper = mount(<RequestDetail />);
+    const wrapper = mount(<RequestDetails />);
     const emailOrPhoneForm = wrapper.find(Form);
     const emailOrPhoneCheck = wrapper.find(Form.Check);
     const mockedEvent = { target: { value: '' } };
@@ -91,7 +91,7 @@ describe('RequestDetail Component', () => {
       .fn()
       .mockImplementationOnce(() => [initialContact, setAccountFrom])
       .mockImplementationOnce((x) => [x, setContacts]);
-    const wrapper = mount(<RequestDetail />);
+    const wrapper = mount(<RequestDetails />);
     const emailOrPhoneCheck = wrapper.find(Form.Check);
     const mockedEvent = { target: { value: JSON.stringify(initialContact) } };
     emailOrPhoneCheck.at(0).simulate('click', mockedEvent);
@@ -110,11 +110,21 @@ describe('RequestDetail Component', () => {
       .fn()
       .mockImplementationOnce(() => [initialContact, setAccountFrom])
       .mockImplementationOnce((x) => [x, setContacts]);
-    const wrapper = mount(<RequestDetail />);
+    const wrapper = mount(<RequestDetails />);
     const emailOrPhoneCheck = wrapper.find(Form.Check);
     const mockedEvent = { target: { value: JSON.stringify(initialContact) } };
     emailOrPhoneCheck.at(0).simulate('click', mockedEvent);
     const emailOrPhoneForm = wrapper.find(Form);
     expect(emailOrPhoneForm).toBeTruthy();
+  });
+  it('should click next step button', () => {
+    const setCurrentStep = jest.fn();
+    const wrapper = shallow(<RequestDetails setCurrentStep={setCurrentStep} />);
+
+    wrapper
+      .find('.account-from')
+      .simulate('change', { target: { value: 'index' } });
+    wrapper.find('Button[variant="danger"]').simulate('click');
+    expect(setCurrentStep).toHaveBeenCalled();
   });
 });
