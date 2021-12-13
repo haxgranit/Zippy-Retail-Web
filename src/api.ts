@@ -40,6 +40,7 @@ export default class Api {
       scopes: ['https://zippycashdev.onmicrosoft.com/b0b070aa-4e90-4015-af46-59d0ceed5ecc/access_as_user'],
       account: this.account,
     };
+
     let accessToken;
     try {
       const accessTokenResponse = await this.instance.acquireTokenSilent(accessTokenRequest);
