@@ -20,7 +20,7 @@ export default function MyAccounts() {
   useEffect(() => {
     new Api(instance, msalAccounts[0]).listAccounts()
       .then((accounts) => console.log('accounts', accounts))
-      .catch((error) => console.error('accounts', error));
+      .catch((error) => console.log('error', error));
   }, []);
 
   return (

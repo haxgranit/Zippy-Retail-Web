@@ -5,6 +5,7 @@ import {
   FormControl,
   Button,
 } from 'react-bootstrap';
+import { Account } from '../../../api';
 
 const DetailsPage = ({
   setRealStep,
@@ -13,6 +14,7 @@ const DetailsPage = ({
   setUserToSend,
   mainInfo,
   setMainInfo,
+  accounts,
 }: any): JSX.Element => {
   const handleAccountChange = (evt: any) => setUserToSend(Number(evt.target.value));
   return (
@@ -92,7 +94,12 @@ const DetailsPage = ({
             onChange={(evt) => setMainInfo({ ...mainInfo, from: evt.target.value })}
             value={mainInfo?.from}
           >
-            <option>Cheguing (01702-81-99639) $2,260.57</option>
+            <option value="">Select</option>
+            {
+              accounts?.map((contact:Account) => (
+                <option key={contact.name} value={contact.name}>{`${contact.name} $Balance`}</option>
+              ))
+            }
           </Form.Select>
         </Col>
       </Row>

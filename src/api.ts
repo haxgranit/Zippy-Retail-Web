@@ -53,8 +53,12 @@ export default class Api {
       console.log(error);
       return null;
     }
+    const apiUrl = (<any>window).API_URL;
+    if (!apiUrl) {
+      throw Error('window.API_URL is undefined');
+    }
 
-    const response = await fetch(`https://zippy-retail-api-dev.azurewebsites.net/${path}`, {
+    const response = await fetch(`${apiUrl}/${path}`, {
       method,
       headers: new Headers({ Authorization: `Bearer ${accessToken}` }),
     });
