@@ -11,7 +11,7 @@ import Api, { Contact } from '../../../api';
 const Divider = () => <div className="border-top my-3" />;
 
 export default function RequestDetail({ setCurrentStep }: any) {
-  const [accountFrom, setAccountFrom] = useState('');
+  const [accountFrom, setAccountFrom] = useState<Contact | null >(null);
   const [contacts, setContacts] = useState<Contact[] | null>([]);
   const { instance, accounts } = useMsal();
 
@@ -31,28 +31,45 @@ export default function RequestDetail({ setCurrentStep }: any) {
       <Row className="align-items-center mt-4">
         <Col xs={3}>Request Money From:</Col>
         <Col xs={6}>
-          <Form.Select onChange={(evt) => setAccountFrom(evt.target.value)}>
+          <Form.Select onChange={(evt) => {
+            if (evt.target.value === '') {
+              setAccountFrom(null);
+            }
+            setAccountFrom(JSON.parse(evt.target.value));
+          }}
+          >
             <option value="">Select</option>
             {
               contacts?.map((contact) => (
-                <option key={contact.email} value="index">{contact.name}</option>
+                <option key={contact.email} value={JSON.stringify(contact)}>{contact.name}</option>
               ))
             }
           </Form.Select>
         </Col>
       </Row>
       <Divider />
-      {accountFrom !== '' && (
+      {accountFrom && (
         <>
           <Row className="align-items-center mt-4">
             <Col xs={3}>Notify By:</Col>
             <Col xs={9}>
-              <Form.Check
-                type="checkbox"
-                id="email"
-                label="Email kentu@shaw.ca"
-                className="mt-2 mb-2"
-              />
+              {accountFrom?.email !== '' ? (
+                <Form.Check
+                  type="checkbox"
+                  id="email"
+                  label={`Email ${accountFrom.email}`}
+                  className="mt-2 mb-2"
+                />
+              )
+                : (
+                  <Form.Check
+                    type="checkbox"
+                    id="phone"
+                    label={`Phone ${accountFrom.phone}`}
+                    className="mt-2 mb-2"
+                  />
+
+                )}
               <Form.Check
                 type="checkbox"
                 id="text"
