@@ -42,4 +42,22 @@ describe('EditContact Component', () => {
     wrapper.find('Button').at(1).simulate('click');
     expect(setShow).toHaveBeenCalled();
   });
+
+  it('click close modal button on IdentityVerificationModal', () => {
+    const setShow = jest.fn();
+    const setStep = jest.fn();
+    React.useState = jest
+      .fn()
+      .mockImplementationOnce((x) => [x, setShow])
+      .mockImplementationOnce((x) => [x, setStep]);
+    const wrapper = shallow(<EditContact />);
+    wrapper.find('Button').at(1).simulate('click');
+    expect(setShow).toHaveBeenCalled();
+    const modalWrapper = wrapper.find('IdentityVerificationModal').dive();
+    const firstStepWrapper = modalWrapper.find('VerificationStep').dive();
+    firstStepWrapper.find('Button[variant="link"]').at(0).simulate('click');
+    firstStepWrapper.find('button').at(0).simulate('click');
+    firstStepWrapper.find('button').at(1).simulate('click');
+    expect(setShow).toHaveBeenCalled();
+  })
 });

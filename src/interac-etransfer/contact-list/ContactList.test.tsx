@@ -1,3 +1,4 @@
+import React from 'react';
 import Enzyme, { shallow } from 'enzyme';
 import Adapter from '@wojtekmaj/enzyme-adapter-react-17';
 
@@ -31,4 +32,26 @@ describe('Contact List Component', () => {
     const modal = wrapper.find('RemoveContactModal');
     expect(modal).toHaveLength(1);
   });
+
+  it('click a close button on modal', () => {
+    const setModalShow = jest.fn();
+    const setContacts = jest.fn();
+    const setSelectedContact = jest.fn();
+    React.useState = jest
+      .fn()
+      .mockImplementationOnce((x) => [x, setModalShow])
+      .mockImplementationOnce((x) => [x, setContacts])
+      .mockImplementationOnce((x) => [x, setSelectedContact]);
+
+    const wrapper = shallow(<ContactList initialContacts={CONTACTS_MOCK} />);
+    wrapper.find('Button').at(0).simulate('click');
+    wrapper.update();
+
+    const modal = wrapper.find('RemoveContactModal');
+    expect(modal).toHaveLength(1);
+    const modalWrapper = modal.dive();
+    modalWrapper.find('Button').at(0).simulate('click');
+    modalWrapper.find('Button').at(2).simulate('click');
+    expect(setModalShow).toHaveBeenCalledTimes(2);
+  })
 });
