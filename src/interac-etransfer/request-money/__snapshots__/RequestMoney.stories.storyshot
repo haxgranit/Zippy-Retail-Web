@@ -217,7 +217,6 @@ exports[`Storyshots interac-etransfer/request-money/RequestMoney Default 1`] = `
         >
           <select
             className="form-select"
-            onChange={[Function]}
           >
             <option
               value=""

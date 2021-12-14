@@ -95,7 +95,6 @@ Array [
     >
       <select
         className="form-select"
-        onChange={[Function]}
       >
         <option
           value=""

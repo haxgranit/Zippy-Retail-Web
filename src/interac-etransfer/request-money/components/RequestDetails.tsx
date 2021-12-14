@@ -12,7 +12,6 @@ const Divider = () => <div className="border-top my-3" />;
 
 export default function RequestDetail({ setCurrentStep }: any) {
   const [accountFrom, setAccountFrom] = useState<Contact | null >(null);
-  const [, setDepositTo] = useState<Account | null >(null);
   const [contacts, setContacts] = useState<Contact[] | null>([]);
   const [accountsData, setAccountsData] = useState<Account[] | null>([]);
   const { instance, accounts } = useMsal();
@@ -114,14 +113,7 @@ export default function RequestDetail({ setCurrentStep }: any) {
       <Row className="align-items-center">
         <Col xs={3}>Deposit To:</Col>
         <Col xs={9}>
-          <Form.Select onChange={(evt) => {
-            if (evt.target.value === '') {
-              setDepositTo(null);
-              return;
-            }
-            setDepositTo(JSON.parse(evt.target.value));
-          }}
-          >
+          <Form.Select>
             <option value="">Select</option>
             {
               accountsData?.map((accountData) => (
