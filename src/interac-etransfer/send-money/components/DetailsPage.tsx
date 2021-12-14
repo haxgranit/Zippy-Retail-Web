@@ -38,7 +38,7 @@ const DetailsPage = ({
           Note: Sending money outside of Canada? Use the
           <a href="/" className="text-black">
             {' '}
-            CIBC Global Money Transfer Servicec
+            ZippyX Global Money Transfer Servicec
           </a>
         </li>
       </ul>
