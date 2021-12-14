@@ -6,19 +6,25 @@ import {
   Form,
   Row,
 } from 'react-bootstrap';
-import Api, { Contact } from '../../../api';
+import Api, { Account, Contact } from '../../../api';
 
 const Divider = () => <div className="border-top my-3" />;
 
 export default function RequestDetail({ setCurrentStep }: any) {
   const [accountFrom, setAccountFrom] = useState<Contact | null >(null);
   const [contacts, setContacts] = useState<Contact[] | null>([]);
+  const [accountsData, setAccountsData] = useState<Account[] | null>([]);
   const { instance, accounts } = useMsal();
 
   useEffect(() => {
     new Api(instance, accounts[0]).listContacts()
       .then((contactsList) => {
         setContacts(contactsList);
+      })
+      .catch((error) => console.log('error', error));
+    new Api(instance, accounts[0]).listAccounts()
+      .then((accountsList) => {
+        setAccountsData(accountsList);
       })
       .catch((error) => console.log('error', error));
   }, []);
@@ -108,9 +114,14 @@ export default function RequestDetail({ setCurrentStep }: any) {
         <Col xs={3}>Deposit To:</Col>
         <Col xs={9}>
           <Form.Select>
-            <option>Select</option>
-            <option value="Personal (8000 001 000000000) $1,747.46">Personal (8000 001 000000000) $1,747.46</option>
-            <option value="Business (7000 001 000000000) $1,747.46">Business (7000 001 000000000) $1,747.46</option>
+            <option value="">Select</option>
+            {
+              accountsData?.map((accountData) => (
+                <option key={accountData.name} value={JSON.stringify(accountData)}>
+                  {accountData.name}
+                </option>
+              ))
+            }
           </Form.Select>
         </Col>
       </Row>
