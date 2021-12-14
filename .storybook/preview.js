@@ -1,3 +1,12 @@
+import { initialize, mswDecorator } from 'msw-storybook-addon';
+
+// Initialize MSW
+initialize();
+
+window.API_URL = "https://zippy-retail-api-dev.azurewebsites.net";
+
+export const decorators = [mswDecorator] 
+
 export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },
   controls: {

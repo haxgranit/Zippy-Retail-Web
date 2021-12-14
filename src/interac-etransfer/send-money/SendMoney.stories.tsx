@@ -27,7 +27,7 @@ APIError.parameters = {
   msw: [
     rest.get(
       'https://zippy-retail-api-dev.azurewebsites.net/Accounts',
-      (_req, res, ctx) => res(ctx.delay(800), ctx.status(403)),
+      (_req, res, ctx) => res(ctx.status(403)),
     ),
   ],
 };
