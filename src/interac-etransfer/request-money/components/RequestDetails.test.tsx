@@ -1,7 +1,7 @@
 import Enzyme, { mount, shallow } from 'enzyme';
 import Adapter from '@wojtekmaj/enzyme-adapter-react-17';
 import { Form } from 'react-bootstrap';
-import React from 'react';
+import React, { ChangeEvent } from 'react';
 import RequestDetails from './RequestDetails';
 
 // Configure enzyme for react 17
@@ -133,9 +133,56 @@ describe('RequestDetail Component', () => {
     const wrapper = shallow(<RequestDetails setCurrentStep={setCurrentStep} />);
 
     wrapper
-      .find(Form.Select).at(0)
-      .simulate('change', { target: { value: JSON.stringify(initialContact) } });
+      .find(Form.Select)
+      .at(0)
+      .simulate('change', {
+        target: { value: JSON.stringify(initialContact) },
+      });
     wrapper.find('Button[variant="danger"]').simulate('click');
     expect(setCurrentStep).toHaveBeenCalled();
+  });
+  it('should call setAccount when changing Select ', () => {
+    const initialContact = {
+      name: 'test',
+      email: 'test@test.com',
+      phone: '',
+    };
+    const setAccountFrom = jest.fn();
+    const setContacts = jest.fn();
+    React.useState = jest
+      .fn()
+      .mockImplementationOnce(() => [initialContact, setAccountFrom])
+      .mockImplementationOnce(() => [[initialContact], setContacts]);
+    const wrapper = mount(<RequestDetails />);
+    const emailOrPhoneCheck = wrapper.find(Form.Select);
+    // @ts-ignore
+    emailOrPhoneCheck
+      ?.at(0)
+      ?.prop('onChange')({ target: { name: 'test', value: JSON.stringify(initialContact) } } as ChangeEvent<HTMLSelectElement>);
+    expect(wrapper.find('option').at(1).props().value).toEqual(
+      JSON.stringify(initialContact),
+    );
+  });
+
+  it('should call setAccount with null when selected Value is empty ', () => {
+    const initialContact = {
+      name: 'test',
+      email: 'test@test.com',
+      phone: '',
+    };
+    const setAccountFrom = jest.fn();
+    const setContacts = jest.fn();
+    React.useState = jest
+      .fn()
+      .mockImplementationOnce(() => [initialContact, setAccountFrom])
+      .mockImplementationOnce(() => [[initialContact], setContacts]);
+    const wrapper = mount(<RequestDetails />);
+    const emailOrPhoneCheck = wrapper.find(Form.Select);
+    // const mockedEvent = { target: { value: JSON.stringify(initialContact) } };
+    // @ts-ignore
+    emailOrPhoneCheck
+      ?.at(0)
+      ?.prop('onChange')({ target: { name: 'test', value: '' } } as ChangeEvent<HTMLSelectElement>);
+    expect(setAccountFrom).toBeCalledWith(null);
   });
 });

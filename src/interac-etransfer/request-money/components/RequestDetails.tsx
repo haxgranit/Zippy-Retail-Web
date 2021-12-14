@@ -35,6 +35,7 @@ export default function RequestDetail({ setCurrentStep }: any) {
           <Form.Select onChange={(evt) => {
             if (evt.target.value === '') {
               setAccountFrom(null);
+              return;
             }
             setAccountFrom(JSON.parse(evt.target.value));
           }}
