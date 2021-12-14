@@ -20,7 +20,7 @@ const EditEmailAccount = ({
       <Row style={{ padding: '30px' }}>
         <h3>EMAIL ADDRESS UPDATE</h3>
         <p style={{ marginTop: '10px' }}>
-          this is your email address on file with CIBC.
+          this is your email address on file with ZippyX.
         </p>
         <span>
           Communication for ebills, alerts. interec e-Transfer messages and promotional materials
