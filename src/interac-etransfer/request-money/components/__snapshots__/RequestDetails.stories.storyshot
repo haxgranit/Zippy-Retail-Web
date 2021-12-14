@@ -27,7 +27,7 @@ Array [
       className="col-6"
     >
       <select
-        className="account-from form-select"
+        className="form-select"
         onChange={[Function]}
       >
         <option
