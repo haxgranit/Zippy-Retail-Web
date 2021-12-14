@@ -95,19 +95,12 @@ Array [
     >
       <select
         className="form-select"
+        onChange={[Function]}
       >
-        <option>
+        <option
+          value=""
+        >
           Select
-        </option>
-        <option
-          value="Personal (8000 001 000000000) $1,747.46"
-        >
-          Personal (8000 001 000000000) $1,747.46
-        </option>
-        <option
-          value="Business (7000 001 000000000) $1,747.46"
-        >
-          Business (7000 001 000000000) $1,747.46
         </option>
       </select>
     </div>
