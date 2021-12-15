@@ -26,9 +26,11 @@ describe('RequestDetail Component', () => {
     };
     const setAccountFrom = jest.fn();
     const setContacts = jest.fn();
+    const setAccountsData = jest.fn();
     React.useState = jest
       .fn()
       .mockImplementationOnce(() => [initialContact, setAccountFrom])
+      .mockImplementationOnce((x) => [x, setAccountsData])
       .mockImplementationOnce((x) => [x, setContacts]);
     const wrapper = mount(<RequestDetails />);
     const emailOrPhoneCheck = wrapper.find(Form.Check);
@@ -47,9 +49,11 @@ describe('RequestDetail Component', () => {
     };
     const setAccountFrom = jest.fn();
     const setContacts = jest.fn();
+    const setAccountsData = jest.fn();
     React.useState = jest
       .fn()
       .mockImplementationOnce(() => [initialContact, setAccountFrom])
+      .mockImplementationOnce((x) => [x, setAccountsData])
       .mockImplementationOnce((x) => [x, setContacts]);
     const wrapper = mount(<RequestDetails />);
     const emailOrPhoneCheck = wrapper.find(Form.Check);
@@ -68,9 +72,11 @@ describe('RequestDetail Component', () => {
     };
     const setAccountFrom = jest.fn();
     const setContacts = jest.fn();
+    const setAccountsData = jest.fn();
     React.useState = jest
       .fn()
       .mockImplementationOnce(() => [initialContact, setAccountFrom])
+      .mockImplementationOnce((x) => [x, setAccountsData])
       .mockImplementationOnce((x) => [x, setContacts]);
     const wrapper = mount(<RequestDetails />);
     const emailOrPhoneForm = wrapper.find(Form);
@@ -87,9 +93,11 @@ describe('RequestDetail Component', () => {
     };
     const setAccountFrom = jest.fn();
     const setContacts = jest.fn();
+    const setAccountsData = jest.fn();
     React.useState = jest
       .fn()
       .mockImplementationOnce(() => [initialContact, setAccountFrom])
+      .mockImplementationOnce((x) => [x, setAccountsData])
       .mockImplementationOnce((x) => [x, setContacts]);
     const wrapper = mount(<RequestDetails />);
     const emailOrPhoneCheck = wrapper.find(Form.Select);
@@ -106,9 +114,11 @@ describe('RequestDetail Component', () => {
     };
     const setAccountFrom = jest.fn();
     const setContacts = jest.fn();
+    const setAccountsData = jest.fn();
     React.useState = jest
       .fn()
       .mockImplementationOnce(() => [initialContact, setAccountFrom])
+      .mockImplementationOnce((x) => [x, setAccountsData])
       .mockImplementationOnce((x) => [x, setContacts]);
     const wrapper = mount(<RequestDetails />);
     const emailOrPhoneCheck = wrapper.find(Form.Select);
@@ -125,9 +135,11 @@ describe('RequestDetail Component', () => {
     };
     const setAccountFrom = jest.fn();
     const setContacts = jest.fn();
+    const setAccountsData = jest.fn();
     React.useState = jest
       .fn()
       .mockImplementationOnce(() => [initialContact, setAccountFrom])
+      .mockImplementationOnce((x) => [x, setAccountsData])
       .mockImplementationOnce((x) => [x, setContacts]);
     const setCurrentStep = jest.fn();
     const wrapper = shallow(<RequestDetails setCurrentStep={setCurrentStep} />);
@@ -149,9 +161,12 @@ describe('RequestDetail Component', () => {
     };
     const setAccountFrom = jest.fn();
     const setContacts = jest.fn();
+    const setAccountsData = jest.fn();
+
     React.useState = jest
       .fn()
       .mockImplementationOnce(() => [initialContact, setAccountFrom])
+      .mockImplementationOnce((x) => [x, setAccountsData])
       .mockImplementationOnce(() => [[initialContact], setContacts]);
     const wrapper = mount(<RequestDetails />);
     const emailOrPhoneCheck = wrapper.find(Form.Select);
@@ -159,11 +174,11 @@ describe('RequestDetail Component', () => {
     emailOrPhoneCheck
       ?.at(0)
       ?.prop('onChange')({ target: { name: 'test', value: JSON.stringify(initialContact) } } as ChangeEvent<HTMLSelectElement>);
-    expect(wrapper.find('option').at(1).props().value).toEqual(
+    expect(wrapper.find('option').at(2).props().value).toEqual(
       JSON.stringify(initialContact),
     );
+    expect(setAccountFrom).toBeCalledWith(initialContact);
   });
-
   it('should call setAccount with null when selected Value is empty ', () => {
     const initialContact = {
       name: 'test',
@@ -172,9 +187,12 @@ describe('RequestDetail Component', () => {
     };
     const setAccountFrom = jest.fn();
     const setContacts = jest.fn();
+    const setAccountsData = jest.fn();
+
     React.useState = jest
       .fn()
       .mockImplementationOnce(() => [initialContact, setAccountFrom])
+      .mockImplementationOnce((x) => [x, setAccountsData])
       .mockImplementationOnce(() => [[initialContact], setContacts]);
     const wrapper = mount(<RequestDetails />);
     const emailOrPhoneCheck = wrapper.find(Form.Select);
@@ -184,5 +202,63 @@ describe('RequestDetail Component', () => {
       ?.at(0)
       ?.prop('onChange')({ target: { name: 'test', value: '' } } as ChangeEvent<HTMLSelectElement>);
     expect(setAccountFrom).toBeCalledWith(null);
+    expect(wrapper.find('option').at(1).props().value).toEqual(
+      '',
+    );
+  });
+  it('should render select with Contact Details', () => {
+    const initialContact = [{
+      name: 'test',
+      email: 'test@test.com',
+      phone: '',
+    },
+    {
+      name: 'test2',
+      email: 'tes2t@test.com',
+      phone: '',
+    },
+    {
+      name: 'test3',
+      email: 'test3@test.com',
+      phone: '',
+    },
+    ];
+    const setAccountFrom = jest.fn();
+    const setContacts = jest.fn();
+    const setAccountsData = jest.fn();
+
+    React.useState = jest
+      .fn()
+      .mockImplementationOnce(() => [initialContact, setAccountFrom])
+      .mockImplementationOnce((x) => [x, setAccountsData])
+      .mockImplementationOnce(() => [initialContact, setContacts]);
+    const wrapper = mount(<RequestDetails />);
+    const emailOrPhoneCheck = wrapper.find(Form.Select);
+    const options = emailOrPhoneCheck.at(1).find('option');
+    expect(options.length).toBeGreaterThan(1);
+    // expect(options.at(1).children().text()).toEqual(initialContact.name);
+    // expect(options.at(1).props().value).toEqual(JSON.stringify(initialContact));
+  });
+  it('should not render any select when  Contact is null', () => {
+    const initialContact = {
+      name: 'test',
+      email: 'test@test.com',
+      phone: '',
+    };
+    const setAccountFrom = jest.fn();
+    const setContacts = jest.fn();
+    const setAccountsData = jest.fn();
+
+    React.useState = jest
+      .fn()
+      .mockImplementationOnce(() => [initialContact, setAccountFrom])
+      .mockImplementationOnce((x) => [x, setAccountsData])
+      .mockImplementationOnce(() => [null, setContacts]);
+    const wrapper = mount(<RequestDetails />);
+    const emailOrPhoneCheck = wrapper.find(Form.Select);
+    const options = emailOrPhoneCheck.at(1).find('option');
+    expect(options.length).toEqual(1);
+    expect(options.at(0).children().text()).toEqual('Select');
+    expect(options.at(0).props().value).toEqual('');
   });
 });
