@@ -4,3 +4,4 @@ src/app/*
 src/features/user/userSlice.ts
 src/i18n/config.js
 coverage/*
+public/config.js
