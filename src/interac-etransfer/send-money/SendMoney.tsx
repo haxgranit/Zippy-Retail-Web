@@ -10,7 +10,7 @@ import {
   TransferSentPage,
 } from './components';
 import SendMoneyVerificationModal from '../dialogs/SendMoneyVerificationModal';
-import Api, { Account } from '../../api';
+import Api, { Account, Contact } from '../../api';
 
 interface QuickLink {
   id: number;
@@ -37,14 +37,29 @@ export default function SendMoney() {
   const [mainInfo, setMainInfo] = useState({});
 
   const [accountsList, setAccountsList] = useState<Account[] | null>([]);
+  const [contactList, setContactList] = useState<Contact[] | null>([]);
   const { instance, accounts } = useMsal();
 
   useEffect(() => {
-    new Api(instance, accounts[0]).listAccounts()
+    const currentApi = new Api(instance, accounts[0]);
+
+    currentApi.listAccounts()
       .then((result) => {
-        setError(null);
         setAccountsList(result);
-      }).catch(() => setError('Sorry! a problem has occurred when getting accounts.'));
+      }).catch(() => {
+        setTimeout(() => {
+          setError('Sorry! a problem has occurred when getting accounts.');
+        }, 0);
+      });
+
+    currentApi.listContacts()
+      .then((result) => {
+        setContactList(result);
+      }).catch(() => {
+        setTimeout(() => {
+          setError('Sorry! a problem has occurred when getting contacts.');
+        }, 0);
+      });
   }, []);
 
   const quickLinks: QuickLink[] = [
@@ -123,6 +138,7 @@ export default function SendMoney() {
               mainInfo={mainInfo}
               setMainInfo={setMainInfo}
               accounts={accountsList}
+              contacts={contactList}
             />
           )}
           {currentStep === 2 && realStep === 2 && (

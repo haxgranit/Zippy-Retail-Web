@@ -53,20 +53,11 @@ Array [
       <select
         className="send-account-select form-select"
         onChange={[Function]}
-      >
-        <option
-          value={1}
-        >
-          Chelsea Tough
-        </option>
-        <option
-          value={2}
-        >
-          Cristian
-        </option>
-      </select>
+      />
       <p>
-        Email: chelsea.tough@gmail.com
+        Email:
+         
+        No email
       </p>
       <p>
         <a

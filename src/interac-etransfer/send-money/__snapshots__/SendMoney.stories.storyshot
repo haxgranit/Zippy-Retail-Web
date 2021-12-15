@@ -194,20 +194,11 @@ exports[`Storyshots interac-etransfer/send-money/SendMoney API Error 1`] = `
           <select
             className="send-account-select form-select"
             onChange={[Function]}
-          >
-            <option
-              value={1}
-            >
-              Chelsea Tough
-            </option>
-            <option
-              value={2}
-            >
-              Cristian
-            </option>
-          </select>
+          />
           <p>
-            Email: chelsea.tough@gmail.com
+            Email:
+             
+            No email
           </p>
           <p>
             <a
@@ -807,20 +798,11 @@ exports[`Storyshots interac-etransfer/send-money/SendMoney Default 1`] = `
           <select
             className="send-account-select form-select"
             onChange={[Function]}
-          >
-            <option
-              value={1}
-            >
-              Chelsea Tough
-            </option>
-            <option
-              value={2}
-            >
-              Cristian
-            </option>
-          </select>
+          />
           <p>
-            Email: chelsea.tough@gmail.com
+            Email:
+             
+            No email
           </p>
           <p>
             <a
