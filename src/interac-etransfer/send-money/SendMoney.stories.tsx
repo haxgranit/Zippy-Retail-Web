@@ -15,7 +15,7 @@ Default.args = {};
 Default.parameters = {
   msw: [
     rest.get(
-      'https://zippy-retail-api-dev.azurewebsites.net/Accounts',
+      'https://mock.net/Accounts',
       (_req, res, ctx) => res(ctx.json(ACCOUNTS)),
     ),
   ],
@@ -26,7 +26,7 @@ APIError.args = {};
 APIError.parameters = {
   msw: [
     rest.get(
-      'https://zippy-retail-api-dev.azurewebsites.net/Accounts',
+      'https://mock.net/Accounts',
       (_req, res, ctx) => res(ctx.status(403)),
     ),
   ],
