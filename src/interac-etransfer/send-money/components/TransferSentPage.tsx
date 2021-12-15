@@ -1,13 +1,11 @@
 import {
-  Row,
-  Col,
-  Form,
-  Button,
+  Row, Col, Form, Button,
 } from 'react-bootstrap';
 
 const TransferSentPage = ({
   setRealStep,
   setCurrentStep,
+  isCompleted,
 }: any): JSX.Element => (
   <>
     <div className="d-flex align-items-center">
@@ -28,7 +26,7 @@ const TransferSentPage = ({
       If you opted to send a notification of your transfer, your contact will
       receive it shortly.
     </p>
-    <p>This transfer is final and can&apos;t be recalled.</p>
+    {!isCompleted && <p>This transfer is final and can&apos;t be recalled.</p>}
     <Row className="mt-4">
       <Col md={4}>
         <Form.Label>From:</Form.Label>
@@ -58,6 +56,29 @@ const TransferSentPage = ({
       </Col>
     </Row>
     <hr style={{ height: '1px', width: '100%' }} />
+    {isCompleted && (
+      <>
+        <Row className="mt-2">
+          <Col md={4}>
+            <Form.Label>Security Question:</Form.Label>
+          </Col>
+          <Col md={8}>
+            <Form.Label>45056454585524585512</Form.Label>
+          </Col>
+        </Row>
+        <hr style={{ height: '1px', width: '100%' }} />
+        <Row className="mt-2">
+          <Col md={4}>
+            <Form.Label>Response:</Form.Label>
+          </Col>
+          <Col md={8}>
+            <Form.Label>***************</Form.Label>
+          </Col>
+        </Row>
+        <hr style={{ height: '1px', width: '100%' }} />
+      </>
+    )}
+
     <Row className="mt-2">
       <Col md={4}>
         <Form.Label>Amount:</Form.Label>
@@ -76,6 +97,19 @@ const TransferSentPage = ({
       </Col>
     </Row>
     <hr style={{ height: '1px', width: '100%' }} />
+    {isCompleted && (
+      <>
+        <Row className="mt-2">
+          <Col md={4}>
+            <Form.Label>Expiry Date:</Form.Label>
+          </Col>
+          <Col md={8}>
+            <Form.Label>Dec 9, 2021</Form.Label>
+          </Col>
+        </Row>
+        <hr style={{ height: '1px', width: '100%' }} />
+      </>
+    )}
     <Row className="mt-2">
       <Col md={4}>
         <Form.Label>Reference Number:(keep for your records)</Form.Label>

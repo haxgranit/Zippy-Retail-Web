@@ -7,7 +7,6 @@ import {
   DetailsPage,
   SecurityQuestionPage,
   SecurityRecipientPage,
-  TransferSentCompletePage,
   TransferSentPage,
 } from './components';
 import SendMoneyVerificationModal from '../dialogs/SendMoneyVerificationModal';
@@ -148,14 +147,16 @@ export default function SendMoney() {
               setCurrentStep={setCurrentStep}
               mainInfo={mainInfo}
               setMainInfo={setMainInfo}
+              isCompleted={false}
             />
           )}
           {currentStep === 3 && realStep === 5 && (
-            <TransferSentCompletePage
+            <TransferSentPage
               setRealStep={setRealStep}
               setCurrentStep={setCurrentStep}
               mainInfo={mainInfo}
               setMainInfo={setMainInfo}
+              isCompleted
             />
           )}
           <hr style={{ height: '1px' }} />
