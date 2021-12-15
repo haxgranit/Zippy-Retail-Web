@@ -1,6 +1,6 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { rest } from 'msw';
-import ACCOUNTS from './Accounts';
+import ACCOUNTS from '../../stories/Accounts';
 import SendMoney from './SendMoney';
 
 export default {

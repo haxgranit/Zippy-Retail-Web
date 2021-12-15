@@ -2,21 +2,6 @@
 
 import { AccountInfo, IPublicClientApplication } from '@azure/msal-browser';
 
-export type Account = {
-  name: string;
-};
-
-export type Contact = {
-  name: string;
-  email: string;
-  phone: string;
-};
-
-export type User = {
-  givenName: string;
-  surname: number;
-};
-
 export async function getToken()
 : Promise<string | null> {
   return 'token';
