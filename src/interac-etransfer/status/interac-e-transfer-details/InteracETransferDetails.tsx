@@ -1,10 +1,5 @@
-import
-{
-  Tabs,
-  Tab,
-  Table,
-  Button,
-  Row,
+import {
+  Tabs, Tab, Table, Button, Row,
 } from 'react-bootstrap';
 import { useNavigate, useParams } from 'react-router-dom';
 import CommonHeader from '../../../common/CommonHeader';
@@ -70,7 +65,13 @@ export default function InteracETransferDetails() {
                 </td>
                 <td>$2,000.00</td>
                 <td>
-                  <Button variant="link" className="text-black">
+                  <Button
+                    variant="link"
+                    className="text-black"
+                    onClick={() => navigate('/interac-etransfer/send-money', {
+                      state: { step: 3 },
+                    })}
+                  >
                     Transfer Completed
                   </Button>
                 </td>
@@ -143,7 +144,11 @@ export default function InteracETransferDetails() {
                 </td>
                 <td>$2,000.00</td>
                 <td>
-                  <Button variant="link" className="text-black" onClick={() => navigate('request-sent')}>
+                  <Button
+                    variant="link"
+                    className="text-black"
+                    onClick={() => navigate('request-sent')}
+                  >
                     Requested
                   </Button>
                 </td>
