@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Col, Row } from 'react-bootstrap';
+import { Alert, Col, Row } from 'react-bootstrap';
 import { useMsal } from '@azure/msal-react';
 import CommonHeader from '../../common/CommonHeader';
 import StepComponent from '../../common/StepComponent';
@@ -7,7 +7,6 @@ import {
   DetailsPage,
   SecurityQuestionPage,
   SecurityRecipientPage,
-  TransferSentCompletePage,
   TransferSentPage,
 } from './components';
 import SendMoneyVerificationModal from '../dialogs/SendMoneyVerificationModal';
@@ -33,6 +32,7 @@ export default function SendMoney() {
   const [currentStep, setCurrentStep] = useState(1);
   const [realStep, setRealStep] = useState(1);
   const [showVerifyModal, setShowVerifyModal] = useState(false);
+  const [error, setError] = useState<string | null>(null);
   const [selectedUser, setUserToSend] = useState(1);
   const [mainInfo, setMainInfo] = useState({});
 
@@ -42,8 +42,9 @@ export default function SendMoney() {
   useEffect(() => {
     new Api(instance, accounts[0]).listAccounts()
       .then((result) => {
+        setError(null);
         setAccountsList(result);
-      }).catch((error) => console.log('error', error));
+      }).catch(() => setError('Sorry! a problem has occurred when getting accounts.'));
   }, []);
 
   const quickLinks: QuickLink[] = [
@@ -95,6 +96,12 @@ export default function SendMoney() {
         handleBack={handleBack}
       />
       <CommonHeader title="SEND MONEY" print={false} />
+      {error && (
+        <Alert variant="danger" className="rounded-0 text-dark py-2 my-2 px-5">
+          <i />
+          {error}
+        </Alert>
+      )}
       <Row>
         <Col md={8}>
           <Row>
@@ -140,14 +147,16 @@ export default function SendMoney() {
               setCurrentStep={setCurrentStep}
               mainInfo={mainInfo}
               setMainInfo={setMainInfo}
+              isCompleted={false}
             />
           )}
           {currentStep === 3 && realStep === 5 && (
-            <TransferSentCompletePage
+            <TransferSentPage
               setRealStep={setRealStep}
               setCurrentStep={setCurrentStep}
               mainInfo={mainInfo}
               setMainInfo={setMainInfo}
+              isCompleted
             />
           )}
           <hr style={{ height: '1px' }} />
