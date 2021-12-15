@@ -41,7 +41,7 @@ describe('RequestDetail Component', () => {
     );
   });
 
-  it('should render Phone Form  when user Has an Phone ', () => {
+  it('should render Text Form  when user Has an Phone ', () => {
     const initialContact = {
       name: 'test',
       email: '',
@@ -60,7 +60,7 @@ describe('RequestDetail Component', () => {
     const mockedEvent = { target: { value: JSON.stringify(initialContact) } };
     emailOrPhoneCheck.at(0).simulate('click', mockedEvent);
     expect(emailOrPhoneCheck.at(0).props().label).toEqual(
-      `Phone ${initialContact.phone}`,
+      'Text Message',
     );
   });
 

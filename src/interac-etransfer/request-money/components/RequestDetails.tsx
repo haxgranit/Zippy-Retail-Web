@@ -70,20 +70,12 @@ export default function RequestDetail({ setCurrentStep }: any) {
                 />
               )
                 : (
-                  <>
-                    <Form.Check
-                      type="checkbox"
-                      id="phone"
-                      label={`Phone ${accountFrom.phone}`}
-                      className="mt-2 mb-2"
-                    />
-                    <Form.Check
-                      type="checkbox"
-                      id="text"
-                      label="Text Message"
-                      className="mt-2 mb-2"
-                    />
-                  </>
+                  <Form.Check
+                    type="checkbox"
+                    id="text"
+                    label="Text Message"
+                    className="mt-2 mb-2"
+                  />
                 )}
               <Button variant="link" className="text-black">Edit Notification Preferences</Button>
             </Col>
