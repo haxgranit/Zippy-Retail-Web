@@ -61,7 +61,7 @@ export default function RequestDetail({ setCurrentStep }: any) {
           <Row className="align-items-center mt-4">
             <Col xs={3}>Notify By:</Col>
             <Col xs={9}>
-              {accountFrom?.email !== '' ? (
+              {accountFrom.email && accountFrom?.email !== '' ? (
                 <Form.Check
                   type="checkbox"
                   id="email"
