@@ -17,6 +17,26 @@ export type User = {
   surname: number;
 };
 
+export async function getToken(instance: IPublicClientApplication, account: AccountInfo)
+  : Promise<string | null> {
+  const accessTokenRequest = {
+    scopes: ['https://zippycashdev.onmicrosoft.com/b0b070aa-4e90-4015-af46-59d0ceed5ecc/access_as_user'],
+    account,
+  };
+
+  let accessToken;
+  try {
+    const accessTokenResponse = await instance.acquireTokenSilent(accessTokenRequest);
+    accessToken = accessTokenResponse.accessToken;
+    return accessToken;
+  } catch (error) {
+    if (error instanceof InteractionRequiredAuthError) {
+      instance.acquireTokenRedirect(accessTokenRequest);
+    }
+    console.log(error);
+  }
+  return null;
+}
 export default class Api {
   constructor(
     private readonly instance: IPublicClientApplication,
@@ -36,28 +56,11 @@ export default class Api {
   }
 
   private async fetch<TResponse>(method: string, path: string) {
-    const accessTokenRequest = {
-      scopes: ['https://zippycashdev.onmicrosoft.com/b0b070aa-4e90-4015-af46-59d0ceed5ecc/access_as_user'],
-      account: this.account,
-    };
-
-    let accessToken;
-    try {
-      const accessTokenResponse = await this.instance.acquireTokenSilent(accessTokenRequest);
-      accessToken = accessTokenResponse.accessToken;
-    } catch (error) {
-      if (error instanceof InteractionRequiredAuthError) {
-        this.instance.acquireTokenRedirect(accessTokenRequest);
-      }
-
-      console.log(error);
-      return null;
-    }
     const apiUrl = (<any>window).API_URL;
     if (!apiUrl) {
       throw Error('window.API_URL is undefined');
     }
-
+    const accessToken = await getToken(this.instance, this.account);
     const response = await fetch(`${apiUrl}/${path}`, {
       method,
       headers: new Headers({ Authorization: `Bearer ${accessToken}` }),
