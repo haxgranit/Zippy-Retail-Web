@@ -19,9 +19,7 @@ export const Default = Template.bind({});
 Default.args = {};
 Default.parameters = {
   msw: [
-    rest.get('https://mock.net/Accounts', (_req, res, ctx) =>
-      res(ctx.json(ACCOUNTS)),
-    ),
+    rest.get('https://mock.net/Accounts', (_req, res, ctx) => res(ctx.json(ACCOUNTS))),
   ],
 };
 
@@ -29,8 +27,6 @@ export const APIError = Template.bind({});
 APIError.args = {};
 APIError.parameters = {
   msw: [
-    rest.get('https://mock.net/Accounts', (_req, res, ctx) =>
-      res(ctx.status(403)),
-    ),
+    rest.get('https://mock.net/Accounts', (_req, res, ctx) => res(ctx.status(403))),
   ],
 };
