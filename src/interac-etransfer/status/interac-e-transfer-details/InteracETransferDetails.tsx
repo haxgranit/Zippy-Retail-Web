@@ -6,14 +6,14 @@ import
   Button,
   Row,
 } from 'react-bootstrap';
-import { useNavigate, useLocation } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import CommonHeader from '../../../common/CommonHeader';
 import MonthSelectComponent from '../../../common/MonthSelectComponent';
 
 export default function InteracETransferDetails() {
   const navigate = useNavigate();
-  const { state } = useLocation();
-  const tabId = state ? state.tabId : null;
+  const { tabId } = useParams();
+  const selectedTabId = tabId || null;
 
   return (
     <>
@@ -39,10 +39,13 @@ export default function InteracETransferDetails() {
         </p>
       </div>
       <Tabs
-        defaultActiveKey={tabId || 'sent'}
+        defaultActiveKey={selectedTabId || 'sent'}
         transition={false}
         id="status-tab"
         className="mt-2 mb-3"
+        onSelect={(tabKey) => {
+          navigate(`/interac-etransfer/status/${tabKey}`);
+        }}
       >
         <Tab eventKey="sent" title="Sent">
           <MonthSelectComponent />
