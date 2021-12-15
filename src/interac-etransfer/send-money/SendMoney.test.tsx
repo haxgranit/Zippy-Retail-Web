@@ -6,6 +6,13 @@ import SendMoney from './SendMoney';
 // Configure enzyme for react 17
 Enzyme.configure({ adapter: new Adapter() });
 
+jest.mock('react-router-dom', () => ({
+  ...(jest.requireActual('react-router-dom') as any),
+  useLocation: () => ({
+    step: 1,
+  }),
+}));
+
 describe('SendMoney Component', () => {
   it('should render StepComponent inside a SendMoney', () => {
     const wrapper = shallow(<SendMoney />);
