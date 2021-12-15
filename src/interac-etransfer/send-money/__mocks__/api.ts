@@ -18,7 +18,7 @@ export type User = {
 };
 
 export async function getToken()
-  : Promise<string | null> {  
+: Promise<string | null> {
   return 'token';
 }
 export default class Api {
@@ -28,19 +28,18 @@ export default class Api {
   ) { }
 
   public listAccounts() {
-    return this.fetch<Account[]>();
+    return this.fetch('get', 'Accounts');
   }
 
   public listContacts() {
-    return this.fetch<Contact[]>();
+    return this.fetch('get', 'Contacts');
   }
 
   public putUser() {
-    return this.fetch<User>();
+    return this.fetch('put', 'User');
   }
 
-  private async fetch<TResponse>() {
-     
-    return {} as TResponse;
+  private async fetch(method: string, path: string) {
+    return { instance: this.instance, url: `${method}/${path}` };
   }
 }
