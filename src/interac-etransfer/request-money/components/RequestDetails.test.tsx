@@ -41,7 +41,7 @@ describe('RequestDetail Component', () => {
     );
   });
 
-  it('should render Text Form  when user Has an Phone ', () => {
+  it('should render Text Form  when user Has a Phone ', () => {
     const initialContact = {
       name: 'test',
       email: '',
@@ -64,7 +64,7 @@ describe('RequestDetail Component', () => {
     );
   });
 
-  it('should render accountFrom with null when no chossing any contact ', () => {
+  it('should render accountFrom with null when no there is no contact ', () => {
     const initialContact = {
       name: 'test',
       email: '',
@@ -85,7 +85,7 @@ describe('RequestDetail Component', () => {
     emailOrPhoneCheck.at(0).simulate('click', mockedEvent);
     expect(emailOrPhoneForm.exists()).toBeFalsy();
   });
-  it('should render accountFrom with contact when  chossing any contact ', () => {
+  it('should render accountFrom with contact when  chossing  a contact ', () => {
     const initialContact = {
       name: 'test',
       email: 'test@test.com',
@@ -106,7 +106,7 @@ describe('RequestDetail Component', () => {
     const emailOrPhoneForm = wrapper.find(Form);
     expect(emailOrPhoneForm).toBeTruthy();
   });
-  it('should cell handleSelect on changing select ', () => {
+  it('should call handleSelect when changing select ', () => {
     const initialContact = {
       name: 'test',
       email: 'test@test.com',
@@ -236,8 +236,6 @@ describe('RequestDetail Component', () => {
     const emailOrPhoneCheck = wrapper.find(Form.Select);
     const options = emailOrPhoneCheck.at(1).find('option');
     expect(options.length).toBeGreaterThan(1);
-    // expect(options.at(1).children().text()).toEqual(initialContact.name);
-    // expect(options.at(1).props().value).toEqual(JSON.stringify(initialContact));
   });
   it('should not render any select when  Contact is null', () => {
     const initialContact = {

@@ -61,30 +61,22 @@ export default function RequestDetail({ setCurrentStep }: any) {
           <Row className="align-items-center mt-4">
             <Col xs={3}>Notify By:</Col>
             <Col xs={9}>
-              {accountFrom.email && accountFrom?.email !== '' ? (
-                <>
-                  <Form.Check
-                    type="checkbox"
-                    id="email"
-                    label={`Email ${accountFrom.email}`}
-                    className="mt-2 mb-2"
-                  />
-                  <Form.Check
-                    type="checkbox"
-                    id="text"
-                    label="Text Message"
-                    className="mt-2 mb-2"
-                  />
-                </>
-              )
-                : (
-                  <Form.Check
-                    type="checkbox"
-                    id="text"
-                    label="Text Message"
-                    className="mt-2 mb-2"
-                  />
-                )}
+              {accountFrom.email && (
+                <Form.Check
+                  type="checkbox"
+                  id="email"
+                  label={`Email ${accountFrom.email}`}
+                  className="mt-2 mb-2"
+                />
+              )}
+              {accountFrom.phone && (
+              <Form.Check
+                type="checkbox"
+                id="text"
+                label="Text Message"
+                className="mt-2 mb-2"
+              />
+              )}
               <Button variant="link" className="text-black">Edit Notification Preferences</Button>
             </Col>
           </Row>
