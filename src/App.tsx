@@ -132,7 +132,7 @@ export default function App() {
           </Route>
           <Route path="interac-etransfer">
             <Route path="/interac-etransfer" element={<Navigate to="/interac-etransfer/status" />} />
-            <Route path="status" element={<InteracETransferDetails />}>
+            <Route path="status" component={InteracETransferDetails}>
               <Route path="/interac-etransfer/status/:tabId" element={<InteracETransferDetails />} />
               <Route path="request-sent" element={<RequestSent />} />
               <Route path="request-reminder" element={<RequestReminder />} />

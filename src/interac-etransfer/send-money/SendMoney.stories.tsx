@@ -2,6 +2,7 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { rest } from 'msw';
 import { BrowserRouter } from 'react-router-dom';
 import ACCOUNTS from '../../stories/Accounts';
+import CONTACTS from '../../stories/Contacts';
 import SendMoney from './SendMoney';
 
 export default {
@@ -19,7 +20,14 @@ export const Default = Template.bind({});
 Default.args = {};
 Default.parameters = {
   msw: [
-    rest.get('https://mock.net/Accounts', (_req, res, ctx) => res(ctx.json(ACCOUNTS))),
+    rest.get(
+      'https://mock.net/Accounts',
+      (_req, res, ctx) => res(ctx.json(ACCOUNTS)),
+    ),
+    rest.get(
+      'https://zippy-retail-api-dev.azurewebsites.net/Contacts',
+      (_req, res, ctx) => res(ctx.json(CONTACTS)),
+    ),
   ],
 };
 
@@ -27,6 +35,13 @@ export const APIError = Template.bind({});
 APIError.args = {};
 APIError.parameters = {
   msw: [
-    rest.get('https://mock.net/Accounts', (_req, res, ctx) => res(ctx.status(403))),
+    rest.get(
+      'https://mock.net/Accounts',
+      (_req, res, ctx) => res(ctx.status(403)),
+    ),
+    rest.get(
+      'https://zippy-retail-api-dev.azurewebsites.net/Contacts',
+      (_req, res, ctx) => res(ctx.delay(800), ctx.status(403)),
+    ),
   ],
 };

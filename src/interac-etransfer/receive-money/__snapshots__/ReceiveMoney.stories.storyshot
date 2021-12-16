@@ -90,6 +90,7 @@ exports[`Storyshots interac-etransfer/receive-money/ReceiveMoney Default 1`] = `
           Check Status
         </button>
         <button
+          onClick={[Function]}
           style={
             Object {
               "borderRadius": "4px",

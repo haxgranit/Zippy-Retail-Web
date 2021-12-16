@@ -8,7 +8,7 @@ import MonthSelectComponent from '../../../common/MonthSelectComponent';
 export default function InteracETransferDetails() {
   const navigate = useNavigate();
   const { tabId } = useParams();
-  const selectedTabId = tabId || null;
+  const selectedTabId = tabId || undefined;
 
   return (
     <>

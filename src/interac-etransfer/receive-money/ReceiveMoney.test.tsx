@@ -25,19 +25,16 @@ describe('ReceiveMoney Component', () => {
     expect(receiveMoneyComponent).toHaveLength(1);
   });
 
-  it('should render ReceiveMoney', () => {
+  it('should navigate when click buttons', () => {
     const wrapper = shallow(
       <BrowserRouter>
         <ReceiveMoney />
       </BrowserRouter>,
     );
     const mEvent = { preventDefault: jest.fn() };
-    wrapper
-      .childAt(0)
-      .dive()
-      .find('button')
-      .at(0)
-      .simulate('click', mEvent);
-    expect(mockedUsedNavigate).toBeCalledTimes(1);
+    const buttons = wrapper.childAt(0).dive().find('button');
+    buttons.at(0).simulate('click', mEvent);
+    buttons.at(1).simulate('click', mEvent);
+    expect(mockedUsedNavigate).toBeCalledTimes(2);
   });
 });
