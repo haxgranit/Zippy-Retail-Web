@@ -11,7 +11,7 @@ import {
   TransferSentPage,
 } from './components';
 import SendMoneyVerificationModal from '../dialogs/SendMoneyVerificationModal';
-import Api, { Account } from '../../api';
+import Api, { Account, Contact } from '../../api';
 
 interface QuickLink {
   id: number;
@@ -35,19 +35,37 @@ export default function SendMoney() {
   const [currentStep, setCurrentStep] = useState(step || 1);
   const [realStep, setRealStep] = useState(currentStep >= 3 ? 5 : 1);
   const [showVerifyModal, setShowVerifyModal] = useState(false);
-  const [error, setError] = useState<string | null>(null);
+  const [errorAccount, setErrorAccount] = useState<string | null>(null);
+  const [errorContact, setErrorContact] = useState<string | null>(null);
   const [selectedUser, setUserToSend] = useState(1);
   const [mainInfo, setMainInfo] = useState({});
 
   const [accountsList, setAccountsList] = useState<Account[] | null>([]);
+  const [contactList, setContactList] = useState<Contact[] | null>([]);
   const { instance, accounts } = useMsal();
 
   useEffect(() => {
-    new Api(instance, accounts[0]).listAccounts()
-      .then((result) => {
-        setError(null);
+    const currentApi = new Api(instance, accounts[0]);
+
+    (async () => {
+      try {
+        const result = await currentApi.listAccounts();
         setAccountsList(result);
-      }).catch(() => setError('Sorry! a problem has occurred when getting accounts.'));
+      } catch (error) {
+        setTimeout(() => {
+          setErrorAccount('Sorry! a problem has occurred when getting accounts.');
+        }, 0);
+      }
+
+      try {
+        const result = await currentApi.listContacts();
+        setContactList(result);
+      } catch (error) {
+        setTimeout(() => {
+          setErrorContact('Sorry! a problem has occurred when getting contacts.');
+        }, 0);
+      }
+    })();
   }, []);
 
   const quickLinks: QuickLink[] = [
@@ -99,10 +117,16 @@ export default function SendMoney() {
         handleBack={handleBack}
       />
       <CommonHeader title="SEND MONEY" print={false} />
-      {error && (
+      {errorAccount && (
         <Alert variant="danger" className="rounded-0 text-dark py-2 my-2 px-5">
           <i />
-          {error}
+          {errorAccount}
+        </Alert>
+      )}
+      {errorContact && (
+        <Alert variant="danger" className="rounded-0 text-dark py-2 my-2 px-5">
+          <i />
+          {errorContact}
         </Alert>
       )}
       <Row>
@@ -126,6 +150,7 @@ export default function SendMoney() {
               mainInfo={mainInfo}
               setMainInfo={setMainInfo}
               accounts={accountsList}
+              contacts={contactList}
             />
           )}
           {currentStep === 2 && realStep === 2 && (
