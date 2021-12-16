@@ -109,6 +109,7 @@ export default function ReceiveMoney() {
                 borderRadius: '4px',
                 padding: '5px 12px',
               }}
+              onClick={() => navigate('/interac-etransfer/learn-more')}
             >
               Learn More
             </button>
