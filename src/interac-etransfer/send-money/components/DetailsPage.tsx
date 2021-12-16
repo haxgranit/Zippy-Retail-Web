@@ -59,7 +59,7 @@ const DetailsPage = ({
             className="send-account-select"
             onChange={handleAccountChange}
           >
-            {contacts && contacts.map((item: Contact, index: number) => (
+            {contacts?.map((item: Contact, index: number) => (
               <option key={item.name} value={index}>{item.name}</option>
             ))}
           </Form.Select>
