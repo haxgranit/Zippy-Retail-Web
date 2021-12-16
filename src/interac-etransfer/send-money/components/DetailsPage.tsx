@@ -65,8 +65,6 @@ const DetailsPage = ({
           </Form.Select>
           <p>
             { `Email: ${getEmail(contactName)}` }
-            {' '}
-            {getEmail(contactName)}
           </p>
           <p>
             <a href="/" className="text-black">

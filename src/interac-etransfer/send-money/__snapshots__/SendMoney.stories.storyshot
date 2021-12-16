@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports['Storyshots interac-etransfer/send-money/SendMoney API Error 1'] = `
+exports[`Storyshots interac-etransfer/send-money/SendMoney API Error 1`] = `
 <div>
   <div
     className="d-flex justify-content-between align-items-center"
@@ -196,9 +196,7 @@ exports['Storyshots interac-etransfer/send-money/SendMoney API Error 1'] = `
             onChange={[Function]}
           />
           <p>
-            Email:
-             
-            No email
+            Email: No email
           </p>
           <p>
             <a
@@ -800,9 +798,7 @@ exports[`Storyshots interac-etransfer/send-money/SendMoney Default 1`] = `
             onChange={[Function]}
           />
           <p>
-            Email:
-             
-            No email
+            Email: No email
           </p>
           <p>
             <a

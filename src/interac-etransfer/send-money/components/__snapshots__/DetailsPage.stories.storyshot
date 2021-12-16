@@ -55,9 +55,7 @@ Array [
         onChange={[Function]}
       />
       <p>
-        Email:
-         
-        No email
+        Email: No email
       </p>
       <p>
         <a
