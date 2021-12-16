@@ -44,23 +44,25 @@ export default function SendMoney() {
   useEffect(() => {
     const currentApi = new Api(instance, accounts[0]);
 
-    currentApi.listAccounts()
-      .then((result) => {
+    (async () => {
+      try {
+        const result = await currentApi.listAccounts();
         setAccountsList(result);
-      }).catch(() => {
+      } catch (error) {
         setTimeout(() => {
           setErrorAccount('Sorry! a problem has occurred when getting accounts.');
         }, 0);
-      });
+      }
 
-    currentApi.listContacts()
-      .then((result) => {
+      try {
+        const result = await currentApi.listContacts();
         setContactList(result);
-      }).catch(() => {
+      } catch (error) {
         setTimeout(() => {
           setErrorContact('Sorry! a problem has occurred when getting contacts.');
         }, 0);
-      });
+      }
+    })();
   }, []);
 
   const quickLinks: QuickLink[] = [
