@@ -10,7 +10,7 @@ import { Account } from '../../../api';
 const DetailsPage = ({
   setRealStep,
   setCurrentStep,
-  selectedUser = 1,
+  selectedUser = 0,
   setUserToSend,
   mainInfo,
   setMainInfo,
@@ -51,6 +51,7 @@ const DetailsPage = ({
             className="send-account-select"
             onChange={handleAccountChange}
           >
+            <option value={0}>Select</option>
             <option value={1}>Chelsea Tough</option>
             <option value={2}>Cristian</option>
           </Form.Select>
@@ -190,6 +191,7 @@ const DetailsPage = ({
           <Button
             variant="danger"
             className="d-flex"
+            disabled={(mainInfo?.from == null || mainInfo?.from === '' || selectedUser === 0)}
             onClick={() => {
               if (selectedUser === 1) {
                 setCurrentStep(2);

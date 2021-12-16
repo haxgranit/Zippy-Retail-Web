@@ -196,6 +196,11 @@ exports[`Storyshots interac-etransfer/send-money/SendMoney API Error 1`] = `
             onChange={[Function]}
           >
             <option
+              value={0}
+            >
+              Select
+            </option>
+            <option
               value={1}
             >
               Chelsea Tough
@@ -488,7 +493,7 @@ exports[`Storyshots interac-etransfer/send-money/SendMoney API Error 1`] = `
         >
           <button
             className="d-flex btn btn-danger"
-            disabled={false}
+            disabled={true}
             onClick={[Function]}
             type="button"
           >
@@ -809,6 +814,11 @@ exports[`Storyshots interac-etransfer/send-money/SendMoney Default 1`] = `
             onChange={[Function]}
           >
             <option
+              value={0}
+            >
+              Select
+            </option>
+            <option
               value={1}
             >
               Chelsea Tough
@@ -1101,7 +1111,7 @@ exports[`Storyshots interac-etransfer/send-money/SendMoney Default 1`] = `
         >
           <button
             className="d-flex btn btn-danger"
-            disabled={false}
+            disabled={true}
             onClick={[Function]}
             type="button"
           >

@@ -55,6 +55,11 @@ Array [
         onChange={[Function]}
       >
         <option
+          value={0}
+        >
+          Select
+        </option>
+        <option
           value={1}
         >
           Chelsea Tough
@@ -347,7 +352,7 @@ Array [
     >
       <button
         className="d-flex btn btn-danger"
-        disabled={false}
+        disabled={true}
         onClick={[Function]}
         type="button"
       >

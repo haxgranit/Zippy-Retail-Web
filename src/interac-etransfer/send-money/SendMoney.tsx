@@ -10,7 +10,7 @@ import {
   TransferSentPage,
 } from './components';
 import SendMoneyVerificationModal from '../dialogs/SendMoneyVerificationModal';
-import Api, { Account } from '../../api';
+import Api, { Account, InteracEtransferTransaction } from '../../api';
 
 interface QuickLink {
   id: number;
@@ -33,7 +33,7 @@ export default function SendMoney() {
   const [realStep, setRealStep] = useState(1);
   const [showVerifyModal, setShowVerifyModal] = useState(false);
   const [error, setError] = useState<string | null>(null);
-  const [selectedUser, setUserToSend] = useState(1);
+  const [selectedUser, setUserToSend] = useState(0);
   const [mainInfo, setMainInfo] = useState({});
 
   const [accountsList, setAccountsList] = useState<Account[] | null>([]);
@@ -66,12 +66,22 @@ export default function SendMoney() {
   ];
 
   const handleNext = () => {
-    if (selectedUser === 1) {
-      setRealStep(4);
-    } else {
-      setRealStep(5);
-    }
-    setCurrentStep(3);
+    const data: InteracEtransferTransaction = {
+      clientReferenceNumber: '',
+      contactId: selectedUser,
+    };
+    new Api(instance, accounts[0])
+      .postInteracEtransferTransaction(data)
+      .then(() => {
+        setError(null);
+        if (selectedUser === 1) {
+          setRealStep(4);
+        } else {
+          setRealStep(5);
+        }
+        setCurrentStep(3);
+      })
+      .catch(() => setError('Transfer failed.'));
     setShowVerifyModal(false);
   };
 
