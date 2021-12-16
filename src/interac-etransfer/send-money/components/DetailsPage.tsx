@@ -21,9 +21,14 @@ const DetailsPage = ({
   const [contactId, setContactId] = useState(0);
   const handleAccountChange = (evt: any) => {
     setUserToSend(Number(evt.target.value));
-    setContactId(evt.target.value);
+    setContactId(Number(evt.target.value));
   };
-  const getEmail = (id: number) => contacts?.find((el: Contact) => el.id === id)?.email || 'No email';
+  const getEmail = (id: number) => {
+    if (id) {
+      return contacts?.find((el: Contact) => el.id === id)?.email || 'No email';
+    }
+    return contacts && contacts[0] ? contacts[0].email : 'No email';
+  };
 
   return (
     <>
