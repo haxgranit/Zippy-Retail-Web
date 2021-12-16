@@ -49,7 +49,7 @@ export default function RequestDetail({ setCurrentStep }: any) {
             <option value="">Select</option>
             {
               contacts?.map((contact) => (
-                <option key={contact.email} value={JSON.stringify(contact)}>{contact.name}</option>
+                <option key={contact.id} value={JSON.stringify(contact)}>{`${contact?.firstName} ${contact?.lastName}`}</option>
               ))
             }
           </Form.Select>
