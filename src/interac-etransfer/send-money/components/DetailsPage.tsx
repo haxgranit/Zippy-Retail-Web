@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import {
   Row,
   Col,
@@ -5,7 +6,7 @@ import {
   FormControl,
   Button,
 } from 'react-bootstrap';
-import { Account } from '../../../api';
+import { Account, Contact } from '../../../api';
 
 const DetailsPage = ({
   setRealStep,
@@ -15,8 +16,15 @@ const DetailsPage = ({
   mainInfo,
   setMainInfo,
   accounts,
+  contacts,
 }: any): JSX.Element => {
-  const handleAccountChange = (evt: any) => setUserToSend(Number(evt.target.value));
+  const [contactName, setContactName] = useState('');
+  const handleAccountChange = (evt: any) => {
+    setUserToSend(Number(evt.target.value));
+    setContactName(evt.target.value);
+  };
+  const getEmail = (name: string) => contacts?.find((el: Contact) => el.name === name)?.email || 'No email';
+
   return (
     <>
       <h4>Your Interac e-Transfer Details</h4>
@@ -52,10 +60,13 @@ const DetailsPage = ({
             onChange={handleAccountChange}
           >
             <option value={0}>Select</option>
-            <option value={1}>Chelsea Tough</option>
-            <option value={2}>Cristian</option>
+            {contacts?.map((item: Contact, index: number) => (
+              <option key={item.name} value={index + 1}>{item.name}</option>
+            ))}
           </Form.Select>
-          <p>Email: chelsea.tough@gmail.com</p>
+          <p>
+            { `Email: ${getEmail(contactName)}` }
+          </p>
           <p>
             <a href="/" className="text-black">
               Edit Contact

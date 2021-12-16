@@ -69,4 +69,19 @@ describe('DetailsPage Component', () => {
     wrapper.find('.transfer-method').simulate('change', { target: { value: 'Text Message' } });
     expect(setMainInfo).toBeCalledTimes(4);
   });
+
+  it('change FormControl to call setUserToSend', () => {
+    const setUserToSend = jest.fn();
+    const wrapper = shallow(
+      <DetailsPage
+        setCurrentStep={jest.fn()}
+        setRealStep={jest.fn()}
+        setMainInfo={jest.fn()}
+        mainInfo={{}}
+        setUserToSend={setUserToSend}
+      />,
+    );
+    wrapper.find('.send-account-select').simulate('change', { target: { value: 'Text Message' } });
+    expect(setUserToSend).toBeCalledTimes(1);
+  });
 });
