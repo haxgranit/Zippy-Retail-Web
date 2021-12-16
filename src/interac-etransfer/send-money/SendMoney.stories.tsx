@@ -1,6 +1,7 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { rest } from 'msw';
 import ACCOUNTS from '../../stories/Accounts';
+import CONTACTS from '../../stories/Contacts';
 import SendMoney from './SendMoney';
 
 export default {
@@ -18,6 +19,10 @@ Default.parameters = {
       'https://mock.net/Accounts',
       (_req, res, ctx) => res(ctx.json(ACCOUNTS)),
     ),
+    rest.get(
+      'https://zippy-retail-api-dev.azurewebsites.net/Contacts',
+      (_req, res, ctx) => res(ctx.json(CONTACTS)),
+    ),
   ],
 };
 
@@ -28,6 +33,10 @@ APIError.parameters = {
     rest.get(
       'https://mock.net/Accounts',
       (_req, res, ctx) => res(ctx.status(403)),
+    ),
+    rest.get(
+      'https://zippy-retail-api-dev.azurewebsites.net/Contacts',
+      (_req, res, ctx) => res(ctx.delay(800), ctx.status(403)),
     ),
   ],
 };
