@@ -64,7 +64,7 @@ const DetailsPage = ({
             ))}
           </Form.Select>
           <p>
-            Email:
+            { `Email: ${getEmail(contactName)}` }
             {' '}
             {getEmail(contactName)}
           </p>
