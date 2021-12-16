@@ -32,7 +32,8 @@ export default function SendMoney() {
   const [currentStep, setCurrentStep] = useState(1);
   const [realStep, setRealStep] = useState(1);
   const [showVerifyModal, setShowVerifyModal] = useState(false);
-  const [error, setError] = useState<string | null>(null);
+  const [errorAccount, setErrorAccount] = useState<string | null>(null);
+  const [errorContact, setErrorContact] = useState<string | null>(null);
   const [selectedUser, setUserToSend] = useState(1);
   const [mainInfo, setMainInfo] = useState({});
 
@@ -48,7 +49,7 @@ export default function SendMoney() {
         setAccountsList(result);
       }).catch(() => {
         setTimeout(() => {
-          setError('Sorry! a problem has occurred when getting accounts.');
+          setErrorAccount('Sorry! a problem has occurred when getting accounts.');
         }, 0);
       });
 
@@ -57,7 +58,7 @@ export default function SendMoney() {
         setContactList(result);
       }).catch(() => {
         setTimeout(() => {
-          setError('Sorry! a problem has occurred when getting contacts.');
+          setErrorContact('Sorry! a problem has occurred when getting contacts.');
         }, 0);
       });
   }, []);
@@ -111,10 +112,16 @@ export default function SendMoney() {
         handleBack={handleBack}
       />
       <CommonHeader title="SEND MONEY" print={false} />
-      {error && (
+      {errorAccount && (
         <Alert variant="danger" className="rounded-0 text-dark py-2 my-2 px-5">
           <i />
-          {error}
+          {errorAccount}
+        </Alert>
+      )}
+      {errorContact && (
+        <Alert variant="danger" className="rounded-0 text-dark py-2 my-2 px-5">
+          <i />
+          {errorContact}
         </Alert>
       )}
       <Row>
