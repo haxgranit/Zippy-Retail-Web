@@ -19,7 +19,6 @@ export type User = {
 
 export type InteracEtransferTransaction = {
   contactId: number,
-  clientReferenceNumber: string,
 };
 
 export async function getToken(instance: IPublicClientApplication, account: AccountInfo)

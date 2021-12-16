@@ -32,8 +32,8 @@ export default function SendMoney() {
   const [currentStep, setCurrentStep] = useState(1);
   const [realStep, setRealStep] = useState(1);
   const [showVerifyModal, setShowVerifyModal] = useState(false);
-  const [error, setError] = useState<string | null>(null);
-  const [selectedUser, setUserToSend] = useState(0);
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
+  const [selectedContact, setSelectedContact] = useState(0);
   const [mainInfo, setMainInfo] = useState({});
 
   const [accountsList, setAccountsList] = useState<Account[] | null>([]);
@@ -49,7 +49,7 @@ export default function SendMoney() {
         setAccountsList(result);
       } catch (err) {
         setTimeout(() => {
-          setError('Sorry! a problem has occurred when getting accounts.');
+          setErrorMessage('Sorry! a problem has occurred when getting accounts.');
         }, 0);
       }
 
@@ -58,7 +58,7 @@ export default function SendMoney() {
         setContactList(result);
       } catch (err) {
         setTimeout(() => {
-          setError('Sorry! a problem has occurred when getting contacts.');
+          setErrorMessage('Sorry! a problem has occurred when getting contacts.');
         }, 0);
       }
     })();
@@ -84,21 +84,20 @@ export default function SendMoney() {
 
   const handleNext = () => {
     const data: InteracEtransferTransaction = {
-      clientReferenceNumber: '',
-      contactId: selectedUser,
+      contactId: selectedContact,
     };
     new Api(instance, accounts[0])
       .postInteracEtransferTransaction(data)
       .then(() => {
-        setError(null);
-        if (selectedUser === 1) {
+        setErrorMessage(null);
+        if (selectedContact === 1) {
           setRealStep(4);
         } else {
           setRealStep(5);
         }
         setCurrentStep(3);
       })
-      .catch(() => setError('Transfer failed.'));
+      .catch(() => setErrorMessage('Transfer failed.'));
     setShowVerifyModal(false);
   };
 
@@ -123,10 +122,10 @@ export default function SendMoney() {
         handleBack={handleBack}
       />
       <CommonHeader title="SEND MONEY" print={false} />
-      {error && (
+      {errorMessage && (
         <Alert variant="danger" className="rounded-0 text-dark py-2 my-2 px-5">
           <i />
-          {error}
+          {errorMessage}
         </Alert>
       )}
       <Row>
@@ -145,8 +144,8 @@ export default function SendMoney() {
             <DetailsPage
               setRealStep={setRealStep}
               setCurrentStep={setCurrentStep}
-              selectedUser={selectedUser}
-              setUserToSend={setUserToSend}
+              selectedContact={selectedContact}
+              setContactToSend={setSelectedContact}
               mainInfo={mainInfo}
               setMainInfo={setMainInfo}
               accounts={accountsList}
