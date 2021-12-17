@@ -113,7 +113,13 @@ export default function InteracETransferDetails() {
                 </td>
                 <td>$2,000.00</td>
                 <td>
-                  <Button variant="link" className="text-black">
+                  <Button
+                    variant="link"
+                    className="text-black"
+                    onClick={() => navigate('/interac-etransfer/send-money', {
+                      state: { step: 3 },
+                    })}
+                  >
                     Transfer Completed
                   </Button>
                 </td>

@@ -31,9 +31,9 @@ const LinkElement = ({ url, text, id }: QuickLink): JSX.Element => (
 
 export default function SendMoney() {
   const { state } = useLocation();
-  const step = state ? state.step : null;
+  const step = state ? state.step : undefined;
   const [currentStep, setCurrentStep] = useState(step || 1);
-  const [realStep, setRealStep] = useState(step && step === 3 ? 5 : 1);
+  const [realStep, setRealStep] = useState(currentStep >= 3 ? 5 : 1);
   const [showVerifyModal, setShowVerifyModal] = useState(false);
   const [errorAccount, setErrorAccount] = useState<string | null>(null);
   const [errorContact, setErrorContact] = useState<string | null>(null);
