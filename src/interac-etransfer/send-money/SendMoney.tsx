@@ -35,6 +35,7 @@ export default function SendMoney() {
   const [currentStep, setCurrentStep] = useState(step || 1);
   const [realStep, setRealStep] = useState(currentStep >= 3 ? 5 : 1);
   const [showVerifyModal, setShowVerifyModal] = useState(false);
+  const [isSendingMoney, setIsSendingMoney] = useState(false);
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
   const [selectedContact, setSelectedContact] = useState(0);
   const [mainInfo, setMainInfo] = useState({});
@@ -85,10 +86,11 @@ export default function SendMoney() {
     },
   ];
 
-  const handleNext = () => {
+  const handleSendMoneyVerificationNext = () => {
     const data: InteracEtransferTransaction = {
       contactId: selectedContact,
     };
+    setIsSendingMoney(true);
     new Api(instance, accounts[0])
       .postInteracEtransferTransaction(data)
       .then(() => {
@@ -100,13 +102,16 @@ export default function SendMoney() {
         }
         setCurrentStep(3);
       })
-      .catch(() => setErrorMessage('Transfer failed.'));
-    setShowVerifyModal(false);
+      .catch(() => setErrorMessage('Transfer failed.'))
+      .finally(() => {
+        setIsSendingMoney(false);
+        setShowVerifyModal(false);
+      });
   };
 
-  const handleClose = () => setShowVerifyModal(false);
+  const handleSendMoneyVerificationClose = () => setShowVerifyModal(false);
 
-  const handleBack = () => {
+  const handleSendMoneyVerificationBack = () => {
     setRealStep(1);
     setCurrentStep(1);
     setShowVerifyModal(false);
@@ -120,9 +125,10 @@ export default function SendMoney() {
     <div>
       <SendMoneyVerificationModal
         show={showVerifyModal}
-        handleClose={handleClose}
-        handleNext={handleNext}
-        handleBack={handleBack}
+        handleClose={handleSendMoneyVerificationClose}
+        handleNext={handleSendMoneyVerificationNext}
+        handleBack={handleSendMoneyVerificationBack}
+        isSendingMoney={isSendingMoney}
       />
       <CommonHeader title="SEND MONEY" print={false} />
       {errorMessage && (
