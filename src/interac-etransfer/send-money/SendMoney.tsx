@@ -127,7 +127,6 @@ export default function SendMoney() {
       });
   };
 
-  const handleClose = () => setShowVerifyModal(false);
   const getTransferDetails = (): TransferDetails => {
     const destinationContact: Contact = contactList![selectedContact - 1];
     return {
