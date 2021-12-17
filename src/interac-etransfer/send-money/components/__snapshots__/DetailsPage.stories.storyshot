@@ -107,7 +107,6 @@ Array [
       <input
         className="form-control"
         onChange={[Function]}
-        type="email"
       />
       <label
         className="form-label"

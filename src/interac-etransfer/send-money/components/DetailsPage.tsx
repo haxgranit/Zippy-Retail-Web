@@ -86,9 +86,8 @@ const DetailsPage = ({
         </Col>
         <Col md={8}>
           <FormControl
-            type="email"
-            value={mainInfo?.email}
-            onChange={(evt) => setMainInfo({ ...mainInfo, email: evt.target.value })}
+            value={mainInfo?.amount}
+            onChange={(evt) => setMainInfo({ ...mainInfo, amount: evt.target.value })}
           />
           <Form.Label>
             The maximum amount you can send in each transfer is $3,000.

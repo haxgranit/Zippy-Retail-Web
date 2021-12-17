@@ -10,7 +10,9 @@ import {
   SecurityRecipientPage,
   TransferSentPage,
 } from './components';
-import SendMoneyVerificationModal from '../dialogs/SendMoneyVerificationModal';
+import SendMoneyVerificationModal, {
+  TransferDetails,
+} from '../dialogs/SendMoneyVerificationModal';
 import Api, { Account, InteracEtransferTransaction, Contact } from '../../api';
 
 interface QuickLink {
@@ -37,7 +39,7 @@ export default function SendMoney() {
   const [showVerifyModal, setShowVerifyModal] = useState(false);
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
   const [selectedContact, setSelectedContact] = useState(0);
-  const [mainInfo, setMainInfo] = useState({});
+  const [mainInfo, setMainInfo] = useState<any>({});
 
   const [accountsList, setAccountsList] = useState<Account[] | null>([]);
   const [contactList, setContactList] = useState<Contact[] | null>([]);
@@ -105,6 +107,21 @@ export default function SendMoney() {
   };
 
   const handleClose = () => setShowVerifyModal(false);
+  const getTransferDetails = (): TransferDetails => {
+    const destinationContact: Contact = contactList![selectedContact - 1];
+    return {
+      amount: mainInfo.amount,
+      source: {
+        name: accounts[0]?.name ?? '',
+        email: accounts[0]?.username ?? '',
+      },
+      destination: {
+        name: destinationContact?.name ?? '',
+        email: destinationContact?.email ?? '',
+      },
+      fromAccount: mainInfo.from,
+    };
+  };
 
   const handleBack = () => {
     setRealStep(1);
@@ -123,6 +140,7 @@ export default function SendMoney() {
         handleClose={handleClose}
         handleNext={handleNext}
         handleBack={handleBack}
+        transferDetails={getTransferDetails()}
       />
       <CommonHeader title="SEND MONEY" print={false} />
       {errorMessage && (
