@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Alert, Col, Row } from 'react-bootstrap';
 import { useMsal } from '@azure/msal-react';
+import { useLocation } from 'react-router-dom';
 import CommonHeader from '../../common/CommonHeader';
 import StepComponent from '../../common/StepComponent';
 import {
@@ -29,8 +30,10 @@ const LinkElement = ({ url, text, id }: QuickLink): JSX.Element => (
 );
 
 export default function SendMoney() {
-  const [currentStep, setCurrentStep] = useState(1);
-  const [realStep, setRealStep] = useState(1);
+  const { state } = useLocation();
+  const step = state ? state.step : undefined;
+  const [currentStep, setCurrentStep] = useState(step || 1);
+  const [realStep, setRealStep] = useState(currentStep >= 3 ? 5 : 1);
   const [showVerifyModal, setShowVerifyModal] = useState(false);
   const [errorAccount, setErrorAccount] = useState<string | null>(null);
   const [errorContact, setErrorContact] = useState<string | null>(null);

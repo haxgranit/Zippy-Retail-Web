@@ -1,5 +1,6 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { rest } from 'msw';
+import { BrowserRouter } from 'react-router-dom';
 import ACCOUNTS from '../../stories/Accounts';
 import CONTACTS from '../../stories/Contacts';
 import SendMoney from './SendMoney';
@@ -9,7 +10,11 @@ export default {
   component: SendMoney,
 } as ComponentMeta<typeof SendMoney>;
 
-const Template: ComponentStory<typeof SendMoney> = () => <SendMoney />;
+const Template: ComponentStory<typeof SendMoney> = () => (
+  <BrowserRouter>
+    <SendMoney />
+  </BrowserRouter>
+);
 
 export const Default = Template.bind({});
 Default.args = {};
