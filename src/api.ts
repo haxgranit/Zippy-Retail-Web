@@ -17,6 +17,10 @@ export type User = {
   surname: number;
 };
 
+export type InteracEtransferTransaction = {
+  contactId: number,
+};
+
 export async function getToken(instance: IPublicClientApplication, account: AccountInfo)
   : Promise<string | null> {
   const accessTokenRequest = {
@@ -55,7 +59,11 @@ export default class Api {
     return this.fetch<User>('put', 'User');
   }
 
-  private async fetch<TResponse>(method: string, path: string) {
+  public postInteracEtransferTransaction(data: InteracEtransferTransaction) {
+    return this.fetch<InteracEtransferTransaction>('post', 'InteracEtransfer/Transactions', data);
+  }
+
+  private async fetch<TResponse>(method: string, path: string, body?: any) {
     const apiUrl = (<any>window).API_URL;
     if (!apiUrl) {
       throw Error('window.API_URL is undefined');
@@ -63,7 +71,13 @@ export default class Api {
     const accessToken = await getToken(this.instance, this.account);
     const response = await fetch(`${apiUrl}/${path}`, {
       method,
-      headers: new Headers({ Authorization: `Bearer ${accessToken}` }),
+      headers: new Headers(
+        {
+          Authorization: `Bearer ${accessToken}`,
+          'Content-Type': 'application/json',
+        },
+      ),
+      body: body ? JSON.stringify(body) : null,
     });
 
     if (!response.ok) {

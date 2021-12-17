@@ -53,7 +53,13 @@ Array [
       <select
         className="send-account-select form-select"
         onChange={[Function]}
-      />
+      >
+        <option
+          value={0}
+        >
+          Select
+        </option>
+      </select>
       <p>
         Email: No email
       </p>
@@ -336,7 +342,7 @@ Array [
     >
       <button
         className="d-flex btn btn-danger"
-        disabled={false}
+        disabled={true}
         onClick={[Function]}
         type="button"
       >

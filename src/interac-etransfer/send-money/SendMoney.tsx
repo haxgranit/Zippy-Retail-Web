@@ -11,7 +11,7 @@ import {
   TransferSentPage,
 } from './components';
 import SendMoneyVerificationModal from '../dialogs/SendMoneyVerificationModal';
-import Api, { Account, Contact } from '../../api';
+import Api, { Account, InteracEtransferTransaction, Contact } from '../../api';
 
 interface QuickLink {
   id: number;
@@ -35,9 +35,8 @@ export default function SendMoney() {
   const [currentStep, setCurrentStep] = useState(step || 1);
   const [realStep, setRealStep] = useState(currentStep >= 3 ? 5 : 1);
   const [showVerifyModal, setShowVerifyModal] = useState(false);
-  const [errorAccount, setErrorAccount] = useState<string | null>(null);
-  const [errorContact, setErrorContact] = useState<string | null>(null);
-  const [selectedUser, setUserToSend] = useState(1);
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
+  const [selectedContact, setSelectedContact] = useState(0);
   const [mainInfo, setMainInfo] = useState({});
 
   const [accountsList, setAccountsList] = useState<Account[] | null>([]);
@@ -51,18 +50,18 @@ export default function SendMoney() {
       try {
         const result = await currentApi.listAccounts();
         setAccountsList(result);
-      } catch (error) {
+      } catch (err) {
         setTimeout(() => {
-          setErrorAccount('Sorry! a problem has occurred when getting accounts.');
+          setErrorMessage('Sorry! a problem has occurred when getting accounts.');
         }, 0);
       }
 
       try {
         const result = await currentApi.listContacts();
         setContactList(result);
-      } catch (error) {
+      } catch (err) {
         setTimeout(() => {
-          setErrorContact('Sorry! a problem has occurred when getting contacts.');
+          setErrorMessage('Sorry! a problem has occurred when getting contacts.');
         }, 0);
       }
     })();
@@ -87,12 +86,21 @@ export default function SendMoney() {
   ];
 
   const handleNext = () => {
-    if (selectedUser === 1) {
-      setRealStep(4);
-    } else {
-      setRealStep(5);
-    }
-    setCurrentStep(3);
+    const data: InteracEtransferTransaction = {
+      contactId: selectedContact,
+    };
+    new Api(instance, accounts[0])
+      .postInteracEtransferTransaction(data)
+      .then(() => {
+        setErrorMessage(null);
+        if (selectedContact === 1) {
+          setRealStep(4);
+        } else {
+          setRealStep(5);
+        }
+        setCurrentStep(3);
+      })
+      .catch(() => setErrorMessage('Transfer failed.'));
     setShowVerifyModal(false);
   };
 
@@ -117,16 +125,10 @@ export default function SendMoney() {
         handleBack={handleBack}
       />
       <CommonHeader title="SEND MONEY" print={false} />
-      {errorAccount && (
+      {errorMessage && (
         <Alert variant="danger" className="rounded-0 text-dark py-2 my-2 px-5">
           <i />
-          {errorAccount}
-        </Alert>
-      )}
-      {errorContact && (
-        <Alert variant="danger" className="rounded-0 text-dark py-2 my-2 px-5">
-          <i />
-          {errorContact}
+          {errorMessage}
         </Alert>
       )}
       <Row>
@@ -145,8 +147,8 @@ export default function SendMoney() {
             <DetailsPage
               setRealStep={setRealStep}
               setCurrentStep={setCurrentStep}
-              selectedUser={selectedUser}
-              setUserToSend={setUserToSend}
+              selectedContact={selectedContact}
+              setContactToSend={setSelectedContact}
               mainInfo={mainInfo}
               setMainInfo={setMainInfo}
               accounts={accountsList}

@@ -11,8 +11,8 @@ import { Account, Contact } from '../../../api';
 const DetailsPage = ({
   setRealStep,
   setCurrentStep,
-  selectedUser = 1,
-  setUserToSend,
+  selectedContact = 0,
+  setContactToSend,
   mainInfo,
   setMainInfo,
   accounts,
@@ -20,7 +20,7 @@ const DetailsPage = ({
 }: any): JSX.Element => {
   const [contactName, setContactName] = useState('');
   const handleAccountChange = (evt: any) => {
-    setUserToSend(Number(evt.target.value));
+    setContactToSend(Number(evt.target.value));
     setContactName(evt.target.value);
   };
   const getEmail = (name: string) => contacts?.find((el: Contact) => el.name === name)?.email || 'No email';
@@ -59,8 +59,9 @@ const DetailsPage = ({
             className="send-account-select"
             onChange={handleAccountChange}
           >
+            <option value={0}>Select</option>
             {contacts?.map((item: Contact, index: number) => (
-              <option key={item.name} value={index}>{item.name}</option>
+              <option key={item.name} value={index + 1}>{item.name}</option>
             ))}
           </Form.Select>
           <p>
@@ -201,8 +202,9 @@ const DetailsPage = ({
           <Button
             variant="danger"
             className="d-flex"
+            disabled={(mainInfo?.from == null || mainInfo?.from === '' || selectedContact === 0)}
             onClick={() => {
-              if (selectedUser === 1) {
+              if (selectedContact === 1) {
                 setCurrentStep(2);
                 setRealStep(2);
               } else {
