@@ -10,7 +10,7 @@ Enzyme.configure({ adapter: new Adapter() });
 const mockedUsedNavigate = jest.fn();
 jest.mock('react-router-dom', () => ({
   ...(jest.requireActual('react-router-dom') as any),
-  useLocation: () => ({
+  useParams: () => ({
     tabId: 'received',
   }),
   useNavigate: () => mockedUsedNavigate,
