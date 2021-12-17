@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { Dispatch, SetStateAction, useState } from 'react';
 import {
   Row,
   Col,
@@ -7,7 +7,18 @@ import {
   Button,
 } from 'react-bootstrap';
 import { Account, Contact } from '../../../api';
+import { TransferMainDetails } from '../SendMoney';
 
+interface DetailsPageProps {
+  setRealStep: Dispatch<SetStateAction<number>>;
+  setCurrentStep: Dispatch<SetStateAction<number>>;
+  selectedContact : number;
+  setContactToSend: Dispatch<SetStateAction<number>>;
+  mainInfo: TransferMainDetails;
+  setMainInfo: Dispatch<SetStateAction<TransferMainDetails>>;
+  accounts: Account[] | null;
+  contacts: Contact[] | null;
+}
 const DetailsPage = ({
   setRealStep,
   setCurrentStep,
@@ -17,7 +28,7 @@ const DetailsPage = ({
   setMainInfo,
   accounts,
   contacts,
-}: any): JSX.Element => {
+}: DetailsPageProps): JSX.Element => {
   const [contactName, setContactName] = useState('');
   const handleAccountChange = (evt: any) => {
     setContactToSend(Number(evt.target.value));
@@ -87,7 +98,7 @@ const DetailsPage = ({
         <Col md={8}>
           <FormControl
             value={mainInfo?.amount}
-            onChange={(evt) => setMainInfo({ ...mainInfo, amount: evt.target.value })}
+            onChange={(evt) => setMainInfo({ ...mainInfo, amount: Number(evt.target.value) })}
           />
           <Form.Label>
             The maximum amount you can send in each transfer is $3,000.
@@ -102,8 +113,8 @@ const DetailsPage = ({
         <Col md={8}>
           <Form.Select
             className="from-account-info"
-            onChange={(evt) => setMainInfo({ ...mainInfo, from: evt.target.value })}
-            value={mainInfo?.from}
+            onChange={(evt) => setMainInfo({ ...mainInfo, fromAccount: evt.target.value })}
+            value={mainInfo?.fromAccount}
           >
             <option value="">Select</option>
             {
@@ -122,8 +133,8 @@ const DetailsPage = ({
         <Col md={8}>
           <Form.Select
             className="transfer-method"
-            onChange={(evt) => setMainInfo({ ...mainInfo, transfer_method: evt.target.value })}
-            value={mainInfo?.transfer_method}
+            onChange={(evt) => setMainInfo({ ...mainInfo, transferMethod: evt.target.value })}
+            value={mainInfo?.transferMethod}
           >
             <option>Email</option>
           </Form.Select>
@@ -201,7 +212,7 @@ const DetailsPage = ({
           <Button
             variant="danger"
             className="d-flex"
-            disabled={(mainInfo?.from == null || mainInfo?.from === '' || selectedContact === 0)}
+            disabled={(mainInfo?.fromAccount == null || mainInfo?.fromAccount === '' || selectedContact === 0)}
             onClick={() => {
               if (selectedContact === 1) {
                 setCurrentStep(2);

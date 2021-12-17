@@ -6,8 +6,22 @@ export default {
   component: DetailsPage,
 } as ComponentMeta<typeof DetailsPage>;
 
-const Template: ComponentStory<typeof DetailsPage> = () => (
-  <DetailsPage setCurrentStep={() => {}} setRealStep={() => {}} />
+const Template: ComponentStory<typeof DetailsPage> = ({
+  accounts,
+  contacts,
+  mainInfo,
+  selectedContact,
+}) => (
+  <DetailsPage
+    mainInfo={mainInfo}
+    contacts={contacts}
+    accounts={accounts}
+    selectedContact={selectedContact}
+    setContactToSend={() => {}}
+    setMainInfo={() => {}}
+    setCurrentStep={() => {}}
+    setRealStep={() => {}}
+  />
 );
 
 export const Default = Template.bind({});

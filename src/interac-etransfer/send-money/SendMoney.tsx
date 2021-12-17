@@ -21,6 +21,15 @@ interface QuickLink {
   text: string;
 }
 
+export interface TransferMainDetails {
+  source: { name: string; email: string };
+  destination: { name: string; email: string };
+  fromAccount: string;
+  amount: number;
+  message: string;
+  transferMethod: string;
+}
+
 const LinkElement = ({ url, text, id }: QuickLink): JSX.Element => (
   <a
     href={url}
@@ -39,7 +48,14 @@ export default function SendMoney() {
   const [showVerifyModal, setShowVerifyModal] = useState(false);
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
   const [selectedContact, setSelectedContact] = useState(0);
-  const [mainInfo, setMainInfo] = useState<any>({});
+  const [mainInfo, setMainInfo] = useState<TransferMainDetails>({
+    amount: 0,
+    destination: { email: '', name: '' },
+    source: { email: '', name: '' },
+    fromAccount: '',
+    message: '',
+    transferMethod: '',
+  });
 
   const [accountsList, setAccountsList] = useState<Account[] | null>([]);
   const [contactList, setContactList] = useState<Contact[] | null>([]);
@@ -119,7 +135,7 @@ export default function SendMoney() {
         name: destinationContact?.name ?? '',
         email: destinationContact?.email ?? '',
       },
-      fromAccount: mainInfo.from,
+      fromAccount: mainInfo.fromAccount,
     };
   };
 
