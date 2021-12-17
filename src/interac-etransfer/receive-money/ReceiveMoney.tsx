@@ -98,7 +98,7 @@ export default function ReceiveMoney() {
                 padding: '5px 12px',
               }}
               onClick={() => {
-                navigate('/interac-etransfer/status', { state: { tabId: 'received' } });
+                navigate('/interac-etransfer/status/received');
               }}
             >
               Check Status

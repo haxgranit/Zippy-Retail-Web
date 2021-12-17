@@ -29,7 +29,6 @@ import LearnMore from './interac-etransfer/learn-more/LearnMore';
 import ReceiveMoney from './interac-etransfer/receive-money/ReceiveMoney';
 import RequestMoney from './interac-etransfer/request-money/RequestMoney';
 import SendMoney from './interac-etransfer/send-money/SendMoney';
-import Status from './interac-etransfer/status/Status';
 import Home from './home/Home';
 import Legal from './Legal';
 import ManageMyAlerts from './manage-my-alerts/ManageMyAlerts';
@@ -133,8 +132,8 @@ export default function App() {
           </Route>
           <Route path="interac-etransfer">
             <Route path="/interac-etransfer" element={<Navigate to="/interac-etransfer/status" />} />
-            <Route path="status" element={<Status />}>
-              <Route path="/interac-etransfer/status" element={<InteracETransferDetails />} />
+            <Route path="status" element={<InteracETransferDetails />}>
+              <Route path="/interac-etransfer/status/:tabId" element={<InteracETransferDetails />} />
               <Route path="request-sent" element={<RequestSent />} />
               <Route path="request-reminder" element={<RequestReminder />} />
               <Route path="request-canceled" element={<RequestCanceled />} />
