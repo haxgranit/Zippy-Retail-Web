@@ -101,6 +101,7 @@ const SendMoneyVerificationModal = ({
         <Col style={{ padding: '15px' }}>
           <Button
             variant="link"
+            disabled={isSendingMoney}
             onClick={handleClose}
             style={{
               borderRadius: '4px',
