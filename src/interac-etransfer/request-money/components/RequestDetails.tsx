@@ -1,28 +1,29 @@
 import { useMsal } from '@azure/msal-react';
 import { useEffect, useState } from 'react';
 import {
-  Button,
-  Col,
-  Form,
-  Row,
+  Button, Col, Form, Row,
 } from 'react-bootstrap';
 import Api, { Account, Contact } from '../../../api';
 
 const Divider = () => <div className="border-top my-3" />;
 
 export default function RequestDetail({ setCurrentStep }: any) {
-  const [accountFrom, setAccountFrom] = useState<Contact | null >(null);
+  const [accountFrom, setAccountFrom] = useState<Contact | undefined>(
+    undefined,
+  );
   const [contacts, setContacts] = useState<Contact[] | null>([]);
   const [accountsData, setAccountsData] = useState<Account[] | null>([]);
   const { instance, accounts } = useMsal();
 
   useEffect(() => {
-    new Api(instance, accounts[0]).listContacts()
+    new Api(instance, accounts[0])
+      .listContacts()
       .then((contactsList) => {
         setContacts(contactsList);
       })
       .catch((error) => console.log('error', error));
-    new Api(instance, accounts[0]).listAccounts()
+    new Api(instance, accounts[0])
+      .listAccounts()
       .then((accountsList) => {
         setAccountsData(accountsList);
       })
@@ -38,20 +39,27 @@ export default function RequestDetail({ setCurrentStep }: any) {
       <Row className="align-items-center mt-4">
         <Col xs={3}>Request Money From:</Col>
         <Col xs={6}>
-          <Form.Select onChange={(evt) => {
-            if (evt.target.value === '') {
-              setAccountFrom(null);
-              return;
-            }
-            setAccountFrom(JSON.parse(evt.target.value));
-          }}
+          <Form.Select
+            onChange={(evt) => {
+              if (evt.target.value === '') {
+                setAccountFrom(undefined);
+                return;
+              }
+              const selectedContact: Contact | undefined = contacts?.find(
+                (v) => v.id === Number(evt.target.value),
+              );
+              setAccountFrom(selectedContact);
+            }}
           >
             <option value="">Select</option>
-            {
-              contacts?.map((contact) => (
-                <option key={contact.id} value={JSON.stringify(contact)}>{`${contact?.firstName} ${contact?.lastName}`}</option>
-              ))
-            }
+            {contacts?.map((contact) => (
+              <option
+                key={contact.id}
+                value={contact.id}
+              >
+                {`${contact.firstName} ${contact.lastName}`}
+              </option>
+            ))}
           </Form.Select>
         </Col>
       </Row>
@@ -70,14 +78,16 @@ export default function RequestDetail({ setCurrentStep }: any) {
                 />
               )}
               {accountFrom.phone && (
-              <Form.Check
-                type="checkbox"
-                id="text"
-                label="Text Message"
-                className="mt-2 mb-2"
-              />
+                <Form.Check
+                  type="checkbox"
+                  id="text"
+                  label="Text Message"
+                  className="mt-2 mb-2"
+                />
               )}
-              <Button variant="link" className="text-black">Edit Notification Preferences</Button>
+              <Button variant="link" className="text-black">
+                Edit Notification Preferences
+              </Button>
             </Col>
           </Row>
           <Divider />
@@ -108,13 +118,14 @@ export default function RequestDetail({ setCurrentStep }: any) {
         <Col xs={9}>
           <Form.Select>
             <option value="">Select</option>
-            {
-              accountsData?.map((accountData) => (
-                <option key={accountData.name} value={JSON.stringify(accountData)}>
-                  {accountData.name}
-                </option>
-              ))
-            }
+            {accountsData?.map((accountData) => (
+              <option
+                key={accountData.name}
+                value={JSON.stringify(accountData)}
+              >
+                {accountData.name}
+              </option>
+            ))}
           </Form.Select>
         </Col>
       </Row>

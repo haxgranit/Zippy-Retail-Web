@@ -19,12 +19,12 @@ describe('DetailsPage Component', () => {
 
   it('Click next button on DetailsPage with option changing', () => {
     const setRealStep = jest.fn();
-    const setUserToSend = jest.fn();
+    const setContactToSend = jest.fn();
     const wrapper = shallow(
       <DetailsPage
         setCurrentStep={jest.fn()}
         setRealStep={setRealStep}
-        setUserToSend={setUserToSend}
+        setContactToSend={setContactToSend}
       />,
     );
     wrapper.find('.send-account-select').simulate('change', { target: { value: 2 } });
@@ -32,18 +32,18 @@ describe('DetailsPage Component', () => {
     const mEvent = { preventDefault: jest.fn() };
     wrapper.find('Button[variant="danger"]').simulate('click', mEvent);
     expect(setRealStep).toBeCalledTimes(1);
-    expect(setUserToSend).toBeCalledTimes(1);
+    expect(setContactToSend).toBeCalledTimes(1);
   });
 
   it('Click next button on DetailsPage with option 2', () => {
     const setRealStep = jest.fn();
-    const setUserToSend = jest.fn();
+    const setContactToSend = jest.fn();
     const wrapper = shallow(
       <DetailsPage
         setCurrentStep={jest.fn()}
         setRealStep={setRealStep}
-        setUserToSend={setUserToSend}
-        selectedUser={2}
+        setContactToSend={setContactToSend}
+        selectedContact={2}
       />,
     );
 
@@ -70,18 +70,18 @@ describe('DetailsPage Component', () => {
     expect(setMainInfo).toBeCalledTimes(4);
   });
 
-  it('change FormControl to call setUserToSend', () => {
-    const setUserToSend = jest.fn();
+  it('change FormControl to call setContactToSend', () => {
+    const setContactToSend = jest.fn();
     const wrapper = shallow(
       <DetailsPage
         setCurrentStep={jest.fn()}
         setRealStep={jest.fn()}
         setMainInfo={jest.fn()}
         mainInfo={{}}
-        setUserToSend={setUserToSend}
+        setContactToSend={setContactToSend}
       />,
     );
     wrapper.find('.send-account-select').simulate('change', { target: { value: 'Text Message' } });
-    expect(setUserToSend).toBeCalledTimes(1);
+    expect(setContactToSend).toBeCalledTimes(1);
   });
 });
