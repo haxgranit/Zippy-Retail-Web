@@ -1,8 +1,11 @@
 import { Row, Col, Button } from 'react-bootstrap';
+import { useNavigate } from 'react-router-dom';
 
 const Divider = () => <div className="border-top my-3" />;
 
 export default function RequestSent({ setCurrentStep }: any) {
+  const navigate = useNavigate();
+  
   return (
     <>
       <div className="d-flex align-items-center mt-4">
@@ -71,6 +74,9 @@ export default function RequestSent({ setCurrentStep }: any) {
             variant="outline-danger"
             className="d-flex"
             style={{ marginRight: 10 }}
+            onClick={() => {
+              navigate(`/interac-etransfer/status/requested`);
+            }}
           >
             Check Status
           </Button>
