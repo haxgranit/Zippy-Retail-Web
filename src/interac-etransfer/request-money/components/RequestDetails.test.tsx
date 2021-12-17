@@ -155,6 +155,7 @@ describe('RequestDetail Component', () => {
   });
   it('should call setAccount when changing Select ', () => {
     const initialContact = {
+      id: 1,
       name: 'test',
       email: 'test@test.com',
       phone: '',
@@ -173,11 +174,9 @@ describe('RequestDetail Component', () => {
     // @ts-ignore
     emailOrPhoneCheck
       ?.at(0)
-      ?.prop('onChange')({ target: { name: 'test', value: JSON.stringify(initialContact) } } as ChangeEvent<HTMLSelectElement>);
-    expect(wrapper.find('option').at(2).props().value).toEqual(
-      JSON.stringify(initialContact),
-    );
-    expect(setAccountFrom).toBeCalledWith(initialContact);
+      ?.prop('onChange')({ target: { name: 'test', value: '' } } as ChangeEvent<HTMLSelectElement>);
+
+    expect(setAccountFrom).toBeCalledWith(undefined);
   });
   it('should call setAccount with null when selected Value is empty ', () => {
     const initialContact = {
@@ -201,7 +200,7 @@ describe('RequestDetail Component', () => {
     emailOrPhoneCheck
       ?.at(0)
       ?.prop('onChange')({ target: { name: 'test', value: '' } } as ChangeEvent<HTMLSelectElement>);
-    expect(setAccountFrom).toBeCalledWith(null);
+    expect(setAccountFrom).toBeCalledWith(undefined);
     expect(wrapper.find('option').at(1).props().value).toEqual(
       '',
     );
