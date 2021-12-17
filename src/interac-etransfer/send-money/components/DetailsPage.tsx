@@ -60,7 +60,7 @@ const DetailsPage = ({
             onChange={handleAccountChange}
           >
             {contacts?.map((item: Contact) => (
-              <option key={item.id} value={item.id}>{`${item?.firstName} ${item?.lastName}`}</option>
+              <option key={item.id} value={item.id}>{`${item.firstName} ${item.lastName}`}</option>
             ))}
           </Form.Select>
           <p>

@@ -10,6 +10,8 @@ Enzyme.configure({ adapter: new Adapter() });
 const CONTACT_MOCK = {
   key: 1,
   name: '392 Jones',
+  firstName: '392',
+  lastName: 'Jones',
   lang: 'English',
   email: 'lu_ben2002@yahoo.com',
   phone: '',
