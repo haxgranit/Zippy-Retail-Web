@@ -79,9 +79,19 @@ describe('DetailsPage Component', () => {
         setMainInfo={jest.fn()}
         mainInfo={{}}
         setContactToSend={setContactToSend}
+        contacts={[{
+          id: 1,
+          firstName: 'Test',
+          lastName: 'Test',
+        }]}
+        accounts={[{
+          name: 'test',
+        }]}
+        selectedContact={1}
       />,
     );
     wrapper.find('.send-account-select').simulate('change', { target: { value: 'Text Message' } });
     expect(setContactToSend).toBeCalledTimes(1);
+    wrapper.find('Button').at(1).simulate('click');
   });
 });

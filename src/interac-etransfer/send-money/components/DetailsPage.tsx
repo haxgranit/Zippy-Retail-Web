@@ -7,6 +7,7 @@ import {
   Button,
 } from 'react-bootstrap';
 import { Account, Contact } from '../../../api';
+import { formatContactName } from '../../../Helpers';
 
 const DetailsPage = ({
   setRealStep,
@@ -23,11 +24,10 @@ const DetailsPage = ({
     setContactToSend(Number(evt.target.value));
     setContactId(Number(evt.target.value));
   };
+
   const getEmail = (id: number) => {
-    if (id) {
-      return contacts?.find((el: Contact) => el.id === id)?.email || 'No email';
-    }
-    return contacts && contacts[0] ? contacts[0].email : 'No email';
+    const contact = id ? contacts?.find((el: Contact) => el.id === id) : 'No email';
+    return contact?.email || 'No email';
   };
 
   return (
@@ -66,7 +66,9 @@ const DetailsPage = ({
           >
             <option value={0}>Select</option>
             {contacts?.map((item: Contact) => (
-              <option key={item.id} value={item.id}>{`${item.firstName} ${item.lastName}`}</option>
+              <option key={item.id} value={item.id}>
+                {formatContactName(item.firstName, item.lastName)}
+              </option>
             ))}
           </Form.Select>
           <p>
