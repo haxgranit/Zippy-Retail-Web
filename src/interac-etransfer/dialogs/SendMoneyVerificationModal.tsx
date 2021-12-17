@@ -3,6 +3,7 @@ import {
   Modal,
   Row,
   Button,
+  Spinner,
 } from 'react-bootstrap';
 import currencyFormatter from '../helpers/CurrencyFormatter';
 
@@ -18,6 +19,7 @@ export interface SendMoneyVerificationModalProps {
   handleNext: () => void;
   handleBack: () => void;
   transferDetails: TransferDetails;
+  isSendingMoney: boolean;
 }
 const SendMoneyVerificationModal = ({
   show,
@@ -25,6 +27,7 @@ const SendMoneyVerificationModal = ({
   handleNext,
   handleBack,
   transferDetails,
+  isSendingMoney,
 }: SendMoneyVerificationModalProps) => (
   <Modal show={show} size="lg">
     <Modal.Body style={{ padding: '0px' }}>
@@ -107,6 +110,7 @@ const SendMoneyVerificationModal = ({
         <Col style={{ padding: '15px' }}>
           <Button
             variant="link"
+            disabled={isSendingMoney}
             onClick={handleClose}
             style={{
               borderRadius: '4px',
@@ -122,6 +126,7 @@ const SendMoneyVerificationModal = ({
         <Col style={{ textAlign: 'end', padding: '15px' }}>
           <button
             type="button"
+            disabled={isSendingMoney}
             style={{
               marginRight: '15px',
               borderRadius: '4px',
@@ -142,9 +147,17 @@ const SendMoneyVerificationModal = ({
               borderColor: '#C41F3E',
               color: 'white',
             }}
-            onClick={handleNext}
+            disabled={isSendingMoney}
+            onClick={!isSendingMoney ? handleNext : undefined}
           >
-            Send Money
+            {isSendingMoney ? (
+              <span>
+                Sending
+                <Spinner style={{ marginLeft: '16px' }} animation="border" variant="light" size="sm" />
+              </span>
+            ) : (
+              'Send Money'
+            )}
           </button>
         </Col>
       </Row>

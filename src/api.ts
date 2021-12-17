@@ -7,7 +7,10 @@ export type Account = {
 };
 
 export type Contact = {
+  id: number,
   name: string;
+  firstName: string;
+  lastName: string;
   email: string;
   phone: string;
 };

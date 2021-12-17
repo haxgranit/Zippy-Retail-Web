@@ -16,6 +16,7 @@ const Template: ComponentStory<typeof SendMoneyVerificationModal> = ({
   handleNext,
   handleBack,
   transferDetails,
+  isSendingMoney,
 }: SendMoneyVerificationModalProps) => (
   <SendMoneyVerificationModal
     show={show}
@@ -23,6 +24,7 @@ const Template: ComponentStory<typeof SendMoneyVerificationModal> = ({
     handleNext={handleNext}
     handleBack={handleBack}
     transferDetails={transferDetails}
+    isSendingMoney={isSendingMoney}
   />
 );
 export const Default = Template.bind({});

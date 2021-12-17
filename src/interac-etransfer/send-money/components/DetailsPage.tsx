@@ -29,12 +29,12 @@ const DetailsPage = ({
   accounts,
   contacts,
 }: DetailsPageProps): JSX.Element => {
-  const [contactName, setContactName] = useState('');
+  const [contactId, setContactId] = useState(0);
   const handleAccountChange = (evt: any) => {
     setContactToSend(Number(evt.target.value));
-    setContactName(evt.target.value);
+    setContactId(evt.target.value);
   };
-  const getEmail = (name: string) => contacts?.find((el: Contact) => el.name === name)?.email || 'No email';
+  const getEmail = (id: number) => contacts?.find((el: Contact) => el.id === id)?.email || 'No email';
 
   return (
     <>
@@ -71,12 +71,12 @@ const DetailsPage = ({
             onChange={handleAccountChange}
           >
             <option value={0}>Select</option>
-            {contacts?.map((item: Contact, index: number) => (
-              <option key={item.name} value={index + 1}>{item.name}</option>
+            {contacts?.map((item: Contact) => (
+              <option key={item.id} value={item.id}>{`${item.firstName} ${item.lastName}`}</option>
             ))}
           </Form.Select>
           <p>
-            { `Email: ${getEmail(contactName)}` }
+            { `Email: ${getEmail(contactId)}` }
           </p>
           <p>
             <a href="/" className="text-black">
@@ -118,8 +118,8 @@ const DetailsPage = ({
           >
             <option value="">Select</option>
             {
-              accounts?.map((contact:Account) => (
-                <option key={contact.name} value={contact.name}>{`${contact.name} $Balance`}</option>
+              accounts?.map((account:Account) => (
+                <option key={account.name} value={account.name}>{`${account.name} $Balance`}</option>
               ))
             }
           </Form.Select>

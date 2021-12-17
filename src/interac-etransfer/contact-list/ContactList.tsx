@@ -34,7 +34,7 @@ const RemoveContactModal: React.FC<{
         <Col>
           <span>Name:</span>
         </Col>
-        <Col>{selectedContact?.name}</Col>
+        <Col>{`${selectedContact?.firstName} ${selectedContact?.lastName}`}</Col>
       </Row>
       <hr
         style={{
@@ -209,10 +209,10 @@ const ContactList = () => {
             </thead>
             <tbody style={{ borderTop: 'none' }}>
               {contacts.map((item, index) => (
-                <tr key={item.email ? item.email : item.phone}>
+                <tr key={item.id}>
                   <td>
                     <Link to="edit" state={{ item }}>
-                      {item.name}
+                      {`${item?.firstName} ${item?.lastName}`}
                     </Link>
                   </td>
                   <td>English</td>
