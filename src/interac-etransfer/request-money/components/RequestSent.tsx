@@ -5,7 +5,7 @@ const Divider = () => <div className="border-top my-3" />;
 
 export default function RequestSent({ setCurrentStep }: any) {
   const navigate = useNavigate();
-  
+
   return (
     <>
       <div className="d-flex align-items-center mt-4">
@@ -75,7 +75,7 @@ export default function RequestSent({ setCurrentStep }: any) {
             className="d-flex"
             style={{ marginRight: 10 }}
             onClick={() => {
-              navigate(`/interac-etransfer/status/requested`);
+              navigate('/interac-etransfer/status/requested');
             }}
           >
             Check Status

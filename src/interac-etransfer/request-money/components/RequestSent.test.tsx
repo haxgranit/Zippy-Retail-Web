@@ -1,9 +1,9 @@
 import React from 'react';
 import Enzyme, { shallow } from 'enzyme';
+import { BrowserRouter } from 'react-router-dom';
 import Adapter from '@wojtekmaj/enzyme-adapter-react-17';
 
 import RequestSent from './RequestSent';
-import { BrowserRouter } from 'react-router-dom';
 
 // Configure enzyme for react 17
 Enzyme.configure({ adapter: new Adapter() });
