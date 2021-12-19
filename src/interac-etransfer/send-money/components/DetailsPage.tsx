@@ -116,7 +116,7 @@ const DetailsPage = ({
             <option value="">Select</option>
             {
               accounts?.map((account:Account) => (
-                <option key={account.name} value={account.name}>{`${account.name}`}</option>
+                <option key={account.name} value={account.name}>{account.name}</option>
               ))
             }
           </Form.Select>
