@@ -29,5 +29,6 @@ describe('Transfer Sent Page Component', () => {
     const mEvent = { preventDefault: jest.fn() };
     wrapper.childAt(0).dive().find('Button[variant="danger"]').simulate('click', mEvent);
     expect(setRealStep).toBeCalledTimes(1);
+    expect(setCurrentStep).toBeCalledTimes(1);
   });
 });
