@@ -1,7 +1,5 @@
 /* eslint-disable no-console */
 
-import { useMsal } from '@azure/msal-react';
-import { useEffect } from 'react';
 import {
   Alert,
   Card,
@@ -11,16 +9,10 @@ import {
   Button,
   Nav,
 } from 'react-bootstrap';
-import Api from '../../api';
 import CommonHeader from '../../common/CommonHeader';
 import PanelHeader from './components/PanelHeader';
 
 export default function MyAccounts() {
-  const { instance, accounts: msalAccounts } = useMsal();
-  useEffect(() => {
-    new Api(instance, msalAccounts[0]).listAccounts();
-  }, []);
-
   return (
     <>
       <CommonHeader title="My Accounts" print={false} />
