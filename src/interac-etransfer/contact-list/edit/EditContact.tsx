@@ -95,7 +95,7 @@ const EditContact: React.FC = () => {
           <Col xs="4" style={{ display: 'flex', alignItems: 'center' }}>
             <Form.Control
               type="text"
-              value={selectedContact?.name}
+              value={`${selectedContact?.firstName} ${selectedContact?.lastName}`}
               style={{
                 display: 'inline-block',
                 width: 250,
