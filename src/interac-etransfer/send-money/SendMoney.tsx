@@ -13,7 +13,7 @@ import {
 import SendMoneyVerificationModal from '../dialogs/SendMoneyVerificationModal';
 import Api, { Account, InteracEtransferTransaction, Contact } from '../../api';
 
-const enum PageIndexes {
+export const enum PageIndexes {
   DetailsPageIndex = 1,
   SecurityRecipientPageIndex = 2,
   SecurityQuestionPageIndex = 3,

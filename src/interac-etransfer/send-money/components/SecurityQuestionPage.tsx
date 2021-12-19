@@ -6,6 +6,7 @@ import {
   Button,
   Alert,
 } from 'react-bootstrap';
+import { PageIndexes } from '../SendMoney';
 
 const SecurityQuestionPage = ({
   setPageIndex,
@@ -118,7 +119,7 @@ const SecurityQuestionPage = ({
         <Button
           variant="light"
           className="d-flex"
-          onClick={() => setPageIndex(2)}
+          onClick={() => setPageIndex(PageIndexes.SecurityRecipientPageIndex)}
         >
           <div
             style={{
@@ -140,7 +141,7 @@ const SecurityQuestionPage = ({
           className="d-flex"
           style={{ marginRight: 10 }}
           onClick={() => {
-            setPageIndex(1);
+            setPageIndex(PageIndexes.DetailsPageIndex);
             setCurrentStep(1);
           }}
         >

@@ -1,4 +1,5 @@
 import { Row, Col, Button } from 'react-bootstrap';
+import { PageIndexes } from '../SendMoney';
 
 const SecurityRecipientPage = ({
   setPageIndex,
@@ -35,7 +36,7 @@ const SecurityRecipientPage = ({
           className="d-flex"
           style={{ marginRight: 10 }}
           onClick={() => {
-            setPageIndex(1);
+            setPageIndex(PageIndexes.DetailsPageIndex);
             setCurrentStep(1);
           }}
         >

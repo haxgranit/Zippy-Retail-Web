@@ -8,6 +8,7 @@ import {
 } from 'react-bootstrap';
 import { Account, Contact } from '../../../api';
 import { formatContactName } from '../../../Helpers';
+import { PageIndexes } from '../SendMoney';
 
 const DetailsPage = ({
   setPageIndex,
@@ -213,10 +214,10 @@ const DetailsPage = ({
             onClick={() => {
               if (selectedContact === 1) {
                 setCurrentStep(2);
-                setPageIndex(2);
+                setPageIndex(PageIndexes.SecurityRecipientPageIndex);
               } else {
                 setCurrentStep(2);
-                setPageIndex(3);
+                setPageIndex(PageIndexes.SecurityQuestionPageIndex);
               }
             }}
           >

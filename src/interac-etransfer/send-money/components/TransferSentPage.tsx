@@ -2,6 +2,7 @@ import {
   Row, Col, Form, Button,
 } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
+import { PageIndexes } from '../SendMoney';
 
 const TransferSentPage = ({
   setPageIndex,
@@ -140,7 +141,7 @@ const TransferSentPage = ({
             variant="danger"
             className="d-flex"
             onClick={() => {
-              setPageIndex(1);
+              setPageIndex(PageIndexes.DetailsPageIndex);
               setCurrentStep(1);
             }}
           >
