@@ -4,7 +4,7 @@ import {
 import { useNavigate } from 'react-router-dom';
 
 const TransferSentPage = ({
-  setRealStep,
+  setPageIndex,
   setCurrentStep,
   isCompleted,
 }: any): JSX.Element => {
@@ -140,7 +140,7 @@ const TransferSentPage = ({
             variant="danger"
             className="d-flex"
             onClick={() => {
-              setRealStep(1);
+              setPageIndex(1);
               setCurrentStep(1);
             }}
           >

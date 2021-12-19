@@ -20,7 +20,7 @@ const HorizontalLine = () => (
   />
 );
 
-const LeftCol = ({ currentStep, setCurrentStep, setRealStep }: any) => (
+const LeftCol = ({ currentStep, setCurrentStep, setPageIndex }: any) => (
   <Col xs={9}>
     <Row>
       <Col>
@@ -28,7 +28,7 @@ const LeftCol = ({ currentStep, setCurrentStep, setRealStep }: any) => (
           steps={2}
           currentStep={currentStep}
           setCurrentStep={setCurrentStep}
-          setRealStep={setRealStep}
+          setPageIndex={setPageIndex}
         />
       </Col>
     </Row>

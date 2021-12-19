@@ -9,7 +9,7 @@ import {
 import { Account, Contact } from '../../../api';
 
 const DetailsPage = ({
-  setRealStep,
+  setPageIndex,
   setCurrentStep,
   selectedContact = 0,
   setContactToSend,
@@ -206,10 +206,10 @@ const DetailsPage = ({
             onClick={() => {
               if (selectedContact === 1) {
                 setCurrentStep(2);
-                setRealStep(2);
+                setPageIndex(2);
               } else {
                 setCurrentStep(2);
-                setRealStep(3);
+                setPageIndex(3);
               }
             }}
           >

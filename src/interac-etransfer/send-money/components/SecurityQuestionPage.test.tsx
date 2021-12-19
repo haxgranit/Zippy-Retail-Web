@@ -16,24 +16,24 @@ describe('Security Question Page Component', () => {
   });
 
   it('Click back button on Security Question Page', () => {
-    const setRealStep = jest.fn();
+    const setPageIndex = jest.fn();
     const wrapper = shallow(
       <SecurityQuestionPage
-        setRealStep={setRealStep}
+        setPageIndex={setPageIndex}
         setCurrentStep={jest.fn()}
       />,
     );
     const mEvent = { preventDefault: jest.fn() };
     wrapper.find('Button[variant="outline-danger"]').simulate('click', mEvent);
-    expect(setRealStep).toBeCalledTimes(1);
+    expect(setPageIndex).toBeCalledTimes(1);
   });
 
   it('change FormControl text values', () => {
-    const setRealStep = jest.fn();
+    const setPageIndex = jest.fn();
     const setMainInfo = jest.fn();
     const wrapper = shallow(
       <SecurityQuestionPage
-        setRealStep={setRealStep}
+        setPageIndex={setPageIndex}
         setMainInfo={setMainInfo}
         mainInfo={{}}
       />,
@@ -45,6 +45,6 @@ describe('Security Question Page Component', () => {
     expect(setMainInfo).toBeCalledTimes(4);
 
     wrapper.find('Button[variant="light"]').simulate('click');
-    expect(setRealStep).toBeCalledTimes(1);
+    expect(setPageIndex).toBeCalledTimes(1);
   });
 });

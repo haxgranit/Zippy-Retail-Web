@@ -17,29 +17,29 @@ jest.mock('react-router-dom', () => ({
 describe('Transfer Sent Page Component', () => {
   it('Click Send another transfer button on Transfer Sent Page', () => {
     const setCurrentStep = jest.fn();
-    const setRealStep = jest.fn();
+    const setPageIndex = jest.fn();
     const wrapper = shallow(
       <BrowserRouter>
         <TransferSentPage
           setCurrentStep={setCurrentStep}
-          setRealStep={setRealStep}
+          setPageIndex={setPageIndex}
         />
       </BrowserRouter>,
     );
     const mEvent = { preventDefault: jest.fn() };
     wrapper.childAt(0).dive().find('Button[variant="danger"]').simulate('click', mEvent);
-    expect(setRealStep).toBeCalledTimes(1);
+    expect(setPageIndex).toBeCalledTimes(1);
     expect(setCurrentStep).toBeCalledTimes(1);
   });
 
   it('Click Check Status Button on Transfer Sent Page', () => {
     const setCurrentStep = jest.fn();
-    const setRealStep = jest.fn();
+    const setPageIndex = jest.fn();
     const wrapper = shallow(
       <BrowserRouter>
         <TransferSentPage
           setCurrentStep={setCurrentStep}
-          setRealStep={setRealStep}
+          setPageIndex={setPageIndex}
         />
       </BrowserRouter>,
     );
