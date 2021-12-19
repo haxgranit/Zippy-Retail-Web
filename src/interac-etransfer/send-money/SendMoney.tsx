@@ -161,7 +161,7 @@ export default function SendMoney() {
               />
             </Col>
           </Row>
-          {currentStep === 1 && (
+          {pageIndex === PageIndexes.DetailsPageIndex && (
             <DetailsPage
               setPageIndex={setPageIndex}
               setCurrentStep={setCurrentStep}
@@ -173,14 +173,14 @@ export default function SendMoney() {
               contacts={contactList}
             />
           )}
-          {currentStep === 2 && pageIndex === PageIndexes.SecurityRecipientPageIndex && (
+          {pageIndex === PageIndexes.SecurityRecipientPageIndex && (
             <SecurityRecipientPage
               setPageIndex={setPageIndex}
               setCurrentStep={setCurrentStep}
               showModal={setShowVerifyModal}
             />
           )}
-          {currentStep === 2 && pageIndex === PageIndexes.SecurityQuestionPageIndex && (
+          {pageIndex === PageIndexes.SecurityQuestionPageIndex && (
             <SecurityQuestionPage
               setPageIndex={setPageIndex}
               setCurrentStep={setCurrentStep}
@@ -189,7 +189,7 @@ export default function SendMoney() {
               setMainInfo={setMainInfo}
             />
           )}
-          {currentStep === 3 && pageIndex === PageIndexes.TransferSentPageIndex && (
+          {pageIndex === PageIndexes.TransferSentPageIndex && (
             <TransferSentPage
               setPageIndex={setPageIndex}
               setCurrentStep={setCurrentStep}
@@ -198,7 +198,7 @@ export default function SendMoney() {
               isCompleted={false}
             />
           )}
-          {currentStep === 3 && pageIndex === PageIndexes.TransferSentCompletedIndex && (
+          {pageIndex === PageIndexes.TransferSentCompletedIndex && (
             <TransferSentPage
               setPageIndex={setPageIndex}
               setCurrentStep={setCurrentStep}
