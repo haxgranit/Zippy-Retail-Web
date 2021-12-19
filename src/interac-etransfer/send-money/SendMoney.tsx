@@ -192,6 +192,7 @@ export default function SendMoney() {
               setCurrentStep={setCurrentStep}
               mainInfo={mainInfo}
               setMainInfo={setMainInfo}
+              setSelectedContact={setSelectedContact}
               isCompleted
             />
           )}
