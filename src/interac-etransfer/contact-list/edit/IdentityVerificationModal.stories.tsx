@@ -3,6 +3,16 @@ import IdentityVerificationModal, {
   IdentityVerificationModalProps,
 } from './IdentityVerificationModal';
 
+const CONTACT_MOCK = {
+  key: 1,
+  name: '392 Jones',
+  firstName: '392',
+  lastName: 'Jones',
+  lang: 'English',
+  email: 'lu_ben2002@yahoo.com',
+  phone: '',
+};
+
 export default {
   title: 'interac-etransfer/contact-list/edit/IdentityVerificationModal',
   component: IdentityVerificationModal,
@@ -15,7 +25,7 @@ const Template: ComponentStory<typeof IdentityVerificationModal> = ({
   <IdentityVerificationModal
     show={show}
     handleClose={handleClose}
-    selectedContact={{}}
+    selectedContact={CONTACT_MOCK}
   />
 );
 export const Default = Template.bind({});
