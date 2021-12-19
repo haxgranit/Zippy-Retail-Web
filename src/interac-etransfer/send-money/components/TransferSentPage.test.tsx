@@ -31,4 +31,20 @@ describe('Transfer Sent Page Component', () => {
     expect(setRealStep).toBeCalledTimes(1);
     expect(setCurrentStep).toBeCalledTimes(1);
   });
+
+  it('Click Check Status Button on Transfer Sent Page', () => {
+    const setCurrentStep = jest.fn();
+    const setRealStep = jest.fn();
+    const wrapper = shallow(
+      <BrowserRouter>
+        <TransferSentPage
+          setCurrentStep={setCurrentStep}
+          setRealStep={setRealStep}
+        />
+      </BrowserRouter>,
+    );
+    const mEvent = { preventDefault: jest.fn() };
+    wrapper.childAt(0).dive().find('Button[variant="outline-danger"]').simulate('click', mEvent);
+    expect(mockedUsedNavigate).toHaveBeenCalled();
+  });
 });
