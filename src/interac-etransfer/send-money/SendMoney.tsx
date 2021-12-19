@@ -41,7 +41,11 @@ export default function SendMoney() {
   const { state } = useLocation();
   const step = state ? state.step : undefined;
   const [currentStep, setCurrentStep] = useState(step || 1);
-  const [pageIndex, setPageIndex] = useState(currentStep >= 3 ? 5 : 1);
+  const [pageIndex, setPageIndex] = useState(
+    currentStep >= 3
+      ? PageIndexes.TransferSentCompletedIndex
+      : PageIndexes.DetailsPageIndex,
+  );
   const [showVerifyModal, setShowVerifyModal] = useState(false);
   const [isSendingMoney, setIsSendingMoney] = useState(false);
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
