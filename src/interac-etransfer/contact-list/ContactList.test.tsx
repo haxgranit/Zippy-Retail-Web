@@ -1,4 +1,3 @@
-import React from 'react';
 import Enzyme, { shallow } from 'enzyme';
 import Adapter from '@wojtekmaj/enzyme-adapter-react-17';
 
@@ -8,14 +7,14 @@ import ContactList from './ContactList';
 Enzyme.configure({ adapter: new Adapter() });
 
 describe('Contact List Component', () => {
+  const wrapper = shallow(<ContactList />);
+
   it('should delete contact', () => {
-    const wrapper = shallow(<ContactList />);
     const modal = wrapper.find('RemoveContactModal');
     expect(modal).toHaveLength(1);
   });
 
   it('click a close button on modal', () => {
-    const wrapper = shallow(<ContactList />);
     wrapper.find('Button').at(0).simulate('click');
     wrapper.update();
 
