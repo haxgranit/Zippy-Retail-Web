@@ -40,9 +40,6 @@ const getDateAry = () => {
         currMonth,
         currYear: year,
       };
-      if (!result[0]) {
-        result[0] = [];
-      }
       result[0].items.push(item);
     } else {
       dateStr = `${MONTH_NAMES[currMonth - i]} ${year}`;
@@ -51,9 +48,6 @@ const getDateAry = () => {
         currMonth,
         currYear: year,
       };
-      if (!result[1]) {
-        result[1] = [];
-      }
       result[1].items.push(item);
     }
   }

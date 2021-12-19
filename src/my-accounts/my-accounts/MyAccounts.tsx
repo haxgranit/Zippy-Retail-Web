@@ -18,9 +18,7 @@ import PanelHeader from './components/PanelHeader';
 export default function MyAccounts() {
   const { instance, accounts: msalAccounts } = useMsal();
   useEffect(() => {
-    new Api(instance, msalAccounts[0]).listAccounts()
-      .then((accounts) => console.log('accounts', accounts))
-      .catch((error) => console.log('error', error));
+    new Api(instance, msalAccounts[0]).listAccounts();
   }, []);
 
   return (
