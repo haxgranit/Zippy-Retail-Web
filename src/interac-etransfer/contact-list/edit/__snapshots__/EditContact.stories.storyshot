@@ -219,6 +219,7 @@ exports[`Storyshots interac-etransfer/contact-list/edit/EditContact Default 1`] 
           }
         }
         type="text"
+        value=""
       />
     </div>
     <div

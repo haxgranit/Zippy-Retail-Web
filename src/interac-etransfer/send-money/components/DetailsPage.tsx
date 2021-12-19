@@ -7,6 +7,7 @@ import {
   Button,
 } from 'react-bootstrap';
 import { Account, Contact } from '../../../api';
+import { formatContactName } from '../../../Helpers';
 
 const DetailsPage = ({
   setPageIndex,
@@ -18,12 +19,16 @@ const DetailsPage = ({
   accounts,
   contacts,
 }: any): JSX.Element => {
-  const [contactName, setContactName] = useState('');
+  const [contactId, setContactId] = useState(0);
   const handleAccountChange = (evt: any) => {
     setContactToSend(Number(evt.target.value));
-    setContactName(evt.target.value);
+    setContactId(Number(evt.target.value));
   };
-  const getEmail = (name: string) => contacts?.find((el: Contact) => el.name === name)?.email || 'No email';
+
+  const getEmail = (id: number) => {
+    const contact = id ? contacts?.find((el: Contact) => el.id === id) : 'No email';
+    return contact?.email || 'No email';
+  };
 
   return (
     <>
@@ -60,12 +65,14 @@ const DetailsPage = ({
             onChange={handleAccountChange}
           >
             <option value={0}>Select</option>
-            {contacts?.map((item: Contact, index: number) => (
-              <option key={item.name} value={index + 1}>{item.name}</option>
+            {contacts?.map((item: Contact) => (
+              <option key={item.id} value={item.id}>
+                {formatContactName(item.firstName, item.lastName)}
+              </option>
             ))}
           </Form.Select>
           <p>
-            { `Email: ${getEmail(contactName)}` }
+            { `Email: ${getEmail(contactId)}` }
           </p>
           <p>
             <a href="/" className="text-black">
@@ -108,8 +115,8 @@ const DetailsPage = ({
           >
             <option value="">Select</option>
             {
-              accounts?.map((contact:Account) => (
-                <option key={contact.name} value={contact.name}>{`${contact.name} $Balance`}</option>
+              accounts?.map((account:Account) => (
+                <option key={account.name} value={account.name}>{account.name}</option>
               ))
             }
           </Form.Select>

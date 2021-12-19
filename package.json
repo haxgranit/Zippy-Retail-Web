@@ -66,7 +66,8 @@
     "collectCoverageFrom": [
       "src/**/*.tsx",
       "!src/**/*.stories.tsx",
-      "!src/index.tsx"
+      "!src/index.tsx",
+      "!src/interac-etransfer/send-money/components/index.tsx"
     ]
   },
   "browserslist": {

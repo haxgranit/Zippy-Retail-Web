@@ -8,6 +8,7 @@ import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import CommonHeader from '../../common/CommonHeader';
 import Api, { Contact } from '../../api';
+import { formatContactName } from '../../Helpers';
 
 const RemoveContactModal: React.FC<{
   show: boolean;
@@ -34,7 +35,7 @@ const RemoveContactModal: React.FC<{
         <Col>
           <span>Name:</span>
         </Col>
-        <Col>{selectedContact?.name}</Col>
+        <Col>{formatContactName(selectedContact?.firstName, selectedContact?.lastName)}</Col>
       </Row>
       <hr
         style={{
@@ -209,10 +210,10 @@ const ContactList = () => {
             </thead>
             <tbody style={{ borderTop: 'none' }}>
               {contacts.map((item, index) => (
-                <tr key={item.email ? item.email : item.phone}>
+                <tr key={item.id}>
                   <td>
                     <Link to="edit" state={{ item }}>
-                      {item.name}
+                      {formatContactName(item?.firstName, item?.lastName)}
                     </Link>
                   </td>
                   <td>English</td>
