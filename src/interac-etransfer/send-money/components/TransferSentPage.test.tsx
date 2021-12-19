@@ -10,10 +10,14 @@ describe('Transfer Sent Page Component', () => {
   it('Click Send another transfer button on Transfer Sent Page', () => {
     const setCurrentStep = jest.fn();
     const setRealStep = jest.fn();
+    const setMainInfo = jest.fn();
+    const setSelectedContact = jest.fn();
     const wrapper = shallow(
       <TransferSentPage
         setCurrentStep={setCurrentStep}
         setRealStep={setRealStep}
+        setMainInfo={setMainInfo}
+        setSelectedContact={setSelectedContact}
       />,
     );
     const mEvent = { preventDefault: jest.fn() };

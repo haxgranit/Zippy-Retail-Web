@@ -6,6 +6,8 @@ const TransferSentPage = ({
   setRealStep,
   setCurrentStep,
   isCompleted,
+  setMainInfo,
+  setSelectedContact,
 }: any): JSX.Element => (
   <>
     <div className="d-flex align-items-center">
@@ -135,6 +137,8 @@ const TransferSentPage = ({
           onClick={() => {
             setRealStep(1);
             setCurrentStep(1);
+            setMainInfo({});
+            setSelectedContact(0);
           }}
         >
           Send another transfer
