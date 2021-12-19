@@ -7,6 +7,7 @@ import {
   Button,
 } from 'react-bootstrap';
 import { Account, Contact } from '../../../api';
+import { formatContactName } from '../../../Helpers';
 
 const DetailsPage = ({
   setRealStep,
@@ -21,9 +22,13 @@ const DetailsPage = ({
   const [contactId, setContactId] = useState(0);
   const handleAccountChange = (evt: any) => {
     setContactToSend(Number(evt.target.value));
-    setContactId(evt.target.value);
+    setContactId(Number(evt.target.value));
   };
-  const getEmail = (id: number) => contacts?.find((el: Contact) => el.id === id)?.email || 'No email';
+
+  const getEmail = (id: number) => {
+    const contact = id ? contacts?.find((el: Contact) => el.id === id) : 'No email';
+    return contact?.email || 'No email';
+  };
 
   return (
     <>
@@ -61,7 +66,9 @@ const DetailsPage = ({
           >
             <option value={0}>Select</option>
             {contacts?.map((item: Contact) => (
-              <option key={item.id} value={item.id}>{`${item.firstName} ${item.lastName}`}</option>
+              <option key={item.id} value={item.id}>
+                {formatContactName(item.firstName, item.lastName)}
+              </option>
             ))}
           </Form.Select>
           <p>
@@ -109,7 +116,7 @@ const DetailsPage = ({
             <option value="">Select</option>
             {
               accounts?.map((account:Account) => (
-                <option key={account.name} value={account.name}>{`${account.name} $Balance`}</option>
+                <option key={account.name} value={account.name}>{account.name}</option>
               ))
             }
           </Form.Select>
