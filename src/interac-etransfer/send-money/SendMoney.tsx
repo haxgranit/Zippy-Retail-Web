@@ -13,6 +13,14 @@ import {
 import SendMoneyVerificationModal from '../dialogs/SendMoneyVerificationModal';
 import Api, { Account, InteracEtransferTransaction, Contact } from '../../api';
 
+export const enum PageIndexes {
+  DetailsPageIndex = 1,
+  SecurityRecipientPageIndex = 2,
+  SecurityQuestionPageIndex = 3,
+  TransferSentPageIndex = 4,
+  TransferSentCompletedIndex = 5,
+}
+
 interface QuickLink {
   id: number;
   url: string;
@@ -33,7 +41,11 @@ export default function SendMoney() {
   const { state } = useLocation();
   const step = state ? state.step : undefined;
   const [currentStep, setCurrentStep] = useState(step || 1);
-  const [realStep, setRealStep] = useState(currentStep >= 3 ? 5 : 1);
+  const [pageIndex, setPageIndex] = useState(
+    currentStep >= 3
+      ? PageIndexes.TransferSentCompletedIndex
+      : PageIndexes.DetailsPageIndex,
+  );
   const [showVerifyModal, setShowVerifyModal] = useState(false);
   const [isSendingMoney, setIsSendingMoney] = useState(false);
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
@@ -96,9 +108,9 @@ export default function SendMoney() {
       .then(() => {
         setErrorMessage(null);
         if (selectedContact === 1) {
-          setRealStep(4);
+          setPageIndex(PageIndexes.TransferSentPageIndex);
         } else {
-          setRealStep(5);
+          setPageIndex(PageIndexes.TransferSentCompletedIndex);
         }
         setCurrentStep(3);
       })
@@ -112,14 +124,14 @@ export default function SendMoney() {
   const handleSendMoneyVerificationClose = () => setShowVerifyModal(false);
 
   const handleSendMoneyVerificationBack = () => {
-    setRealStep(1);
+    setPageIndex(PageIndexes.DetailsPageIndex);
     setCurrentStep(1);
     setShowVerifyModal(false);
   };
 
   useEffect(() => {
     window.scrollTo(0, 0);
-  }, [realStep]);
+  }, [pageIndex]);
 
   return (
     <div>
@@ -145,13 +157,13 @@ export default function SendMoney() {
                 steps={3}
                 currentStep={currentStep}
                 setCurrentStep={setCurrentStep}
-                setRealStep={setRealStep}
+                setPageIndex={setPageIndex}
               />
             </Col>
           </Row>
-          {currentStep === 1 && (
+          {pageIndex === PageIndexes.DetailsPageIndex && (
             <DetailsPage
-              setRealStep={setRealStep}
+              setPageIndex={setPageIndex}
               setCurrentStep={setCurrentStep}
               selectedContact={selectedContact}
               setContactToSend={setSelectedContact}
@@ -161,34 +173,34 @@ export default function SendMoney() {
               contacts={contactList}
             />
           )}
-          {currentStep === 2 && realStep === 2 && (
+          {pageIndex === PageIndexes.SecurityRecipientPageIndex && (
             <SecurityRecipientPage
-              setRealStep={setRealStep}
+              setPageIndex={setPageIndex}
               setCurrentStep={setCurrentStep}
               showModal={setShowVerifyModal}
             />
           )}
-          {currentStep === 2 && realStep === 3 && (
+          {pageIndex === PageIndexes.SecurityQuestionPageIndex && (
             <SecurityQuestionPage
-              setRealStep={setRealStep}
+              setPageIndex={setPageIndex}
               setCurrentStep={setCurrentStep}
               showModal={setShowVerifyModal}
               mainInfo={mainInfo}
               setMainInfo={setMainInfo}
             />
           )}
-          {currentStep === 3 && realStep === 4 && (
+          {pageIndex === PageIndexes.TransferSentPageIndex && (
             <TransferSentPage
-              setRealStep={setRealStep}
+              setPageIndex={setPageIndex}
               setCurrentStep={setCurrentStep}
               mainInfo={mainInfo}
               setMainInfo={setMainInfo}
               isCompleted={false}
             />
           )}
-          {currentStep === 3 && realStep === 5 && (
+          {pageIndex === PageIndexes.TransferSentCompletedIndex && (
             <TransferSentPage
-              setRealStep={setRealStep}
+              setPageIndex={setPageIndex}
               setCurrentStep={setCurrentStep}
               mainInfo={mainInfo}
               setMainInfo={setMainInfo}

@@ -7,7 +7,7 @@ export default {
 } as ComponentMeta<typeof DetailsPage>;
 
 const Template: ComponentStory<typeof DetailsPage> = () => (
-  <DetailsPage setCurrentStep={() => {}} setRealStep={() => {}} />
+  <DetailsPage setCurrentStep={() => {}} setPageIndex={() => {}} />
 );
 
 export const Default = Template.bind({});
