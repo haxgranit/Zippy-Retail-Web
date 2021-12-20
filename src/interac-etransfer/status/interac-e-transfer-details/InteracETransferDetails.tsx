@@ -5,10 +5,15 @@ import {
 import moment from 'moment';
 import { useNavigate, useParams } from 'react-router-dom';
 import { useMsal } from '@azure/msal-react';
+import styled from 'styled-components';
 import Api, { Transaction } from '../../../api';
 import CommonHeader from '../../../common/CommonHeader';
 import MonthSelectComponent from '../../../common/MonthSelectComponent';
 import { formatContactName, formatNumber } from '../../../Helpers';
+
+const BorderedTR = styled.tr`
+  borderTop: '1px solid #c5c5c5'
+`;
 
 const SentTabContent = ({ navigate, instance, accounts }: any) => {
   const [transactions, setTransactions] = useState<Transaction[]>([]);
@@ -22,14 +27,14 @@ const SentTabContent = ({ navigate, instance, accounts }: any) => {
       <MonthSelectComponent />
       <Table className="mt-2">
         <thead>
-          <tr className="bg-light" style={{ borderTop: '1px solid #c5c5c5' }}>
+          <BorderedTR className="bg-light">
             <th>Date Sent</th>
             <th>Contact</th>
             <th>Amount</th>
             <th>Status</th>
-          </tr>
+          </BorderedTR>
         </thead>
-        <tbody style={{ borderTop: 'none' }}>
+        <tbody className="border-top-0">
           {transactions.map((item: Transaction) => (
             <tr>
               <td>{moment(item.date).format('MMM D, YYYY')}</td>
@@ -37,7 +42,10 @@ const SentTabContent = ({ navigate, instance, accounts }: any) => {
                 <div>{formatContactName(item.contact?.firstName, item.contact?.lastName)}</div>
                 <div>{item.contact?.email}</div>
               </td>
-              <td>{`$${formatNumber(item.amount)}`}</td>
+              <td>
+                $
+                {`${formatNumber(item.amount)}`}
+              </td>
               <td>
                 <Button
                   variant="link"
@@ -81,17 +89,16 @@ const ReceivedTabContent = ({ navigate }: any) => (
     <MonthSelectComponent />
     <Table className="mt-2">
       <thead>
-        <tr
+        <BorderedTR
           className="bg-light"
-          style={{ borderTop: '1px solid #c5c5c5' }}
         >
           <th>Date Received</th>
           <th>Contact</th>
           <th>Amount</th>
           <th>Status</th>
-        </tr>
+        </BorderedTR>
       </thead>
-      <tbody style={{ borderTop: 'none' }}>
+      <tbody className="border-top-0">
         <tr>
           <td>Nov 2, 2021</td>
           <td>
@@ -121,17 +128,16 @@ const RequestedTabContent = ({ navigate }: any) => (
     <MonthSelectComponent />
     <Table className="mt-2">
       <thead>
-        <tr
+        <BorderedTR
           className="bg-light"
-          style={{ borderTop: '1px solid #c5c5c5' }}
         >
           <th>Date Requested</th>
           <th>Contact</th>
           <th>Amount</th>
           <th>Status</th>
-        </tr>
+        </BorderedTR>
       </thead>
-      <tbody style={{ borderTop: 'none' }}>
+      <tbody className="border-top-0">
         <tr>
           <td>Nov 2, 2021</td>
           <td>

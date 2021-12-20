@@ -206,12 +206,7 @@ Array [
       >
         <thead>
           <tr
-            className="bg-light"
-            style={
-              Object {
-                "borderTop": "1px solid #c5c5c5",
-              }
-            }
+            className="sc-gsDKAQ cqZAuk bg-light"
           >
             <th>
               Date Sent
@@ -351,12 +346,7 @@ Array [
       >
         <thead>
           <tr
-            className="bg-light"
-            style={
-              Object {
-                "borderTop": "1px solid #c5c5c5",
-              }
-            }
+            className="sc-gsDKAQ cqZAuk bg-light"
           >
             <th>
               Date Received
@@ -494,12 +484,7 @@ Array [
       >
         <thead>
           <tr
-            className="bg-light"
-            style={
-              Object {
-                "borderTop": "1px solid #c5c5c5",
-              }
-            }
+            className="sc-gsDKAQ cqZAuk bg-light"
           >
             <th>
               Date Requested
