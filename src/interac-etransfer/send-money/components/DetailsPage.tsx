@@ -98,6 +98,7 @@ const DetailsPage = ({
         <Col md={8}>
           <FormControl
             value={mainInfo?.amount}
+            type="number"
             onChange={(evt) => setMainInfo({ ...mainInfo, amount: Number(evt.target.value) })}
           />
           <Form.Label>

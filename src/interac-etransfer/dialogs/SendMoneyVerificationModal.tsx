@@ -48,8 +48,8 @@ const SendMoneyVerificationModal = ({
               <p>From:</p>
             </Col>
             <Col>
-              <p>{transferDetails?.source?.name}</p>
-              <p>{transferDetails?.source?.email}</p>
+              <p>{transferDetails.source.name}</p>
+              <p>{transferDetails.source.email}</p>
             </Col>
           </Row>
           <hr style={{ marginTop: '0px' }} />
@@ -63,8 +63,8 @@ const SendMoneyVerificationModal = ({
               <p>To:</p>
             </Col>
             <Col>
-              <p>{transferDetails?.destination?.name}</p>
-              <p>{transferDetails?.destination?.email}</p>
+              <p>{transferDetails.destination.name}</p>
+              <p>{transferDetails.destination.email}</p>
             </Col>
           </Row>
           <hr style={{ marginTop: '0px' }} />
@@ -78,7 +78,7 @@ const SendMoneyVerificationModal = ({
               <p>Amount:</p>
             </Col>
             <Col>
-              <p>{`${currencyFormatter().format(transferDetails?.amount)}`}</p>
+              <p>{`${currencyFormatter().format(transferDetails.amount)}`}</p>
             </Col>
           </Row>
           <hr style={{ marginTop: '0px' }} />
@@ -92,7 +92,7 @@ const SendMoneyVerificationModal = ({
               <p>From Account:</p>
             </Col>
             <Col>
-              <p>{transferDetails?.fromAccount}</p>
+              <p>{transferDetails.fromAccount}</p>
             </Col>
           </Row>
         </div>

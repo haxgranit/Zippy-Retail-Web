@@ -107,6 +107,7 @@ Array [
       <input
         className="form-control"
         onChange={[Function]}
+        type="number"
       />
       <label
         className="form-label"
