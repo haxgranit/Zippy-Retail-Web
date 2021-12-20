@@ -223,11 +223,7 @@ Array [
           </tr>
         </thead>
         <tbody
-          style={
-            Object {
-              "borderTop": "none",
-            }
-          }
+          className="border-top-0"
         >
           <tr>
             <td
@@ -363,11 +359,7 @@ Array [
           </tr>
         </thead>
         <tbody
-          style={
-            Object {
-              "borderTop": "none",
-            }
-          }
+          className="border-top-0"
         >
           <tr>
             <td>
@@ -501,11 +493,7 @@ Array [
           </tr>
         </thead>
         <tbody
-          style={
-            Object {
-              "borderTop": "none",
-            }
-          }
+          className="border-top-0"
         >
           <tr>
             <td>
