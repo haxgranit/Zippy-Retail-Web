@@ -61,6 +61,7 @@ export default function SendMoney() {
   const [isSendingMoney, setIsSendingMoney] = useState(false);
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
   const [selectedContact, setSelectedContact] = useState(0);
+  const [selectedAccount, setSelectedAccount] = useState(0);
   const [mainInfo, setMainInfo] = useState<TransferMainDetails>({
     amount: 0,
     destination: { email: '', name: '' },
@@ -140,18 +141,25 @@ export default function SendMoney() {
   };
 
   const getTransferDetails = (): TransferDetails => {
-    const destinationContact: Contact = contactList![selectedContact - 1];
+    const sourceAccount: Account = accountsList!.find(
+      (x) => x.id === selectedAccount,
+    )!;
+    const destinationContact: Contact = contactList!.find(
+      (x) => x.id === selectedContact,
+    )!;
     return {
       amount: mainInfo.amount,
       source: {
-        name: accounts[0]?.name ?? '',
-        email: accounts[0]?.username ?? '',
+        name: sourceAccount?.name ?? '',
+        email: sourceAccount?.email ?? '',
       },
       destination: {
-        name: `${destinationContact?.firstName ?? ''} ${destinationContact?.lastName ?? ''}`,
+        name: `${destinationContact?.firstName ?? ''} ${
+          destinationContact?.lastName ?? ''
+        }`,
         email: destinationContact?.email ?? '',
       },
-      fromAccount: mainInfo.fromAccount,
+      fromAccount: sourceAccount?.name,
     };
   };
   const handleSendMoneyVerificationClose = () => setShowVerifyModal(false);
@@ -201,6 +209,8 @@ export default function SendMoney() {
               setCurrentStep={setCurrentStep}
               selectedContact={selectedContact}
               setContactToSend={setSelectedContact}
+              selectedAccount={selectedAccount}
+              setSelectedAccount={setSelectedAccount}
               mainInfo={mainInfo}
               setMainInfo={setMainInfo}
               accounts={accountsList}

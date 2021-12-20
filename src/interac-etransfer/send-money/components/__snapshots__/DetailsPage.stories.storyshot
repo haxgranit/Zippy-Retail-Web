@@ -55,10 +55,9 @@ Array [
       <select
         className="send-account-select form-select"
         onChange={[Function]}
+        value={0}
       >
-        <option
-          value={0}
-        >
+        <option>
           Select
         </option>
       </select>
@@ -145,9 +144,7 @@ Array [
         className="from-account-info form-select"
         onChange={[Function]}
       >
-        <option
-          value=""
-        >
+        <option>
           Select
         </option>
       </select>

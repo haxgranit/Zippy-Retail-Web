@@ -19,6 +19,8 @@ interface DetailsPageProps {
   setPageIndex: Dispatch<SetStateAction<PageIndexes>>;
   accounts: Account[] | null;
   contacts: Contact[] | null;
+  selectedAccount: number;
+  setSelectedAccount: Dispatch<SetStateAction<number>>;
 }
 const DetailsPage = ({
   setPageIndex,
@@ -29,13 +31,17 @@ const DetailsPage = ({
   setMainInfo,
   accounts,
   contacts,
+  selectedAccount,
+  setSelectedAccount,
 }: DetailsPageProps): JSX.Element => {
   const [contactId, setContactId] = useState(0);
-  const handleAccountChange = (evt: any) => {
+  const handleContactChange = (evt: any) => {
     setContactToSend(Number(evt.target.value));
     setContactId(Number(evt.target.value));
   };
-
+  const handleAccountChange = (evt: any) => {
+    setSelectedAccount(Number(evt.target.value));
+  };
   const getEmail = (id: number) => {
     const contact = id ? contacts?.find((el: Contact) => el.id === id) : 'No email';
     return (contact as Contact)?.email || 'No email';
@@ -75,9 +81,10 @@ const DetailsPage = ({
         <Col md={8}>
           <Form.Select
             className="send-account-select"
-            onChange={handleAccountChange}
+            onChange={handleContactChange}
+            value={selectedContact}
           >
-            <option value={0}>Select</option>
+            <option>Select</option>
             {contacts?.map((item: Contact) => (
               <option key={item.id} value={item.id}>
                 {formatContactName(item.firstName, item.lastName)}
@@ -123,13 +130,13 @@ const DetailsPage = ({
         <Col md={8}>
           <Form.Select
             className="from-account-info"
-            onChange={(evt) => setMainInfo({ ...mainInfo, fromAccount: evt.target.value })}
-            value={mainInfo?.fromAccount}
+            onChange={(evt) => handleAccountChange(evt)}
+            value={selectedAccount}
           >
-            <option value="">Select</option>
+            <option>Select</option>
             {
               accounts?.map((account:Account) => (
-                <option key={account.name} value={account.name}>{account.name}</option>
+                <option key={account.name} value={account.id}>{account.name}</option>
               ))
             }
           </Form.Select>
@@ -223,7 +230,7 @@ const DetailsPage = ({
           <Button
             variant="danger"
             className="d-flex"
-            disabled={(mainInfo?.fromAccount == null || mainInfo?.fromAccount === '' || selectedContact === 0)}
+            disabled={(selectedAccount === 0 || selectedContact === 0)}
             onClick={() => {
               if (selectedContact === 1) {
                 setCurrentStep(2);

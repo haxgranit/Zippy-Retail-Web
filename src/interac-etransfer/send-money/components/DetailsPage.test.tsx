@@ -25,6 +25,8 @@ describe('DetailsPage Component', () => {
         setMainInfo={jest.fn()}
         mainInfo={initMainInfo}
         setContactToSend={setContactToSend}
+        setSelectedAccount={jest.fn()}
+        selectedAccount={0}
         contacts={[
           {
             id: 1,
@@ -36,7 +38,9 @@ describe('DetailsPage Component', () => {
         ]}
         accounts={[
           {
+            id: 0,
             name: 'test',
+            email: 'eamil',
           },
         ]}
         selectedContact={1}
@@ -57,6 +61,8 @@ describe('DetailsPage Component', () => {
         setMainInfo={jest.fn()}
         mainInfo={initMainInfo}
         setContactToSend={setContactToSend}
+        setSelectedAccount={jest.fn()}
+        selectedAccount={0}
         contacts={[
           {
             id: 1,
@@ -68,7 +74,9 @@ describe('DetailsPage Component', () => {
         ]}
         accounts={[
           {
+            id: 0,
             name: 'test',
+            email: 'eamil',
           },
         ]}
         selectedContact={1}
@@ -94,6 +102,8 @@ describe('DetailsPage Component', () => {
         setMainInfo={jest.fn()}
         mainInfo={initMainInfo}
         setContactToSend={setContactToSend}
+        setSelectedAccount={jest.fn()}
+        selectedAccount={0}
         contacts={[
           {
             id: 1,
@@ -105,7 +115,9 @@ describe('DetailsPage Component', () => {
         ]}
         accounts={[
           {
+            id: 0,
             name: 'test',
+            email: 'eamil',
           },
         ]}
         selectedContact={1}
@@ -127,6 +139,8 @@ describe('DetailsPage Component', () => {
         setMainInfo={setMainInfo}
         mainInfo={initMainInfo}
         setContactToSend={setContactToSend}
+        setSelectedAccount={jest.fn()}
+        selectedAccount={0}
         contacts={[
           {
             id: 1,
@@ -138,7 +152,9 @@ describe('DetailsPage Component', () => {
         ]}
         accounts={[
           {
+            id: 0,
             name: 'test',
+            email: 'eamil',
           },
         ]}
         selectedContact={1}
@@ -158,7 +174,7 @@ describe('DetailsPage Component', () => {
     wrapper
       .find('.transfer-method')
       .simulate('change', { target: { value: 'Text Message' } });
-    expect(setMainInfo).toBeCalledTimes(4);
+    expect(setMainInfo).toBeCalledTimes(3);
   });
 
   it('change FormControl to call setContactToSend', () => {
@@ -170,6 +186,8 @@ describe('DetailsPage Component', () => {
         setMainInfo={jest.fn()}
         mainInfo={initMainInfo}
         setContactToSend={setContactToSend}
+        setSelectedAccount={jest.fn()}
+        selectedAccount={0}
         contacts={[
           {
             id: 1,
@@ -181,7 +199,9 @@ describe('DetailsPage Component', () => {
         ]}
         accounts={[
           {
+            id: 0,
             name: 'test',
+            email: 'eamil',
           },
         ]}
         selectedContact={1}

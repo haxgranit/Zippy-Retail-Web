@@ -11,6 +11,7 @@ const Template: ComponentStory<typeof DetailsPage> = ({
   contacts,
   mainInfo,
   selectedContact,
+  selectedAccount,
 }) => (
   <DetailsPage
     mainInfo={mainInfo}
@@ -21,6 +22,8 @@ const Template: ComponentStory<typeof DetailsPage> = ({
     setMainInfo={() => {}}
     setCurrentStep={() => {}}
     setPageIndex={() => {}}
+    selectedAccount={selectedAccount}
+    setSelectedAccount={() => {}}
   />
 );
 

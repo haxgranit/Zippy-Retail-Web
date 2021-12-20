@@ -196,10 +196,9 @@ exports[`Storyshots interac-etransfer/send-money/SendMoney API Error 1`] = `
           <select
             className="send-account-select form-select"
             onChange={[Function]}
+            value={0}
           >
-            <option
-              value={0}
-            >
+            <option>
               Select
             </option>
           </select>
@@ -286,11 +285,9 @@ exports[`Storyshots interac-etransfer/send-money/SendMoney API Error 1`] = `
           <select
             className="from-account-info form-select"
             onChange={[Function]}
-            value=""
+            value={0}
           >
-            <option
-              value=""
-            >
+            <option>
               Select
             </option>
           </select>
@@ -811,10 +808,9 @@ exports[`Storyshots interac-etransfer/send-money/SendMoney Default 1`] = `
           <select
             className="send-account-select form-select"
             onChange={[Function]}
+            value={0}
           >
-            <option
-              value={0}
-            >
+            <option>
               Select
             </option>
           </select>
@@ -901,11 +897,9 @@ exports[`Storyshots interac-etransfer/send-money/SendMoney Default 1`] = `
           <select
             className="from-account-info form-select"
             onChange={[Function]}
-            value=""
+            value={0}
           >
-            <option
-              value=""
-            >
+            <option>
               Select
             </option>
           </select>
