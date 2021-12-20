@@ -7,12 +7,10 @@ import {
   Button,
 } from 'react-bootstrap';
 import { Account, Contact } from '../../../api';
-import { TransferMainDetails } from '../SendMoney';
+import { TransferMainDetails, PageIndexes } from '../SendMoney';
 import { formatContactName } from '../../../Helpers';
-import { PageIndexes } from '../SendMoney';
 
 interface DetailsPageProps {
-  setRealStep: Dispatch<SetStateAction<number>>;
   setCurrentStep: Dispatch<SetStateAction<number>>;
   selectedContact : number;
   setContactToSend: Dispatch<SetStateAction<number>>;

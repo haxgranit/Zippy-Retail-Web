@@ -1,13 +1,12 @@
+import React from 'react';
 import Enzyme, { mount, shallow } from 'enzyme';
 import Adapter from '@wojtekmaj/enzyme-adapter-react-17';
-
-import SendMoney from './SendMoney';
-import React from 'react';
 import { Form, FormControl } from 'react-bootstrap';
+import SendMoney from './SendMoney';
 
 // Configure enzyme for react 17
 Enzyme.configure({ adapter: new Adapter() });
-const wrapper = mount(<SendMoney />);
+const mounted = mount(<SendMoney />);
 jest.mock('react-router-dom', () => ({
   ...(jest.requireActual('react-router-dom') as any),
   useLocation: () => ({
@@ -59,8 +58,8 @@ describe('SendMoney Component', () => {
     const setErrorMessage = jest.fn();
     const setSelectedContact = jest.fn();
     const setMainInfo = jest.fn();
-    const  setAccountsList= jest.fn();
-    const  setContactList= jest.fn();
+    const setAccountsList = jest.fn();
+    const setContactList = jest.fn();
     React.useState = jest
       .fn()
       .mockImplementationOnce(() => [[], setAccountsList])
@@ -71,13 +70,11 @@ describe('SendMoney Component', () => {
       .mockImplementationOnce(() => [false, setIsSendingMoney])
       .mockImplementationOnce(() => [null, setErrorMessage])
       .mockImplementationOnce(() => [0, setSelectedContact])
-      .mockImplementationOnce((x) => [x,
-        setMainInfo,
-      ]);
-      const ammount = wrapper.find(FormControl);
-      const selects = wrapper.find(Form.Select);
-      expect(ammount.at(0).prop('value')).toEqual(0);
-      expect(selects.at(0).text()).toEqual('Select');
-      expect(selects.at(1).text()).toEqual('Select');
+      .mockImplementationOnce((x) => [x, setMainInfo]);
+    const ammount = mounted.find(FormControl);
+    const selects = mounted.find(Form.Select);
+    expect(ammount.at(0).prop('value')).toEqual(0);
+    expect(selects.at(0).text()).toEqual('Select');
+    expect(selects.at(1).text()).toEqual('Select');
   });
 });

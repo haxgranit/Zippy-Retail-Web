@@ -20,7 +20,7 @@ const Template: ComponentStory<typeof DetailsPage> = ({
     setContactToSend={() => {}}
     setMainInfo={() => {}}
     setCurrentStep={() => {}}
-    setRealStep={() => {}}
+    setPageIndex={() => {}}
   />
 );
 

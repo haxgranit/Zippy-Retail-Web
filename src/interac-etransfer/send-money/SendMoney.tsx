@@ -148,7 +148,7 @@ export default function SendMoney() {
         email: accounts[0]?.username ?? '',
       },
       destination: {
-        name: destinationContact?.name ?? '',
+        name: `${destinationContact?.firstName ?? ''} ${destinationContact?.lastName ?? ''}`,
         email: destinationContact?.email ?? '',
       },
       fromAccount: mainInfo.fromAccount,
