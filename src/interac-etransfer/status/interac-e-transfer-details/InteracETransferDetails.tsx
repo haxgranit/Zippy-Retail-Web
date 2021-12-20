@@ -2,14 +2,15 @@ import { useEffect, useState } from 'react';
 import {
   Tabs, Tab, Table, Button, Row,
 } from 'react-bootstrap';
-import moment from 'moment';
 import { useNavigate, useParams } from 'react-router-dom';
+import { DateTime } from 'luxon';
+import NumberFormat from 'react-number-format';
 import { useMsal } from '@azure/msal-react';
 import styled from 'styled-components';
 import Api, { Transaction } from '../../../api';
 import CommonHeader from '../../../common/CommonHeader';
 import MonthSelectComponent from '../../../common/MonthSelectComponent';
-import { formatContactName, formatNumber } from '../../../Helpers';
+import { formatContactName } from '../../../Helpers';
 
 const BorderedTR = styled.tr`
   borderTop: '1px solid #c5c5c5'
@@ -37,14 +38,18 @@ const SentTabContent = ({ navigate, instance, accounts }: any) => {
         <tbody className="border-top-0">
           {transactions.map((item: Transaction) => (
             <tr>
-              <td>{moment(item.date).format('MMM D, YYYY')}</td>
+              <td>{DateTime.fromISO(item.date).toLocaleString(DateTime.DATE_MED)}</td>
               <td>
                 <div>{formatContactName(item.contact?.firstName, item.contact?.lastName)}</div>
                 <div>{item.contact?.email}</div>
               </td>
               <td>
-                $
-                {`${formatNumber(item.amount)}`}
+                <NumberFormat
+                  value={item.amount}
+                  displayType="text"
+                  prefix="$"
+                  thousandSeparator
+                />
               </td>
               <td>
                 <Button
