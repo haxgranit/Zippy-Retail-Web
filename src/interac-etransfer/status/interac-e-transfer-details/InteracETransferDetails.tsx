@@ -64,7 +64,7 @@ const SentTabContent = ({ navigate, instance, accounts }: any) => {
               </td>
             </tr>
           ))}
-          {!transactions.length && (
+          {!transactions?.length && (
             <tr>
               <td colSpan={4} className="text-center text-gray">No Transactions</td>
             </tr>
