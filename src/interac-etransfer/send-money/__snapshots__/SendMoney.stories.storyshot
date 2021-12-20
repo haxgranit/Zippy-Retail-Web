@@ -149,6 +149,7 @@ exports[`Storyshots interac-etransfer/send-money/SendMoney API Error 1`] = `
       <ul>
         <li>
           Fees apply to Interac e-Transfer transactions.
+           
           <a
             className="text-black"
             href="/"
@@ -158,6 +159,7 @@ exports[`Storyshots interac-etransfer/send-money/SendMoney API Error 1`] = `
         </li>
         <li>
           There are limits on how much money you can send in a day, a week and a month.
+           
           <a
             className="text-black"
             href="/"
@@ -167,12 +169,12 @@ exports[`Storyshots interac-etransfer/send-money/SendMoney API Error 1`] = `
         </li>
         <li>
           Note: Sending money outside of Canada? Use the
+           
           <a
             className="text-black"
             href="/"
           >
-             
-            ZippyX Global Money Transfer Servicec
+            ZippyX Global Money Transfer Services
           </a>
         </li>
       </ul>
@@ -374,6 +376,7 @@ exports[`Storyshots interac-etransfer/send-money/SendMoney API Error 1`] = `
         >
           <p>
             This is how you will appear in all emails to your Interac e-Transfer contacts. If incorrect,
+             
             <a
               className="text-black"
               href="/"
@@ -757,6 +760,7 @@ exports[`Storyshots interac-etransfer/send-money/SendMoney Default 1`] = `
       <ul>
         <li>
           Fees apply to Interac e-Transfer transactions.
+           
           <a
             className="text-black"
             href="/"
@@ -766,6 +770,7 @@ exports[`Storyshots interac-etransfer/send-money/SendMoney Default 1`] = `
         </li>
         <li>
           There are limits on how much money you can send in a day, a week and a month.
+           
           <a
             className="text-black"
             href="/"
@@ -775,12 +780,12 @@ exports[`Storyshots interac-etransfer/send-money/SendMoney Default 1`] = `
         </li>
         <li>
           Note: Sending money outside of Canada? Use the
+           
           <a
             className="text-black"
             href="/"
           >
-             
-            ZippyX Global Money Transfer Servicec
+            ZippyX Global Money Transfer Services
           </a>
         </li>
       </ul>
@@ -982,6 +987,7 @@ exports[`Storyshots interac-etransfer/send-money/SendMoney Default 1`] = `
         >
           <p>
             This is how you will appear in all emails to your Interac e-Transfer contacts. If incorrect,
+             
             <a
               className="text-black"
               href="/"

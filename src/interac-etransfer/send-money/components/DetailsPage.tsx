@@ -37,6 +37,7 @@ const DetailsPage = ({
       <ul>
         <li>
           Fees apply to Interac e-Transfer transactions.
+          {' '}
           <a href="/" className="text-black">
             Learn more about Interac e-Transfer fees
           </a>
@@ -44,15 +45,16 @@ const DetailsPage = ({
         <li>
           There are limits on how much money you can send in a day, a week and a
           month.
+          {' '}
           <a href="/" className="text-black">
             Learn more about Interac e-Transfer limits
           </a>
         </li>
         <li>
           Note: Sending money outside of Canada? Use the
+          {' '}
           <a href="/" className="text-black">
-            {' '}
-            ZippyX Global Money Transfer Servicec
+            ZippyX Global Money Transfer Services
           </a>
         </li>
       </ul>
@@ -164,6 +166,7 @@ const DetailsPage = ({
           <p>
             This is how you will appear in all emails to your Interac e-Transfer
             contacts. If incorrect,
+            {' '}
             <a href="/" className="text-black">
               edit your profile.
             </a>
