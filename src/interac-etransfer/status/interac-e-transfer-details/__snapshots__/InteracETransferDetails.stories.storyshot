@@ -235,29 +235,11 @@ Array [
           }
         >
           <tr>
-            <td>
-              Nov 2, 2021
-            </td>
-            <td>
-              <div>
-                Chelsea Tough
-              </div>
-              <div>
-                chelsea.tough@gmail.com
-              </div>
-            </td>
-            <td>
-              $2,000.00
-            </td>
-            <td>
-              <button
-                className="text-black btn btn-link"
-                disabled={false}
-                onClick={[Function]}
-                type="button"
-              >
-                Transfer Completed
-              </button>
+            <td
+              className="text-center text-gray"
+              colSpan={4}
+            >
+              No Transactions
             </td>
           </tr>
         </tbody>
