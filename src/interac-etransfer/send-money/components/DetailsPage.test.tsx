@@ -8,22 +8,22 @@ Enzyme.configure({ adapter: new Adapter() });
 
 describe('DetailsPage Component', () => {
   it('Click next button on DetailsPage', () => {
-    const setRealStep = jest.fn();
+    const setPageIndex = jest.fn();
     const wrapper = shallow(
-      <DetailsPage setCurrentStep={jest.fn()} setRealStep={setRealStep} />,
+      <DetailsPage setCurrentStep={jest.fn()} setPageIndex={setPageIndex} />,
     );
     const mEvent = { preventDefault: jest.fn() };
     wrapper.find('Button[variant="danger"]').simulate('click', mEvent);
-    expect(setRealStep).toBeCalledTimes(1);
+    expect(setPageIndex).toBeCalledTimes(1);
   });
 
   it('Click next button on DetailsPage with option changing', () => {
-    const setRealStep = jest.fn();
+    const setPageIndex = jest.fn();
     const setContactToSend = jest.fn();
     const wrapper = shallow(
       <DetailsPage
         setCurrentStep={jest.fn()}
-        setRealStep={setRealStep}
+        setPageIndex={setPageIndex}
         setContactToSend={setContactToSend}
       />,
     );
@@ -31,17 +31,17 @@ describe('DetailsPage Component', () => {
 
     const mEvent = { preventDefault: jest.fn() };
     wrapper.find('Button[variant="danger"]').simulate('click', mEvent);
-    expect(setRealStep).toBeCalledTimes(1);
+    expect(setPageIndex).toBeCalledTimes(1);
     expect(setContactToSend).toBeCalledTimes(1);
   });
 
   it('Click next button on DetailsPage with option 2', () => {
-    const setRealStep = jest.fn();
+    const setPageIndex = jest.fn();
     const setContactToSend = jest.fn();
     const wrapper = shallow(
       <DetailsPage
         setCurrentStep={jest.fn()}
-        setRealStep={setRealStep}
+        setPageIndex={setPageIndex}
         setContactToSend={setContactToSend}
         selectedContact={2}
       />,
@@ -49,16 +49,16 @@ describe('DetailsPage Component', () => {
 
     const mEvent = { preventDefault: jest.fn() };
     wrapper.find('Button[variant="danger"]').simulate('click', mEvent);
-    expect(setRealStep).toBeCalledTimes(1);
+    expect(setPageIndex).toBeCalledTimes(1);
   });
 
   it('change FormControl text values', () => {
-    const setRealStep = jest.fn();
+    const setPageIndex = jest.fn();
     const setMainInfo = jest.fn();
     const wrapper = shallow(
       <DetailsPage
         setCurrentStep={jest.fn()}
-        setRealStep={setRealStep}
+        setPageIndex={setPageIndex}
         setMainInfo={setMainInfo}
         mainInfo={{}}
       />,
@@ -75,13 +75,23 @@ describe('DetailsPage Component', () => {
     const wrapper = shallow(
       <DetailsPage
         setCurrentStep={jest.fn()}
-        setRealStep={jest.fn()}
+        setPageIndex={jest.fn()}
         setMainInfo={jest.fn()}
         mainInfo={{}}
         setContactToSend={setContactToSend}
+        contacts={[{
+          id: 1,
+          firstName: 'Test',
+          lastName: 'Test',
+        }]}
+        accounts={[{
+          name: 'test',
+        }]}
+        selectedContact={1}
       />,
     );
     wrapper.find('.send-account-select').simulate('change', { target: { value: 'Text Message' } });
     expect(setContactToSend).toBeCalledTimes(1);
+    wrapper.find('Button').at(1).simulate('click');
   });
 });

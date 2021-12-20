@@ -84,6 +84,9 @@ export default function InteracETransferDetails() {
                 variant="danger"
                 className="d-flex"
                 style={{ width: 'auto', marginRight: 10 }}
+                onClick={() => navigate('/interac-etransfer/send-money', {
+                  state: { step: 1 },
+                })}
               >
                 Send Money
               </Button>

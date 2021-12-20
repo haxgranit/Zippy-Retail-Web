@@ -4,6 +4,7 @@ import {
   Button, Col, Form, Row,
 } from 'react-bootstrap';
 import Api, { Account, Contact } from '../../../api';
+import { formatContactName } from '../../../Helpers';
 
 const Divider = () => <div className="border-top my-3" />;
 
@@ -57,7 +58,7 @@ export default function RequestDetail({ setCurrentStep }: any) {
                 key={contact.id}
                 value={contact.id}
               >
-                {`${contact.firstName} ${contact.lastName}`}
+                {formatContactName(contact.firstName, contact.lastName)}
               </option>
             ))}
           </Form.Select>

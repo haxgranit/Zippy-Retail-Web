@@ -7,7 +7,7 @@ export default {
 } as ComponentMeta<typeof SecurityRecipientPage>;
 
 const Template: ComponentStory<typeof SecurityRecipientPage> = () => (
-  <SecurityRecipientPage setCurrentStep={() => {}} setRealStep={() => {}} />
+  <SecurityRecipientPage setCurrentStep={() => {}} setPageIndex={() => {}} />
 );
 
 export const Default = Template.bind({});

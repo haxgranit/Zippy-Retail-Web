@@ -7,7 +7,7 @@ export default {
 } as ComponentMeta<typeof StepComponent>;
 
 const Template: ComponentStory<typeof StepComponent> = () => (
-  <StepComponent steps={3} currentStep={1} setCurrentStep={() => {}} setRealStep={() => {}} />
+  <StepComponent steps={3} currentStep={1} setCurrentStep={() => {}} setPageIndex={() => {}} />
 );
 
 export const Default = Template.bind({});

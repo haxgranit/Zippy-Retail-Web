@@ -1,4 +1,5 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { BrowserRouter } from 'react-router-dom';
 import TransferSentPage from './TransferSentPage';
 
 export default {
@@ -7,7 +8,9 @@ export default {
 } as ComponentMeta<typeof TransferSentPage>;
 
 const Template: ComponentStory<typeof TransferSentPage> = () => (
-  <TransferSentPage />
+  <BrowserRouter>
+    <TransferSentPage />
+  </BrowserRouter>
 );
 
 export const Default = Template.bind({});

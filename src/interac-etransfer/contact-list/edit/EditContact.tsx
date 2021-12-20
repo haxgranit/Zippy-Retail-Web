@@ -6,6 +6,7 @@ import { useLocation } from 'react-router-dom';
 import StepComponent from '../../../common/StepComponent';
 import CommonHeader from '../../../common/CommonHeader';
 import IdentityVerificationModal from './IdentityVerificationModal';
+import { formatContactName } from '../../../Helpers';
 
 const Divider = () => <div className="border-top my-3" />;
 const HorizontalLine = () => (
@@ -20,7 +21,7 @@ const HorizontalLine = () => (
   />
 );
 
-const LeftCol = ({ currentStep, setCurrentStep, setRealStep }: any) => (
+const LeftCol = ({ currentStep, setCurrentStep, setPageIndex }: any) => (
   <Col xs={9}>
     <Row>
       <Col>
@@ -28,7 +29,7 @@ const LeftCol = ({ currentStep, setCurrentStep, setRealStep }: any) => (
           steps={2}
           currentStep={currentStep}
           setCurrentStep={setCurrentStep}
-          setRealStep={setRealStep}
+          setPageIndex={setPageIndex}
         />
       </Col>
     </Row>
@@ -95,7 +96,7 @@ const EditContact: React.FC = () => {
           <Col xs="4" style={{ display: 'flex', alignItems: 'center' }}>
             <Form.Control
               type="text"
-              value={`${selectedContact?.firstName} ${selectedContact?.lastName}`}
+              value={formatContactName(selectedContact?.firstName, selectedContact?.lastName)}
               style={{
                 display: 'inline-block',
                 width: 250,

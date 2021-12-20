@@ -35,8 +35,11 @@ describe('InteracETransferDetails Component', () => {
     );
     const mEvent = { preventDefault: jest.fn() };
     const Buttons = wrapper.childAt(0).dive().find('Button');
+    Buttons.at(0).simulate('click', mEvent);
+    Buttons.at(1).simulate('click', mEvent);
+    Buttons.at(2).simulate('click', mEvent);
     Buttons.at(3).simulate('click', mEvent);
     Buttons.at(4).simulate('click', mEvent);
-    expect(mockedUsedNavigate).toBeCalledTimes(2);
+    expect(mockedUsedNavigate).toBeCalledTimes(5);
   });
 });

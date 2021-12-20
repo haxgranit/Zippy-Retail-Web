@@ -8,6 +8,8 @@ import {
 } from 'react-bootstrap';
 import { Account, Contact } from '../../../api';
 import { TransferMainDetails } from '../SendMoney';
+import { formatContactName } from '../../../Helpers';
+import { PageIndexes } from '../SendMoney';
 
 interface DetailsPageProps {
   setRealStep: Dispatch<SetStateAction<number>>;
@@ -16,11 +18,12 @@ interface DetailsPageProps {
   setContactToSend: Dispatch<SetStateAction<number>>;
   mainInfo: TransferMainDetails;
   setMainInfo: Dispatch<SetStateAction<TransferMainDetails>>;
+  setPageIndex: Dispatch<SetStateAction<PageIndexes>>;
   accounts: Account[] | null;
   contacts: Contact[] | null;
 }
 const DetailsPage = ({
-  setRealStep,
+  setPageIndex,
   setCurrentStep,
   selectedContact = 0,
   setContactToSend,
@@ -32,9 +35,13 @@ const DetailsPage = ({
   const [contactId, setContactId] = useState(0);
   const handleAccountChange = (evt: any) => {
     setContactToSend(Number(evt.target.value));
-    setContactId(evt.target.value);
+    setContactId(Number(evt.target.value));
   };
-  const getEmail = (id: number) => contacts?.find((el: Contact) => el.id === id)?.email || 'No email';
+
+  const getEmail = (id: number) => {
+    const contact = id ? contacts?.find((el: Contact) => el.id === id) : 'No email';
+    return (contact as Contact)?.email || 'No email';
+  };
 
   return (
     <>
@@ -42,6 +49,7 @@ const DetailsPage = ({
       <ul>
         <li>
           Fees apply to Interac e-Transfer transactions.
+          {' '}
           <a href="/" className="text-black">
             Learn more about Interac e-Transfer fees
           </a>
@@ -49,15 +57,16 @@ const DetailsPage = ({
         <li>
           There are limits on how much money you can send in a day, a week and a
           month.
+          {' '}
           <a href="/" className="text-black">
             Learn more about Interac e-Transfer limits
           </a>
         </li>
         <li>
           Note: Sending money outside of Canada? Use the
+          {' '}
           <a href="/" className="text-black">
-            {' '}
-            ZippyX Global Money Transfer Servicec
+            ZippyX Global Money Transfer Services
           </a>
         </li>
       </ul>
@@ -72,7 +81,9 @@ const DetailsPage = ({
           >
             <option value={0}>Select</option>
             {contacts?.map((item: Contact) => (
-              <option key={item.id} value={item.id}>{`${item.firstName} ${item.lastName}`}</option>
+              <option key={item.id} value={item.id}>
+                {formatContactName(item.firstName, item.lastName)}
+              </option>
             ))}
           </Form.Select>
           <p>
@@ -120,7 +131,7 @@ const DetailsPage = ({
             <option value="">Select</option>
             {
               accounts?.map((account:Account) => (
-                <option key={account.name} value={account.name}>{`${account.name} $Balance`}</option>
+                <option key={account.name} value={account.name}>{account.name}</option>
               ))
             }
           </Form.Select>
@@ -167,6 +178,7 @@ const DetailsPage = ({
           <p>
             This is how you will appear in all emails to your Interac e-Transfer
             contacts. If incorrect,
+            {' '}
             <a href="/" className="text-black">
               edit your profile.
             </a>
@@ -217,10 +229,10 @@ const DetailsPage = ({
             onClick={() => {
               if (selectedContact === 1) {
                 setCurrentStep(2);
-                setRealStep(2);
+                setPageIndex(PageIndexes.SecurityRecipientPageIndex);
               } else {
                 setCurrentStep(2);
-                setRealStep(3);
+                setPageIndex(PageIndexes.SecurityQuestionPageIndex);
               }
             }}
           >
