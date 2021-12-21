@@ -179,15 +179,8 @@ Array [
         onChange={[Function]}
         value="Email"
       >
-        <option
-          value="Email"
-        >
+        <option>
           Email
-        </option>
-        <option
-          value="Other"
-        >
-          Other
         </option>
       </select>
     </div>
@@ -540,15 +533,8 @@ Array [
         className="transfer-method form-select"
         onChange={[Function]}
       >
-        <option
-          value="Email"
-        >
+        <option>
           Email
-        </option>
-        <option
-          value="Other"
-        >
-          Other
         </option>
       </select>
     </div>

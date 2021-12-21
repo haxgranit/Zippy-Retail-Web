@@ -1,4 +1,4 @@
-import { Dispatch, SetStateAction, useState } from 'react';
+import { Dispatch, SetStateAction } from 'react';
 import {
   Row,
   Col,
@@ -34,10 +34,8 @@ const DetailsPage = ({
   selectedAccount,
   setSelectedAccount,
 }: DetailsPageProps): JSX.Element => {
-  const [contactId, setContactId] = useState(0);
   const handleContactChange = (evt: any) => {
     setContactToSend(Number(evt.target.value));
-    setContactId(Number(evt.target.value));
   };
   const handleAccountChange = (evt: any) => {
     setSelectedAccount(Number(evt.target.value));
@@ -92,7 +90,7 @@ const DetailsPage = ({
             ))}
           </Form.Select>
           <p>
-            { `Email: ${getEmail(contactId)}` }
+            { `Email: ${getEmail(selectedContact)}` }
           </p>
           <p>
             <a href="/" className="text-black">

@@ -1,8 +1,9 @@
+import React from 'react';
 import Enzyme, { shallow } from 'enzyme';
 import Adapter from '@wojtekmaj/enzyme-adapter-react-17';
 
+import { Button, Form, FormControl } from 'react-bootstrap';
 import DetailsPage from './DetailsPage';
-import { Form, FormControl } from 'react-bootstrap';
 
 const initMainInfo = {
   amount: 0,
@@ -10,7 +11,7 @@ const initMainInfo = {
   source: { email: '', name: '' },
   fromAccount: '',
   message: '',
-  transferMethod: '',
+  transferMethod: 'Email',
 };
 // Configure enzyme for react 17
 Enzyme.configure({ adapter: new Adapter() });
@@ -33,7 +34,7 @@ describe('DetailsPage Component', () => {
             id: 1,
             firstName: 'Test',
             lastName: 'Test',
-            email: 'email',
+            email: 'email@zippy.cash',
             phone: 'phone',
           },
         ]}
@@ -41,7 +42,7 @@ describe('DetailsPage Component', () => {
           {
             id: 0,
             name: 'test',
-            email: 'eamil',
+            email: 'email@zippy.cash',
           },
         ]}
         selectedContact={1}
@@ -69,7 +70,7 @@ describe('DetailsPage Component', () => {
             id: 1,
             firstName: 'Test',
             lastName: 'Test',
-            email: 'email',
+            email: 'email@zippy.cash',
             phone: 'phone',
           },
         ]}
@@ -77,7 +78,7 @@ describe('DetailsPage Component', () => {
           {
             id: 0,
             name: 'test',
-            email: 'eamil',
+            email: 'email@zippy.cash',
           },
         ]}
         selectedContact={1}
@@ -110,7 +111,7 @@ describe('DetailsPage Component', () => {
             id: 1,
             firstName: 'Test',
             lastName: 'Test',
-            email: 'email',
+            email: 'email@zippy.cash',
             phone: 'phone',
           },
         ]}
@@ -118,7 +119,7 @@ describe('DetailsPage Component', () => {
           {
             id: 0,
             name: 'test',
-            email: 'eamil',
+            email: 'email@zippy.cash',
           },
         ]}
         selectedContact={1}
@@ -147,7 +148,7 @@ describe('DetailsPage Component', () => {
             id: 1,
             firstName: 'Test',
             lastName: 'Test',
-            email: 'email',
+            email: 'email@zippy.cash',
             phone: 'phone',
           },
         ]}
@@ -155,7 +156,7 @@ describe('DetailsPage Component', () => {
           {
             id: 0,
             name: 'test',
-            email: 'eamil',
+            email: 'email@zippy.cash',
           },
         ]}
         selectedContact={1}
@@ -174,7 +175,6 @@ describe('DetailsPage Component', () => {
       .simulate('change', { target: { value: 'Other' } });
 
     expect(setMainInfo).toBeCalledTimes(3);
-
   });
 
   it('change FormControl to call setContactToSend', () => {
@@ -193,7 +193,7 @@ describe('DetailsPage Component', () => {
             id: 1,
             firstName: 'Test',
             lastName: 'Test',
-            email: 'email',
+            email: 'email@zippy.cash',
             phone: 'phone',
           },
         ]}
@@ -201,7 +201,7 @@ describe('DetailsPage Component', () => {
           {
             id: 0,
             name: 'test',
-            email: 'eamil',
+            email: 'email@zippy.cash',
           },
         ]}
         selectedContact={1}
@@ -212,5 +212,143 @@ describe('DetailsPage Component', () => {
       .simulate('change', { target: { value: 'Text Message' } });
     expect(setContactToSend).toBeCalledTimes(1);
     wrapper.find('Button').at(1).simulate('click');
+  });
+  it('next button click should not affect ammount', () => {
+    const setContactToSend = jest.fn();
+    const wrapper = shallow(
+      <DetailsPage
+        setCurrentStep={jest.fn()}
+        setPageIndex={jest.fn()}
+        setMainInfo={jest.fn()}
+        mainInfo={{ ...initMainInfo, amount: 3000 }}
+        setContactToSend={setContactToSend}
+        setSelectedAccount={jest.fn()}
+        selectedAccount={0}
+        contacts={[
+          {
+            id: 1,
+            firstName: 'Test',
+            lastName: 'Test',
+            email: 'email@zippy.cash',
+            phone: 'phone',
+          },
+        ]}
+        accounts={[
+          {
+            id: 0,
+            name: 'test',
+            email: 'email@zippy.cash',
+          },
+        ]}
+        selectedContact={1}
+      />,
+    );
+    expect(wrapper.find(FormControl).at(0).prop('value')).toEqual(3000);
+
+    wrapper.find(Button).at(1).simulate('click');
+
+    wrapper.update();
+
+    expect(wrapper.find(FormControl).at(0).prop('value')).toEqual(3000);
+  });
+  it('next button click should not affect transfer method', () => {
+    const setContactToSend = jest.fn();
+    const wrapper = shallow(
+      <DetailsPage
+        setCurrentStep={jest.fn()}
+        setPageIndex={jest.fn()}
+        setMainInfo={jest.fn()}
+        mainInfo={{ ...initMainInfo, amount: 3000 }}
+        setContactToSend={setContactToSend}
+        setSelectedAccount={jest.fn()}
+        selectedAccount={0}
+        contacts={[
+          {
+            id: 1,
+            firstName: 'Test',
+            lastName: 'Test',
+            email: 'email@zippy.cash',
+            phone: 'phone',
+          },
+        ]}
+        accounts={[
+          {
+            id: 0,
+            name: 'test',
+            email: 'email@zippy.cash',
+          },
+        ]}
+        selectedContact={1}
+      />,
+    );
+    expect(wrapper.find('.transfer-method').text()).toEqual('Email');
+
+    wrapper.find(Button).at(1).simulate('click');
+
+    wrapper.update();
+
+    expect(wrapper.find('.transfer-method').text()).toEqual('Email');
+  });
+  it('getEmail without contacts should render no email', () => {
+    const setContactToSend = jest.fn();
+    const setContactId = jest.fn();
+    React.useState = jest.fn().mockImplementationOnce(() => [0, setContactId]);
+
+    const wrapper = shallow(
+      <DetailsPage
+        setCurrentStep={jest.fn()}
+        setPageIndex={jest.fn()}
+        setMainInfo={jest.fn()}
+        mainInfo={{ ...initMainInfo, amount: 3000 }}
+        setContactToSend={setContactToSend}
+        setSelectedAccount={jest.fn()}
+        selectedAccount={1}
+        contacts={[]}
+        accounts={[
+          {
+            id: 0,
+            name: 'test',
+            email: 'email@zippy.cash',
+          },
+        ]}
+        selectedContact={1}
+      />,
+    );
+    expect(wrapper.find('p').at(0).text()).toEqual('Email: No email');
+  });
+  it('getEmail with contacts should render an email', () => {
+    const setContactToSend = jest.fn();
+    const setContactId = jest.fn();
+    React.useState = jest.fn().mockImplementationOnce(() => [0, setContactId]);
+
+    const wrapper = shallow(
+      <DetailsPage
+        setCurrentStep={jest.fn()}
+        setPageIndex={jest.fn()}
+        setMainInfo={jest.fn()}
+        mainInfo={{ ...initMainInfo, amount: 3000 }}
+        setContactToSend={setContactToSend}
+        setSelectedAccount={jest.fn()}
+        selectedAccount={1}
+        contacts={[
+          {
+            id: 1,
+            firstName: 'Test',
+            lastName: 'Test',
+            email: 'email@zippy.cash',
+            phone: 'phone',
+          },
+        ]}
+        accounts={[
+          {
+            id: 0,
+            name: 'test',
+            email: 'email@zippy.cash',
+          },
+        ]}
+        selectedContact={1}
+      />,
+    );
+    expect(wrapper.find('p').at(0).text()).toEqual('Email: email@zippy.cash');
   });
 });
