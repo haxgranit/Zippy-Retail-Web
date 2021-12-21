@@ -321,8 +321,15 @@ exports[`Storyshots interac-etransfer/send-money/SendMoney API Error 1`] = `
             onChange={[Function]}
             value=""
           >
-            <option>
+            <option
+              value="Email"
+            >
               Email
+            </option>
+            <option
+              value="Other"
+            >
+              Other
             </option>
           </select>
         </div>
@@ -933,8 +940,15 @@ exports[`Storyshots interac-etransfer/send-money/SendMoney Default 1`] = `
             onChange={[Function]}
             value=""
           >
-            <option>
+            <option
+              value="Email"
+            >
               Email
+            </option>
+            <option
+              value="Other"
+            >
+              Other
             </option>
           </select>
         </div>

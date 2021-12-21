@@ -2,6 +2,7 @@ import Enzyme, { shallow } from 'enzyme';
 import Adapter from '@wojtekmaj/enzyme-adapter-react-17';
 
 import DetailsPage from './DetailsPage';
+import { Form, FormControl } from 'react-bootstrap';
 
 const initMainInfo = {
   amount: 0,
@@ -161,20 +162,19 @@ describe('DetailsPage Component', () => {
       />,
     );
     wrapper
-      .find('FormControl')
+      .find(FormControl)
+      .at(0)
+      .simulate('change', { target: { value: '3000' } });
+    wrapper
+      .find(Form.Control)
       .at(0)
       .simulate('change', { target: { value: 'Test Text' } });
     wrapper
-      .find('FormControl')
-      .at(1)
-      .simulate('change', { target: { value: 'Test Text' } });
-    wrapper
-      .find('.from-account-info')
-      .simulate('change', { target: { value: 'Test Text' } });
-    wrapper
       .find('.transfer-method')
-      .simulate('change', { target: { value: 'Text Message' } });
+      .simulate('change', { target: { value: 'Other' } });
+
     expect(setMainInfo).toBeCalledTimes(3);
+
   });
 
   it('change FormControl to call setContactToSend', () => {
