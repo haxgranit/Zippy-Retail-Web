@@ -49,6 +49,7 @@ exports[`Storyshots Header Default 1`] = `
             tabIndex={0}
           >
             <span
+              className="i18n-dropdown-title"
               style={
                 Object {
                   "color": "inherit",

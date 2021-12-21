@@ -1,22 +1,22 @@
-import Enzyme, { shallow } from 'enzyme';
-import Adapter from '@wojtekmaj/enzyme-adapter-react-17';
+import { render, fireEvent, screen } from './test-utils';
+import { waitFor } from '@testing-library/react';
 import Header from './Header';
-
-// Configure enzyme for react 17
-Enzyme.configure({ adapter: new Adapter() });
+import { act } from 'react-dom/test-utils';
 
 const mockLoginRedirect = jest.fn();
 const mockLogoutRedirect = jest.fn();
 const mockChangeLanguage = jest.fn();
-const mockI18nTranslate = jest.fn();
+const mockI18nTranslate = 'Test String';
 
-jest.mock('react-i18next', () => ({
+jest.mock("react-i18next", () => ({
+  initReactI18next: { type: "3rdParty", init: jest.fn() },
   useTranslation: () => ({
     i18n: {
       changeLanguage: () => mockChangeLanguage,
     },
     t: () => mockI18nTranslate,
   }),
+  Trans: ({ children }: { children: React.ReactNode }) => children,
 }));
 
 jest.mock('@azure/msal-react', () => ({
@@ -31,16 +31,20 @@ jest.mock('@azure/msal-react', () => ({
 }));
 
 describe('Header', () => {
-  it('change language on header ', () => {
-    const wrapper = shallow(<Header />);
-    wrapper.find('.nav-dropdown-item').at(0).simulate('click');
-    wrapper.find('.nav-dropdown-item').at(1).simulate('click');
-    wrapper.find('.nav-dropdown-item').at(2).simulate('click');
-    wrapper.find('.nav-dropdown-item').at(3).simulate('click');
-    wrapper.find('button').at(1).simulate('click');
+  test('change language on header ', async () => {
+    const { container } = render(<Header />);
+    fireEvent.click(container.querySelectorAll('button')[1]);
+    fireEvent.click(container.querySelectorAll('.i18n-dropdown-title')[0]);
+
+    await waitFor(() => screen.getByText('English (Canada)'));
+
+    fireEvent.click(container.querySelectorAll('.nav-dropdown-item')[0]);
+    fireEvent.click(container.querySelectorAll('.nav-dropdown-item')[1]);
+    fireEvent.click(container.querySelectorAll('.nav-dropdown-item')[2]);
+    fireEvent.click(container.querySelectorAll('.nav-dropdown-item')[3]);
   });
 
-  it('click login button on header', () => {
+  test('click login button on header', () => {
     jest.mock('@azure/msal-react', () => ({
       useIsAuthenticated: () => false,
       useMsal: () => ({
@@ -51,7 +55,7 @@ describe('Header', () => {
         inProgress: 'none',
       }),
     }));
-    const wrapper = shallow(<Header />);
-    wrapper.find('button').at(1).simulate('click');
+    const { container } = render(<Header />);
+    fireEvent.click(container.querySelectorAll('button')[1]);
   });
 });
