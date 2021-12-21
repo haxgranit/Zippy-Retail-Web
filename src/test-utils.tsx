@@ -1,7 +1,7 @@
 import { FC, ReactElement } from 'react';
-import './i18n/config';
 import { render, RenderOptions } from '@testing-library/react';
 import { BrowserRouter } from 'react-router-dom';
+import './i18n/config';
 
 const AllTheProviders: FC = ({ children }) => (
   <BrowserRouter>{children}</BrowserRouter>

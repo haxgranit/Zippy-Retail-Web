@@ -1,15 +1,15 @@
-import { render, fireEvent, screen } from './test-utils';
-import { waitFor } from '@testing-library/react';
+import {
+  render, fireEvent, screen, waitFor,
+} from './test-utils';
 import Header from './Header';
-import { act } from 'react-dom/test-utils';
 
 const mockLoginRedirect = jest.fn();
 const mockLogoutRedirect = jest.fn();
 const mockChangeLanguage = jest.fn();
 const mockI18nTranslate = 'Test String';
 
-jest.mock("react-i18next", () => ({
-  initReactI18next: { type: "3rdParty", init: jest.fn() },
+jest.mock('react-i18next', () => ({
+  initReactI18next: { type: '3rdParty', init: jest.fn() },
   useTranslation: () => ({
     i18n: {
       changeLanguage: () => mockChangeLanguage,
