@@ -3,9 +3,17 @@ import { useEffect, useState } from 'react';
 import {
   Button, Col, Form, Row,
 } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
+import styled from 'styled-components';
 import Api, { Account, Contact } from '../../../api';
 import { formatContactName } from '../../../Helpers';
 
+const StyledLink = styled(Link)`
+  color:black;
+  &:hover{
+    color:black;
+  }
+`;
 const Divider = () => <div className="border-top my-3" />;
 
 export default function RequestDetail({ setCurrentStep }: any) {
@@ -183,7 +191,7 @@ export default function RequestDetail({ setCurrentStep }: any) {
           {' '}
           e-Transfer contacts. If incorrect,
           {' '}
-          <u>edit your profile</u>
+          <StyledLink to="/interac-etransfer/edit-my-profile">edit your profile</StyledLink>
           .
         </Col>
       </Row>
