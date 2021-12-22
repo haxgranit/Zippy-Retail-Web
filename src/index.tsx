@@ -9,6 +9,7 @@ import {
 import { MsalProvider } from '@azure/msal-react';
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
 import './i18n/config';
 import './index.css';
@@ -16,6 +17,8 @@ import App from './App';
 import { msalConfig } from './authConfig';
 import * as serviceWorker from './serviceWorker';
 import Api from './api';
+import { store } from './app/store';
+import { login } from './features/user/userSlice';
 
 const msalInstance = new PublicClientApplication(msalConfig);
 const accounts = msalInstance.getAllAccounts();
@@ -30,7 +33,10 @@ msalInstance.addEventCallback((event: EventMessage) => {
     if (account) {
       const api = new Api(msalInstance, account);
       api.putUser()
-        .then((user) => console.log('user', user))
+        .then((user) => {
+          console.log('user', user);
+          store.dispatch(login(user));
+        })
         .catch((error) => console.log('error', error));
       msalInstance.setActiveAccount(account);
     }
@@ -39,11 +45,13 @@ msalInstance.addEventCallback((event: EventMessage) => {
 
 ReactDOM.render(
   <React.StrictMode>
-    <MsalProvider instance={msalInstance}>
-      <BrowserRouter>
-        <App />
-      </BrowserRouter>
-    </MsalProvider>
+    <Provider store={store}>
+      <MsalProvider instance={msalInstance}>
+        <BrowserRouter>
+          <App />
+        </BrowserRouter>
+      </MsalProvider>
+    </Provider>
   </React.StrictMode>,
   document.getElementById('root'),
 );
