@@ -74,6 +74,7 @@ import RequestReminder from './interac-etransfer/status/request-reminder/Request
 import i18n from './i18n/config';
 import RequestCanceled from './interac-etransfer/status/request-canceled/RequestCanceled';
 import InteracETransferDetails from './interac-etransfer/status/interac-e-transfer-details/InteracETransferDetails';
+import Status from './interac-etransfer/status/Status';
 
 export default function App() {
   const { search } = useLocation();
@@ -132,8 +133,9 @@ export default function App() {
           </Route>
           <Route path="interac-etransfer">
             <Route path="/interac-etransfer" element={<Navigate to="/interac-etransfer/status" />} />
-            <Route path="status" element={<InteracETransferDetails />}>
-              <Route path="/interac-etransfer/status/:tabId" element={<InteracETransferDetails />} />
+            <Route path="/interac-etransfer/status" element={<Status />}>
+              <Route path="/interac-etransfer/status" element={<Navigate to="/interac-etransfer/status/requested" />} />
+              <Route path=":tabId" element={<InteracETransferDetails />} />
               <Route path="request-sent" element={<RequestSent />} />
               <Route path="request-reminder" element={<RequestReminder />} />
               <Route path="request-canceled" element={<RequestCanceled />} />

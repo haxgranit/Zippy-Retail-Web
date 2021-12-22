@@ -154,7 +154,7 @@ const RequestedTabContent = ({ navigate }: any) => (
             <Button
               variant="link"
               className="text-black"
-              onClick={() => navigate('request-sent')}
+              onClick={() => navigate('/interac-etransfer/status/request-sent')}
             >
               Requested
             </Button>
