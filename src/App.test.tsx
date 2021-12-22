@@ -4,6 +4,8 @@ import { BrowserRouter } from 'react-router-dom';
 // eslint-disable-next-line import/no-extraneous-dependencies
 import App from './App';
 import i18n from './i18n/config';
+import { Provider } from 'react-redux';
+import { store } from './app/store';
 
 // Configure enzyme for react 17
 Enzyme.configure({ adapter: new Adapter() });
@@ -15,9 +17,11 @@ describe('App', () => {
     jest.spyOn(i18n, 'changeLanguage');
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     mount(
-      <BrowserRouter>
-        <App />
-      </BrowserRouter>,
+      <Provider store={store}>
+        <BrowserRouter>
+          <App />
+        </BrowserRouter>
+      </Provider>
     );
     expect(i18n.changeLanguage).toBeCalled();
   });
