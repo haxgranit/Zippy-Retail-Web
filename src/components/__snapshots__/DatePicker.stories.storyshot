@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots interac-etransfer/request-money/components/DatePicker Default 1`] = `
+exports[`Storyshots components/DatePicker Default 1`] = `
 <div
   className="col-9"
 >
@@ -47,6 +47,11 @@ exports[`Storyshots interac-etransfer/request-money/components/DatePicker Defaul
           value={7}
         >
           7
+        </option>
+        <option
+          value={8}
+        >
+          8
         </option>
         <option
           value={9}
@@ -112,6 +117,11 @@ exports[`Storyshots interac-etransfer/request-money/components/DatePicker Defaul
           7
         </option>
         <option
+          value={8}
+        >
+          8
+        </option>
+        <option
           value={9}
         >
           9
@@ -130,6 +140,101 @@ exports[`Storyshots interac-etransfer/request-money/components/DatePicker Defaul
           value={12}
         >
           12
+        </option>
+        <option
+          value={13}
+        >
+          13
+        </option>
+        <option
+          value={14}
+        >
+          14
+        </option>
+        <option
+          value={15}
+        >
+          15
+        </option>
+        <option
+          value={16}
+        >
+          16
+        </option>
+        <option
+          value={17}
+        >
+          17
+        </option>
+        <option
+          value={18}
+        >
+          18
+        </option>
+        <option
+          value={19}
+        >
+          19
+        </option>
+        <option
+          value={20}
+        >
+          20
+        </option>
+        <option
+          value={21}
+        >
+          21
+        </option>
+        <option
+          value={22}
+        >
+          22
+        </option>
+        <option
+          value={23}
+        >
+          23
+        </option>
+        <option
+          value={24}
+        >
+          24
+        </option>
+        <option
+          value={25}
+        >
+          25
+        </option>
+        <option
+          value={26}
+        >
+          26
+        </option>
+        <option
+          value={27}
+        >
+          27
+        </option>
+        <option
+          value={28}
+        >
+          28
+        </option>
+        <option
+          value={29}
+        >
+          29
+        </option>
+        <option
+          value={30}
+        >
+          30
+        </option>
+        <option
+          value={31}
+        >
+          31
         </option>
       </select>
     </div>
@@ -149,39 +254,27 @@ exports[`Storyshots interac-etransfer/request-money/components/DatePicker Defaul
         >
           2022
         </option>
+        <option
+          value={2023}
+        >
+          2023
+        </option>
+        <option
+          value={2024}
+        >
+          2024
+        </option>
+        <option
+          value={2025}
+        >
+          2025
+        </option>
+        <option
+          value={2026}
+        >
+          2026
+        </option>
       </select>
-    </div>
-  </div>
-</div>
-`;
-
-exports[`Storyshots interac-etransfer/request-money/components/DatePicker Empty 1`] = `
-<div
-  className="col-9"
->
-  <div
-    className="row"
-  >
-    <div
-      className="col-auto"
-    >
-      <select
-        className="form-select"
-      />
-    </div>
-    <div
-      className="col-auto"
-    >
-      <select
-        className="form-select"
-      />
-    </div>
-    <div
-      className="col-auto"
-    >
-      <select
-        className="form-select"
-      />
     </div>
   </div>
 </div>

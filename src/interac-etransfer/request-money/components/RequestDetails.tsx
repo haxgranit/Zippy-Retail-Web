@@ -1,7 +1,6 @@
 /* eslint-disable no-console */
 
 import { useMsal } from '@azure/msal-react';
-import { DateTime } from 'luxon';
 import { useEffect, useState } from 'react';
 import {
   Button, Col, Form, Row,
@@ -34,23 +33,6 @@ export default function RequestDetail({ setCurrentStep }: any) {
       })
       .catch((error) => console.log('error', error));
   }, []);
-
-  const years = (): number[] => {
-    const currentYear = DateTime.now().setZone('America/New_York').year;
-    const yrs = [];
-    for (let i = currentYear; i <= currentYear + 5; i += 1) yrs.push(i);
-    return yrs;
-  };
-  const months = (): number[] => {
-    const mnths = [];
-    for (let i = 1; i <= 12; i += 1) mnths.push(i);
-    return mnths;
-  };
-  const days = (): number[] => {
-    const dys = [];
-    for (let i = 1; i <= 31; i += 1) dys.push(i);
-    return dys;
-  };
 
   return (
     <>
@@ -162,7 +144,7 @@ export default function RequestDetail({ setCurrentStep }: any) {
       <Divider />
       <Row className="align-items-center">
         <Col xs={3}>Invoice Due Date (Optional):</Col>
-        <DatePicker months={months()} days={days()} years={years()} />
+        <DatePicker />
       </Row>
       <Divider />
       <Row className="align-items-center">
