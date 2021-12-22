@@ -29,6 +29,7 @@ describe('SendMoneyVerificationModal Component', () => {
     expect(labels.at(6).text()).toEqual('destination');
     expect(labels.at(7).text()).toEqual('destination@zippy.cash');
     expect(labels.at(9).text()).toEqual('$10,000.00');
+    expect(labels.at(11).text()).toEqual('Personal (8000 001 000000000) $1,747.46');
     expect(isValidEmail(labels.at(4).text())).toBeTruthy();
     expect(isValidEmail(labels.at(7).text())).toBeTruthy();
   });
