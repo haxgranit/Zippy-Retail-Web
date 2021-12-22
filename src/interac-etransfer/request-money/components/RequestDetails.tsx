@@ -6,7 +6,7 @@ import {
   Button, Col, Form, Row,
 } from 'react-bootstrap';
 import Api, { Account, Contact } from '../../../api';
-import DatePicker from '../../../components/DatePicker';
+import DateDropdowns from '../../../components/DateDropdowns';
 import { formatContactName } from '../../../Helpers';
 
 const Divider = () => <div className="border-top my-3" />;
@@ -144,7 +144,7 @@ export default function RequestDetail({ setCurrentStep }: any) {
       <Divider />
       <Row className="align-items-center">
         <Col xs={3}>Invoice Due Date (Optional):</Col>
-        <DatePicker />
+        <DateDropdowns />
       </Row>
       <Divider />
       <Row className="align-items-center">

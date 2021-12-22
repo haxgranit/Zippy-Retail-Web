@@ -1,22 +1,15 @@
 import { DateTime } from 'luxon';
 import { Col, Form, Row } from 'react-bootstrap';
 
+const range = (start: number, length: number) => Array.from({ length }, (v, key) => start + key);
+
 const years = (): number[] => {
-  const currentYear = DateTime.now().setZone('America/New_York').year;
-  const yrs = [];
-  for (let i = currentYear; i <= currentYear + 5; i += 1) yrs.push(i);
-  return yrs;
+  const currentYear = DateTime.now().year;
+  return range(currentYear, 5);
 };
-const months = (): number[] => {
-  const mnths = [];
-  for (let i = 1; i <= 12; i += 1) mnths.push(i);
-  return mnths;
-};
-const days = (): number[] => {
-  const dys = [];
-  for (let i = 1; i <= 31; i += 1) dys.push(i);
-  return dys;
-};
+const months = (): number[] => range(1, 12);
+
+const days = (): number[] => range(1, 31);
 
 export default function DatePicker() {
   return (

@@ -517,11 +517,6 @@ exports[`Storyshots interac-etransfer/request-money/RequestMoney Default 1`] = `
                 >
                   2025
                 </option>
-                <option
-                  value={2026}
-                >
-                  2026
-                </option>
               </select>
             </div>
           </div>
