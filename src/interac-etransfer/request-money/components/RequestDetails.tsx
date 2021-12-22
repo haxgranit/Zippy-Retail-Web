@@ -164,21 +164,22 @@ export default function RequestDetail({ setCurrentStep }: any) {
             <Col xs="auto">
               <Form.Select>
                 {
-                  months().map((month:number) => (<option value={month}>{month}</option>))
+                  months()
+                    .map((month:number) => (<option key={month} value={month}>{month}</option>))
                 }
               </Form.Select>
             </Col>
             <Col xs="auto">
               <Form.Select>
                 {
-                  days().map((day:number) => (<option value={day}>{day}</option>))
+                  days().map((day:number) => (<option key={day} value={day}>{day}</option>))
                 }
               </Form.Select>
             </Col>
             <Col xs="auto">
               <Form.Select>
                 {
-                  years().map((year:number) => (<option value={year}>{year}</option>))
+                  years().map((year:number) => (<option key={year} value={year}>{year}</option>))
                 }
               </Form.Select>
             </Col>
