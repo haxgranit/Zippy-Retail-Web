@@ -1,4 +1,5 @@
 import { useMsal } from '@azure/msal-react';
+import { DateTime } from 'luxon';
 import { useEffect, useState } from 'react';
 import {
   Button, Col, Form, Row,
@@ -30,6 +31,24 @@ export default function RequestDetail({ setCurrentStep }: any) {
       })
       .catch((error) => console.log('error', error));
   }, []);
+
+  const years = (): number[] => {
+    const currentYear = DateTime.now().setZone('America/New_York').year;
+    const yrs = [];
+    for (let i = currentYear; i <= currentYear + 5; i += 1) yrs.push(i);
+    return yrs;
+  };
+  const months = (): number[] => {
+    const mnths = [];
+    for (let i = 1; i <= 12; i += 1) mnths.push(i);
+    return mnths;
+  };
+  const days = (): number[] => {
+    const dys = [];
+    for (let i = 1; i <= 31; i += 1) dys.push(i);
+    return dys;
+  };
+
   return (
     <>
       <Row>
@@ -144,17 +163,23 @@ export default function RequestDetail({ setCurrentStep }: any) {
           <Row>
             <Col xs="auto">
               <Form.Select>
-                <option>Month</option>
+                {
+                  months().map((month:number) => (<option value={month}>{month}</option>))
+                }
               </Form.Select>
             </Col>
             <Col xs="auto">
               <Form.Select>
-                <option>Day</option>
+                {
+                  days().map((day:number) => (<option value={day}>{day}</option>))
+                }
               </Form.Select>
             </Col>
             <Col xs="auto">
               <Form.Select>
-                <option>Year</option>
+                {
+                  years().map((year:number) => (<option value={year}>{year}</option>))
+                }
               </Form.Select>
             </Col>
           </Row>
