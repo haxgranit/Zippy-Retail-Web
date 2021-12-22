@@ -17,8 +17,16 @@ export type Contact = {
 };
 
 export type User = {
-  givenName: string;
-  surname: number;
+  email: string;
+  firstName: string;
+  lastName: string;
+};
+
+export type Transaction = {
+  id: number;
+  contact: Contact;
+  amount: number;
+  date: string;
 };
 
 export type InteracEtransferTransaction = {
@@ -61,6 +69,10 @@ export default class Api {
 
   public putUser() {
     return this.fetch<User>('put', 'User');
+  }
+
+  public getInteracEtransferTransactions() {
+    return this.fetch<Transaction[]>('get', 'InteracEtransfer/Transactions');
   }
 
   public postInteracEtransferTransaction(data: InteracEtransferTransaction) {

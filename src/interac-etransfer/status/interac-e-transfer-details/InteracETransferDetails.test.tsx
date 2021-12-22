@@ -1,4 +1,5 @@
 import Enzyme, { shallow } from 'enzyme';
+import { act } from 'react-dom/test-utils';
 import { BrowserRouter } from 'react-router-dom';
 import Adapter from '@wojtekmaj/enzyme-adapter-react-17';
 
@@ -23,23 +24,55 @@ describe('InteracETransferDetails Component', () => {
         <InteracETransferDetails />
       </BrowserRouter>,
     );
-    const InteracETransferDetailsComponent = wrapper.find('InteracETransferDetails');
+    const InteracETransferDetailsComponent = wrapper.find(
+      'InteracETransferDetails',
+    );
     expect(InteracETransferDetailsComponent).toHaveLength(1);
   });
 
   it('should click buttons on InteracETransferDetails', () => {
-    const wrapper = shallow(
-      <BrowserRouter>
-        <InteracETransferDetails />
-      </BrowserRouter>,
-    );
+    let wrapper: any;
+    act(() => {
+      wrapper = shallow(
+        <BrowserRouter>
+          <InteracETransferDetails />
+        </BrowserRouter>,
+      );
+    });
     const mEvent = { preventDefault: jest.fn() };
-    const Buttons = wrapper.childAt(0).dive().find('Button');
-    Buttons.at(0).simulate('click', mEvent);
-    Buttons.at(1).simulate('click', mEvent);
-    Buttons.at(2).simulate('click', mEvent);
-    Buttons.at(3).simulate('click', mEvent);
-    Buttons.at(4).simulate('click', mEvent);
-    expect(mockedUsedNavigate).toBeCalledTimes(5);
+    wrapper
+      .childAt(0)
+      .dive()
+      .find('SentTabContent')
+      .dive()
+      .find('Button')
+      .at(0)
+      .simulate('click', mEvent);
+    wrapper
+      .childAt(0)
+      .dive()
+      .find('ReceivedTabContent')
+      .dive()
+      .find('Button')
+      .at(0)
+      .simulate('click', mEvent);
+
+    wrapper
+      .childAt(0)
+      .dive()
+      .find('RequestedTabContent')
+      .dive()
+      .find('Button')
+      .at(0)
+      .simulate('click', mEvent);
+    wrapper
+      .childAt(0)
+      .dive()
+      .find('RequestedTabContent')
+      .dive()
+      .find('Button')
+      .at(1)
+      .simulate('click', mEvent);
+    expect(mockedUsedNavigate).toBeCalledTimes(4);
   });
 });

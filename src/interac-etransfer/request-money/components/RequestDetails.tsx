@@ -1,3 +1,5 @@
+/* eslint-disable no-console */
+
 import { useMsal } from '@azure/msal-react';
 import { useEffect, useState } from 'react';
 import {

@@ -4,10 +4,13 @@ import {
   Form,
   Row,
 } from 'react-bootstrap';
+import { User } from '../../api';
+import { useAppSelector } from '../../app/hooks';
+import { selectUser } from '../../features/user/userSlice';
 
 const Divider = () => <div className="border-top my-3" />;
 
-const LeftCol = () => (
+const LeftCol = ({ user }: { user: User }) => (
   <Col xs={9}>
     <Row>
       <Col>
@@ -29,20 +32,24 @@ const LeftCol = () => (
     </Row>
     <Row className="align-items-center mt-4">
       <Col xs={3}>Legal Name:</Col>
-      <Col xs={6}>DUANE TOUGH</Col>
+      <Col xs={6}>
+        {user?.firstName}
+        {' '}
+        {user?.lastName}
+      </Col>
     </Row>
     <Divider />
     <Row className="align-items-center">
       <Col xs={3}>Email Nickname:</Col>
       <Col xs={6}>
-        <Form.Control type="text" value="DUANE TOUGH" />
+        <Form.Control type="text" value={`${user?.firstName} ${user?.lastName}`} />
       </Col>
     </Row>
     <Divider />
     <Row className="align-items-center">
       <Col xs={3}>Email Address:</Col>
       <Col xs={6}>
-        <Form.Control type="text" value="dtough@hotmail.com" />
+        <Form.Control type="text" value={user?.email} />
       </Col>
     </Row>
     <Row className="mt-2">
@@ -107,18 +114,21 @@ const RightCol = () => (
   </Col>
 );
 
-export default function EditMyProfile() {
-  return (
-    <div>
-      <Row>
-        <Col>
-          <h2>EDIT MY PROFILE</h2>
-        </Col>
-      </Row>
-      <Row>
-        <LeftCol />
-        <RightCol />
-      </Row>
-    </div>
-  );
-}
+export const EditMyProfilePure = ({ user }: { user: User }) => (
+  <div>
+    <Row>
+      <Col>
+        <h2>EDIT MY PROFILE</h2>
+      </Col>
+    </Row>
+    <Row>
+      <LeftCol user={user} />
+      <RightCol />
+    </Row>
+  </div>
+);
+
+export const EditMyProfile = () => {
+  const { user } = useAppSelector(selectUser);
+  return (user && <EditMyProfilePure user={user} />) || null;
+};
