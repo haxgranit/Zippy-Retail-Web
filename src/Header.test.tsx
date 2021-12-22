@@ -17,12 +17,12 @@ const component = (
   <BrowserRouter>
     <HeaderPure
       isAuthenticated
-      canLogin={false}
+      isInProgress={false}
       handleLogin={() => {}}
       handleLogout={() => {}}
     />
   </BrowserRouter>
-)
+);
 
 test('can change language to English (Canada)', async () => {
   render(component);

@@ -1,10 +1,10 @@
 import Enzyme, { mount } from 'enzyme';
 import Adapter from '@wojtekmaj/enzyme-adapter-react-17';
+import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
-// eslint-disable-next-line import/no-extraneous-dependencies
 import App from './App';
 import i18n from './i18n/config';
-import { Provider } from 'react-redux';
+
 import { store } from './app/store';
 
 // Configure enzyme for react 17
@@ -21,7 +21,7 @@ describe('App', () => {
         <BrowserRouter>
           <App />
         </BrowserRouter>
-      </Provider>
+      </Provider>,
     );
     expect(i18n.changeLanguage).toBeCalled();
   });
