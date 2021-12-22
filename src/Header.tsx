@@ -3,12 +3,22 @@ import { useIsAuthenticated, useMsal } from '@azure/msal-react';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
+import { useAppDispatch } from './app/hooks';
 import ZippyCash_Logo from './assets/img/general/ZippyCash_Logo.png';
 import { loginRequest } from './authConfig';
+import { logout } from './features/user/userSlice';
 
-export default function Header() {
-  const isAuthenticated = useIsAuthenticated();
-  const { inProgress, instance } = useMsal();
+export const HeaderPure = ({
+  isAuthenticated,
+  isInProgress,
+  handleLogin,
+  handleLogout,
+}: {
+  isAuthenticated: boolean,
+  isInProgress: boolean,
+  handleLogin: () => void,
+  handleLogout: () => void
+}) => {
   const { i18n, t } = useTranslation();
   return (
     <nav className="navbar navbar-expand-lg navbar-light">
@@ -40,20 +50,18 @@ export default function Header() {
                 <button
                   type="button"
                   className="btn btn-link nav-link fw-bold shadow-none"
-                  onClick={() => instance.logoutRedirect()}
+                  onClick={() => handleLogout()}
                 >
                   {t('header.logout')}
                 </button>
               </li>
             )) || (
-              inProgress !== InteractionStatus.Startup
-              && inProgress !== InteractionStatus.HandleRedirect
-              && (
+              !isInProgress && (
                 <li className="nav-item">
                   <button
                     type="button"
                     className="btn btn-link nav-link fw-bold shadow-none"
-                    onClick={() => instance.loginRedirect(loginRequest)}
+                    onClick={() => handleLogin()}
                   >
                     {t('header.login')}
                   </button>
@@ -78,4 +86,31 @@ export default function Header() {
       </div>
     </nav>
   );
-}
+};
+
+export const Header = () => {
+  const isAuthenticated = useIsAuthenticated();
+  const { inProgress, instance } = useMsal();
+  const dispatch = useAppDispatch();
+
+  const isInProgress = inProgress === InteractionStatus.Startup
+    || inProgress === InteractionStatus.HandleRedirect;
+
+  const handleLogin = () => {
+    instance.loginRedirect(loginRequest);
+  };
+
+  const handleLogout = () => {
+    dispatch(logout());
+    instance.logoutRedirect();
+  };
+
+  return (
+    <HeaderPure
+      isAuthenticated={isAuthenticated}
+      isInProgress={isInProgress}
+      handleLogin={handleLogin}
+      handleLogout={handleLogout}
+    />
+  );
+};

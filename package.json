@@ -7,7 +7,7 @@
     "@azure/msal-react": "^1.1.1",
     "@reduxjs/toolkit": "^1.6.2",
     "@testing-library/jest-dom": "^4.2.4",
-    "@testing-library/react": "^9.5.0",
+    "@testing-library/react": "^12.1.2",
     "@testing-library/user-event": "^7.2.1",
     "@types/styled-components": "^5.1.15",
     "@wojtekmaj/enzyme-adapter-react-17": "^0.6.5",

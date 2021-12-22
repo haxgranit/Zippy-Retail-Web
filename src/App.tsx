@@ -20,11 +20,11 @@ import CreateOrEditAccountNickname from './customer-services/create-or-edit-acco
 import ChangeYourAddress from './customer-services/change-your-address/ChangeYourAddress';
 import CustomerServices from './customer-services/customer-services/CustomerServices';
 import Footer from './footer/Footer';
-import Header from './Header';
+import { Header } from './Header';
 import AutodepositSettings from './interac-etransfer/autodeposit-settings/AutodepositSettings';
 import ContactList from './interac-etransfer/contact-list/ContactList';
 import EditContact from './interac-etransfer/contact-list/edit/EditContact';
-import EditMyProfile from './interac-etransfer/edit-my-profile/EditMyProfile';
+import { EditMyProfile } from './interac-etransfer/edit-my-profile/EditMyProfile';
 import LearnMore from './interac-etransfer/learn-more/LearnMore';
 import ReceiveMoney from './interac-etransfer/receive-money/ReceiveMoney';
 import RequestMoney from './interac-etransfer/request-money/RequestMoney';
@@ -74,6 +74,7 @@ import RequestReminder from './interac-etransfer/status/request-reminder/Request
 import i18n from './i18n/config';
 import RequestCanceled from './interac-etransfer/status/request-canceled/RequestCanceled';
 import InteracETransferDetails from './interac-etransfer/status/interac-e-transfer-details/InteracETransferDetails';
+import Status from './interac-etransfer/status/Status';
 
 export default function App() {
   const { search } = useLocation();
@@ -132,8 +133,9 @@ export default function App() {
           </Route>
           <Route path="interac-etransfer">
             <Route path="/interac-etransfer" element={<Navigate to="/interac-etransfer/status" />} />
-            <Route path="status" element={<InteracETransferDetails />}>
-              <Route path="/interac-etransfer/status/:tabId" element={<InteracETransferDetails />} />
+            <Route path="/interac-etransfer/status" element={<Status />}>
+              <Route path="/interac-etransfer/status" element={<Navigate to="/interac-etransfer/status/requested" />} />
+              <Route path=":tabId" element={<InteracETransferDetails />} />
               <Route path="request-sent" element={<RequestSent />} />
               <Route path="request-reminder" element={<RequestReminder />} />
               <Route path="request-canceled" element={<RequestCanceled />} />

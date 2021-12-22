@@ -15,8 +15,9 @@ export type Contact = {
 };
 
 export type User = {
-  givenName: string;
-  surname: number;
+  email: string;
+  firstName: string;
+  lastName: string;
 };
 
 export type Transaction = {
