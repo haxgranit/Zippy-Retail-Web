@@ -9,7 +9,7 @@ import {
 import { PageIndexes } from '../SendMoney';
 
 const SecurityQuestionPage = ({
-  setPageIndex,
+  navigateSteps,
   setCurrentStep,
   showModal,
   mainInfo,
@@ -119,7 +119,7 @@ const SecurityQuestionPage = ({
         <Button
           variant="light"
           className="d-flex"
-          onClick={() => setPageIndex(PageIndexes.SecurityRecipientPageIndex)}
+          onClick={() => navigateSteps(PageIndexes.SecurityRecipientPageIndex)}
         >
           <div
             style={{
@@ -141,7 +141,7 @@ const SecurityQuestionPage = ({
           className="d-flex"
           style={{ marginRight: 10 }}
           onClick={() => {
-            setPageIndex(PageIndexes.DetailsPageIndex);
+            navigateSteps(PageIndexes.DetailsPageIndex);
             setCurrentStep(1);
           }}
         >

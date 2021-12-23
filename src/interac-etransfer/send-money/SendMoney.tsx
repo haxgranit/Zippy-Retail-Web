@@ -56,6 +56,12 @@ const StepIndexes: any = {
   'transfer-sent-complete': 3,
 };
 
+const MainSteps: any = [
+  'details',
+  'security-recipient',
+  'transfer-sent',
+];
+
 export default function SendMoney() {
   const navigate = useNavigate();
   const { stepId } = useParams();
@@ -209,7 +215,9 @@ export default function SendMoney() {
                 steps={3}
                 currentStep={currentStep}
                 setCurrentStep={setCurrentStep}
-                setPageIndex={navigateSteps}
+                navigateSteps={(stepIndex: number) => {
+                  navigateSteps(MainSteps[stepIndex]);
+                }}
               />
             </Col>
           </Row>
@@ -230,7 +238,6 @@ export default function SendMoney() {
           {pageIndex === PageIndexes.SecurityRecipientPageIndex && (
             <SecurityRecipientPage
               navigateSteps={navigateSteps}
-              setPageIndex={setPageIndex}
               setCurrentStep={setCurrentStep}
               showModal={setShowVerifyModal}
             />
@@ -238,7 +245,6 @@ export default function SendMoney() {
           {pageIndex === PageIndexes.SecurityQuestionPageIndex && (
             <SecurityQuestionPage
               navigateSteps={navigateSteps}
-              setPageIndex={setPageIndex}
               setCurrentStep={setCurrentStep}
               showModal={setShowVerifyModal}
               mainInfo={mainInfo}
@@ -248,7 +254,6 @@ export default function SendMoney() {
           {pageIndex === PageIndexes.TransferSentPageIndex && (
             <TransferSentPage
               navigateSteps={navigateSteps}
-              setPageIndex={setPageIndex}
               setCurrentStep={setCurrentStep}
               mainInfo={mainInfo}
               setMainInfo={setMainInfo}
@@ -258,7 +263,6 @@ export default function SendMoney() {
           {pageIndex === PageIndexes.TransferSentCompletedIndex && (
             <TransferSentPage
               navigateSteps={navigateSteps}
-              setPageIndex={setPageIndex}
               setCurrentStep={setCurrentStep}
               mainInfo={mainInfo}
               setMainInfo={setMainInfo}

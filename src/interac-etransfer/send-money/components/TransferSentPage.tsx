@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import { PageIndexes } from '../SendMoney';
 
 const TransferSentPage = ({
-  setPageIndex,
+  navigateSteps,
   setCurrentStep,
   isCompleted,
 }: any): JSX.Element => {
@@ -141,7 +141,7 @@ const TransferSentPage = ({
             variant="danger"
             className="d-flex"
             onClick={() => {
-              setPageIndex(PageIndexes.DetailsPageIndex);
+              navigateSteps(PageIndexes.DetailsPageIndex);
               setCurrentStep(1);
             }}
           >

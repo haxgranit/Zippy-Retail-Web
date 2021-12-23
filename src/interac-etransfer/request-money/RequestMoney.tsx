@@ -10,7 +10,7 @@ import RequestSent from './components/RequestSent';
 
 const Divider = () => <div className="border-top my-3" />;
 
-const LeftCol = ({ currentStep, setCurrentStep, setPageIndex }: any) => (
+const LeftCol = ({ currentStep, setCurrentStep }: any) => (
   <Col xs={9}>
     <Row>
       <Col>
@@ -18,7 +18,7 @@ const LeftCol = ({ currentStep, setCurrentStep, setPageIndex }: any) => (
           steps={2}
           currentStep={currentStep}
           setCurrentStep={setCurrentStep}
-          setPageIndex={setPageIndex}
+          navigateSteps={() => {}}
         />
       </Col>
     </Row>
