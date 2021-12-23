@@ -1,9 +1,12 @@
+/* eslint-disable no-console */
+
 import { useMsal } from '@azure/msal-react';
 import { useEffect, useState } from 'react';
 import {
   Button, Col, Form, Row,
 } from 'react-bootstrap';
 import Api, { Account, Contact } from '../../../api';
+import DateDropdowns from '../../../components/DateDropdowns';
 import { formatContactName } from '../../../Helpers';
 
 const Divider = () => <div className="border-top my-3" />;
@@ -30,6 +33,7 @@ export default function RequestDetail({ setCurrentStep }: any) {
       })
       .catch((error) => console.log('error', error));
   }, []);
+
   return (
     <>
       <Row>
@@ -140,25 +144,7 @@ export default function RequestDetail({ setCurrentStep }: any) {
       <Divider />
       <Row className="align-items-center">
         <Col xs={3}>Invoice Due Date (Optional):</Col>
-        <Col xs={9}>
-          <Row>
-            <Col xs="auto">
-              <Form.Select>
-                <option>Month</option>
-              </Form.Select>
-            </Col>
-            <Col xs="auto">
-              <Form.Select>
-                <option>Day</option>
-              </Form.Select>
-            </Col>
-            <Col xs="auto">
-              <Form.Select>
-                <option>Year</option>
-              </Form.Select>
-            </Col>
-          </Row>
-        </Col>
+        <DateDropdowns />
       </Row>
       <Divider />
       <Row className="align-items-center">

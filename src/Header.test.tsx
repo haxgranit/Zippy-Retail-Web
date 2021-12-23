@@ -1,61 +1,43 @@
-import {
-  render, fireEvent, screen, waitFor,
-} from './test-utils';
-import Header from './Header';
+import { render, screen } from '@testing-library/react';
+import { BrowserRouter } from 'react-router-dom';
+import { HeaderPure } from './Header';
 
-const mockLoginRedirect = jest.fn();
-const mockLogoutRedirect = jest.fn();
 const mockChangeLanguage = jest.fn();
-const mockI18nTranslate = 'Test String';
 
 jest.mock('react-i18next', () => ({
   initReactI18next: { type: '3rdParty', init: jest.fn() },
   useTranslation: () => ({
     i18n: {
-      changeLanguage: () => mockChangeLanguage,
+      changeLanguage: mockChangeLanguage,
     },
-    t: () => mockI18nTranslate,
+    t: (key: string) => key,
   }),
   Trans: ({ children }: { children: React.ReactNode }) => children,
 }));
 
-jest.mock('@azure/msal-react', () => ({
-  useIsAuthenticated: () => true,
-  useMsal: () => ({
-    instance: {
-      loginRedirect: () => mockLoginRedirect,
-      logoutRedirect: () => mockLogoutRedirect,
-    },
-    inProgress: 'none',
-  }),
-}));
+const component = (
+  <BrowserRouter>
+    <HeaderPure
+      isAuthenticated
+      isInProgress={false}
+      handleLogin={() => {}}
+      handleLogout={() => {}}
+    />
+  </BrowserRouter>
+);
 
-describe('Header', () => {
-  test('change language on header ', async () => {
-    const { container } = render(<Header />);
-    fireEvent.click(container.querySelectorAll('button')[1]);
-    fireEvent.click(container.querySelectorAll('.i18n-dropdown-title')[0]);
+test('can change language to English (Canada)', async () => {
+  render(component);
+  (await screen.findByText('header.language')).click();
+  (await screen.findByText('English (Canada)')).click();
+  expect(mockChangeLanguage).toBeCalledTimes(1);
+  expect(mockChangeLanguage.mock.calls[0][0]).toBe('en-CA');
+});
 
-    await waitFor(() => screen.getByText('English (Canada)'));
-
-    fireEvent.click(container.querySelectorAll('.nav-dropdown-item')[0]);
-    fireEvent.click(container.querySelectorAll('.nav-dropdown-item')[1]);
-    fireEvent.click(container.querySelectorAll('.nav-dropdown-item')[2]);
-    fireEvent.click(container.querySelectorAll('.nav-dropdown-item')[3]);
-  });
-
-  test('click login button on header', () => {
-    jest.mock('@azure/msal-react', () => ({
-      useIsAuthenticated: () => false,
-      useMsal: () => ({
-        instance: {
-          loginRedirect: () => mockLoginRedirect,
-          logoutRedirect: () => mockLogoutRedirect,
-        },
-        inProgress: 'none',
-      }),
-    }));
-    const { container } = render(<Header />);
-    fireEvent.click(container.querySelectorAll('button')[1]);
-  });
+test('can change language to French (Canada)', async () => {
+  render(component);
+  (await screen.findByText('header.language')).click();
+  (await screen.findByText('French (Canada)')).click();
+  expect(mockChangeLanguage).toBeCalledTimes(1);
+  expect(mockChangeLanguage.mock.calls[0][0]).toBe('fr-CA');
 });

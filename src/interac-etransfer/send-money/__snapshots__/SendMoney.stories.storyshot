@@ -196,10 +196,9 @@ exports[`Storyshots interac-etransfer/send-money/SendMoney API Error 1`] = `
           <select
             className="send-account-select form-select"
             onChange={[Function]}
+            value={0}
           >
-            <option
-              value={0}
-            >
+            <option>
               Select
             </option>
           </select>
@@ -250,7 +249,8 @@ exports[`Storyshots interac-etransfer/send-money/SendMoney API Error 1`] = `
           <input
             className="form-control"
             onChange={[Function]}
-            type="email"
+            type="number"
+            value={0}
           />
           <label
             className="form-label"
@@ -285,10 +285,9 @@ exports[`Storyshots interac-etransfer/send-money/SendMoney API Error 1`] = `
           <select
             className="from-account-info form-select"
             onChange={[Function]}
+            value={0}
           >
-            <option
-              value=""
-            >
+            <option>
               Select
             </option>
           </select>
@@ -320,6 +319,7 @@ exports[`Storyshots interac-etransfer/send-money/SendMoney API Error 1`] = `
           <select
             className="transfer-method form-select"
             onChange={[Function]}
+            value=""
           >
             <option>
               Email
@@ -354,6 +354,7 @@ exports[`Storyshots interac-etransfer/send-money/SendMoney API Error 1`] = `
             className="form-control"
             onChange={[Function]}
             rows={3}
+            value=""
           />
           <p>
             Do not provide the security question, any part of the security answer or any confidential information in your message to the contact. This message will be viewable on the Interac e-Transfer Status page.
@@ -807,10 +808,9 @@ exports[`Storyshots interac-etransfer/send-money/SendMoney Default 1`] = `
           <select
             className="send-account-select form-select"
             onChange={[Function]}
+            value={0}
           >
-            <option
-              value={0}
-            >
+            <option>
               Select
             </option>
           </select>
@@ -861,7 +861,8 @@ exports[`Storyshots interac-etransfer/send-money/SendMoney Default 1`] = `
           <input
             className="form-control"
             onChange={[Function]}
-            type="email"
+            type="number"
+            value={0}
           />
           <label
             className="form-label"
@@ -896,10 +897,9 @@ exports[`Storyshots interac-etransfer/send-money/SendMoney Default 1`] = `
           <select
             className="from-account-info form-select"
             onChange={[Function]}
+            value={0}
           >
-            <option
-              value=""
-            >
+            <option>
               Select
             </option>
           </select>
@@ -931,6 +931,7 @@ exports[`Storyshots interac-etransfer/send-money/SendMoney Default 1`] = `
           <select
             className="transfer-method form-select"
             onChange={[Function]}
+            value=""
           >
             <option>
               Email
@@ -965,6 +966,7 @@ exports[`Storyshots interac-etransfer/send-money/SendMoney Default 1`] = `
             className="form-control"
             onChange={[Function]}
             rows={3}
+            value=""
           />
           <p>
             Do not provide the security question, any part of the security answer or any confidential information in your message to the contact. This message will be viewable on the Interac e-Transfer Status page.

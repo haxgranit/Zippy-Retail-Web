@@ -1,19 +1,39 @@
 import { BrowserRouter } from 'react-router-dom';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import Header from './Header';
+import { HeaderPure } from './Header';
 import './i18n/config';
 import './index.css';
 
 export default {
   title: 'Header',
-  component: Header,
-} as ComponentMeta<typeof Header>;
+  component: HeaderPure,
+} as ComponentMeta<typeof HeaderPure>;
 
-const Template: ComponentStory<typeof Header> = () => (
+const Template: ComponentStory<typeof HeaderPure> = ({
+  isAuthenticated,
+  isInProgress: canLogin,
+  handleLogin,
+  handleLogout,
+}) => (
   <BrowserRouter>
-    <Header />
+    <HeaderPure
+      isAuthenticated={isAuthenticated}
+      isInProgress={canLogin}
+      handleLogin={handleLogin}
+      handleLogout={handleLogout}
+    />
   </BrowserRouter>
 );
 
-export const Default = Template.bind({});
-Default.args = {};
+export const LoggedOut = Template.bind({});
+LoggedOut.args = {};
+
+export const LoggingIn = Template.bind({});
+LoggingIn.args = {
+  isInProgress: true,
+};
+
+export const LoggedIn = Template.bind({});
+LoggedIn.args = {
+  isAuthenticated: true,
+};
