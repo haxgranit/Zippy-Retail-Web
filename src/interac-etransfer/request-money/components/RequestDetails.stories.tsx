@@ -1,4 +1,5 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { BrowserRouter } from 'react-router-dom';
 import RequestDetails from './RequestDetails';
 
 export default {
@@ -6,8 +7,12 @@ export default {
   component: RequestDetails,
 } as ComponentMeta<typeof RequestDetails>;
 
-const Template: ComponentStory<typeof RequestDetails> = () => (
-  <RequestDetails setCurrentStep={() => {}} />
+const Template: ComponentStory<typeof RequestDetails> = ({
+  setCurrentStep,
+}) => (
+  <BrowserRouter>
+    <RequestDetails setCurrentStep={setCurrentStep} />
+  </BrowserRouter>
 );
 
 export const Default = Template.bind({});

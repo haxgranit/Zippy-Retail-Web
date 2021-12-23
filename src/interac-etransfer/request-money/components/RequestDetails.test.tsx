@@ -3,18 +3,23 @@ import Adapter from '@wojtekmaj/enzyme-adapter-react-17';
 import { Form } from 'react-bootstrap';
 import React, { ChangeEvent } from 'react';
 import RequestDetails from './RequestDetails';
+import { BrowserRouter } from 'react-router-dom';
 
 // Configure enzyme for react 17
 Enzyme.configure({ adapter: new Adapter() });
-
+const wrapper = mount(
+  <BrowserRouter>
+    <RequestDetails />
+  </BrowserRouter>,
+);
 describe('RequestDetail Component', () => {
   it('should render RequestDetail', () => {
-    const wrapper = mount(<RequestDetails />);
+
     const title = wrapper.find('h4');
     expect(title.text()).toEqual('Request Money Details');
   });
   it('should not  render any form in beginging ', () => {
-    const wrapper = mount(<RequestDetails />);
+
     const emailOrPhoneForm = wrapper.find(Form);
     expect(emailOrPhoneForm.exists()).toBeFalsy();
   });
@@ -32,7 +37,7 @@ describe('RequestDetail Component', () => {
       .mockImplementationOnce(() => [initialContact, setAccountFrom])
       .mockImplementationOnce((x) => [x, setAccountsData])
       .mockImplementationOnce((x) => [x, setContacts]);
-    const wrapper = mount(<RequestDetails />);
+
     const emailOrPhoneCheck = wrapper.find(Form.Check);
     const mockedEvent = { target: { value: JSON.stringify(initialContact) } };
     emailOrPhoneCheck.at(0).simulate('click', mockedEvent);
@@ -55,13 +60,11 @@ describe('RequestDetail Component', () => {
       .mockImplementationOnce(() => [initialContact, setAccountFrom])
       .mockImplementationOnce((x) => [x, setAccountsData])
       .mockImplementationOnce((x) => [x, setContacts]);
-    const wrapper = mount(<RequestDetails />);
+
     const emailOrPhoneCheck = wrapper.find(Form.Check);
     const mockedEvent = { target: { value: JSON.stringify(initialContact) } };
     emailOrPhoneCheck.at(0).simulate('click', mockedEvent);
-    expect(emailOrPhoneCheck.at(0).props().label).toEqual(
-      'Text Message',
-    );
+    expect(emailOrPhoneCheck.at(0).props().label).toEqual('Text Message');
   });
 
   it('should render accountFrom with null when no there is no contact ', () => {
@@ -78,7 +81,7 @@ describe('RequestDetail Component', () => {
       .mockImplementationOnce(() => [initialContact, setAccountFrom])
       .mockImplementationOnce((x) => [x, setAccountsData])
       .mockImplementationOnce((x) => [x, setContacts]);
-    const wrapper = mount(<RequestDetails />);
+
     const emailOrPhoneForm = wrapper.find(Form);
     const emailOrPhoneCheck = wrapper.find(Form.Select);
     const mockedEvent = { target: { value: '' } };
@@ -99,7 +102,7 @@ describe('RequestDetail Component', () => {
       .mockImplementationOnce(() => [initialContact, setAccountFrom])
       .mockImplementationOnce((x) => [x, setAccountsData])
       .mockImplementationOnce((x) => [x, setContacts]);
-    const wrapper = mount(<RequestDetails />);
+
     const emailOrPhoneCheck = wrapper.find(Form.Select);
     const mockedEvent = { target: { value: JSON.stringify(initialContact) } };
     emailOrPhoneCheck.at(0).simulate('click', mockedEvent);
@@ -120,7 +123,7 @@ describe('RequestDetail Component', () => {
       .mockImplementationOnce(() => [initialContact, setAccountFrom])
       .mockImplementationOnce((x) => [x, setAccountsData])
       .mockImplementationOnce((x) => [x, setContacts]);
-    const wrapper = mount(<RequestDetails />);
+
     const emailOrPhoneCheck = wrapper.find(Form.Select);
     const mockedEvent = { target: { value: JSON.stringify(initialContact) } };
     emailOrPhoneCheck.at(0).simulate('click', mockedEvent);
@@ -169,12 +172,12 @@ describe('RequestDetail Component', () => {
       .mockImplementationOnce(() => [initialContact, setAccountFrom])
       .mockImplementationOnce((x) => [x, setAccountsData])
       .mockImplementationOnce(() => [[initialContact], setContacts]);
-    const wrapper = mount(<RequestDetails />);
+
     const emailOrPhoneCheck = wrapper.find(Form.Select);
     // @ts-ignore
-    emailOrPhoneCheck
-      ?.at(0)
-      ?.prop('onChange')({ target: { name: 'test', value: '' } } as ChangeEvent<HTMLSelectElement>);
+    emailOrPhoneCheck?.at(0)?.prop('onChange')({
+      target: { name: 'test', value: '' },
+    } as ChangeEvent<HTMLSelectElement>);
 
     expect(setAccountFrom).toBeCalledWith(undefined);
   });
@@ -193,34 +196,33 @@ describe('RequestDetail Component', () => {
       .mockImplementationOnce(() => [initialContact, setAccountFrom])
       .mockImplementationOnce((x) => [x, setAccountsData])
       .mockImplementationOnce(() => [[initialContact], setContacts]);
-    const wrapper = mount(<RequestDetails />);
+
     const emailOrPhoneCheck = wrapper.find(Form.Select);
     // const mockedEvent = { target: { value: JSON.stringify(initialContact) } };
     // @ts-ignore
-    emailOrPhoneCheck
-      ?.at(0)
-      ?.prop('onChange')({ target: { name: 'test', value: '' } } as ChangeEvent<HTMLSelectElement>);
+    emailOrPhoneCheck?.at(0)?.prop('onChange')({
+      target: { name: 'test', value: '' },
+    } as ChangeEvent<HTMLSelectElement>);
     expect(setAccountFrom).toBeCalledWith(undefined);
-    expect(wrapper.find('option').at(1).props().value).toEqual(
-      '',
-    );
+    expect(wrapper.find('option').at(1).props().value).toEqual('');
   });
   it('should render select with Contact Details', () => {
-    const initialContact = [{
-      name: 'test',
-      email: 'test@test.com',
-      phone: '',
-    },
-    {
-      name: 'test2',
-      email: 'tes2t@test.com',
-      phone: '',
-    },
-    {
-      name: 'test3',
-      email: 'test3@test.com',
-      phone: '',
-    },
+    const initialContact = [
+      {
+        name: 'test',
+        email: 'test@test.com',
+        phone: '',
+      },
+      {
+        name: 'test2',
+        email: 'tes2t@test.com',
+        phone: '',
+      },
+      {
+        name: 'test3',
+        email: 'test3@test.com',
+        phone: '',
+      },
     ];
     const setAccountFrom = jest.fn();
     const setContacts = jest.fn();
@@ -231,7 +233,7 @@ describe('RequestDetail Component', () => {
       .mockImplementationOnce(() => [initialContact, setAccountFrom])
       .mockImplementationOnce((x) => [x, setAccountsData])
       .mockImplementationOnce(() => [initialContact, setContacts]);
-    const wrapper = mount(<RequestDetails />);
+
     const emailOrPhoneCheck = wrapper.find(Form.Select);
     const options = emailOrPhoneCheck.at(1).find('option');
     expect(options.length).toBeGreaterThan(1);
@@ -251,7 +253,7 @@ describe('RequestDetail Component', () => {
       .mockImplementationOnce(() => [initialContact, setAccountFrom])
       .mockImplementationOnce((x) => [x, setAccountsData])
       .mockImplementationOnce(() => [null, setContacts]);
-    const wrapper = mount(<RequestDetails />);
+
     const emailOrPhoneCheck = wrapper.find(Form.Select);
     const options = emailOrPhoneCheck.at(1).find('option');
     expect(options.length).toEqual(1);
