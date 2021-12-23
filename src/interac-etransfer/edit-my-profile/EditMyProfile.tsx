@@ -33,23 +33,23 @@ const LeftCol = ({ user }: { user: User }) => (
     <Row className="align-items-center mt-4">
       <Col xs={3}>Legal Name:</Col>
       <Col xs={6}>
-        {user?.firstName}
+        {user.firstName}
         {' '}
-        {user?.lastName}
+        {user.lastName}
       </Col>
     </Row>
     <Divider />
     <Row className="align-items-center">
       <Col xs={3}>Email Nickname:</Col>
       <Col xs={6}>
-        <Form.Control type="text" value={`${user?.firstName} ${user?.lastName}`} />
+        <Form.Control type="text" value={`${user.firstName} ${user.lastName}`} />
       </Col>
     </Row>
     <Divider />
     <Row className="align-items-center">
       <Col xs={3}>Email Address:</Col>
       <Col xs={6}>
-        <Form.Control type="text" value={user?.email} />
+        <Form.Control type="text" value={user.email} />
       </Col>
     </Row>
     <Row className="mt-2">

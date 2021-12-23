@@ -21,7 +21,7 @@ import ChangeYourAddress from './customer-services/change-your-address/ChangeYou
 import CustomerServices from './customer-services/customer-services/CustomerServices';
 import Footer from './footer/Footer';
 import { Header } from './Header';
-import AutodepositSettings from './interac-etransfer/autodeposit-settings/AutodepositSettings';
+import { AutodepositSettings } from './interac-etransfer/autodeposit-settings/AutodepositSettings';
 import ContactList from './interac-etransfer/contact-list/ContactList';
 import EditContact from './interac-etransfer/contact-list/edit/EditContact';
 import { EditMyProfile } from './interac-etransfer/edit-my-profile/EditMyProfile';

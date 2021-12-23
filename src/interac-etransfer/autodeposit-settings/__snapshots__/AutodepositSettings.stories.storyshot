@@ -107,7 +107,7 @@ exports[`Storyshots interac-etransfer/autodeposit-settings/AutodepositSettings D
           <input
             className="form-control"
             type="text"
-            value="dtough@hotmail.com"
+            value="john.doe@email.com"
           />
         </div>
       </div>
@@ -148,7 +148,9 @@ exports[`Storyshots interac-etransfer/autodeposit-settings/AutodepositSettings D
         <div
           className="col-9"
         >
-          DUANE TOUGH
+          John
+           
+          Doe
         </div>
       </div>
       <div
