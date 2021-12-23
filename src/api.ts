@@ -2,6 +2,12 @@
 
 import { AccountInfo, InteractionRequiredAuthError, IPublicClientApplication } from '@azure/msal-browser';
 
+export enum TransferType {
+  SEND = 'send',
+  RECEIVE = 'receive',
+  REQUEST = 'requested',
+}
+
 export type Account = {
   id: number,
   name: string;
@@ -71,8 +77,8 @@ export default class Api {
     return this.fetch<User>('put', 'User');
   }
 
-  public getInteracEtransferTransactions(type?: string) {
-    return this.fetch<Transaction[]>('get', `InteracEtransfer/Transactions${type ? `?type=${type}` : ''}`);
+  public getInteracEtransferTransactions(type: TransferType) {
+    return this.fetch<Transaction[]>('get', `InteracEtransfer/Transactions?type=${type}`);
   }
 
   public postInteracEtransferTransaction(data: InteracEtransferTransaction) {

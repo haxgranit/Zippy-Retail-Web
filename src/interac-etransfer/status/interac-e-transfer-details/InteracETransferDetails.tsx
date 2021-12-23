@@ -7,7 +7,7 @@ import { DateTime } from 'luxon';
 import NumberFormat from 'react-number-format';
 import { useMsal } from '@azure/msal-react';
 import styled from 'styled-components';
-import Api, { Transaction } from '../../../api';
+import Api, { Transaction, TransferType } from '../../../api';
 import CommonHeader from '../../../common/CommonHeader';
 import MonthSelectComponent from '../../../common/MonthSelectComponent';
 import { formatContactName } from '../../../Helpers';
@@ -20,7 +20,7 @@ const SentTabContent = ({ navigate, instance, accounts }: any) => {
   const [transactions, setTransactions] = useState<Transaction[]>([]);
   useEffect(() => {
     new Api(instance, accounts[0])
-      .getInteracEtransferTransactions('send')
+      .getInteracEtransferTransactions(TransferType.SEND)
       .then((data) => setTransactions(data));
   }, []);
   return (
@@ -93,7 +93,7 @@ const ReceivedTabContent = ({ navigate, instance, accounts }: any) => {
   const [transactions, setTransactions] = useState<Transaction[]>([]);
   useEffect(() => {
     new Api(instance, accounts[0])
-      .getInteracEtransferTransactions('receive')
+      .getInteracEtransferTransactions(TransferType.RECEIVE)
       .then((data) => setTransactions(data));
   }, []);
   return (
