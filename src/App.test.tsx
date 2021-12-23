@@ -1,4 +1,4 @@
-import { render } from './test-utils';
+import { renderWithProviders } from './test-utils';
 import App from './App';
 import i18n from './i18n/config';
 
@@ -7,7 +7,7 @@ describe('App', () => {
     const pageUrl = '?language=en-CA';
     window.history.pushState('', '', pageUrl);
     jest.spyOn(i18n, 'changeLanguage');
-    render(<App />);
+    renderWithProviders(<App />);
     expect(i18n.changeLanguage).toBeCalled();
   });
 
@@ -15,7 +15,7 @@ describe('App', () => {
     const pageUrl = '?language=fr-CA';
     window.history.pushState('', '', pageUrl);
     jest.spyOn(i18n, 'changeLanguage');
-    render(<App />);
+    renderWithProviders(<App />);
     expect(i18n.changeLanguage).toBeCalled();
   });
 });

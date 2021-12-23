@@ -1,4 +1,4 @@
-import { render, fireEvent } from './test-utils';
+import { renderWithProviders, fireEvent } from './test-utils';
 import './i18n/config';
 
 import Personal from './Personal';
@@ -15,7 +15,7 @@ jest.mock('@azure/msal-react', () => ({
 
 describe('Personal Component', () => {
   it('click a button on Personal', () => {
-    const { container } = render(<Personal />);
+    const { container } = renderWithProviders(<Personal />);
 
     fireEvent.click(container.querySelectorAll('button')[0]);
     expect(mockLoginRedirect).toHaveBeenCalled();
