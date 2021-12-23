@@ -1,3 +1,4 @@
+import { render, fireEvent } from '../../../test-utils';
 import Enzyme, { mount, shallow } from 'enzyme';
 import Adapter from '@wojtekmaj/enzyme-adapter-react-17';
 import { BrowserRouter } from 'react-router-dom';
@@ -15,24 +16,14 @@ jest.mock('react-router-dom', () => ({
 
 describe('ٌRequest Reminder Component', () => {
   it('should render RequestReminder', () => {
-    const wrapper = shallow(
-      <BrowserRouter>
-        <RequestReminder />
-      </BrowserRouter>,
-    );
-    const RequestReminderComponent = wrapper.find('RequestReminder');
-    expect(RequestReminderComponent).toHaveLength(1);
+    const { getByText } = render(<RequestReminder />);
+    expect(getByText('A reminder has been sent')).toBeInTheDocument();
   });
   it('should click buttons on RequestReminder', () => {
-    const wrapper = mount(
-      <BrowserRouter>
-        <RequestReminder />
-      </BrowserRouter>,
-    );
+    const { container } = render(<RequestReminder />);
 
-    const buttons = wrapper.childAt(0).find(Button);
-    buttons.at(0).simulate('click');
-    buttons.at(1).simulate('click');
+    fireEvent.click(container.querySelectorAll('button')[0]);
+    fireEvent.click(container.querySelectorAll('button')[1]);
 
     expect(mockedUsedNavigate).toBeCalledTimes(2);
   });

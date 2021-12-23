@@ -1,12 +1,6 @@
-import React from 'react';
-import Enzyme, { shallow } from 'enzyme';
-import { BrowserRouter } from 'react-router-dom';
-import Adapter from '@wojtekmaj/enzyme-adapter-react-17';
+import { render, fireEvent } from '../../../test-utils';
 
 import RequestSent from './RequestSent';
-
-// Configure enzyme for react 17
-Enzyme.configure({ adapter: new Adapter() });
 
 const mockedUsedNavigate = jest.fn();
 
@@ -18,12 +12,8 @@ jest.mock('react-router-dom', () => ({
 describe('Request Sent Component', () => {
   it('should click Send another transfer button', () => {
     const setCurrentStep = jest.fn();
-    const wrapper = shallow(
-      <BrowserRouter>
-        <RequestSent setCurrentStep={setCurrentStep} />
-      </BrowserRouter>,
-    );
-    wrapper.childAt(0).dive().find('Button[variant="danger"]').simulate('click');
+    const { container } = render(<RequestSent setCurrentStep={setCurrentStep} />);
+    fireEvent.click(container.querySelectorAll('.btn-danger')[0]);
     expect(setCurrentStep).toHaveBeenCalled();
   });
 });
