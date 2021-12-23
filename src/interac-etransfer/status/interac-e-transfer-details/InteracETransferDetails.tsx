@@ -93,7 +93,7 @@ const ReceivedTabContent = ({ navigate, instance, accounts }: any) => {
   const [transactions, setTransactions] = useState<Transaction[]>([]);
   useEffect(() => {
     new Api(instance, accounts[0])
-      .getInteracEtransferTransactions('received')
+      .getInteracEtransferTransactions('receive')
       .then((data) => setTransactions(data));
   }, []);
   return (
