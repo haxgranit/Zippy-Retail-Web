@@ -150,54 +150,76 @@ const ReceivedTabContent = ({ navigate, instance, accounts }: any) => {
   );
 };
 
-const RequestedTabContent = ({ navigate }: any) => (
-  <>
-    <MonthSelectComponent />
-    <Table className="mt-2">
-      <thead>
-        <BorderedTR
-          className="bg-light"
-        >
-          <th>Date Requested</th>
-          <th>Contact</th>
-          <th>Amount</th>
-          <th>Status</th>
-        </BorderedTR>
-      </thead>
-      <tbody className="border-top-0">
-        <tr>
-          <td>Nov 2, 2021</td>
-          <td>
-            <div>Chelsea Tough</div>
-            <div>chelsea.tough@gmail.com</div>
-          </td>
-          <td>$2,000.00</td>
-          <td>
-            <Button
-              variant="link"
-              className="text-black"
-              onClick={() => navigate('/interac-etransfer/status/request-sent')}
-            >
-              Requested
-            </Button>
-          </td>
-        </tr>
-      </tbody>
-    </Table>
-    <div>
-      <Row className="d-flex justify-content-end">
-        <Button
-          variant="danger"
-          className="d-flex"
-          style={{ width: 'auto', marginRight: 10 }}
-          onClick={() => navigate('/interac-etransfer/request-money')}
-        >
-          Request Money
-        </Button>
-      </Row>
-    </div>
-  </>
-);
+const RequestedTabContent = ({ navigate, instance, accounts }: any) => {
+  const [transactions, setTransactions] = useState<Transaction[]>([]);
+  useEffect(() => {
+    new Api(instance, accounts[0])
+      .getInteracEtransferTransactions(TransferType.REQUEST)
+      .then((data) => setTransactions(data));
+  }, []);
+  return (
+    <>
+      <MonthSelectComponent />
+      <Table className="mt-2">
+        <thead>
+          <BorderedTR
+            className="bg-light"
+          >
+            <th>Date Requested</th>
+            <th>Contact</th>
+            <th>Amount</th>
+            <th>Status</th>
+          </BorderedTR>
+        </thead>
+        <tbody className="border-top-0">
+          {transactions.map((item: Transaction) => (
+            <tr>
+              <td>{DateTime.fromISO(item.date).toLocaleString(DateTime.DATE_MED)}</td>
+              <td>
+                <div>{formatContactName(item.contact?.firstName, item.contact?.lastName)}</div>
+                <div>{item.contact?.email}</div>
+              </td>
+              <td>
+                <NumberFormat
+                  value={item.amount}
+                  displayType="text"
+                  prefix="$"
+                  thousandSeparator
+                />
+              </td>
+              <td>
+                <Button
+                  variant="link"
+                  className="text-black"
+                  onClick={() => navigate('/interac-etransfer/status/request-sent')}
+                >
+                  Requested
+                </Button>
+              </td>
+            </tr>
+          ))}
+          {!transactions?.length && (
+            <tr>
+              <td colSpan={4} className="text-center text-gray">No Transactions</td>
+            </tr>
+          )}
+        </tbody>
+      </Table>
+      <div>
+        <Row className="d-flex justify-content-end">
+          <Button
+            variant="danger"
+            className="d-flex"
+            style={{ width: 'auto', marginRight: 10 }}
+            onClick={() => navigate('/interac-etransfer/request-money')}
+          >
+            Request Money
+          </Button>
+        </Row>
+      </div>
+    </>
+  );
+};
 
 export default function InteracETransferDetails() {
   const navigate = useNavigate();
@@ -244,7 +266,7 @@ export default function InteracETransferDetails() {
           <ReceivedTabContent navigate={navigate} instance={instance} accounts={accounts} />
         </Tab>
         <Tab eventKey="requested" title="Requested">
-          <RequestedTabContent navigate={navigate} />
+          <RequestedTabContent navigate={navigate} instance={instance} accounts={accounts} />
         </Tab>
       </Tabs>
     </>
