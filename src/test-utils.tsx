@@ -1,10 +1,14 @@
 import { FC, ReactElement } from 'react';
 import { render, RenderOptions } from '@testing-library/react';
+import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
 import './i18n/config';
+import { store } from './app/store';
 
 const AllTheProviders: FC = ({ children }) => (
-  <BrowserRouter>{children}</BrowserRouter>
+  <Provider store={store}>
+    <BrowserRouter>{children}</BrowserRouter>
+  </Provider>
 );
 
 const customRender = (
