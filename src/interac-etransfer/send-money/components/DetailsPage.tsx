@@ -16,14 +16,14 @@ interface DetailsPageProps {
   setContactToSend: Dispatch<SetStateAction<number>>;
   mainInfo: TransferMainDetails;
   setMainInfo: Dispatch<SetStateAction<TransferMainDetails>>;
-  setPageIndex: Dispatch<SetStateAction<PageIndexes>>;
+  navigateSteps: Dispatch<string>;
   accounts: Account[] | null;
   contacts: Contact[] | null;
   selectedAccount: number;
   setSelectedAccount: Dispatch<SetStateAction<number>>;
 }
 const DetailsPage = ({
-  setPageIndex,
+  navigateSteps,
   setCurrentStep,
   selectedContact = 0,
   setContactToSend,
@@ -232,10 +232,10 @@ const DetailsPage = ({
             onClick={() => {
               if (selectedContact === 1) {
                 setCurrentStep(2);
-                setPageIndex(PageIndexes.SecurityRecipientPageIndex);
+                navigateSteps(PageIndexes.SecurityRecipientPageIndex);
               } else {
                 setCurrentStep(2);
-                setPageIndex(PageIndexes.SecurityQuestionPageIndex);
+                navigateSteps(PageIndexes.SecurityQuestionPageIndex);
               }
             }}
           >

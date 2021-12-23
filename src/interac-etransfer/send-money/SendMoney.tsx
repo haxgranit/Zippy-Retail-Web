@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Alert, Col, Row } from 'react-bootstrap';
 import { useMsal } from '@azure/msal-react';
-import { useLocation } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import CommonHeader from '../../common/CommonHeader';
 import StepComponent from '../../common/StepComponent';
 import {
@@ -16,11 +16,11 @@ import SendMoneyVerificationModal, {
 import Api, { Account, InteracEtransferTransaction, Contact } from '../../api';
 
 export const enum PageIndexes {
-  DetailsPageIndex = 1,
-  SecurityRecipientPageIndex = 2,
-  SecurityQuestionPageIndex = 3,
-  TransferSentPageIndex = 4,
-  TransferSentCompletedIndex = 5,
+  DetailsPageIndex = 'details',
+  SecurityRecipientPageIndex = 'security-recipient',
+  SecurityQuestionPageIndex = 'security-question',
+  TransferSentPageIndex = 'transfer-sent',
+  TransferSentCompletedIndex = 'transfer-sent-complete',
 }
 
 interface QuickLink {
@@ -48,15 +48,20 @@ const LinkElement = ({ url, text, id }: QuickLink): JSX.Element => (
   </a>
 );
 
+const StepIndexes: any = {
+  details: 1,
+  'security-recipient': 2,
+  'security-question': 2,
+  'transfer-sent': 3,
+  'transfer-sent-complete': 3,
+};
+
 export default function SendMoney() {
-  const { state } = useLocation();
-  const step = state ? state.step : undefined;
+  const navigate = useNavigate();
+  const { stepId } = useParams();
+  const step = stepId ? StepIndexes[stepId] : undefined;
   const [currentStep, setCurrentStep] = useState(step || 1);
-  const [pageIndex, setPageIndex] = useState(
-    currentStep >= 3
-      ? PageIndexes.TransferSentCompletedIndex
-      : PageIndexes.DetailsPageIndex,
-  );
+  const [pageIndex, setPageIndex] = useState(stepId || PageIndexes.DetailsPageIndex);
   const [showVerifyModal, setShowVerifyModal] = useState(false);
   const [isSendingMoney, setIsSendingMoney] = useState(false);
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
@@ -170,6 +175,11 @@ export default function SendMoney() {
     setShowVerifyModal(false);
   };
 
+  const navigateSteps = (nav_step: string) => {
+    setPageIndex(nav_step);
+    navigate(`/interac-etransfer/send-money/${nav_step}`);
+  };
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [pageIndex]);
@@ -199,13 +209,13 @@ export default function SendMoney() {
                 steps={3}
                 currentStep={currentStep}
                 setCurrentStep={setCurrentStep}
-                setPageIndex={setPageIndex}
+                setPageIndex={navigateSteps}
               />
             </Col>
           </Row>
           {pageIndex === PageIndexes.DetailsPageIndex && (
             <DetailsPage
-              setPageIndex={setPageIndex}
+              navigateSteps={navigateSteps}
               setCurrentStep={setCurrentStep}
               selectedContact={selectedContact}
               setContactToSend={setSelectedContact}
@@ -219,6 +229,7 @@ export default function SendMoney() {
           )}
           {pageIndex === PageIndexes.SecurityRecipientPageIndex && (
             <SecurityRecipientPage
+              navigateSteps={navigateSteps}
               setPageIndex={setPageIndex}
               setCurrentStep={setCurrentStep}
               showModal={setShowVerifyModal}
@@ -226,6 +237,7 @@ export default function SendMoney() {
           )}
           {pageIndex === PageIndexes.SecurityQuestionPageIndex && (
             <SecurityQuestionPage
+              navigateSteps={navigateSteps}
               setPageIndex={setPageIndex}
               setCurrentStep={setCurrentStep}
               showModal={setShowVerifyModal}
@@ -235,6 +247,7 @@ export default function SendMoney() {
           )}
           {pageIndex === PageIndexes.TransferSentPageIndex && (
             <TransferSentPage
+              navigateSteps={navigateSteps}
               setPageIndex={setPageIndex}
               setCurrentStep={setCurrentStep}
               mainInfo={mainInfo}
@@ -244,6 +257,7 @@ export default function SendMoney() {
           )}
           {pageIndex === PageIndexes.TransferSentCompletedIndex && (
             <TransferSentPage
+              navigateSteps={navigateSteps}
               setPageIndex={setPageIndex}
               setCurrentStep={setCurrentStep}
               mainInfo={mainInfo}

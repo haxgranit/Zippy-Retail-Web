@@ -156,7 +156,9 @@ export default function App() {
               <Route path="request-reminder" element={<RequestReminder />} />
               <Route path="request-canceled" element={<RequestCanceled />} />
             </Route>
-            <Route path="send-money" element={<SendMoney />} />
+            <Route path="send-money" element={<SendMoney />}>
+              <Route path=":stepId" element={<SendMoney />} />
+            </Route>
             <Route path="request-money" element={<RequestMoney />} />
             <Route path="contact-list" element={<ContactList />} />
             <Route path="contact-list/edit" element={<EditContact />} />

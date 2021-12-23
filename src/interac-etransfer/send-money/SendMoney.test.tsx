@@ -9,8 +9,8 @@ Enzyme.configure({ adapter: new Adapter() });
 const mounted = mount(<SendMoney />);
 jest.mock('react-router-dom', () => ({
   ...(jest.requireActual('react-router-dom') as any),
-  useLocation: () => ({
-    step: 1,
+  useParams: () => ({
+    stepId: 'details',
   }),
 }));
 
