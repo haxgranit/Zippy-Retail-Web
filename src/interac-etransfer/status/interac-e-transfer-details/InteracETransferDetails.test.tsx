@@ -57,14 +57,6 @@ describe('InteracETransferDetails Component', () => {
       .find('Button')
       .at(0)
       .simulate('click', mEvent);
-    wrapper
-      .childAt(0)
-      .dive()
-      .find('RequestedTabContent')
-      .dive()
-      .find('Button')
-      .at(1)
-      .simulate('click', mEvent);
-    expect(mockedUsedNavigate).toBeCalledTimes(3);
+    expect(mockedUsedNavigate).toBeCalledTimes(2);
   });
 });
