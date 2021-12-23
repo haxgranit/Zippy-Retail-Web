@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { Dispatch, SetStateAction } from 'react';
 import {
   Row,
   Col,
@@ -7,9 +7,21 @@ import {
   Button,
 } from 'react-bootstrap';
 import { Account, Contact } from '../../../api';
+import { TransferMainDetails, PageIndexes } from '../SendMoney';
 import { formatContactName } from '../../../Helpers';
-import { PageIndexes } from '../SendMoney';
 
+interface DetailsPageProps {
+  setCurrentStep: Dispatch<SetStateAction<number>>;
+  selectedContact : number;
+  setContactToSend: Dispatch<SetStateAction<number>>;
+  mainInfo: TransferMainDetails;
+  setMainInfo: Dispatch<SetStateAction<TransferMainDetails>>;
+  setPageIndex: Dispatch<SetStateAction<PageIndexes>>;
+  accounts: Account[] | null;
+  contacts: Contact[] | null;
+  selectedAccount: number;
+  setSelectedAccount: Dispatch<SetStateAction<number>>;
+}
 const DetailsPage = ({
   setPageIndex,
   setCurrentStep,
@@ -19,16 +31,18 @@ const DetailsPage = ({
   setMainInfo,
   accounts,
   contacts,
-}: any): JSX.Element => {
-  const [contactId, setContactId] = useState(0);
-  const handleAccountChange = (evt: any) => {
+  selectedAccount,
+  setSelectedAccount,
+}: DetailsPageProps): JSX.Element => {
+  const handleContactChange = (evt: any) => {
     setContactToSend(Number(evt.target.value));
-    setContactId(Number(evt.target.value));
   };
-
+  const handleAccountChange = (evt: any) => {
+    setSelectedAccount(Number(evt.target.value));
+  };
   const getEmail = (id: number) => {
     const contact = id ? contacts?.find((el: Contact) => el.id === id) : 'No email';
-    return contact?.email || 'No email';
+    return (contact as Contact)?.email || 'No email';
   };
 
   return (
@@ -65,9 +79,10 @@ const DetailsPage = ({
         <Col md={8}>
           <Form.Select
             className="send-account-select"
-            onChange={handleAccountChange}
+            onChange={handleContactChange}
+            value={selectedContact}
           >
-            <option value={0}>Select</option>
+            <option>Select</option>
             {contacts?.map((item: Contact) => (
               <option key={item.id} value={item.id}>
                 {formatContactName(item.firstName, item.lastName)}
@@ -75,7 +90,7 @@ const DetailsPage = ({
             ))}
           </Form.Select>
           <p>
-            { `Email: ${getEmail(contactId)}` }
+            { `Email: ${getEmail(selectedContact)}` }
           </p>
           <p>
             <a href="/" className="text-black">
@@ -96,9 +111,9 @@ const DetailsPage = ({
         </Col>
         <Col md={8}>
           <FormControl
-            type="email"
-            value={mainInfo?.email}
-            onChange={(evt) => setMainInfo({ ...mainInfo, email: evt.target.value })}
+            value={mainInfo?.amount}
+            type="number"
+            onChange={(evt) => setMainInfo({ ...mainInfo, amount: Number(evt.target.value) })}
           />
           <Form.Label>
             The maximum amount you can send in each transfer is $3,000.
@@ -113,13 +128,13 @@ const DetailsPage = ({
         <Col md={8}>
           <Form.Select
             className="from-account-info"
-            onChange={(evt) => setMainInfo({ ...mainInfo, from: evt.target.value })}
-            value={mainInfo?.from}
+            onChange={(evt) => handleAccountChange(evt)}
+            value={selectedAccount}
           >
-            <option value="">Select</option>
+            <option>Select</option>
             {
               accounts?.map((account:Account) => (
-                <option key={account.name} value={account.name}>{account.name}</option>
+                <option key={account.name} value={account.id}>{account.name}</option>
               ))
             }
           </Form.Select>
@@ -133,8 +148,8 @@ const DetailsPage = ({
         <Col md={8}>
           <Form.Select
             className="transfer-method"
-            onChange={(evt) => setMainInfo({ ...mainInfo, transfer_method: evt.target.value })}
-            value={mainInfo?.transfer_method}
+            onChange={(evt) => setMainInfo({ ...mainInfo, transferMethod: evt.target.value })}
+            value={mainInfo?.transferMethod}
           >
             <option>Email</option>
           </Form.Select>
@@ -213,7 +228,7 @@ const DetailsPage = ({
           <Button
             variant="danger"
             className="d-flex"
-            disabled={(mainInfo?.from == null || mainInfo?.from === '' || selectedContact === 0)}
+            disabled={(selectedAccount === 0 || selectedContact === 0)}
             onClick={() => {
               if (selectedContact === 1) {
                 setCurrentStep(2);

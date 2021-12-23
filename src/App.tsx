@@ -20,11 +20,11 @@ import CreateOrEditAccountNickname from './customer-services/create-or-edit-acco
 import ChangeYourAddress from './customer-services/change-your-address/ChangeYourAddress';
 import CustomerServices from './customer-services/customer-services/CustomerServices';
 import Footer from './footer/Footer';
-import Header from './Header';
+import { Header } from './Header';
 import AutodepositSettings from './interac-etransfer/autodeposit-settings/AutodepositSettings';
 import ContactList from './interac-etransfer/contact-list/ContactList';
 import EditContact from './interac-etransfer/contact-list/edit/EditContact';
-import EditMyProfile from './interac-etransfer/edit-my-profile/EditMyProfile';
+import { EditMyProfile } from './interac-etransfer/edit-my-profile/EditMyProfile';
 import LearnMore from './interac-etransfer/learn-more/LearnMore';
 import ReceiveMoney from './interac-etransfer/receive-money/ReceiveMoney';
 import RequestMoney from './interac-etransfer/request-money/RequestMoney';
