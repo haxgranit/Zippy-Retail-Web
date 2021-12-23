@@ -67,7 +67,7 @@ const LeftCol = () => (
     <Divider />
     <Row>
       <Col className="text-end">
-        <Button>Send Request</Button>
+        <Button>Register</Button>
       </Col>
     </Row>
     <Divider />
