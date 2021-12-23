@@ -48,14 +48,6 @@ describe('InteracETransferDetails Component', () => {
       .find('Button')
       .at(0)
       .simulate('click', mEvent);
-    wrapper
-      .childAt(0)
-      .dive()
-      .find('ReceivedTabContent')
-      .dive()
-      .find('Button')
-      .at(0)
-      .simulate('click', mEvent);
 
     wrapper
       .childAt(0)
@@ -73,6 +65,6 @@ describe('InteracETransferDetails Component', () => {
       .find('Button')
       .at(1)
       .simulate('click', mEvent);
-    expect(mockedUsedNavigate).toBeCalledTimes(4);
+    expect(mockedUsedNavigate).toBeCalledTimes(3);
   });
 });
