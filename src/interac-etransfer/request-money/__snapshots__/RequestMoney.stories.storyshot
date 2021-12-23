@@ -579,7 +579,7 @@ exports[`Storyshots interac-etransfer/request-money/RequestMoney Default 1`] = `
           e-Transfer contacts. If incorrect,
            
           <a
-            className="sc-gsDKAQ ftvXYO"
+            className="sc-gsDKAQ jumfrC"
             href="/interac-etransfer/edit-my-profile"
             onClick={[Function]}
           >
