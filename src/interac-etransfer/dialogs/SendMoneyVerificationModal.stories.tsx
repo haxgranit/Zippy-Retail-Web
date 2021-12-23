@@ -15,6 +15,7 @@ const Template: ComponentStory<typeof SendMoneyVerificationModal> = ({
   handleClose,
   handleNext,
   handleBack,
+  transferDetails,
   isSendingMoney,
 }: SendMoneyVerificationModalProps) => (
   <SendMoneyVerificationModal
@@ -22,7 +23,16 @@ const Template: ComponentStory<typeof SendMoneyVerificationModal> = ({
     handleClose={handleClose}
     handleNext={handleNext}
     handleBack={handleBack}
+    transferDetails={transferDetails}
     isSendingMoney={isSendingMoney}
   />
 );
 export const Default = Template.bind({});
+Default.args = {
+  transferDetails: {
+    source: { name: 'name', email: 'email@zippy.cash' },
+    destination: { name: 'name', email: 'email@zippy.cash' },
+    fromAccount: 'Personal (8000 001 000000000) $1,747.46',
+    amount: 0,
+  },
+};

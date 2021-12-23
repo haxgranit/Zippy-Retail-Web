@@ -3,7 +3,9 @@
 import { AccountInfo, InteractionRequiredAuthError, IPublicClientApplication } from '@azure/msal-browser';
 
 export type Account = {
+  id: number,
   name: string;
+  email: string;
 };
 
 export type Contact = {
