@@ -10,7 +10,9 @@ import {
   SecurityRecipientPage,
   TransferSentPage,
 } from './components';
-import SendMoneyVerificationModal from '../dialogs/SendMoneyVerificationModal';
+import SendMoneyVerificationModal, {
+  TransferDetails,
+} from '../dialogs/SendMoneyVerificationModal';
 import Api, { Account, InteracEtransferTransaction, Contact } from '../../api';
 
 export const enum PageIndexes {
@@ -25,6 +27,15 @@ interface QuickLink {
   id: number;
   url: string;
   text: string;
+}
+
+export interface TransferMainDetails {
+  source: { name: string; email: string };
+  destination: { name: string; email: string };
+  fromAccount: string;
+  amount: number;
+  message: string;
+  transferMethod: string;
 }
 
 const LinkElement = ({ url, text, id }: QuickLink): JSX.Element => (
@@ -50,7 +61,15 @@ export default function SendMoney() {
   const [isSendingMoney, setIsSendingMoney] = useState(false);
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
   const [selectedContact, setSelectedContact] = useState(0);
-  const [mainInfo, setMainInfo] = useState({});
+  const [selectedAccount, setSelectedAccount] = useState(0);
+  const [mainInfo, setMainInfo] = useState<TransferMainDetails>({
+    amount: 0,
+    destination: { email: '', name: '' },
+    source: { email: '', name: '' },
+    fromAccount: '',
+    message: '',
+    transferMethod: '',
+  });
 
   const [accountsList, setAccountsList] = useState<Account[] | null>([]);
   const [contactList, setContactList] = useState<Contact[] | null>([]);
@@ -121,6 +140,28 @@ export default function SendMoney() {
       });
   };
 
+  const getTransferDetails = (): TransferDetails => {
+    const sourceAccount: Account = accountsList!.find(
+      (x) => x.id === selectedAccount,
+    )!;
+    const destinationContact: Contact = contactList!.find(
+      (x) => x.id === selectedContact,
+    )!;
+    return {
+      amount: mainInfo.amount,
+      source: {
+        name: sourceAccount?.name ?? '',
+        email: sourceAccount?.email ?? '',
+      },
+      destination: {
+        name: `${destinationContact?.firstName ?? ''} ${
+          destinationContact?.lastName ?? ''
+        }`,
+        email: destinationContact?.email ?? '',
+      },
+      fromAccount: sourceAccount?.name,
+    };
+  };
   const handleSendMoneyVerificationClose = () => setShowVerifyModal(false);
 
   const handleSendMoneyVerificationBack = () => {
@@ -141,6 +182,7 @@ export default function SendMoney() {
         handleNext={handleSendMoneyVerificationNext}
         handleBack={handleSendMoneyVerificationBack}
         isSendingMoney={isSendingMoney}
+        transferDetails={getTransferDetails()}
       />
       <CommonHeader title="SEND MONEY" print={false} />
       {errorMessage && (
@@ -167,6 +209,8 @@ export default function SendMoney() {
               setCurrentStep={setCurrentStep}
               selectedContact={selectedContact}
               setContactToSend={setSelectedContact}
+              selectedAccount={selectedAccount}
+              setSelectedAccount={setSelectedAccount}
               mainInfo={mainInfo}
               setMainInfo={setMainInfo}
               accounts={accountsList}
