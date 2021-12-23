@@ -44,7 +44,7 @@ const TransferSentPage = ({
       <hr style={{ height: '1px', width: '100%' }} />
       <Row className="mt-2">
         <Col md={4}>
-          <Form.Label>Your Email Nickname:</Form.Label>
+          <Form.Label>To:</Form.Label>
         </Col>
         <Col md={8}>
           <Form.Label>CHELSEA TOUGH</Form.Label>
