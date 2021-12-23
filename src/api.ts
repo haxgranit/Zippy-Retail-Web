@@ -5,7 +5,7 @@ import { AccountInfo, InteractionRequiredAuthError, IPublicClientApplication } f
 export enum TransferType {
   SEND = 'send',
   RECEIVE = 'receive',
-  REQUEST = 'requested',
+  REQUEST = 'request',
 }
 
 export type Account = {
