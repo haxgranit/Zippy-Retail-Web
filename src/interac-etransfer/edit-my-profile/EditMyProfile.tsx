@@ -78,7 +78,7 @@ const LeftCol = ({ user }: { user: User }) => (
         <Button variant="outline-primary">Cancel</Button>
       </Col>
       <Col className="text-end">
-        <Button>Send Request</Button>
+        <Button>Next</Button>
       </Col>
     </Row>
     <Divider />

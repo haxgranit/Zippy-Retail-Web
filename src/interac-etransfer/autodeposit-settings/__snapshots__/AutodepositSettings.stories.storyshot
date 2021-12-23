@@ -183,7 +183,7 @@ exports[`Storyshots interac-etransfer/autodeposit-settings/AutodepositSettings D
             disabled={false}
             type="button"
           >
-            Send Request
+            Register
           </button>
         </div>
       </div>

@@ -178,7 +178,7 @@ exports[`Storyshots interac-etransfer/edit-my-profile/EditMyProfile Default 1`] 
             disabled={false}
             type="button"
           >
-            Send Request
+            Next
           </button>
         </div>
       </div>
