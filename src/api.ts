@@ -71,8 +71,8 @@ export default class Api {
     return this.fetch<User>('put', 'User');
   }
 
-  public getInteracEtransferTransactions() {
-    return this.fetch<Transaction[]>('get', 'InteracEtransfer/Transactions');
+  public getInteracEtransferTransactions(type?: string) {
+    return this.fetch<Transaction[]>('get', `InteracEtransfer/Transactions${type ? `?type=${type}` : ''}`);
   }
 
   public postInteracEtransferTransaction(data: InteracEtransferTransaction) {
