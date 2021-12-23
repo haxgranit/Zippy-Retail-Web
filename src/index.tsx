@@ -1,5 +1,3 @@
-/* eslint-disable no-console */
-
 import {
   AuthenticationResult,
   EventMessage,
@@ -16,9 +14,7 @@ import './index.css';
 import App from './App';
 import { msalConfig } from './authConfig';
 import * as serviceWorker from './serviceWorker';
-import Api from './api';
 import { store } from './app/store';
-import { login } from './features/user/userSlice';
 
 const msalInstance = new PublicClientApplication(msalConfig);
 const accounts = msalInstance.getAllAccounts();
@@ -31,13 +27,6 @@ msalInstance.addEventCallback((event: EventMessage) => {
     const payload = event.payload as AuthenticationResult;
     const { account } = payload;
     if (account) {
-      const api = new Api(msalInstance, account);
-      api.putUser()
-        .then((user) => {
-          console.log('user', user);
-          store.dispatch(login(user));
-        })
-        .catch((error) => console.log('error', error));
       msalInstance.setActiveAccount(account);
     }
   }
