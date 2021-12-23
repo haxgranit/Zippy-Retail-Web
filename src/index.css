@@ -7,8 +7,8 @@
 body {
   font-family: 'Poppins', sans-serif;
 }
-a:hover {
-  color: #0a58ca;
+main a:hover {
+  color: #ffffff;
 }
 .slider-slide {
   background-position: center;
