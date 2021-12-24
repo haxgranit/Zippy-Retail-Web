@@ -5,8 +5,10 @@ import SecurityRecipientPage from './SecurityRecipientPage';
 describe('Security Recipient Page Component', () => {
   it('Click next button on Security Recipient Page', () => {
     const showModal = jest.fn();
-    const { container } = render(<SecurityRecipientPage showModal={showModal} />);
-    
+    const { container } = render(
+      <SecurityRecipientPage showModal={showModal} />,
+    );
+
     fireEvent.click(container.querySelectorAll('.btn-danger')[0]);
     expect(showModal).toBeCalledTimes(1);
   });

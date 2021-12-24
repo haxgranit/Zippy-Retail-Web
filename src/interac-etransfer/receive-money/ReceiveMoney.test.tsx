@@ -1,12 +1,6 @@
 import { render, fireEvent } from '../../test-utils';
-import Enzyme, { shallow } from 'enzyme';
-import { BrowserRouter } from 'react-router-dom';
-import Adapter from '@wojtekmaj/enzyme-adapter-react-17';
 
 import ReceiveMoney from './ReceiveMoney';
-
-// Configure enzyme for react 17
-Enzyme.configure({ adapter: new Adapter() });
 
 const mockedUsedNavigate = jest.fn();
 

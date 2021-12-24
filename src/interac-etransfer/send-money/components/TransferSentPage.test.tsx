@@ -17,7 +17,7 @@ describe('Transfer Sent Page Component', () => {
       <TransferSentPage
         setCurrentStep={setCurrentStep}
         setPageIndex={setPageIndex}
-      />
+      />,
     );
     fireEvent.click(container.querySelectorAll('.btn-danger')[0]);
     expect(setPageIndex).toBeCalledTimes(1);
@@ -31,9 +31,9 @@ describe('Transfer Sent Page Component', () => {
       <TransferSentPage
         setCurrentStep={setCurrentStep}
         setPageIndex={setPageIndex}
-      />
+      />,
     );
-    
+
     fireEvent.click(container.querySelectorAll('.btn-outline-danger')[0]);
     expect(mockedUsedNavigate).toHaveBeenCalled();
   });

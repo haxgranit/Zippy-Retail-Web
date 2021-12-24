@@ -1,12 +1,5 @@
 import { render, fireEvent } from '../../../test-utils';
-import Enzyme, { mount, shallow } from 'enzyme';
-import Adapter from '@wojtekmaj/enzyme-adapter-react-17';
-import { BrowserRouter } from 'react-router-dom';
-import { Button } from 'react-bootstrap';
 import RequestReminder from './RequestReminder';
-
-// Configure enzyme for react 17
-Enzyme.configure({ adapter: new Adapter() });
 
 const mockedUsedNavigate = jest.fn();
 jest.mock('react-router-dom', () => ({

@@ -2,7 +2,7 @@ import React from 'react';
 import Enzyme, { shallow } from 'enzyme';
 import Adapter from '@wojtekmaj/enzyme-adapter-react-17';
 
-import { Button, Form, FormControl } from 'react-bootstrap';
+import { Button, FormControl } from 'react-bootstrap';
 import DetailsPage from './DetailsPage';
 
 const initMainInfo = {
