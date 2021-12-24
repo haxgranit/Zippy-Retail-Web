@@ -19,11 +19,11 @@ Enzyme.configure({ adapter: new Adapter() });
 describe('DetailsPage Component', () => {
   it('Click next button on DetailsPage', () => {
     const setContactToSend = jest.fn();
-    const setPageIndex = jest.fn();
+    const navigateSteps = jest.fn();
     const wrapper = shallow(
       <DetailsPage
         setCurrentStep={jest.fn()}
-        setPageIndex={setPageIndex}
+        navigateSteps={navigateSteps}
         setMainInfo={jest.fn()}
         mainInfo={initMainInfo}
         setContactToSend={setContactToSend}
@@ -50,16 +50,16 @@ describe('DetailsPage Component', () => {
     );
     const mEvent = { preventDefault: jest.fn() };
     wrapper.find('Button[variant="danger"]').simulate('click', mEvent);
-    expect(setPageIndex).toBeCalledTimes(1);
+    expect(navigateSteps).toBeCalledTimes(1);
   });
 
   it('Click next button on DetailsPage with option changing', () => {
-    const setPageIndex = jest.fn();
+    const navigateSteps = jest.fn();
     const setContactToSend = jest.fn();
     const wrapper = shallow(
       <DetailsPage
         setCurrentStep={jest.fn()}
-        setPageIndex={setPageIndex}
+        navigateSteps={navigateSteps}
         setMainInfo={jest.fn()}
         mainInfo={initMainInfo}
         setContactToSend={setContactToSend}
@@ -90,17 +90,17 @@ describe('DetailsPage Component', () => {
 
     const mEvent = { preventDefault: jest.fn() };
     wrapper.find('Button[variant="danger"]').simulate('click', mEvent);
-    expect(setPageIndex).toBeCalledTimes(1);
+    expect(navigateSteps).toBeCalledTimes(1);
     expect(setContactToSend).toBeCalledTimes(1);
   });
 
   it('Click next button on DetailsPage with option 2', () => {
-    const setPageIndex = jest.fn();
+    const navigateSteps = jest.fn();
     const setContactToSend = jest.fn();
     const wrapper = shallow(
       <DetailsPage
         setCurrentStep={jest.fn()}
-        setPageIndex={setPageIndex}
+        navigateSteps={navigateSteps}
         setMainInfo={jest.fn()}
         mainInfo={initMainInfo}
         setContactToSend={setContactToSend}
@@ -128,7 +128,7 @@ describe('DetailsPage Component', () => {
 
     const mEvent = { preventDefault: jest.fn() };
     wrapper.find('Button[variant="danger"]').simulate('click', mEvent);
-    expect(setPageIndex).toBeCalledTimes(1);
+    expect(navigateSteps).toBeCalledTimes(1);
   });
 
   it('change FormControl text values', () => {
@@ -137,7 +137,7 @@ describe('DetailsPage Component', () => {
     const wrapper = shallow(
       <DetailsPage
         setCurrentStep={jest.fn()}
-        setPageIndex={jest.fn()}
+        navigateSteps={jest.fn()}
         setMainInfo={setMainInfo}
         mainInfo={initMainInfo}
         setContactToSend={setContactToSend}
@@ -182,7 +182,7 @@ describe('DetailsPage Component', () => {
     const wrapper = shallow(
       <DetailsPage
         setCurrentStep={jest.fn()}
-        setPageIndex={jest.fn()}
+        navigateSteps={jest.fn()}
         setMainInfo={jest.fn()}
         mainInfo={initMainInfo}
         setContactToSend={setContactToSend}
@@ -218,7 +218,7 @@ describe('DetailsPage Component', () => {
     const wrapper = shallow(
       <DetailsPage
         setCurrentStep={jest.fn()}
-        setPageIndex={jest.fn()}
+        navigateSteps={jest.fn()}
         setMainInfo={jest.fn()}
         mainInfo={{ ...initMainInfo, amount: 3000 }}
         setContactToSend={setContactToSend}
@@ -256,7 +256,7 @@ describe('DetailsPage Component', () => {
     const wrapper = shallow(
       <DetailsPage
         setCurrentStep={jest.fn()}
-        setPageIndex={jest.fn()}
+        navigateSteps={jest.fn()}
         setMainInfo={jest.fn()}
         mainInfo={{ ...initMainInfo, amount: 3000 }}
         setContactToSend={setContactToSend}
@@ -297,7 +297,7 @@ describe('DetailsPage Component', () => {
     const wrapper = shallow(
       <DetailsPage
         setCurrentStep={jest.fn()}
-        setPageIndex={jest.fn()}
+        navigateSteps={jest.fn()}
         setMainInfo={jest.fn()}
         mainInfo={{ ...initMainInfo, amount: 3000 }}
         setContactToSend={setContactToSend}
@@ -324,7 +324,7 @@ describe('DetailsPage Component', () => {
     const wrapper = shallow(
       <DetailsPage
         setCurrentStep={jest.fn()}
-        setPageIndex={jest.fn()}
+        navigateSteps={jest.fn()}
         setMainInfo={jest.fn()}
         mainInfo={{ ...initMainInfo, amount: 3000 }}
         setContactToSend={setContactToSend}
