@@ -85,6 +85,10 @@ export default class Api {
     return this.fetch<InteracEtransferTransaction>('post', 'InteracEtransfer/Transactions', data);
   }
 
+  public postDirectDepositStatus(data: Contact | undefined) {
+    return this.fetch<InteracEtransferTransaction>('post', 'InteracEtransfer/DirectDepositStatus', { email: data?.email });
+  }
+
   private async fetch<TResponse>(method: string, path: string, body?: any) {
     const apiUrl = (<any>window).API_URL;
     if (!apiUrl) {

@@ -14,9 +14,8 @@ const Template: ComponentStory<typeof DetailsPage> = ({
   selectedAccount,
   setContactToSend,
   setSelectedAccount,
-  navigateSteps,
-  setCurrentStep,
   setMainInfo,
+  handleSecurity,
 }) => (
   <DetailsPage
     mainInfo={mainInfo}
@@ -25,10 +24,10 @@ const Template: ComponentStory<typeof DetailsPage> = ({
     selectedContact={selectedContact}
     setContactToSend={setContactToSend}
     setMainInfo={setMainInfo}
-    setCurrentStep={setCurrentStep}
-    navigateSteps={navigateSteps}
     selectedAccount={selectedAccount}
     setSelectedAccount={setSelectedAccount}
+    handleSecurity={handleSecurity}
+    isProcessing={false}
   />
 );
 

@@ -69,7 +69,7 @@ export default function SendMoney() {
   const [currentStep, setCurrentStep] = useState(step || 1);
   const [pageIndex, setPageIndex] = useState(stepId || PageIndexes.DetailsPageIndex);
   const [showVerifyModal, setShowVerifyModal] = useState(false);
-  const [isSendingMoney, setIsSendingMoney] = useState(false);
+  const [isProcessing, setProcessing] = useState(false);
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
   const [selectedContact, setSelectedContact] = useState(0);
   const [selectedAccount, setSelectedAccount] = useState(0);
@@ -132,7 +132,7 @@ export default function SendMoney() {
     const data: InteracEtransferTransaction = {
       contactId: selectedContact,
     };
-    setIsSendingMoney(true);
+    setProcessing(true);
     new Api(instance, accounts[0])
       .postInteracEtransferTransaction(data)
       .then(() => {
@@ -146,7 +146,7 @@ export default function SendMoney() {
       })
       .catch(() => setErrorMessage('Transfer failed.'))
       .finally(() => {
-        setIsSendingMoney(false);
+        setProcessing(false);
         setShowVerifyModal(false);
       });
   };
@@ -186,6 +186,27 @@ export default function SendMoney() {
     navigate(`/interac-etransfer/send-money/${nav_step}`);
   };
 
+  const handleSecurity = () => {
+    const contact = contactList?.find((item) => item.id === selectedContact);
+    setProcessing(true);
+    new Api(instance, accounts[0])
+      .postDirectDepositStatus(contact)
+      .then((res) => {
+        if (res) {
+          setCurrentStep(2);
+          navigateSteps(PageIndexes.SecurityRecipientPageIndex);
+        } else {
+          setCurrentStep(2);
+          navigateSteps(PageIndexes.SecurityQuestionPageIndex);
+        }
+        setProcessing(false);
+      })
+      .catch(() => setErrorMessage('Transfer failed'))
+      .finally(() => {
+        setProcessing(false);
+      });
+  };
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [pageIndex]);
@@ -197,7 +218,7 @@ export default function SendMoney() {
         handleClose={handleSendMoneyVerificationClose}
         handleNext={handleSendMoneyVerificationNext}
         handleBack={handleSendMoneyVerificationBack}
-        isSendingMoney={isSendingMoney}
+        isSendingMoney={isProcessing}
         transferDetails={getTransferDetails()}
       />
       <CommonHeader title="SEND MONEY" print={false} />
@@ -223,8 +244,7 @@ export default function SendMoney() {
           </Row>
           {pageIndex === PageIndexes.DetailsPageIndex && (
             <DetailsPage
-              navigateSteps={navigateSteps}
-              setCurrentStep={setCurrentStep}
+              isProcessing={isProcessing}
               selectedContact={selectedContact}
               setContactToSend={setSelectedContact}
               selectedAccount={selectedAccount}
@@ -233,6 +253,7 @@ export default function SendMoney() {
               setMainInfo={setMainInfo}
               accounts={accountsList}
               contacts={contactList}
+              handleSecurity={handleSecurity}
             />
           )}
           {pageIndex === PageIndexes.SecurityRecipientPageIndex && (

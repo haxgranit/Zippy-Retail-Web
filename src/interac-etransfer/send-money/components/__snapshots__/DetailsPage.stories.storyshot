@@ -346,7 +346,6 @@ Array [
       <button
         className="d-flex btn btn-danger"
         disabled={true}
-        onClick={[Function]}
         type="button"
       >
         Next
@@ -699,7 +698,6 @@ Array [
       <button
         className="d-flex btn btn-danger"
         disabled={true}
-        onClick={[Function]}
         type="button"
       >
         Next

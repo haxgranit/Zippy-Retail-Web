@@ -5,26 +5,25 @@ import {
   Form,
   FormControl,
   Button,
+  Spinner,
 } from 'react-bootstrap';
 import { Account, Contact } from '../../../api';
-import { TransferMainDetails, PageIndexes } from '../SendMoney';
+import { TransferMainDetails } from '../SendMoney';
 import { formatContactName } from '../../../Helpers';
 
 interface DetailsPageProps {
-  setCurrentStep: Dispatch<SetStateAction<number>>;
   selectedContact : number;
   setContactToSend: Dispatch<SetStateAction<number>>;
   mainInfo: TransferMainDetails;
   setMainInfo: Dispatch<SetStateAction<TransferMainDetails>>;
-  navigateSteps: Dispatch<string>;
   accounts: Account[] | null;
   contacts: Contact[] | null;
   selectedAccount: number;
   setSelectedAccount: Dispatch<SetStateAction<number>>;
+  handleSecurity: any;
+  isProcessing: boolean;
 }
 const DetailsPage = ({
-  navigateSteps,
-  setCurrentStep,
   selectedContact = 0,
   setContactToSend,
   mainInfo,
@@ -33,6 +32,8 @@ const DetailsPage = ({
   contacts,
   selectedAccount,
   setSelectedAccount,
+  handleSecurity,
+  isProcessing,
 }: DetailsPageProps): JSX.Element => {
   const handleContactChange = (evt: any) => {
     setContactToSend(Number(evt.target.value));
@@ -228,18 +229,17 @@ const DetailsPage = ({
           <Button
             variant="danger"
             className="d-flex"
-            disabled={(selectedAccount === 0 || selectedContact === 0)}
-            onClick={() => {
-              if (selectedContact === 1) {
-                setCurrentStep(2);
-                navigateSteps(PageIndexes.SecurityRecipientPageIndex);
-              } else {
-                setCurrentStep(2);
-                navigateSteps(PageIndexes.SecurityQuestionPageIndex);
-              }
-            }}
+            disabled={(selectedAccount === 0 || selectedContact === 0 || isProcessing)}
+            onClick={handleSecurity}
           >
-            Next
+            {isProcessing ? (
+              <span>
+                Next
+                <Spinner style={{ marginLeft: '16px' }} animation="border" variant="light" size="sm" />
+              </span>
+            ) : (
+              'Next'
+            )}
           </Button>
         </Col>
       </Row>

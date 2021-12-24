@@ -19,11 +19,10 @@ Enzyme.configure({ adapter: new Adapter() });
 describe('DetailsPage Component', () => {
   it('Click next button on DetailsPage', () => {
     const setContactToSend = jest.fn();
-    const navigateSteps = jest.fn();
+    const handleSecurity = jest.fn();
     const wrapper = shallow(
       <DetailsPage
-        setCurrentStep={jest.fn()}
-        navigateSteps={navigateSteps}
+        handleSecurity={handleSecurity}
         setMainInfo={jest.fn()}
         mainInfo={initMainInfo}
         setContactToSend={setContactToSend}
@@ -46,20 +45,20 @@ describe('DetailsPage Component', () => {
           },
         ]}
         selectedContact={1}
+        isProcessing={false}
       />,
     );
     const mEvent = { preventDefault: jest.fn() };
     wrapper.find('Button[variant="danger"]').simulate('click', mEvent);
-    expect(navigateSteps).toBeCalledTimes(1);
+    expect(handleSecurity).toBeCalledTimes(1);
   });
 
   it('Click next button on DetailsPage with option changing', () => {
-    const navigateSteps = jest.fn();
+    const handleSecurity = jest.fn();
     const setContactToSend = jest.fn();
     const wrapper = shallow(
       <DetailsPage
-        setCurrentStep={jest.fn()}
-        navigateSteps={navigateSteps}
+        handleSecurity={handleSecurity}
         setMainInfo={jest.fn()}
         mainInfo={initMainInfo}
         setContactToSend={setContactToSend}
@@ -82,6 +81,7 @@ describe('DetailsPage Component', () => {
           },
         ]}
         selectedContact={1}
+        isProcessing={false}
       />,
     );
     wrapper
@@ -90,17 +90,16 @@ describe('DetailsPage Component', () => {
 
     const mEvent = { preventDefault: jest.fn() };
     wrapper.find('Button[variant="danger"]').simulate('click', mEvent);
-    expect(navigateSteps).toBeCalledTimes(1);
+    expect(handleSecurity).toBeCalledTimes(1);
     expect(setContactToSend).toBeCalledTimes(1);
   });
 
   it('Click next button on DetailsPage with option 2', () => {
-    const navigateSteps = jest.fn();
+    const handleSecurity = jest.fn();
     const setContactToSend = jest.fn();
     const wrapper = shallow(
       <DetailsPage
-        setCurrentStep={jest.fn()}
-        navigateSteps={navigateSteps}
+        handleSecurity={handleSecurity}
         setMainInfo={jest.fn()}
         mainInfo={initMainInfo}
         setContactToSend={setContactToSend}
@@ -123,21 +122,22 @@ describe('DetailsPage Component', () => {
           },
         ]}
         selectedContact={1}
+        isProcessing={false}
       />,
     );
 
     const mEvent = { preventDefault: jest.fn() };
     wrapper.find('Button[variant="danger"]').simulate('click', mEvent);
-    expect(navigateSteps).toBeCalledTimes(1);
+    expect(handleSecurity).toBeCalledTimes(1);
   });
 
   it('change FormControl text values', () => {
     const setContactToSend = jest.fn();
     const setMainInfo = jest.fn();
+    const handleSecurity = jest.fn();
     const wrapper = shallow(
       <DetailsPage
-        setCurrentStep={jest.fn()}
-        navigateSteps={jest.fn()}
+        handleSecurity={handleSecurity}
         setMainInfo={setMainInfo}
         mainInfo={initMainInfo}
         setContactToSend={setContactToSend}
@@ -160,6 +160,7 @@ describe('DetailsPage Component', () => {
           },
         ]}
         selectedContact={1}
+        isProcessing={false}
       />,
     );
     wrapper
@@ -179,10 +180,10 @@ describe('DetailsPage Component', () => {
 
   it('change FormControl to call setContactToSend', () => {
     const setContactToSend = jest.fn();
+    const handleSecurity = jest.fn();
     const wrapper = shallow(
       <DetailsPage
-        setCurrentStep={jest.fn()}
-        navigateSteps={jest.fn()}
+        handleSecurity={handleSecurity}
         setMainInfo={jest.fn()}
         mainInfo={initMainInfo}
         setContactToSend={setContactToSend}
@@ -205,6 +206,7 @@ describe('DetailsPage Component', () => {
           },
         ]}
         selectedContact={1}
+        isProcessing={false}
       />,
     );
     wrapper
@@ -215,10 +217,10 @@ describe('DetailsPage Component', () => {
   });
   it('next button click should not affect ammount', () => {
     const setContactToSend = jest.fn();
+    const handleSecurity = jest.fn();
     const wrapper = shallow(
       <DetailsPage
-        setCurrentStep={jest.fn()}
-        navigateSteps={jest.fn()}
+        handleSecurity={handleSecurity}
         setMainInfo={jest.fn()}
         mainInfo={{ ...initMainInfo, amount: 3000 }}
         setContactToSend={setContactToSend}
@@ -241,6 +243,7 @@ describe('DetailsPage Component', () => {
           },
         ]}
         selectedContact={1}
+        isProcessing={false}
       />,
     );
     expect(wrapper.find(FormControl).at(0).prop('value')).toEqual(3000);
@@ -253,10 +256,10 @@ describe('DetailsPage Component', () => {
   });
   it('next button click should not affect transfer method', () => {
     const setContactToSend = jest.fn();
+    const handleSecurity = jest.fn();
     const wrapper = shallow(
       <DetailsPage
-        setCurrentStep={jest.fn()}
-        navigateSteps={jest.fn()}
+        handleSecurity={handleSecurity}
         setMainInfo={jest.fn()}
         mainInfo={{ ...initMainInfo, amount: 3000 }}
         setContactToSend={setContactToSend}
@@ -279,6 +282,7 @@ describe('DetailsPage Component', () => {
           },
         ]}
         selectedContact={1}
+        isProcessing={false}
       />,
     );
     expect(wrapper.find('.transfer-method').text()).toEqual('Email');
@@ -292,12 +296,12 @@ describe('DetailsPage Component', () => {
   it('getEmail without contacts should render no email', () => {
     const setContactToSend = jest.fn();
     const setContactId = jest.fn();
+    const handleSecurity = jest.fn();
     React.useState = jest.fn().mockImplementationOnce(() => [0, setContactId]);
 
     const wrapper = shallow(
       <DetailsPage
-        setCurrentStep={jest.fn()}
-        navigateSteps={jest.fn()}
+        handleSecurity={handleSecurity}
         setMainInfo={jest.fn()}
         mainInfo={{ ...initMainInfo, amount: 3000 }}
         setContactToSend={setContactToSend}
@@ -312,6 +316,7 @@ describe('DetailsPage Component', () => {
           },
         ]}
         selectedContact={1}
+        isProcessing={false}
       />,
     );
     expect(wrapper.find('p').at(0).text()).toEqual('Email: No email');
@@ -319,12 +324,12 @@ describe('DetailsPage Component', () => {
   it('getEmail with contacts should render an email', () => {
     const setContactToSend = jest.fn();
     const setContactId = jest.fn();
+    const handleSecurity = jest.fn();
     React.useState = jest.fn().mockImplementationOnce(() => [0, setContactId]);
 
     const wrapper = shallow(
       <DetailsPage
-        setCurrentStep={jest.fn()}
-        navigateSteps={jest.fn()}
+        handleSecurity={handleSecurity}
         setMainInfo={jest.fn()}
         mainInfo={{ ...initMainInfo, amount: 3000 }}
         setContactToSend={setContactToSend}
@@ -347,6 +352,7 @@ describe('DetailsPage Component', () => {
           },
         ]}
         selectedContact={1}
+        isProcessing={false}
       />,
     );
     expect(wrapper.find('p').at(0).text()).toEqual('Email: email@zippy.cash');
