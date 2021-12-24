@@ -20,7 +20,7 @@ describe('Request Sent Component', () => {
     const setCurrentStep = jest.fn();
     const wrapper = shallow(
       <BrowserRouter>
-        <RequestSent setCurrentStep={setCurrentStep} />
+        <RequestSent setCurrentStep={setCurrentStep} navigateStep={jest.fn()} />
       </BrowserRouter>,
     );
     wrapper.childAt(0).dive().find('Button[variant="danger"]').simulate('click');

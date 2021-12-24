@@ -11,7 +11,7 @@ import { formatContactName } from '../../../Helpers';
 
 const Divider = () => <div className="border-top my-3" />;
 
-export default function RequestDetail({ setCurrentStep }: any) {
+export default function RequestDetail({ setCurrentStep, navigateStep }: any) {
   const [accountFrom, setAccountFrom] = useState<Contact | undefined>(
     undefined,
   );
@@ -210,7 +210,13 @@ export default function RequestDetail({ setCurrentStep }: any) {
       <Divider />
       <Row>
         <Col className="text-end">
-          <Button variant="danger" onClick={() => setCurrentStep(2)}>
+          <Button
+            variant="danger"
+            onClick={() => {
+              setCurrentStep(2);
+              navigateStep(1);
+            }}
+          >
             Send Request
           </Button>
         </Col>

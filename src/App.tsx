@@ -159,7 +159,9 @@ export default function App() {
             <Route path="send-money" element={<SendMoney />}>
               <Route path=":stepId" element={<SendMoney />} />
             </Route>
-            <Route path="request-money" element={<RequestMoney />} />
+            <Route path="request-money" element={<RequestMoney />}>
+              <Route path=":stepId" element={<RequestMoney />} />
+            </Route>
             <Route path="contact-list" element={<ContactList />} />
             <Route path="contact-list/edit" element={<EditContact />} />
             <Route path="edit-my-profile" element={<EditMyProfile />} />

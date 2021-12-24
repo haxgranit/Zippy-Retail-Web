@@ -3,15 +3,27 @@ import Enzyme, { shallow } from 'enzyme';
 import Adapter from '@wojtekmaj/enzyme-adapter-react-17';
 
 import RequestMoney from './RequestMoney';
+import { BrowserRouter } from 'react-router-dom';
 
 // Configure enzyme for react 17
 Enzyme.configure({ adapter: new Adapter() });
 
+const mockedUsedNavigate = jest.fn();
+
+jest.mock('react-router-dom', () => ({
+  ...(jest.requireActual('react-router-dom') as any),
+  useNavigate: () => mockedUsedNavigate,
+}));
+
 describe('Request Money Component', () => {
   it('should click next step button', () => {
-    const wrapper = shallow(<RequestMoney />);
+    const wrapper = shallow(
+      <BrowserRouter>
+        <RequestMoney />
+      </BrowserRouter>,
+    );
 
-    const leftWrapper = wrapper.find('LeftCol').dive();
+    const leftWrapper = wrapper.childAt(0).dive().find('LeftCol').dive();
     const stepWrapper = leftWrapper.find('StepComponent').dive();
     stepWrapper.find('div[role="button"]').at(0).simulate('click');
   });

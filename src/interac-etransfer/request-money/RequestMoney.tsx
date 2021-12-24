@@ -3,6 +3,7 @@ import {
   Col,
   Row,
 } from 'react-bootstrap';
+import { useNavigate, useParams } from 'react-router-dom';
 import CommonHeader from '../../common/CommonHeader';
 import StepComponent from '../../common/StepComponent';
 import RequestDetail from './components/RequestDetails';
@@ -10,7 +11,7 @@ import RequestSent from './components/RequestSent';
 
 const Divider = () => <div className="border-top my-3" />;
 
-const LeftCol = ({ currentStep, setCurrentStep }: any) => (
+const LeftCol = ({ currentStep, setCurrentStep, navigateStep }: any) => (
   <Col xs={9}>
     <Row>
       <Col>
@@ -18,12 +19,22 @@ const LeftCol = ({ currentStep, setCurrentStep }: any) => (
           steps={2}
           currentStep={currentStep}
           setCurrentStep={setCurrentStep}
-          navigateSteps={() => {}}
+          navigateSteps={navigateStep}
         />
       </Col>
     </Row>
-    {currentStep === 1 && <RequestDetail setCurrentStep={setCurrentStep} />}
-    {currentStep === 2 && <RequestSent setCurrentStep={setCurrentStep} />}
+    {currentStep === 1 && (
+      <RequestDetail
+        setCurrentStep={setCurrentStep}
+        navigateStep={navigateStep}
+      />
+    )}
+    {currentStep === 2 && (
+      <RequestSent
+        setCurrentStep={setCurrentStep}
+        navigateStep={navigateStep}
+      />
+    )}
     <Divider />
     <Row>
       <Col>
@@ -57,8 +68,22 @@ const RightCol = () => (
   </Col>
 );
 
+const StepIndexes: any = {
+  'request-detail': 1,
+  'request-sent': 2,
+};
+
+const Steps = ['request-details', 'request-sent'];
+
 export default function RequestMoney() {
-  const [currentStep, setCurrentStep] = useState(1);
+  const { stepId } = useParams();
+  const navigate = useNavigate();
+  const [currentStep, setCurrentStep] = useState(StepIndexes[stepId || 'request-detail']);
+
+  const navigateStep = (stepIndex: number) => {
+    navigate(`/interac-etransfer/request-money/${Steps[stepIndex]}`);
+  };
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [currentStep]);
@@ -70,7 +95,11 @@ export default function RequestMoney() {
         </Col>
       </Row>
       <Row>
-        <LeftCol currentStep={currentStep} setCurrentStep={setCurrentStep} />
+        <LeftCol
+          currentStep={currentStep}
+          setCurrentStep={setCurrentStep}
+          navigateStep={navigateStep}
+        />
         <RightCol />
       </Row>
     </div>

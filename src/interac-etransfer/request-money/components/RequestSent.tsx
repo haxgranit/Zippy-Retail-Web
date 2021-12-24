@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 
 const Divider = () => <div className="border-top my-3" />;
 
-export default function RequestSent({ setCurrentStep }: any) {
+export default function RequestSent({ setCurrentStep, navigateStep }: any) {
   const navigate = useNavigate();
 
   return (
@@ -83,7 +83,10 @@ export default function RequestSent({ setCurrentStep }: any) {
           <Button
             variant="danger"
             className="d-flex"
-            onClick={() => setCurrentStep(1)}
+            onClick={() => {
+              setCurrentStep(1);
+              navigateStep(0);
+            }}
           >
             Send another transfer
           </Button>

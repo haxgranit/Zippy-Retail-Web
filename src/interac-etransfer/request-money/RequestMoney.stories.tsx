@@ -1,4 +1,5 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { BrowserRouter } from 'react-router-dom';
 import '../../i18n/config';
 import '../../index.css';
 import RequestMoney from './RequestMoney';
@@ -8,6 +9,10 @@ export default {
   component: RequestMoney,
 } as ComponentMeta<typeof RequestMoney>;
 
-const Template: ComponentStory<typeof RequestMoney> = () => <RequestMoney />;
+const Template: ComponentStory<typeof RequestMoney> = () => (
+  <BrowserRouter>
+    <RequestMoney />
+  </BrowserRouter>
+);
 export const Default = Template.bind({});
 Default.args = {};

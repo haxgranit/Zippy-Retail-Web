@@ -9,7 +9,7 @@ export default {
 
 const Template: ComponentStory<typeof RequestSent> = () => (
   <BrowserRouter>
-    <RequestSent setCurrentStep={() => {}} />
+    <RequestSent setCurrentStep={() => {}} navigateStep={jest.fn()} />
   </BrowserRouter>
 );
 

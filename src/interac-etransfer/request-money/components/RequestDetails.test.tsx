@@ -9,12 +9,12 @@ Enzyme.configure({ adapter: new Adapter() });
 
 describe('RequestDetail Component', () => {
   it('should render RequestDetail', () => {
-    const wrapper = mount(<RequestDetails />);
+    const wrapper = mount(<RequestDetails navigateStep={jest.fn()} />);
     const title = wrapper.find('h4');
     expect(title.text()).toEqual('Request Money Details');
   });
   it('should not  render any form in beginging ', () => {
-    const wrapper = mount(<RequestDetails />);
+    const wrapper = mount(<RequestDetails navigateStep={jest.fn()} />);
     const emailOrPhoneForm = wrapper.find(Form);
     expect(emailOrPhoneForm.exists()).toBeFalsy();
   });
@@ -32,7 +32,7 @@ describe('RequestDetail Component', () => {
       .mockImplementationOnce(() => [initialContact, setAccountFrom])
       .mockImplementationOnce((x) => [x, setAccountsData])
       .mockImplementationOnce((x) => [x, setContacts]);
-    const wrapper = mount(<RequestDetails />);
+    const wrapper = mount(<RequestDetails navigateStep={jest.fn()} />);
     const emailOrPhoneCheck = wrapper.find(Form.Check);
     const mockedEvent = { target: { value: JSON.stringify(initialContact) } };
     emailOrPhoneCheck.at(0).simulate('click', mockedEvent);
@@ -55,7 +55,7 @@ describe('RequestDetail Component', () => {
       .mockImplementationOnce(() => [initialContact, setAccountFrom])
       .mockImplementationOnce((x) => [x, setAccountsData])
       .mockImplementationOnce((x) => [x, setContacts]);
-    const wrapper = mount(<RequestDetails />);
+    const wrapper = mount(<RequestDetails navigateStep={jest.fn()} />);
     const emailOrPhoneCheck = wrapper.find(Form.Check);
     const mockedEvent = { target: { value: JSON.stringify(initialContact) } };
     emailOrPhoneCheck.at(0).simulate('click', mockedEvent);
@@ -78,7 +78,7 @@ describe('RequestDetail Component', () => {
       .mockImplementationOnce(() => [initialContact, setAccountFrom])
       .mockImplementationOnce((x) => [x, setAccountsData])
       .mockImplementationOnce((x) => [x, setContacts]);
-    const wrapper = mount(<RequestDetails />);
+    const wrapper = mount(<RequestDetails navigateStep={jest.fn()} />);
     const emailOrPhoneForm = wrapper.find(Form);
     const emailOrPhoneCheck = wrapper.find(Form.Select);
     const mockedEvent = { target: { value: '' } };
@@ -99,7 +99,7 @@ describe('RequestDetail Component', () => {
       .mockImplementationOnce(() => [initialContact, setAccountFrom])
       .mockImplementationOnce((x) => [x, setAccountsData])
       .mockImplementationOnce((x) => [x, setContacts]);
-    const wrapper = mount(<RequestDetails />);
+    const wrapper = mount(<RequestDetails navigateStep={jest.fn()} />);
     const emailOrPhoneCheck = wrapper.find(Form.Select);
     const mockedEvent = { target: { value: JSON.stringify(initialContact) } };
     emailOrPhoneCheck.at(0).simulate('click', mockedEvent);
@@ -120,7 +120,7 @@ describe('RequestDetail Component', () => {
       .mockImplementationOnce(() => [initialContact, setAccountFrom])
       .mockImplementationOnce((x) => [x, setAccountsData])
       .mockImplementationOnce((x) => [x, setContacts]);
-    const wrapper = mount(<RequestDetails />);
+    const wrapper = mount(<RequestDetails navigateStep={jest.fn()} />);
     const emailOrPhoneCheck = wrapper.find(Form.Select);
     const mockedEvent = { target: { value: JSON.stringify(initialContact) } };
     emailOrPhoneCheck.at(0).simulate('click', mockedEvent);
@@ -142,7 +142,7 @@ describe('RequestDetail Component', () => {
       .mockImplementationOnce((x) => [x, setAccountsData])
       .mockImplementationOnce((x) => [x, setContacts]);
     const setCurrentStep = jest.fn();
-    const wrapper = shallow(<RequestDetails setCurrentStep={setCurrentStep} />);
+    const wrapper = shallow(<RequestDetails setCurrentStep={setCurrentStep} navigateStep={jest.fn()} />);
 
     wrapper
       .find(Form.Select)
@@ -169,7 +169,7 @@ describe('RequestDetail Component', () => {
       .mockImplementationOnce(() => [initialContact, setAccountFrom])
       .mockImplementationOnce((x) => [x, setAccountsData])
       .mockImplementationOnce(() => [[initialContact], setContacts]);
-    const wrapper = mount(<RequestDetails />);
+    const wrapper = mount(<RequestDetails navigateStep={jest.fn()} />);
     const emailOrPhoneCheck = wrapper.find(Form.Select);
     // @ts-ignore
     emailOrPhoneCheck
@@ -193,7 +193,7 @@ describe('RequestDetail Component', () => {
       .mockImplementationOnce(() => [initialContact, setAccountFrom])
       .mockImplementationOnce((x) => [x, setAccountsData])
       .mockImplementationOnce(() => [[initialContact], setContacts]);
-    const wrapper = mount(<RequestDetails />);
+    const wrapper = mount(<RequestDetails navigateStep={jest.fn()} />);
     const emailOrPhoneCheck = wrapper.find(Form.Select);
     // const mockedEvent = { target: { value: JSON.stringify(initialContact) } };
     // @ts-ignore
@@ -231,7 +231,7 @@ describe('RequestDetail Component', () => {
       .mockImplementationOnce(() => [initialContact, setAccountFrom])
       .mockImplementationOnce((x) => [x, setAccountsData])
       .mockImplementationOnce(() => [initialContact, setContacts]);
-    const wrapper = mount(<RequestDetails />);
+    const wrapper = mount(<RequestDetails navigateStep={jest.fn()} />);
     const emailOrPhoneCheck = wrapper.find(Form.Select);
     const options = emailOrPhoneCheck.at(1).find('option');
     expect(options.length).toBeGreaterThan(1);
