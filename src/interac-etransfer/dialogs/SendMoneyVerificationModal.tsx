@@ -5,12 +5,20 @@ import {
   Button,
   Spinner,
 } from 'react-bootstrap';
+import currencyFormatter from '../helpers/CurrencyFormatter';
 
+export interface TransferDetails {
+  source: { name: string; email: string };
+  destination: { name: string; email: string };
+  fromAccount: string;
+  amount: number;
+}
 export interface SendMoneyVerificationModalProps {
   show: boolean;
   handleClose: () => void;
   handleNext: () => void;
   handleBack: () => void;
+  transferDetails: TransferDetails;
   isSendingMoney: boolean;
 }
 const SendMoneyVerificationModal = ({
@@ -18,6 +26,7 @@ const SendMoneyVerificationModal = ({
   handleClose,
   handleNext,
   handleBack,
+  transferDetails,
   isSendingMoney,
 }: SendMoneyVerificationModalProps) => (
   <Modal show={show} size="lg">
@@ -39,8 +48,8 @@ const SendMoneyVerificationModal = ({
               <p>From:</p>
             </Col>
             <Col>
-              <p>DUANE TOUGH</p>
-              <p>dtough@hotmail.com</p>
+              <p>{transferDetails.source.name}</p>
+              <p>{transferDetails.source.email}</p>
             </Col>
           </Row>
           <hr style={{ marginTop: '0px' }} />
@@ -54,8 +63,8 @@ const SendMoneyVerificationModal = ({
               <p>To:</p>
             </Col>
             <Col>
-              <p>CHELSEA TOUGH</p>
-              <p>chelsea.tough@gmail.com</p>
+              <p>{transferDetails.destination.name}</p>
+              <p>{transferDetails.destination.email}</p>
             </Col>
           </Row>
           <hr style={{ marginTop: '0px' }} />
@@ -69,7 +78,7 @@ const SendMoneyVerificationModal = ({
               <p>Amount:</p>
             </Col>
             <Col>
-              <p>$1,000.00</p>
+              <p>{`${currencyFormatter().format(transferDetails.amount)}`}</p>
             </Col>
           </Row>
           <hr style={{ marginTop: '0px' }} />
@@ -83,7 +92,7 @@ const SendMoneyVerificationModal = ({
               <p>From Account:</p>
             </Col>
             <Col>
-              <p>Chequing (01702-81-99639)</p>
+              <p>{transferDetails.fromAccount}</p>
             </Col>
           </Row>
         </div>

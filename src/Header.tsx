@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 import { useAppDispatch } from './app/hooks';
 import ZippyCash_Logo from './assets/img/general/ZippyCash_Logo.png';
 import { loginRequest } from './authConfig';
-import { logout } from './features/user/userSlice';
+import { unload } from './features/user/userSlice';
 
 export const HeaderPure = ({
   isAuthenticated,
@@ -101,7 +101,7 @@ export const Header = () => {
   };
 
   const handleLogout = () => {
-    dispatch(logout());
+    dispatch(unload());
     instance.logoutRedirect();
   };
 

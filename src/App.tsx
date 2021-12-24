@@ -1,4 +1,5 @@
 import AOS from 'aos';
+import { useIsAuthenticated, useMsal } from '@azure/msal-react';
 import { useEffect } from 'react';
 import {
   Navigate,
@@ -6,6 +7,9 @@ import {
   Routes,
   useLocation,
 } from 'react-router-dom';
+import Api from './api';
+import { useAppDispatch } from './app/hooks';
+import { load } from './features/user/userSlice';
 import About from './About';
 import AccountSecurity from './account-security/AccountSecurity';
 import BillerDetails from './bill-payments/biller-details/BillerDetails';
@@ -21,7 +25,7 @@ import ChangeYourAddress from './customer-services/change-your-address/ChangeYou
 import CustomerServices from './customer-services/customer-services/CustomerServices';
 import Footer from './footer/Footer';
 import { Header } from './Header';
-import AutodepositSettings from './interac-etransfer/autodeposit-settings/AutodepositSettings';
+import { AutodepositSettings } from './interac-etransfer/autodeposit-settings/AutodepositSettings';
 import ContactList from './interac-etransfer/contact-list/ContactList';
 import EditContact from './interac-etransfer/contact-list/edit/EditContact';
 import { EditMyProfile } from './interac-etransfer/edit-my-profile/EditMyProfile';
@@ -77,8 +81,20 @@ import InteracETransferDetails from './interac-etransfer/status/interac-e-transf
 import Status from './interac-etransfer/status/Status';
 
 export default function App() {
+  const dispatch = useAppDispatch();
+  const isAuthenticated = useIsAuthenticated();
+  const { accounts, instance } = useMsal();
   const { search } = useLocation();
   const languageCode = new URLSearchParams(search).get('language');
+
+  useEffect(() => {
+    if (isAuthenticated) {
+      new Api(instance, accounts[0])
+        .putUser()
+        .then((user) => dispatch(load(user)));
+    }
+  }, [isAuthenticated, instance, accounts]);
+
   useEffect(() => {
     if (languageCode) {
       i18n.changeLanguage(languageCode);
