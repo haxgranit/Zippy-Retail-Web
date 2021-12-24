@@ -176,7 +176,7 @@ describe('DetailsPage Component', () => {
     wrapper
       .find('.transfer-method')
       .simulate('change', { target: { value: 'Text Message' } });
-    expect(setMainInfo).toBeCalledTimes(4);
+    expect(setMainInfo).toBeCalledTimes(3);
   });
 
   it('change FormControl to call setContactToSend', () => {
