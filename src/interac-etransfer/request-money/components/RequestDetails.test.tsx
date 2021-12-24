@@ -142,7 +142,12 @@ describe('RequestDetail Component', () => {
       .mockImplementationOnce((x) => [x, setAccountsData])
       .mockImplementationOnce((x) => [x, setContacts]);
     const setCurrentStep = jest.fn();
-    const wrapper = shallow(<RequestDetails setCurrentStep={setCurrentStep} navigateStep={jest.fn()} />);
+    const wrapper = shallow(
+      <RequestDetails
+        setCurrentStep={setCurrentStep}
+        navigateStep={jest.fn()}
+      />,
+    );
 
     wrapper
       .find(Form.Select)
