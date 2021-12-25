@@ -1,30 +1,25 @@
-import Enzyme, { shallow } from 'enzyme';
-import Adapter from '@wojtekmaj/enzyme-adapter-react-17';
-import { Button } from 'react-bootstrap';
+import { render, fireEvent, screen } from '../../../../test-utils';
 import CancelRequestForMoneyVerification from './CancelRequestForMoneyVerification';
-
-// Configure enzyme for react 17
-Enzyme.configure({ adapter: new Adapter() });
 
 describe('ٌRequest Sent Component', () => {
   it('should render CancelRequestForMoneyVerification', () => {
     const show = true;
     const handleCancelRequest = jest.fn();
     const handleBack = jest.fn();
-    const wrapper = shallow(
+    render(
       <CancelRequestForMoneyVerification
         show={show}
         handleCancelRequest={handleCancelRequest}
         handleBack={handleBack}
       />,
     );
-    expect(wrapper.exists);
+    expect(screen.getByText('Cancel Request For Money - VERIFICATION')).toBeInTheDocument();
   });
   it('should click Back button on CancelRequestForMoneyVerification', () => {
     const show = true;
     const handleCancelRequest = jest.fn();
     const handleBack = jest.fn();
-    const wrapper = shallow(
+    const { container } = render(
       <CancelRequestForMoneyVerification
         show={show}
         handleCancelRequest={handleCancelRequest}
@@ -32,15 +27,14 @@ describe('ٌRequest Sent Component', () => {
       />,
     );
 
-    const buttons = wrapper.find(Button);
-    buttons.at(0).simulate('click');
+    fireEvent.click(screen.getByText('Back'));
     expect(handleBack).toBeCalled();
   });
   it('should click CancelRequest button on CancelRequestForMoneyVerification', () => {
     const show = true;
     const handleCancelRequest = jest.fn();
     const handleBack = jest.fn();
-    const wrapper = shallow(
+    const { container } = render(
       <CancelRequestForMoneyVerification
         show={show}
         handleCancelRequest={handleCancelRequest}
@@ -48,8 +42,7 @@ describe('ٌRequest Sent Component', () => {
       />,
     );
 
-    const buttons = wrapper.find(Button);
-    buttons.at(1).simulate('click');
+    fireEvent.click(screen.getByText('Cancel Request'));
     expect(handleCancelRequest).toBeCalled();
   });
 });
