@@ -249,6 +249,7 @@ exports[`Storyshots interac-etransfer/send-money/SendMoney API Error 1`] = `
           <input
             className="form-control"
             onChange={[Function]}
+            step=".01"
             type="number"
             value={0}
           />
@@ -861,6 +862,7 @@ exports[`Storyshots interac-etransfer/send-money/SendMoney Default 1`] = `
           <input
             className="form-control"
             onChange={[Function]}
+            step=".01"
             type="number"
             value={0}
           />
