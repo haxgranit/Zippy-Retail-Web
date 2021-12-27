@@ -60,7 +60,7 @@ describe('Transfer Sent Page Component', () => {
     expect(screen.getByText('$1,000.00')).toBeInTheDocument();
     expect(screen.getByText('$2,000.00')).toBeInTheDocument();
     expect(screen.getByText('Aug 6, 2021')).toBeInTheDocument();
-    expect(screen.getByText('Submitted: December 6, 2021, 1:07 PM EST.')).toBeInTheDocument();
+    expect(screen.getByText(/.*December 6, 2021, 1:07 PM.*$/)).toBeInTheDocument();
     expect(isValidEmail(sourceEmail.textContent!));
     expect(isValidEmail(destinationEmail.textContent!));
   });
