@@ -124,7 +124,7 @@ export default function SendMoney() {
   const handleSendMoneyVerificationNext = () => {
     const data: InteracEtransferTransaction = {
       contactId: selectedContact,
-      amount: 10,
+      amount: mainInfo.amount,
     };
     setIsSendingMoney(true);
     new Api(instance, accounts[0])

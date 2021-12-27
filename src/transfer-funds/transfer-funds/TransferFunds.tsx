@@ -45,7 +45,7 @@ const LeftCol = () => (
     <Row className="align-items-center">
       <Col xs={3}>Amount:</Col>
       <Col xs={6}>
-        <Form.Control type="number" placeholder="$" />
+        <Form.Control type="number" step=".01" placeholder="$" />
       </Col>
     </Row>
     <Divider />

@@ -80,6 +80,7 @@ Array [
       <input
         className="form-control"
         placeholder="$"
+        step=".01"
         type="number"
       />
     </div>
@@ -710,6 +711,7 @@ Array [
       <input
         className="form-control"
         placeholder="$"
+        step=".01"
         type="number"
       />
     </div>
