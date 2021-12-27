@@ -112,7 +112,7 @@ export const RequestDetailPure = ({
       <Row className="align-items-center">
         <Col xs={3}>Request Amount:</Col>
         <Col xs={6}>
-          <Form.Control type="number" placeholder="$" />
+          <Form.Control type="number" step=".01" placeholder="$" />
         </Col>
       </Row>
       <Row className="align-items-center mt-2">
