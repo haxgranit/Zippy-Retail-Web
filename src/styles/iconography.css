@@ -1,0 +1,37 @@
+i.zippy-cash-icon {
+    display: inline-block;
+    vertical-align: sub;
+    color: inherit;
+}
+
+i.zippy-cash-icon.zc-account-security:after {
+    content: url("../assets/img/icons/account-security.svg");
+}
+
+i.zippy-cash-icon.zc-bill-payments:after {
+    content: url("../assets/img/icons/bill-payments.svg");
+}
+
+i.zippy-cash-icon.zc-contact-us:after {
+    content: url("../assets/img/icons/contact-us.svg");
+}
+
+i.zippy-cash-icon.zc-customer-services:after {
+    content: url("../assets/img/icons/customer-services.svg");
+}
+
+i.zippy-cash-icon.zc-home:after {
+    content: url("../assets/img/icons/home.svg");
+}
+
+i.zippy-cash-icon.zc-interac-etransfer:after {
+    content: url("../assets/img/icons/interac-etransfer.svg");
+}
+
+i.zippy-cash-icon.zc-manage-my-alerts:after {
+    content: url("../assets/img/icons/manage-my-alerts.svg");
+}
+
+i.zippy-cash-icon.zc-transfer-funds:after {
+    content: url("../assets/img/icons/transfer-funds.svg");
+}

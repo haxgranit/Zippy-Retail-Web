@@ -1,0 +1,46 @@
+.vertical-nav-wrapper {
+    display: flex;
+    position: sticky;
+    left: 0;
+    top: 62px;
+    padding: 5px;
+}
+
+.vertical-nav {
+    display: flex;
+    position: absolute;
+    left: 0;
+    top: -62px;
+    background: #FFFFFF;
+    border-radius: 0px 0px 10px 0px;
+}
+
+.vertical-nav .nav-link,
+.vertical-nav .nav-link:visited,
+.vertical-nav .nav-link:focus {
+    display: block;
+    width: 100%;
+    color: #707272;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    height: 34px;
+    cursor: pointer;
+    background: transparent;
+}
+
+.vertical-nav > .nav-link.active {
+    background: linear-gradient(83.49deg, #FF0D26 31.24%, #FF7300 99.49%);
+    color: #FFFFFF;
+}
+
+.vertical-nav .navbar-brand {
+    display: block;
+    text-align: center;
+    margin: 20px 0 15px;
+    width: 100%;
+}
+
+.vertical-nav .nav-link > i {
+    margin-right: 10px;
+}

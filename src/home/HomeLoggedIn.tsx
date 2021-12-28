@@ -4,9 +4,9 @@ import VerticalNavLinks from './VerticalNavLinks';
 
 export default function HomeLoggedIn() {
   return (
-    <div className="container" style={{ paddingBottom: '50px' }}>
+    <div>
       <div className="row">
-        <div className="col-2">
+        <div className="col-2" style={{ position: 'relative' }}>
           <VerticalNavLinks />
         </div>
         <div className="col-8">
