@@ -37,7 +37,7 @@ const SentTabContent = ({ navigate, instance, accounts }: any) => {
         </thead>
         <tbody className="border-top-0">
           {transactions.map((item: Transaction) => (
-            <tr>
+            <tr key={item.id}>
               <td>{DateTime.fromISO(item.date).toLocaleString(DateTime.DATE_MED)}</td>
               <td>
                 <div>{formatContactName(item.contact?.firstName, item.contact?.lastName)}</div>
@@ -108,7 +108,7 @@ const ReceivedTabContent = ({ navigate, instance, accounts }: any) => {
         </thead>
         <tbody className="border-top-0">
           {transactions.map((item: Transaction) => (
-            <tr>
+            <tr key={item.id}>
               <td>{DateTime.fromISO(item.date).toLocaleString(DateTime.DATE_MED)}</td>
               <td>
                 <div>{formatContactName(item.contact?.firstName, item.contact?.lastName)}</div>
@@ -167,7 +167,7 @@ const RequestedTabContent = ({ navigate, instance, accounts }: any) => {
         </thead>
         <tbody className="border-top-0">
           {transactions.map((item: Transaction) => (
-            <tr>
+            <tr key={item.id}>
               <td>{DateTime.fromISO(item.date).toLocaleString(DateTime.DATE_MED)}</td>
               <td>
                 <div>{formatContactName(item.contact?.firstName, item.contact?.lastName)}</div>
@@ -218,7 +218,7 @@ const RequestedTabContent = ({ navigate, instance, accounts }: any) => {
 export default function InteracETransferDetails() {
   const navigate = useNavigate();
   const { instance, accounts } = useMsal();
-  const { tabId } = useParams();
+  const { tabId, detailId } = useParams();
   const selectedTabId = tabId || undefined;
 
   return (
@@ -254,13 +254,28 @@ export default function InteracETransferDetails() {
         }}
       >
         <Tab eventKey="sent" title="Sent">
-          <SentTabContent navigate={navigate} instance={instance} accounts={accounts} />
+          <SentTabContent
+            navigate={navigate}
+            instance={instance}
+            accounts={accounts}
+            detailId={detailId}
+          />
         </Tab>
         <Tab eventKey="received" title="Received">
-          <ReceivedTabContent navigate={navigate} instance={instance} accounts={accounts} />
+          <ReceivedTabContent
+            navigate={navigate}
+            instance={instance}
+            accounts={accounts}
+            detailId={detailId}
+          />
         </Tab>
         <Tab eventKey="requested" title="Requested">
-          <RequestedTabContent navigate={navigate} instance={instance} accounts={accounts} />
+          <RequestedTabContent
+            navigate={navigate}
+            instance={instance}
+            accounts={accounts}
+            detailId={detailId}
+          />
         </Tab>
       </Tabs>
     </>
