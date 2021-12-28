@@ -36,6 +36,10 @@ export interface TransferMainDetails {
   amount: number;
   message: string;
   transferMethod: string;
+  securityQuestion: string | undefined;
+  securityAnswer: string | undefined;
+  confirmSecurityAnswer: string | undefined;
+  showAnswer: boolean;
 }
 
 const LinkElement = ({ url, text, id }: QuickLink): JSX.Element => (
@@ -68,7 +72,11 @@ export default function SendMoney() {
     source: { email: '', name: '' },
     fromAccount: '',
     message: '',
-    transferMethod: '',
+    transferMethod: 'Email',
+    securityAnswer: undefined,
+    confirmSecurityAnswer: undefined,
+    securityQuestion: undefined,
+    showAnswer: false,
   });
 
   const [accountsList, setAccountsList] = useState<Account[] | null>([]);
@@ -174,6 +182,9 @@ export default function SendMoney() {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [pageIndex]);
+  useEffect(() => {
+    if (errorMessage) window.scrollTo(0, 0);
+  }, [errorMessage]);
 
   return (
     <div>
@@ -216,6 +227,7 @@ export default function SendMoney() {
               setMainInfo={setMainInfo}
               accounts={accountsList}
               contacts={contactList}
+              setErrorMessage={setErrorMessage}
             />
           )}
           {pageIndex === PageIndexes.SecurityRecipientPageIndex && (
@@ -232,6 +244,7 @@ export default function SendMoney() {
               showModal={setShowVerifyModal}
               mainInfo={mainInfo}
               setMainInfo={setMainInfo}
+              setErrorMessage={setErrorMessage}
             />
           )}
           {pageIndex === PageIndexes.TransferSentPageIndex && (

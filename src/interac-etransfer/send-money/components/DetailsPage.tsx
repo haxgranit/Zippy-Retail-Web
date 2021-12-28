@@ -21,6 +21,7 @@ interface DetailsPageProps {
   contacts: Contact[] | null;
   selectedAccount: number;
   setSelectedAccount: Dispatch<SetStateAction<number>>;
+  setErrorMessage: Dispatch<SetStateAction<string | null>>;
 }
 const DetailsPage = ({
   setPageIndex,
@@ -33,6 +34,7 @@ const DetailsPage = ({
   contacts,
   selectedAccount,
   setSelectedAccount,
+  setErrorMessage,
 }: DetailsPageProps): JSX.Element => {
   const handleContactChange = (evt: any) => {
     setContactToSend(Number(evt.target.value));
@@ -45,6 +47,30 @@ const DetailsPage = ({
     return (contact as Contact)?.email || 'No email';
   };
 
+  const validateInputs = (): string | null => {
+    if (selectedContact === 0) return 'Please select a contact to send money to';
+    if (selectedAccount === 0) return 'Please select an account';
+    if (mainInfo.amount <= 0) return 'Amount should be greater than 0';
+    if (mainInfo.amount > 3000) return 'The maximum amount you can send in each transfer is $3,000';
+    if (!mainInfo.transferMethod) return 'Please select a transfer method';
+    return null;
+  };
+
+  const handleNext = () => {
+    setErrorMessage(null);
+    const validationMessage = validateInputs();
+    if (validationMessage != null) {
+      setErrorMessage(validationMessage);
+      return;
+    }
+    if (selectedContact === 1) {
+      setCurrentStep(2);
+      setPageIndex(PageIndexes.SecurityRecipientPageIndex);
+    } else {
+      setCurrentStep(2);
+      setPageIndex(PageIndexes.SecurityQuestionPageIndex);
+    }
+  };
   return (
     <>
       <h4>Your Interac e-Transfer Details</h4>
@@ -229,16 +255,7 @@ const DetailsPage = ({
           <Button
             variant="danger"
             className="d-flex"
-            disabled={(selectedAccount === 0 || selectedContact === 0)}
-            onClick={() => {
-              if (selectedContact === 1) {
-                setCurrentStep(2);
-                setPageIndex(PageIndexes.SecurityRecipientPageIndex);
-              } else {
-                setCurrentStep(2);
-                setPageIndex(PageIndexes.SecurityQuestionPageIndex);
-              }
-            }}
+            onClick={handleNext}
           >
             Next
           </Button>
