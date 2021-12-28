@@ -177,6 +177,7 @@ exports[`Storyshots interac-etransfer/request-money/RequestMoney Default 1`] = `
           <input
             className="form-control"
             placeholder="$"
+            step=".01"
             type="number"
           />
         </div>

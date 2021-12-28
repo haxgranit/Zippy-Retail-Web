@@ -1,14 +1,36 @@
+import { DateTime } from 'luxon';
+import { Dispatch, SetStateAction } from 'react';
 import {
   Row, Col, Form, Button,
 } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 import { PageIds } from '../SendMoney';
+import currencyFormatter from '../../helpers/CurrencyFormatter';
+
+export interface TransferInformation{
+  source: { name: string; email: string };
+  destination: { name: string; email: string };
+  fromAccount: string;
+  securityQuestion: string;
+  expiryDate: DateTime;
+  submitted: DateTime;
+  balance: number;
+  amount: number;
+  referenceNumber: number;
+}
+interface TransferSentPageProps{
+  navigateSteps: Dispatch<string>;
+  setCurrentStep: Dispatch<SetStateAction<number>>;
+  isCompleted: boolean;
+  transferInformation: TransferInformation;
+}
 
 const TransferSentPage = ({
   navigateSteps,
   setCurrentStep,
   isCompleted,
-}: any): JSX.Element => {
+  transferInformation,
+}: TransferSentPageProps): JSX.Element => {
   const navigate = useNavigate();
 
   return (
@@ -37,8 +59,8 @@ const TransferSentPage = ({
           <Form.Label>From:</Form.Label>
         </Col>
         <Col md={8}>
-          <Form.Label>DUANE TOUGH</Form.Label>
-          <p>dtough@hotmail.com</p>
+          <Form.Label>{transferInformation.source.name}</Form.Label>
+          <p>{transferInformation.source.email}</p>
         </Col>
       </Row>
       <hr style={{ height: '1px', width: '100%' }} />
@@ -47,8 +69,8 @@ const TransferSentPage = ({
           <Form.Label>To:</Form.Label>
         </Col>
         <Col md={8}>
-          <Form.Label>CHELSEA TOUGH</Form.Label>
-          <p>chelsea.tough@gmail.com</p>
+          <Form.Label>{transferInformation.destination.name}</Form.Label>
+          <p>{transferInformation.destination.email}</p>
         </Col>
       </Row>
       <hr style={{ height: '1px', width: '100%' }} />
@@ -57,7 +79,7 @@ const TransferSentPage = ({
           <Form.Label>Account Balance:</Form.Label>
         </Col>
         <Col md={8}>
-          <Form.Label>$1,260.57</Form.Label>
+          <Form.Label>{`${currencyFormatter().format(transferInformation.balance)}`}</Form.Label>
         </Col>
       </Row>
       <hr style={{ height: '1px', width: '100%' }} />
@@ -68,7 +90,7 @@ const TransferSentPage = ({
               <Form.Label>Security Question:</Form.Label>
             </Col>
             <Col md={8}>
-              <Form.Label>45056454585524585512</Form.Label>
+              <Form.Label>{transferInformation.securityQuestion}</Form.Label>
             </Col>
           </Row>
           <hr style={{ height: '1px', width: '100%' }} />
@@ -89,7 +111,7 @@ const TransferSentPage = ({
           <Form.Label>Amount:</Form.Label>
         </Col>
         <Col md={8}>
-          <Form.Label>$1,000.00</Form.Label>
+          <Form.Label>{`${currencyFormatter().format(transferInformation.amount)}`}</Form.Label>
         </Col>
       </Row>
       <hr style={{ height: '1px', width: '100%' }} />
@@ -98,7 +120,7 @@ const TransferSentPage = ({
           <Form.Label>From Account:</Form.Label>
         </Col>
         <Col md={8}>
-          <Form.Label>Cheguing (01702-81-99639)</Form.Label>
+          <Form.Label>{transferInformation.fromAccount}</Form.Label>
         </Col>
       </Row>
       <hr style={{ height: '1px', width: '100%' }} />
@@ -109,7 +131,9 @@ const TransferSentPage = ({
               <Form.Label>Expiry Date:</Form.Label>
             </Col>
             <Col md={8}>
-              <Form.Label>Dec 9, 2021</Form.Label>
+              <Form.Label>
+                {transferInformation.expiryDate.toLocaleString(DateTime.DATE_MED)}
+              </Form.Label>
             </Col>
           </Row>
           <hr style={{ height: '1px', width: '100%' }} />
@@ -120,10 +144,10 @@ const TransferSentPage = ({
           <Form.Label>Reference Number:(keep for your records)</Form.Label>
         </Col>
         <Col md={8}>
-          <Form.Label>3942439898</Form.Label>
+          <Form.Label>{transferInformation.referenceNumber}</Form.Label>
         </Col>
       </Row>
-      <p className="mt-4">Submitted: November 9, 2021 at 6:44 p.m. ET.</p>
+      <p className="mt-4">{`Submitted: ${transferInformation.submitted.toLocaleString(DateTime.DATETIME_FULL)}.`}</p>
       <hr style={{ height: '1px', width: '100%' }} />
       <Row className="mt-4 mb-4">
         <Col className="d-flex justify-content-end">

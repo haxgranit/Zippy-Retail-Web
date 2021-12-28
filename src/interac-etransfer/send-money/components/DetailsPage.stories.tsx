@@ -4,6 +4,10 @@ import DetailsPage from './DetailsPage';
 export default {
   title: 'interac-etransfer/send-money/components/DetailsPage',
   component: DetailsPage,
+  argTypes: {
+    setCurrentStep: { action: 'setCurrentStep' },
+    setPageIndex: { action: 'setPageIndex' },
+  },
 } as ComponentMeta<typeof DetailsPage>;
 
 const Template: ComponentStory<typeof DetailsPage> = ({
