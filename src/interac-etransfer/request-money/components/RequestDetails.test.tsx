@@ -7,6 +7,7 @@ import CONTACTS from '../../../stories/Contacts';
 import { RequestDetailPure } from './RequestDetails';
 
 const mockSetCurrentStep = jest.fn();
+const mockNavigateStep = jest.fn();
 
 const component = (
   <BrowserRouter>
@@ -14,6 +15,7 @@ const component = (
       accountsData={ACCOUNTS}
       contacts={CONTACTS}
       setCurrentStep={mockSetCurrentStep}
+      navigateStep={mockNavigateStep}
     />
   </BrowserRouter>
 );
@@ -23,6 +25,7 @@ const componentWithoutData = (
       accountsData={null}
       contacts={null}
       setCurrentStep={mockSetCurrentStep}
+      navigateStep={mockNavigateStep}
     />
   </BrowserRouter>
 );
