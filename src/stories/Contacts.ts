@@ -1,94 +1,40 @@
-const CONTACTS = [
-  {
-    name: '392 Jones',
-    email: 'lu_ben2002@yahoo.com',
-    phone: null,
-  },
-  {
-    name: 'Auto Island Inc',
-    email: null,
-    phone: '647-747-6109',
-  },
-  {
-    name: 'BITVO',
-    email: '42000023186@bitvodeposits.com',
-    phone: null,
-  },
-  {
-    name: 'BITVO.COM',
-    email: 'noreply@bitvo.com',
-    phone: null,
-  },
-  {
-    name: 'Chelsea Tough',
-    email: 'chelsea.tough@gmail.com',
-    phone: null,
-  },
-  {
-    name: 'Christian',
-    email: 'pratt540@gmail.com',
-    phone: null,
-  },
-  {
-    name: 'DnF',
-    email: 'franjessco@sympatico.ca',
-    phone: null,
-  },
-  {
-    name: 'DUANE TOUGH',
-    email: 'dtough@hotmail.com',
-    phone: '647-857-6694',
-  },
+import { Contact } from '../api';
 
+const CONTACTS : Contact[] = [
   {
-    name: 'Gigadat',
-    email: 'etransfer@orderdeposit.com',
-    phone: null,
+    id: 1,
+    firstName: 'Jon',
+    lastName: 'Doe',
+    phone: '647-747-6109',
+    email: 'email1@zipy.cash',
   },
   {
-    name: 'J Grundy',
-    email: 'jegrundy@rogers.com',
-    phone: null,
+    id: 2,
+    firstName: 'Abram',
+    lastName: 'Acotas',
+    phone: '',
+    email: 'email2@zipy.cash',
   },
   {
-    name: 'JJJ',
-    email: 'toughj@telus.net',
-    phone: null,
+    id: 3,
+    firstName: 'Ragnar',
+    lastName: 'Hagan',
+    phone: '647-747-3333',
+    email: '',
   },
   {
-    name: 'Jon English',
-    email: 'john.oliverscoffee@gmail.com',
-    phone: null,
+    id: 4,
+    firstName: 'Bob',
+    lastName: 'Mathew',
+    phone: '647-747-4444',
+    email: 'email4@zipy.cash',
   },
   {
-    name: 'Karen',
-    email: 'english_karen@yahoo.com',
-    phone: null,
-  },
-  {
-    name: 'Mathew',
-    email: 'mathewm1212@gmail.com',
-    phone: null,
-  },
-  {
-    name: 'Michael Sovereign Medical',
-    email: 'hello@sovereigncosmeticsurgery.com',
-    phone: null,
-  },
-  {
-    name: 'Rishi',
-    email: 'rishi.jokhu@gmail.com',
-    phone: null,
-  },
-  {
-    name: 'Robb MacDonald',
-    email: 'rm@lawintoronto.com',
-    phone: null,
-  },
-  {
-    name: 'RobnGeo',
-    email: 'robngeo@gmail.com',
-    phone: null,
+    id: 5,
+    firstName: 'Rafi',
+    lastName: 'Doe',
+    phone: '647-747-5555',
+    email: 'email5@zipy.cash',
   },
 ];
 

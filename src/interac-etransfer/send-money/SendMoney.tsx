@@ -14,6 +14,8 @@ import SendMoneyVerificationModal, {
   TransferDetails,
 } from '../dialogs/SendMoneyVerificationModal';
 import Api, { Account, InteracEtransferTransaction, Contact } from '../../api';
+import { TransferInformation } from './components/TransferSentPage';
+import TRANSFER_INFORMATION from '../../stories/TransferInformation';
 
 export const enum PageIndexes {
   DetailsPageIndex = 'details',
@@ -127,10 +129,13 @@ export default function SendMoney() {
       url: './',
     },
   ];
+  // will remove after integrating api response
+  const tempTransferInformation: TransferInformation = TRANSFER_INFORMATION;
 
   const handleSendMoneyVerificationNext = () => {
     const data: InteracEtransferTransaction = {
       contactId: selectedContact,
+      amount: mainInfo.amount,
     };
     setProcessing(true);
     new Api(instance, accounts[0])
@@ -276,8 +281,7 @@ export default function SendMoney() {
             <TransferSentPage
               navigateSteps={navigateSteps}
               setCurrentStep={setCurrentStep}
-              mainInfo={mainInfo}
-              setMainInfo={setMainInfo}
+              transferInformation={tempTransferInformation}
               isCompleted={false}
             />
           )}
@@ -285,9 +289,7 @@ export default function SendMoney() {
             <TransferSentPage
               navigateSteps={navigateSteps}
               setCurrentStep={setCurrentStep}
-              mainInfo={mainInfo}
-              setMainInfo={setMainInfo}
-              setSelectedContact={setSelectedContact}
+              transferInformation={tempTransferInformation}
               isCompleted
             />
           )}

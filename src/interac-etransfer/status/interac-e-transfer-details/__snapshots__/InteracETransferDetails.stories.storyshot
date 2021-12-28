@@ -206,7 +206,7 @@ Array [
       >
         <thead>
           <tr
-            className="sc-gsDKAQ cqZAuk bg-light"
+            className="sc-dkPtRN gzzzDs bg-light"
           >
             <th>
               Date Sent
@@ -342,7 +342,7 @@ Array [
       >
         <thead>
           <tr
-            className="sc-gsDKAQ cqZAuk bg-light"
+            className="sc-dkPtRN gzzzDs bg-light"
           >
             <th>
               Date Received
@@ -458,7 +458,7 @@ Array [
       >
         <thead>
           <tr
-            className="sc-gsDKAQ cqZAuk bg-light"
+            className="sc-dkPtRN gzzzDs bg-light"
           >
             <th>
               Date Requested
