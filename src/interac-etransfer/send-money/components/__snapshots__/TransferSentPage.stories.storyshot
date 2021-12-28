@@ -25,9 +25,6 @@ Array [
   <p>
     If you opted to send a notification of your transfer, your contact will receive it shortly.
   </p>,
-  <p>
-    This transfer is final and can't be recalled.
-  </p>,
   <div
     className="mt-4 row"
   >
@@ -46,10 +43,10 @@ Array [
       <label
         className="form-label"
       >
-        DUANE TOUGH
+        source name
       </label>
       <p>
-        dtough@hotmail.com
+        source@zippy.cash
       </p>
     </div>
   </div>,
@@ -79,10 +76,10 @@ Array [
       <label
         className="form-label"
       >
-        CHELSEA TOUGH
+        destination name
       </label>
       <p>
-        chelsea.tough@gmail.com
+        destination@zippy.cash
       </p>
     </div>
   </div>,
@@ -112,7 +109,67 @@ Array [
       <label
         className="form-label"
       >
-        $1,260.57
+        $2,000.00
+      </label>
+    </div>
+  </div>,
+  <hr
+    style={
+      Object {
+        "height": "1px",
+        "width": "100%",
+      }
+    }
+  />,
+  <div
+    className="mt-2 row"
+  >
+    <div
+      className="col-md-4"
+    >
+      <label
+        className="form-label"
+      >
+        Security Question:
+      </label>
+    </div>
+    <div
+      className="col-md-8"
+    >
+      <label
+        className="form-label"
+      >
+        Security Question
+      </label>
+    </div>
+  </div>,
+  <hr
+    style={
+      Object {
+        "height": "1px",
+        "width": "100%",
+      }
+    }
+  />,
+  <div
+    className="mt-2 row"
+  >
+    <div
+      className="col-md-4"
+    >
+      <label
+        className="form-label"
+      >
+        Response:
+      </label>
+    </div>
+    <div
+      className="col-md-8"
+    >
+      <label
+        className="form-label"
+      >
+        ***************
       </label>
     </div>
   </div>,
@@ -172,7 +229,37 @@ Array [
       <label
         className="form-label"
       >
-        Cheguing (01702-81-99639)
+        392 Jones (8000 001 000000000)
+      </label>
+    </div>
+  </div>,
+  <hr
+    style={
+      Object {
+        "height": "1px",
+        "width": "100%",
+      }
+    }
+  />,
+  <div
+    className="mt-2 row"
+  >
+    <div
+      className="col-md-4"
+    >
+      <label
+        className="form-label"
+      >
+        Expiry Date:
+      </label>
+    </div>
+    <div
+      className="col-md-8"
+    >
+      <label
+        className="form-label"
+      >
+        Aug 6, 2021
       </label>
     </div>
   </div>,
@@ -202,14 +289,14 @@ Array [
       <label
         className="form-label"
       >
-        3942439898
+        123456789
       </label>
     </div>
   </div>,
   <p
     className="mt-4"
   >
-    Submitted: November 9, 2021 at 6:44 p.m. ET.
+    Submitted: December 6, 2021, 1:07 PM PST.
   </p>,
   <hr
     style={

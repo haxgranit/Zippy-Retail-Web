@@ -1,38 +1,51 @@
 /* eslint-disable no-console */
 
 import { useMsal } from '@azure/msal-react';
-import { useEffect, useState } from 'react';
-import {
-  Button, Col, Form, Row,
+import
+{
+  Dispatch,
+  SetStateAction,
+  useEffect,
+  useState,
+} from 'react';
+import
+{
+  Button,
+  Col,
+  Form,
+  Row,
 } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
+import styled from 'styled-components';
 import Api, { Account, Contact } from '../../../api';
 import DateDropdowns from '../../../components/DateDropdowns';
 import { formatContactName } from '../../../Helpers';
 
+const StyledLink = styled(Link)`
+  color: black;
+  &:hover {
+    color: black;
+  }
+`;
 const Divider = () => <div className="border-top my-3" />;
 
-export default function RequestDetail({ setCurrentStep, navigateStep }: any) {
+interface RequestDetailProps {
+  setCurrentStep: Dispatch<SetStateAction<number>>;
+  navigateStep: Dispatch<number>;
+}
+interface RequestDetailPureProps extends RequestDetailProps {
+  contacts: Contact[] | null;
+  accountsData: Account[] | null;
+}
+export const RequestDetailPure = ({
+  setCurrentStep,
+  accountsData,
+  contacts,
+  navigateStep,
+}: RequestDetailPureProps) => {
   const [accountFrom, setAccountFrom] = useState<Contact | undefined>(
     undefined,
   );
-  const [contacts, setContacts] = useState<Contact[] | null>([]);
-  const [accountsData, setAccountsData] = useState<Account[] | null>([]);
-  const { instance, accounts } = useMsal();
-
-  useEffect(() => {
-    new Api(instance, accounts[0])
-      .listContacts()
-      .then((contactsList) => {
-        setContacts(contactsList);
-      })
-      .catch((error) => console.log('error', error));
-    new Api(instance, accounts[0])
-      .listAccounts()
-      .then((accountsList) => {
-        setAccountsData(accountsList);
-      })
-      .catch((error) => console.log('error', error));
-  }, []);
 
   return (
     <>
@@ -101,7 +114,7 @@ export default function RequestDetail({ setCurrentStep, navigateStep }: any) {
       <Row className="align-items-center">
         <Col xs={3}>Request Amount:</Col>
         <Col xs={6}>
-          <Form.Control type="number" placeholder="$" />
+          <Form.Control type="number" step=".01" placeholder="$" />
         </Col>
       </Row>
       <Row className="align-items-center mt-2">
@@ -169,7 +182,7 @@ export default function RequestDetail({ setCurrentStep, navigateStep }: any) {
           {' '}
           e-Transfer contacts. If incorrect,
           {' '}
-          <u>edit your profile</u>
+          <StyledLink to="/interac-etransfer/edit-my-profile">edit your profile</StyledLink>
           .
         </Col>
       </Row>
@@ -223,4 +236,36 @@ export default function RequestDetail({ setCurrentStep, navigateStep }: any) {
       </Row>
     </>
   );
-}
+};
+
+const RequestDetail = ({ setCurrentStep, navigateStep }: RequestDetailProps) => {
+  const [contacts, setContacts] = useState<Contact[] | null>([]);
+  const [accountsData, setAccountsData] = useState<Account[] | null>([]);
+  const { instance, accounts } = useMsal();
+
+  useEffect(() => {
+    new Api(instance, accounts[0])
+      .listContacts()
+      .then((contactsList) => {
+        setContacts(contactsList);
+      })
+      .catch((error) => console.log('error', error));
+    new Api(instance, accounts[0])
+      .listAccounts()
+      .then((accountsList) => {
+        setAccountsData(accountsList);
+      })
+      .catch((error) => console.log('error', error));
+  }, []);
+
+  return (
+    <RequestDetailPure
+      setCurrentStep={setCurrentStep}
+      accountsData={accountsData}
+      contacts={contacts}
+      navigateStep={navigateStep}
+    />
+  );
+};
+
+export default RequestDetail;

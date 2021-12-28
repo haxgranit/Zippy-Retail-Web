@@ -108,6 +108,7 @@ Array [
       <input
         className="form-control"
         onChange={[Function]}
+        step=".01"
         type="number"
         value={10000}
       />
@@ -464,6 +465,7 @@ Array [
       <input
         className="form-control"
         onChange={[Function]}
+        step=".01"
         type="number"
       />
       <label

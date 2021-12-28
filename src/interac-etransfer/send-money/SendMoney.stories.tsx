@@ -25,7 +25,7 @@ Default.parameters = {
       (_req, res, ctx) => res(ctx.json(ACCOUNTS)),
     ),
     rest.get(
-      'https://zippy-retail-api-dev.azurewebsites.net/Contacts',
+      'https://mock.net/Contacts',
       (_req, res, ctx) => res(ctx.json(CONTACTS)),
     ),
   ],
@@ -40,8 +40,8 @@ APIError.parameters = {
       (_req, res, ctx) => res(ctx.status(403)),
     ),
     rest.get(
-      'https://zippy-retail-api-dev.azurewebsites.net/Contacts',
-      (_req, res, ctx) => res(ctx.delay(800), ctx.status(403)),
+      'https://mock.net/Contacts',
+      (_req, res, ctx) => res(ctx.status(403)),
     ),
   ],
 };
