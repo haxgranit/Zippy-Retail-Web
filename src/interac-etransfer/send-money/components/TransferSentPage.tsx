@@ -2,7 +2,7 @@ import {
   Row, Col, Form, Button,
 } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
-import { PageIndexes } from '../SendMoney';
+import { PageIds } from '../SendMoney';
 
 const TransferSentPage = ({
   navigateSteps,
@@ -141,7 +141,7 @@ const TransferSentPage = ({
             variant="danger"
             className="d-flex"
             onClick={() => {
-              navigateSteps(PageIndexes.DetailsPageIndex);
+              navigateSteps(PageIds.DetailsPageId);
               setCurrentStep(1);
             }}
           >

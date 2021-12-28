@@ -7,7 +7,7 @@ import {
   Button,
 } from 'react-bootstrap';
 import { Account, Contact } from '../../../api';
-import { TransferMainDetails, PageIndexes } from '../SendMoney';
+import { TransferMainDetails, PageIds } from '../SendMoney';
 import { formatContactName } from '../../../Helpers';
 
 interface DetailsPageProps {
@@ -232,10 +232,10 @@ const DetailsPage = ({
             onClick={() => {
               if (selectedContact === 1) {
                 setCurrentStep(2);
-                navigateSteps(PageIndexes.SecurityRecipientPageIndex);
+                navigateSteps(PageIds.SecurityRecipientPageId);
               } else {
                 setCurrentStep(2);
-                navigateSteps(PageIndexes.SecurityQuestionPageIndex);
+                navigateSteps(PageIds.SecurityQuestionPageId);
               }
             }}
           >
