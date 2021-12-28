@@ -4,10 +4,13 @@ import {
   Form,
   Row,
 } from 'react-bootstrap';
+import { User } from '../../api';
+import { useAppSelector } from '../../app/hooks';
+import { selectUser } from '../../features/user/userSlice';
 
 const Divider = () => <div className="border-top my-3" />;
 
-const LeftCol = () => (
+const LeftCol = ({ user }: { user: User }) => (
   <Col xs={9}>
     <Row>
       <Col>
@@ -33,7 +36,7 @@ const LeftCol = () => (
     <Row className="align-items-center">
       <Col xs={3}>Enter your email Address:</Col>
       <Col xs={6}>
-        <Form.Control type="text" value="dtough@hotmail.com" />
+        <Form.Control type="text" value={user.email} />
       </Col>
     </Row>
     <Divider />
@@ -48,7 +51,11 @@ const LeftCol = () => (
     <Divider />
     <Row className="align-items-center">
       <Col xs={3}>Your Legal Name:</Col>
-      <Col xs={9}>DUANE TOUGH</Col>
+      <Col xs={9}>
+        {user.firstName}
+        {' '}
+        {user.lastName}
+      </Col>
     </Row>
     <Row className="mt-4">
       <Col>
@@ -103,18 +110,21 @@ const RightCol = () => (
   </Col>
 );
 
-export default function AutodepositSettings() {
-  return (
-    <div>
-      <Row>
-        <Col>
-          <h2>SETUP AUTODEPOSIT</h2>
-        </Col>
-      </Row>
-      <Row>
-        <LeftCol />
-        <RightCol />
-      </Row>
-    </div>
-  );
-}
+export const AutodepositSettingsPure = ({ user }: { user: User }) => (
+  <div>
+    <Row>
+      <Col>
+        <h2>SETUP AUTODEPOSIT</h2>
+      </Col>
+    </Row>
+    <Row>
+      <LeftCol user={user} />
+      <RightCol />
+    </Row>
+  </div>
+);
+
+export const AutodepositSettings = () => {
+  const { user } = useAppSelector(selectUser);
+  return (user && <AutodepositSettingsPure user={user} />) || null;
+};
