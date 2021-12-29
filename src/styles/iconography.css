@@ -4,34 +4,66 @@ i.zippy-cash-icon {
     color: inherit;
 }
 
+i.zippy-cash-icon:after {
+    content: '';
+    -webkit-mask-size: contain;
+    mask-size: contain;
+    width: 25px;
+    height: 25px;
+    display: block;
+    background-color: #51596C;
+    -webkit-mask-position: center center;
+    mask-position: center center;
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+}
+
 i.zippy-cash-icon.zc-account-security:after {
-    content: url("../assets/img/icons/account-security.svg");
+    -webkit-mask-image: url("../assets/img/icons/account-security.svg");
+    mask-image: url("../assets/img/icons/account-security.svg");
 }
 
 i.zippy-cash-icon.zc-bill-payments:after {
-    content: url("../assets/img/icons/bill-payments.svg");
+    -webkit-mask-image: url("../assets/img/icons/bill-payments.svg");
+    mask-image: url("../assets/img/icons/bill-payments.svg");
 }
 
 i.zippy-cash-icon.zc-contact-us:after {
-    content: url("../assets/img/icons/contact-us.svg");
+    -webkit-mask-image: url("../assets/img/icons/contact-us.svg");
+    mask-image: url("../assets/img/icons/contact-us.svg");
 }
 
 i.zippy-cash-icon.zc-customer-services:after {
-    content: url("../assets/img/icons/customer-services.svg");
+    -webkit-mask-image: url("../assets/img/icons/customer-services.svg");
+    mask-image: url("../assets/img/icons/customer-services.svg");
 }
 
 i.zippy-cash-icon.zc-home:after {
-    content: url("../assets/img/icons/home.svg");
+    -webkit-mask-image: url("../assets/img/icons/home.svg");
+    mask-image: url("../assets/img/icons/home.svg");
 }
 
 i.zippy-cash-icon.zc-interac-etransfer:after {
-    content: url("../assets/img/icons/interac-etransfer.svg");
+    -webkit-mask-image: url("../assets/img/icons/interac-etransfer.svg");
+    mask-image: url("../assets/img/icons/interac-etransfer.svg");
 }
 
 i.zippy-cash-icon.zc-manage-my-alerts:after {
-    content: url("../assets/img/icons/manage-my-alerts.svg");
+    -webkit-mask-image: url("../assets/img/icons/manage-my-alerts.svg");
+    mask-image: url("../assets/img/icons/manage-my-alerts.svg");
 }
 
 i.zippy-cash-icon.zc-transfer-funds:after {
-    content: url("../assets/img/icons/transfer-funds.svg");
+    -webkit-mask-image: url("../assets/img/icons/transfer-funds.svg");
+    mask-image: url("../assets/img/icons/transfer-funds.svg");
+}
+
+i.zippy-cash-icon.zc-down:after {
+    -webkit-mask-image: url("../assets/img/icons/down.svg");
+    mask-image: url("../assets/img/icons/down.svg");
+}
+
+i.zippy-cash-icon.zc-up:after {
+    -webkit-mask-image: url("../assets/img/icons/up.svg");
+    mask-image: url("../assets/img/icons/up.svg");
 }

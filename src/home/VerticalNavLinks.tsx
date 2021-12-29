@@ -14,12 +14,16 @@ export default function VerticalNavLinks() {
         <Nav.Link as={NavLink} to="/my-accounts">
           <i className="zippy-cash-icon zc-home" />
           My Accounts
+          <i className="dropdown zippy-cash-icon zc-up" />
         </Nav.Link>
         {pathname.startsWith('/my-accounts') && (
           <Nav className="flex-column" style={{ marginLeft: '20px' }}>
             <Nav.Link as={NavLink} to="/my-accounts/view-account-details">View Account Details</Nav.Link>
             <Nav.Link as={NavLink} to="/my-accounts/download-transactions">Download Transactions</Nav.Link>
-            <Nav.Link as={NavLink} to="/my-accounts/view-estatements">View eStatements</Nav.Link>
+            <Nav.Link as={NavLink} to="/my-accounts/view-estatements">
+              View eStatements
+              <i className="dropdown zippy-cash-icon zc-up" />
+            </Nav.Link>
             {pathname.startsWith('/my-accounts/view-estatements') && (
               <Nav className="flex-column" style={{ marginLeft: '20px' }}>
                 <Nav.Link as={NavLink} to="/my-accounts/view-estatements/statement-preferences">Statement Preferences</Nav.Link>
@@ -31,6 +35,7 @@ export default function VerticalNavLinks() {
         <Nav.Link as={NavLink} to="/interac-etransfer">
           <i className="zippy-cash-icon zc-interac-etransfer" />
           Interac e-Transfer
+          <i className="dropdown zippy-cash-icon zc-up" />
         </Nav.Link>
         {pathname.startsWith('/interac-etransfer') && (
           <Nav className="flex-column" style={{ marginLeft: '20px' }}>
@@ -47,6 +52,7 @@ export default function VerticalNavLinks() {
         <Nav.Link as={NavLink} to="/bill-payments">
           <i className="zippy-cash-icon zc-bill-payments" />
           Bill Payments
+          <i className="dropdown zippy-cash-icon zc-up" />
         </Nav.Link>
         {pathname.startsWith('/bill-payments') && (
           <Nav className="flex-column" style={{ marginLeft: '20px' }}>
@@ -60,6 +66,7 @@ export default function VerticalNavLinks() {
         <Nav.Link as={NavLink} to="/transfer-funds">
           <i className="zippy-cash-icon zc-transfer-funds" />
           Transfer Funds
+          <i className="dropdown zippy-cash-icon zc-up" />
         </Nav.Link>
         {pathname.startsWith('/transfer-funds') && (
           <Nav className="flex-column" style={{ marginLeft: '20px' }}>
@@ -73,6 +80,7 @@ export default function VerticalNavLinks() {
           <i className="zippy-cash-icon zc-account-security" />
           Account Security
         </Nav.Link>
+        <hr />
         <Nav.Link as={NavLink} to="/customer-services">
           <i className="zippy-cash-icon zc-customer-services" />
           Customer Services
@@ -85,6 +93,7 @@ export default function VerticalNavLinks() {
           <i className="zippy-cash-icon zc-contact-us" />
           Contact Us
         </Nav.Link>
+        <div className="copyright">© 2021 Zippy Cash LLC</div>
       </Nav>
     </div>
   );

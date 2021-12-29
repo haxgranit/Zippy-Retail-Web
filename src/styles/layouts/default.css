@@ -1,0 +1,21 @@
+.default-layout {
+    display: flex;
+    flex-direction: row;
+    background-color: #E5E5E5;
+}
+
+.default-layout .left-side-nav {
+    display: flex;
+    width: 240px;
+}
+
+.default-layout .content {
+    padding: 20px;
+    width: auto;
+}
+
+.default-layout .right-side-panel {
+    padding: 20px;
+    display: flex;
+    width: 240px;
+}
