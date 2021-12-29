@@ -897,7 +897,7 @@ Array [
                 Note:
               </span>
             </div>
-            <p
+            <div
               className="d-flex flex-column"
             >
               <ul>
@@ -941,7 +941,7 @@ Array [
                   </span>
                 </div>
               </div>
-            </p>
+            </div>
           </div>
         </div>
         <div
@@ -1305,7 +1305,7 @@ Array [
                 Note:
               </span>
             </div>
-            <p
+            <div
               className="d-flex flex-column"
             >
               <ul>
@@ -1349,7 +1349,7 @@ Array [
                   </span>
                 </div>
               </div>
-            </p>
+            </div>
           </div>
         </div>
         <div
@@ -1668,7 +1668,7 @@ Array [
                 Note:
               </span>
             </div>
-            <p
+            <div
               className="d-flex flex-column"
             >
               <ul>
@@ -1712,7 +1712,7 @@ Array [
                   </span>
                 </div>
               </div>
-            </p>
+            </div>
           </div>
         </div>
       </div>
