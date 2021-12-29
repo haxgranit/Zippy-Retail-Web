@@ -55,7 +55,7 @@ const SentTabContent = ({ navigate, instance, accounts }: any) => {
                 <Button
                   variant="link"
                   className="text-black"
-                  onClick={() => navigate('/interac-etransfer/send-money/transfer-sent-complete')}
+                  onClick={() => navigate(`/interac-etransfer/send-money/${item.id}/transfer-sent-complete`)}
                 >
                   Transfer Completed
                 </Button>
@@ -75,7 +75,7 @@ const SentTabContent = ({ navigate, instance, accounts }: any) => {
             variant="danger"
             className="d-flex"
             style={{ width: 'auto', marginRight: 10 }}
-            onClick={() => navigate('/interac-etransfer/send-money/details')}
+            onClick={() => navigate('/interac-etransfer/send-money/0/details')}
           >
             Send Money
           </Button>
@@ -126,7 +126,7 @@ const ReceivedTabContent = ({ navigate, instance, accounts }: any) => {
                 <Button
                   variant="link"
                   className="text-black"
-                  onClick={() => navigate('/interac-etransfer/send-money/transfer-sent-complete')}
+                  onClick={() => navigate(`/interac-etransfer/send-money/${item.id}/transfer-sent-complete`)}
                 >
                   Transfer Completed
                 </Button>
@@ -185,7 +185,7 @@ const RequestedTabContent = ({ navigate, instance, accounts }: any) => {
                 <Button
                   variant="link"
                   className="text-black"
-                  onClick={() => navigate('/interac-etransfer/status/request-sent')}
+                  onClick={() => navigate(`/interac-etransfer/status/request-sent/${item.id}`)}
                 >
                   Requested
                 </Button>
@@ -218,7 +218,7 @@ const RequestedTabContent = ({ navigate, instance, accounts }: any) => {
 export default function InteracETransferDetails() {
   const navigate = useNavigate();
   const { instance, accounts } = useMsal();
-  const { tabId, detailId } = useParams();
+  const { tabId } = useParams();
   const selectedTabId = tabId || undefined;
 
   return (
@@ -258,7 +258,6 @@ export default function InteracETransferDetails() {
             navigate={navigate}
             instance={instance}
             accounts={accounts}
-            detailId={detailId}
           />
         </Tab>
         <Tab eventKey="received" title="Received">
@@ -266,7 +265,6 @@ export default function InteracETransferDetails() {
             navigate={navigate}
             instance={instance}
             accounts={accounts}
-            detailId={detailId}
           />
         </Tab>
         <Tab eventKey="requested" title="Requested">
@@ -274,7 +272,6 @@ export default function InteracETransferDetails() {
             navigate={navigate}
             instance={instance}
             accounts={accounts}
-            detailId={detailId}
           />
         </Tab>
       </Tabs>

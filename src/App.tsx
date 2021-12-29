@@ -2,10 +2,7 @@ import AOS from 'aos';
 import { useIsAuthenticated, useMsal } from '@azure/msal-react';
 import { useEffect } from 'react';
 import {
-  Navigate,
-  Route,
-  Routes,
-  useLocation,
+  Navigate, Route, Routes, useLocation,
 } from 'react-router-dom';
 import Api from './api';
 import { useAppDispatch } from './app/hooks';
@@ -113,79 +110,171 @@ export default function App() {
           <Route path="contact-us" element={<ContactUs />} />
           <Route path="customer-services">
             <Route path="/customer-services" element={<CustomerServices />} />
-            <Route path="create-or-edit-account-nickname" element={<CreateOrEditAccountNickname />} />
+            <Route
+              path="create-or-edit-account-nickname"
+              element={<CreateOrEditAccountNickname />}
+            />
             <Route path="change-your-address" element={<ChangeYourAddress />} />
-            <Route path="change-your-password" element={<ChangeYourPassword />} />
-            <Route path="change-your-contact-information" element={<ChangeYourContactInformation />} />
+            <Route
+              path="change-your-password"
+              element={<ChangeYourPassword />}
+            />
+            <Route
+              path="change-your-contact-information"
+              element={<ChangeYourContactInformation />}
+            />
             <Route path="add-a-cardholder" element={<AddACardHolder />} />
             <Route path="order-cheques" element={<OrderCheques />} />
-            <Route path="set-up-ebills-email-notification" element={<EbillsEmailNotification />} />
-            <Route path="change-your-tax-residency" element={<ChangeYourTaxResidency />} />
-            <Route path="create-a-click-to-pay-account" element={<CreateAClickToPayAccount />} />
+            <Route
+              path="set-up-ebills-email-notification"
+              element={<EbillsEmailNotification />}
+            />
+            <Route
+              path="change-your-tax-residency"
+              element={<ChangeYourTaxResidency />}
+            />
+            <Route
+              path="create-a-click-to-pay-account"
+              element={<CreateAClickToPayAccount />}
+            />
             <Route path="make-a-loan-payment" element={<MakeALoanPayment />} />
-            <Route path="make-a-mortgage-payment" element={<MakeAMortgagePayment />} />
-            <Route path="apply-for-or-change-overdraft-protection-service" element={<ApplyForOrChangeOverdraftProtectionService />} />
-            <Route path="make-a-payment-with-points" element={<MakeAPaymentWithPoints />} />
-            <Route path="remove-association-to-online-investment-account" element={<RemoveAssociationToOnlineInvestmentAccount />} />
-            <Route path="request-a-credit-card-balance-transfer" element={<RequestACreditCardBalanceTransfer />} />
-            <Route path="apply-for-a-credit-limit-increase" element={<ApplyForACreditLimitIncrease />} />
-            <Route path="set-up-direct-deposit-with-canada-revenue-agency" element={<SetUpDirectDepositWithCanadaRevenueAgency />} />
+            <Route
+              path="make-a-mortgage-payment"
+              element={<MakeAMortgagePayment />}
+            />
+            <Route
+              path="apply-for-or-change-overdraft-protection-service"
+              element={<ApplyForOrChangeOverdraftProtectionService />}
+            />
+            <Route
+              path="make-a-payment-with-points"
+              element={<MakeAPaymentWithPoints />}
+            />
+            <Route
+              path="remove-association-to-online-investment-account"
+              element={<RemoveAssociationToOnlineInvestmentAccount />}
+            />
+            <Route
+              path="request-a-credit-card-balance-transfer"
+              element={<RequestACreditCardBalanceTransfer />}
+            />
+            <Route
+              path="apply-for-a-credit-limit-increase"
+              element={<ApplyForACreditLimitIncrease />}
+            />
+            <Route
+              path="set-up-direct-deposit-with-canada-revenue-agency"
+              element={<SetUpDirectDepositWithCanadaRevenueAgency />}
+            />
             <Route path="stop-payments" element={<StopPayments />} />
-            <Route path="withdraw-from-a-tfsa" element={<WithdrawFromATfsa />} />
-            <Route path="pay-and-file-business-taxes" element={<PayAndFileBusinessTaxes />} />
-            <Route path="apply-for-payment-protector-insurance-for-credit-cards" element={<ApplyForPaymentProtectorInsuranceForCreditCards />} />
-            <Route path="change-mortgage-payment-details" element={<ChangeMortgagePaymentAmount />} />
-            <Route path="unlink-accounts-from-your-debit-card" element={<UnlinkAccountsFromYourDebitCard />} />
-            <Route path="digital-vault-documents" element={<DigitalVaultDocuments />} />
+            <Route
+              path="withdraw-from-a-tfsa"
+              element={<WithdrawFromATfsa />}
+            />
+            <Route
+              path="pay-and-file-business-taxes"
+              element={<PayAndFileBusinessTaxes />}
+            />
+            <Route
+              path="apply-for-payment-protector-insurance-for-credit-cards"
+              element={<ApplyForPaymentProtectorInsuranceForCreditCards />}
+            />
+            <Route
+              path="change-mortgage-payment-details"
+              element={<ChangeMortgagePaymentAmount />}
+            />
+            <Route
+              path="unlink-accounts-from-your-debit-card"
+              element={<UnlinkAccountsFromYourDebitCard />}
+            />
+            <Route
+              path="digital-vault-documents"
+              element={<DigitalVaultDocuments />}
+            />
             <Route path="contribute-to-a-tfsa" element={<ContributeToTfsa />} />
           </Route>
           <Route path="bill-payments">
             <Route path="/bill-payments" element={<BillPayments />} />
-            <Route path="set-up-bill-payments" element={<SetUpBillPayments />} />
-            <Route path="review-and-cancel-bill-payments" element={<ReviewAndCancelBillPayments />} />
+            <Route
+              path="set-up-bill-payments"
+              element={<SetUpBillPayments />}
+            />
+            <Route
+              path="review-and-cancel-bill-payments"
+              element={<ReviewAndCancelBillPayments />}
+            />
             <Route path="add-or-edit-billers" element={<AddOrEditBillers />} />
             <Route path="biller-details" element={<BillerDetails />} />
             <Route path="view-ebills" element={<ViewEBills />} />
           </Route>
           <Route path="interac-etransfer">
-            <Route path="/interac-etransfer" element={<Navigate to="/interac-etransfer/status" />} />
+            <Route
+              path="/interac-etransfer"
+              element={<Navigate to="/interac-etransfer/status" />}
+            />
             <Route path="/interac-etransfer/status" element={<Status />}>
-              <Route path="/interac-etransfer/status" element={<Navigate to="/interac-etransfer/status/requested" />} />
-              <Route path=":tabId" element={<InteracETransferDetails />}>
-                <Route path=":detailId" element={<InteracETransferDetails />} />
+              <Route
+                path="/interac-etransfer/status"
+                element={<Navigate to="/interac-etransfer/status/requested" />}
+              />
+              <Route path=":tabId" element={<InteracETransferDetails />} />
+              <Route path="request-sent" element={<RequestSent />}>
+                <Route path=":requestId" element={<RequestSent />} />
               </Route>
-              <Route path="request-sent" element={<RequestSent />} />
               <Route path="request-reminder" element={<RequestReminder />} />
               <Route path="request-canceled" element={<RequestCanceled />} />
             </Route>
             <Route path="send-money" element={<SendMoney />}>
-              <Route path=":stepId" element={<SendMoney />} />
+              <Route path=":transactionId" element={<SendMoney />}>
+                <Route path=":stepId" element={<SendMoney />} />
+              </Route>
             </Route>
             <Route path="request-money" element={<RequestMoney />} />
             <Route path="contact-list" element={<ContactList />} />
             <Route path="contact-list/edit" element={<EditContact />} />
             <Route path="edit-my-profile" element={<EditMyProfile />} />
-            <Route path="autodeposit-settings" element={<AutodepositSettings />} />
+            <Route
+              path="autodeposit-settings"
+              element={<AutodepositSettings />}
+            />
             <Route path="receive-money" element={<ReceiveMoney />} />
             <Route path="learn-more" element={<LearnMore />} />
           </Route>
           <Route path="manage-my-alerts" element={<ManageMyAlerts />} />
           <Route path="my-accounts">
             <Route path="/my-accounts" element={<MyAccounts />} />
-            <Route path="view-account-details" element={<ViewAccountDetails />} />
-            <Route path="download-transactions" element={<DownloadTransactions />} />
+            <Route
+              path="view-account-details"
+              element={<ViewAccountDetails />}
+            />
+            <Route
+              path="download-transactions"
+              element={<DownloadTransactions />}
+            />
             <Route path="view-estatements">
-              <Route path="/my-accounts/view-estatements" element={<ViewEStatements />} />
-              <Route path="statement-preferences" element={<StatementPreferences />} />
+              <Route
+                path="/my-accounts/view-estatements"
+                element={<ViewEStatements />}
+              />
+              <Route
+                path="statement-preferences"
+                element={<StatementPreferences />}
+              />
             </Route>
-            <Route path="upcoming-bill-payments-and-transfers" element={<UpcomingBillPaymentsAndTransfers />} />
+            <Route
+              path="upcoming-bill-payments-and-transfers"
+              element={<UpcomingBillPaymentsAndTransfers />}
+            />
           </Route>
           <Route path="transfer-funds">
             <Route path="/transfer-funds" element={<TransferFunds />} />
             <Route path="zippy-to-zippy" element={<ZippyToZippy />} />
             <Route path="eft" element={<EFT />} />
             <Route path="visa-direct" element={<VisaDirect />} />
-            <Route path="review-and-cancel-transfers" element={<ReviewAndCancelTransfers />} />
+            <Route
+              path="review-and-cancel-transfers"
+              element={<ReviewAndCancelTransfers />}
+            />
           </Route>
         </Route>
         <Route path="about" element={<About />} />
