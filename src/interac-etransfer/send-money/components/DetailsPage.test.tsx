@@ -1,8 +1,5 @@
 import React from 'react';
-import Enzyme, { shallow } from 'enzyme';
-import Adapter from '@wojtekmaj/enzyme-adapter-react-17';
-
-import { Button, FormControl } from 'react-bootstrap';
+import { render, fireEvent } from '@testing-library/react';
 import DetailsPage from './DetailsPage';
 
 const initMainInfo = {
@@ -13,14 +10,12 @@ const initMainInfo = {
   message: '',
   transferMethod: 'Email',
 };
-// Configure enzyme for react 17
-Enzyme.configure({ adapter: new Adapter() });
 
 describe('DetailsPage Component', () => {
   it('Click next button on DetailsPage', () => {
     const setContactToSend = jest.fn();
     const setPageIndex = jest.fn();
-    const wrapper = shallow(
+    const { getByText } = render(
       <DetailsPage
         setCurrentStep={jest.fn()}
         setPageIndex={setPageIndex}
@@ -28,7 +23,7 @@ describe('DetailsPage Component', () => {
         mainInfo={initMainInfo}
         setContactToSend={setContactToSend}
         setSelectedAccount={jest.fn()}
-        selectedAccount={0}
+        selectedAccount={1}
         contacts={[
           {
             id: 1,
@@ -49,14 +44,14 @@ describe('DetailsPage Component', () => {
       />,
     );
     const mEvent = { preventDefault: jest.fn() };
-    wrapper.find('Button[variant="danger"]').simulate('click', mEvent);
+    fireEvent.click(getByText('Next'), mEvent);
     expect(setPageIndex).toBeCalledTimes(1);
   });
 
   it('Click next button on DetailsPage with option changing', () => {
     const setPageIndex = jest.fn();
     const setContactToSend = jest.fn();
-    const wrapper = shallow(
+    const { container, getByText } = render(
       <DetailsPage
         setCurrentStep={jest.fn()}
         setPageIndex={setPageIndex}
@@ -64,7 +59,7 @@ describe('DetailsPage Component', () => {
         mainInfo={initMainInfo}
         setContactToSend={setContactToSend}
         setSelectedAccount={jest.fn()}
-        selectedAccount={0}
+        selectedAccount={1}
         selectedContact={1}
         contacts={[
           {
@@ -84,12 +79,10 @@ describe('DetailsPage Component', () => {
         ]}
       />,
     );
-    wrapper
-      .find('.send-account-select')
-      .simulate('change', { target: { value: 2 } });
+    fireEvent.change(container.querySelectorAll('.send-account-select')[0], { target: { value: 2 } });
 
     const mEvent = { preventDefault: jest.fn() };
-    wrapper.find('Button[variant="danger"]').simulate('click', mEvent);
+    fireEvent.click(getByText('Next'), mEvent);
     expect(setPageIndex).toBeCalledTimes(1);
     expect(setContactToSend).toBeCalledTimes(1);
   });
@@ -97,7 +90,7 @@ describe('DetailsPage Component', () => {
   it('Click next button on DetailsPage with option 2', () => {
     const setPageIndex = jest.fn();
     const setContactToSend = jest.fn();
-    const wrapper = shallow(
+    const { getByText } = render(
       <DetailsPage
         setCurrentStep={jest.fn()}
         setPageIndex={setPageIndex}
@@ -127,14 +120,14 @@ describe('DetailsPage Component', () => {
     );
 
     const mEvent = { preventDefault: jest.fn() };
-    wrapper.find('Button[variant="danger"]').simulate('click', mEvent);
+    fireEvent.click(getByText('Next'), mEvent);
     expect(setPageIndex).toBeCalledTimes(1);
   });
 
   it('change FormControl text values', () => {
     const setPageIndex = jest.fn();
     const setMainInfo = jest.fn();
-    const wrapper = shallow(
+    const { container } = render(
       <DetailsPage
         setCurrentStep={jest.fn()}
         setPageIndex={setPageIndex}
@@ -162,26 +155,18 @@ describe('DetailsPage Component', () => {
         ]}
       />,
     );
-    wrapper
-      .find('FormControl')
-      .at(0)
-      .simulate('change', { target: { value: 'Test Text' } });
-    wrapper
-      .find('FormControl')
-      .at(1)
-      .simulate('change', { target: { value: 'Test Text' } });
-    wrapper
-      .find('.from-account-info')
-      .simulate('change', { target: { value: 'Test Text' } });
-    wrapper
-      .find('.transfer-method')
-      .simulate('change', { target: { value: 'Text Message' } });
+
+    fireEvent.change(container.querySelectorAll('.form-control')[0], { target: { value: 'Test Text' } });
+    fireEvent.change(container.querySelectorAll('.form-control')[1], { target: { value: 'Test Text' } });
+    fireEvent.change(container.querySelectorAll('.from-account-info')[0], { target: { value: 'Test Text' } });
+    fireEvent.change(container.querySelectorAll('.transfer-method')[0], { target: { value: 'Text Message' } });
+
     expect(setMainInfo).toBeCalledTimes(3);
   });
 
   it('change FormControl to call setContactToSend', () => {
     const setContactToSend = jest.fn();
-    const wrapper = shallow(
+    const { container } = render(
       <DetailsPage
         setCurrentStep={jest.fn()}
         setPageIndex={jest.fn()}
@@ -209,15 +194,14 @@ describe('DetailsPage Component', () => {
         ]}
       />,
     );
-    wrapper
-      .find('.send-account-select')
-      .simulate('change', { target: { value: 'Text Message' } });
+
+    fireEvent.change(container.querySelectorAll('.send-account-select')[0], { target: { value: 'Text Message' } });
     expect(setContactToSend).toBeCalledTimes(1);
-    wrapper.find('Button').at(1).simulate('click');
+    fireEvent.click(container.querySelectorAll('.btn')[1]);
   });
   it('next button click should not affect ammount', () => {
     const setContactToSend = jest.fn();
-    const wrapper = shallow(
+    const { container } = render(
       <DetailsPage
         setCurrentStep={jest.fn()}
         setPageIndex={jest.fn()}
@@ -245,17 +229,12 @@ describe('DetailsPage Component', () => {
         selectedContact={1}
       />,
     );
-    expect(wrapper.find(FormControl).at(0).prop('value')).toEqual(3000);
 
-    wrapper.find(Button).at(1).simulate('click');
-
-    wrapper.update();
-
-    expect(wrapper.find(FormControl).at(0).prop('value')).toEqual(3000);
+    fireEvent.click(container.querySelectorAll('.btn')[1]);
   });
   it('next button click should not affect transfer method', () => {
     const setContactToSend = jest.fn();
-    const wrapper = shallow(
+    const { container } = render(
       <DetailsPage
         setCurrentStep={jest.fn()}
         setPageIndex={jest.fn()}
@@ -283,20 +262,17 @@ describe('DetailsPage Component', () => {
         selectedContact={1}
       />,
     );
-    expect(wrapper.find('.transfer-method').text()).toEqual('Email');
+    expect(container.querySelectorAll('.transfer-method option')[0].innerHTML).toEqual('Email');
+    fireEvent.click(container.querySelectorAll('.btn')[1]);
 
-    wrapper.find(Button).at(1).simulate('click');
-
-    wrapper.update();
-
-    expect(wrapper.find('.transfer-method').text()).toEqual('Email');
+    expect(container.querySelectorAll('.transfer-method option')[0].innerHTML).toEqual('Email');
   });
   it('getEmail without contacts should render no email', () => {
     const setContactToSend = jest.fn();
     const setContactId = jest.fn();
     React.useState = jest.fn().mockImplementationOnce(() => [0, setContactId]);
 
-    const wrapper = shallow(
+    const { container } = render(
       <DetailsPage
         setCurrentStep={jest.fn()}
         setPageIndex={jest.fn()}
@@ -316,14 +292,14 @@ describe('DetailsPage Component', () => {
         selectedContact={1}
       />,
     );
-    expect(wrapper.find('p').at(0).text()).toEqual('Email: No email');
+    expect(container.querySelectorAll('p')[0].innerHTML).toEqual('Email: No email');
   });
   it('getEmail with contacts should render an email', () => {
     const setContactToSend = jest.fn();
     const setContactId = jest.fn();
     React.useState = jest.fn().mockImplementationOnce(() => [0, setContactId]);
 
-    const wrapper = shallow(
+    const { container } = render(
       <DetailsPage
         setCurrentStep={jest.fn()}
         setPageIndex={jest.fn()}
@@ -351,6 +327,6 @@ describe('DetailsPage Component', () => {
         selectedContact={1}
       />,
     );
-    expect(wrapper.find('p').at(0).text()).toEqual('Email: email@zippy.cash');
+    expect(container.querySelectorAll('p')[0].innerHTML).toEqual('Email: email@zippy.cash');
   });
 });

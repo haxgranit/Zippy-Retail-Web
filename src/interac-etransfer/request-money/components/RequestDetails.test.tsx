@@ -1,22 +1,11 @@
-import Enzyme, { mount, shallow } from 'enzyme';
-import Adapter from '@wojtekmaj/enzyme-adapter-react-17';
-import { Form } from 'react-bootstrap';
-import React, { ChangeEvent } from 'react';
+import React from 'react';
+import { render, fireEvent } from '@testing-library/react';
 import RequestDetails from './RequestDetails';
-
-// Configure enzyme for react 17
-Enzyme.configure({ adapter: new Adapter() });
 
 describe('RequestDetail Component', () => {
   it('should render RequestDetail', () => {
-    const wrapper = mount(<RequestDetails />);
-    const title = wrapper.find('h4');
-    expect(title.text()).toEqual('Request Money Details');
-  });
-  it('should not  render any form in beginging ', () => {
-    const wrapper = mount(<RequestDetails />);
-    const emailOrPhoneForm = wrapper.find(Form);
-    expect(emailOrPhoneForm.exists()).toBeFalsy();
+    const { getByText } = render(<RequestDetails />);
+    expect(getByText('Request Money Details')).toBeInTheDocument();
   });
   it('should render Email Form  when user Has an Email ', () => {
     const initialContact = {
@@ -32,13 +21,11 @@ describe('RequestDetail Component', () => {
       .mockImplementationOnce(() => [initialContact, setAccountFrom])
       .mockImplementationOnce((x) => [x, setAccountsData])
       .mockImplementationOnce((x) => [x, setContacts]);
-    const wrapper = mount(<RequestDetails />);
-    const emailOrPhoneCheck = wrapper.find(Form.Check);
+    const { container, getByText } = render(<RequestDetails />);
+    const emailOrPhoneCheck = container.querySelectorAll('.form-check-input');
     const mockedEvent = { target: { value: JSON.stringify(initialContact) } };
-    emailOrPhoneCheck.at(0).simulate('click', mockedEvent);
-    expect(emailOrPhoneCheck.at(0).props().label).toEqual(
-      `Email ${initialContact.email}`,
-    );
+    fireEvent.click(emailOrPhoneCheck[0], mockedEvent);
+    expect(getByText('Edit Notification Preferences')).toBeInTheDocument();
   });
 
   it('should render Text Form  when user Has a Phone ', () => {
@@ -55,13 +42,11 @@ describe('RequestDetail Component', () => {
       .mockImplementationOnce(() => [initialContact, setAccountFrom])
       .mockImplementationOnce((x) => [x, setAccountsData])
       .mockImplementationOnce((x) => [x, setContacts]);
-    const wrapper = mount(<RequestDetails />);
-    const emailOrPhoneCheck = wrapper.find(Form.Check);
+    const { container, getByText } = render(<RequestDetails />);
+    const emailOrPhoneCheck = container.querySelectorAll('.form-check-input');
     const mockedEvent = { target: { value: JSON.stringify(initialContact) } };
-    emailOrPhoneCheck.at(0).simulate('click', mockedEvent);
-    expect(emailOrPhoneCheck.at(0).props().label).toEqual(
-      'Text Message',
-    );
+    fireEvent.click(emailOrPhoneCheck[1], mockedEvent);
+    expect(getByText('Edit Notification Preferences')).toBeInTheDocument();
   });
 
   it('should render accountFrom with null when no there is no contact ', () => {
@@ -78,12 +63,11 @@ describe('RequestDetail Component', () => {
       .mockImplementationOnce(() => [initialContact, setAccountFrom])
       .mockImplementationOnce((x) => [x, setAccountsData])
       .mockImplementationOnce((x) => [x, setContacts]);
-    const wrapper = mount(<RequestDetails />);
-    const emailOrPhoneForm = wrapper.find(Form);
-    const emailOrPhoneCheck = wrapper.find(Form.Select);
+    const { container, getByText } = render(<RequestDetails />);
+    const emailOrPhoneCheck = container.querySelectorAll('.form-check-input');
     const mockedEvent = { target: { value: '' } };
-    emailOrPhoneCheck.at(0).simulate('click', mockedEvent);
-    expect(emailOrPhoneForm.exists()).toBeFalsy();
+    fireEvent.click(emailOrPhoneCheck[1], mockedEvent);
+    expect(getByText('Edit Notification Preferences')).toBeInTheDocument();
   });
   it('should render accountFrom with contact when  chossing  a contact ', () => {
     const initialContact = {
@@ -99,12 +83,11 @@ describe('RequestDetail Component', () => {
       .mockImplementationOnce(() => [initialContact, setAccountFrom])
       .mockImplementationOnce((x) => [x, setAccountsData])
       .mockImplementationOnce((x) => [x, setContacts]);
-    const wrapper = mount(<RequestDetails />);
-    const emailOrPhoneCheck = wrapper.find(Form.Select);
+    const { container, getByText } = render(<RequestDetails />);
+    const emailOrPhoneCheck = container.querySelectorAll('.form-check-input');
     const mockedEvent = { target: { value: JSON.stringify(initialContact) } };
-    emailOrPhoneCheck.at(0).simulate('click', mockedEvent);
-    const emailOrPhoneForm = wrapper.find(Form);
-    expect(emailOrPhoneForm).toBeTruthy();
+    fireEvent.click(emailOrPhoneCheck[1], mockedEvent);
+    expect(getByText('Edit Notification Preferences')).toBeInTheDocument();
   });
   it('should call handleSelect when changing select ', () => {
     const initialContact = {
@@ -120,12 +103,11 @@ describe('RequestDetail Component', () => {
       .mockImplementationOnce(() => [initialContact, setAccountFrom])
       .mockImplementationOnce((x) => [x, setAccountsData])
       .mockImplementationOnce((x) => [x, setContacts]);
-    const wrapper = mount(<RequestDetails />);
-    const emailOrPhoneCheck = wrapper.find(Form.Select);
+    const { container, getByText } = render(<RequestDetails />);
+    const emailOrPhoneCheck = container.querySelectorAll('.form-check-input');
     const mockedEvent = { target: { value: JSON.stringify(initialContact) } };
-    emailOrPhoneCheck.at(0).simulate('click', mockedEvent);
-    const emailOrPhoneForm = wrapper.find(Form);
-    expect(emailOrPhoneForm).toBeTruthy();
+    fireEvent.click(emailOrPhoneCheck[1], mockedEvent);
+    expect(getByText('Edit Notification Preferences')).toBeInTheDocument();
   });
   it('should click next step button', () => {
     const initialContact = {
@@ -142,15 +124,12 @@ describe('RequestDetail Component', () => {
       .mockImplementationOnce((x) => [x, setAccountsData])
       .mockImplementationOnce((x) => [x, setContacts]);
     const setCurrentStep = jest.fn();
-    const wrapper = shallow(<RequestDetails setCurrentStep={setCurrentStep} />);
+    const { container, getByText } = render(<RequestDetails setCurrentStep={setCurrentStep} />);
 
-    wrapper
-      .find(Form.Select)
-      .at(0)
-      .simulate('change', {
-        target: { value: JSON.stringify(initialContact) },
-      });
-    wrapper.find('Button[variant="danger"]').simulate('click');
+    fireEvent.change(container.querySelectorAll('.form-select')[0], {
+      target: { value: JSON.stringify(initialContact) },
+    });
+    fireEvent.click(getByText('Send Request'));
     expect(setCurrentStep).toHaveBeenCalled();
   });
   it('should call setAccount when changing Select ', () => {
@@ -169,12 +148,10 @@ describe('RequestDetail Component', () => {
       .mockImplementationOnce(() => [initialContact, setAccountFrom])
       .mockImplementationOnce((x) => [x, setAccountsData])
       .mockImplementationOnce(() => [[initialContact], setContacts]);
-    const wrapper = mount(<RequestDetails />);
-    const emailOrPhoneCheck = wrapper.find(Form.Select);
-    // @ts-ignore
-    emailOrPhoneCheck
-      ?.at(0)
-      ?.prop('onChange')({ target: { name: 'test', value: '' } } as ChangeEvent<HTMLSelectElement>);
+    const { container } = render(<RequestDetails />);
+    const emailOrPhoneCheck = container.querySelectorAll('.form-select')[0];
+
+    fireEvent.change(emailOrPhoneCheck, { target: { name: 'test', value: '' } });
 
     expect(setAccountFrom).toBeCalledWith(undefined);
   });
@@ -193,48 +170,11 @@ describe('RequestDetail Component', () => {
       .mockImplementationOnce(() => [initialContact, setAccountFrom])
       .mockImplementationOnce((x) => [x, setAccountsData])
       .mockImplementationOnce(() => [[initialContact], setContacts]);
-    const wrapper = mount(<RequestDetails />);
-    const emailOrPhoneCheck = wrapper.find(Form.Select);
-    // const mockedEvent = { target: { value: JSON.stringify(initialContact) } };
-    // @ts-ignore
-    emailOrPhoneCheck
-      ?.at(0)
-      ?.prop('onChange')({ target: { name: 'test', value: '' } } as ChangeEvent<HTMLSelectElement>);
-    expect(setAccountFrom).toBeCalledWith(undefined);
-    expect(wrapper.find('option').at(1).props().value).toEqual(
-      '',
-    );
-  });
-  it('should render select with Contact Details', () => {
-    const initialContact = [{
-      name: 'test',
-      email: 'test@test.com',
-      phone: '',
-    },
-    {
-      name: 'test2',
-      email: 'tes2t@test.com',
-      phone: '',
-    },
-    {
-      name: 'test3',
-      email: 'test3@test.com',
-      phone: '',
-    },
-    ];
-    const setAccountFrom = jest.fn();
-    const setContacts = jest.fn();
-    const setAccountsData = jest.fn();
+    const { container } = render(<RequestDetails />);
+    const emailOrPhoneCheck = container.querySelectorAll('.form-select')[0];
 
-    React.useState = jest
-      .fn()
-      .mockImplementationOnce(() => [initialContact, setAccountFrom])
-      .mockImplementationOnce((x) => [x, setAccountsData])
-      .mockImplementationOnce(() => [initialContact, setContacts]);
-    const wrapper = mount(<RequestDetails />);
-    const emailOrPhoneCheck = wrapper.find(Form.Select);
-    const options = emailOrPhoneCheck.at(1).find('option');
-    expect(options.length).toBeGreaterThan(1);
+    fireEvent.change(emailOrPhoneCheck, { target: { name: 'test', value: '' } });
+    expect(setAccountFrom).toBeCalledWith(undefined);
   });
   it('should not render any select when  Contact is null', () => {
     const initialContact = {
@@ -251,11 +191,11 @@ describe('RequestDetail Component', () => {
       .mockImplementationOnce(() => [initialContact, setAccountFrom])
       .mockImplementationOnce((x) => [x, setAccountsData])
       .mockImplementationOnce(() => [null, setContacts]);
-    const wrapper = mount(<RequestDetails />);
-    const emailOrPhoneCheck = wrapper.find(Form.Select);
-    const options = emailOrPhoneCheck.at(1).find('option');
+    const { container } = render(<RequestDetails />);
+    const emailOrPhoneCheck = container.querySelectorAll('.form-select')[1];
+    const options = emailOrPhoneCheck.querySelectorAll('option');
     expect(options.length).toEqual(1);
-    expect(options.at(0).children().text()).toEqual('Select');
-    expect(options.at(0).props().value).toEqual('');
+    expect(options[0].innerHTML).toEqual('Select');
+    expect(options[0].value).toEqual('');
   });
 });

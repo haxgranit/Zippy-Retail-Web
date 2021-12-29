@@ -210,6 +210,7 @@ exports[`Storyshots interac-etransfer/contact-list/edit/EditContact Default 1`] 
     >
       <input
         className="form-control"
+        onChange={[Function]}
         style={
           Object {
             "display": "inline-block",
@@ -327,6 +328,7 @@ exports[`Storyshots interac-etransfer/contact-list/edit/EditContact Default 1`] 
     >
       <input
         className="form-control"
+        onChange={[Function]}
         style={
           Object {
             "marginLeft": 10,
@@ -521,7 +523,7 @@ exports[`Storyshots interac-etransfer/contact-list/edit/EditContact Default 1`] 
           Note:
         </span>
       </div>
-      <p>
+      <div>
         <span>
           Your use of Interac e-Transfer is subject to the 
         </span>
@@ -549,7 +551,7 @@ exports[`Storyshots interac-etransfer/contact-list/edit/EditContact Default 1`] 
             </span>
           </div>
         </div>
-      </p>
+      </div>
     </div>
   </div>
 </div>

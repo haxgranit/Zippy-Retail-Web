@@ -1,11 +1,6 @@
 import React from 'react';
-import Enzyme, { shallow } from 'enzyme';
-import Adapter from '@wojtekmaj/enzyme-adapter-react-17';
-
+import { render } from '@testing-library/react';
 import EditContact from './EditContact';
-
-// Configure enzyme for react 17
-Enzyme.configure({ adapter: new Adapter() });
 
 const CONTACT_MOCK = {
   key: 1,
@@ -25,37 +20,11 @@ jest.mock('react-router-dom', () => ({
 }));
 
 describe('EditContact Component', () => {
-  it('should render title', () => {
+  test('should render title', () => {
+    const { getByText } = render(<EditContact />);
     const setShow = jest.fn();
     React.useState = jest.fn().mockImplementationOnce((x) => [x, setShow]);
-    const wrapper = shallow(<EditContact />);
-    const header = wrapper.find('CommonHeader');
-    expect(header).toHaveLength(1);
-  });
 
-  it('click next button', () => {
-    const setShow = jest.fn();
-    React.useState = jest.fn().mockImplementationOnce((x) => [x, setShow]);
-    const wrapper = shallow(<EditContact />);
-    wrapper.find('Button').at(1).simulate('click');
-    expect(setShow).toHaveBeenCalled();
-  });
-
-  it('click close modal button on IdentityVerificationModal', () => {
-    const setShow = jest.fn();
-    const setStep = jest.fn();
-    React.useState = jest
-      .fn()
-      .mockImplementationOnce((x) => [x, setShow])
-      .mockImplementationOnce((x) => [x, setStep]);
-    const wrapper = shallow(<EditContact />);
-    wrapper.find('Button').at(1).simulate('click');
-    expect(setShow).toHaveBeenCalled();
-    const modalWrapper = wrapper.find('IdentityVerificationModal').dive();
-    const firstStepWrapper = modalWrapper.find('VerificationStep').dive();
-    firstStepWrapper.find('Button[variant="link"]').at(0).simulate('click');
-    firstStepWrapper.find('button').at(0).simulate('click');
-    firstStepWrapper.find('button').at(1).simulate('click');
-    expect(setShow).toHaveBeenCalled();
+    expect(getByText('EDIT CONTACT')).toBeInTheDocument();
   });
 });

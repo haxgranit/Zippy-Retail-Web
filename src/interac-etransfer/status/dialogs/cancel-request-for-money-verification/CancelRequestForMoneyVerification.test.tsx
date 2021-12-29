@@ -19,7 +19,7 @@ describe('ٌRequest Sent Component', () => {
     const show = true;
     const handleCancelRequest = jest.fn();
     const handleBack = jest.fn();
-    const { container } = render(
+    render(
       <CancelRequestForMoneyVerification
         show={show}
         handleCancelRequest={handleCancelRequest}
@@ -34,7 +34,7 @@ describe('ٌRequest Sent Component', () => {
     const show = true;
     const handleCancelRequest = jest.fn();
     const handleBack = jest.fn();
-    const { container } = render(
+    render(
       <CancelRequestForMoneyVerification
         show={show}
         handleCancelRequest={handleCancelRequest}
