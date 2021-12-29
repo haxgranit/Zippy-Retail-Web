@@ -1,308 +1,124 @@
-import React from 'react';
-import Enzyme, { shallow } from 'enzyme';
-import Adapter from '@wojtekmaj/enzyme-adapter-react-17';
-
-import { Button, Form, FormControl } from 'react-bootstrap';
+import
+{
+  cleanup,
+  fireEvent,
+  render,
+  screen,
+} from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 import DetailsPage from './DetailsPage';
+import MAIN_INFO from '../../../stories/MainInfo';
 
-const initMainInfo = {
-  amount: 0,
-  destination: { email: '', name: '' },
-  source: { email: '', name: '' },
-  fromAccount: '',
-  message: '',
-  transferMethod: 'Email',
-};
-// Configure enzyme for react 17
-Enzyme.configure({ adapter: new Adapter() });
+const mockSetMainInfo = jest.fn();
+const mockSetErrorMessage = jest.fn();
+const mockSetCurrentStep = jest.fn();
+const mockSetContactToSend = jest.fn();
+const mockNavigateSteps = jest.fn();
+
+const component = (
+  <DetailsPage
+    setCurrentStep={mockSetCurrentStep}
+    navigateSteps={mockNavigateSteps}
+    setMainInfo={mockSetMainInfo}
+    mainInfo={MAIN_INFO}
+    setErrorMessage={mockSetErrorMessage}
+    setContactToSend={mockSetContactToSend}
+    setSelectedAccount={jest.fn()}
+    selectedAccount={1}
+    selectedContact={1}
+    contacts={[
+      {
+        id: 1,
+        firstName: 'Test',
+        lastName: 'Test',
+        email: 'email@zippy.cash',
+        phone: 'phone',
+      },
+    ]}
+    accounts={[
+      {
+        id: 0,
+        name: 'test',
+        email: 'email@zippy.cash',
+      },
+    ]}
+  />
+);
+
+beforeEach(cleanup);
 
 describe('DetailsPage Component', () => {
+  it('should render SecurityQuestionPage', () => {
+    render(component);
+    expect(
+      screen.getByText('Your Interac e-Transfer Details'),
+    ).toBeInTheDocument();
+  });
+
   it('Click next button on DetailsPage', () => {
-    const setContactToSend = jest.fn();
-    const navigateSteps = jest.fn();
-    const wrapper = shallow(
-      <DetailsPage
-        setCurrentStep={jest.fn()}
-        navigateSteps={navigateSteps}
-        setMainInfo={jest.fn()}
-        mainInfo={initMainInfo}
-        setContactToSend={setContactToSend}
-        setSelectedAccount={jest.fn()}
-        selectedAccount={0}
-        contacts={[
-          {
-            id: 1,
-            firstName: 'Test',
-            lastName: 'Test',
-            email: 'email@zippy.cash',
-            phone: 'phone',
-          },
-        ]}
-        accounts={[
-          {
-            id: 0,
-            name: 'test',
-            email: 'email@zippy.cash',
-          },
-        ]}
-        selectedContact={1}
-      />,
-    );
-    const mEvent = { preventDefault: jest.fn() };
-    wrapper.find('Button[variant="danger"]').simulate('click', mEvent);
-    expect(navigateSteps).toBeCalledTimes(1);
+    render(component);
+    screen.getAllByRole('button')[1].click();
+    expect(mockNavigateSteps).toBeCalledTimes(1);
   });
 
   it('Click next button on DetailsPage with option changing', () => {
-    const navigateSteps = jest.fn();
-    const setContactToSend = jest.fn();
-    const wrapper = shallow(
-      <DetailsPage
-        setCurrentStep={jest.fn()}
-        navigateSteps={navigateSteps}
-        setMainInfo={jest.fn()}
-        mainInfo={initMainInfo}
-        setContactToSend={setContactToSend}
-        setSelectedAccount={jest.fn()}
-        selectedAccount={0}
-        contacts={[
-          {
-            id: 1,
-            firstName: 'Test',
-            lastName: 'Test',
-            email: 'email@zippy.cash',
-            phone: 'phone',
-          },
-        ]}
-        accounts={[
-          {
-            id: 0,
-            name: 'test',
-            email: 'email@zippy.cash',
-          },
-        ]}
-        selectedContact={1}
-      />,
-    );
-    wrapper
-      .find('.send-account-select')
-      .simulate('change', { target: { value: 2 } });
-
-    const mEvent = { preventDefault: jest.fn() };
-    wrapper.find('Button[variant="danger"]').simulate('click', mEvent);
-    expect(navigateSteps).toBeCalledTimes(1);
-    expect(setContactToSend).toBeCalledTimes(1);
+    render(component);
+    userEvent.selectOptions(screen.getAllByRole('combobox')[0], ['1']);
+    screen.getAllByRole('button')[1].click();
+    expect(mockNavigateSteps).toBeCalledTimes(1);
+    expect(mockSetContactToSend).toBeCalledTimes(1);
   });
 
   it('Click next button on DetailsPage with option 2', () => {
-    const navigateSteps = jest.fn();
-    const setContactToSend = jest.fn();
-    const wrapper = shallow(
-      <DetailsPage
-        setCurrentStep={jest.fn()}
-        navigateSteps={navigateSteps}
-        setMainInfo={jest.fn()}
-        mainInfo={initMainInfo}
-        setContactToSend={setContactToSend}
-        setSelectedAccount={jest.fn()}
-        selectedAccount={0}
-        contacts={[
-          {
-            id: 1,
-            firstName: 'Test',
-            lastName: 'Test',
-            email: 'email@zippy.cash',
-            phone: 'phone',
-          },
-        ]}
-        accounts={[
-          {
-            id: 0,
-            name: 'test',
-            email: 'email@zippy.cash',
-          },
-        ]}
-        selectedContact={1}
-      />,
-    );
-
-    const mEvent = { preventDefault: jest.fn() };
-    wrapper.find('Button[variant="danger"]').simulate('click', mEvent);
-    expect(navigateSteps).toBeCalledTimes(1);
+    render(component);
+    screen.getAllByRole('button')[1].click();
+    expect(mockNavigateSteps).toBeCalledTimes(1);
   });
 
   it('change FormControl text values', () => {
-    const setContactToSend = jest.fn();
-    const setMainInfo = jest.fn();
-    const wrapper = shallow(
-      <DetailsPage
-        setCurrentStep={jest.fn()}
-        navigateSteps={jest.fn()}
-        setMainInfo={setMainInfo}
-        mainInfo={initMainInfo}
-        setContactToSend={setContactToSend}
-        setSelectedAccount={jest.fn()}
-        selectedAccount={0}
-        contacts={[
-          {
-            id: 1,
-            firstName: 'Test',
-            lastName: 'Test',
-            email: 'email@zippy.cash',
-            phone: 'phone',
-          },
-        ]}
-        accounts={[
-          {
-            id: 0,
-            name: 'test',
-            email: 'email@zippy.cash',
-          },
-        ]}
-        selectedContact={1}
-      />,
-    );
-    wrapper
-      .find(FormControl)
-      .at(0)
-      .simulate('change', { target: { value: '3000' } });
-    wrapper
-      .find(Form.Control)
-      .at(0)
-      .simulate('change', { target: { value: 'Test Text' } });
-    wrapper
-      .find('.transfer-method')
-      .simulate('change', { target: { value: 'Other' } });
+    render(component);
 
-    expect(setMainInfo).toBeCalledTimes(3);
+    fireEvent.change(screen.getByRole('textbox'), {
+      target: { value: 'new message' },
+    });
+    fireEvent.change(screen.getByDisplayValue('1000'), {
+      target: { value: 200 },
+    });
+
+    expect(mockSetMainInfo).toBeCalledTimes(2);
   });
 
   it('change FormControl to call setContactToSend', () => {
-    const setContactToSend = jest.fn();
-    const wrapper = shallow(
-      <DetailsPage
-        setCurrentStep={jest.fn()}
-        navigateSteps={jest.fn()}
-        setMainInfo={jest.fn()}
-        mainInfo={initMainInfo}
-        setContactToSend={setContactToSend}
-        setSelectedAccount={jest.fn()}
-        selectedAccount={0}
-        contacts={[
-          {
-            id: 1,
-            firstName: 'Test',
-            lastName: 'Test',
-            email: 'email@zippy.cash',
-            phone: 'phone',
-          },
-        ]}
-        accounts={[
-          {
-            id: 0,
-            name: 'test',
-            email: 'email@zippy.cash',
-          },
-        ]}
-        selectedContact={1}
-      />,
-    );
-    wrapper
-      .find('.send-account-select')
-      .simulate('change', { target: { value: 'Text Message' } });
-    expect(setContactToSend).toBeCalledTimes(1);
-    wrapper.find('Button').at(1).simulate('click');
+    render(component);
+    userEvent.selectOptions(screen.getAllByRole('combobox')[0], ['1']);
+    expect(mockSetContactToSend).toBeCalledTimes(1);
   });
+
   it('next button click should not affect ammount', () => {
-    const setContactToSend = jest.fn();
-    const wrapper = shallow(
-      <DetailsPage
-        setCurrentStep={jest.fn()}
-        navigateSteps={jest.fn()}
-        setMainInfo={jest.fn()}
-        mainInfo={{ ...initMainInfo, amount: 3000 }}
-        setContactToSend={setContactToSend}
-        setSelectedAccount={jest.fn()}
-        selectedAccount={0}
-        contacts={[
-          {
-            id: 1,
-            firstName: 'Test',
-            lastName: 'Test',
-            email: 'email@zippy.cash',
-            phone: 'phone',
-          },
-        ]}
-        accounts={[
-          {
-            id: 0,
-            name: 'test',
-            email: 'email@zippy.cash',
-          },
-        ]}
-        selectedContact={1}
-      />,
-    );
-    expect(wrapper.find(FormControl).at(0).prop('value')).toEqual(3000);
-
-    wrapper.find(Button).at(1).simulate('click');
-
-    wrapper.update();
-
-    expect(wrapper.find(FormControl).at(0).prop('value')).toEqual(3000);
+    render(component);
+    expect(screen.getByDisplayValue('1000')).toBeInTheDocument();
+    screen.getAllByRole('button')[1].click();
+    expect(screen.getByDisplayValue('1000')).toBeInTheDocument();
   });
+
   it('next button click should not affect transfer method', () => {
-    const setContactToSend = jest.fn();
-    const wrapper = shallow(
+    render(component);
+    expect(screen.getAllByRole('combobox')[2].textContent).toEqual('Email');
+    screen.getAllByRole('button')[1].click();
+    expect(screen.getAllByRole('combobox')[2].textContent).toEqual('Email');
+  });
+
+  it('getEmail without contacts should render no email', () => {
+    const wrapper = (
       <DetailsPage
-        setCurrentStep={jest.fn()}
-        navigateSteps={jest.fn()}
-        setMainInfo={jest.fn()}
-        mainInfo={{ ...initMainInfo, amount: 3000 }}
-        setContactToSend={setContactToSend}
+        setCurrentStep={mockSetCurrentStep}
+        navigateSteps={mockNavigateSteps}
+        setMainInfo={mockSetMainInfo}
+        mainInfo={MAIN_INFO}
+        setErrorMessage={mockSetErrorMessage}
+        setContactToSend={mockSetContactToSend}
         setSelectedAccount={jest.fn()}
         selectedAccount={0}
-        contacts={[
-          {
-            id: 1,
-            firstName: 'Test',
-            lastName: 'Test',
-            email: 'email@zippy.cash',
-            phone: 'phone',
-          },
-        ]}
-        accounts={[
-          {
-            id: 0,
-            name: 'test',
-            email: 'email@zippy.cash',
-          },
-        ]}
-        selectedContact={1}
-      />,
-    );
-    expect(wrapper.find('.transfer-method').text()).toEqual('Email');
-
-    wrapper.find(Button).at(1).simulate('click');
-
-    wrapper.update();
-
-    expect(wrapper.find('.transfer-method').text()).toEqual('Email');
-  });
-  it('getEmail without contacts should render no email', () => {
-    const setContactToSend = jest.fn();
-    const setContactId = jest.fn();
-    React.useState = jest.fn().mockImplementationOnce(() => [0, setContactId]);
-
-    const wrapper = shallow(
-      <DetailsPage
-        setCurrentStep={jest.fn()}
-        navigateSteps={jest.fn()}
-        setMainInfo={jest.fn()}
-        mainInfo={{ ...initMainInfo, amount: 3000 }}
-        setContactToSend={setContactToSend}
-        setSelectedAccount={jest.fn()}
-        selectedAccount={1}
         contacts={[]}
         accounts={[
           {
@@ -312,24 +128,30 @@ describe('DetailsPage Component', () => {
           },
         ]}
         selectedContact={1}
-      />,
+      />
     );
-    expect(wrapper.find('p').at(0).text()).toEqual('Email: No email');
-  });
-  it('getEmail with contacts should render an email', () => {
-    const setContactToSend = jest.fn();
-    const setContactId = jest.fn();
-    React.useState = jest.fn().mockImplementationOnce(() => [0, setContactId]);
 
-    const wrapper = shallow(
+    render(wrapper);
+    expect(screen.getByText('Email: No email')).toBeInTheDocument();
+  });
+
+  it('getEmail with contacts should render an email', () => {
+    render(component);
+    expect(screen.getByText('Email: email@zippy.cash')).toBeInTheDocument();
+  });
+
+  it('should not call setCurrentStep when no contact selected', () => {
+    const wrapper = (
       <DetailsPage
-        setCurrentStep={jest.fn()}
-        navigateSteps={jest.fn()}
-        setMainInfo={jest.fn()}
-        mainInfo={{ ...initMainInfo, amount: 3000 }}
-        setContactToSend={setContactToSend}
+        setCurrentStep={mockSetCurrentStep}
+        navigateSteps={mockNavigateSteps}
+        setMainInfo={mockSetMainInfo}
+        mainInfo={MAIN_INFO}
+        setErrorMessage={mockSetErrorMessage}
+        setContactToSend={mockSetContactToSend}
         setSelectedAccount={jest.fn()}
         selectedAccount={1}
+        selectedContact={0}
         contacts={[
           {
             id: 1,
@@ -346,9 +168,150 @@ describe('DetailsPage Component', () => {
             email: 'email@zippy.cash',
           },
         ]}
-        selectedContact={1}
-      />,
+      />
     );
-    expect(wrapper.find('p').at(0).text()).toEqual('Email: email@zippy.cash');
+
+    render(wrapper);
+    expect(mockSetCurrentStep).toBeCalledTimes(0);
+  });
+
+  it('should not call setCurrentStep when no account selected', () => {
+    const wrapper = (
+      <DetailsPage
+        setCurrentStep={mockSetCurrentStep}
+        navigateSteps={mockNavigateSteps}
+        setMainInfo={mockSetMainInfo}
+        mainInfo={MAIN_INFO}
+        setErrorMessage={mockSetErrorMessage}
+        setContactToSend={mockSetContactToSend}
+        setSelectedAccount={jest.fn()}
+        selectedAccount={0}
+        selectedContact={1}
+        contacts={[
+          {
+            id: 1,
+            firstName: 'Test',
+            lastName: 'Test',
+            email: 'email@zippy.cash',
+            phone: 'phone',
+          },
+        ]}
+        accounts={[
+          {
+            id: 0,
+            name: 'test',
+            email: 'email@zippy.cash',
+          },
+        ]}
+      />
+    );
+
+    render(wrapper);
+    expect(mockSetCurrentStep).toBeCalledTimes(0);
+  });
+
+  it('should not call setCurrentStep when no transferMethod selected', () => {
+    const wrapper = (
+      <DetailsPage
+        setCurrentStep={mockSetCurrentStep}
+        navigateSteps={mockNavigateSteps}
+        setMainInfo={mockSetMainInfo}
+        mainInfo={{ ...MAIN_INFO, transferMethod: '' }}
+        setErrorMessage={mockSetErrorMessage}
+        setContactToSend={mockSetContactToSend}
+        setSelectedAccount={jest.fn()}
+        selectedAccount={1}
+        selectedContact={1}
+        contacts={[
+          {
+            id: 1,
+            firstName: 'Test',
+            lastName: 'Test',
+            email: 'email@zippy.cash',
+            phone: 'phone',
+          },
+        ]}
+        accounts={[
+          {
+            id: 0,
+            name: 'test',
+            email: 'email@zippy.cash',
+          },
+        ]}
+      />
+    );
+
+    render(wrapper);
+    expect(mockSetCurrentStep).toBeCalledTimes(0);
+  });
+
+  it('should not call setCurrentStep when ammount equal 0', () => {
+    const wrapper = (
+      <DetailsPage
+        setCurrentStep={mockSetCurrentStep}
+        navigateSteps={mockNavigateSteps}
+        setMainInfo={mockSetMainInfo}
+        mainInfo={{ ...MAIN_INFO, amount: 0 }}
+        setErrorMessage={mockSetErrorMessage}
+        setContactToSend={mockSetContactToSend}
+        setSelectedAccount={jest.fn()}
+        selectedAccount={1}
+        selectedContact={1}
+        contacts={[
+          {
+            id: 1,
+            firstName: 'Test',
+            lastName: 'Test',
+            email: 'email@zippy.cash',
+            phone: 'phone',
+          },
+        ]}
+        accounts={[
+          {
+            id: 0,
+            name: 'test',
+            email: 'email@zippy.cash',
+          },
+        ]}
+      />
+    );
+
+    render(wrapper);
+    expect(mockSetCurrentStep).toBeCalledTimes(0);
+  });
+
+  it('should not call setCurrentStep when ammount greater than 3000', () => {
+    const wrapper = (
+      <DetailsPage
+        setCurrentStep={mockSetCurrentStep}
+        navigateSteps={mockNavigateSteps}
+        setMainInfo={mockSetMainInfo}
+        mainInfo={{ ...MAIN_INFO, amount: 3001 }}
+        setErrorMessage={mockSetErrorMessage}
+        setContactToSend={mockSetContactToSend}
+        setSelectedAccount={jest.fn()}
+        selectedAccount={1}
+        selectedContact={1}
+        contacts={[
+          {
+            id: 1,
+            firstName: 'Test',
+            lastName: 'Test',
+            email: 'email@zippy.cash',
+            phone: 'phone',
+          },
+        ]}
+        accounts={[
+          {
+            id: 0,
+            name: 'test',
+            email: 'email@zippy.cash',
+          },
+        ]}
+      />
+    );
+
+    render(wrapper);
+    expect(mockSetCurrentStep).toBeCalledTimes(0);
   });
 });

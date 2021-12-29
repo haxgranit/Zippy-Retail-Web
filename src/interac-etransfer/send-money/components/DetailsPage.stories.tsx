@@ -1,4 +1,5 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
+import MAIN_INFO from '../../../stories/MainInfo';
 import DetailsPage from './DetailsPage';
 
 export default {
@@ -7,6 +8,7 @@ export default {
   argTypes: {
     setCurrentStep: { action: 'setCurrentStep' },
     setPageIndex: { action: 'setPageIndex' },
+    setErrorMessage: { action: 'setErrorMessage' },
   },
 } as ComponentMeta<typeof DetailsPage>;
 
@@ -21,6 +23,7 @@ const Template: ComponentStory<typeof DetailsPage> = ({
   navigateSteps,
   setCurrentStep,
   setMainInfo,
+  setErrorMessage,
 }) => (
   <DetailsPage
     mainInfo={mainInfo}
@@ -33,19 +36,13 @@ const Template: ComponentStory<typeof DetailsPage> = ({
     navigateSteps={navigateSteps}
     selectedAccount={selectedAccount}
     setSelectedAccount={setSelectedAccount}
+    setErrorMessage={setErrorMessage}
   />
 );
 
 export const Default = Template.bind({});
 Default.args = {
-  mainInfo: {
-    amount: 10000,
-    destination: { email: 'destination@email.com', name: 'destination name' },
-    source: { email: 'source@email.com', name: 'source name' },
-    fromAccount: 'fromAccount (8000 0000 00000000)',
-    message: 'message',
-    transferMethod: 'Email',
-  },
+  mainInfo: MAIN_INFO,
 };
 
 export const Empty = Template.bind({});

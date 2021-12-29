@@ -38,6 +38,10 @@ export interface TransferMainDetails {
   amount: number;
   message: string;
   transferMethod: string;
+  securityQuestion: string | undefined;
+  securityAnswer: string | undefined;
+  confirmSecurityAnswer: string | undefined;
+  showAnswer: boolean;
 }
 
 const LinkElement = ({ url, text, id }: QuickLink): JSX.Element => (
@@ -81,7 +85,11 @@ export default function SendMoney() {
     source: { email: '', name: '' },
     fromAccount: '',
     message: '',
-    transferMethod: '',
+    transferMethod: 'Email',
+    securityAnswer: undefined,
+    confirmSecurityAnswer: undefined,
+    securityQuestion: undefined,
+    showAnswer: false,
   });
 
   const [accountsList, setAccountsList] = useState<Account[] | null>([]);
@@ -197,6 +205,17 @@ export default function SendMoney() {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [pageId]);
+  useEffect(() => {
+    if (errorMessage) window.scrollTo(0, 0);
+  }, [errorMessage]);
+
+  useEffect(() => {
+    if (stepId) {
+      setPageId(stepId || PageIds.DetailsPageId);
+      const mainStep = stepId ? StepIndexes[stepId] : undefined;
+      setCurrentStep(mainStep || 1);
+    }
+  }, [stepId]);
 
   return (
     <div>
@@ -241,6 +260,7 @@ export default function SendMoney() {
               setMainInfo={setMainInfo}
               accounts={accountsList}
               contacts={contactList}
+              setErrorMessage={setErrorMessage}
             />
           )}
           {pageId === PageIds.SecurityRecipientPageId && (
@@ -257,6 +277,7 @@ export default function SendMoney() {
               showModal={setShowVerifyModal}
               mainInfo={mainInfo}
               setMainInfo={setMainInfo}
+              setErrorMessage={setErrorMessage}
             />
           )}
           {pageId === PageIds.TransferSentPageId && (
