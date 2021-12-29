@@ -2,80 +2,136 @@
 
 exports[`Storyshots VerticalNavLinks Default 1`] = `
 <div
-  className="flex-column nav"
-  onKeyDown={[Function]}
+  className="vertical-nav-wrapper noselect"
 >
-  <a
-    className="nav-link nav-link"
-    data-rr-ui-event-key={null}
-    disabled={false}
-    href="/my-accounts"
-    onClick={[Function]}
+  <div
+    className="vertical-nav nav"
+    onKeyDown={[Function]}
   >
-    My Accounts
-  </a>
-  <a
-    className="nav-link nav-link"
-    data-rr-ui-event-key={null}
-    disabled={false}
-    href="/interac-etransfer"
-    onClick={[Function]}
-  >
-    Interac e-Transfer
-  </a>
-  <a
-    className="nav-link nav-link"
-    data-rr-ui-event-key={null}
-    disabled={false}
-    href="/bill-payments"
-    onClick={[Function]}
-  >
-    Bill Payments
-  </a>
-  <a
-    className="nav-link nav-link"
-    data-rr-ui-event-key={null}
-    disabled={false}
-    href="/transfer-funds"
-    onClick={[Function]}
-  >
-    Transfer Funds
-  </a>
-  <a
-    className="nav-link nav-link"
-    data-rr-ui-event-key={null}
-    disabled={false}
-    href="/account-security"
-    onClick={[Function]}
-  >
-    Account Security
-  </a>
-  <a
-    className="nav-link nav-link"
-    data-rr-ui-event-key={null}
-    disabled={false}
-    href="/customer-services"
-    onClick={[Function]}
-  >
-    Customer Services
-  </a>
-  <a
-    className="nav-link nav-link"
-    data-rr-ui-event-key={null}
-    disabled={false}
-    href="/manage-my-alerts"
-    onClick={[Function]}
-  >
-    Manage My Alerts
-  </a>
-  <a
-    className="nav-link nav-link"
-    data-rr-ui-event-key={null}
-    disabled={false}
-    href="/contact-us"
-    onClick={[Function]}
-  >
-    Contact Us
-  </a>
+    <a
+      className="navbar-brand"
+      href="/"
+      onClick={[Function]}
+    >
+      <img
+        alt=""
+        src="ZippyCash_Logo.svg"
+      />
+    </a>
+    <a
+      className="nav-link nav-link"
+      data-rr-ui-event-key={null}
+      disabled={false}
+      href="/my-accounts"
+      onClick={[Function]}
+    >
+      <i
+        className="zippy-cash-icon zc-home"
+      />
+      My Accounts
+      <i
+        className="dropdown zippy-cash-icon zc-up"
+      />
+    </a>
+    <a
+      className="nav-link nav-link"
+      data-rr-ui-event-key={null}
+      disabled={false}
+      href="/interac-etransfer"
+      onClick={[Function]}
+    >
+      <i
+        className="zippy-cash-icon zc-interac-etransfer"
+      />
+      Interac e-Transfer
+      <i
+        className="dropdown zippy-cash-icon zc-up"
+      />
+    </a>
+    <a
+      className="nav-link nav-link"
+      data-rr-ui-event-key={null}
+      disabled={false}
+      href="/bill-payments"
+      onClick={[Function]}
+    >
+      <i
+        className="zippy-cash-icon zc-bill-payments"
+      />
+      Bill Payments
+      <i
+        className="dropdown zippy-cash-icon zc-up"
+      />
+    </a>
+    <a
+      className="nav-link nav-link"
+      data-rr-ui-event-key={null}
+      disabled={false}
+      href="/transfer-funds"
+      onClick={[Function]}
+    >
+      <i
+        className="zippy-cash-icon zc-transfer-funds"
+      />
+      Transfer Funds
+      <i
+        className="dropdown zippy-cash-icon zc-up"
+      />
+    </a>
+    <a
+      className="nav-link nav-link"
+      data-rr-ui-event-key={null}
+      disabled={false}
+      href="/account-security"
+      onClick={[Function]}
+    >
+      <i
+        className="zippy-cash-icon zc-account-security"
+      />
+      Account Security
+    </a>
+    <hr />
+    <a
+      className="nav-link nav-link"
+      data-rr-ui-event-key={null}
+      disabled={false}
+      href="/customer-services"
+      onClick={[Function]}
+    >
+      <i
+        className="zippy-cash-icon zc-customer-services"
+      />
+      Customer Services
+    </a>
+    <a
+      className="nav-link nav-link"
+      data-rr-ui-event-key={null}
+      disabled={false}
+      href="/manage-my-alerts"
+      onClick={[Function]}
+    >
+      <i
+        className="zippy-cash-icon zc-manage-my-alerts"
+      />
+      Manage My Alerts
+    </a>
+    <a
+      className="nav-link nav-link"
+      data-rr-ui-event-key={null}
+      disabled={false}
+      href="/contact-us"
+      onClick={[Function]}
+    >
+      <i
+        className="zippy-cash-icon zc-contact-us"
+      />
+      Contact Us
+    </a>
+    <div
+      className="copyright"
+    >
+      © 2021 Zippy Cash LLC
+    </div>
+  </div>
 </div>
 `;
