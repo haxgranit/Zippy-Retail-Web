@@ -210,11 +210,9 @@ export default function SendMoney() {
   }, [errorMessage]);
 
   useEffect(() => {
-    if (stepId) {
-      setPageId(stepId || PageIds.DetailsPageId);
-      const mainStep = stepId ? StepIndexes[stepId] : undefined;
-      setCurrentStep(mainStep || 1);
-    }
+    setPageId(stepId || PageIds.DetailsPageId);
+    const mainStep = stepId ? StepIndexes[stepId] : undefined;
+    setCurrentStep(mainStep || 1);
   }, [stepId]);
 
   return (

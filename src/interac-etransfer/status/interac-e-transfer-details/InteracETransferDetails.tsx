@@ -52,13 +52,12 @@ const SentTabContent = ({ navigate, instance, accounts }: any) => {
                 />
               </td>
               <td>
-                <Button
-                  variant="link"
+                <a
                   className="text-black"
-                  onClick={() => navigate(`/interac-etransfer/send-money/transfer-sent-complete/${item.id}`)}
+                  href={`/interac-etransfer/send-money/transfer-sent-complete/${item.id}`}
                 >
                   Transfer Completed
-                </Button>
+                </a>
               </td>
             </tr>
           ))}
@@ -85,7 +84,7 @@ const SentTabContent = ({ navigate, instance, accounts }: any) => {
   );
 };
 
-const ReceivedTabContent = ({ navigate, instance, accounts }: any) => {
+const ReceivedTabContent = ({ instance, accounts }: any) => {
   const [transactions, setTransactions] = useState<Transaction[]>([]);
   useEffect(() => {
     new Api(instance, accounts[0])
@@ -123,13 +122,12 @@ const ReceivedTabContent = ({ navigate, instance, accounts }: any) => {
                 />
               </td>
               <td>
-                <Button
-                  variant="link"
+                <a
                   className="text-black"
-                  onClick={() => navigate(`/interac-etransfer/send-money/transfer-sent-complete/${item.id}`)}
+                  href={`/interac-etransfer/send-money/transfer-sent-complete/${item.id}`}
                 >
                   Transfer Completed
-                </Button>
+                </a>
               </td>
             </tr>
           ))}
@@ -182,13 +180,12 @@ const RequestedTabContent = ({ navigate, instance, accounts }: any) => {
                 />
               </td>
               <td>
-                <Button
-                  variant="link"
+                <a
                   className="text-black"
-                  onClick={() => navigate(`/interac-etransfer/status/request-sent/${item.id}`)}
+                  href={`/interac-etransfer/status/request-sent/${item.id}`}
                 >
                   Requested
-                </Button>
+                </a>
               </td>
             </tr>
           ))}
@@ -262,7 +259,6 @@ export default function InteracETransferDetails() {
         </Tab>
         <Tab eventKey="received" title="Received">
           <ReceivedTabContent
-            navigate={navigate}
             instance={instance}
             accounts={accounts}
           />
