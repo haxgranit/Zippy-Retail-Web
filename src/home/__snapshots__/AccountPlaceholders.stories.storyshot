@@ -8,6 +8,7 @@ exports[`Storyshots AccountPlaceholders Default 1`] = `
       "display": "flex",
       "flexDirection": "column",
       "gap": "20px",
+      "width": "240px",
     }
   }
 >

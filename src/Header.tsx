@@ -4,7 +4,6 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import { useAppDispatch } from './app/hooks';
-import ZippyCash_Logo from './assets/img/general/ZippyCash_Logo.png';
 import { loginRequest } from './authConfig';
 import { unload } from './features/user/userSlice';
 
@@ -23,9 +22,6 @@ export const HeaderPure = ({
   return (
     <nav className="navbar navbar-expand-lg navbar-light">
       <div className="container">
-        <Link to="/" className="navbar-brand">
-          <img src={ZippyCash_Logo} alt="" />
-        </Link>
         <button
           className="navbar-toggler"
           type="button"
