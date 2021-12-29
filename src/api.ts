@@ -83,7 +83,7 @@ export default class Api {
   }
 
   public postInteracEtransferTransaction(data: InteracEtransferTransaction) {
-    return this.fetch<InteracEtransferTransaction>('post', 'InteracEtransfer/Transactions', data);
+    return this.fetch<Transaction>('post', 'InteracEtransfer/Transactions', data);
   }
 
   private async fetch<TResponse>(method: string, path: string, body?: any) {

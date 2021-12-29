@@ -148,14 +148,14 @@ export default function SendMoney() {
     setIsSendingMoney(true);
     new Api(instance, accounts[0])
       .postInteracEtransferTransaction(data)
-      .then(() => {
+      .then((res) => {
         setErrorMessage(null);
         if (selectedContact === 1) {
           setPageId(PageIds.TransferSentPageId);
-          navigate(`/interac-etransfer/send-money/${PageIds.TransferSentPageId}`);
+          navigate(`/interac-etransfer/send-money/${PageIds.TransferSentPageId}/${res.id}`);
         } else {
           setPageId(PageIds.TransferSentCompletedId);
-          navigate(`/interac-etransfer/send-money/${PageIds.TransferSentCompletedId}`);
+          navigate(`/interac-etransfer/send-money/${PageIds.TransferSentCompletedId}/${res.id}`);
         }
         setCurrentStep(3);
       })
