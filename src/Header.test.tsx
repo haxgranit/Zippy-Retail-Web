@@ -5,14 +5,12 @@ import { HeaderPure } from './Header';
 const mockChangeLanguage = jest.fn();
 
 jest.mock('react-i18next', () => ({
-  initReactI18next: { type: '3rdParty', init: jest.fn() },
   useTranslation: () => ({
     i18n: {
       changeLanguage: mockChangeLanguage,
     },
     t: (key: string) => key,
   }),
-  Trans: ({ children }: { children: React.ReactNode }) => children,
 }));
 
 const component = (
