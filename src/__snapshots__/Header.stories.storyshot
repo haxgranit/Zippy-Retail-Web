@@ -7,16 +7,6 @@ exports[`Storyshots Header Logged In 1`] = `
   <div
     className="container"
   >
-    <a
-      className="navbar-brand"
-      href="/"
-      onClick={[Function]}
-    >
-      <img
-        alt=""
-        src="ZippyCash_Logo.png"
-      />
-    </a>
     <button
       aria-controls="navbarSupportedContent"
       aria-expanded="false"
@@ -84,16 +74,6 @@ exports[`Storyshots Header Logged Out 1`] = `
   <div
     className="container"
   >
-    <a
-      className="navbar-brand"
-      href="/"
-      onClick={[Function]}
-    >
-      <img
-        alt=""
-        src="ZippyCash_Logo.png"
-      />
-    </a>
     <button
       aria-controls="navbarSupportedContent"
       aria-expanded="false"
@@ -201,16 +181,6 @@ exports[`Storyshots Header Logging In 1`] = `
   <div
     className="container"
   >
-    <a
-      className="navbar-brand"
-      href="/"
-      onClick={[Function]}
-    >
-      <img
-        alt=""
-        src="ZippyCash_Logo.png"
-      />
-    </a>
     <button
       aria-controls="navbarSupportedContent"
       aria-expanded="false"

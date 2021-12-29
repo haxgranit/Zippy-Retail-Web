@@ -11,7 +11,7 @@ export default function VerticalNavLinks() {
         <Link to="/" className="navbar-brand">
           <img src={ZippyCashLogo} alt="" />
         </Link>
-        <Nav.Link as={NavLink} to="/my-accounts">
+        <Nav.Link className="nav-link" as={NavLink} to="/my-accounts">
           <i className="zippy-cash-icon zc-home" />
           My Accounts
           <i className="dropdown zippy-cash-icon zc-up" />
@@ -32,7 +32,7 @@ export default function VerticalNavLinks() {
             <Nav.Link as={NavLink} to="/my-accounts/upcoming-bill-payments-and-transfers">Upcoming Bill Payments and Transfers</Nav.Link>
           </Nav>
         )}
-        <Nav.Link as={NavLink} to="/interac-etransfer">
+        <Nav.Link className="nav-link" as={NavLink} to="/interac-etransfer">
           <i className="zippy-cash-icon zc-interac-etransfer" />
           Interac e-Transfer
           <i className="dropdown zippy-cash-icon zc-up" />
@@ -49,7 +49,7 @@ export default function VerticalNavLinks() {
             <Nav.Link as={NavLink} to="/interac-etransfer/learn-more">Learn More</Nav.Link>
           </Nav>
         )}
-        <Nav.Link as={NavLink} to="/bill-payments">
+        <Nav.Link className="nav-link" as={NavLink} to="/bill-payments">
           <i className="zippy-cash-icon zc-bill-payments" />
           Bill Payments
           <i className="dropdown zippy-cash-icon zc-up" />
@@ -63,7 +63,7 @@ export default function VerticalNavLinks() {
             <Nav.Link as={NavLink} to="/bill-payments/view-ebills">View eBills</Nav.Link>
           </Nav>
         )}
-        <Nav.Link as={NavLink} to="/transfer-funds">
+        <Nav.Link className="nav-link" as={NavLink} to="/transfer-funds">
           <i className="zippy-cash-icon zc-transfer-funds" />
           Transfer Funds
           <i className="dropdown zippy-cash-icon zc-up" />
@@ -76,20 +76,20 @@ export default function VerticalNavLinks() {
             <Nav.Link as={NavLink} to="/transfer-funds/review-and-cancel-transfers">Review and Cancel Transfers</Nav.Link>
           </Nav>
         )}
-        <Nav.Link as={NavLink} to="/account-security">
+        <Nav.Link className="nav-link" as={NavLink} to="/account-security">
           <i className="zippy-cash-icon zc-account-security" />
           Account Security
         </Nav.Link>
         <hr />
-        <Nav.Link as={NavLink} to="/customer-services">
+        <Nav.Link className="nav-link" as={NavLink} to="/customer-services">
           <i className="zippy-cash-icon zc-customer-services" />
           Customer Services
         </Nav.Link>
-        <Nav.Link as={NavLink} to="/manage-my-alerts">
+        <Nav.Link className="nav-link" as={NavLink} to="/manage-my-alerts">
           <i className="zippy-cash-icon zc-manage-my-alerts" />
           Manage My Alerts
         </Nav.Link>
-        <Nav.Link as={NavLink} to="/contact-us">
+        <Nav.Link className="nav-link" as={NavLink} to="/contact-us">
           <i className="zippy-cash-icon zc-contact-us" />
           Contact Us
         </Nav.Link>
