@@ -320,7 +320,7 @@ exports[`Storyshots interac-etransfer/send-money/SendMoney API Error 1`] = `
           <select
             className="transfer-method form-select"
             onChange={[Function]}
-            value=""
+            value="Email"
           >
             <option>
               Email
@@ -488,7 +488,7 @@ exports[`Storyshots interac-etransfer/send-money/SendMoney API Error 1`] = `
         >
           <button
             className="d-flex btn btn-danger"
-            disabled={true}
+            disabled={false}
             onClick={[Function]}
             type="button"
           >
@@ -933,7 +933,7 @@ exports[`Storyshots interac-etransfer/send-money/SendMoney Default 1`] = `
           <select
             className="transfer-method form-select"
             onChange={[Function]}
-            value=""
+            value="Email"
           >
             <option>
               Email
@@ -1101,7 +1101,7 @@ exports[`Storyshots interac-etransfer/send-money/SendMoney Default 1`] = `
         >
           <button
             className="d-flex btn btn-danger"
-            disabled={true}
+            disabled={false}
             onClick={[Function]}
             type="button"
           >
