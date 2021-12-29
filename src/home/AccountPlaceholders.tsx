@@ -5,6 +5,7 @@ export default function AccountPlaceholders() {
       display: 'flex',
       flexDirection: 'column',
       gap: '20px',
+      width: '240px',
     }}
     >
       <div style={{

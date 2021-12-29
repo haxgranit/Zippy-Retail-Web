@@ -4,18 +4,16 @@ import VerticalNavLinks from './VerticalNavLinks';
 
 export default function HomeLoggedIn() {
   return (
-    <div className="container" style={{ paddingBottom: '50px' }}>
-      <div className="row">
-        <div className="col-2">
-          <VerticalNavLinks />
-        </div>
-        <div className="col-8">
-          <Outlet />
-        </div>
-        <div className="col-2">
-          <AccountPlaceholders />
-        </div>
+    <main className="default-layout">
+      <div className="left-side-nav">
+        <VerticalNavLinks />
       </div>
-    </div>
+      <div className="content">
+        <Outlet />
+      </div>
+      <div className="right-side-panel">
+        <AccountPlaceholders />
+      </div>
+    </main>
   );
 }
