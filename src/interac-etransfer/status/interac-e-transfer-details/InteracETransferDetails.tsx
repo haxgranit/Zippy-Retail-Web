@@ -55,7 +55,7 @@ const SentTabContent = ({ navigate, instance, accounts }: any) => {
                 <Button
                   variant="link"
                   className="text-black"
-                  onClick={() => navigate(`/interac-etransfer/send-money/${item.id}/transfer-sent-complete`)}
+                  onClick={() => navigate(`/interac-etransfer/send-money/transfer-sent-complete/${item.id}`)}
                 >
                   Transfer Completed
                 </Button>
@@ -75,7 +75,7 @@ const SentTabContent = ({ navigate, instance, accounts }: any) => {
             variant="danger"
             className="d-flex"
             style={{ width: 'auto', marginRight: 10 }}
-            onClick={() => navigate('/interac-etransfer/send-money/0/details')}
+            onClick={() => navigate('/interac-etransfer/send-money/details')}
           >
             Send Money
           </Button>
@@ -126,7 +126,7 @@ const ReceivedTabContent = ({ navigate, instance, accounts }: any) => {
                 <Button
                   variant="link"
                   className="text-black"
-                  onClick={() => navigate(`/interac-etransfer/send-money/${item.id}/transfer-sent-complete`)}
+                  onClick={() => navigate(`/interac-etransfer/send-money/transfer-sent-complete/${item.id}`)}
                 >
                   Transfer Completed
                 </Button>

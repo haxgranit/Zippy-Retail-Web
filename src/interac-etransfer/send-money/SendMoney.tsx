@@ -152,10 +152,10 @@ export default function SendMoney() {
         setErrorMessage(null);
         if (selectedContact === 1) {
           setPageId(PageIds.TransferSentPageId);
-          navigate(`/interac-etransfer/send-money/0/${PageIds.TransferSentPageId}`);
+          navigate(`/interac-etransfer/send-money/${PageIds.TransferSentPageId}`);
         } else {
           setPageId(PageIds.TransferSentCompletedId);
-          navigate(`/interac-etransfer/send-money/0/${PageIds.TransferSentCompletedId}`);
+          navigate(`/interac-etransfer/send-money/${PageIds.TransferSentCompletedId}`);
         }
         setCurrentStep(3);
       })
@@ -194,12 +194,12 @@ export default function SendMoney() {
     setPageId(PageIds.DetailsPageId);
     setCurrentStep(1);
     setShowVerifyModal(false);
-    navigate(`/interac-etransfer/send-money/0/${PageIds.DetailsPageId}`);
+    navigate(`/interac-etransfer/send-money/${PageIds.DetailsPageId}`);
   };
 
   const navigateSteps = (nav_step: string) => {
     setPageId(nav_step);
-    navigate(`/interac-etransfer/send-money/0/${nav_step}`);
+    navigate(`/interac-etransfer/send-money/${nav_step}`);
   };
 
   useEffect(() => {

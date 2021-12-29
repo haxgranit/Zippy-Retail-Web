@@ -225,8 +225,8 @@ export default function App() {
               <Route path="request-canceled" element={<RequestCanceled />} />
             </Route>
             <Route path="send-money" element={<SendMoney />}>
-              <Route path=":transactionId" element={<SendMoney />}>
-                <Route path=":stepId" element={<SendMoney />} />
+              <Route path=":stepId" element={<SendMoney />}>
+                <Route path=":transactionId" element={<SendMoney />} />
               </Route>
             </Route>
             <Route path="request-money" element={<RequestMoney />} />
