@@ -1,16 +1,18 @@
+import { useEffect, useState } from 'react';
 import {
   Button,
   Col,
   Form,
   Row,
 } from 'react-bootstrap';
-import { User } from '../../api';
+import { useMsal } from '@azure/msal-react';
+import Api, { User, Account } from '../../api';
 import { useAppSelector } from '../../app/hooks';
 import { selectUser } from '../../features/user/userSlice';
 
 const Divider = () => <div className="border-top my-3" />;
 
-const LeftCol = ({ user }: { user: User }) => (
+const LeftCol = ({ user, accountList }: { user: User, accountList: Account[] | null }) => (
   <Col xs={9}>
     <Row>
       <Col>
@@ -45,6 +47,11 @@ const LeftCol = ({ user }: { user: User }) => (
       <Col xs={6}>
         <Form.Select>
           <option>Select account</option>
+          {accountList?.map((account: Account) => (
+            <option key={account.name} value={account.id}>
+              {account.name}
+            </option>
+          ))}
         </Form.Select>
       </Col>
     </Row>
@@ -110,19 +117,31 @@ const RightCol = () => (
   </Col>
 );
 
-export const AutodepositSettingsPure = ({ user }: { user: User }) => (
-  <div>
-    <Row>
-      <Col>
-        <h2>SETUP AUTODEPOSIT</h2>
-      </Col>
-    </Row>
-    <Row>
-      <LeftCol user={user} />
-      <RightCol />
-    </Row>
-  </div>
-);
+export const AutodepositSettingsPure = ({ user }: { user: User }) => {
+  const { instance, accounts } = useMsal();
+  const [accountList, setAccountList] = useState<Account[] | null>([]);
+
+  useEffect(() => {
+    new Api(instance, accounts[0])
+      .listAccounts()
+      .then((res) => {
+        setAccountList(res);
+      });
+  }, []);
+  return (
+    <div>
+      <Row>
+        <Col>
+          <h2>SETUP AUTODEPOSIT</h2>
+        </Col>
+      </Row>
+      <Row>
+        <LeftCol user={user} accountList={accountList} />
+        <RightCol />
+      </Row>
+    </div>
+  );
+};
 
 export const AutodepositSettings = () => {
   const { user } = useAppSelector(selectUser);
