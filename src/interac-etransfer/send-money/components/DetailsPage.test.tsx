@@ -42,6 +42,7 @@ const component = (
         email: 'email@zippy.cash',
       },
     ]}
+    validateInputs={jest.fn()}
   />
 );
 
@@ -128,6 +129,7 @@ describe('DetailsPage Component', () => {
           },
         ]}
         selectedContact={1}
+        validateInputs={jest.fn()}
       />
     );
 
@@ -168,6 +170,7 @@ describe('DetailsPage Component', () => {
             email: 'email@zippy.cash',
           },
         ]}
+        validateInputs={jest.fn()}
       />
     );
 
@@ -203,6 +206,7 @@ describe('DetailsPage Component', () => {
             email: 'email@zippy.cash',
           },
         ]}
+        validateInputs={jest.fn()}
       />
     );
 
@@ -238,6 +242,7 @@ describe('DetailsPage Component', () => {
             email: 'email@zippy.cash',
           },
         ]}
+        validateInputs={jest.fn()}
       />
     );
 
@@ -273,6 +278,7 @@ describe('DetailsPage Component', () => {
             email: 'email@zippy.cash',
           },
         ]}
+        validateInputs={jest.fn()}
       />
     );
 
@@ -308,6 +314,7 @@ describe('DetailsPage Component', () => {
             email: 'email@zippy.cash',
           },
         ]}
+        validateInputs={jest.fn()}
       />
     );
 
