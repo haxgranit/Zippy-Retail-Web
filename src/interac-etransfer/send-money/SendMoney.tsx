@@ -251,20 +251,15 @@ export default function SendMoney() {
               setErrorMessage={setErrorMessage}
             />
           )}
-          {pageIndex === PageIndexes.TransferSentPageIndex && (
+          {(
+            pageIndex === PageIndexes.TransferSentPageIndex
+            || pageIndex === PageIndexes.TransferSentCompletedIndex
+          ) && (
             <TransferSentPage
               setPageIndex={setPageIndex}
               setCurrentStep={setCurrentStep}
               transferInformation={tempTransferInformation}
-              isCompleted={false}
-            />
-          )}
-          {pageIndex === PageIndexes.TransferSentCompletedIndex && (
-            <TransferSentPage
-              setPageIndex={setPageIndex}
-              setCurrentStep={setCurrentStep}
-              transferInformation={tempTransferInformation}
-              isCompleted
+              isCompleted={pageIndex === PageIndexes.TransferSentCompletedIndex}
             />
           )}
           <hr style={{ height: '1px' }} />
