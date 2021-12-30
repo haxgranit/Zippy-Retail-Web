@@ -42,6 +42,7 @@ const SecurityQuestionPage = ({
       setErrorMessage(validationMessage);
       return;
     }
+    navigateSteps('send-money-verify');
     showModal(true);
   };
   return (

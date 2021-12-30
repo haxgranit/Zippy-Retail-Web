@@ -39,6 +39,7 @@ export type InteracEtransferTransaction = {
   contactId: number,
   amount: number,
   type: string,
+  id?: number,
 };
 
 export async function getToken(instance: IPublicClientApplication, account: AccountInfo)
@@ -84,7 +85,7 @@ export default class Api {
   }
 
   public postInteracEtransferTransaction(data: InteracEtransferTransaction) {
-    return this.fetch<Transaction>('post', 'InteracEtransfer/Transactions', data);
+    return this.fetch<InteracEtransferTransaction>('post', 'InteracEtransfer/Transactions', data);
   }
 
   private async fetch<TResponse>(method: string, path: string, body?: any) {

@@ -271,10 +271,7 @@ export default function App() {
             <Route path="zippy-to-zippy" element={<ZippyToZippy />} />
             <Route path="eft" element={<EFT />} />
             <Route path="visa-direct" element={<VisaDirect />} />
-            <Route
-              path="review-and-cancel-transfers"
-              element={<ReviewAndCancelTransfers />}
-            />
+            <Route path="review-and-cancel-transfers" element={<ReviewAndCancelTransfers />} />
           </Route>
         </Route>
         <Route path="about" element={<About />} />

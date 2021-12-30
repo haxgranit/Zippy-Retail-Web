@@ -22,6 +22,7 @@ interface DetailsPageProps {
   selectedAccount: number;
   setSelectedAccount: Dispatch<SetStateAction<number>>;
   setErrorMessage: Dispatch<SetStateAction<string | null>>;
+  validateInputs: any;
 }
 const DetailsPage = ({
   navigateSteps,
@@ -35,6 +36,7 @@ const DetailsPage = ({
   selectedAccount,
   setSelectedAccount,
   setErrorMessage,
+  validateInputs,
 }: DetailsPageProps): JSX.Element => {
   const handleContactChange = (evt: any) => {
     setContactToSend(Number(evt.target.value));
@@ -45,15 +47,6 @@ const DetailsPage = ({
   const getEmail = (id: number) => {
     const contact = id ? contacts?.find((el: Contact) => el.id === id) : 'No email';
     return (contact as Contact)?.email || 'No email';
-  };
-
-  const validateInputs = (): string | null => {
-    if (selectedContact === 0) return 'Please select a contact to send money to';
-    if (selectedAccount === 0) return 'Please select an account';
-    if (mainInfo.amount <= 0) return 'Amount should be greater than 0';
-    if (mainInfo.amount > 3000) return 'The maximum amount you can send in each transfer is $3,000';
-    if (!mainInfo.transferMethod) return 'Please select a transfer method';
-    return null;
   };
 
   const handleNext = () => {

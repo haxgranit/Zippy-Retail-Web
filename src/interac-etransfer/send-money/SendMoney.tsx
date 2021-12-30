@@ -21,6 +21,7 @@ export const enum PageIds {
   DetailsPageId = 'details',
   SecurityRecipientPageId = 'security-recipient',
   SecurityQuestionPageId = 'security-question',
+  SendMoneyVerifyPageId = 'send-money-verify',
   TransferSentPageId = 'transfer-sent',
   TransferSentCompletedId = 'transfer-sent-complete',
 }
@@ -58,6 +59,7 @@ const StepIndexes: any = {
   details: 1,
   'security-recipient': 2,
   'security-question': 2,
+  'send-money-verify': 2,
   'transfer-sent': 3,
   'transfer-sent-complete': 3,
 };
@@ -74,7 +76,9 @@ export default function SendMoney() {
   const step = stepId ? StepIndexes[stepId] : undefined;
   const [currentStep, setCurrentStep] = useState(step || 1);
   const [pageId, setPageId] = useState(stepId || PageIds.DetailsPageId);
-  const [showVerifyModal, setShowVerifyModal] = useState(false);
+  const [showVerifyModal, setShowVerifyModal] = useState(
+    stepId === PageIds.SendMoneyVerifyPageId || false,
+  );
   const [isSendingMoney, setIsSendingMoney] = useState(false);
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
   const [selectedContact, setSelectedContact] = useState(0);
@@ -189,7 +193,17 @@ export default function SendMoney() {
       fromAccount: sourceAccount?.name,
     };
   };
-  const handleSendMoneyVerificationClose = () => setShowVerifyModal(false);
+
+  const handleSendMoneyVerificationClose = () => {
+    setShowVerifyModal(false);
+    navigate(
+      `/interac-etransfer/send-money/${
+        selectedContact === 1
+          ? PageIds.SecurityRecipientPageId
+          : PageIds.SecurityQuestionPageId
+      }`,
+    );
+  };
 
   const handleSendMoneyVerificationBack = () => {
     setPageId(PageIds.DetailsPageId);
@@ -198,7 +212,23 @@ export default function SendMoney() {
     navigate(`/interac-etransfer/send-money/${PageIds.DetailsPageId}`);
   };
 
+  const validateInputs = (): string | null => {
+    if (selectedContact === 0) return 'Please select a contact to send money to';
+    if (selectedAccount === 0) return 'Please select an account';
+    if (mainInfo.amount <= 0) return 'Amount should be greater than 0';
+    if (mainInfo.amount > 3000) return 'The maximum amount you can send in each transfer is $3,000';
+    if (!mainInfo.transferMethod) return 'Please select a transfer method';
+    return null;
+  };
+
   const navigateSteps = (nav_step: string) => {
+    const isValidated = validateInputs();
+    if (isValidated) {
+      setErrorMessage(isValidated);
+      setCurrentStep(1);
+      return;
+    }
+
     if (
       !transactionId
       && (nav_step === PageIds.TransferSentPageId
@@ -222,6 +252,10 @@ export default function SendMoney() {
     setPageId(stepId || PageIds.DetailsPageId);
     const mainStep = stepId ? StepIndexes[stepId] : undefined;
     setCurrentStep(mainStep || 1);
+    setShowVerifyModal(false);
+    if (stepId === PageIds.SendMoneyVerifyPageId) {
+      setShowVerifyModal(true);
+    }
   }, [stepId]);
 
   return (
@@ -268,24 +302,28 @@ export default function SendMoney() {
               accounts={accountsList}
               contacts={contactList}
               setErrorMessage={setErrorMessage}
+              validateInputs={validateInputs}
             />
           )}
-          {pageId === PageIds.SecurityRecipientPageId && (
-            <SecurityRecipientPage
-              navigateSteps={navigateSteps}
-              setCurrentStep={setCurrentStep}
-              showModal={setShowVerifyModal}
-            />
+          {(pageId === PageIds.SecurityRecipientPageId
+            || (selectedContact === 1 && pageId === PageIds.SendMoneyVerifyPageId)) && (
+              <SecurityRecipientPage
+                navigateSteps={navigateSteps}
+                setCurrentStep={setCurrentStep}
+                showModal={setShowVerifyModal}
+              />
           )}
-          {pageId === PageIds.SecurityQuestionPageId && (
-            <SecurityQuestionPage
-              navigateSteps={navigateSteps}
-              setCurrentStep={setCurrentStep}
-              showModal={setShowVerifyModal}
-              mainInfo={mainInfo}
-              setMainInfo={setMainInfo}
-              setErrorMessage={setErrorMessage}
-            />
+          {(pageId === PageIds.SecurityQuestionPageId
+            || (selectedContact && selectedContact !== 1
+              && pageId === PageIds.SendMoneyVerifyPageId)) && (
+              <SecurityQuestionPage
+                navigateSteps={navigateSteps}
+                setCurrentStep={setCurrentStep}
+                showModal={setShowVerifyModal}
+                mainInfo={mainInfo}
+                setMainInfo={setMainInfo}
+                setErrorMessage={setErrorMessage}
+              />
           )}
           {(
             pageId === PageIds.TransferSentPageId

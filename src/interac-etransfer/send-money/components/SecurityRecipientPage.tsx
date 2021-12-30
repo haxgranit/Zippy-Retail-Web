@@ -46,6 +46,7 @@ const SecurityRecipientPage = ({
           variant="danger"
           className="d-flex"
           onClick={() => {
+            navigateSteps('send-money-verify');
             showModal(true);
           }}
         >
