@@ -223,7 +223,7 @@ export default function SendMoney() {
 
   const navigateSteps = (nav_step: string) => {
     const isValidated = validateInputs();
-    if (isValidated) {
+    if (isValidated && nav_step !== PageIds.DetailsPageId) {
       setErrorMessage(isValidated);
       setCurrentStep(1);
       return;
