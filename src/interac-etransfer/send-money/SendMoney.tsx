@@ -70,7 +70,7 @@ const MainSteps: any = [
 
 export default function SendMoney() {
   const navigate = useNavigate();
-  const { stepId } = useParams();
+  const { stepId, transactionId } = useParams();
   const step = stepId ? StepIndexes[stepId] : undefined;
   const [currentStep, setCurrentStep] = useState(step || 1);
   const [pageId, setPageId] = useState(stepId || PageIds.DetailsPageId);
@@ -144,6 +144,7 @@ export default function SendMoney() {
     const data: InteracEtransferTransaction = {
       contactId: selectedContact,
       amount: mainInfo.amount,
+      type: 'send',
     };
     setIsSendingMoney(true);
     new Api(instance, accounts[0])
@@ -198,8 +199,16 @@ export default function SendMoney() {
   };
 
   const navigateSteps = (nav_step: string) => {
+    if (
+      !transactionId
+      && (nav_step === PageIds.TransferSentPageId
+      || nav_step === PageIds.TransferSentCompletedId)
+    ) {
+      setCurrentStep(2);
+      return;
+    }
     setPageId(nav_step);
-    navigate(`/interac-etransfer/send-money/${nav_step}`);
+    navigate(`/interac-etransfer/send-money/${nav_step}${transactionId ? `/${transactionId}` : ''}`);
   };
 
   useEffect(() => {
@@ -278,20 +287,15 @@ export default function SendMoney() {
               setErrorMessage={setErrorMessage}
             />
           )}
-          {pageId === PageIds.TransferSentPageId && (
+          {(
+            pageId === PageIds.TransferSentPageId
+            || pageId === PageIds.TransferSentCompletedId
+          ) && (
             <TransferSentPage
               navigateSteps={navigateSteps}
               setCurrentStep={setCurrentStep}
               transferInformation={tempTransferInformation}
-              isCompleted={false}
-            />
-          )}
-          {pageId === PageIds.TransferSentCompletedId && (
-            <TransferSentPage
-              navigateSteps={navigateSteps}
-              setCurrentStep={setCurrentStep}
-              transferInformation={tempTransferInformation}
-              isCompleted
+              isCompleted={pageId === PageIds.TransferSentCompletedId}
             />
           )}
           <hr style={{ height: '1px' }} />
