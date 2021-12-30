@@ -256,6 +256,9 @@ export default function SendMoney() {
     if (stepId === PageIds.SendMoneyVerifyPageId) {
       setShowVerifyModal(true);
     }
+    if (!selectedAccount && !selectedContact) {
+      navigateSteps(PageIds.DetailsPageId);
+    }
   }, [stepId]);
 
   return (
