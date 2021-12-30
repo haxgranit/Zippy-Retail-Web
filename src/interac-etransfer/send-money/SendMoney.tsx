@@ -133,6 +133,7 @@ export default function SendMoney() {
     const data: InteracEtransferTransaction = {
       contactId: selectedContact,
       amount: mainInfo.amount,
+      type: 'send',
     };
     setIsSendingMoney(true);
     new Api(instance, accounts[0])
@@ -251,20 +252,15 @@ export default function SendMoney() {
               setErrorMessage={setErrorMessage}
             />
           )}
-          {pageIndex === PageIndexes.TransferSentPageIndex && (
+          {(
+            pageIndex === PageIndexes.TransferSentPageIndex
+            || pageIndex === PageIndexes.TransferSentCompletedIndex
+          ) && (
             <TransferSentPage
               setPageIndex={setPageIndex}
               setCurrentStep={setCurrentStep}
               transferInformation={tempTransferInformation}
-              isCompleted={false}
-            />
-          )}
-          {pageIndex === PageIndexes.TransferSentCompletedIndex && (
-            <TransferSentPage
-              setPageIndex={setPageIndex}
-              setCurrentStep={setCurrentStep}
-              transferInformation={tempTransferInformation}
-              isCompleted
+              isCompleted={pageIndex === PageIndexes.TransferSentCompletedIndex}
             />
           )}
           <hr style={{ height: '1px' }} />
