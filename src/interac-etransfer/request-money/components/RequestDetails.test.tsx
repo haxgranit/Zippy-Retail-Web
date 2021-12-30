@@ -71,13 +71,11 @@ describe('RequestDetail Component', () => {
     render(component);
     const requestMoneyFrom = screen.getAllByRole('combobox');
     userEvent.selectOptions(requestMoneyFrom[0], ['1']);
-    // expect(screen.getByText('Notify By:')).toBeInTheDocument();
   });
   it('should render Text Form  when user Has a Phone ', () => {
     render(component);
     const requestMoneyFrom = screen.getAllByRole('combobox');
     userEvent.selectOptions(requestMoneyFrom[0], ['1']);
-    // expect(screen.getByText('Text Message')).toBeInTheDocument();
   });
   it('should render accountFrom with null when no there is no contact ', () => {
     render(componentWithoutData);
@@ -99,7 +97,6 @@ describe('RequestDetail Component', () => {
     render(component);
     const requestMoneyFrom = screen.getAllByRole('combobox');
     userEvent.selectOptions(requestMoneyFrom[0], ['1']);
-    // screen.getAllByRole('button')[1].click();
     expect(mockSetCurrentStep).toHaveBeenCalled();
   });
   it('should render select with Contact Details', () => {

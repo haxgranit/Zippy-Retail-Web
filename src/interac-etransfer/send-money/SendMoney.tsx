@@ -133,6 +133,7 @@ export default function SendMoney() {
     const data: InteracEtransferTransaction = {
       contactId: selectedContact,
       amount: mainInfo.amount,
+      type: 'send',
     };
     setIsSendingMoney(true);
     new Api(instance, accounts[0])
