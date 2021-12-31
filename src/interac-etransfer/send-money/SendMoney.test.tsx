@@ -1,4 +1,5 @@
 import React from 'react';
+import { BrowserRouter } from 'react-router-dom';
 import Enzyme, { mount, shallow } from 'enzyme';
 import Adapter from '@wojtekmaj/enzyme-adapter-react-17';
 import { Form, FormControl } from 'react-bootstrap';
@@ -6,30 +7,49 @@ import SendMoney from './SendMoney';
 
 // Configure enzyme for react 17
 Enzyme.configure({ adapter: new Adapter() });
-const mounted = mount(<SendMoney />);
+const mockedUsedNavigate = jest.fn();
 jest.mock('react-router-dom', () => ({
   ...(jest.requireActual('react-router-dom') as any),
-  useLocation: () => ({
-    step: 1,
+  useParams: () => ({
+    stepId: 'details',
   }),
+  useNavigate: () => mockedUsedNavigate,
 }));
+
+const mounted = mount(
+  <BrowserRouter>
+    <SendMoney />
+  </BrowserRouter>,
+);
 
 describe('SendMoney Component', () => {
   it('should render StepComponent inside a SendMoney', () => {
-    const wrapper = shallow(<SendMoney />);
-    const header = wrapper.find('StepComponent');
+    const wrapper = shallow(
+      <BrowserRouter>
+        <SendMoney />
+      </BrowserRouter>,
+    );
+    const header = wrapper.childAt(0).dive().find('StepComponent');
     expect(header).toHaveLength(1);
   });
 
   it('should render DetailsPage inside a SendMoney', () => {
-    const wrapper = shallow(<SendMoney />);
-    const header = wrapper.find('DetailsPage');
+    const wrapper = shallow(
+      <BrowserRouter>
+        <SendMoney />
+      </BrowserRouter>,
+    );
+    const header = wrapper.childAt(0).dive().find('DetailsPage');
     expect(header).toHaveLength(1);
   });
 
   it('click buttons on SendMoneyVerificationModal', () => {
-    const wrapper = shallow(<SendMoney />);
-    const modal = wrapper.find('SendMoneyVerificationModal');
+    const wrapper = shallow(
+      <BrowserRouter>
+        <SendMoney />
+      </BrowserRouter>,
+    );
+    const modal = wrapper.childAt(0).dive().find('SendMoneyVerificationModal');
     const modalWrapper = modal.dive().childAt(0);
     const buttons = modalWrapper.find('button');
     buttons.at(0).simulate('click');
@@ -38,12 +58,16 @@ describe('SendMoney Component', () => {
   });
 
   it('change user account and click buttons', () => {
-    const wrapper = shallow(<SendMoney />);
-    const detailsPage = wrapper.find('DetailsPage');
+    const wrapper = shallow(
+      <BrowserRouter>
+        <SendMoney />
+      </BrowserRouter>,
+    );
+    const detailsPage = wrapper.childAt(0).dive().find('DetailsPage');
     const detailsWrapper = detailsPage.dive();
     const accountSelect = detailsWrapper.find('.send-account-select');
     accountSelect.simulate('change', { target: { value: 2 } });
-    const modal = wrapper.find('SendMoneyVerificationModal');
+    const modal = wrapper.childAt(0).dive().find('SendMoneyVerificationModal');
     const modalWrapper = modal.dive().childAt(0);
     const buttons = modalWrapper.find('button');
     buttons.at(0).simulate('click');

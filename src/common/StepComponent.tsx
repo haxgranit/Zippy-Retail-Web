@@ -2,14 +2,14 @@ interface Steps {
   steps: number;
   currentStep: number;
   setCurrentStep: any;
-  setPageIndex: any;
+  navigateSteps: any;
 }
 
 const StepComponent = ({
   steps,
   currentStep,
   setCurrentStep,
-  setPageIndex,
+  navigateSteps,
 }: Steps): JSX.Element => {
   const KeyPressHandler = () => {};
   const stepNumberStyle = {
@@ -54,8 +54,8 @@ const StepComponent = ({
         onKeyPress={KeyPressHandler}
         onClick={() => {
           setCurrentStep(i + 1);
-          if (setPageIndex) {
-            setPageIndex(i * 2);
+          if (navigateSteps) {
+            navigateSteps(i);
           }
         }}
         key={`step_${i}`}

@@ -9,16 +9,16 @@ import userEvent from '@testing-library/user-event';
 import DetailsPage from './DetailsPage';
 import MAIN_INFO from '../../../stories/MainInfo';
 
-const mockSetPageIndex = jest.fn();
 const mockSetMainInfo = jest.fn();
 const mockSetErrorMessage = jest.fn();
 const mockSetCurrentStep = jest.fn();
 const mockSetContactToSend = jest.fn();
+const mockNavigateSteps = jest.fn();
 
 const component = (
   <DetailsPage
     setCurrentStep={mockSetCurrentStep}
-    setPageIndex={mockSetPageIndex}
+    navigateSteps={mockNavigateSteps}
     setMainInfo={mockSetMainInfo}
     mainInfo={MAIN_INFO}
     setErrorMessage={mockSetErrorMessage}
@@ -42,6 +42,7 @@ const component = (
         email: 'email@zippy.cash',
       },
     ]}
+    validateInputs={jest.fn()}
   />
 );
 
@@ -58,21 +59,21 @@ describe('DetailsPage Component', () => {
   it('Click next button on DetailsPage', () => {
     render(component);
     screen.getAllByRole('button')[1].click();
-    expect(mockSetPageIndex).toBeCalledTimes(1);
+    expect(mockNavigateSteps).toBeCalledTimes(1);
   });
 
   it('Click next button on DetailsPage with option changing', () => {
     render(component);
     userEvent.selectOptions(screen.getAllByRole('combobox')[0], ['1']);
     screen.getAllByRole('button')[1].click();
-    expect(mockSetPageIndex).toBeCalledTimes(1);
+    expect(mockNavigateSteps).toBeCalledTimes(1);
     expect(mockSetContactToSend).toBeCalledTimes(1);
   });
 
   it('Click next button on DetailsPage with option 2', () => {
     render(component);
     screen.getAllByRole('button')[1].click();
-    expect(mockSetPageIndex).toBeCalledTimes(1);
+    expect(mockNavigateSteps).toBeCalledTimes(1);
   });
 
   it('change FormControl text values', () => {
@@ -112,7 +113,7 @@ describe('DetailsPage Component', () => {
     const wrapper = (
       <DetailsPage
         setCurrentStep={mockSetCurrentStep}
-        setPageIndex={mockSetPageIndex}
+        navigateSteps={mockNavigateSteps}
         setMainInfo={mockSetMainInfo}
         mainInfo={MAIN_INFO}
         setErrorMessage={mockSetErrorMessage}
@@ -128,6 +129,7 @@ describe('DetailsPage Component', () => {
           },
         ]}
         selectedContact={1}
+        validateInputs={jest.fn()}
       />
     );
 
@@ -144,7 +146,7 @@ describe('DetailsPage Component', () => {
     const wrapper = (
       <DetailsPage
         setCurrentStep={mockSetCurrentStep}
-        setPageIndex={mockSetPageIndex}
+        navigateSteps={mockNavigateSteps}
         setMainInfo={mockSetMainInfo}
         mainInfo={MAIN_INFO}
         setErrorMessage={mockSetErrorMessage}
@@ -168,6 +170,7 @@ describe('DetailsPage Component', () => {
             email: 'email@zippy.cash',
           },
         ]}
+        validateInputs={jest.fn()}
       />
     );
 
@@ -179,7 +182,7 @@ describe('DetailsPage Component', () => {
     const wrapper = (
       <DetailsPage
         setCurrentStep={mockSetCurrentStep}
-        setPageIndex={mockSetPageIndex}
+        navigateSteps={mockNavigateSteps}
         setMainInfo={mockSetMainInfo}
         mainInfo={MAIN_INFO}
         setErrorMessage={mockSetErrorMessage}
@@ -203,6 +206,7 @@ describe('DetailsPage Component', () => {
             email: 'email@zippy.cash',
           },
         ]}
+        validateInputs={jest.fn()}
       />
     );
 
@@ -214,7 +218,7 @@ describe('DetailsPage Component', () => {
     const wrapper = (
       <DetailsPage
         setCurrentStep={mockSetCurrentStep}
-        setPageIndex={mockSetPageIndex}
+        navigateSteps={mockNavigateSteps}
         setMainInfo={mockSetMainInfo}
         mainInfo={{ ...MAIN_INFO, transferMethod: '' }}
         setErrorMessage={mockSetErrorMessage}
@@ -238,6 +242,7 @@ describe('DetailsPage Component', () => {
             email: 'email@zippy.cash',
           },
         ]}
+        validateInputs={jest.fn()}
       />
     );
 
@@ -249,7 +254,7 @@ describe('DetailsPage Component', () => {
     const wrapper = (
       <DetailsPage
         setCurrentStep={mockSetCurrentStep}
-        setPageIndex={mockSetPageIndex}
+        navigateSteps={mockNavigateSteps}
         setMainInfo={mockSetMainInfo}
         mainInfo={{ ...MAIN_INFO, amount: 0 }}
         setErrorMessage={mockSetErrorMessage}
@@ -273,6 +278,7 @@ describe('DetailsPage Component', () => {
             email: 'email@zippy.cash',
           },
         ]}
+        validateInputs={jest.fn()}
       />
     );
 
@@ -284,7 +290,7 @@ describe('DetailsPage Component', () => {
     const wrapper = (
       <DetailsPage
         setCurrentStep={mockSetCurrentStep}
-        setPageIndex={mockSetPageIndex}
+        navigateSteps={mockNavigateSteps}
         setMainInfo={mockSetMainInfo}
         mainInfo={{ ...MAIN_INFO, amount: 3001 }}
         setErrorMessage={mockSetErrorMessage}
@@ -308,6 +314,7 @@ describe('DetailsPage Component', () => {
             email: 'email@zippy.cash',
           },
         ]}
+        validateInputs={jest.fn()}
       />
     );
 

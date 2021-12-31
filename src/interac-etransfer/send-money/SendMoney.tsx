@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Alert, Col, Row } from 'react-bootstrap';
 import { useMsal } from '@azure/msal-react';
-import { useLocation } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import CommonHeader from '../../common/CommonHeader';
 import StepComponent from '../../common/StepComponent';
 import {
@@ -17,12 +17,13 @@ import Api, { Account, InteracEtransferTransaction, Contact } from '../../api';
 import { TransferInformation } from './components/TransferSentPage';
 import TRANSFER_INFORMATION from '../../stories/TransferInformation';
 
-export const enum PageIndexes {
-  DetailsPageIndex = 1,
-  SecurityRecipientPageIndex = 2,
-  SecurityQuestionPageIndex = 3,
-  TransferSentPageIndex = 4,
-  TransferSentCompletedIndex = 5,
+export const enum PageIds {
+  DetailsPageId = 'details',
+  SecurityRecipientPageId = 'security-recipient',
+  SecurityQuestionPageId = 'security-question',
+  SendMoneyVerifyPageId = 'send-money-verify',
+  TransferSentPageId = 'transfer-sent',
+  TransferSentCompletedId = 'transfer-sent-complete',
 }
 
 interface QuickLink {
@@ -54,16 +55,30 @@ const LinkElement = ({ url, text, id }: QuickLink): JSX.Element => (
   </a>
 );
 
+const StepIndexes: any = {
+  details: 1,
+  'security-recipient': 2,
+  'security-question': 2,
+  'send-money-verify': 2,
+  'transfer-sent': 3,
+  'transfer-sent-complete': 3,
+};
+
+const MainSteps: any = [
+  'details',
+  'security-recipient',
+  'transfer-sent',
+];
+
 export default function SendMoney() {
-  const { state } = useLocation();
-  const step = state ? state.step : undefined;
+  const navigate = useNavigate();
+  const { stepId, transactionId } = useParams();
+  const step = stepId ? StepIndexes[stepId] : undefined;
   const [currentStep, setCurrentStep] = useState(step || 1);
-  const [pageIndex, setPageIndex] = useState(
-    currentStep >= 3
-      ? PageIndexes.TransferSentCompletedIndex
-      : PageIndexes.DetailsPageIndex,
+  const [pageId, setPageId] = useState(stepId || PageIds.DetailsPageId);
+  const [showVerifyModal, setShowVerifyModal] = useState(
+    stepId === PageIds.SendMoneyVerifyPageId || false,
   );
-  const [showVerifyModal, setShowVerifyModal] = useState(false);
   const [isSendingMoney, setIsSendingMoney] = useState(false);
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
   const [selectedContact, setSelectedContact] = useState(0);
@@ -138,12 +153,14 @@ export default function SendMoney() {
     setIsSendingMoney(true);
     new Api(instance, accounts[0])
       .postInteracEtransferTransaction(data)
-      .then(() => {
+      .then((res) => {
         setErrorMessage(null);
         if (selectedContact === 1) {
-          setPageIndex(PageIndexes.TransferSentPageIndex);
+          setPageId(PageIds.TransferSentPageId);
+          navigate(`/interac-etransfer/send-money/${PageIds.TransferSentPageId}/${res.id}`);
         } else {
-          setPageIndex(PageIndexes.TransferSentCompletedIndex);
+          setPageId(PageIds.TransferSentCompletedId);
+          navigate(`/interac-etransfer/send-money/${PageIds.TransferSentCompletedId}/${res.id}`);
         }
         setCurrentStep(3);
       })
@@ -176,20 +193,73 @@ export default function SendMoney() {
       fromAccount: sourceAccount?.name,
     };
   };
-  const handleSendMoneyVerificationClose = () => setShowVerifyModal(false);
+
+  const handleSendMoneyVerificationClose = () => {
+    setShowVerifyModal(false);
+    navigate(
+      `/interac-etransfer/send-money/${
+        selectedContact === 1
+          ? PageIds.SecurityRecipientPageId
+          : PageIds.SecurityQuestionPageId
+      }`,
+    );
+  };
 
   const handleSendMoneyVerificationBack = () => {
-    setPageIndex(PageIndexes.DetailsPageIndex);
+    setPageId(PageIds.DetailsPageId);
     setCurrentStep(1);
     setShowVerifyModal(false);
+    navigate(`/interac-etransfer/send-money/${PageIds.DetailsPageId}`);
+  };
+
+  const validateInputs = (): string | null => {
+    if (selectedContact === 0) return 'Please select a contact to send money to';
+    if (selectedAccount === 0) return 'Please select an account';
+    if (mainInfo.amount <= 0) return 'Amount should be greater than 0';
+    if (mainInfo.amount > 3000) return 'The maximum amount you can send in each transfer is $3,000';
+    if (!mainInfo.transferMethod) return 'Please select a transfer method';
+    return null;
+  };
+
+  const navigateSteps = (nav_step: string) => {
+    const isValidated = validateInputs();
+    if (isValidated && nav_step !== PageIds.DetailsPageId) {
+      setErrorMessage(isValidated);
+      setCurrentStep(1);
+      return;
+    }
+
+    if (
+      !transactionId
+      && (nav_step === PageIds.TransferSentPageId
+      || nav_step === PageIds.TransferSentCompletedId)
+    ) {
+      setCurrentStep(2);
+      return;
+    }
+    setPageId(nav_step);
+    navigate(`/interac-etransfer/send-money/${nav_step}${transactionId ? `/${transactionId}` : ''}`);
   };
 
   useEffect(() => {
     window.scrollTo(0, 0);
-  }, [pageIndex]);
+  }, [pageId]);
   useEffect(() => {
     if (errorMessage) window.scrollTo(0, 0);
   }, [errorMessage]);
+
+  useEffect(() => {
+    setPageId(stepId || PageIds.DetailsPageId);
+    const mainStep = stepId ? StepIndexes[stepId] : undefined;
+    setCurrentStep(mainStep || 1);
+    setShowVerifyModal(false);
+    if (stepId === PageIds.SendMoneyVerifyPageId) {
+      setShowVerifyModal(true);
+    }
+    if (!selectedAccount && !selectedContact) {
+      navigateSteps(PageIds.DetailsPageId);
+    }
+  }, [stepId]);
 
   return (
     <div>
@@ -216,13 +286,15 @@ export default function SendMoney() {
                 steps={3}
                 currentStep={currentStep}
                 setCurrentStep={setCurrentStep}
-                setPageIndex={setPageIndex}
+                navigateSteps={(stepIndex: number) => {
+                  navigateSteps(MainSteps[stepIndex]);
+                }}
               />
             </Col>
           </Row>
-          {pageIndex === PageIndexes.DetailsPageIndex && (
+          {pageId === PageIds.DetailsPageId && (
             <DetailsPage
-              setPageIndex={setPageIndex}
+              navigateSteps={navigateSteps}
               setCurrentStep={setCurrentStep}
               selectedContact={selectedContact}
               setContactToSend={setSelectedContact}
@@ -233,34 +305,38 @@ export default function SendMoney() {
               accounts={accountsList}
               contacts={contactList}
               setErrorMessage={setErrorMessage}
+              validateInputs={validateInputs}
             />
           )}
-          {pageIndex === PageIndexes.SecurityRecipientPageIndex && (
-            <SecurityRecipientPage
-              setPageIndex={setPageIndex}
-              setCurrentStep={setCurrentStep}
-              showModal={setShowVerifyModal}
-            />
+          {(pageId === PageIds.SecurityRecipientPageId
+            || (selectedContact === 1 && pageId === PageIds.SendMoneyVerifyPageId)) && (
+              <SecurityRecipientPage
+                navigateSteps={navigateSteps}
+                setCurrentStep={setCurrentStep}
+                showModal={setShowVerifyModal}
+              />
           )}
-          {pageIndex === PageIndexes.SecurityQuestionPageIndex && (
-            <SecurityQuestionPage
-              setPageIndex={setPageIndex}
-              setCurrentStep={setCurrentStep}
-              showModal={setShowVerifyModal}
-              mainInfo={mainInfo}
-              setMainInfo={setMainInfo}
-              setErrorMessage={setErrorMessage}
-            />
+          {(pageId === PageIds.SecurityQuestionPageId
+            || (selectedContact && selectedContact !== 1
+              && pageId === PageIds.SendMoneyVerifyPageId)) && (
+              <SecurityQuestionPage
+                navigateSteps={navigateSteps}
+                setCurrentStep={setCurrentStep}
+                showModal={setShowVerifyModal}
+                mainInfo={mainInfo}
+                setMainInfo={setMainInfo}
+                setErrorMessage={setErrorMessage}
+              />
           )}
           {(
-            pageIndex === PageIndexes.TransferSentPageIndex
-            || pageIndex === PageIndexes.TransferSentCompletedIndex
+            pageId === PageIds.TransferSentPageId
+            || pageId === PageIds.TransferSentCompletedId
           ) && (
             <TransferSentPage
-              setPageIndex={setPageIndex}
+              navigateSteps={navigateSteps}
               setCurrentStep={setCurrentStep}
               transferInformation={tempTransferInformation}
-              isCompleted={pageIndex === PageIndexes.TransferSentCompletedIndex}
+              isCompleted={pageId === PageIds.TransferSentCompletedId}
             />
           )}
           <hr style={{ height: '1px' }} />

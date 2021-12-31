@@ -17,7 +17,6 @@ import styled from 'styled-components';
 import { Account, Contact } from '../../../api';
 import DateDropdowns from '../../../components/DateDropdowns';
 import { formatContactName } from '../../../Helpers';
-import { PageIndexes } from '../../send-money/SendMoney';
 import { RequestMainDetails } from '../RequestMoney';
 
 const StyledLink = styled(Link)`
@@ -32,7 +31,7 @@ interface RequestDetailProps {
   setCurrentStep: Dispatch<SetStateAction<number>>;
   setContactToSend: Dispatch<SetStateAction<number>>;
   setMainInfo: Dispatch<SetStateAction<RequestMainDetails>>;
-  setPageIndex: Dispatch<SetStateAction<PageIndexes>>;
+  setPageIndex: Dispatch<SetStateAction<number>>;
   setSelectedAccount: Dispatch<SetStateAction<number>>;
   setErrorMessage: Dispatch<SetStateAction<string | null>>;
   selectedAccount: number;
