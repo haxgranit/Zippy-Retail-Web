@@ -1,6 +1,6 @@
 import React from 'react';
 import {
-  render, fireEvent, screen, waitFor,
+  render, fireEvent, screen,
 } from '../../test-utils';
 import SendMoney from './SendMoney';
 

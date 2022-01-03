@@ -50,7 +50,7 @@ describe('Security Question Page Component', () => {
         setErrorMessage={mockSetErrorMessage}
         setCurrentStep={mockSetCurrentStep}
         mainInfo={{ ...MAIN_INFO, confirmSecurityAnswer: undefined }}
-      />
+      />,
     );
     fireEvent.change(container.querySelectorAll('.form-control')[0], {
       target: { value: 'Test Text' },
