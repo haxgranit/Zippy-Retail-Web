@@ -101,7 +101,7 @@ export default function App() {
   useEffect(() => AOS.init(), []);
 
   return (
-    <div>
+    <main className="main-container">
       <ScrollToTop />
       <Header />
       <Routes>
@@ -194,6 +194,6 @@ export default function App() {
         <Route path="personal-profile" element={<PersonalProfile />} />
       </Routes>
       <Footer />
-    </div>
+    </main>
   );
 }

@@ -3,9 +3,11 @@ import { useIsAuthenticated, useMsal } from '@azure/msal-react';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
+import { Form } from 'react-bootstrap';
 import { useAppDispatch } from './app/hooks';
 import { loginRequest } from './authConfig';
 import { unload } from './features/user/userSlice';
+import ZippyCashLogo from './assets/img/general/ZippyCash_Logo.svg';
 
 export const HeaderPure = ({
   isAuthenticated,
@@ -20,8 +22,29 @@ export const HeaderPure = ({
 }) => {
   const { i18n, t } = useTranslation();
   return (
-    <nav className="navbar navbar-expand-lg navbar-light">
-      <div className="container">
+    <nav className="header-layout navbar navbar-expand-lg navbar-light">
+      <div className="left-side-header">
+        <Link to="/" className="navbar-brand">
+          <img src={ZippyCashLogo} alt="" />
+        </Link>
+      </div>
+      <div className="content">
+        <div className="search-box">
+          <i className="zippy-cash-icon zc-search" />
+          <Form.Control
+            type="input"
+            placeholder="Search..."
+            onChange={(evt) => console.log(evt)}
+          />
+          <Form.Select
+            onChange={(evt) => console.log(evt)}
+            value="all"
+          >
+            <option value="all">All</option>
+          </Form.Select>
+        </div>
+      </div>
+      <div className="right-side-header">
         <button
           className="navbar-toggler"
           type="button"
