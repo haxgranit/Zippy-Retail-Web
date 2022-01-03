@@ -1,22 +1,26 @@
+import { ComponentMeta } from '@storybook/react';
+/*
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { BrowserRouter } from 'react-router-dom';
 import ACCOUNTS from '../../../stories/Accounts';
 import CONTACTS from '../../../stories/Contacts';
-import { RequestDetailPure } from './RequestDetails';
+*/
+import { RequestDetails } from './RequestDetails';
 
 export default {
   title: 'interac-etransfer/request-money/components/RequestDetails',
-  component: RequestDetailPure,
-} as ComponentMeta<typeof RequestDetailPure>;
+  component: RequestDetails,
+} as ComponentMeta<typeof RequestDetails>;
 
-const Template: ComponentStory<typeof RequestDetailPure> = ({
+/*
+const Template: ComponentStory<typeof RequestDetails> = ({
   setCurrentStep,
   accountsData,
   contacts,
   navigateStep,
 }) => (
   <BrowserRouter>
-    <RequestDetailPure
+    <RequestDetails
       accountsData={accountsData}
       contacts={contacts}
       setCurrentStep={setCurrentStep}
@@ -33,3 +37,4 @@ Default.args = {
 
 export const Empty = Template.bind({});
 Empty.args = {};
+*/

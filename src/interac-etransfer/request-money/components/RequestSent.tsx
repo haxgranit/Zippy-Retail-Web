@@ -1,10 +1,30 @@
 import { Row, Col, Button } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
+import { useState } from 'react';
+import { Account, Contact } from '../../../api';
 
 const Divider = () => <div className="border-top my-3" />;
 
-export default function RequestSent({ setCurrentStep, navigateStep }: any) {
+export default function RequestSent({
+  accounts,
+  contacts,
+  selectedAccount,
+  selectedContact,
+  mainInfo,
+  setCurrentStep,
+  navigateStep,
+}: any) {
   const navigate = useNavigate();
+  const getSelectedAccount = (id: number):Account => {
+    const value = id && accounts ? accounts?.find((el: Account) => el.id === id) : null;
+    return value;
+  };
+  const getSelectedContact = (id: number):Contact => {
+    const value = id && contacts ? contacts?.find((el: Contact) => el.id === id) : null;
+    return value;
+  };
+  const [account] = useState<Account | null>(getSelectedAccount(selectedAccount));
+  const [contact] = useState<Contact | null>(getSelectedContact(selectedContact));
 
   return (
     <>
@@ -27,7 +47,7 @@ export default function RequestSent({ setCurrentStep, navigateStep }: any) {
           <p>Sent To:</p>
         </Col>
         <Col md={8}>
-          <p>Kent Ulrich</p>
+          <p>{ contact && `${contact.firstName} ${contact.lastName}` }</p>
           <p>kentu@shaw.ca</p>
         </Col>
       </Row>
@@ -37,7 +57,7 @@ export default function RequestSent({ setCurrentStep, navigateStep }: any) {
           <p>Request Amount:</p>
         </Col>
         <Col md={8}>
-          <p>$10.00</p>
+          <p>{ mainInfo && `$ ${mainInfo.amount}` }</p>
         </Col>
       </Row>
       <Divider />
@@ -46,7 +66,7 @@ export default function RequestSent({ setCurrentStep, navigateStep }: any) {
           <p>Deposit To:</p>
         </Col>
         <Col md={8}>
-          <p>Chequing (01802-81099639)</p>
+          <p>{ account && account.name }</p>
         </Col>
       </Row>
       <Divider />

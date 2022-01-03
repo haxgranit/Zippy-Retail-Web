@@ -1,0 +1,112 @@
+.vertical-nav-wrapper {
+    width: 240px;
+    display: flex;
+    position: sticky;
+    left: 0;
+    top: 62px;
+    padding: 5px;
+}
+
+.vertical-nav {
+    display: flex;
+    position: absolute;
+    left: 0;
+    top: -62px;
+    background: #FFFFFF;
+    border-radius: 0 0 10px 0;
+    border-right: #E5E5E5 solid 1px;
+    border-bottom: #E5E5E5 solid 1px;
+}
+
+.vertical-nav .nav-link,
+.vertical-nav .nav-link:visited,
+.vertical-nav .nav-link:focus {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    color: #707272;
+    font-style: normal;
+    font-weight: normal;
+    padding: 5px 30px 5px 10px;
+    font-size: 14px;
+    cursor: pointer;
+    background: transparent;
+    position: relative;
+}
+
+.vertical-nav .nav-link:hover {
+    color: #000000;
+}
+
+.vertical-nav .nav-link .dropdown {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    -ms-transform:translateY(-50%); /* IE */
+    -moz-transform:translateY(-50%); /* Firefox */
+    -webkit-transform:translateY(-50%); /* Safari and Chrome */
+    -o-transform:translateY(-50%);
+    margin: 0;
+}
+
+.vertical-nav .nav-link .dropdown:after {
+    width: 8px;
+    height: 8px;
+}
+
+.vertical-nav .nav > .nav-link {
+    font-size: 12px;
+    padding: 10px 30px 10px 10px;
+}
+
+.vertical-nav > .nav-link.active {
+    background: linear-gradient(83.49deg, #FF0D26 31.24%, #FF7300 99.49%);
+    color: #FFFFFF;
+}
+
+.vertical-nav > .nav-link.active > .dropdown:after {
+    -webkit-mask-image: url("../assets/img/icons/down.svg");
+    mask-image: url("../assets/img/icons/down.svg");
+}
+
+.vertical-nav .nav > .nav-link.active {
+    color: #000000;
+}
+
+.vertical-nav .nav > .nav-link.active > .dropdown:after {
+    -webkit-mask-image: url("../assets/img/icons/down.svg");
+    mask-image: url("../assets/img/icons/down.svg");
+}
+
+.vertical-nav > .nav-link.active > i.zippy-cash-icon:after {
+    background-color: #FFF;
+}
+
+.vertical-nav .navbar-brand {
+    display: block;
+    text-align: center;
+    margin: 10px 0 15px;
+    width: 100%;
+}
+
+.vertical-nav .nav-link > i {
+    margin-right: 10px;
+}
+
+.vertical-nav hr {
+    background: #CFD2D3;
+    border-radius: 1px;
+    width: 100%;
+    margin: 15px 20px;
+}
+
+.vertical-nav .copyright {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 18px;
+    margin: 60px 20px 15px;
+    color: #707272;
+}

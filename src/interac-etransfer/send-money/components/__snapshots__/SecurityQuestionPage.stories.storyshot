@@ -106,12 +106,13 @@ Array [
       <input
         className="form-control"
         onChange={[Function]}
-        type="text"
+        type="password"
       />
       <div
         className="is-show-answer form-check"
       >
         <input
+          checked={false}
           className="form-check-input"
           disabled={false}
           onChange={[Function]}
@@ -152,7 +153,7 @@ Array [
       <input
         className="form-control"
         onChange={[Function]}
-        type="text"
+        type="password"
       />
     </div>
   </div>,

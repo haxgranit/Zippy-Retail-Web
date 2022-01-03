@@ -21,6 +21,8 @@ interface DetailsPageProps {
   contacts: Contact[] | null;
   selectedAccount: number;
   setSelectedAccount: Dispatch<SetStateAction<number>>;
+  setErrorMessage: Dispatch<SetStateAction<string | null>>;
+  validateInputs: any;
 }
 const DetailsPage = ({
   navigateSteps,
@@ -33,6 +35,8 @@ const DetailsPage = ({
   contacts,
   selectedAccount,
   setSelectedAccount,
+  setErrorMessage,
+  validateInputs,
 }: DetailsPageProps): JSX.Element => {
   const handleContactChange = (evt: any) => {
     setContactToSend(Number(evt.target.value));
@@ -45,6 +49,21 @@ const DetailsPage = ({
     return (contact as Contact)?.email || 'No email';
   };
 
+  const handleNext = () => {
+    setErrorMessage(null);
+    const validationMessage = validateInputs();
+    if (validationMessage != null) {
+      setErrorMessage(validationMessage);
+      return;
+    }
+    if (selectedContact === 1) {
+      setCurrentStep(2);
+      navigateSteps(PageIds.SecurityRecipientPageId);
+    } else {
+      setCurrentStep(2);
+      navigateSteps(PageIds.SecurityQuestionPageId);
+    }
+  };
   return (
     <>
       <h4>Your Interac e-Transfer Details</h4>
@@ -229,16 +248,7 @@ const DetailsPage = ({
           <Button
             variant="danger"
             className="d-flex"
-            disabled={(selectedAccount === 0 || selectedContact === 0)}
-            onClick={() => {
-              if (selectedContact === 1) {
-                setCurrentStep(2);
-                navigateSteps(PageIds.SecurityRecipientPageId);
-              } else {
-                setCurrentStep(2);
-                navigateSteps(PageIds.SecurityQuestionPageId);
-              }
-            }}
+            onClick={handleNext}
           >
             Next
           </Button>

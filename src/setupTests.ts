@@ -17,12 +17,12 @@ window.matchMedia = window.matchMedia || customMatchMedia;
 window.scrollTo = jest.fn();
 
 const { warn, error } = window.console;
-window.console.warn = (message) => {
+window.console.warn = (message: any) => {
   warn(message);
   throw message;
 };
 
-window.console.error = (message) => {
+window.console.error = (message: any) => {
   error(message);
   throw message;
 };
