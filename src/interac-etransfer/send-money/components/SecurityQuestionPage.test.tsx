@@ -9,7 +9,7 @@ import SecurityQuestionPage from './SecurityQuestionPage';
 import MAIN_INFO from '../../../stories/MainInfo';
 
 const mockShowModal = jest.fn();
-const mockSetPageIndex = jest.fn();
+const mockNavigateSteps = jest.fn();
 const mockSetMainInfo = jest.fn();
 const mockSetErrorMessage = jest.fn();
 const mockSetCurrentStep = jest.fn();
@@ -17,7 +17,7 @@ const mockSetCurrentStep = jest.fn();
 const component = (
   <SecurityQuestionPage
     showModal={mockShowModal}
-    setPageIndex={mockSetPageIndex}
+    navigateSteps={mockNavigateSteps}
     setMainInfo={mockSetMainInfo}
     setErrorMessage={mockSetErrorMessage}
     setCurrentStep={mockSetCurrentStep}
@@ -42,7 +42,7 @@ describe('Security Question Page Component', () => {
   it('Click back button on Security Question Page', () => {
     render(component);
     screen.getAllByRole('button')[1].click();
-    expect(mockSetPageIndex).toBeCalledTimes(1);
+    expect(mockNavigateSteps).toBeCalledTimes(1);
   });
 
   it('change FormControl text values', () => {
@@ -62,14 +62,14 @@ describe('Security Question Page Component', () => {
     expect(mockSetMainInfo).toBeCalledTimes(4);
 
     screen.getAllByRole('button')[1].click();
-    expect(mockSetPageIndex).toBeCalledTimes(1);
+    expect(mockNavigateSteps).toBeCalledTimes(1);
   });
 
   it('should not show modal when securityQuestion not valid', () => {
     const wrapper = (
       <SecurityQuestionPage
         showModal={mockShowModal}
-        setPageIndex={mockSetPageIndex}
+        navigateSteps={mockNavigateSteps}
         setMainInfo={mockSetMainInfo}
         setErrorMessage={mockSetErrorMessage}
         setCurrentStep={mockSetCurrentStep}
@@ -85,7 +85,7 @@ describe('Security Question Page Component', () => {
     const wrapper = (
       <SecurityQuestionPage
         showModal={mockShowModal}
-        setPageIndex={mockSetPageIndex}
+        navigateSteps={mockNavigateSteps}
         setMainInfo={mockSetMainInfo}
         setErrorMessage={mockSetErrorMessage}
         setCurrentStep={mockSetCurrentStep}
@@ -101,7 +101,7 @@ describe('Security Question Page Component', () => {
     const wrapper = (
       <SecurityQuestionPage
         showModal={mockShowModal}
-        setPageIndex={mockSetPageIndex}
+        navigateSteps={mockNavigateSteps}
         setMainInfo={mockSetMainInfo}
         setErrorMessage={mockSetErrorMessage}
         setCurrentStep={mockSetCurrentStep}
@@ -117,7 +117,7 @@ describe('Security Question Page Component', () => {
     const wrapper = (
       <SecurityQuestionPage
         showModal={mockShowModal}
-        setPageIndex={mockSetPageIndex}
+        navigateSteps={mockNavigateSteps}
         setMainInfo={mockSetMainInfo}
         setErrorMessage={mockSetErrorMessage}
         setCurrentStep={mockSetCurrentStep}

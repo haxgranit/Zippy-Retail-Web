@@ -37,7 +37,7 @@ const SentTabContent = ({ navigate, instance, accounts }: any) => {
         </thead>
         <tbody className="border-top-0">
           {transactions.map((item: Transaction) => (
-            <tr>
+            <tr key={item.id}>
               <td>{DateTime.fromISO(item.date).toLocaleString(DateTime.DATE_MED)}</td>
               <td>
                 <div>{formatContactName(item.contact?.firstName, item.contact?.lastName)}</div>
@@ -52,15 +52,12 @@ const SentTabContent = ({ navigate, instance, accounts }: any) => {
                 />
               </td>
               <td>
-                <Button
-                  variant="link"
+                <a
                   className="text-black"
-                  onClick={() => navigate('/interac-etransfer/send-money', {
-                    state: { step: 3 },
-                  })}
+                  href={`/interac-etransfer/send-money/transfer-sent-complete/${item.id}`}
                 >
                   Transfer Completed
-                </Button>
+                </a>
               </td>
             </tr>
           ))}
@@ -77,9 +74,7 @@ const SentTabContent = ({ navigate, instance, accounts }: any) => {
             variant="danger"
             className="d-flex"
             style={{ width: 'auto', marginRight: 10 }}
-            onClick={() => navigate('/interac-etransfer/send-money', {
-              state: { step: 1 },
-            })}
+            onClick={() => navigate('/interac-etransfer/send-money/details')}
           >
             Send Money
           </Button>
@@ -89,7 +84,7 @@ const SentTabContent = ({ navigate, instance, accounts }: any) => {
   );
 };
 
-const ReceivedTabContent = ({ navigate, instance, accounts }: any) => {
+const ReceivedTabContent = ({ instance, accounts }: any) => {
   const [transactions, setTransactions] = useState<Transaction[]>([]);
   useEffect(() => {
     new Api(instance, accounts[0])
@@ -112,7 +107,7 @@ const ReceivedTabContent = ({ navigate, instance, accounts }: any) => {
         </thead>
         <tbody className="border-top-0">
           {transactions.map((item: Transaction) => (
-            <tr>
+            <tr key={item.id}>
               <td>{DateTime.fromISO(item.date).toLocaleString(DateTime.DATE_MED)}</td>
               <td>
                 <div>{formatContactName(item.contact?.firstName, item.contact?.lastName)}</div>
@@ -127,15 +122,12 @@ const ReceivedTabContent = ({ navigate, instance, accounts }: any) => {
                 />
               </td>
               <td>
-                <Button
-                  variant="link"
+                <a
                   className="text-black"
-                  onClick={() => navigate('/interac-etransfer/send-money', {
-                    state: { step: 3 },
-                  })}
+                  href={`/interac-etransfer/send-money/transfer-sent-complete/${item.id}`}
                 >
                   Transfer Completed
-                </Button>
+                </a>
               </td>
             </tr>
           ))}
@@ -173,7 +165,7 @@ const RequestedTabContent = ({ navigate, instance, accounts }: any) => {
         </thead>
         <tbody className="border-top-0">
           {transactions.map((item: Transaction) => (
-            <tr>
+            <tr key={item.id}>
               <td>{DateTime.fromISO(item.date).toLocaleString(DateTime.DATE_MED)}</td>
               <td>
                 <div>{formatContactName(item.contact?.firstName, item.contact?.lastName)}</div>
@@ -188,13 +180,12 @@ const RequestedTabContent = ({ navigate, instance, accounts }: any) => {
                 />
               </td>
               <td>
-                <Button
-                  variant="link"
+                <a
                   className="text-black"
-                  onClick={() => navigate('/interac-etransfer/status/request-sent')}
+                  href={`/interac-etransfer/status/request-sent/${item.id}`}
                 >
                   Requested
-                </Button>
+                </a>
               </td>
             </tr>
           ))}
@@ -260,13 +251,24 @@ export default function InteracETransferDetails() {
         }}
       >
         <Tab eventKey="sent" title="Sent">
-          <SentTabContent navigate={navigate} instance={instance} accounts={accounts} />
+          <SentTabContent
+            navigate={navigate}
+            instance={instance}
+            accounts={accounts}
+          />
         </Tab>
         <Tab eventKey="received" title="Received">
-          <ReceivedTabContent navigate={navigate} instance={instance} accounts={accounts} />
+          <ReceivedTabContent
+            instance={instance}
+            accounts={accounts}
+          />
         </Tab>
         <Tab eventKey="requested" title="Requested">
-          <RequestedTabContent navigate={navigate} instance={instance} accounts={accounts} />
+          <RequestedTabContent
+            navigate={navigate}
+            instance={instance}
+            accounts={accounts}
+          />
         </Tab>
       </Tabs>
     </>

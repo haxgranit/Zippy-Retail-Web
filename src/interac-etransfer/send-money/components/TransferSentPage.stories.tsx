@@ -14,14 +14,14 @@ export default {
 
 const Template: ComponentStory<typeof TransferSentPage> = ({
   setCurrentStep,
-  setPageIndex,
+  navigateSteps,
   isCompleted,
   transferInformation,
 }) => (
   <BrowserRouter>
     <TransferSentPage
       setCurrentStep={setCurrentStep}
-      setPageIndex={setPageIndex}
+      navigateSteps={navigateSteps}
       isCompleted={isCompleted}
       transferInformation={transferInformation}
     />
