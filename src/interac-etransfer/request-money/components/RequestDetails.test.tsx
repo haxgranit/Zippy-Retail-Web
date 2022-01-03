@@ -32,7 +32,6 @@ const component = (
       setContactToSend={mockSetCurrentStep}
       setErrorMessage={mockSetCurrentStep}
       setMainInfo={mockSetCurrentStep}
-      setPageIndex={mockSetCurrentStep}
       setSelectedAccount={mockSetCurrentStep}
       showModal={mockSetCurrentStep}
     />
@@ -51,7 +50,6 @@ const componentWithoutData = (
       setContactToSend={mockSetCurrentStep}
       setErrorMessage={mockSetCurrentStep}
       setMainInfo={mockSetCurrentStep}
-      setPageIndex={mockSetCurrentStep}
       setSelectedAccount={mockSetCurrentStep}
       showModal={mockSetCurrentStep}
     />

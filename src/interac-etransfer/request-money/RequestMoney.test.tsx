@@ -22,8 +22,7 @@ describe('Request Money Component', () => {
       </BrowserRouter>,
     );
 
-    const leftWrapper = wrapper.childAt(0).dive().find('LeftCol').dive();
-    const stepWrapper = leftWrapper.find('StepComponent').dive();
+    const stepWrapper = wrapper.childAt(0).dive().find('StepComponent').dive();
     stepWrapper.find('div[role="button"]').at(0).simulate('click');
   });
 });
