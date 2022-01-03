@@ -21,7 +21,7 @@ describe('Manage Alert Component', () => {
   });
   test('Click Edit Home Phone button  ', () => {
     jest.spyOn(React, 'useState');
-    
+
     const { container } = render(<ManageMyAlerts />);
     fireEvent.click(container.querySelectorAll('.btn-link')[2]);
     fireEvent.click(container.querySelectorAll('.btn-link')[0]);
