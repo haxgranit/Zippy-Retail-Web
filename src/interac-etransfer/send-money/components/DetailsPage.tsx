@@ -5,10 +5,9 @@ import {
   Form,
   FormControl,
   Button,
-  Spinner,
 } from 'react-bootstrap';
 import { Account, Contact } from '../../../api';
-import { TransferMainDetails } from '../SendMoney';
+import { TransferMainDetails, PageIds } from '../SendMoney';
 import { formatContactName } from '../../../Helpers';
 
 interface DetailsPageProps {
@@ -20,8 +19,10 @@ interface DetailsPageProps {
   contacts: Contact[] | null;
   selectedAccount: number;
   setSelectedAccount: Dispatch<SetStateAction<number>>;
-  handleSecurity: any;
-  isProcessing: boolean;
+  setErrorMessage: Dispatch<SetStateAction<string | null>>;
+  validateInputs: any;
+  setCurrentStep: any;
+  navigateSteps: any;
 }
 const DetailsPage = ({
   selectedContact = 0,
@@ -32,8 +33,10 @@ const DetailsPage = ({
   contacts,
   selectedAccount,
   setSelectedAccount,
-  handleSecurity,
-  isProcessing,
+  setErrorMessage,
+  validateInputs,
+  setCurrentStep,
+  navigateSteps,
 }: DetailsPageProps): JSX.Element => {
   const handleContactChange = (evt: any) => {
     setContactToSend(Number(evt.target.value));
@@ -46,6 +49,21 @@ const DetailsPage = ({
     return (contact as Contact)?.email || 'No email';
   };
 
+  const handleNext = () => {
+    setErrorMessage(null);
+    const validationMessage = validateInputs();
+    if (validationMessage != null) {
+      setErrorMessage(validationMessage);
+      return;
+    }
+    if (selectedContact === 1) {
+      setCurrentStep(2);
+      navigateSteps(PageIds.SecurityRecipientPageId);
+    } else {
+      setCurrentStep(2);
+      navigateSteps(PageIds.SecurityQuestionPageId);
+    }
+  };
   return (
     <>
       <h4>Your Interac e-Transfer Details</h4>
@@ -230,17 +248,9 @@ const DetailsPage = ({
           <Button
             variant="danger"
             className="d-flex"
-            disabled={(selectedAccount === 0 || selectedContact === 0 || isProcessing)}
-            onClick={handleSecurity}
+            onClick={handleNext}
           >
-            {isProcessing ? (
-              <span>
-                Next
-                <Spinner style={{ marginLeft: '16px' }} animation="border" variant="light" size="sm" />
-              </span>
-            ) : (
-              'Next'
-            )}
+            Next
           </Button>
         </Col>
       </Row>

@@ -1,28 +1,21 @@
-import Enzyme, { mount } from 'enzyme';
-import Adapter from '@wojtekmaj/enzyme-adapter-react-17';
-import { Provider } from 'react-redux';
-import { BrowserRouter } from 'react-router-dom';
+import { renderWithProviders } from './test-utils';
 import App from './App';
 import i18n from './i18n/config';
 
-import { store } from './app/store';
-
-// Configure enzyme for react 17
-Enzyme.configure({ adapter: new Adapter() });
-
 describe('App', () => {
-  it('change language query in the url ', () => {
-    const pageUrl = '?language=en-ES';
+  test('change language query in the url for en-CA', () => {
+    const pageUrl = '?language=en-CA';
     window.history.pushState('', '', pageUrl);
     jest.spyOn(i18n, 'changeLanguage');
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    mount(
-      <Provider store={store}>
-        <BrowserRouter>
-          <App />
-        </BrowserRouter>
-      </Provider>,
-    );
+    renderWithProviders(<App />);
+    expect(i18n.changeLanguage).toBeCalled();
+  });
+
+  test('change language query in the url for fr-CA', () => {
+    const pageUrl = '?language=fr-CA';
+    window.history.pushState('', '', pageUrl);
+    jest.spyOn(i18n, 'changeLanguage');
+    renderWithProviders(<App />);
     expect(i18n.changeLanguage).toBeCalled();
   });
 });

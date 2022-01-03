@@ -3,16 +3,30 @@
 @import 'slick-carousel/slick/slick.css'; 
 @import 'slick-carousel/slick/slick-theme.css';
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap');
+@import './styles/iconography.css';
+@import './styles/layouts/index.css';
+@import './styles/vertical-nav-links.css';
 
 body {
   font-family: 'Poppins', sans-serif;
 }
+
 main a:hover {
   color: #ffffff;
 }
+
 .slider-slide {
   background-position: center;
   background-size: cover;
+}
+
+.noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Old versions of Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox */
 }
 
 .slider-slide .container .row {

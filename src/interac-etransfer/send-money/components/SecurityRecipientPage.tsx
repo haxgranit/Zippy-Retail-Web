@@ -1,5 +1,5 @@
 import { Row, Col, Button } from 'react-bootstrap';
-import { PageIndexes } from '../SendMoney';
+import { PageIds } from '../SendMoney';
 
 const SecurityRecipientPage = ({
   navigateSteps,
@@ -36,7 +36,7 @@ const SecurityRecipientPage = ({
           className="d-flex"
           style={{ marginRight: 10 }}
           onClick={() => {
-            navigateSteps(PageIndexes.DetailsPageIndex);
+            navigateSteps(PageIds.DetailsPageId);
             setCurrentStep(1);
           }}
         >
@@ -46,6 +46,7 @@ const SecurityRecipientPage = ({
           variant="danger"
           className="d-flex"
           onClick={() => {
+            navigateSteps('send-money-verify');
             showModal(true);
           }}
         >

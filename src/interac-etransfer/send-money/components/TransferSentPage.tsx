@@ -4,8 +4,8 @@ import {
   Row, Col, Form, Button,
 } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
+import { PageIds } from '../SendMoney';
 import currencyFormatter from '../../helpers/CurrencyFormatter';
-import { PageIndexes } from '../SendMoney';
 
 export interface TransferInformation{
   source: { name: string; email: string };
@@ -19,8 +19,8 @@ export interface TransferInformation{
   referenceNumber: number;
 }
 interface TransferSentPageProps{
-  setCurrentStep: Dispatch<SetStateAction<number>>;
   navigateSteps: Dispatch<string>;
+  setCurrentStep: Dispatch<SetStateAction<number>>;
   isCompleted: boolean;
   transferInformation: TransferInformation;
 }
@@ -165,7 +165,7 @@ const TransferSentPage = ({
             variant="danger"
             className="d-flex"
             onClick={() => {
-              navigateSteps(PageIndexes.DetailsPageIndex);
+              navigateSteps(PageIds.DetailsPageId);
               setCurrentStep(1);
             }}
           >
