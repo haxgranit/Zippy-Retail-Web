@@ -11,7 +11,6 @@ import StepComponent from '../../common/StepComponent';
 import { RequestDetails } from './components/RequestDetails';
 import RequestSent from './components/RequestSent';
 import RequestMoneyVerificationModal from '../dialogs/RequestMoneyVerificationModal';
-import { PageIndexes } from '../send-money/SendMoney';
 import Api, { Account, Contact, InteracEtransferTransaction } from '../../api';
 import { TransferDetails } from '../dialogs/SendMoneyVerificationModal';
 
@@ -30,11 +29,7 @@ export default function RequestMoney() {
   const { state } = useLocation();
   const step = state ? state.step : undefined;
   const [currentStep, setCurrentStep] = useState(step || 1);
-  const [pageIndex, setPageIndex] = useState(
-    currentStep >= 3
-      ? PageIndexes.TransferSentCompletedIndex
-      : PageIndexes.DetailsPageIndex,
-  );
+  const [pageIndex, setPageIndex] = useState(1);
   const [isRequestingMoney, setIsRequestingMoney] = useState(false);
   const [showVerifyModal, setShowVerifyModal] = useState(false);
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
@@ -79,7 +74,7 @@ export default function RequestMoney() {
   const handleRequestMoneyVerificationClose = () => setShowVerifyModal(false);
 
   const handleRequestMoneyVerificationBack = () => {
-    setPageIndex(PageIndexes.DetailsPageIndex);
+    setPageIndex(1);
     setCurrentStep(1);
     setShowVerifyModal(false);
   };
@@ -161,7 +156,7 @@ export default function RequestMoney() {
                 steps={2}
                 currentStep={currentStep}
                 setCurrentStep={setCurrentStep}
-                setPageIndex={setPageIndex}
+                navigateSteps={setPageIndex}
               />
             </Col>
           </Row>

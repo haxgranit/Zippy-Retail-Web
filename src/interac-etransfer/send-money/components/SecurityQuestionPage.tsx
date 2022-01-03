@@ -8,11 +8,11 @@ import
   Button,
   Alert,
 } from 'react-bootstrap';
-import { PageIndexes, TransferMainDetails } from '../SendMoney';
+import { PageIds, TransferMainDetails } from '../SendMoney';
 
 interface SecurityQuestionPageProps{
   setCurrentStep: Dispatch<SetStateAction<number>>;
-  setPageIndex: Dispatch<SetStateAction<PageIndexes>>;
+  navigateSteps: Dispatch<string>;
   mainInfo: TransferMainDetails;
   setMainInfo: Dispatch<SetStateAction<TransferMainDetails>>;
   showModal: (show: boolean) => void;
@@ -20,7 +20,7 @@ interface SecurityQuestionPageProps{
 }
 
 const SecurityQuestionPage = ({
-  setPageIndex,
+  navigateSteps,
   setCurrentStep,
   showModal,
   mainInfo,
@@ -42,6 +42,7 @@ const SecurityQuestionPage = ({
       setErrorMessage(validationMessage);
       return;
     }
+    navigateSteps('send-money-verify');
     showModal(true);
   };
   return (
@@ -149,7 +150,7 @@ const SecurityQuestionPage = ({
           <Button
             variant="light"
             className="d-flex"
-            onClick={() => setPageIndex(PageIndexes.SecurityRecipientPageIndex)}
+            onClick={() => navigateSteps(PageIds.SecurityRecipientPageId)}
           >
             <div
               style={{
@@ -171,7 +172,7 @@ const SecurityQuestionPage = ({
             className="d-flex"
             style={{ marginRight: 10 }}
             onClick={() => {
-              setPageIndex(PageIndexes.DetailsPageIndex);
+              navigateSteps(PageIds.DetailsPageId);
               setCurrentStep(1);
             }}
           >

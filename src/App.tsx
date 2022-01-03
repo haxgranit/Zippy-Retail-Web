@@ -2,10 +2,7 @@ import AOS from 'aos';
 import { useIsAuthenticated, useMsal } from '@azure/msal-react';
 import { useEffect } from 'react';
 import {
-  Navigate,
-  Route,
-  Routes,
-  useLocation,
+  Navigate, Route, Routes, useLocation,
 } from 'react-router-dom';
 import Api from './api';
 import { useAppDispatch } from './app/hooks';
@@ -152,11 +149,17 @@ export default function App() {
             <Route path="/interac-etransfer/status" element={<Status />}>
               <Route path="/interac-etransfer/status" element={<Navigate to="/interac-etransfer/status/requested" />} />
               <Route path=":tabId" element={<InteracETransferDetails />} />
-              <Route path="request-sent" element={<RequestSent />} />
+              <Route path="request-sent" element={<RequestSent />}>
+                <Route path=":requestId" element={<RequestSent />} />
+              </Route>
               <Route path="request-reminder" element={<RequestReminder />} />
               <Route path="request-canceled" element={<RequestCanceled />} />
             </Route>
-            <Route path="send-money" element={<SendMoney />} />
+            <Route path="send-money" element={<SendMoney />}>
+              <Route path=":stepId" element={<SendMoney />}>
+                <Route path=":transactionId" element={<SendMoney />} />
+              </Route>
+            </Route>
             <Route path="request-money" element={<RequestMoney />} />
             <Route path="contact-list" element={<ContactList />} />
             <Route path="contact-list/edit" element={<EditContact />} />

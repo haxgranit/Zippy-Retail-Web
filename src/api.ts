@@ -39,6 +39,7 @@ export type InteracEtransferTransaction = {
   contactId: number,
   amount: number,
   type: string,
+  id?: number,
 };
 
 export async function getToken(instance: IPublicClientApplication, account: AccountInfo)

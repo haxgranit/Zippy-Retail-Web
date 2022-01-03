@@ -7,7 +7,7 @@ export default {
   component: SecurityQuestionPage,
   argTypes: {
     setCurrentStep: { action: 'setCurrentStep' },
-    setPageIndex: { action: 'setPageIndex' },
+    navigateSteps: { action: 'navigateSteps' },
     setMainInfo: { action: 'setMainInfo' },
     setErrorMessage: { action: 'setErrorMessage' },
     showModal: { action: 'showModal' },
@@ -15,7 +15,7 @@ export default {
 } as ComponentMeta<typeof SecurityQuestionPage>;
 
 const Template: ComponentStory<typeof SecurityQuestionPage> = ({
-  setPageIndex,
+  navigateSteps,
   setCurrentStep,
   mainInfo,
   setMainInfo,
@@ -24,7 +24,7 @@ const Template: ComponentStory<typeof SecurityQuestionPage> = ({
 }) => (
   <SecurityQuestionPage
     setCurrentStep={setCurrentStep}
-    setPageIndex={setPageIndex}
+    navigateSteps={navigateSteps}
     setErrorMessage={setErrorMessage}
     mainInfo={mainInfo}
     setMainInfo={setMainInfo}
