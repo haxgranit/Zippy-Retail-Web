@@ -10,10 +10,7 @@ exports[`Storyshots common/MonthSelectComponent Default 1`] = `
   }
 >
   <optgroup
-    label="2021"
-  />
-  <optgroup
-    label="2020"
+    label="2022"
   >
     <option
       value="December 2021"
@@ -70,10 +67,14 @@ exports[`Storyshots common/MonthSelectComponent Default 1`] = `
     >
       February 2021
     </option>
+  </optgroup>
+  <optgroup
+    label="2021"
+  >
     <option
-      value="January 2021"
+      value="January 2022"
     >
-      January 2021
+      January 2022
     </option>
   </optgroup>
 </select>

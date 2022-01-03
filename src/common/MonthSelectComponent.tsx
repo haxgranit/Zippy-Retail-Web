@@ -34,7 +34,7 @@ const getDateAry = () => {
   for (let i = 0; i < 12; i += 1) {
     let dateStr = '';
     if (currMonth - i < 0) {
-      dateStr = `${MONTH_NAMES[currMonth - i]} ${prevYear}`;
+      dateStr = `${MONTH_NAMES[12 + currMonth - i]} ${prevYear}`;
       const item = {
         value: dateStr,
         currMonth,
