@@ -5,7 +5,7 @@ import TRANSFER_INFORMATION from '../../../stories/TransferInformation';
 import { isValidEmail } from '../../helpers/Validators';
 
 const mockSetCurrentStep = jest.fn();
-const mockSetPageIndex = jest.fn();
+const mockNavigateSteps = jest.fn();
 
 const mockedUsedNavigate = jest.fn();
 
@@ -18,7 +18,7 @@ const component = (
   <BrowserRouter>
     <TransferSentPage
       setCurrentStep={mockSetCurrentStep}
-      setPageIndex={mockSetPageIndex}
+      navigateSteps={mockNavigateSteps}
       isCompleted
       transferInformation={TRANSFER_INFORMATION}
     />
@@ -38,7 +38,7 @@ describe('Transfer Sent Page Component', () => {
     render(component);
     screen.getAllByRole('button')[1].click();
     expect(mockSetCurrentStep).toBeCalledTimes(1);
-    expect(mockSetPageIndex).toBeCalledTimes(1);
+    expect(mockNavigateSteps).toBeCalledTimes(1);
   });
 
   it('Click Check Status Button on Transfer Sent Page', () => {

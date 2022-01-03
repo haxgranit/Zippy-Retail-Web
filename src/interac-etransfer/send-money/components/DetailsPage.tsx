@@ -7,7 +7,7 @@ import {
   Button,
 } from 'react-bootstrap';
 import { Account, Contact } from '../../../api';
-import { TransferMainDetails, PageIndexes } from '../SendMoney';
+import { TransferMainDetails, PageIds } from '../SendMoney';
 import { formatContactName } from '../../../Helpers';
 
 interface DetailsPageProps {
@@ -16,15 +16,16 @@ interface DetailsPageProps {
   setContactToSend: Dispatch<SetStateAction<number>>;
   mainInfo: TransferMainDetails;
   setMainInfo: Dispatch<SetStateAction<TransferMainDetails>>;
-  setPageIndex: Dispatch<SetStateAction<PageIndexes>>;
+  navigateSteps: Dispatch<string>;
   accounts: Account[] | null;
   contacts: Contact[] | null;
   selectedAccount: number;
   setSelectedAccount: Dispatch<SetStateAction<number>>;
   setErrorMessage: Dispatch<SetStateAction<string | null>>;
+  validateInputs: any;
 }
 const DetailsPage = ({
-  setPageIndex,
+  navigateSteps,
   setCurrentStep,
   selectedContact = 0,
   setContactToSend,
@@ -35,6 +36,7 @@ const DetailsPage = ({
   selectedAccount,
   setSelectedAccount,
   setErrorMessage,
+  validateInputs,
 }: DetailsPageProps): JSX.Element => {
   const handleContactChange = (evt: any) => {
     setContactToSend(Number(evt.target.value));
@@ -47,15 +49,6 @@ const DetailsPage = ({
     return (contact as Contact)?.email || 'No email';
   };
 
-  const validateInputs = (): string | null => {
-    if (selectedContact === 0) return 'Please select a contact to send money to';
-    if (selectedAccount === 0) return 'Please select an account';
-    if (mainInfo.amount <= 0) return 'Amount should be greater than 0';
-    if (mainInfo.amount > 3000) return 'The maximum amount you can send in each transfer is $3,000';
-    if (!mainInfo.transferMethod) return 'Please select a transfer method';
-    return null;
-  };
-
   const handleNext = () => {
     setErrorMessage(null);
     const validationMessage = validateInputs();
@@ -65,10 +58,10 @@ const DetailsPage = ({
     }
     if (selectedContact === 1) {
       setCurrentStep(2);
-      setPageIndex(PageIndexes.SecurityRecipientPageIndex);
+      navigateSteps(PageIds.SecurityRecipientPageId);
     } else {
       setCurrentStep(2);
-      setPageIndex(PageIndexes.SecurityQuestionPageIndex);
+      navigateSteps(PageIds.SecurityQuestionPageId);
     }
   };
   return (
