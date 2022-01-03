@@ -1,6 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import { BrowserRouter } from 'react-router-dom';
 import { HeaderPure } from './Header';
+import { User } from './api';
 
 const mockChangeLanguage = jest.fn();
 
@@ -16,6 +17,7 @@ jest.mock('react-i18next', () => ({
 const component = (
   <BrowserRouter>
     <HeaderPure
+      user={{ email: null, firstName: null, lastName: null } as unknown as User}
       isAuthenticated
       isInProgress={false}
       handleLogin={() => {}}

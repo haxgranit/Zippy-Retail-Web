@@ -9,16 +9,6 @@ exports[`Storyshots VerticalNavLinks Default 1`] = `
     onKeyDown={[Function]}
   >
     <a
-      className="navbar-brand"
-      href="/"
-      onClick={[Function]}
-    >
-      <img
-        alt=""
-        src="ZippyCash_Logo.svg"
-      />
-    </a>
-    <a
       className="nav-link nav-link"
       data-rr-ui-event-key={null}
       disabled={false}

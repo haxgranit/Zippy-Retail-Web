@@ -1,3 +1,5 @@
+@import './colors';
+
 body {
     font-family: 'Poppins', sans-serif;
 }
@@ -8,7 +10,7 @@ body {
 }
 
 main a:hover {
-    color: #ffffff;
+    color: $color-white;
 }
 
 .slider-slide {
@@ -31,7 +33,7 @@ main a:hover {
 }
 
 .sliderh2 {
-    color: #ffffff;
+    color: $color-white;
     font-weight: 500;
     font-size: 1.6em;
     padding-top: 6em;
@@ -62,7 +64,7 @@ main a:hover {
     padding: 0px 15px;
     box-shadow: 5px 5px #88888840;
     border-radius: 10px !important;
-    color: #FFFFFF;
+    color: $color-white;
     background-color: #FF1926;
 }
 
@@ -72,7 +74,7 @@ main a:hover {
     padding: 0px 15px;
     box-shadow: 5px 5px #88888840;
     border-radius: 10px !important;
-    color: #FFFFFF;
+    color: $color-white;
     background-color: #FF1926;
 }
 
@@ -87,12 +89,12 @@ main a:hover {
 }
 
 #colorgradient {
-    background-image: linear-gradient(to right, #FF7300, #FF1926);
+    background-image: linear-gradient(to right, $color-gray-30, #FF1926);
     margin-top: 18vh;
 }
 
 #redgradient {
-    background-image: linear-gradient(to right, #ed4238, #FF7300);
+    background-image: linear-gradient(to right, #ed4238, $color-gray-30);
 }
 
 #bluegradient {
@@ -100,7 +102,7 @@ main a:hover {
     margin-top: 18vh;
 }
 #redbar {
-    background: linear-gradient(to right, #ed4238 20% 70%, blue 70%);
+    background: linear-gradient(to right, #ed4238 20%, blue 70%);
 }
 
 .orangeredbar {
@@ -108,7 +110,7 @@ main a:hover {
 }
 
 .fw-bold {
-    color: #ffffff;
+    color: $color-white;
 }
 
 .redtitle {
@@ -127,12 +129,12 @@ main a:hover {
 }
 
 .whitetitle {
-    color: #FFFFFF;
+    color: $color-white;
     font-weight: 700;
 }
 
 .whitecopy {
-    color: #ffffff;
+    color: $color-white;
     font-size: 1rem;
     font-weight: 400;
 }
@@ -222,7 +224,7 @@ footer {
 }
 
 .card {
-    background-color: #FF7300;
+    background-color: $color-gray-30;
 }
 
 .cardbusiness {
@@ -272,7 +274,7 @@ footer {
         margin-top: 0vh;
     }
     .sliderh2 {
-        color: #ffffff;
+        color: $color-white;
         font-weight: 500;
         font-size: 2em;
         padding-top: 0em;
@@ -288,7 +290,7 @@ footer {
         padding-top: 20px;
     }
     .btn-red {
-        color: #FFFFFF;
+        color: $color-white;
         background-color: #FF1926;
         border-color: #FF1926;
     }
@@ -348,14 +350,14 @@ footer {
 .slick-dots>li>button {
     height: 14px;
     width: 14px;
-    border: 1px solid #ffffff90;
+    border: 1px solid $color-white;
     background-color: transparent;
     color: transparent;
     border-radius: 50%;
 }
 
 .slick-dots>li.slick-active>button {
-    border: 1px solid #ffffff;
+    border: 1px solid $color-white;
     background-color: #a3c6e2;
 }
 
