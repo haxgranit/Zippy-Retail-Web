@@ -274,7 +274,7 @@ Array [
             Note:
           </span>
         </div>
-        <p
+        <div
           className="d-flex align-items-end"
         >
           <span>
@@ -304,7 +304,7 @@ Array [
               </span>
             </div>
           </div>
-        </p>
+        </div>
       </div>
     </div>
   </div>,
@@ -585,7 +585,7 @@ Array [
             Note:
           </span>
         </div>
-        <p
+        <div
           className="d-flex align-items-end"
         >
           <span>
@@ -615,7 +615,7 @@ Array [
               </span>
             </div>
           </div>
-        </p>
+        </div>
       </div>
     </div>
   </div>,

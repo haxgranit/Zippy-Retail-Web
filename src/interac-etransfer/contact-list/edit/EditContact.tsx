@@ -103,6 +103,7 @@ const EditContact: React.FC = () => {
                 marginLeft: 10,
                 marginRight: 10,
               }}
+              onChange={(e) => e.preventDefault()}
             />
           </Col>
           <Col xs="4" style={{ display: 'flex', alignItems: 'center' }}>
@@ -149,6 +150,7 @@ const EditContact: React.FC = () => {
                 marginLeft: 10,
                 marginRight: 10,
               }}
+              onChange={(e) => e.preventDefault()}
             />
           </Col>
           <Col
@@ -229,7 +231,7 @@ const EditContact: React.FC = () => {
               </div>
               <span style={{ fontWeight: 'bold' }}>Note:</span>
             </div>
-            <p>
+            <div>
               <span>Your use of Interac e-Transfer is subject to the </span>
               <Row>
                 <Col md={12} className="d-flex align-items-center mt-2">
@@ -249,7 +251,7 @@ const EditContact: React.FC = () => {
                   </span>
                 </Col>
               </Row>
-            </p>
+            </div>
           </div>
         </Row>
       </div>

@@ -25,7 +25,7 @@ const SentTabContent = ({ navigate, instance, accounts }: any) => {
   }, []);
   return (
     <>
-      <MonthSelectComponent />
+      <MonthSelectComponent prefix="sent" />
       <Table className="mt-2">
         <thead>
           <BorderedTR className="bg-light">
@@ -37,7 +37,7 @@ const SentTabContent = ({ navigate, instance, accounts }: any) => {
         </thead>
         <tbody className="border-top-0">
           {transactions.map((item: Transaction) => (
-            <tr key={item.id}>
+            <tr key={`sent_${item.id}`}>
               <td>{DateTime.fromISO(item.date).toLocaleString(DateTime.DATE_MED)}</td>
               <td>
                 <div>{formatContactName(item.contact?.firstName, item.contact?.lastName)}</div>
@@ -93,7 +93,7 @@ const ReceivedTabContent = ({ instance, accounts }: any) => {
   }, []);
   return (
     <>
-      <MonthSelectComponent />
+      <MonthSelectComponent prefix="received" />
       <Table className="mt-2">
         <thead>
           <BorderedTR
@@ -107,7 +107,7 @@ const ReceivedTabContent = ({ instance, accounts }: any) => {
         </thead>
         <tbody className="border-top-0">
           {transactions.map((item: Transaction) => (
-            <tr key={item.id}>
+            <tr key={`received_${item.id}`}>
               <td>{DateTime.fromISO(item.date).toLocaleString(DateTime.DATE_MED)}</td>
               <td>
                 <div>{formatContactName(item.contact?.firstName, item.contact?.lastName)}</div>
@@ -151,7 +151,7 @@ const RequestedTabContent = ({ navigate, instance, accounts }: any) => {
   }, []);
   return (
     <>
-      <MonthSelectComponent />
+      <MonthSelectComponent prefix="requested" />
       <Table className="mt-2">
         <thead>
           <BorderedTR
@@ -165,7 +165,7 @@ const RequestedTabContent = ({ navigate, instance, accounts }: any) => {
         </thead>
         <tbody className="border-top-0">
           {transactions.map((item: Transaction) => (
-            <tr key={item.id}>
+            <tr key={`requested_${item.id}`}>
               <td>{DateTime.fromISO(item.date).toLocaleString(DateTime.DATE_MED)}</td>
               <td>
                 <div>{formatContactName(item.contact?.firstName, item.contact?.lastName)}</div>

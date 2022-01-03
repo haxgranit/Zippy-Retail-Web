@@ -34,7 +34,7 @@ const getDateAry = () => {
   for (let i = 0; i < 12; i += 1) {
     let dateStr = '';
     if (currMonth - i < 0) {
-      dateStr = `${MONTH_NAMES[currMonth - i]} ${prevYear}`;
+      dateStr = `${MONTH_NAMES[12 + currMonth - i]} ${prevYear}`;
       const item = {
         value: dateStr,
         currMonth,
@@ -55,14 +55,14 @@ const getDateAry = () => {
 };
 
 export default function MonthSelectComponent(props: any) {
-  const { onChange } = props;
+  const { onChange, prefix } = props;
   const dateAry = getDateAry();
   return (
     <Form.Select style={{ maxWidth: 300 }} onChange={onChange} className="month-select-comp">
       {dateAry.map((item: any) => (
-        <optgroup label={`${item.label}`} key={`sent_${item.label}`}>
+        <optgroup label={`${item.label}`} key={`${prefix || 'opt'}_${item.label}`}>
           {item.items.map((dateValue: any) => (
-            <option value={dateValue.value} key={`sent_${dateValue.value}`}>
+            <option value={dateValue.value} key={`${prefix || 'option'}_${dateValue.value}`}>
               {dateValue.value}
             </option>
           ))}

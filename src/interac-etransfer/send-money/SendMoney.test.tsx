@@ -43,37 +43,6 @@ describe('SendMoney Component', () => {
     expect(header).toHaveLength(1);
   });
 
-  it('click buttons on SendMoneyVerificationModal', () => {
-    const wrapper = shallow(
-      <BrowserRouter>
-        <SendMoney />
-      </BrowserRouter>,
-    );
-    const modal = wrapper.childAt(0).dive().find('SendMoneyVerificationModal');
-    const modalWrapper = modal.dive().childAt(0);
-    const buttons = modalWrapper.find('button');
-    buttons.at(0).simulate('click');
-    buttons.at(1).simulate('click');
-    modalWrapper.find('Button[variant="link"]').simulate('click');
-  });
-
-  it('change user account and click buttons', () => {
-    const wrapper = shallow(
-      <BrowserRouter>
-        <SendMoney />
-      </BrowserRouter>,
-    );
-    const detailsPage = wrapper.childAt(0).dive().find('DetailsPage');
-    const detailsWrapper = detailsPage.dive();
-    const accountSelect = detailsWrapper.find('.send-account-select');
-    accountSelect.simulate('change', { target: { value: 2 } });
-    const modal = wrapper.childAt(0).dive().find('SendMoneyVerificationModal');
-    const modalWrapper = modal.dive().childAt(0);
-    const buttons = modalWrapper.find('button');
-    buttons.at(0).simulate('click');
-    buttons.at(1).simulate('click');
-    modalWrapper.find('Button[variant="link"]').simulate('click');
-  });
   it('should render SendMoney with transferDetails initial values', () => {
     const setCurrentStep = jest.fn();
     const setRealStep = jest.fn();
@@ -99,6 +68,5 @@ describe('SendMoney Component', () => {
     const selects = mounted.find(Form.Select);
     expect(ammount.at(0).prop('value')).toEqual(0);
     expect(selects.at(0).text()).toEqual('Select');
-    expect(selects.at(1).text()).toEqual('Select');
   });
 });

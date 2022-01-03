@@ -1,11 +1,5 @@
-import Enzyme, { mount, shallow } from 'enzyme';
-import Adapter from '@wojtekmaj/enzyme-adapter-react-17';
-import { BrowserRouter } from 'react-router-dom';
-import { Button } from 'react-bootstrap';
+import { render, fireEvent } from '../../../test-utils';
 import RequestCanceled from './RequestCanceled';
-
-// Configure enzyme for react 17
-Enzyme.configure({ adapter: new Adapter() });
 
 const mockedUsedNavigate = jest.fn();
 jest.mock('react-router-dom', () => ({
@@ -15,24 +9,14 @@ jest.mock('react-router-dom', () => ({
 
 describe('ٌRequest Canceled Component', () => {
   it('should render RequestCanceled', () => {
-    const wrapper = shallow(
-      <BrowserRouter>
-        <RequestCanceled />
-      </BrowserRouter>,
-    );
-    const RequestCanceledComponent = wrapper.find('RequestCanceled');
-    expect(RequestCanceledComponent).toHaveLength(1);
+    const { getByText } = render(<RequestCanceled />);
+    expect(getByText('Request Canceled')).toBeInTheDocument();
   });
   it('should click buttons on RequestCanceled', () => {
-    const wrapper = mount(
-      <BrowserRouter>
-        <RequestCanceled />
-      </BrowserRouter>,
-    );
+    const { container } = render(<RequestCanceled />);
 
-    const buttons = wrapper.childAt(0).find(Button);
-    buttons.at(0).simulate('click');
-    buttons.at(1).simulate('click');
+    fireEvent.click(container.querySelectorAll('button')[0]);
+    fireEvent.click(container.querySelectorAll('button')[1]);
 
     expect(mockedUsedNavigate).toBeCalledTimes(2);
   });

@@ -1,27 +1,13 @@
-import Enzyme, { shallow } from 'enzyme';
-import Adapter from '@wojtekmaj/enzyme-adapter-react-17';
+import { render } from '@testing-library/react';
 
-import ContactList from './ContactList';
-
-// Configure enzyme for react 17
-Enzyme.configure({ adapter: new Adapter() });
+import { ContactListContent } from './ContactList';
 
 describe('Contact List Component', () => {
-  const wrapper = shallow(<ContactList />);
+  const { getByText } = render(
+    <ContactListContent contacts={[]} onDeletePressed={jest.fn()} />,
+  );
 
-  it('should delete contact', () => {
-    const modal = wrapper.find('RemoveContactModal');
-    expect(modal).toHaveLength(1);
-  });
-
-  it('click a close button on modal', () => {
-    wrapper.find('Button').at(0).simulate('click');
-    wrapper.update();
-
-    const modal = wrapper.find('RemoveContactModal');
-    expect(modal).toHaveLength(1);
-    const modalWrapper = modal.dive();
-    modalWrapper.find('Button').at(0).simulate('click');
-    modalWrapper.find('Button').at(2).simulate('click');
+  it('should render contact list', () => {
+    expect(getByText('Add, Edit or Delete a Contact')).toBeInTheDocument();
   });
 });
