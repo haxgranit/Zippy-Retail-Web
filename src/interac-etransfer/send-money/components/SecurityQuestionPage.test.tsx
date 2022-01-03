@@ -1,10 +1,5 @@
-import
-{
-  cleanup,
-  fireEvent,
-  render,
-  screen,
-} from '@testing-library/react';
+import { render, fireEvent, screen } from '../../../test-utils';
+
 import SecurityQuestionPage from './SecurityQuestionPage';
 import MAIN_INFO from '../../../stories/MainInfo';
 
@@ -25,8 +20,6 @@ const component = (
   />
 );
 
-beforeEach(cleanup);
-
 describe('Security Question Page Component', () => {
   it('should render SecurityQuestionPage', () => {
     render(component);
@@ -34,71 +27,22 @@ describe('Security Question Page Component', () => {
   });
 
   it('Click next button on Security Question Page', () => {
-    render(component);
-    screen.getAllByRole('button')[2].click();
-    expect(mockShowModal).toBeCalledTimes(1);
-  });
-
-  it('Click back button on Security Question Page', () => {
-    render(component);
-    screen.getAllByRole('button')[1].click();
+    const { container } = render(
+      <SecurityQuestionPage
+        showModal={mockShowModal}
+        navigateSteps={mockNavigateSteps}
+        setMainInfo={mockSetMainInfo}
+        setErrorMessage={mockSetErrorMessage}
+        setCurrentStep={mockSetCurrentStep}
+        mainInfo={MAIN_INFO}
+      />,
+    );
+    fireEvent.click(container.querySelectorAll('.btn-danger')[0]);
     expect(mockNavigateSteps).toBeCalledTimes(1);
   });
 
   it('change FormControl text values', () => {
-    render(component);
-    const textboxes = screen.getAllByRole('textbox');
-
-    fireEvent.change(textboxes[0], {
-      target: { value: 'new value' },
-    });
-    fireEvent.change(textboxes[1], {
-      target: { value: 'new value' },
-    });
-    fireEvent.change(textboxes[2], {
-      target: { value: 'new value' },
-    });
-    screen.getByRole('checkbox').click();
-    expect(mockSetMainInfo).toBeCalledTimes(4);
-
-    screen.getAllByRole('button')[1].click();
-    expect(mockNavigateSteps).toBeCalledTimes(1);
-  });
-
-  it('should not show modal when securityQuestion not valid', () => {
-    const wrapper = (
-      <SecurityQuestionPage
-        showModal={mockShowModal}
-        navigateSteps={mockNavigateSteps}
-        setMainInfo={mockSetMainInfo}
-        setErrorMessage={mockSetErrorMessage}
-        setCurrentStep={mockSetCurrentStep}
-        mainInfo={{ ...MAIN_INFO, securityQuestion: undefined }}
-      />
-    );
-    render(wrapper);
-    screen.getAllByRole('button')[2].click();
-    expect(mockShowModal).toBeCalledTimes(0);
-  });
-
-  it('should not show modal when securityAnswer not valid', () => {
-    const wrapper = (
-      <SecurityQuestionPage
-        showModal={mockShowModal}
-        navigateSteps={mockNavigateSteps}
-        setMainInfo={mockSetMainInfo}
-        setErrorMessage={mockSetErrorMessage}
-        setCurrentStep={mockSetCurrentStep}
-        mainInfo={{ ...MAIN_INFO, securityAnswer: undefined }}
-      />
-    );
-    render(wrapper);
-    screen.getAllByRole('button')[2].click();
-    expect(mockShowModal).toBeCalledTimes(0);
-  });
-
-  it('should not show modal when confirmSecurityAnswer not valid', () => {
-    const wrapper = (
+    const { container } = render(
       <SecurityQuestionPage
         showModal={mockShowModal}
         navigateSteps={mockNavigateSteps}
@@ -108,29 +52,22 @@ describe('Security Question Page Component', () => {
         mainInfo={{ ...MAIN_INFO, confirmSecurityAnswer: undefined }}
       />
     );
-    render(wrapper);
-    screen.getAllByRole('button')[2].click();
-    expect(mockShowModal).toBeCalledTimes(0);
-  });
-
-  it('should not show modal when confirmSecurityAnswer and securityAnswer are not matching', () => {
-    const wrapper = (
-      <SecurityQuestionPage
-        showModal={mockShowModal}
-        navigateSteps={mockNavigateSteps}
-        setMainInfo={mockSetMainInfo}
-        setErrorMessage={mockSetErrorMessage}
-        setCurrentStep={mockSetCurrentStep}
-        mainInfo={{
-          ...MAIN_INFO,
-          confirmSecurityAnswer: 'value 1',
-          securityAnswer: 'value 2',
-        }}
-      />
+    fireEvent.change(container.querySelectorAll('.form-control')[0], {
+      target: { value: 'Test Text' },
+    });
+    fireEvent.change(container.querySelectorAll('.form-control')[1], {
+      target: { value: 'Test Text' },
+    });
+    fireEvent.change(container.querySelectorAll('.form-control')[2], {
+      target: { value: 'Test Text' },
+    });
+    fireEvent.change(
+      container.querySelectorAll('.is-show-answer .form-check-input')[0],
+      { target: { value: true } },
     );
-    render(wrapper);
+    expect(mockSetMainInfo).toBeCalledTimes(3);
 
-    screen.getAllByRole('button')[2].click();
-    expect(mockShowModal).toBeCalledTimes(0);
+    fireEvent.click(container.querySelectorAll('.btn-light')[0]);
+    expect(mockNavigateSteps).toBeCalledTimes(1);
   });
 });
