@@ -88,7 +88,7 @@ export default function HomeLoggedOut() {
               <div className="container">
                 <div className="row">
                   <div className="col-12">
-                    <h2 className="sliderh2">{t('home.personal_sign_up')}</h2>
+                    <h2 className="sliderh2" id="header-personal-sign-up">{t('home.personal_sign_up')}</h2>
                     <h1 className="hero-heading display-3 fw-bold">
                       <Trans
                         i18nKey="home.zip_it"
