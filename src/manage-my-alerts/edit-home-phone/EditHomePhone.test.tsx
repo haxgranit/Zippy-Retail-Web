@@ -9,7 +9,9 @@ describe('EditHomePhone Component', () => {
       <EditHomePhoneContent handleSave={handleSave} handleCancel={handleCancel} />,
     );
     const mEvent = { preventDefault: jest.fn() };
-    fireEvent.click(container.querySelectorAll('#cancel-btn-edit-home-phone')[0], mEvent);
+    const btn_element = container.querySelectorAll('#cancel-btn-edit-home-phone');
+    expect(btn_element).toHaveLength(1);
+    fireEvent.click(btn_element[0], mEvent);
     expect(handleCancel).toBeCalledTimes(1);
   });
   it('Click save button on EditHomePhone', () => {
@@ -19,7 +21,9 @@ describe('EditHomePhone Component', () => {
       <EditHomePhoneContent handleSave={handleSave} handleCancel={handleClose} />,
     );
     const mEvent = { preventDefault: jest.fn() };
-    fireEvent.click(container.querySelectorAll('#save-btn-edit-home-phone')[0], mEvent);
+    const btn_element = container.querySelectorAll('#save-btn-edit-home-phone');
+    expect(btn_element).toHaveLength(1);
+    fireEvent.click(btn_element[0], mEvent);
     expect(handleSave).toBeCalledTimes(1);
   });
 });
