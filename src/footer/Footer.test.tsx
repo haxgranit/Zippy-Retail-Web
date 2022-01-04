@@ -1,24 +1,25 @@
-import Enzyme, { shallow } from 'enzyme';
-import Adapter from '@wojtekmaj/enzyme-adapter-react-17';
+import { render, fireEvent } from '@testing-library/react';
+import { BrowserRouter } from 'react-router-dom';
 
 import Footer from './Footer';
 import '../i18n/config';
 
-// Configure enzyme for react 17
-Enzyme.configure({ adapter: new Adapter() });
-
 describe('Footer Component', () => {
   it('click footer links', () => {
-    const wrapper = shallow(<Footer />);
+    const { container, getAllByText } = render(
+      <BrowserRouter>
+        <Footer />
+      </BrowserRouter>,
+    );
     const preventMethod = jest.fn();
     const mEvent = { preventDefault: preventMethod };
 
-    wrapper.find('.text-decoration-none').at(1).simulate('click', mEvent);
-    wrapper.find('.text-decoration-none').at(2).simulate('click', mEvent);
-    wrapper.find('.text-decoration-none').at(3).simulate('click', mEvent);
-    wrapper.find('.text-decoration-none').at(6).simulate('click', mEvent);
-    wrapper.find('.text-decoration-none').at(7).simulate('click', mEvent);
-    wrapper.find('.text-decoration-none').at(8).simulate('click', mEvent);
-    expect(preventMethod).toHaveBeenCalledTimes(6);
+    fireEvent.click(container.querySelectorAll('.text-decoration-none')[1], mEvent);
+    fireEvent.click(container.querySelectorAll('.text-decoration-none')[2], mEvent);
+    fireEvent.click(container.querySelectorAll('.text-decoration-none')[3], mEvent);
+    fireEvent.click(container.querySelectorAll('.text-decoration-none')[6], mEvent);
+    fireEvent.click(container.querySelectorAll('.text-decoration-none')[7], mEvent);
+    fireEvent.click(container.querySelectorAll('.text-decoration-none')[8], mEvent);
+    expect(getAllByText('dev docs')[0]).toBeInTheDocument();
   });
 });
