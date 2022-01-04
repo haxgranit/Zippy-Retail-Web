@@ -12,7 +12,7 @@ import { selectUser } from '../../features/user/userSlice';
 
 const Divider = () => <div className="border-top my-3" />;
 
-const LeftCol = ({ user, accountList }: { user: User, accountList: Account[] | null }) => (
+const LeftCol = ({ user, accountList }: { user: User, accountList: Account[] }) => (
   <Col xs={9}>
     <Row>
       <Col>
@@ -119,7 +119,7 @@ const RightCol = () => (
 
 export const AutodepositSettingsPure = ({ user }: { user: User }) => {
   const { instance, accounts } = useMsal();
-  const [accountList, setAccountList] = useState<Account[] | null>([]);
+  const [accountList, setAccountList] = useState<Account[]>([]);
 
   useEffect(() => {
     new Api(instance, accounts[0])
@@ -127,7 +127,7 @@ export const AutodepositSettingsPure = ({ user }: { user: User }) => {
       .then((res) => {
         setAccountList(res);
       });
-  }, []);
+  }, [accounts]);
   return (
     <div>
       <Row>
