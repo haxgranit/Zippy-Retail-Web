@@ -49,7 +49,7 @@ describe('Transfer Sent Page Component', () => {
   it('should render with the valid values', () => {
     const { container } = render(component);
     expect(container).toMatchSnapshot();
-    
+
     const sourceEmail = screen.getByText(TRANSFER_INFORMATION.source.email);
     const destinationEmail = screen.getByText(TRANSFER_INFORMATION.destination.email);
 
