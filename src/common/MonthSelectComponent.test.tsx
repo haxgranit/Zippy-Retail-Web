@@ -12,7 +12,9 @@ describe('MonthSelectComponent Component', () => {
     const onChange = jest.fn();
     const { container } = render(<MonthSelectComponent onChange={onChange} />);
     const mEvent = { preventDefault: jest.fn() };
-    fireEvent.change(container.querySelectorAll('.month-select-comp')[0], mEvent);
+    const optionElements = container.querySelectorAll('.month-select-comp');
+    expect(optionElements).toHaveLength(1);
+    fireEvent.change(optionElements[0], mEvent);
     expect(onChange).toBeCalledTimes(1);
   });
 });

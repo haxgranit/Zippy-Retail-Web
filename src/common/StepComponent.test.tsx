@@ -14,9 +14,11 @@ describe('Step Component', () => {
       />,
     );
     const mEvent = { preventDefault: jest.fn() };
-    for (let i = 0; i < steps; i += 1) {
-      fireEvent.click(container.querySelectorAll('div[role="button"]')[i], mEvent);
-    }
+    const btnElements = container.querySelectorAll('div[role="button"]');
+    expect(btnElements).toHaveLength(steps);
+    fireEvent.click(btnElements[0], mEvent);
+    fireEvent.click(btnElements[1], mEvent);
+    fireEvent.click(btnElements[2], mEvent);
     expect(setCurrentStep).toBeCalledTimes(steps);
   });
 });

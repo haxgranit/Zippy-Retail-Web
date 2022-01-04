@@ -13,17 +13,18 @@ jest.mock('react-router-dom', () => ({
 
 describe('VerticalNavLinks Component', () => {
   it('click buttons on VerticalNavLinks', () => {
-    const { container, getAllByText } = render(
+    const { container } = render(
       <BrowserRouter>
         <VerticalNavLinks />
       </BrowserRouter>,
     );
 
     const links = container.querySelectorAll('.nav-link');
+    expect(links).toHaveLength(8);
     fireEvent.click(links[0]);
     fireEvent.click(links[1]);
     fireEvent.click(links[2]);
     fireEvent.click(links[3]);
-    expect(getAllByText('My Accounts')[0]).toBeInTheDocument();
+    expect(container.querySelectorAll('#my-account-link')[0]).toBeInTheDocument();
   });
 });

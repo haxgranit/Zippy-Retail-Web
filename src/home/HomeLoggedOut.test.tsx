@@ -16,17 +16,19 @@ jest.mock('@azure/msal-react', () => ({
 
 describe('HomeLoggedOut Component', () => {
   it('click buttons on HomeLoggedOut', () => {
-    const { container, getAllByText } = render(
+    const { container } = render(
       <BrowserRouter>
         <HomeLoggedOut />
       </BrowserRouter>,
     );
 
     const buttons = container.querySelectorAll('button');
+    expect(buttons).toHaveLength(8);
     fireEvent.click(buttons[0]);
     fireEvent.click(buttons[1]);
     fireEvent.click(buttons[2]);
     fireEvent.click(buttons[3]);
-    expect(getAllByText('personal sign up')[0]).toBeInTheDocument();
+    const headers = container.querySelectorAll('.sliderh2');
+    expect(headers).toHaveLength(7);
   });
 });
