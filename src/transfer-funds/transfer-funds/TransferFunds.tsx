@@ -4,6 +4,7 @@ import {
   Form,
   Row,
 } from 'react-bootstrap';
+import CommonHeader from '../../common/CommonHeader';
 
 const Divider = () => <div className="border-top my-3" />;
 
@@ -139,16 +140,14 @@ const RightCol = () => (
 
 export default function TransferFunds() {
   return (
-    <div>
-      <Row>
-        <Col>
-          <h2>TRANSFERS</h2>
-        </Col>
-      </Row>
-      <Row>
-        <LeftCol />
-        <RightCol />
-      </Row>
-    </div>
+    <>
+      <CommonHeader title="Transfers" />
+      <div className="content-wrapper">
+        <Row>
+          <LeftCol />
+          <RightCol />
+        </Row>
+      </div>
+    </>
   );
 }

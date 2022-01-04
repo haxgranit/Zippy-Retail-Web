@@ -808,7 +808,7 @@ Array [
             My Accounts
           </button>
           <button
-            className="d-flex btn btn-danger"
+            className="d-flex btn zippy-btn"
             disabled={false}
             style={
               Object {

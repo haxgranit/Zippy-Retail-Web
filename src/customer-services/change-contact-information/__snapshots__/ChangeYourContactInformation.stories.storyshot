@@ -6,54 +6,8 @@ Array [
     className="d-flex justify-content-between align-items-center"
   >
     <h3>
-      CHANGE YOUR CONTACT INFORMATION
+      Change Your Contact Information
     </h3>
-    <div
-      className="d-flex"
-    >
-      <div
-        style={
-          Object {
-            "border": "1px dotted grey",
-            "height": 25,
-            "marginRight": 10,
-            "textAlign": "center",
-            "width": 20,
-          }
-        }
-        title="print"
-      >
-        P
-      </div>
-      <div
-        style={
-          Object {
-            "border": "1px dotted grey",
-            "height": 25,
-            "marginRight": 10,
-            "textAlign": "center",
-            "width": 20,
-          }
-        }
-        title="copy"
-      >
-        P
-      </div>
-      <div
-        style={
-          Object {
-            "border": "1px dotted grey",
-            "height": 25,
-            "marginRight": 10,
-            "textAlign": "center",
-            "width": 20,
-          }
-        }
-        title="question"
-      >
-        P
-      </div>
-    </div>
   </div>,
   <div
     className="row"
@@ -423,7 +377,7 @@ Array [
           className="d-flex justify-content-end col"
         >
           <button
-            className="d-flex btn btn-danger"
+            className="zippy-btn d-flex btn btn-primary"
             disabled={false}
             type="button"
           >

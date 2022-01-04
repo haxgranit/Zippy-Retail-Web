@@ -6,40 +6,8 @@ Array [
     className="d-flex justify-content-between align-items-center"
   >
     <h3>
-      REMOVE ASSOCIATION TO INVESTMENT ACCOUNT(S)
+      Remove Association to Investment Account(s)
     </h3>
-    <div
-      className="d-flex"
-    >
-      <div
-        style={
-          Object {
-            "border": "1px dotted grey",
-            "height": 25,
-            "marginRight": 10,
-            "textAlign": "center",
-            "width": 20,
-          }
-        }
-        title="copy"
-      >
-        P
-      </div>
-      <div
-        style={
-          Object {
-            "border": "1px dotted grey",
-            "height": 25,
-            "marginRight": 10,
-            "textAlign": "center",
-            "width": 20,
-          }
-        }
-        title="question"
-      >
-        P
-      </div>
-    </div>
   </div>,
   <b>
     Step: 1 - 2
@@ -81,7 +49,7 @@ Array [
         Return to Customer Services
       </button>
       <button
-        className="btn btn-danger"
+        className="zippy-btn btn btn-primary"
         disabled={false}
         type="button"
       >

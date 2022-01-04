@@ -80,7 +80,7 @@ const EditContact: React.FC = () => {
         />
         <Row>
           <Col>
-            <CommonHeader title="EDIT CONTACT" print={false} />
+            <CommonHeader title="Edit Contact" />
           </Col>
         </Row>
         <Row>
@@ -204,7 +204,7 @@ const EditContact: React.FC = () => {
           </Col>
           <Col style={{ display: 'flex', justifyContent: 'flex-end' }}>
             <Button
-              className="btn btn-danger"
+              className="btn zippy-btn"
               onClick={() => setShow(true)}
               style={{ marginLeft: 15 }}
             >

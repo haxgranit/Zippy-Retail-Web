@@ -9,7 +9,7 @@ import CommonHeader from '../../common/CommonHeader';
 export default function ChangeYourPassword() {
   return (
     <>
-      <CommonHeader title="CHANGE YOUR PASSWORD" print />
+      <CommonHeader title="Change Your Password" />
       <div>
         <p>
           Create a password to use when you sign on to ZippyX Online and Mobile
@@ -51,7 +51,7 @@ export default function ChangeYourPassword() {
             </Button>
           </Col>
           <Col className="d-flex justify-content-end">
-            <Button variant="danger" className="d-flex">
+            <Button className="zippy-btn d-flex">
               Save
             </Button>
           </Col>

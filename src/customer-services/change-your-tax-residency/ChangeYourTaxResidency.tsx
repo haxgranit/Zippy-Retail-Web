@@ -9,7 +9,7 @@ import CommonHeader from '../../common/CommonHeader';
 export default function ChangeYourTaxResidency() {
   return (
     <>
-      <CommonHeader title="Change Your Tax Residency" print />
+      <CommonHeader title="Change Your Tax Residency" />
       <b>Step: 1 - 2</b>
       <div className="pt-3 pb-3">
         Tax residency is a method used by the Candada Revenue Agency (CRA) and
@@ -108,7 +108,7 @@ export default function ChangeYourTaxResidency() {
           </Button>
         </Col>
         <Col className="d-flex justify-content-end">
-          <Button variant="danger" className="d-flex">
+          <Button className="zippy-btn d-flex">
             Register for eBills
           </Button>
         </Col>

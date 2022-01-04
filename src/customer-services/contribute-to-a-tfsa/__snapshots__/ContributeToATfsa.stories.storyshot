@@ -8,40 +8,8 @@ exports[`Storyshots customer-services/contribute-to-a-tfsa Default 1`] = `
     className="d-flex justify-content-between align-items-center"
   >
     <h3>
-      TAX-FREE SAVINGS ACCOUNTS (TFSA)
+      Tax-Free Savings Accounts (TFSA)
     </h3>
-    <div
-      className="d-flex"
-    >
-      <div
-        style={
-          Object {
-            "border": "1px dotted grey",
-            "height": 25,
-            "marginRight": 10,
-            "textAlign": "center",
-            "width": 20,
-          }
-        }
-        title="copy"
-      >
-        P
-      </div>
-      <div
-        style={
-          Object {
-            "border": "1px dotted grey",
-            "height": 25,
-            "marginRight": 10,
-            "textAlign": "center",
-            "width": 20,
-          }
-        }
-        title="question"
-      >
-        P
-      </div>
-    </div>
   </div>
   <div
     className="row"
@@ -315,7 +283,7 @@ exports[`Storyshots customer-services/contribute-to-a-tfsa Default 1`] = `
             </span>
           </a>
           <button
-            className="btn btn-danger"
+            className="zippy-btn btn btn-primary"
             disabled={false}
             style={
               Object {
@@ -403,7 +371,7 @@ exports[`Storyshots customer-services/contribute-to-a-tfsa Default 1`] = `
           </p>
           
           <button
-            className="btn btn-danger"
+            className="zippy-btn btn btn-primary"
             disabled={false}
             style={
               Object {
@@ -470,7 +438,7 @@ exports[`Storyshots customer-services/contribute-to-a-tfsa Default 1`] = `
           </p>
           
           <button
-            className="btn btn-danger"
+            className="zippy-btn btn btn-primary"
             disabled={false}
             style={
               Object {
@@ -730,7 +698,7 @@ exports[`Storyshots customer-services/contribute-to-a-tfsa Default 1`] = `
       }
     >
       <button
-        className="btn btn-danger"
+        className="zippy-btn btn btn-primary"
         disabled={false}
         style={
           Object {

@@ -12,40 +12,8 @@ exports[`Storyshots interac-etransfer/contact-list/edit/EditContact Default 1`] 
         className="d-flex justify-content-between align-items-center"
       >
         <h3>
-          EDIT CONTACT
+          Edit Contact
         </h3>
-        <div
-          className="d-flex"
-        >
-          <div
-            style={
-              Object {
-                "border": "1px dotted grey",
-                "height": 25,
-                "marginRight": 10,
-                "textAlign": "center",
-                "width": 20,
-              }
-            }
-            title="copy"
-          >
-            P
-          </div>
-          <div
-            style={
-              Object {
-                "border": "1px dotted grey",
-                "height": 25,
-                "marginRight": 10,
-                "textAlign": "center",
-                "width": 20,
-              }
-            }
-            title="question"
-          >
-            P
-          </div>
-        </div>
       </div>
     </div>
   </div>
@@ -464,7 +432,7 @@ exports[`Storyshots interac-etransfer/contact-list/edit/EditContact Default 1`] 
       }
     >
       <button
-        className="btn btn-danger btn btn-primary"
+        className="btn zippy-btn btn btn-primary"
         disabled={false}
         onClick={[Function]}
         style={

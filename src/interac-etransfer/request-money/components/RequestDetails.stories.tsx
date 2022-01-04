@@ -1,38 +1,38 @@
-import { ComponentMeta } from '@storybook/react';
-/*
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { BrowserRouter } from 'react-router-dom';
-import ACCOUNTS from '../../../stories/Accounts';
-import CONTACTS from '../../../stories/Contacts';
-*/
-import { RequestDetails } from './RequestDetails';
+import RequestDetails from './RequestDetails';
+import { RequestMainDetails } from '../RequestMoney';
 
 export default {
-  title: 'interac-etransfer/request-money/components/RequestDetails',
+  title: 'interac-etransfer/request-money/components/RequestSent',
   component: RequestDetails,
 } as ComponentMeta<typeof RequestDetails>;
 
-/*
-const Template: ComponentStory<typeof RequestDetails> = ({
-  setCurrentStep,
-  accountsData,
-  contacts,
-}) => (
+const Template: ComponentStory<typeof RequestDetails> = () => (
   <BrowserRouter>
     <RequestDetails
-      accountsData={accountsData}
-      contacts={contacts}
-      setCurrentStep={setCurrentStep}
+      accounts={[]}
+      contacts={[]}
+      mainInfo={{
+        amount: 0,
+        invoiceNumber: 0,
+        message: '',
+        notifyByEmail: false,
+        notifyTextMessage: false,
+        agreed: false,
+      } as RequestMainDetails}
+      selectedAccount={0}
+      selectedContact={0}
+      setContactToSend={() => ''}
+      setErrorMessage={() => ''}
+      setMainInfo={() => ''}
+      setCurrentStep={() => ''}
+      setPageIndex={() => ''}
+      setSelectedAccount={() => ''}
+      showModal={() => ''}
     />
   </BrowserRouter>
 );
 
 export const Default = Template.bind({});
-Default.args = {
-  accountsData: ACCOUNTS,
-  contacts: CONTACTS,
-};
-
-export const Empty = Template.bind({});
-Empty.args = {};
-*/
+Default.args = {};

@@ -14,7 +14,7 @@ const Divider = () => <div className="border-top my-3" />;
 export default function StopPayments() {
   return (
     <>
-      <CommonHeader title="STOP PAYMENT" print />
+      <CommonHeader title="Stop Payment" />
       <Row>
         <Col md={9}>
           <Row className="mt-3">
@@ -313,7 +313,7 @@ export default function StopPayments() {
                 </Button>
               </Col>
               <Col className="d-flex justify-content-end">
-                <Button variant="danger" className="d-flex">
+                <Button className="zippy-btn d-flex">
                   Next
                 </Button>
               </Col>

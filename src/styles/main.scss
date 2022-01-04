@@ -388,3 +388,38 @@ p.content-home {
     font-weight: 400;
     color: #5e7472;
 }
+
+/** New Styles */
+h3 {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+}
+
+.btn {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 13px;
+    box-shadow: none;
+
+    &:focus {
+        box-shadow: none;
+    }
+
+    &.zippy-btn {
+        background: linear-gradient(83.49deg, #FF0D26 31.24%, #FF7300 99.49%);
+        border-radius: 7px;
+        border: none;
+        padding: 10px 20px;
+    }
+}
+
+.content-wrapper {
+    background-color: $color-white;
+    border-radius: 8px;
+    padding: 20px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 13px;
+    width: 100%;
+}

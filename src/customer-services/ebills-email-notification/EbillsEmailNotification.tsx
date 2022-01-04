@@ -4,7 +4,7 @@ import CommonHeader from '../../common/CommonHeader';
 export default function EbillsEmailNotification() {
   return (
     <>
-      <CommonHeader title="Ebills Email Notification" print={false} />
+      <CommonHeader title="Ebills Email Notification" />
       <b>Step: 1 - 2</b>
       <div className="pt-3 pb-3">
         <p>
@@ -28,7 +28,7 @@ export default function EbillsEmailNotification() {
       </div>
       <Row className="pt-3 pb-3" style={{ borderTop: '1px solid #c5c1c1' }}>
         <Col md="12" className="d-flex justify-content-end">
-          <Button variant="danger">Register for eBills</Button>
+          <Button className="zippy-btn">Register for eBills</Button>
         </Col>
       </Row>
     </>

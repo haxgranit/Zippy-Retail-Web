@@ -10,70 +10,71 @@ exports[`Storyshots common/MonthSelectComponent Default 1`] = `
   }
 >
   <optgroup
-    label="2021"
-  />
-  <optgroup
-    label="2020"
+    label="2022"
   >
     <option
-      value="December 2021"
+      value="undefined 2021"
     >
-      December 2021
+      undefined 2021
     </option>
     <option
-      value="November 2021"
+      value="undefined 2021"
     >
-      November 2021
+      undefined 2021
     </option>
     <option
-      value="October 2021"
+      value="undefined 2021"
     >
-      October 2021
+      undefined 2021
     </option>
     <option
-      value="September 2021"
+      value="undefined 2021"
     >
-      September 2021
+      undefined 2021
     </option>
     <option
-      value="August 2021"
+      value="undefined 2021"
     >
-      August 2021
+      undefined 2021
     </option>
     <option
-      value="July 2021"
+      value="undefined 2021"
     >
-      July 2021
+      undefined 2021
     </option>
     <option
-      value="June 2021"
+      value="undefined 2021"
     >
-      June 2021
+      undefined 2021
     </option>
     <option
-      value="May 2021"
+      value="undefined 2021"
     >
-      May 2021
+      undefined 2021
     </option>
     <option
-      value="April 2021"
+      value="undefined 2021"
     >
-      April 2021
+      undefined 2021
     </option>
     <option
-      value="March 2021"
+      value="undefined 2021"
     >
-      March 2021
+      undefined 2021
     </option>
     <option
-      value="February 2021"
+      value="undefined 2021"
     >
-      February 2021
+      undefined 2021
     </option>
+  </optgroup>
+  <optgroup
+    label="2021"
+  >
     <option
-      value="January 2021"
+      value="January 2022"
     >
-      January 2021
+      January 2022
     </option>
   </optgroup>
 </select>

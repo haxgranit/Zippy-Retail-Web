@@ -1056,7 +1056,7 @@ Array [
               />
             </div>
             <button
-              className="btn btn-danger"
+              className="btn zippy-btn"
               disabled={false}
               type="button"
             >

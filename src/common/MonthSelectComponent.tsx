@@ -18,7 +18,7 @@ const MONTH_NAMES = [
 const getDateAry = () => {
   const dateVal = new Date();
   const year = dateVal.getFullYear();
-  const prevYear = year * 1 - 1;
+  const prevYear = year - 1;
   const currMonth = dateVal.getMonth();
   const result: any = [
     {
@@ -36,6 +36,7 @@ const getDateAry = () => {
     if (currMonth - i < 0) {
       dateStr = `${MONTH_NAMES[currMonth - i]} ${prevYear}`;
       const item = {
+        key: i,
         value: dateStr,
         currMonth,
         currYear: year,
@@ -44,6 +45,7 @@ const getDateAry = () => {
     } else {
       dateStr = `${MONTH_NAMES[currMonth - i]} ${year}`;
       const item = {
+        key: i,
         value: dateStr,
         currMonth,
         currYear: year,
@@ -62,7 +64,7 @@ export default function MonthSelectComponent(props: any) {
       {dateAry.map((item: any) => (
         <optgroup label={`${item.label}`} key={`sent_${item.label}`}>
           {item.items.map((dateValue: any) => (
-            <option value={dateValue.value} key={`sent_${dateValue.value}`}>
+            <option value={dateValue.value} key={`sent_${dateValue.value}_${dateValue.key}`}>
               {dateValue.value}
             </option>
           ))}

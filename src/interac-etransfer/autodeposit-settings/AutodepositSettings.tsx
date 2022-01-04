@@ -7,6 +7,7 @@ import {
 import { User } from '../../api';
 import { useAppSelector } from '../../app/hooks';
 import { selectUser } from '../../features/user/userSlice';
+import CommonHeader from '../../common/CommonHeader';
 
 const Divider = () => <div className="border-top my-3" />;
 
@@ -112,15 +113,13 @@ const RightCol = () => (
 
 export const AutodepositSettingsPure = ({ user }: { user: User }) => (
   <div>
-    <Row>
-      <Col>
-        <h2>SETUP AUTODEPOSIT</h2>
-      </Col>
-    </Row>
-    <Row>
-      <LeftCol user={user} />
-      <RightCol />
-    </Row>
+    <CommonHeader title="Setup AutoDeposit" />
+    <div className="content-wrapper">
+      <Row>
+        <LeftCol user={user} />
+        <RightCol />
+      </Row>
+    </div>
   </div>
 );
 

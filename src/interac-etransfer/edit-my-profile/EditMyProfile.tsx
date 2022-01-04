@@ -7,6 +7,7 @@ import {
 import { User } from '../../api';
 import { useAppSelector } from '../../app/hooks';
 import { selectUser } from '../../features/user/userSlice';
+import CommonHeader from '../../common/CommonHeader';
 
 const Divider = () => <div className="border-top my-3" />;
 
@@ -116,15 +117,14 @@ const RightCol = () => (
 
 export const EditMyProfilePure = ({ user }: { user: User }) => (
   <div>
-    <Row>
-      <Col>
-        <h2>EDIT MY PROFILE</h2>
-      </Col>
-    </Row>
-    <Row>
-      <LeftCol user={user} />
-      <RightCol />
-    </Row>
+    <CommonHeader title="Edit My Profile" />
+    <div className="content-wrapper">
+      <h2>Edit My Profile</h2>
+      <Row>
+        <LeftCol user={user} />
+        <RightCol />
+      </Row>
+    </div>
   </div>
 );
 

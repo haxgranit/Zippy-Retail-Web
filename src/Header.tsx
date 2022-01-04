@@ -8,23 +8,21 @@ import { useAppDispatch, useAppSelector } from './app/hooks';
 import { loginRequest } from './authConfig';
 import { selectUser, unload } from './features/user/userSlice';
 import ZippyCashLogo from './assets/img/general/ZippyCash_Logo.svg';
-import { User } from './api';
 
 export const HeaderPure = ({
   isAuthenticated,
-  user,
+  userFullName,
   isInProgress,
   handleLogin,
   handleLogout,
 }: {
   isAuthenticated: boolean,
-  user: User,
+  userFullName: string,
   isInProgress: boolean,
   handleLogin: () => void,
   handleLogout: () => void
 }) => {
   const { i18n, t } = useTranslation();
-  const getFullName = () => (user && user.firstName && user.lastName ? `${user.firstName} ${user.lastName}` : '');
 
   return (
     <nav className="header-layout navbar navbar-expand-lg navbar-light">
@@ -39,10 +37,10 @@ export const HeaderPure = ({
           <Form.Control
             type="input"
             placeholder="Search..."
-            onChange={(evt) => console.log(evt)}
+            onChange={(evt) => evt.preventDefault()}
           />
           <Form.Select
-            onChange={(evt) => console.log(evt)}
+            onChange={(evt) => evt.preventDefault()}
             value="all"
           >
             <option value="all">All</option>
@@ -77,7 +75,7 @@ export const HeaderPure = ({
                 Spanish (US)
               </NavDropdown.Item>
             </NavDropdown>
-            <NavDropdown title={getFullName()}>
+            <NavDropdown title={userFullName || t('header.login')}>
               {(isAuthenticated && (
                 <NavDropdown.Item onClick={() => handleLogout()} className="nav-dropdown-item">
                   {t('header.logout')}
@@ -115,14 +113,10 @@ export const Header = () => {
   const { inProgress, instance } = useMsal();
   const { user } = useAppSelector(selectUser);
   const dispatch = useAppDispatch();
-
   const isInProgress = inProgress === InteractionStatus.Startup
-    || inProgress === InteractionStatus.HandleRedirect;
-
-  const handleLogin = () => {
-    instance.loginRedirect(loginRequest);
-  };
-
+      || inProgress === InteractionStatus.HandleRedirect;
+  const getFullName = () => (user && user.firstName && user.lastName ? `${user.firstName} ${user.lastName}` : '');
+  const handleLogin = () => instance.loginRedirect(loginRequest);
   const handleLogout = () => {
     dispatch(unload());
     instance.logoutRedirect();
@@ -130,7 +124,7 @@ export const Header = () => {
 
   return (
     <HeaderPure
-      user={user || { email: null, firstName: null, lastName: null } as unknown as User}
+      userFullName={getFullName()}
       isAuthenticated={isAuthenticated}
       isInProgress={isInProgress}
       handleLogin={handleLogin}

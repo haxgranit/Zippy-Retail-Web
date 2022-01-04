@@ -4,7 +4,7 @@ import CommonHeader from '../../common/CommonHeader';
 export default function RemoveAssociationToOnlineInvestmentAccount() {
   return (
     <>
-      <CommonHeader title="Remove Association to Investment Account(s)" print={false} />
+      <CommonHeader title="Remove Association to Investment Account(s)" />
       <b>Step: 1 - 2</b>
       <div className="pt-3 pb-3">
         <p>
@@ -26,7 +26,7 @@ export default function RemoveAssociationToOnlineInvestmentAccount() {
       <Row className="pt-3 pb-3" style={{ borderTop: '1px solid #c5c1c1' }}>
         <Col md="12" className="d-flex justify-content-end">
           <Button variant="outline-danger" style={{ marginRight: '10px' }}>Return to Customer Services</Button>
-          <Button variant="danger">Remove Association</Button>
+          <Button className="zippy-btn">Remove Association</Button>
         </Col>
       </Row>
     </>

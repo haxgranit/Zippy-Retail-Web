@@ -221,7 +221,7 @@ Card.defaultProps = CardDefaultProps;
 
 const ContributeToTfsa = () => (
   <Container fluid>
-    <CommonHeader title="TAX-FREE SAVINGS ACCOUNTS (TFSA)" print={false} />
+    <CommonHeader title="Tax-Free Savings Accounts (TFSA)" />
     <Row
       style={{
         display: 'flex',
@@ -325,7 +325,7 @@ const ContributeToTfsa = () => (
         button={(
           <Button
             style={{ display: 'flex', marginTop: 25, fontSize: 14 }}
-            variant="danger"
+            className="zippy-btn"
           >
             Apply or contribute
           </Button>
@@ -347,7 +347,7 @@ const ContributeToTfsa = () => (
         button={(
           <Button
             style={{ display: 'flex', marginTop: 25, fontSize: 14 }}
-            variant="danger"
+            className="zippy-btn"
           >
             Purchase or contribute
           </Button>
@@ -366,7 +366,7 @@ const ContributeToTfsa = () => (
         button={(
           <Button
             style={{ display: 'flex', marginTop: 25, fontSize: 14 }}
-            variant="danger"
+            className="zippy-btn"
           >
             Purchase or contribute
           </Button>
@@ -466,7 +466,7 @@ const ContributeToTfsa = () => (
       <Col xs={2} style={{ display: 'flex', justifyContent: 'flex-end', alignItems: 'center' }}>
         <Button
           style={{ fontSize: 14, paddingRight: 20, paddingLeft: 20 }}
-          variant="danger"
+          className="zippy-btn"
         >
           Ask
         </Button>

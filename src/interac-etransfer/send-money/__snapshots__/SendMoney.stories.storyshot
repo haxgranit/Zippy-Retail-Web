@@ -487,7 +487,7 @@ exports[`Storyshots interac-etransfer/send-money/SendMoney API Error 1`] = `
           className="d-flex justify-content-end col"
         >
           <button
-            className="d-flex btn btn-danger"
+            className="d-flex btn zippy-btn"
             disabled={false}
             onClick={[Function]}
             type="button"
@@ -1100,7 +1100,7 @@ exports[`Storyshots interac-etransfer/send-money/SendMoney Default 1`] = `
           className="d-flex justify-content-end col"
         >
           <button
-            className="d-flex btn btn-danger"
+            className="d-flex btn zippy-btn"
             disabled={false}
             onClick={[Function]}
             type="button"

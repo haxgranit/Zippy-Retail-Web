@@ -15,8 +15,8 @@ import PanelHeader from './components/PanelHeader';
 export default function MyAccounts() {
   return (
     <>
-      <CommonHeader title="My Accounts" print={false} />
-      <div>
+      <CommonHeader title="My Accounts" />
+      <div className="content-wrapper">
         <div className="d-flex justify-content-between">
           <p>
             Welcome DUANE TOUGH. Your last visit: November 9, 2021 at 4:54 p.m.
@@ -416,7 +416,7 @@ export default function MyAccounts() {
                     aria-describedby="basic-addon1"
                   />
                 </InputGroup>
-                <Button variant="danger">Next</Button>
+                <Button className="zippy-btn">Next</Button>
               </Card.Body>
             </Card>
             <Card className="bg-white" style={{ marginTop: 10 }}>

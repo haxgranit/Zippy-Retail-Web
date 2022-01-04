@@ -10,7 +10,7 @@ import CommonHeader from '../../common/CommonHeader';
 export default function ChangeYourContactInformation() {
   return (
     <>
-      <CommonHeader title="CHANGE YOUR CONTACT INFORMATION" print />
+      <CommonHeader title="Change Your Contact Information" />
       <Row>
         <Col md={8}>
           <Row className="mt-3">
@@ -167,7 +167,7 @@ export default function ChangeYourContactInformation() {
               </Button>
             </Col>
             <Col className="d-flex justify-content-end">
-              <Button variant="danger" className="d-flex">
+              <Button className="zippy-btn d-flex">
                 Save
               </Button>
             </Col>

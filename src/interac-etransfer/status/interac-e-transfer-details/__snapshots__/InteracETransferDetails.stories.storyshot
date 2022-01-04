@@ -240,7 +240,7 @@ Array [
           className="d-flex justify-content-end row"
         >
           <button
-            className="d-flex btn btn-danger"
+            className="d-flex btn zippy-btn"
             disabled={false}
             onClick={[Function]}
             style={
@@ -492,7 +492,7 @@ Array [
           className="d-flex justify-content-end row"
         >
           <button
-            className="d-flex btn btn-danger"
+            className="d-flex btn zippy-btn"
             disabled={false}
             onClick={[Function]}
             style={

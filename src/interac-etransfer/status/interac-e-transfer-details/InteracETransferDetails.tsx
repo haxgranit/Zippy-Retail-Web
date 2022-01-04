@@ -71,8 +71,7 @@ const SentTabContent = ({ navigate, instance, accounts }: any) => {
       <div>
         <Row className="d-flex justify-content-end">
           <Button
-            variant="danger"
-            className="d-flex"
+            className="zippy-btn d-flex"
             style={{ width: 'auto', marginRight: 10 }}
             onClick={() => navigate('/interac-etransfer/send-money/details')}
           >
@@ -199,8 +198,7 @@ const RequestedTabContent = ({ navigate, instance, accounts }: any) => {
       <div>
         <Row className="d-flex justify-content-end">
           <Button
-            variant="danger"
-            className="d-flex"
+            className="zippy-btn d-flex"
             style={{ width: 'auto', marginRight: 10 }}
             onClick={() => navigate('/interac-etransfer/request-money')}
           >
@@ -219,58 +217,60 @@ export default function InteracETransferDetails() {
   const selectedTabId = tabId || undefined;
 
   return (
-    <>
-      <CommonHeader title="STATUS" print={false} />
-      <div>
-        <h4>Your Interac e-Transfer Details</h4>
-        <ul>
-          <li>
-            To learn more about the status of an Interac e-Transfer, or to take
-            action on any of your transfers, select the text link under the
-            status column.
-          </li>
-          <li>
-            You can also view information about your Interac e-Transfer on the
-            &quot;Account Details&quot; page. Select the account from which you
-            made the transfer to view the details of your transfer in the list
-            of transactions
-          </li>
-        </ul>
-        <p>
-          Note: The(Requested) status refers to a transfer you sent in response
-          to a request for money
-        </p>
+    <div>
+      <CommonHeader title="Status" />
+      <div className="content-wrapper">
+        <div>
+          <h4>Your Interac e-Transfer Details</h4>
+          <ul>
+            <li>
+              To learn more about the status of an Interac e-Transfer, or to take
+              action on any of your transfers, select the text link under the
+              status column.
+            </li>
+            <li>
+              You can also view information about your Interac e-Transfer on the
+              &quot;Account Details&quot; page. Select the account from which you
+              made the transfer to view the details of your transfer in the list
+              of transactions
+            </li>
+          </ul>
+          <p>
+            Note: The(Requested) status refers to a transfer you sent in response
+            to a request for money
+          </p>
+        </div>
+        <Tabs
+          defaultActiveKey={selectedTabId || 'sent'}
+          transition={false}
+          id="status-tab"
+          className="mt-2 mb-3"
+          onSelect={(tabKey) => {
+            navigate(`/interac-etransfer/status/${tabKey}`);
+          }}
+        >
+          <Tab eventKey="sent" title="Sent">
+            <SentTabContent
+              navigate={navigate}
+              instance={instance}
+              accounts={accounts}
+            />
+          </Tab>
+          <Tab eventKey="received" title="Received">
+            <ReceivedTabContent
+              instance={instance}
+              accounts={accounts}
+            />
+          </Tab>
+          <Tab eventKey="requested" title="Requested">
+            <RequestedTabContent
+              navigate={navigate}
+              instance={instance}
+              accounts={accounts}
+            />
+          </Tab>
+        </Tabs>
       </div>
-      <Tabs
-        defaultActiveKey={selectedTabId || 'sent'}
-        transition={false}
-        id="status-tab"
-        className="mt-2 mb-3"
-        onSelect={(tabKey) => {
-          navigate(`/interac-etransfer/status/${tabKey}`);
-        }}
-      >
-        <Tab eventKey="sent" title="Sent">
-          <SentTabContent
-            navigate={navigate}
-            instance={instance}
-            accounts={accounts}
-          />
-        </Tab>
-        <Tab eventKey="received" title="Received">
-          <ReceivedTabContent
-            instance={instance}
-            accounts={accounts}
-          />
-        </Tab>
-        <Tab eventKey="requested" title="Requested">
-          <RequestedTabContent
-            navigate={navigate}
-            instance={instance}
-            accounts={accounts}
-          />
-        </Tab>
-      </Tabs>
-    </>
+    </div>
   );
 }

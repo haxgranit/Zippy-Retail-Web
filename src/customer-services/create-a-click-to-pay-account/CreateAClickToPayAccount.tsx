@@ -10,7 +10,7 @@ import CommonHeader from '../../common/CommonHeader';
 export default function CreateAClickToPayAccount() {
   return (
     <>
-      <CommonHeader title="Signup For Click to Pay" print />
+      <CommonHeader title="Signup For Click to Pay" />
       <Row className="pt-2 pb-2">
         <Col md="12">
           <h4>Click to Pay</h4>
@@ -129,7 +129,7 @@ export default function CreateAClickToPayAccount() {
             </div>
             Cancel enrollment
           </Button>
-          <Button variant="danger" className="d-flex">
+          <Button className="zippy-btn d-flex">
             Next
           </Button>
         </Col>

@@ -40,7 +40,7 @@ const LeftCol = () => {
         >
           Return to Status
         </Button>
-        <Button variant="danger" onClick={() => navigate('/interac-etransfer/request-money')}>
+        <Button className="zippy-btn" onClick={() => navigate('/interac-etransfer/request-money')}>
           Send Another Request
         </Button>
       </Stack>

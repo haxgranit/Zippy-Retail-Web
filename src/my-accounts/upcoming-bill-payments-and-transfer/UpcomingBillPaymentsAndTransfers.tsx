@@ -3,9 +3,9 @@ import CommonHeader from '../../common/CommonHeader';
 
 export default function UpcomingBillPaymentsAndTransfers() {
   return (
-    <>
-      <CommonHeader title="UPCOMING BILL PAYMENTS AND TRANSFER" print />
-      <div className="p-3 mt-4">
+    <div>
+      <CommonHeader title="Upcoming Bill Payments & Transfer" />
+      <div className="content-wrapper">
         <p>
           You have no bill payments or transfers scheduled.
           <Button variant="link" className="text-black">Set up a future bill payment</Button>
@@ -13,6 +13,6 @@ export default function UpcomingBillPaymentsAndTransfers() {
           <Button variant="link" className="text-black">transfer</Button>
         </p>
       </div>
-    </>
+    </div>
   );
 }

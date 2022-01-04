@@ -326,7 +326,7 @@ Array [
         Check Status
       </button>
       <button
-        className="d-flex btn btn-danger"
+        className="d-flex btn zippy-btn"
         disabled={false}
         onClick={[Function]}
         type="button"

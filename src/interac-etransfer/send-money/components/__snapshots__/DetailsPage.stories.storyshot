@@ -345,7 +345,7 @@ Array [
       className="d-flex justify-content-end col"
     >
       <button
-        className="d-flex btn btn-danger"
+        className="d-flex btn zippy-btn"
         disabled={false}
         onClick={[Function]}
         type="button"
@@ -699,7 +699,7 @@ Array [
       className="d-flex justify-content-end col"
     >
       <button
-        className="d-flex btn btn-danger"
+        className="d-flex btn zippy-btn"
         disabled={false}
         onClick={[Function]}
         type="button"

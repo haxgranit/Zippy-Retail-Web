@@ -94,7 +94,7 @@ exports[`Storyshots Header Logged In 1`] = `
             role="button"
             tabIndex={0}
           >
-            
+            login
           </a>
         </div>
       </ul>
@@ -197,7 +197,7 @@ exports[`Storyshots Header Logged Out 1`] = `
             role="button"
             tabIndex={0}
           >
-            
+            login
           </a>
         </div>
       </ul>
@@ -340,7 +340,7 @@ exports[`Storyshots Header Logging In 1`] = `
             role="button"
             tabIndex={0}
           >
-            
+            login
           </a>
         </div>
       </ul>
