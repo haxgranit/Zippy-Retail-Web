@@ -23,12 +23,12 @@ describe('Manage Alert Component', () => {
     jest.spyOn(React, 'useState');
 
     const { container } = render(<ManageMyAlerts />);
-    const btn_links = container.querySelectorAll('.btn-link');
-    expect(btn_links).toHaveLength(4);
-    fireEvent.click(btn_links[2]);
-    fireEvent.click(btn_links[0]);
-    fireEvent.click(btn_links[3]);
-    fireEvent.click(btn_links[1]);
+    const btnLinks = container.querySelectorAll('.btn-link');
+    expect(btnLinks).toHaveLength(4);
+    fireEvent.click(btnLinks[2]);
+    fireEvent.click(btnLinks[0]);
+    fireEvent.click(btnLinks[3]);
+    fireEvent.click(btnLinks[1]);
     expect(React.useState).toHaveBeenCalled();
   });
 

@@ -9,9 +9,9 @@ describe('EditMobilePhone Component', () => {
       <EditMobilePhoneContent handleNext={handleNext} handleCancel={handleCancel} />,
     );
     const mEvent = { preventDefault: jest.fn() };
-    const btn_element = container.querySelectorAll('#cancel-btn-edit-mobile-phone');
-    expect(btn_element).toHaveLength(1);
-    fireEvent.click(btn_element[0], mEvent);
+    const btnElements = container.querySelectorAll('#cancel-btn-edit-mobile-phone');
+    expect(btnElements).toHaveLength(1);
+    fireEvent.click(btnElements[0], mEvent);
     expect(handleCancel).toBeCalledTimes(1);
   });
   it('Click save button on EditMobilePhone', () => {
@@ -21,9 +21,9 @@ describe('EditMobilePhone Component', () => {
       <EditMobilePhoneContent handleNext={handleNext} handleCancel={handleClose} />,
     );
     const mEvent = { preventDefault: jest.fn() };
-    const btn_element = container.querySelectorAll('#next-btn-edit-mobile-phone');
-    expect(btn_element).toHaveLength(1);
-    fireEvent.click(btn_element[0], mEvent);
+    const btnElements = container.querySelectorAll('#next-btn-edit-mobile-phone');
+    expect(btnElements).toHaveLength(1);
+    fireEvent.click(btnElements[0], mEvent);
     expect(handleNext).toBeCalledTimes(1);
   });
 });
