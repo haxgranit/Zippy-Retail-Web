@@ -48,7 +48,7 @@ const LeftCol = ({ user, accountList }: { user: User, accountList: Account[] }) 
         <Form.Select>
           <option>Select account</option>
           {accountList?.map((account: Account) => (
-            <option key={account.name} value={account.id}>
+            <option key={account.id} value={account.id}>
               {account.name}
             </option>
           ))}

@@ -16,7 +16,7 @@ jest.mock('@azure/msal-react', () => ({
 
 describe('HomeLoggedOut Component', () => {
   it('click buttons on HomeLoggedOut', () => {
-    const { container } = render(
+    const { container, getAllByText } = render(
       <BrowserRouter>
         <HomeLoggedOut />
       </BrowserRouter>,
@@ -27,5 +27,6 @@ describe('HomeLoggedOut Component', () => {
     fireEvent.click(buttons[1]);
     fireEvent.click(buttons[2]);
     fireEvent.click(buttons[3]);
+    expect(getAllByText('personal sign up')[0]).toBeInTheDocument();
   });
 });
