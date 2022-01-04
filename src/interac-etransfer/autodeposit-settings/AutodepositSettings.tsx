@@ -30,8 +30,8 @@ const LeftCol = ({ user, accountList }: { user: User, accountList: Account[] | n
     <Row className="align-items-center mt-4">
       <Col xs={3}>Choose contact method:</Col>
       <Col xs={6}>
-        <Form.Check type="radio" name="display" id="contact-email" label="Email" />
-        <Form.Check type="radio" name="display" id="contact-phone" label="Mobile phone number" />
+        <Form.Check type="radio" name="display" id="contact-email" label="Email" checked disabled />
+        <Form.Check type="radio" name="display" id="contact-phone" label="Mobile phone number" disabled />
       </Col>
     </Row>
     <Divider />

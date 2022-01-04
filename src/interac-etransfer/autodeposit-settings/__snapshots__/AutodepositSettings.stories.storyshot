@@ -56,8 +56,9 @@ exports[`Storyshots interac-etransfer/autodeposit-settings/AutodepositSettings D
             className="form-check"
           >
             <input
+              checked={true}
               className="form-check-input"
-              disabled={false}
+              disabled={true}
               id="contact-email"
               name="display"
               type="radio"
@@ -75,7 +76,7 @@ exports[`Storyshots interac-etransfer/autodeposit-settings/AutodepositSettings D
           >
             <input
               className="form-check-input"
-              disabled={false}
+              disabled={true}
               id="contact-phone"
               name="display"
               type="radio"
