@@ -163,7 +163,7 @@ export const RequestDetails = ({
             type="number"
             step=".01"
             placeholder="$"
-            value={mainInfo.amount}
+            value={mainInfo?.amount}
             onChange={(evt) => setMainInfo({ ...mainInfo, amount: Number(evt.target.value) })}
           />
         </Col>

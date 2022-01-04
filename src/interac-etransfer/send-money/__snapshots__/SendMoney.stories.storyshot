@@ -496,6 +496,7 @@ exports[`Storyshots interac-etransfer/send-money/SendMoney API Error 1`] = `
           </button>
         </div>
       </div>
+      0
       <hr
         style={
           Object {
@@ -1109,6 +1110,7 @@ exports[`Storyshots interac-etransfer/send-money/SendMoney Default 1`] = `
           </button>
         </div>
       </div>
+      0
       <hr
         style={
           Object {

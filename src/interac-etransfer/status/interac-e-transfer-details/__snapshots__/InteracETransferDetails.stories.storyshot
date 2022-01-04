@@ -134,10 +134,7 @@ Array [
         }
       >
         <optgroup
-          label="2021"
-        />
-        <optgroup
-          label="2020"
+          label="2022"
         >
           <option
             value="December 2021"
@@ -194,10 +191,14 @@ Array [
           >
             February 2021
           </option>
+        </optgroup>
+        <optgroup
+          label="2021"
+        >
           <option
-            value="January 2021"
+            value="January 2022"
           >
-            January 2021
+            January 2022
           </option>
         </optgroup>
       </select>
@@ -270,10 +271,7 @@ Array [
         }
       >
         <optgroup
-          label="2021"
-        />
-        <optgroup
-          label="2020"
+          label="2022"
         >
           <option
             value="December 2021"
@@ -330,10 +328,14 @@ Array [
           >
             February 2021
           </option>
+        </optgroup>
+        <optgroup
+          label="2021"
+        >
           <option
-            value="January 2021"
+            value="January 2022"
           >
-            January 2021
+            January 2022
           </option>
         </optgroup>
       </select>
@@ -386,10 +388,7 @@ Array [
         }
       >
         <optgroup
-          label="2021"
-        />
-        <optgroup
-          label="2020"
+          label="2022"
         >
           <option
             value="December 2021"
@@ -446,10 +445,14 @@ Array [
           >
             February 2021
           </option>
+        </optgroup>
+        <optgroup
+          label="2021"
+        >
           <option
-            value="January 2021"
+            value="January 2022"
           >
-            January 2021
+            January 2022
           </option>
         </optgroup>
       </select>

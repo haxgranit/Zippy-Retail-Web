@@ -1,4 +1,5 @@
-import { ComponentMeta } from '@storybook/react';
+import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { BrowserRouter } from 'react-router-dom';
 /*
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { BrowserRouter } from 'react-router-dom';
@@ -12,6 +13,22 @@ export default {
   component: RequestDetails,
 } as ComponentMeta<typeof RequestDetails>;
 
+const Template: ComponentStory<typeof RequestDetails> = (props) => (
+  <BrowserRouter>
+    <RequestDetails {...props}/>
+  </BrowserRouter>
+)
+export const Default = Template.bind({});
+Default.args = {
+  mainInfo: {
+    amount: 3000,
+    invoiceNumber: 1,
+    message: 'Test message',
+    notifyByEmail: true,
+    notifyTextMessage: true,
+    agreed: true,
+  }
+};
 /*
 const Template: ComponentStory<typeof RequestDetails> = ({
   setCurrentStep,
