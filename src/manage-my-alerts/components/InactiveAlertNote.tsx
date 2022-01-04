@@ -27,11 +27,11 @@ export default function InactiveAlertNote() {
       <p className="d-flex flex-column">
         <ul>
           <li>
-            An inactive alert status applies to bank accoiunts that were
+            An inactive alert status applies to bank accounts that were
             automatically transferred from Paperless to eStatements. If your
             alert status is displayed as &apos;Inactive&apos;, it means you have
             not agreed to the terms and conditions for eStatements. Once you
-            have accepted the terms and conditions, you alerts will be activated
+            have accepted the terms and conditions, your alerts will be activated
             and you will not see an &apos;Inactive&apos; alert status.
           </li>
           <li>
