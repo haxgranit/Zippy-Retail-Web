@@ -71,6 +71,7 @@ export const EditMobilePhoneContent = ({
       <Col>
         <button
           type="button"
+          id="cancel-btn-edit-mobile-phone"
           style={{
             backgroundColor: 'transparent',
             color: 'black',
@@ -86,6 +87,7 @@ export const EditMobilePhoneContent = ({
       <Col style={{ textAlign: 'end' }}>
         <button
           type="button"
+          id="next-btn-edit-mobile-phone"
           style={{
             borderRadius: '3px',
             padding: '5px 12px',

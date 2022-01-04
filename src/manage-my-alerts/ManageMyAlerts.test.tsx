@@ -16,13 +16,14 @@ import {
 
 describe('Manage Alert Component', () => {
   test('Render manage-my-alerts page', () => {
-    const { getByText } = render(<ManageMyAlerts />);
-    expect(getByText('MANAGE MY ALERTS')).toBeInTheDocument();
+    const { container } = render(<ManageMyAlerts />);
+    expect(container).toMatchSnapshot();
   });
   test('Click Edit Home Phone button  ', () => {
     jest.spyOn(React, 'useState');
 
     const { container } = render(<ManageMyAlerts />);
+    expect(container.querySelectorAll('.btn-link')).toHaveLength(4);
     fireEvent.click(container.querySelectorAll('.btn-link')[2]);
     fireEvent.click(container.querySelectorAll('.btn-link')[0]);
     fireEvent.click(container.querySelectorAll('.btn-link')[3]);
@@ -50,6 +51,7 @@ describe('Manage Alert Component', () => {
       />,
     );
     const buttons = container.querySelectorAll('button');
+    expect(buttons).toHaveLength(2);
     fireEvent.click(buttons[0]);
     fireEvent.click(buttons[1]);
   });
@@ -74,6 +76,7 @@ describe('Manage Alert Component', () => {
       />,
     );
     const buttons = container.querySelectorAll('button');
+    expect(buttons).toHaveLength(2);
     fireEvent.click(buttons[0]);
     fireEvent.click(buttons[1]);
   });
@@ -98,6 +101,7 @@ describe('Manage Alert Component', () => {
       />,
     );
     const buttons = container.querySelectorAll('button');
+    expect(buttons).toHaveLength(2);
     fireEvent.click(buttons[0]);
     fireEvent.click(buttons[1]);
   });
@@ -122,6 +126,7 @@ describe('Manage Alert Component', () => {
       />,
     );
     const buttons = container.querySelectorAll('button');
+    expect(buttons).toHaveLength(2);
     fireEvent.click(buttons[0]);
     fireEvent.click(buttons[1]);
   });

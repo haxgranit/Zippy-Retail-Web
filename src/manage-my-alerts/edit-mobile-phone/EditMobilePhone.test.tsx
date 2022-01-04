@@ -5,21 +5,21 @@ describe('EditMobilePhone Component', () => {
   it('Click cancel button on EditMobilePhone', () => {
     const handleCancel = jest.fn();
     const handleNext = jest.fn();
-    const { getByText } = render(
+    const { container } = render(
       <EditMobilePhoneContent handleNext={handleNext} handleCancel={handleCancel} />,
     );
     const mEvent = { preventDefault: jest.fn() };
-    fireEvent.click(getByText('Cancel'), mEvent);
+    fireEvent.click(container.querySelectorAll('#cancel-btn-edit-mobile-phone')[0], mEvent);
     expect(handleCancel).toBeCalledTimes(1);
   });
   it('Click save button on EditMobilePhone', () => {
     const handleClose = jest.fn();
     const handleNext = jest.fn();
-    const { getByText } = render(
+    const { container } = render(
       <EditMobilePhoneContent handleNext={handleNext} handleCancel={handleClose} />,
     );
     const mEvent = { preventDefault: jest.fn() };
-    fireEvent.click(getByText('Next'), mEvent);
+    fireEvent.click(container.querySelectorAll('#next-btn-edit-mobile-phone')[0], mEvent);
     expect(handleNext).toBeCalledTimes(1);
   });
 });

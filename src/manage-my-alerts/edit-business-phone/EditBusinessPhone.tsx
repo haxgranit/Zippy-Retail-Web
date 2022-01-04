@@ -80,6 +80,7 @@ export const EditBusinessPhoneContent = ({
       <Col>
         <button
           type="button"
+          id="cancel-btn-edit-business-phone"
           style={{
             backgroundColor: 'transparent',
             color: 'black',
@@ -95,6 +96,7 @@ export const EditBusinessPhoneContent = ({
       <Col style={{ textAlign: 'end' }}>
         <button
           type="button"
+          id="save-btn-edit-business-phone"
           style={{
             borderRadius: '3px',
             padding: '5px 12px',

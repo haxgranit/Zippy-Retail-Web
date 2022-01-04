@@ -18,7 +18,7 @@ export const EditEmailAccountContent = ({
         this is your email address on file with ZippyX.
       </p>
       <span>
-        Communication for ebills, alerts. interec e-Transfer messages and
+        Communication for ebills, alerts. interac e-Transfer messages and
         promotional materials will be sent to you at this email address.
       </span>
       <Row
@@ -104,6 +104,7 @@ export const EditEmailAccountContent = ({
       <Col>
         <button
           type="button"
+          id="cancel-btn-edit-email-account"
           style={{
             backgroundColor: 'transparent',
             color: 'black',
@@ -119,6 +120,7 @@ export const EditEmailAccountContent = ({
       <Col style={{ textAlign: 'end' }}>
         <button
           type="button"
+          id="save-btn-edit-email-account"
           style={{
             borderRadius: '3px',
             padding: '5px 12px',

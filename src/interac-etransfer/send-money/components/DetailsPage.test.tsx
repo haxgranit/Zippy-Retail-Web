@@ -50,10 +50,8 @@ beforeEach(cleanup);
 
 describe('DetailsPage Component', () => {
   it('should render SecurityQuestionPage', () => {
-    render(component);
-    expect(
-      screen.getByText('Your Interac e-Transfer Details'),
-    ).toBeInTheDocument();
+    const { container } = render(component);
+    expect(container).toMatchSnapshot();
   });
 
   it('Click next button on DetailsPage', () => {
@@ -134,12 +132,12 @@ describe('DetailsPage Component', () => {
     );
 
     render(wrapper);
-    expect(screen.getByText('Email: No email')).toBeInTheDocument();
+    expect(wrapper).toMatchSnapshot();
   });
 
   it('getEmail with contacts should render an email', () => {
     render(component);
-    expect(screen.getByText('Email: email@zippy.cash')).toBeInTheDocument();
+    expect(component).toMatchSnapshot();
   });
 
   it('should not call setCurrentStep when no contact selected', () => {
