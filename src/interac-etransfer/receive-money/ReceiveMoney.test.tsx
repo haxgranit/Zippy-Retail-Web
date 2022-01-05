@@ -11,8 +11,8 @@ jest.mock('react-router-dom', () => ({
 
 describe('ReceiveMoney Component', () => {
   it('should render ReceiveMoney', () => {
-    const { getByText } = render(<ReceiveMoney />);
-    expect(getByText('RECEIVE MONEY')).toBeInTheDocument();
+    const { container } = render(<ReceiveMoney />);
+    expect(container).toMatchSnapshot();
   });
 
   it('should navigate when click buttons', () => {

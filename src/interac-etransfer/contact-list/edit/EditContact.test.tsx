@@ -21,10 +21,10 @@ jest.mock('react-router-dom', () => ({
 
 describe('EditContact Component', () => {
   test('should render title', () => {
-    const { getByText } = render(<EditContact />);
+    const { container } = render(<EditContact />);
     const setShow = jest.fn();
     React.useState = jest.fn().mockImplementationOnce((x) => [x, setShow]);
 
-    expect(getByText('EDIT CONTACT')).toBeInTheDocument();
+    expect(container).toMatchSnapshot();
   });
 });

@@ -173,6 +173,7 @@ Array [
       >
         <input
           className="form-control"
+          onChange={[Function]}
           style={
             Object {
               "display": "inline-block",
@@ -290,6 +291,7 @@ Array [
       >
         <input
           className="form-control"
+          onChange={[Function]}
           style={
             Object {
               "marginLeft": 10,
@@ -484,7 +486,7 @@ Array [
             Note:
           </span>
         </div>
-        <p>
+        <div>
           <span>
             Your use of Interac e-Transfer is subject to the 
           </span>
@@ -512,7 +514,7 @@ Array [
               </span>
             </div>
           </div>
-        </p>
+        </div>
       </div>
     </div>
   </div>,

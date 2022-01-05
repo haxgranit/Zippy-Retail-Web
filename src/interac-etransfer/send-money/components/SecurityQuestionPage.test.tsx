@@ -37,7 +37,7 @@ describe('Security Question Page Component', () => {
         mainInfo={MAIN_INFO}
       />,
     );
-    fireEvent.click(container.querySelectorAll('.btn-danger')[0]);
+    fireEvent.click(container.querySelectorAll('.zippy-btn')[0]);
     expect(mockNavigateSteps).toBeCalledTimes(1);
   });
 
