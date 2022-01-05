@@ -1,55 +1,24 @@
 import { Form } from 'react-bootstrap';
-
-const MONTH_NAMES = [
-  'January',
-  'February',
-  'March',
-  'April',
-  'May',
-  'June',
-  'July',
-  'August',
-  'September',
-  'October',
-  'November',
-  'December',
-];
+import { DateTime } from 'luxon';
 
 const getDateAry = () => {
-  const dateVal = new Date();
-  const year = dateVal.getFullYear();
-  const prevYear = year * 1 - 1;
-  const currMonth = dateVal.getMonth();
-  const result: any = [
-    {
-      label: year,
-      items: [],
-    },
-    {
-      label: prevYear,
-      items: [],
-    },
-  ];
-
+  const result: any = [];
+  let prevYearValue = '';
   for (let i = 0; i < 12; i += 1) {
-    let dateStr = '';
-    if (currMonth - i < 0) {
-      dateStr = `${MONTH_NAMES[currMonth - i]} ${prevYear}`;
-      const item = {
-        value: dateStr,
-        currMonth,
-        currYear: year,
-      };
-      result[0].items.push(item);
-    } else {
-      dateStr = `${MONTH_NAMES[currMonth - i]} ${year}`;
-      const item = {
-        value: dateStr,
-        currMonth,
-        currYear: year,
-      };
-      result[1].items.push(item);
+    const calculatedDate = DateTime.now().minus({ months: i });
+    const dateStr = calculatedDate.toFormat('MMMM yyyy');
+    const yearValue = calculatedDate.toFormat('yyyy');
+    if (prevYearValue !== yearValue) {
+      result.push({
+        label: yearValue,
+        items: [],
+      });
+      prevYearValue = yearValue;
     }
+    const item = {
+      value: dateStr,
+    };
+    result[result.length - 1].items.push(item);
   }
   return result;
 };
