@@ -29,7 +29,7 @@ describe('EditContact Component', () => {
     const setShow = jest.fn();
     React.useState = jest.fn().mockImplementationOnce((x) => [x, setShow]);
     const wrapper = shallow(<EditContact />);
-    const header = wrapper.find('CommonHeader');
+    const header = wrapper.find('CommonPageContainer');
     expect(header).toHaveLength(1);
   });
 

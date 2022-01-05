@@ -1,6 +1,6 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import '../i18n/config';
-import '../index.css';
+import '../styles/index.scss';
 import CommonHeader from './CommonHeader';
 
 export default {
@@ -8,7 +8,7 @@ export default {
   component: CommonHeader,
 } as ComponentMeta<typeof CommonHeader>;
 
-const Template: ComponentStory<typeof CommonHeader> = () => <CommonHeader title="Test Title" print />;
+const Template: ComponentStory<typeof CommonHeader> = () => <CommonHeader title="Test Title" />;
 
 export const Default = Template.bind({});
 Default.args = {};

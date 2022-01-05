@@ -38,7 +38,7 @@ const AlertsSection = () => (
     </Row>
     <Row>
       <Col>
-        <Alert variant="danger" className="mb-0 rounded-0 text-dark py-2 px-5">
+        <Alert variant="danger" className="zippy-btn mb-0 rounded-0 text-dark py-2 px-5">
           <i />
           We are sorry. You do not have a credit card that allows you to complete this request
         </Alert>
@@ -46,7 +46,7 @@ const AlertsSection = () => (
     </Row>
     <Row>
       <Col>
-        <Alert className="mb-0 rounded-0 text-dark py-0 px-5">
+        <Alert variant="danger" className="mb-0 rounded-0 text-dark py-0 px-5">
           <Stack direction="horizontal" gap={2}>
             <div>
               <i />

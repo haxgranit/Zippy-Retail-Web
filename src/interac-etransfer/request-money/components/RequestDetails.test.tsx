@@ -4,7 +4,7 @@ import { BrowserRouter } from 'react-router-dom';
 import { formatContactName } from '../../../Helpers';
 import ACCOUNTS from '../../../stories/Accounts';
 import CONTACTS from '../../../stories/Contacts';
-import { RequestDetails } from './RequestDetails';
+import RequestDetails from './RequestDetails';
 import { RequestMainDetails } from '../RequestMoney';
 
 const mockSetCurrentStep = jest.fn();
@@ -40,8 +40,8 @@ const component = (
 const componentWithoutData = (
   <BrowserRouter>
     <RequestDetails
-      accounts={null}
-      contacts={null}
+      accounts={[]}
+      contacts={[]}
       setCurrentStep={mockSetCurrentStep}
       mainInfo={mainInfo}
       selectedAccount={0}

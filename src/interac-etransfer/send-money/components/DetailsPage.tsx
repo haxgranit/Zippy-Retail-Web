@@ -6,7 +6,7 @@ import {
   FormControl,
   Button,
 } from 'react-bootstrap';
-import { Account, Contact } from '../../../api';
+import { Account, Contact, User } from '../../../api';
 import { TransferMainDetails, PageIds } from '../SendMoney';
 import { formatContactName } from '../../../Helpers';
 
@@ -23,6 +23,7 @@ interface DetailsPageProps {
   validateInputs: any;
   setCurrentStep: any;
   navigateSteps: any;
+  user: User | undefined;
 }
 const DetailsPage = ({
   selectedContact = 0,
@@ -37,7 +38,11 @@ const DetailsPage = ({
   validateInputs,
   setCurrentStep,
   navigateSteps,
+  user,
 }: DetailsPageProps): JSX.Element => {
+  const getUserFullName = () => (user && user.firstName && user.lastName ? `${user.firstName} ${user.lastName}` : '');
+  const getUserEmail = () => (user && user?.email);
+
   const handleContactChange = (evt: any) => {
     setContactToSend(Number(evt.target.value));
   };
@@ -123,7 +128,6 @@ const DetailsPage = ({
           </p>
         </Col>
       </Row>
-      <hr style={{ height: '1px', width: '100%' }} />
       <Row className="mt-2">
         <Col md={4}>
           <Form.Label>Amount:</Form.Label>
@@ -140,7 +144,6 @@ const DetailsPage = ({
           </Form.Label>
         </Col>
       </Row>
-      <hr style={{ height: '1px', width: '100%' }} />
       <Row className="mt-2">
         <Col md={4}>
           <Form.Label>From Account:</Form.Label>
@@ -160,7 +163,6 @@ const DetailsPage = ({
           </Form.Select>
         </Col>
       </Row>
-      <hr style={{ height: '1px', width: '100%' }} />
       <Row className="mt-2">
         <Col md={4}>
           <Form.Label>Transfer Method:</Form.Label>
@@ -175,7 +177,6 @@ const DetailsPage = ({
           </Form.Select>
         </Col>
       </Row>
-      <hr style={{ height: '1px', width: '100%' }} />
       <Row className="mt-2">
         <Col md={4}>
           <Form.Label>Message (Optional):</Form.Label>
@@ -208,22 +209,20 @@ const DetailsPage = ({
           </p>
         </Col>
       </Row>
-      <hr style={{ height: '1px', width: '100%' }} />
       <Row className="mt-2">
         <Col md={4}>
           <Form.Label>Your Email Nickname:</Form.Label>
         </Col>
         <Col md={8}>
-          <Form.Label>DUANE TOUGH</Form.Label>
+          <Form.Label>{getUserFullName()}</Form.Label>
         </Col>
       </Row>
-      <hr style={{ height: '1px', width: '100%' }} />
       <Row className="mt-2">
         <Col md={4}>
           <Form.Label>Your Email Address:</Form.Label>
         </Col>
         <Col md={8}>
-          <Form.Label>dtough@hotmail.com</Form.Label>
+          <Form.Label>{getUserEmail()}</Form.Label>
         </Col>
       </Row>
       <hr style={{ height: '1px', width: '100%' }} />
@@ -246,8 +245,7 @@ const DetailsPage = ({
         </Col>
         <Col className="d-flex justify-content-end">
           <Button
-            variant="danger"
-            className="d-flex"
+            className="zippy-btn d-flex"
             onClick={handleNext}
           >
             Next

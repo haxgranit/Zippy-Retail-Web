@@ -25,6 +25,7 @@ const Template: ComponentStory<typeof DetailsPage> = ({
   validateInputs,
   setCurrentStep,
   navigateSteps,
+  user,
 }) => (
   <DetailsPage
     mainInfo={mainInfo}
@@ -39,6 +40,7 @@ const Template: ComponentStory<typeof DetailsPage> = ({
     validateInputs={validateInputs}
     setCurrentStep={setCurrentStep}
     navigateSteps={navigateSteps}
+    user={user}
   />
 );
 

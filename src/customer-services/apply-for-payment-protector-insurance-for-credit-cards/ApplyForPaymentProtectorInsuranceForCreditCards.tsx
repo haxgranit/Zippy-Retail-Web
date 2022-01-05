@@ -59,7 +59,7 @@ const AlertsSection = () => (
     </Row>
     <Row>
       <Col>
-        <Alert className="mb-0 rounded-0 text-dark py-2 px-5">
+        <Alert variant="danger" className="mb-0 rounded-0 text-dark py-2 px-5">
           <i />
           All fields are mandatory unless otherwise stated as optional.
         </Alert>

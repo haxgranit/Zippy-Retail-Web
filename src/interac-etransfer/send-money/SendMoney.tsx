@@ -1,8 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Alert, Col, Row } from 'react-bootstrap';
-import { useMsal } from '@azure/msal-react';
+import { useIsAuthenticated, useMsal } from '@azure/msal-react';
 import { useNavigate, useParams } from 'react-router-dom';
-import CommonHeader from '../../common/CommonHeader';
 import StepComponent from '../../common/StepComponent';
 import {
   DetailsPage,
@@ -13,9 +12,16 @@ import {
 import SendMoneyVerificationModal, {
   TransferDetails,
 } from '../dialogs/SendMoneyVerificationModal';
-import Api, { Account, InteracEtransferTransaction, Contact } from '../../api';
+import Api, {
+  Account,
+  InteracEtransferTransaction,
+  Contact,
+} from '../../api';
 import { TransferInformation } from './components/TransferSentPage';
 import TRANSFER_INFORMATION from '../../stories/TransferInformation';
+import { useAppSelector } from '../../app/hooks';
+import { selectUser, UserState } from '../../features/user/userSlice';
+import CommonPageContainer from '../../common/CommonPageContainer';
 
 export const enum PageIds {
   DetailsPageId = 'details',
@@ -241,6 +247,20 @@ export default function SendMoney() {
     navigate(`/interac-etransfer/send-money/${nav_step}${transactionId ? `/${transactionId}` : ''}`);
   };
 
+  const isAuthenticated = useIsAuthenticated();
+  let user: any;
+  if (isAuthenticated) {
+    ({ user } = useAppSelector(selectUser));
+  } else {
+    ({ user } = {
+      user: {
+        firstName: null,
+        lastName: null,
+        email: null,
+      } as any,
+    } as unknown as UserState);
+  }
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [pageId]);
@@ -271,28 +291,28 @@ export default function SendMoney() {
         isSendingMoney={isProcessing}
         transferDetails={getTransferDetails()}
       />
-      <CommonHeader title="SEND MONEY" print={false} />
-      {errorMessage && (
-        <Alert variant="danger" className="rounded-0 text-dark py-2 my-2 px-5">
-          <i />
-          {errorMessage}
-        </Alert>
-      )}
-      <Row>
-        <Col md={8}>
-          <Row>
-            <Col>
-              <StepComponent
-                steps={3}
-                currentStep={currentStep}
-                setCurrentStep={setCurrentStep}
-                navigateSteps={(stepIndex: number) => {
-                  navigateSteps(MainSteps[stepIndex]);
-                }}
-              />
-            </Col>
-          </Row>
-          {pageId === PageIds.DetailsPageId && (
+      <CommonPageContainer title="Send Money">
+        {errorMessage && (
+          <Alert variant="danger" className="rounded-0 text-dark py-2 my-2 px-5">
+            <i />
+            {errorMessage}
+          </Alert>
+        )}
+        <Row>
+          <Col md={8}>
+            <Row>
+              <Col>
+                <StepComponent
+                  steps={3}
+                  currentStep={currentStep}
+                  setCurrentStep={setCurrentStep}
+                  navigateSteps={(stepIndex: number) => {
+                    navigateSteps(MainSteps[stepIndex]);
+                  }}
+                />
+              </Col>
+            </Row>
+            {pageId === PageIds.DetailsPageId && (
             <DetailsPage
               selectedContact={selectedContact}
               setContactToSend={setSelectedContact}
@@ -306,17 +326,18 @@ export default function SendMoney() {
               validateInputs={validateInputs}
               setCurrentStep={setCurrentStep}
               navigateSteps={navigateSteps}
+              user={user}
             />
-          )}
-          {(pageId === PageIds.SecurityRecipientPageId
+            )}
+            {(pageId === PageIds.SecurityRecipientPageId
             || (selectedContact === 1 && pageId === PageIds.SendMoneyVerifyPageId)) && (
               <SecurityRecipientPage
                 navigateSteps={navigateSteps}
                 setCurrentStep={setCurrentStep}
                 showModal={setShowVerifyModal}
               />
-          )}
-          {(pageId === PageIds.SecurityQuestionPageId
+            )}
+            {(pageId === PageIds.SecurityQuestionPageId
             || (selectedContact && selectedContact !== 1
               && pageId === PageIds.SendMoneyVerifyPageId)) && (
               <SecurityQuestionPage
@@ -327,58 +348,59 @@ export default function SendMoney() {
                 setMainInfo={setMainInfo}
                 setErrorMessage={setErrorMessage}
               />
-          )}
-          {(
-            pageId === PageIds.TransferSentPageId
+            )}
+            {(
+              pageId === PageIds.TransferSentPageId
             || pageId === PageIds.TransferSentCompletedId
-          ) && (
+            ) && (
             <TransferSentPage
               navigateSteps={navigateSteps}
               setCurrentStep={setCurrentStep}
               transferInformation={tempTransferInformation}
               isCompleted={pageId === PageIds.TransferSentCompletedId}
             />
-          )}
-          <hr style={{ height: '1px' }} />
-          <Row>
-            <i />
-            <h6 style={{ fontWeight: 'bold' }}>Note:</h6>
-            <p>Your use of lnterac e-Transfer® is subject to the </p>
-            <p>
+            )}
+            <hr style={{ height: '1px' }} />
+            <Row>
               <i />
-              lnterac e-Transferl Terms and conditions (PDF, 197 KB).
-            </p>
-          </Row>
-        </Col>
-        <Col md={4}>
-          <Row>
-            <div className="d-flex">
-              <div
-                style={{
-                  width: 20,
-                  height: 25,
-                  border: '1px dotted grey',
-                  textAlign: 'center',
-                  marginRight: 10,
-                }}
-              >
-                P
+              <h6 style={{ fontWeight: 'bold' }}>Note:</h6>
+              <p>Your use of lnterac e-Transfer® is subject to the </p>
+              <p>
+                <i />
+                lnterac e-Transferl Terms and conditions (PDF, 197 KB).
+              </p>
+            </Row>
+          </Col>
+          <Col md={4}>
+            <Row>
+              <div className="d-flex">
+                <div
+                  style={{
+                    width: 20,
+                    height: 25,
+                    border: '1px dotted grey',
+                    textAlign: 'center',
+                    marginRight: 10,
+                  }}
+                >
+                  P
+                </div>
+                <p>Online Security Guarantee</p>
               </div>
-              <p>Online Security Guarantee</p>
-            </div>
-          </Row>
-          <Row
-            style={{
-              border: 'solid #AAAAAA 1px',
-              justifyItems: 'space-between',
-              margin: '0px 0px 20px 0px',
-            }}
-          >
-            <h6 style={{ paddingTop: '10px' }}>You can also:</h6>
-            {quickLinks.map((q) => LinkElement(q))}
-          </Row>
-        </Col>
-      </Row>
+            </Row>
+            <Row
+              style={{
+                border: 'solid #AAAAAA 1px',
+                justifyItems: 'space-between',
+                margin: '0px 0px 20px 0px',
+              }}
+            >
+              <h6 style={{ paddingTop: '10px' }}>You can also:</h6>
+              {quickLinks.map((q) => LinkElement(q))}
+            </Row>
+          </Col>
+        </Row>
+      </CommonPageContainer>
     </div>
   );
 }
