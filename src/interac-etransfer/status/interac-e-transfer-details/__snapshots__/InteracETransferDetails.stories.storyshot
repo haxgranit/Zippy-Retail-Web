@@ -137,6 +137,15 @@ Array [
           label="2022"
         >
           <option
+            value="January 2022"
+          >
+            January 2022
+          </option>
+        </optgroup>
+        <optgroup
+          label="2021"
+        >
+          <option
             value="December 2021"
           >
             December 2021
@@ -190,15 +199,6 @@ Array [
             value="February 2021"
           >
             February 2021
-          </option>
-        </optgroup>
-        <optgroup
-          label="2021"
-        >
-          <option
-            value="January 2022"
-          >
-            January 2022
           </option>
         </optgroup>
       </select>
@@ -274,6 +274,15 @@ Array [
           label="2022"
         >
           <option
+            value="January 2022"
+          >
+            January 2022
+          </option>
+        </optgroup>
+        <optgroup
+          label="2021"
+        >
+          <option
             value="December 2021"
           >
             December 2021
@@ -327,15 +336,6 @@ Array [
             value="February 2021"
           >
             February 2021
-          </option>
-        </optgroup>
-        <optgroup
-          label="2021"
-        >
-          <option
-            value="January 2022"
-          >
-            January 2022
           </option>
         </optgroup>
       </select>
@@ -391,6 +391,15 @@ Array [
           label="2022"
         >
           <option
+            value="January 2022"
+          >
+            January 2022
+          </option>
+        </optgroup>
+        <optgroup
+          label="2021"
+        >
+          <option
             value="December 2021"
           >
             December 2021
@@ -444,15 +453,6 @@ Array [
             value="February 2021"
           >
             February 2021
-          </option>
-        </optgroup>
-        <optgroup
-          label="2021"
-        >
-          <option
-            value="January 2022"
-          >
-            January 2022
           </option>
         </optgroup>
       </select>
