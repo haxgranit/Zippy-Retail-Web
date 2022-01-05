@@ -1,17 +1,19 @@
+import { useEffect, useState } from 'react';
 import {
   Button,
   Col,
   Form,
   Row,
 } from 'react-bootstrap';
-import { User } from '../../api';
+import { useMsal } from '@azure/msal-react';
+import Api, { User, Account } from '../../api';
 import { useAppSelector } from '../../app/hooks';
 import { selectUser } from '../../features/user/userSlice';
 import CommonPageContainer from '../../common/CommonPageContainer';
 
 const Divider = () => <div className="border-top my-3" />;
 
-const LeftCol = ({ user }: { user: User }) => (
+const LeftCol = ({ user, accountList }: { user: User, accountList: Account[] }) => (
   <Col xs={9}>
     <Row>
       <Col>
@@ -29,8 +31,8 @@ const LeftCol = ({ user }: { user: User }) => (
     <Row className="align-items-center mt-4">
       <Col xs={3}>Choose contact method:</Col>
       <Col xs={6}>
-        <Form.Check type="radio" name="display" id="contact-email" label="Email" />
-        <Form.Check type="radio" name="display" id="contact-phone" label="Mobile phone number" />
+        <Form.Check type="radio" name="display" id="contact-email" label="Email" checked disabled />
+        <Form.Check type="radio" name="display" id="contact-phone" label="Mobile phone number" disabled />
       </Col>
     </Row>
     <Divider />
@@ -46,6 +48,11 @@ const LeftCol = ({ user }: { user: User }) => (
       <Col xs={6}>
         <Form.Select>
           <option>Select account</option>
+          {accountList?.map((account: Account) => (
+            <option key={account.id} value={account.id}>
+              {account.name}
+            </option>
+          ))}
         </Form.Select>
       </Col>
     </Row>
@@ -111,16 +118,28 @@ const RightCol = () => (
   </Col>
 );
 
-export const AutodepositSettingsPure = ({ user }: { user: User }) => (
-  <>
-    <CommonPageContainer title="Setup AutoDeposit">
-      <Row>
-        <LeftCol user={user} />
-        <RightCol />
-      </Row>
-    </CommonPageContainer>
-  </>
-);
+export const AutodepositSettingsPure = ({ user }: { user: User }) => {
+  const { instance, accounts } = useMsal();
+  const [accountList, setAccountList] = useState<Account[]>([]);
+
+  useEffect(() => {
+    new Api(instance, accounts[0])
+      .listAccounts()
+      .then((res) => {
+        setAccountList(res);
+      });
+  }, [accounts]);
+  return (
+    <>
+      <CommonPageContainer title="Setup AutoDeposit">
+        <Row>
+          <LeftCol user={user} accountList={accountList} />
+          <RightCol />
+        </Row>
+      </CommonPageContainer>
+    </>
+  );
+};
 
 export const AutodepositSettings = () => {
   const { user } = useAppSelector(selectUser);

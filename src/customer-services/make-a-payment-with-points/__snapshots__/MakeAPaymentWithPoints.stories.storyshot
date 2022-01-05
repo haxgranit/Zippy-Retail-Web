@@ -32,7 +32,7 @@ Array [
     <div
       className="d-flex justify-content-between"
     >
-      <p
+      <div
         className="d-flex"
         style={
           Object {
@@ -55,7 +55,7 @@ Array [
           P
         </div>
         You don't have an account that allows to complete this request
-      </p>
+      </div>
       <p>
         {
         Result #0328
@@ -71,7 +71,7 @@ Array [
       }
     }
   >
-    <p
+    <div
       style={
         Object {
           "fontSize": 14,
@@ -93,7 +93,7 @@ Array [
           All fields must be filled in unless labelled "Optional".
         </li>
       </ul>
-    </p>
+    </div>
   </div>,
   <div
     className="mt-3 row"

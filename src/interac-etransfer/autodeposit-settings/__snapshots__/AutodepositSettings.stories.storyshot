@@ -55,8 +55,9 @@ Array [
               className="form-check"
             >
               <input
+                checked={true}
                 className="form-check-input"
-                disabled={false}
+                disabled={true}
                 id="contact-email"
                 name="display"
                 type="radio"
@@ -74,7 +75,7 @@ Array [
             >
               <input
                 className="form-check-input"
-                disabled={false}
+                disabled={true}
                 id="contact-phone"
                 name="display"
                 type="radio"

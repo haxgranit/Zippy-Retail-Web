@@ -33,7 +33,7 @@ export default function MakeALoanPayment() {
       </div>
       <div style={{ padding: 10, backgroundColor: '#FAF0F3' }}>
         <div className="d-flex justify-content-between">
-          <p style={{ marginBottom: 0, fontSize: 14 }} className="d-flex">
+          <div style={{ marginBottom: 0, fontSize: 14 }} className="d-flex">
             <div
               style={{
                 width: 20,
@@ -46,7 +46,7 @@ export default function MakeALoanPayment() {
               P
             </div>
             You don&apos;t have an account that allows to complete this request
-          </p>
+          </div>
           <p>
             {'{'}
             Result #0328
@@ -55,7 +55,7 @@ export default function MakeALoanPayment() {
         </div>
       </div>
       <div style={{ padding: 10, backgroundColor: '#DEE9F7' }}>
-        <p style={{ marginBottom: 0, fontSize: 14 }} className="d-flex">
+        <div style={{ marginBottom: 0, fontSize: 14 }} className="d-flex">
           <div
             style={{
               width: 20,
@@ -71,7 +71,7 @@ export default function MakeALoanPayment() {
             <li>It may take up to 2 business days to process your request.</li>
             <li>All fields are required unless stated as optional.</li>
           </ul>
-        </p>
+        </div>
       </div>
       <Row className="mt-4">
         <Col md={12} className="bg-light p-3" style={{ fontWeight: 500 }}>
