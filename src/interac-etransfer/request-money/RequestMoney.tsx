@@ -30,16 +30,12 @@ const StepIndexes: any = {
   'request-sent': 2,
 };
 
-const Steps = ['request-details', 'request-sent'];
+const Steps = ['request-detail', 'request-sent'];
 
 export default function RequestMoney() {
   const { stepId } = useParams();
   const navigate = useNavigate();
   const [currentStep, setCurrentStep] = useState(StepIndexes[stepId || 'request-detail']);
-
-  const navigateStep = (stepIndex: number) => {
-    navigate(`/interac-etransfer/request-money/${Steps[stepIndex]}`);
-  };
 
   const [pageIndex, setPageIndex] = useState(1);
   const [isRequestingMoney, setIsRequestingMoney] = useState(false);
@@ -61,6 +57,13 @@ export default function RequestMoney() {
   const [accountsList, setAccountsList] = useState<Account[] | null>([]);
   const [contactList, setContactList] = useState<Contact[] | null>([]);
   const { instance, accounts } = useMsal();
+
+  const navigateStep = (stepIndex: number) => {
+    if (!selectedContact || !selectedAccount || !mainInfo.amount) {
+      return;
+    }
+    navigate(`/interac-etransfer/request-money/${Steps[stepIndex]}`);
+  };
 
   const getTransferDetails = (): TransferDetails => {
     const sourceAccount: Account = accountsList!.find(
@@ -90,6 +93,7 @@ export default function RequestMoney() {
   const handleRequestMoneyVerificationBack = () => {
     setPageIndex(1);
     setCurrentStep(1);
+    navigateStep(0);
     setShowVerifyModal(false);
   };
 
@@ -122,6 +126,21 @@ export default function RequestMoney() {
   }, [pageIndex]);
 
   useEffect(() => {
+    if (stepId === 'request-detail') {
+      setMainInfo({
+        amount: 0,
+        message: '',
+        invoiceNumber: 0,
+        notifyByEmail: false,
+        notifyTextMessage: false,
+        agreed: false,
+      });
+      setSelectedContact(0);
+      setSelectedAccount(0);
+    }
+  }, [stepId]);
+
+  useEffect(() => {
     if (errorMessage) window.scrollTo(0, 0);
   }, [errorMessage]);
 
@@ -137,6 +156,8 @@ export default function RequestMoney() {
       .then(() => {
         setErrorMessage(null);
         setCurrentStep(2);
+        navigateStep(1);
+        setShowVerifyModal(false);
       })
       .catch(() => setErrorMessage('Transfer failed.'))
       .finally(() => {
@@ -169,15 +190,18 @@ export default function RequestMoney() {
                 <StepComponent
                   steps={2}
                   currentStep={currentStep}
-                  setCurrentStep={setCurrentStep}
-                  navigateSteps={setPageIndex}
+                  setCurrentStep={(stepIndex: number) => {
+                    if (!selectedContact || !selectedAccount || !mainInfo.amount) {
+                      return;
+                    }
+                    setCurrentStep(stepIndex);
+                  }}
+                  navigateSteps={navigateStep}
                 />
               </Col>
             </Row>
             {currentStep === 1 && (
             <RequestDetails
-              navigateStep={navigateStep}
-              setCurrentStep={setCurrentStep}
               selectedContact={selectedContact}
               setContactToSend={setSelectedContact}
               selectedAccount={selectedAccount}

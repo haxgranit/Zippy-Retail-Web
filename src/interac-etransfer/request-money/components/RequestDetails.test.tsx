@@ -8,7 +8,6 @@ import RequestDetails from './RequestDetails';
 import { RequestMainDetails } from '../RequestMoney';
 
 const mockSetCurrentStep = jest.fn();
-const mockNavigateStep = jest.fn();
 
 const mainInfo = {
   amount: 0,
@@ -24,8 +23,6 @@ const component = (
     <RequestDetails
       accounts={ACCOUNTS}
       contacts={CONTACTS}
-      setCurrentStep={mockSetCurrentStep}
-      navigateStep={mockNavigateStep}
       mainInfo={mainInfo}
       selectedAccount={0}
       selectedContact={0}
@@ -42,8 +39,6 @@ const componentWithoutData = (
     <RequestDetails
       accounts={[]}
       contacts={[]}
-      setCurrentStep={mockSetCurrentStep}
-      navigateStep={mockNavigateStep}
       mainInfo={mainInfo}
       selectedAccount={0}
       selectedContact={0}

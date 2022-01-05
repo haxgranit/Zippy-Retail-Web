@@ -33,7 +33,6 @@ const StyledLink = styled(Link)`
 const Divider = () => <div className="border-top my-3" />;
 
 interface RequestDetailProps {
-  setCurrentStep: Dispatch<SetStateAction<number>>;
   setContactToSend: Dispatch<SetStateAction<number>>;
   setMainInfo: Dispatch<SetStateAction<RequestMainDetails>>;
   setSelectedAccount: Dispatch<SetStateAction<number>>;
@@ -42,7 +41,6 @@ interface RequestDetailProps {
   selectedContact: number;
   mainInfo: RequestMainDetails;
   accounts: Account[];
-  navigateStep: Dispatch<number>;
   contacts: Contact[];
   showModal: any,
 }
@@ -285,7 +283,6 @@ export const RequestDetailsPure = ({
 );
 
 export default function RequestDetails({
-  setCurrentStep,
   selectedContact,
   setContactToSend,
   mainInfo,
@@ -296,7 +293,6 @@ export default function RequestDetails({
   setSelectedAccount,
   setErrorMessage,
   showModal,
-  navigateStep,
 }: RequestDetailProps): JSX.Element {
   const isAuthenticated = useIsAuthenticated();
   let user: any;
@@ -349,8 +345,6 @@ export default function RequestDetails({
       setErrorMessage(validationMessage);
       return;
     }
-    setCurrentStep(2);
-    navigateStep(1);
     showModal(true);
   };
 
