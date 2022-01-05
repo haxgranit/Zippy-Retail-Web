@@ -4,6 +4,7 @@ import {
   Form,
   Row,
 } from 'react-bootstrap';
+import CommonPageContainer from '../../common/CommonPageContainer';
 
 const Divider = () => <div className="border-top my-3" />;
 
@@ -139,16 +140,13 @@ const RightCol = () => (
 
 export default function TransferFunds() {
   return (
-    <div>
-      <Row>
-        <Col>
-          <h2>TRANSFERS</h2>
-        </Col>
-      </Row>
-      <Row>
-        <LeftCol />
-        <RightCol />
-      </Row>
-    </div>
+    <>
+      <CommonPageContainer title="Transfers">
+        <Row>
+          <LeftCol />
+          <RightCol />
+        </Row>
+      </CommonPageContainer>
+    </>
   );
 }

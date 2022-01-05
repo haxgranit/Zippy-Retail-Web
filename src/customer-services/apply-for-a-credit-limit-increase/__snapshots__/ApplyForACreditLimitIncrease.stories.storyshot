@@ -50,7 +50,7 @@ exports[`Storyshots customer-services/apply-for-a-credit-limit-increase/ApplyFor
             className="col"
           >
             <div
-              className="fade mb-0 rounded-0 text-dark py-2 px-5 alert alert-danger show"
+              className="fade zippy-btn mb-0 rounded-0 text-dark py-2 px-5 alert alert-danger show"
               role="alert"
             >
               <i />
@@ -65,7 +65,7 @@ exports[`Storyshots customer-services/apply-for-a-credit-limit-increase/ApplyFor
             className="col"
           >
             <div
-              className="fade mb-0 rounded-0 text-dark py-0 px-5 alert alert-primary show"
+              className="fade mb-0 rounded-0 text-dark py-0 px-5 alert alert-danger show"
               role="alert"
             >
               <div

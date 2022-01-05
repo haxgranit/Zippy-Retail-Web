@@ -16,6 +16,7 @@ jest.mock('react-i18next', () => ({
 const component = (
   <BrowserRouter>
     <HeaderPure
+      userFullName=""
       isAuthenticated
       isInProgress={false}
       handleLogin={() => {}}
