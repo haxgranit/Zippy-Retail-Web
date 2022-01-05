@@ -44,7 +44,7 @@ const SecurityRecipientPage = ({
         </Button>
         <Button
           variant="danger"
-          className="d-flex"
+          className="zippy-btn d-flex"
           onClick={() => {
             navigateSteps('send-money-verify');
             showModal(true);

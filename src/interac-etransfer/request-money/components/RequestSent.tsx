@@ -3,28 +3,23 @@ import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 import { Account, Contact } from '../../../api';
 
+const getSelectedById = (id: number, obj:any) => id && obj?.find((el:any) => el.id === id);
 const Divider = () => <div className="border-top my-3" />;
 
-export default function RequestSent({
-  accounts,
-  contacts,
-  selectedAccount,
-  selectedContact,
+export const RequestSentPure = ({
+  account,
+  contact,
   mainInfo,
   setCurrentStep,
   navigateStep,
-}: any) {
+}: {
+  account: Account,
+  contact: Contact,
+  mainInfo: any,
+  setCurrentStep: any,
+  navigateStep: any,
+}) => {
   const navigate = useNavigate();
-  const getSelectedAccount = (id: number):Account => {
-    const value = id && accounts ? accounts?.find((el: Account) => el.id === id) : null;
-    return value;
-  };
-  const getSelectedContact = (id: number):Contact => {
-    const value = id && contacts ? contacts?.find((el: Contact) => el.id === id) : null;
-    return value;
-  };
-  const [account] = useState<Account | null>(getSelectedAccount(selectedAccount));
-  const [contact] = useState<Contact | null>(getSelectedContact(selectedContact));
 
   return (
     <>
@@ -102,7 +97,7 @@ export default function RequestSent({
           </Button>
           <Button
             variant="danger"
-            className="d-flex"
+            className="zippy-btn"
             onClick={() => {
               setCurrentStep(1);
               navigateStep(0);
@@ -113,5 +108,28 @@ export default function RequestSent({
         </Col>
       </Row>
     </>
+  );
+};
+
+export default function RequestSent({
+  accounts,
+  contacts,
+  selectedAccount,
+  selectedContact,
+  mainInfo,
+  setCurrentStep,
+  navigateStep,
+}: any): JSX.Element {
+  const [account] = useState<Account>(getSelectedById(selectedAccount, accounts));
+  const [contact] = useState<Contact>(getSelectedById(selectedContact, contacts));
+
+  return (
+    <RequestSentPure
+      account={account}
+      contact={contact}
+      mainInfo={mainInfo}
+      setCurrentStep={setCurrentStep}
+      navigateStep={navigateStep}
+    />
   );
 }

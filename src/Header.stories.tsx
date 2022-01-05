@@ -2,7 +2,7 @@ import { BrowserRouter } from 'react-router-dom';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { HeaderPure } from './Header';
 import './i18n/config';
-import './index.css';
+import './styles/index.scss';
 
 export default {
   title: 'Header',
@@ -10,6 +10,7 @@ export default {
 } as ComponentMeta<typeof HeaderPure>;
 
 const Template: ComponentStory<typeof HeaderPure> = ({
+  userFullName,
   isAuthenticated,
   isInProgress: canLogin,
   handleLogin,
@@ -21,6 +22,7 @@ const Template: ComponentStory<typeof HeaderPure> = ({
       isInProgress={canLogin}
       handleLogin={handleLogin}
       handleLogout={handleLogout}
+      userFullName={userFullName}
     />
   </BrowserRouter>
 );

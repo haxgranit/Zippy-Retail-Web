@@ -25,6 +25,7 @@ const Template: ComponentStory<typeof DetailsPage> = ({
   setMainInfo,
   setErrorMessage,
   validateInputs,
+  user,
 }) => (
   <DetailsPage
     mainInfo={mainInfo}
@@ -39,6 +40,7 @@ const Template: ComponentStory<typeof DetailsPage> = ({
     setSelectedAccount={setSelectedAccount}
     setErrorMessage={setErrorMessage}
     validateInputs={validateInputs}
+    user={user}
   />
 );
 

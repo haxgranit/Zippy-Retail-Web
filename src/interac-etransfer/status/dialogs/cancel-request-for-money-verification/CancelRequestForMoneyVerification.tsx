@@ -55,7 +55,7 @@ const CancelRequestForMoneyVerification = ({
           <Button variant="outline-danger" onClick={handleBack}>
             Back
           </Button>
-          <Button variant="danger" onClick={handleCancelRequest}>
+          <Button className="zippy-btn" onClick={handleCancelRequest}>
             Cancel Request
           </Button>
         </Stack>
