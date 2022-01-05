@@ -7,10 +7,13 @@ import SecurityRecipientPage from './SecurityRecipientPage';
 Enzyme.configure({ adapter: new Adapter() });
 
 describe('Security Recipient Page Component', () => {
+  const showModal = jest.fn();
   it('Click next button on Security Recipient Page', () => {
-    const showModal = jest.fn();
     const wrapper = shallow(
-      <SecurityRecipientPage showModal={showModal} navigateSteps={jest.fn()} />,
+      <SecurityRecipientPage
+        showModal={showModal}
+        navigateSteps={jest.fn()}
+      />,
     );
     const mEvent = { preventDefault: jest.fn() };
     wrapper.find('Button[variant="danger"]').simulate('click', mEvent);
@@ -21,12 +24,13 @@ describe('Security Recipient Page Component', () => {
     const navigateSteps = jest.fn();
     const wrapper = shallow(
       <SecurityRecipientPage
+        showModal={showModal}
         navigateSteps={navigateSteps}
         setCurrentStep={jest.fn()}
       />,
     );
     const mEvent = { preventDefault: jest.fn() };
-    wrapper.find('Button[variant="outline-danger"]').simulate('click', mEvent);
+    wrapper.find('Button[variant="danger"]').simulate('click', mEvent);
     expect(navigateSteps).toBeCalledTimes(1);
   });
 });

@@ -183,9 +183,6 @@ exports[`DetailsPage Component should render SecurityQuestionPage 1`] = `
       </p>
     </div>
   </div>
-  <hr
-    style="height: 1px; width: 100%;"
-  />
   <div
     class="mt-2 row"
   >
@@ -214,9 +211,6 @@ exports[`DetailsPage Component should render SecurityQuestionPage 1`] = `
       </label>
     </div>
   </div>
-  <hr
-    style="height: 1px; width: 100%;"
-  />
   <div
     class="mt-2 row"
   >
@@ -246,9 +240,6 @@ exports[`DetailsPage Component should render SecurityQuestionPage 1`] = `
       </select>
     </div>
   </div>
-  <hr
-    style="height: 1px; width: 100%;"
-  />
   <div
     class="mt-2 row"
   >
@@ -273,9 +264,6 @@ exports[`DetailsPage Component should render SecurityQuestionPage 1`] = `
       </select>
     </div>
   </div>
-  <hr
-    style="height: 1px; width: 100%;"
-  />
   <div
     class="mt-2 row"
   >
@@ -323,9 +311,6 @@ exports[`DetailsPage Component should render SecurityQuestionPage 1`] = `
       </p>
     </div>
   </div>
-  <hr
-    style="height: 1px; width: 100%;"
-  />
   <div
     class="mt-2 row"
   >
@@ -343,14 +328,9 @@ exports[`DetailsPage Component should render SecurityQuestionPage 1`] = `
     >
       <label
         class="form-label"
-      >
-        DUANE TOUGH
-      </label>
+      />
     </div>
   </div>
-  <hr
-    style="height: 1px; width: 100%;"
-  />
   <div
     class="mt-2 row"
   >
@@ -368,9 +348,7 @@ exports[`DetailsPage Component should render SecurityQuestionPage 1`] = `
     >
       <label
         class="form-label"
-      >
-        dtough@hotmail.com
-      </label>
+      />
     </div>
   </div>
   <hr
@@ -398,7 +376,7 @@ exports[`DetailsPage Component should render SecurityQuestionPage 1`] = `
       class="d-flex justify-content-end col"
     >
       <button
-        class="d-flex btn btn-danger"
+        class="zippy-btn d-flex btn btn-primary"
         type="button"
       >
         Next

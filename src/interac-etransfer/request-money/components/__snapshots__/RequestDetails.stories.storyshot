@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots interac-etransfer/request-money/components/RequestDetails Default 1`] = `
-Array [
+<div>
   <div
     className="row"
   >
@@ -14,7 +14,7 @@ Array [
         Request Money Details
       </h4>
     </div>
-  </div>,
+  </div>
   <div
     className="align-items-center mt-4 row"
   >
@@ -38,10 +38,10 @@ Array [
         </option>
       </select>
     </div>
-  </div>,
+  </div>
   <div
     className="border-top my-3"
-  />,
+  />
   <div
     className="align-items-center row"
   >
@@ -59,10 +59,10 @@ Array [
         placeholder="$"
         step=".01"
         type="number"
-        value={3000}
+        value={0}
       />
     </div>
-  </div>,
+  </div>
   <div
     className="align-items-center mt-2 row"
   >
@@ -82,10 +82,10 @@ Array [
        
       e-Transfer. Confirm with your contact that they can send you the amount you're requesting.
     </div>
-  </div>,
+  </div>
   <div
     className="border-top my-3"
-  />,
+  />
   <div
     className="align-items-center row"
   >
@@ -100,13 +100,14 @@ Array [
       <select
         className="form-select"
         onChange={[Function]}
+        value={0}
       >
         <option>
           Select
         </option>
       </select>
     </div>
-  </div>,
+  </div>
   <div
     className="align-items-center mt-2 row"
   >
@@ -118,10 +119,10 @@ Array [
     >
       If your request is fulfilled, the money will be deposited automatically to your chosen account.
     </div>
-  </div>,
+  </div>
   <div
     className="border-top my-3"
-  />,
+  />
   <div
     className="align-items-center row"
   >
@@ -402,10 +403,10 @@ Array [
         </div>
       </div>
     </div>
-  </div>,
+  </div>
   <div
     className="border-top my-3"
-  />,
+  />
   <div
     className="align-items-center row"
   >
@@ -423,10 +424,10 @@ Array [
         type="number"
       />
     </div>
-  </div>,
+  </div>
   <div
     className="border-top my-3"
-  />,
+  />
   <div
     className="align-items-center row"
   >
@@ -443,10 +444,10 @@ Array [
         onChange={[Function]}
       />
     </div>
-  </div>,
+  </div>
   <div
     className="border-top my-3"
-  />,
+  />
   <div
     className="align-items-center row"
   >
@@ -470,7 +471,7 @@ Array [
       </a>
       .
     </div>
-  </div>,
+  </div>
   <div
     className="align-items-center mt-4 row"
   >
@@ -482,12 +483,12 @@ Array [
     <div
       className="col-6"
     >
-      DUANE TOUGH
+      
     </div>
-  </div>,
+  </div>
   <div
     className="border-top my-3"
-  />,
+  />
   <div
     className="align-items-center row"
   >
@@ -498,10 +499,8 @@ Array [
     </div>
     <div
       className="col-6"
-    >
-      dtough@hotmail.com
-    </div>
-  </div>,
+    />
+  </div>
   <div
     className="align-items-center mt-4 row"
   >
@@ -521,7 +520,7 @@ Array [
           className="form-check"
         >
           <input
-            checked={true}
+            checked={false}
             className="form-check-input"
             disabled={false}
             id="confirm"
@@ -538,7 +537,7 @@ Array [
         </div>
       </div>
     </div>
-  </div>,
+  </div>
   <div
     className="align-items-center mt-4 row"
   >
@@ -554,10 +553,10 @@ Array [
         .
       </b>
     </div>
-  </div>,
+  </div>
   <div
     className="border-top my-3"
-  />,
+  />
   <div
     className="row"
   >
@@ -565,7 +564,7 @@ Array [
       className="text-end col"
     >
       <button
-        className="btn btn-danger"
+        className="zippy-btn btn btn-primary"
         disabled={false}
         onClick={[Function]}
         type="button"
@@ -573,6 +572,6 @@ Array [
         Send Request
       </button>
     </div>
-  </div>,
-]
+  </div>
+</div>
 `;

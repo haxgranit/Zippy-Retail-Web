@@ -177,7 +177,7 @@ export default function MakeAPaymentWithPoints() {
             </Button>
           </Col>
           <Col className="d-flex justify-content-end">
-            <Button variant="danger" className="d-flex">
+            <Button className="zippy-btn d-flex">
               Next
             </Button>
           </Col>

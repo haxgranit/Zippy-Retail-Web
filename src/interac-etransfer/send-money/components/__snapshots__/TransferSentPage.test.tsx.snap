@@ -267,7 +267,7 @@ exports[`Transfer Sent Page Component should render TransferSentPage 1`] = `
         Check Status
       </button>
       <button
-        class="d-flex btn btn-danger"
+        class="zippy-btn d-flex btn btn-primary"
         type="button"
       >
         Send another transfer
@@ -571,7 +571,7 @@ exports[`Transfer Sent Page Component should render with the valid values 1`] = 
         Check Status
       </button>
       <button
-        class="d-flex btn btn-danger"
+        class="zippy-btn d-flex btn btn-primary"
         type="button"
       >
         Send another transfer

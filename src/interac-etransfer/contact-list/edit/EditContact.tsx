@@ -4,9 +4,9 @@ import {
 } from 'react-bootstrap';
 import { useLocation } from 'react-router-dom';
 import StepComponent from '../../../common/StepComponent';
-import CommonHeader from '../../../common/CommonHeader';
 import IdentityVerificationModal from './IdentityVerificationModal';
 import { formatContactName } from '../../../Helpers';
+import CommonPageContainer from '../../../common/CommonPageContainer';
 
 const Divider = () => <div className="border-top my-3" />;
 const HorizontalLine = () => (
@@ -72,17 +72,12 @@ const EditContact: React.FC = () => {
 
   return (
     <>
-      <div>
-        <IdentityVerificationModal
-          show={show}
-          handleClose={() => setShow(false)}
-          selectedContact={selectedContact}
-        />
-        <Row>
-          <Col>
-            <CommonHeader title="EDIT CONTACT" print={false} />
-          </Col>
-        </Row>
+      <IdentityVerificationModal
+        show={show}
+        handleClose={() => setShow(false)}
+        selectedContact={selectedContact}
+      />
+      <CommonPageContainer title="Edit Contact">
         <Row>
           <LeftCol currentStep={1} setCurrentStep={() => {}} />
           <RightCol />
@@ -204,7 +199,7 @@ const EditContact: React.FC = () => {
           </Col>
           <Col style={{ display: 'flex', justifyContent: 'flex-end' }}>
             <Button
-              className="btn btn-danger"
+              className="btn zippy-btn"
               onClick={() => setShow(true)}
               style={{ marginLeft: 15 }}
             >
@@ -252,7 +247,7 @@ const EditContact: React.FC = () => {
             </p>
           </div>
         </Row>
-      </div>
+      </CommonPageContainer>
     </>
   );
 };
