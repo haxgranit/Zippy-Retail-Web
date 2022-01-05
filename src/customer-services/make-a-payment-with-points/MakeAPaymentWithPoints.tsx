@@ -37,7 +37,7 @@ export default function MakeAPaymentWithPoints() {
       </div>
       <div style={{ padding: 10, backgroundColor: '#FAF0F3' }}>
         <div className="d-flex justify-content-between">
-          <p style={{ marginBottom: 0, fontSize: 14 }} className="d-flex">
+          <div style={{ marginBottom: 0, fontSize: 14 }} className="d-flex">
             <div
               style={{
                 width: 20,
@@ -50,7 +50,7 @@ export default function MakeAPaymentWithPoints() {
               P
             </div>
             You don&apos;t have an account that allows to complete this request
-          </p>
+          </div>
           <p>
             {'{'}
             Result #0328
@@ -59,7 +59,7 @@ export default function MakeAPaymentWithPoints() {
         </div>
       </div>
       <div style={{ backgroundColor: 'rgb(242 243 242)' }} className="mt-3 p-3">
-        <p style={{ marginBottom: 0, fontSize: 14 }}>
+        <div style={{ marginBottom: 0, fontSize: 14 }}>
           <h5>Being your request</h5>
           <ul>
             <li>
@@ -73,7 +73,7 @@ export default function MakeAPaymentWithPoints() {
               All fields must be filled in unless labelled &quot;Optional&quot;.
             </li>
           </ul>
-        </p>
+        </div>
       </div>
 
       <Row className="mt-3">
