@@ -1,5 +1,3 @@
-import { Link } from 'react-router-dom';
-
 export default function QuickLinks() {
   return (
     <div className="container">
@@ -10,16 +8,12 @@ export default function QuickLinks() {
         <div className="col-sm-2">
           <ul>
             <li>
-              <Link to="/">
-                Home
-              </Link>
+              <a href="/" onClick={(e) => e.preventDefault()} className="text-decoration-none">Home</a>
             </li>
             <li>
               Please Review Our Legal Stuff by visiting our
               {' '}
-              <Link to="/legal">
-                Privacy Policy | TOU | EULA | CardHolder T&amp;C Pages
-              </Link>
+              <a href="/legal" onClick={(e) => e.preventDefault()} className="text-decoration-none">Privacy Policy | TOU | EULA | CardHolder T&amp;C Pages</a>
             </li>
           </ul>
         </div>

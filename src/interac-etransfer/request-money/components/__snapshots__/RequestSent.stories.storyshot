@@ -35,9 +35,7 @@ Array [
     <div
       className="col-md-8"
     >
-      <p>
-        Kent Ulrich
-      </p>
+      <p />
       <p>
         kentu@shaw.ca
       </p>
@@ -59,9 +57,7 @@ Array [
     <div
       className="col-md-8"
     >
-      <p>
-        $10.00
-      </p>
+      <p />
     </div>
   </div>,
   <div
@@ -80,9 +76,7 @@ Array [
     <div
       className="col-md-8"
     >
-      <p>
-        Chequing (01802-81099639)
-      </p>
+      <p />
     </div>
   </div>,
   <div
@@ -150,7 +144,7 @@ Array [
         Check Status
       </button>
       <button
-        className="d-flex btn btn-danger"
+        className="zippy-btn btn btn-danger"
         disabled={false}
         onClick={[Function]}
         type="button"

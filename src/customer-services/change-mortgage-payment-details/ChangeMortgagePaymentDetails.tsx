@@ -37,7 +37,7 @@ const AlertsSection = () => (
     </Row>
     <Row>
       <Col>
-        <Alert className="mb-0 rounded-0 text-dark py-0 px-5">
+        <Alert variant="danger" className="mb-0 rounded-0 text-dark py-0 px-5">
           <Stack direction="horizontal" gap={2}>
 
             <div>

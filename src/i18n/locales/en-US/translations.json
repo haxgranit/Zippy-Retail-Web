@@ -1,7 +1,7 @@
 {
-  "header.language": "LANGUAGE",
-  "header.login": "LOGIN",
-  "header.logout": "LOGOUT",
+  "header.language": "language",
+  "header.login": "login",
+  "header.logout": "logout",
   "header.about": "about us",
   "header.personal": "personal",
   "header.business": "business",

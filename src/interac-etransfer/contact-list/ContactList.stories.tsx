@@ -1,7 +1,7 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { rest } from 'msw';
 import '../../i18n/config';
-import '../../index.css';
+import '../../styles/index.scss';
 import ContactList from './ContactList';
 import CONTACTS from './Contacts';
 

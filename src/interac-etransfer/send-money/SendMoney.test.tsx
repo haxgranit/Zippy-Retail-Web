@@ -4,6 +4,7 @@ import Enzyme, { mount, shallow } from 'enzyme';
 import Adapter from '@wojtekmaj/enzyme-adapter-react-17';
 import { Form, FormControl } from 'react-bootstrap';
 import SendMoney from './SendMoney';
+import { useAppSelector } from '../../app/hooks';
 
 // Configure enzyme for react 17
 Enzyme.configure({ adapter: new Adapter() });
@@ -94,10 +95,11 @@ describe('SendMoney Component', () => {
       .mockImplementationOnce(() => [false, setIsSendingMoney])
       .mockImplementationOnce(() => [null, setErrorMessage])
       .mockImplementationOnce(() => [0, setSelectedContact])
-      .mockImplementationOnce((x) => [x, setMainInfo]);
-    const ammount = mounted.find(FormControl);
+      .mockImplementationOnce((x) => [x, setMainInfo])
+      .mockImplementationOnce(() => [undefined, useAppSelector]);
+    const amount = mounted.find(FormControl);
     const selects = mounted.find(Form.Select);
-    expect(ammount.at(0).prop('value')).toEqual(0);
+    expect(amount.at(0).prop('value')).toEqual(0);
     expect(selects.at(0).text()).toEqual('Select');
     expect(selects.at(1).text()).toEqual('Select');
   });
