@@ -3,7 +3,6 @@ import { render, fireEvent } from '../../../test-utils';
 import SecurityRecipientPage from './SecurityRecipientPage';
 
 describe('Security Recipient Page Component', () => {
-  const showModal = jest.fn();
   it('Click next button on Security Recipient Page', () => {
     const showModal = jest.fn();
     const { container } = render(
