@@ -19,6 +19,8 @@ describe('Footer Component', () => {
     wrapper.find('.text-decoration-none').at(3).simulate('click', mEvent);
     wrapper.find('.text-decoration-none').at(4).simulate('click', mEvent);
     wrapper.find('.text-decoration-none').at(5).simulate('click', mEvent);
+    wrapper.find('.text-decoration-none').at(6).simulate('click', mEvent);
+    wrapper.find('.text-decoration-none').at(7).simulate('click', mEvent);
     expect(preventMethod).toHaveBeenCalledTimes(6);
   });
 });

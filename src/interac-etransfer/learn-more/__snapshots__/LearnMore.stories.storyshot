@@ -590,6 +590,16 @@ exports[`Storyshots interac-etransfer/learn-more/LearnMore Default 1`] = `
             >
               <a
                 className="text-decoration-none"
+                href="/personal-profile"
+              >
+                dev docs
+              </a>
+            </div>
+            <div
+              className="footer-link mt-1"
+            >
+              <a
+                className="text-decoration-none"
                 href="/"
                 onClick={[Function]}
               >
@@ -637,6 +647,16 @@ exports[`Storyshots interac-etransfer/learn-more/LearnMore Default 1`] = `
           <div
             className="d-flex flex-column me-2"
           >
+            <div
+              className="footer-link mt-1"
+            >
+              <a
+                className="text-decoration-none"
+                href="/personal-profile"
+              >
+                dev docs
+              </a>
+            </div>
             <div
               className="footer-link mb-1"
             >

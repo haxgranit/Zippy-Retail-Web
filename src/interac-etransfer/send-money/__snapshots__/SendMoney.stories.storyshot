@@ -646,6 +646,16 @@ exports[`Storyshots interac-etransfer/send-money/SendMoney API Error 1`] = `
             >
               <a
                 className="text-decoration-none"
+                href="/personal-profile"
+              >
+                dev docs
+              </a>
+            </div>
+            <div
+              className="footer-link mt-1"
+            >
+              <a
+                className="text-decoration-none"
                 href="/"
                 onClick={[Function]}
               >
@@ -693,6 +703,16 @@ exports[`Storyshots interac-etransfer/send-money/SendMoney API Error 1`] = `
           <div
             className="d-flex flex-column me-2"
           >
+            <div
+              className="footer-link mt-1"
+            >
+              <a
+                className="text-decoration-none"
+                href="/personal-profile"
+              >
+                dev docs
+              </a>
+            </div>
             <div
               className="footer-link mb-1"
             >
@@ -1391,6 +1411,16 @@ exports[`Storyshots interac-etransfer/send-money/SendMoney Default 1`] = `
             >
               <a
                 className="text-decoration-none"
+                href="/personal-profile"
+              >
+                dev docs
+              </a>
+            </div>
+            <div
+              className="footer-link mt-1"
+            >
+              <a
+                className="text-decoration-none"
                 href="/"
                 onClick={[Function]}
               >
@@ -1438,6 +1468,16 @@ exports[`Storyshots interac-etransfer/send-money/SendMoney Default 1`] = `
           <div
             className="d-flex flex-column me-2"
           >
+            <div
+              className="footer-link mt-1"
+            >
+              <a
+                className="text-decoration-none"
+                href="/personal-profile"
+              >
+                dev docs
+              </a>
+            </div>
             <div
               className="footer-link mb-1"
             >

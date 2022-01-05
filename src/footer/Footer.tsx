@@ -12,6 +12,7 @@ export default function Footer() {
           <div className="d-flex justify-content-between border-bottom" />
           <div className="d-flex justify-content-between border-top">
             <div className="">
+              <div className="footer-link mt-1"><a href="/personal-profile" className="text-decoration-none">dev docs</a></div>
               <div className="footer-link mt-1"><a href="/" onClick={(e) => e.preventDefault()} className="text-decoration-none">Lore</a></div>
               <div className="footer-link mt-1"><a href="/" onClick={(e) => e.preventDefault()} className="text-decoration-none">Ipsum</a></div>
               <div className="footer-link mt-1"><a href="/" onClick={(e) => e.preventDefault()} className="text-decoration-none">Nullam Atoidio</a></div>
@@ -25,6 +26,7 @@ export default function Footer() {
         <div className="d-block d-md-none">
           <div className="d-flex border-bottom">
             <div className="d-flex flex-column me-2">
+              <div className="footer-link mt-1"><a href="/personal-profile" className="text-decoration-none">dev docs</a></div>
               <div className="footer-link mb-1"><a href="/" onClick={(e) => e.preventDefault()} className="text-decoration-none">Lore</a></div>
               <div className="footer-link mb-1"><a href="/" onClick={(e) => e.preventDefault()} className="text-decoration-none">Ipsum</a></div>
               <div className="footer-link mb-1"><a href="/" onClick={(e) => e.preventDefault()} className="text-decoration-none">Nullam Atoidio</a></div>
