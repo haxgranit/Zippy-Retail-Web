@@ -179,8 +179,7 @@ const SecurityQuestionPage = ({
             Back
           </Button>
           <Button
-            variant="danger"
-            className="d-flex"
+            className="zippy-btn d-flex"
             onClick={handleNext}
           >
             Next
