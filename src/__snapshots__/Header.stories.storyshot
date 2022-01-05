@@ -2,10 +2,52 @@
 
 exports[`Storyshots Header Logged In 1`] = `
 <nav
-  className="navbar navbar-expand-lg navbar-light"
+  className="header-layout navbar navbar-expand-lg navbar-light"
 >
   <div
-    className="container"
+    className="left-side-header"
+  >
+    <a
+      className="navbar-brand"
+      href="/"
+      onClick={[Function]}
+    >
+      <img
+        alt=""
+        src="ZippyCash_Logo.svg"
+      />
+    </a>
+  </div>
+  <div
+    className="content"
+  >
+    <div
+      className="search-box"
+    >
+      <i
+        className="zippy-cash-icon zc-search"
+      />
+      <input
+        className="form-control"
+        onChange={[Function]}
+        placeholder="Search..."
+        type="input"
+      />
+      <select
+        className="form-select"
+        onChange={[Function]}
+        value="all"
+      >
+        <option
+          value="all"
+        >
+          All
+        </option>
+      </select>
+    </div>
+  </div>
+  <div
+    className="right-side-header"
   >
     <button
       aria-controls="navbarSupportedContent"
@@ -38,29 +80,23 @@ exports[`Storyshots Header Logged In 1`] = `
             role="button"
             tabIndex={0}
           >
-            <span
-              style={
-                Object {
-                  "color": "inherit",
-                  "fontWeight": 700,
-                }
-              }
-            >
-              LANGUAGE
-            </span>
+            language
           </a>
         </div>
-        <li
-          className="nav-item"
+        <div
+          className="nav-item dropdown"
         >
-          <button
-            className="btn btn-link nav-link fw-bold shadow-none"
+          <a
+            aria-expanded={false}
+            className="dropdown-toggle nav-link"
             onClick={[Function]}
-            type="button"
+            onKeyDown={[Function]}
+            role="button"
+            tabIndex={0}
           >
-            LOGOUT
-          </button>
-        </li>
+            login
+          </a>
+        </div>
       </ul>
     </div>
   </div>
@@ -69,10 +105,52 @@ exports[`Storyshots Header Logged In 1`] = `
 
 exports[`Storyshots Header Logged Out 1`] = `
 <nav
-  className="navbar navbar-expand-lg navbar-light"
+  className="header-layout navbar navbar-expand-lg navbar-light"
 >
   <div
-    className="container"
+    className="left-side-header"
+  >
+    <a
+      className="navbar-brand"
+      href="/"
+      onClick={[Function]}
+    >
+      <img
+        alt=""
+        src="ZippyCash_Logo.svg"
+      />
+    </a>
+  </div>
+  <div
+    className="content"
+  >
+    <div
+      className="search-box"
+    >
+      <i
+        className="zippy-cash-icon zc-search"
+      />
+      <input
+        className="form-control"
+        onChange={[Function]}
+        placeholder="Search..."
+        type="input"
+      />
+      <select
+        className="form-select"
+        onChange={[Function]}
+        value="all"
+      >
+        <option
+          value="all"
+        >
+          All
+        </option>
+      </select>
+    </div>
+  </div>
+  <div
+    className="right-side-header"
   >
     <button
       aria-controls="navbarSupportedContent"
@@ -105,29 +183,23 @@ exports[`Storyshots Header Logged Out 1`] = `
             role="button"
             tabIndex={0}
           >
-            <span
-              style={
-                Object {
-                  "color": "inherit",
-                  "fontWeight": 700,
-                }
-              }
-            >
-              LANGUAGE
-            </span>
+            language
           </a>
         </div>
-        <li
-          className="nav-item"
+        <div
+          className="nav-item dropdown"
         >
-          <button
-            className="btn btn-link nav-link fw-bold shadow-none"
+          <a
+            aria-expanded={false}
+            className="dropdown-toggle nav-link"
             onClick={[Function]}
-            type="button"
+            onKeyDown={[Function]}
+            role="button"
+            tabIndex={0}
           >
-            LOGIN
-          </button>
-        </li>
+            login
+          </a>
+        </div>
       </ul>
       <ul
         className="navbar-nav ms-auto mb-2 mb-lg-0"
@@ -176,10 +248,52 @@ exports[`Storyshots Header Logged Out 1`] = `
 
 exports[`Storyshots Header Logging In 1`] = `
 <nav
-  className="navbar navbar-expand-lg navbar-light"
+  className="header-layout navbar navbar-expand-lg navbar-light"
 >
   <div
-    className="container"
+    className="left-side-header"
+  >
+    <a
+      className="navbar-brand"
+      href="/"
+      onClick={[Function]}
+    >
+      <img
+        alt=""
+        src="ZippyCash_Logo.svg"
+      />
+    </a>
+  </div>
+  <div
+    className="content"
+  >
+    <div
+      className="search-box"
+    >
+      <i
+        className="zippy-cash-icon zc-search"
+      />
+      <input
+        className="form-control"
+        onChange={[Function]}
+        placeholder="Search..."
+        type="input"
+      />
+      <select
+        className="form-select"
+        onChange={[Function]}
+        value="all"
+      >
+        <option
+          value="all"
+        >
+          All
+        </option>
+      </select>
+    </div>
+  </div>
+  <div
+    className="right-side-header"
   >
     <button
       aria-controls="navbarSupportedContent"
@@ -212,16 +326,21 @@ exports[`Storyshots Header Logging In 1`] = `
             role="button"
             tabIndex={0}
           >
-            <span
-              style={
-                Object {
-                  "color": "inherit",
-                  "fontWeight": 700,
-                }
-              }
-            >
-              LANGUAGE
-            </span>
+            language
+          </a>
+        </div>
+        <div
+          className="nav-item dropdown"
+        >
+          <a
+            aria-expanded={false}
+            className="dropdown-toggle nav-link"
+            onClick={[Function]}
+            onKeyDown={[Function]}
+            role="button"
+            tabIndex={0}
+          >
+            login
           </a>
         </div>
       </ul>

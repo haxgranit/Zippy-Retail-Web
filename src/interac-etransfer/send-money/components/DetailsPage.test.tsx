@@ -43,6 +43,7 @@ const component = (
       },
     ]}
     validateInputs={jest.fn()}
+    user={undefined}
   />
 );
 
@@ -130,6 +131,7 @@ describe('DetailsPage Component', () => {
         ]}
         selectedContact={1}
         validateInputs={jest.fn()}
+        user={undefined}
       />
     );
 
@@ -171,6 +173,7 @@ describe('DetailsPage Component', () => {
           },
         ]}
         validateInputs={jest.fn()}
+        user={undefined}
       />
     );
 
@@ -207,6 +210,7 @@ describe('DetailsPage Component', () => {
           },
         ]}
         validateInputs={jest.fn()}
+        user={undefined}
       />
     );
 
@@ -243,6 +247,7 @@ describe('DetailsPage Component', () => {
           },
         ]}
         validateInputs={jest.fn()}
+        user={undefined}
       />
     );
 
@@ -279,6 +284,7 @@ describe('DetailsPage Component', () => {
           },
         ]}
         validateInputs={jest.fn()}
+        user={undefined}
       />
     );
 
@@ -315,6 +321,7 @@ describe('DetailsPage Component', () => {
           },
         ]}
         validateInputs={jest.fn()}
+        user={undefined}
       />
     );
 
