@@ -4,7 +4,7 @@ import StatementPreferences from './StatementPreferences';
 
 describe('StatementPreferences Component', () => {
   it('should render StatementPreferences Page', () => {
-    const { getByText } = render(<StatementPreferences />);
-    expect(getByText('STATEMENT PREFERENCES')).toBeInTheDocument();
+    const { container } = render(<StatementPreferences />);
+    expect(container).toMatchSnapshot();
   });
 });

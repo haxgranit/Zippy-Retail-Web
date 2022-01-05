@@ -4,7 +4,7 @@ import MyAccounts from './MyAccounts';
 
 describe('MyAccounts Component', () => {
   it('should render MyAccounts Page', () => {
-    const { getByText } = render(<MyAccounts />);
-    expect(getByText('Online Security Guarantee')).toBeInTheDocument();
+    const { container } = render(<MyAccounts />);
+    expect(container).toMatchSnapshot();
   });
 });
