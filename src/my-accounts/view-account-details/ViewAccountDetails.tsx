@@ -5,13 +5,12 @@ import DropdownButton from 'react-bootstrap/DropdownButton';
 import Table from 'react-bootstrap/Table';
 import Form from 'react-bootstrap/Form';
 import transactions from './transactions';
-import CommonHeader from '../../common/CommonHeader';
+import CommonPageContainer from '../../common/CommonPageContainer';
 
 export default function ViewAccountDetails() {
   return (
     <div>
-      <CommonHeader title="Deposit Account Details" />
-      <div className="content-wrapper">
+      <CommonPageContainer title="Deposit Account Details">
         <p>
           Receive notifications when
           {' '}
@@ -184,7 +183,7 @@ export default function ViewAccountDetails() {
             </p>
           </div>
         </div>
-      </div>
+      </CommonPageContainer>
     </div>
   );
 }

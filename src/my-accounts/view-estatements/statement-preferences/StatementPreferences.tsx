@@ -1,5 +1,5 @@
 import { Row, Table } from 'react-bootstrap';
-import CommonHeader from '../../../common/CommonHeader';
+import CommonPageContainer from '../../../common/CommonPageContainer';
 
 export interface AccountType {
   id: number,
@@ -39,8 +39,7 @@ export default function StatementPreferences() {
   ];
   return (
     <div>
-      <CommonHeader title="Statement Preferences" />
-      <div className="content-wrapper">
+      <CommonPageContainer title="Statement Preferences">
         <Row style={{ justifyContent: 'space-between', marginTop: '15px' }}>
           <div style={{ marginTop: '20px' }}>
             <span>
@@ -172,7 +171,7 @@ export default function StatementPreferences() {
             </p>
           </Row>
         </Row>
-      </div>
+      </CommonPageContainer>
     </div>
   );
 }

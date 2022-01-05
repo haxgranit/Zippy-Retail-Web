@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 
 import { Container, Row, Col } from 'react-bootstrap';
-import CommonHeader from '../common/CommonHeader';
+import CommonPageContainer from '../common/CommonPageContainer';
 
 const CardIconPlaceholder = ({ text }: { text: string }) => (
   <Container
@@ -142,8 +142,7 @@ Card.defaultProps = CardDefaultProps;
 
 const AccountSecurity = () => (
   <>
-    <CommonHeader title="Account Security" />
-    <div className="content-wrapper">
+    <CommonPageContainer title="Account Security">
       <Row>
         <Col>
           <Row style={{ alignItems: 'center' }}>
@@ -238,7 +237,7 @@ const AccountSecurity = () => (
           </h6>
         </Col>
       </Row>
-    </div>
+    </CommonPageContainer>
   </>
 );
 

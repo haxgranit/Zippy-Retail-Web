@@ -5,13 +5,12 @@ import {
   Button,
 } from 'react-bootstrap';
 import QUESTIONS from './Questions';
-import CommonHeader from '../../common/CommonHeader';
+import CommonPageContainer from '../../common/CommonPageContainer';
 
 export default function LearnMore() {
   return (
     <div>
-      <CommonHeader title="Learn About Interac E-Transfer" />
-      <div className="content-wrapper">
+      <CommonPageContainer title="Learn About Interac E-Transfer">
         <Row className="mt-3">
           <Col md={9}>
             <h5>Send and receive money by email or mobile phone number</h5>
@@ -155,7 +154,7 @@ export default function LearnMore() {
             </Card>
           </Col>
         </Row>
-      </div>
+      </CommonPageContainer>
     </div>
   );
 }

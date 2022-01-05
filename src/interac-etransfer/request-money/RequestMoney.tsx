@@ -6,13 +6,13 @@ import {
 } from 'react-bootstrap';
 import { useLocation } from 'react-router-dom';
 import { useMsal } from '@azure/msal-react';
-import CommonHeader from '../../common/CommonHeader';
 import StepComponent from '../../common/StepComponent';
 import RequestDetails from './components/RequestDetails';
 import RequestSent from './components/RequestSent';
 import RequestMoneyVerificationModal from '../dialogs/RequestMoneyVerificationModal';
 import Api, { Account, Contact, InteracEtransferTransaction } from '../../api';
 import { TransferDetails } from '../dialogs/SendMoneyVerificationModal';
+import CommonPageContainer from '../../common/CommonPageContainer';
 
 export interface RequestMainDetails {
   amount: number;
@@ -134,7 +134,7 @@ export default function RequestMoney() {
   };
 
   return (
-    <div>
+    <>
       <RequestMoneyVerificationModal
         show={showVerifyModal}
         handleClose={handleRequestMoneyVerificationClose}
@@ -143,8 +143,7 @@ export default function RequestMoney() {
         isRequestingMoney={isRequestingMoney}
         transferDetails={getTransferDetails()}
       />
-      <CommonHeader title="Request Money" />
-      <div className="content-wrapper">
+      <CommonPageContainer title="Request Money">
         {errorMessage && (
           <Alert variant="danger" className="zippy-btn rounded-0 text-dark py-2 my-2 px-5">
             <i />
@@ -218,7 +217,7 @@ export default function RequestMoney() {
             </div>
           </Col>
         </Row>
-      </div>
-    </div>
+      </CommonPageContainer>
+    </>
   );
 }

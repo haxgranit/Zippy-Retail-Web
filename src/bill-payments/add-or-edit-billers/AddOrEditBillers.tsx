@@ -1,11 +1,10 @@
 import { Button, Form, Table } from 'react-bootstrap';
-import CommonHeader from '../../common/CommonHeader';
+import CommonPageContainer from '../../common/CommonPageContainer';
 
 export default function AddOrEditBillers() {
   return (
     <>
-      <CommonHeader title="Add or Edit Payees" />
-      <div className="content-wrapper">
+      <CommonPageContainer title="Add or Edit Payees">
         <ul className="mt-4">
           <li>On this page, you can edit your existing payees or add new ones</li>
           <li>
@@ -151,7 +150,7 @@ export default function AddOrEditBillers() {
             </tr>
           </tbody>
         </Table>
-      </div>
+      </CommonPageContainer>
     </>
   );
 }

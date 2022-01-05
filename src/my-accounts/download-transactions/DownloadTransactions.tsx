@@ -1,12 +1,11 @@
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
-import CommonHeader from '../../common/CommonHeader';
+import CommonPageContainer from '../../common/CommonPageContainer';
 
 export default function DownloadTransactions() {
   return (
     <div>
-      <CommonHeader title="Download Transactions" />
-      <div className="content-wrapper">
+      <CommonPageContainer title="Download Transactions">
         <ul>
           <li>
             Choose an account, a display period and your financial management software, then select
@@ -90,7 +89,7 @@ export default function DownloadTransactions() {
             <Button>Download Transactions</Button>
           </div>
         </div>
-      </div>
+      </CommonPageContainer>
     </div>
   );
 }

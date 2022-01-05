@@ -1,5 +1,5 @@
 import { Col, Row, Table } from 'react-bootstrap';
-import CommonHeader from '../../common/CommonHeader';
+import CommonPageContainer from '../../common/CommonPageContainer';
 
 interface QuickLink {
   id: number;
@@ -26,8 +26,7 @@ export default function ReviewAndCancelTransfers() {
   ];
   return (
     <>
-      <CommonHeader title="Review & Cancel Transfers" />
-      <div className="content-wrapper">
+      <CommonPageContainer title="Review & Cancel Transfers">
         <Row>
           <Col md={9}>
             <h6 style={{ marginTop: '20px 0px' }}>Overview</h6>
@@ -94,7 +93,7 @@ export default function ReviewAndCancelTransfers() {
         }
       }
         />
-      </div>
+      </CommonPageContainer>
     </>
   );
 }

@@ -1,5 +1,5 @@
 import { Col, Row } from 'react-bootstrap';
-import CommonHeader from '../../common/CommonHeader';
+import CommonPageContainer from '../../common/CommonPageContainer';
 
 interface QuickLink {
   id: number;
@@ -37,8 +37,7 @@ export default function BillerDetails() {
   const result: string = '{Result #0069}';
   return (
     <>
-      <CommonHeader title="Payee Details" />
-      <div className="content-wrapper">
+      <CommonPageContainer title="Payee Details">
         <Row style={{ justifyContent: 'space-between', marginTop: '15px', marginBottom: '15px' }}>
           <h3>PAYEE DETAILS</h3>
           <span>
@@ -89,7 +88,7 @@ export default function BillerDetails() {
             </Row>
           </Col>
         </Row>
-      </div>
+      </CommonPageContainer>
     </>
   );
 }

@@ -1,7 +1,6 @@
 import PropTypes from 'prop-types';
 import { Col, Row, Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import CommonHeader from '../../common/CommonHeader';
 import {
   PERSONAL_INFORMATION_OPTIONS,
   SECURE_MESSAGE_OPTIONS,
@@ -12,6 +11,7 @@ import {
   INVESTMENT_OPTIONS,
   FREQUENT_QUESTIONS,
 } from './ServiceOptions';
+import CommonPageContainer from '../../common/CommonPageContainer';
 
 const LinkItem = (props: any) => {
   const { isNew, title, to } = props;
@@ -67,8 +67,7 @@ LinkItem.defaultProps = {
 export default function CustomerServices() {
   return (
     <>
-      <CommonHeader title="Customer Services" />
-      <div className="content-wrapper">
+      <CommonPageContainer title="Customer Services">
         <div className="mt-4">
           <h4>ONLINE BANKING INFORMATION</h4>
           <Row style={{ borderTop: '2px solid grey' }}>
@@ -219,7 +218,7 @@ export default function CustomerServices() {
             <a href="/" className="text-black">Trademarks</a>
           </p>
         </div>
-      </div>
+      </CommonPageContainer>
     </>
   );
 }

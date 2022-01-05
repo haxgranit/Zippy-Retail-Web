@@ -10,13 +10,13 @@ import {
   InputGroup,
   FormControl,
 } from 'react-bootstrap';
-import CommonHeader from '../common/CommonHeader';
 import EditBusinessPhone from './edit-business-phone/EditBusinessPhone';
 import EditEmailAccount from './edit-email-account/EditEmailAccount';
 import EditHomePhone from './edit-home-phone/EditHomePhone';
 import EditMobilePhone from './edit-mobile-phone/EditMobilePhone';
 import Reminders from './tabs/Reminders';
 import Transactions from './tabs/Transactions';
+import CommonPageContainer from '../common/CommonPageContainer';
 
 export default function ManageMyAlerts() {
   const [showEditHomeModal, setShowEditHomeModal] = useState(false);
@@ -80,8 +80,7 @@ export default function ManageMyAlerts() {
         handleCancel={closeEditEmailAccount}
         handleSave={handleSave}
       />
-      <CommonHeader title="Manage My Alerts" />
-      <div className="content-wrapper">
+      <CommonPageContainer title="Manage My Alerts">
         <Row className="mt-3">
           <Col md={8}>
             <ul>
@@ -525,7 +524,7 @@ export default function ManageMyAlerts() {
             </Card>
           </Col>
         </Row>
-      </div>
+      </CommonPageContainer>
     </>
   );
 }

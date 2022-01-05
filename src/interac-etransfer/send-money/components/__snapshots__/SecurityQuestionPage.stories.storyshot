@@ -210,7 +210,7 @@ Array [
         Back
       </button>
       <button
-        className="d-flex btn zippy-btn"
+        className="zippy-btn d-flex btn btn-primary"
         disabled={false}
         onClick={[Function]}
         type="button"

@@ -2,7 +2,6 @@ import { useEffect, useState } from 'react';
 import { Alert, Col, Row } from 'react-bootstrap';
 import { useIsAuthenticated, useMsal } from '@azure/msal-react';
 import { useNavigate, useParams } from 'react-router-dom';
-import CommonHeader from '../../common/CommonHeader';
 import StepComponent from '../../common/StepComponent';
 import {
   DetailsPage,
@@ -22,6 +21,7 @@ import { TransferInformation } from './components/TransferSentPage';
 import TRANSFER_INFORMATION from '../../stories/TransferInformation';
 import { useAppSelector } from '../../app/hooks';
 import { selectUser, UserState } from '../../features/user/userSlice';
+import CommonPageContainer from '../../common/CommonPageContainer';
 
 export const enum PageIds {
   DetailsPageId = 'details',
@@ -291,8 +291,7 @@ export default function SendMoney() {
         isSendingMoney={isSendingMoney}
         transferDetails={getTransferDetails()}
       />
-      <CommonHeader title="Send Money" />
-      <div className="content-wrapper">
+      <CommonPageContainer title="Send Money">
         {errorMessage && (
           <Alert variant="danger" className="rounded-0 text-dark py-2 my-2 px-5">
             <i />
@@ -401,7 +400,7 @@ export default function SendMoney() {
             </Row>
           </Col>
         </Row>
-      </div>
+      </CommonPageContainer>
     </div>
   );
 }

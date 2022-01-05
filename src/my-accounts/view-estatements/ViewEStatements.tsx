@@ -5,18 +5,17 @@ import {
   Form,
   Button,
 } from 'react-bootstrap';
-import CommonHeader from '../../common/CommonHeader';
 import {
   ESTATEMENTS_2020,
   ESTATEMENTS_2021,
   DOCUMENT_LINKS,
 } from './Estatements';
+import CommonPageContainer from '../../common/CommonPageContainer';
 
 export default function ViewEStatements() {
   return (
     <>
-      <CommonHeader title="EStatements" />
-      <div className="content-wrapper">
+      <CommonPageContainer title="EStatements">
         <Row>
           <Col md={9}>
             <Row className="align-items-md-end">
@@ -212,7 +211,7 @@ export default function ViewEStatements() {
             </Card>
           </Col>
         </Row>
-      </div>
+      </CommonPageContainer>
     </>
   );
 }

@@ -4,7 +4,7 @@ import {
   Form,
   Row,
 } from 'react-bootstrap';
-import CommonHeader from '../../common/CommonHeader';
+import CommonPageContainer from '../../common/CommonPageContainer';
 
 const NumberedCircle = ({ num, title, text }: { num: number, title: string, text: string }) => (
 
@@ -24,8 +24,7 @@ const NumberedCircle = ({ num, title, text }: { num: number, title: string, text
 export default function ViewEBills() {
   return (
     <>
-      <CommonHeader title="View Ebills" />
-      <div className="content-wrapper">
+      <CommonPageContainer title="View Ebills">
         <Row>
           <Col>
             <Row>
@@ -185,7 +184,7 @@ export default function ViewEBills() {
           </Col>
 
         </Row>
-      </div>
+      </CommonPageContainer>
     </>
   );
 }

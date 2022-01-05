@@ -307,7 +307,7 @@ Array [
       Reset
     </button>
     <button
-      className="btn zippy-btn"
+      className="zippy-btn btn btn-primary"
       disabled={false}
       style={
         Object {

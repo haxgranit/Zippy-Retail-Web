@@ -1,5 +1,6 @@
 import Nav from 'react-bootstrap/Nav';
-import { NavLink, useLocation } from 'react-router-dom';
+import { Link, NavLink, useLocation } from 'react-router-dom';
+import ZippyCashLogo from '../assets/img/general/ZippyCash_Logo.svg';
 
 export default function VerticalNavLinks() {
   const { pathname } = useLocation();
@@ -7,6 +8,9 @@ export default function VerticalNavLinks() {
   return (
     <div className="vertical-nav-wrapper noselect">
       <Nav className="vertical-nav">
+        <Link to="/" className="navbar-brand">
+          <img src={ZippyCashLogo} alt="" />
+        </Link>
         <Nav.Link className="nav-link" as={NavLink} to="/my-accounts">
           <i className="zippy-cash-icon zc-home" />
           My Accounts

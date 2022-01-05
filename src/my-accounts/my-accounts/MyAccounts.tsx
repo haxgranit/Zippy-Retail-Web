@@ -9,14 +9,13 @@ import {
   Button,
   Nav,
 } from 'react-bootstrap';
-import CommonHeader from '../../common/CommonHeader';
 import PanelHeader from './components/PanelHeader';
+import CommonPageContainer from '../../common/CommonPageContainer';
 
 export default function MyAccounts() {
   return (
     <>
-      <CommonHeader title="My Accounts" />
-      <div className="content-wrapper">
+      <CommonPageContainer title="My Accounts">
         <div className="d-flex justify-content-between">
           <p>
             Welcome DUANE TOUGH. Your last visit: November 9, 2021 at 4:54 p.m.
@@ -590,7 +589,7 @@ export default function MyAccounts() {
             </Card>
           </div>
         </div>
-      </div>
+      </CommonPageContainer>
     </>
   );
 }

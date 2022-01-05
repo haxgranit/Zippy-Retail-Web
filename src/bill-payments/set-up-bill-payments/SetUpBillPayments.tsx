@@ -1,11 +1,10 @@
 import { Button, Col, Row } from 'react-bootstrap';
-import CommonHeader from '../../common/CommonHeader';
+import CommonPageContainer from '../../common/CommonPageContainer';
 
 export default function SetUpBillPayments() {
   return (
     <>
-      <CommonHeader title="Setup Bill Payments" />
-      <div className="content-wrapper">
+      <CommonPageContainer title="Setup Bill Payments">
         <Row className="mt-4">
           <Col xs={9}>
             <Row>
@@ -35,7 +34,7 @@ export default function SetUpBillPayments() {
             </div>
           </Col>
         </Row>
-      </div>
+      </CommonPageContainer>
     </>
   );
 }

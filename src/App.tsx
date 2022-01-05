@@ -20,7 +20,6 @@ import ContactUs from './contact-us/ContactUs';
 import CreateOrEditAccountNickname from './customer-services/create-or-edit-account-nickname/CreateOrEditAccountNickname';
 import ChangeYourAddress from './customer-services/change-your-address/ChangeYourAddress';
 import CustomerServices from './customer-services/customer-services/CustomerServices';
-import Footer from './footer/Footer';
 import { Header } from './Header';
 import { AutodepositSettings } from './interac-etransfer/autodeposit-settings/AutodepositSettings';
 import ContactList from './interac-etransfer/contact-list/ContactList';
@@ -193,7 +192,6 @@ export default function App() {
         <Route path="personal" element={<Personal />} />
         <Route path="personal-profile" element={<PersonalProfile />} />
       </Routes>
-      <Footer />
     </main>
   );
 }

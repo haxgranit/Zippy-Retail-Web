@@ -5,13 +5,12 @@ import {
   Row,
   Table,
 } from 'react-bootstrap';
-import CommonHeader from '../../common/CommonHeader';
+import CommonPageContainer from '../../common/CommonPageContainer';
 
 export default function ReviewAndCancelBillPayments() {
   return (
     <>
-      <CommonHeader title="Setup Bill Payments" />
-      <div className="content-wrapper">
+      <CommonPageContainer title="Setup Bill Payments">
         <Row>
           <Col>
             <h2>Review & Cancel Bill Payments</h2>
@@ -148,7 +147,7 @@ export default function ReviewAndCancelBillPayments() {
             &quot;Account Details&quot; page under &quot;My Accounts.&quot;
           </Col>
         </Row>
-      </div>
+      </CommonPageContainer>
     </>
   );
 }

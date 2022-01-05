@@ -71,7 +71,7 @@ exports[`Storyshots interac-etransfer/status/request-canceled/RequestCanceled De
           Return to Status
         </button>
         <button
-          className="btn zippy-btn"
+          className="zippy-btn btn btn-primary"
           disabled={false}
           onClick={[Function]}
           type="button"

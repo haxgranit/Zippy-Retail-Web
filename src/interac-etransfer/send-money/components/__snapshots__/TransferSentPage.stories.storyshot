@@ -296,7 +296,7 @@ Array [
   <p
     className="mt-4"
   >
-    Submitted: December 6, 2021, 1:07 PM UTC.
+    Submitted: December 6, 2021, 1:07 PM GMT+8.
   </p>,
   <hr
     style={
@@ -326,7 +326,7 @@ Array [
         Check Status
       </button>
       <button
-        className="d-flex btn zippy-btn"
+        className="zippy-btn d-flex btn btn-primary"
         disabled={false}
         onClick={[Function]}
         type="button"

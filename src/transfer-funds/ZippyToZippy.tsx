@@ -1,10 +1,9 @@
-import CommonHeader from '../common/CommonHeader';
+import CommonPageContainer from '../common/CommonPageContainer';
 
 export default function ZippyToZippy() {
   return (
     <>
-      <CommonHeader title="PLACEHOLDER: Zippy to Zippy Screenshot" />
-      <div className="content-wrapper">
+      <CommonPageContainer title="PLACEHOLDER: Zippy to Zippy Screenshot">
         <div style={{
           border: 'dashed',
           height: '100vh',
@@ -15,7 +14,7 @@ export default function ZippyToZippy() {
         >
           PLACEHOLDER: Zippy to Zippy Screenshot
         </div>
-      </div>
+      </CommonPageContainer>
     </>
   );
 }

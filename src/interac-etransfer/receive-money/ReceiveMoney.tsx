@@ -1,6 +1,6 @@
 import { Col, Row } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
-import CommonHeader from '../../common/CommonHeader';
+import CommonPageContainer from '../../common/CommonPageContainer';
 
 interface QuickLink {
   id: number;
@@ -40,8 +40,7 @@ export default function ReceiveMoney() {
 
   return (
     <div>
-      <CommonHeader title="Receive Money" />
-      <div className="content-wrapper">
+      <CommonPageContainer title="Receive Money">
         <Row>
           <Col md={9}>
             <Row>
@@ -123,7 +122,7 @@ export default function ReceiveMoney() {
             </Row>
           </Col>
         </Row>
-      </div>
+      </CommonPageContainer>
     </div>
   );
 }

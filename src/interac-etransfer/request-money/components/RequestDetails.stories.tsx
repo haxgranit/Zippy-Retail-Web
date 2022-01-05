@@ -4,7 +4,7 @@ import RequestDetails from './RequestDetails';
 import { RequestMainDetails } from '../RequestMoney';
 
 export default {
-  title: 'interac-etransfer/request-money/components/RequestSent',
+  title: 'interac-etransfer/request-money/components/RequestDetails',
   component: RequestDetails,
 } as ComponentMeta<typeof RequestDetails>;
 

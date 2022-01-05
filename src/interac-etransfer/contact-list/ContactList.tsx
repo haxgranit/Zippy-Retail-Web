@@ -6,9 +6,9 @@ import {
 } from 'react-bootstrap';
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import CommonHeader from '../../common/CommonHeader';
 import Api, { Contact } from '../../api';
 import { formatContactName } from '../../Helpers';
+import CommonPageContainer from '../../common/CommonPageContainer';
 
 const RemoveContactModal: React.FC<{
   show: boolean;
@@ -119,8 +119,7 @@ const ContactList = () => {
 
   return (
     <div>
-      <CommonHeader title="Contact List" />
-      <div className="content-wrapper">
+      <CommonPageContainer title="Contact List">
         <Row>
           <Col md={9}>
             <h4 className="mt-4">Add, Edit or Delete a Contact</h4>
@@ -309,7 +308,7 @@ const ContactList = () => {
             </div>
           </Col>
         </Row>
-      </div>
+      </CommonPageContainer>
     </div>
   );
 };

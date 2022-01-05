@@ -7,7 +7,7 @@ import {
   Button,
   Col,
 } from 'react-bootstrap';
-import CommonHeader from '../../common/CommonHeader';
+import CommonPageContainer from '../../common/CommonPageContainer';
 
 const CardIconDefaultProps = {
   text: '',
@@ -220,280 +220,281 @@ const Card: React.FC<{
 Card.defaultProps = CardDefaultProps;
 
 const ContributeToTfsa = () => (
-  <Container fluid>
-    <CommonHeader title="Tax-Free Savings Accounts (TFSA)" />
-    <Row
-      style={{
-        display: 'flex',
-        justifyContent: 'flex-end',
-        marginTop: 20,
-        alignItems: 'center',
-      }}
-    >
-      <Col
+  <>
+    <CommonPageContainer title="Tax-Free Savings Accounts (TFSA)">
+      <Row
         style={{
           display: 'flex',
           justifyContent: 'flex-end',
+          marginTop: 20,
           alignItems: 'center',
         }}
       >
-        <IconButtonPlaceholder text="L" />
-        <span
-          style={{
-            marginRight: 10,
-            display: 'flex',
-            justifyContent: 'flex-end',
-            fontSize: 13,
-            marginBottom: 0,
-            padding: 0,
-          }}
-        >
-          Find a banking centre or ATM
-        </span>
-        <span
+        <Col
           style={{
             display: 'flex',
             justifyContent: 'flex-end',
-            marginRight: -10,
-            fontSize: 13,
-            fontWeight: 600,
-            marginBottom: 0,
-            padding: 0,
+            alignItems: 'center',
           }}
         >
-          Call us at 1-866-525-8622
-        </span>
-      </Col>
-    </Row>
-    <Row>
-      <Col style={{ padding: 0 }} xs={8}>
-        <Card
-          cardName={
-            <DefaultCardTitle text="Grow your money with a special interest rate" />
+          <IconButtonPlaceholder text="L" />
+          <span
+            style={{
+              marginRight: 10,
+              display: 'flex',
+              justifyContent: 'flex-end',
+              fontSize: 13,
+              marginBottom: 0,
+              padding: 0,
+            }}
+          >
+            Find a banking centre or ATM
+          </span>
+          <span
+            style={{
+              display: 'flex',
+              justifyContent: 'flex-end',
+              marginRight: -10,
+              fontSize: 13,
+              fontWeight: 600,
+              marginBottom: 0,
+              padding: 0,
+            }}
+          >
+            Call us at 1-866-525-8622
+          </span>
+        </Col>
+      </Row>
+      <Row>
+        <Col style={{ padding: 0 }} xs={8}>
+          <Card
+            cardName={
+              <DefaultCardTitle text="Grow your money with a special interest rate" />
           }
-          cardText="Reach your savings goals sooner with a TFSA Tax Advantage Savings Account&reg. Offer ends on March 31, 2022"
-          button={(
-            <Link
-              text="Learn More >"
-              href="/#"
-              style={{ color: 'red', marginTop: '15px' }}
-            />
+            cardText="Reach your savings goals sooner with a TFSA Tax Advantage Savings Account&reg. Offer ends on March 31, 2022"
+            button={(
+              <Link
+                text="Learn More >"
+                href="/#"
+                style={{ color: 'red', marginTop: '15px' }}
+              />
           )}
+            containerStyle={{
+              background: 'rgba(242,243,242,0.9)',
+            }}
+          />
+        </Col>
+        <Col
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            marginTop: '14px',
+            border: '2px dashed black',
+          }}
+          xs={4}
+        >
+          <span>Image</span>
+        </Col>
+      </Row>
+      <SectionHeader title="Tax-Free Savings Account" />
+      <Row style={{ marginLeft: '-25px' }}>
+        <span style={{ marginTop: '15px' }}>
+          With a Tax-Free Savings Account(TFSA), you can set money aside in
+          eligible investment accounts without paying tax on income and gains
+          earned within the TFSA.
+        </span>
+        <span style={{ marginTop: '15px' }}>
+          You are able to withdraw funds from your TFSA any time and for any
+          purpose without incurring tax, though restrictions may apply depending
+          on the investments that are held in your TFSA.
+        </span>
+      </Row>
+      <Row>
+        <Card
+          cardName={(
+            <CardTitleLink
+              text="CIBS TFSA Tax Advantage Savings Account"
+              href="/#"
+            />
+        )}
+          cardText={
+            <DefaultCardText text="Save your money tax-free and access it at any time." />
+        }
+          cardTextSecondary={<LearnMoreTextSecondary />}
+          button={(
+            <Button
+              style={{ display: 'flex', marginTop: 25, fontSize: 14 }}
+              className="zippy-btn"
+            >
+              Apply or contribute
+            </Button>
+        )}
           containerStyle={{
+            marginTop: '50px',
+            background: 'rgba(242,243,242,0.9)',
+            marginRight: '10px',
+          }}
+        />
+      </Row>
+      <SectionHeader title="Featured TFSA GICs" />
+      <Row>
+        <Card
+          cardName={<CardTitleLink text="CIBS Bonus Rate TFSA GIC" href="/#" />}
+          cardText={
+            <DefaultCardText text="Earn guaranteed interest at a great rate won't change over your term." />
+        }
+          button={(
+            <Button
+              style={{ display: 'flex', marginTop: 25, fontSize: 14 }}
+              className="zippy-btn"
+            >
+              Purchase or contribute
+            </Button>
+        )}
+          containerStyle={{
+            marginTop: '50px',
+            background: 'rgba(242,243,242,0.9)',
+            marginRight: '20px',
+          }}
+        />
+        <Card
+          cardName={<CardTitleLink text="CIBS Flexible TFSA GIC" href="/#" />}
+          cardText={
+            <DefaultCardText text="Enjoy quaranteed returns with the freedom to access your money when you need it." />
+        }
+          button={(
+            <Button
+              style={{ display: 'flex', marginTop: 25, fontSize: 14 }}
+              className="zippy-btn"
+            >
+              Purchase or contribute
+            </Button>
+        )}
+          containerStyle={{
+            marginTop: '50px',
             background: 'rgba(242,243,242,0.9)',
           }}
         />
-      </Col>
-      <Col
-        style={{
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          marginTop: '14px',
-          border: '2px dashed black',
-        }}
-        xs={4}
-      >
-        <span>Image</span>
-      </Col>
-    </Row>
-    <SectionHeader title="Tax-Free Savings Account" />
-    <Row style={{ marginLeft: '-25px' }}>
-      <span style={{ marginTop: '15px' }}>
-        With a Tax-Free Savings Account(TFSA), you can set money aside in
-        eligible investment accounts without paying tax on income and gains
-        earned within the TFSA.
-      </span>
-      <span style={{ marginTop: '15px' }}>
-        You are able to withdraw funds from your TFSA any time and for any
-        purpose without incurring tax, though restrictions may apply depending
-        on the investments that are held in your TFSA.
-      </span>
-    </Row>
-    <Row>
-      <Card
-        cardName={(
-          <CardTitleLink
-            text="CIBS TFSA Tax Advantage Savings Account"
-            href="/#"
-          />
-        )}
-        cardText={
-          <DefaultCardText text="Save your money tax-free and access it at any time." />
+      </Row>
+      <SectionHeader title="Market Linked GICs(TFSA eligible)" />
+      <Row>
+        <Card
+          cardName={<CardTitleLink text="ZippyX Market Linked GICs" href="/#" />}
+          cardText={
+            <DefaultCardText text="The interest rate is linked to market performance, so the potential for growth is higher than a fixed-rate GIC" />
         }
-        cardTextSecondary={<LearnMoreTextSecondary />}
-        button={(
-          <Button
-            style={{ display: 'flex', marginTop: 25, fontSize: 14 }}
-            className="zippy-btn"
-          >
-            Apply or contribute
-          </Button>
+          cardTextSecondary={(
+            <p>
+              To purchase,
+              <a style={{ color: 'black', marginLeft: '5px' }} href="/#">
+                visit a banking centre.
+              </a>
+            </p>
         )}
-        containerStyle={{
-          marginTop: '50px',
-          background: 'rgba(242,243,242,0.9)',
-          marginRight: '10px',
-        }}
-      />
-    </Row>
-    <SectionHeader title="Featured TFSA GICs" />
-    <Row>
-      <Card
-        cardName={<CardTitleLink text="CIBS Bonus Rate TFSA GIC" href="/#" />}
-        cardText={
-          <DefaultCardText text="Earn guaranteed interest at a great rate won't change over your term." />
-        }
-        button={(
-          <Button
-            style={{ display: 'flex', marginTop: 25, fontSize: 14 }}
-            className="zippy-btn"
-          >
-            Purchase or contribute
-          </Button>
-        )}
-        containerStyle={{
-          marginTop: '50px',
-          background: 'rgba(242,243,242,0.9)',
-          marginRight: '20px',
-        }}
-      />
-      <Card
-        cardName={<CardTitleLink text="CIBS Flexible TFSA GIC" href="/#" />}
-        cardText={
-          <DefaultCardText text="Enjoy quaranteed returns with the freedom to access your money when you need it." />
-        }
-        button={(
-          <Button
-            style={{ display: 'flex', marginTop: 25, fontSize: 14 }}
-            className="zippy-btn"
-          >
-            Purchase or contribute
-          </Button>
-        )}
-        containerStyle={{
-          marginTop: '50px',
-          background: 'rgba(242,243,242,0.9)',
-        }}
-      />
-    </Row>
-    <SectionHeader title="Market Linked GICs(TFSA eligible)" />
-    <Row>
-      <Card
-        cardName={<CardTitleLink text="ZippyX Market Linked GICs" href="/#" />}
-        cardText={
-          <DefaultCardText text="The interest rate is linked to market performance, so the potential for growth is higher than a fixed-rate GIC" />
-        }
-        cardTextSecondary={(
-          <p>
-            To purchase,
-            <a style={{ color: 'black', marginLeft: '5px' }} href="/#">
-              visit a banking centre.
-            </a>
-          </p>
-        )}
-        containerStyle={{
-          marginTop: '50px',
-          background: 'rgba(242,243,242,0.9)',
-        }}
-      />
-    </Row>
-    <Row style={{ marginTop: '50px' }}>
-      <span style={{ fontWeight: 500 }}>Tools and advice</span>
-      <a
-        style={{ fontSize: 13, color: 'black', marginTop: '10px' }}
-        href="/home"
-      >
-        Find the GIC that&aposs right for you
-      </a>
-      <a
-        style={{ fontSize: 13, color: 'black', marginTop: '10px' }}
-        href="/home"
-      >
-        Check out all GIC rates
-      </a>
-      <a
-        style={{ fontSize: 13, color: 'black', marginTop: '10px' }}
-        href="/home"
-      >
-        TFSA calculator
-      </a>
-      <a
-        style={{ fontSize: 13, color: 'black', marginTop: '10px' }}
-        href="/home"
-      >
-        Investor profile tool
-      </a>
-    </Row>
-    <Row
-      style={{
-        marginTop: 50,
-        padding: 15,
-        backgroundColor: 'rgba(242,243,242,0.9)',
-      }}
-    >
-      <Col style={{ flexDirection: 'row', display: 'flex', alignItems: 'center' }}>
-        <QuestionIcon />
-        <h1
-          style={{
-            fontSize: 22,
-            marginBottom: 0,
-            fontWeight: 100,
-            textAlign: 'center',
-          }}
-        >
-          Have a question?
-        </h1>
-        <div
-          style={{
-            width: 2,
-            border: '1px solid black',
-            height: '100%',
-            marginRight: 15,
-            marginLeft: 15,
+          containerStyle={{
+            marginTop: '50px',
+            background: 'rgba(242,243,242,0.9)',
           }}
         />
-        <p
-          style={{
-            fontSize: 14,
-            fontWeight: 100,
-            marginBottom: 0,
-          }}
+      </Row>
+      <Row style={{ marginTop: '50px' }}>
+        <span style={{ fontWeight: 500 }}>Tools and advice</span>
+        <a
+          style={{ fontSize: 13, color: 'black', marginTop: '10px' }}
+          href="/home"
         >
-          Use our automated help for immediate answers to your questions
-        </p>
-      </Col>
-      <Col xs={2} style={{ display: 'flex', justifyContent: 'flex-end', alignItems: 'center' }}>
-        <Button
-          style={{ fontSize: 14, paddingRight: 20, paddingLeft: 20 }}
-          className="zippy-btn"
+          Find the GIC that&aposs right for you
+        </a>
+        <a
+          style={{ fontSize: 13, color: 'black', marginTop: '10px' }}
+          href="/home"
         >
-          Ask
-        </Button>
-      </Col>
-    </Row>
-    <Row
-      style={{
-        marginTop: 30,
-        padding: 8,
-        backgroundColor: 'rgba(242,243,242,0.9)',
-        borderBottom: '2px solid rgba(0,0,0,0.5)',
-      }}
-    >
-      <AddIcon />
-      <Col style={{ display: 'flex', alignItems: 'center' }}>
-        <h1
-          style={{
-            fontSize: 18,
-            fontWeight: 100,
-            marginBottom: 0,
-          }}
+          Check out all GIC rates
+        </a>
+        <a
+          style={{ fontSize: 13, color: 'black', marginTop: '10px' }}
+          href="/home"
         >
-          Terms and conditions
-        </h1>
-      </Col>
-    </Row>
-  </Container>
+          TFSA calculator
+        </a>
+        <a
+          style={{ fontSize: 13, color: 'black', marginTop: '10px' }}
+          href="/home"
+        >
+          Investor profile tool
+        </a>
+      </Row>
+      <Row
+        style={{
+          marginTop: 50,
+          padding: 15,
+          backgroundColor: 'rgba(242,243,242,0.9)',
+        }}
+      >
+        <Col style={{ flexDirection: 'row', display: 'flex', alignItems: 'center' }}>
+          <QuestionIcon />
+          <h1
+            style={{
+              fontSize: 22,
+              marginBottom: 0,
+              fontWeight: 100,
+              textAlign: 'center',
+            }}
+          >
+            Have a question?
+          </h1>
+          <div
+            style={{
+              width: 2,
+              border: '1px solid black',
+              height: '100%',
+              marginRight: 15,
+              marginLeft: 15,
+            }}
+          />
+          <p
+            style={{
+              fontSize: 14,
+              fontWeight: 100,
+              marginBottom: 0,
+            }}
+          >
+            Use our automated help for immediate answers to your questions
+          </p>
+        </Col>
+        <Col xs={2} style={{ display: 'flex', justifyContent: 'flex-end', alignItems: 'center' }}>
+          <Button
+            style={{ fontSize: 14, paddingRight: 20, paddingLeft: 20 }}
+            className="zippy-btn"
+          >
+            Ask
+          </Button>
+        </Col>
+      </Row>
+      <Row
+        style={{
+          marginTop: 30,
+          padding: 8,
+          backgroundColor: 'rgba(242,243,242,0.9)',
+          borderBottom: '2px solid rgba(0,0,0,0.5)',
+        }}
+      >
+        <AddIcon />
+        <Col style={{ display: 'flex', alignItems: 'center' }}>
+          <h1
+            style={{
+              fontSize: 18,
+              fontWeight: 100,
+              marginBottom: 0,
+            }}
+          >
+            Terms and conditions
+          </h1>
+        </Col>
+      </Row>
+    </CommonPageContainer>
+  </>
 );
 
 export default ContributeToTfsa;

@@ -8,9 +8,9 @@ import NumberFormat from 'react-number-format';
 import { useMsal } from '@azure/msal-react';
 import styled from 'styled-components';
 import Api, { Transaction, TransferType } from '../../../api';
-import CommonHeader from '../../../common/CommonHeader';
 import MonthSelectComponent from '../../../common/MonthSelectComponent';
 import { formatContactName } from '../../../Helpers';
+import CommonPageContainer from '../../../common/CommonPageContainer';
 
 const BorderedTR = styled.tr`
   borderTop: '1px solid #c5c5c5'
@@ -218,8 +218,7 @@ export default function InteracETransferDetails() {
 
   return (
     <div>
-      <CommonHeader title="Status" />
-      <div className="content-wrapper">
+      <CommonPageContainer title="Status">
         <div>
           <h4>Your Interac e-Transfer Details</h4>
           <ul>
@@ -270,7 +269,7 @@ export default function InteracETransferDetails() {
             />
           </Tab>
         </Tabs>
-      </div>
+      </CommonPageContainer>
     </div>
   );
 }

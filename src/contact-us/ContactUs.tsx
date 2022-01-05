@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import {
   Col, Dropdown, Row,
 } from 'react-bootstrap';
-import CommonHeader from '../common/CommonHeader';
+import CommonPageContainer from '../common/CommonPageContainer';
 
 const VerticalDivider = styled.div`
 border-left: 1px solid #AAAAAA;
@@ -26,8 +26,7 @@ export default function ContactUs(): JSX.Element {
   const moreQuestions: QuestionLink[] = [{ text: 'question1', url: 'url1', id: 3 }, { text: 'question1', url: 'url1', id: 4 }];
   return (
     <>
-      <CommonHeader title="Contact Us" />
-      <div className="content-wrapper">
+      <CommonPageContainer title="Contact Us">
         <Row>
           <Col md={9}>
             <Row style={{ marginTop: '45px', marginBottom: '25px' }}>
@@ -178,7 +177,7 @@ export default function ContactUs(): JSX.Element {
             </Row>
           </Col>
         </Row>
-      </div>
+      </CommonPageContainer>
     </>
   );
 }
