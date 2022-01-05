@@ -73,7 +73,7 @@ exports[`Storyshots interac-etransfer/status/request-reminder/RequestReminder De
           Return to Status
         </button>
         <button
-          className="btn btn-danger"
+          className="zippy-btn btn btn-primary"
           disabled={false}
           onClick={[Function]}
           type="button"

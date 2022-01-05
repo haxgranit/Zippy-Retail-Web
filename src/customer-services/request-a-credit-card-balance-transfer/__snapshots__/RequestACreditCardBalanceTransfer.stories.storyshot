@@ -410,7 +410,7 @@ Array [
         className="d-flex justify-content-end col"
       >
         <button
-          className="d-flex btn btn-danger"
+          className="zippy-btn d-flex btn btn-primary"
           disabled={false}
           type="button"
         >

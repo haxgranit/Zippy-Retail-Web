@@ -31,7 +31,7 @@ export default function Transactions() {
         >
           Reset
         </Button>
-        <Button variant="danger" style={{ width: 'auto', marginRight: 10 }}>
+        <Button className="zippy-btn" style={{ width: 'auto', marginRight: 10 }}>
           Save
         </Button>
       </Row>

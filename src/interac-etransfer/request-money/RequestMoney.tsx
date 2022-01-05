@@ -6,13 +6,13 @@ import {
 } from 'react-bootstrap';
 import { useLocation } from 'react-router-dom';
 import { useMsal } from '@azure/msal-react';
-import CommonHeader from '../../common/CommonHeader';
 import StepComponent from '../../common/StepComponent';
-import { RequestDetails } from './components/RequestDetails';
+import RequestDetails from './components/RequestDetails';
 import RequestSent from './components/RequestSent';
 import RequestMoneyVerificationModal from '../dialogs/RequestMoneyVerificationModal';
 import Api, { Account, Contact, InteracEtransferTransaction } from '../../api';
 import { TransferDetails } from '../dialogs/SendMoneyVerificationModal';
+import CommonPageContainer from '../../common/CommonPageContainer';
 
 export interface RequestMainDetails {
   amount: number;
@@ -33,8 +33,10 @@ export default function RequestMoney() {
   const [isRequestingMoney, setIsRequestingMoney] = useState(false);
   const [showVerifyModal, setShowVerifyModal] = useState(false);
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
+  /** todo */
   const [selectedContact, setSelectedContact] = useState(0);
   const [selectedAccount, setSelectedAccount] = useState(0);
+
   const [mainInfo, setMainInfo] = useState<RequestMainDetails>({
     amount: 0,
     message: '',
@@ -132,7 +134,7 @@ export default function RequestMoney() {
   };
 
   return (
-    <div>
+    <>
       <RequestMoneyVerificationModal
         show={showVerifyModal}
         handleClose={handleRequestMoneyVerificationClose}
@@ -141,26 +143,26 @@ export default function RequestMoney() {
         isRequestingMoney={isRequestingMoney}
         transferDetails={getTransferDetails()}
       />
-      <CommonHeader title="REQUEST MONEY" print={false} />
-      {errorMessage && (
-        <Alert variant="danger" className="rounded-0 text-dark py-2 my-2 px-5">
-          <i />
-          {errorMessage}
-        </Alert>
-      )}
-      <Row>
-        <Col xs={9}>
-          <Row>
-            <Col>
-              <StepComponent
-                steps={2}
-                currentStep={currentStep}
-                setCurrentStep={setCurrentStep}
-                navigateSteps={setPageIndex}
-              />
-            </Col>
-          </Row>
-          {currentStep === 1 && (
+      <CommonPageContainer title="Request Money">
+        {errorMessage && (
+          <Alert variant="danger" className="zippy-btn rounded-0 text-dark py-2 my-2 px-5">
+            <i />
+            {errorMessage}
+          </Alert>
+        )}
+        <Row>
+          <Col xs={9}>
+            <Row>
+              <Col>
+                <StepComponent
+                  steps={2}
+                  currentStep={currentStep}
+                  setCurrentStep={setCurrentStep}
+                  navigateSteps={setPageIndex}
+                />
+              </Col>
+            </Row>
+            {currentStep === 1 && (
             <RequestDetails
               setPageIndex={setPageIndex}
               setCurrentStep={setCurrentStep}
@@ -170,13 +172,13 @@ export default function RequestMoney() {
               setSelectedAccount={setSelectedAccount}
               setMainInfo={setMainInfo}
               mainInfo={mainInfo}
-              accounts={accountsList}
-              contacts={contactList}
+              accounts={accountsList || []}
+              contacts={contactList || []}
               setErrorMessage={setErrorMessage}
               showModal={setShowVerifyModal}
             />
-          )}
-          {currentStep === 2 && (
+            )}
+            {currentStep === 2 && (
             <RequestSent
               accounts={accountsList}
               contacts={contactList}
@@ -185,36 +187,37 @@ export default function RequestMoney() {
               mainInfo={mainInfo}
               setCurrentStep={setCurrentStep}
             />
-          )}
-          <Divider />
-          <Row>
-            <Col>
-              <b>Note:</b>
+            )}
+            <Divider />
+            <Row>
+              <Col>
+                <b>Note:</b>
+                <br />
+                Your use of
+                {' '}
+                <i>Interac</i>
+                {' '}
+                e-Transfer is subject to the
+                {' '}
+                <i>Interac</i>
+                {' '}
+                e-Transfer Terms and conditions (PDF, 197 KB).
+              </Col>
+            </Row>
+          </Col>
+          <Col xs={3}>
+            <div className="border p-2 rounded">
+              <b>You can also:</b>
               <br />
-              Your use of
-              {' '}
-              <i>Interac</i>
-              {' '}
-              e-Transfer is subject to the
-              {' '}
-              <i>Interac</i>
-              {' '}
-              e-Transfer Terms and conditions (PDF, 197 KB).
-            </Col>
-          </Row>
-        </Col>
-        <Col xs={3}>
-          <div className="border p-2 rounded">
-            <b>You can also:</b>
-            <br />
-            View upcoming bill payments and transfers &gt;
-            <br />
-            Stop a payment &gt;
-            <br />
-            Change your statement preferences &gt;
-          </div>
-        </Col>
-      </Row>
-    </div>
+              View upcoming bill payments and transfers &gt;
+              <br />
+              Stop a payment &gt;
+              <br />
+              Change your statement preferences &gt;
+            </div>
+          </Col>
+        </Row>
+      </CommonPageContainer>
+    </>
   );
 }

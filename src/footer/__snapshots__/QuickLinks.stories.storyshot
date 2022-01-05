@@ -22,6 +22,7 @@ exports[`Storyshots QuickLinks Default 1`] = `
       <ul>
         <li>
           <a
+            className="text-decoration-none"
             href="/"
             onClick={[Function]}
           >
@@ -32,6 +33,7 @@ exports[`Storyshots QuickLinks Default 1`] = `
           Please Review Our Legal Stuff by visiting our
            
           <a
+            className="text-decoration-none"
             href="/legal"
             onClick={[Function]}
           >

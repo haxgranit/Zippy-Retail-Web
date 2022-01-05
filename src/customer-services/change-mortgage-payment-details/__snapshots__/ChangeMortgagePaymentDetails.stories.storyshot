@@ -50,7 +50,7 @@ exports[`Storyshots customer-services/change-mortgage-payment-details/ChangeMort
             className="col"
           >
             <div
-              className="fade mb-0 rounded-0 text-dark py-0 px-5 alert alert-primary show"
+              className="fade mb-0 rounded-0 text-dark py-0 px-5 alert alert-danger show"
               role="alert"
             >
               <div

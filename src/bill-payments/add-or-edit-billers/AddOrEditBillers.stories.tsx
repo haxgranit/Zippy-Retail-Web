@@ -1,6 +1,6 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import '../../i18n/config';
-import '../../index.css';
+import '../../styles/index.scss';
 import AddOrEditBillers from './AddOrEditBillers';
 
 export default {
