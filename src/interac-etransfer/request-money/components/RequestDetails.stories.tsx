@@ -13,11 +13,37 @@ export default {
   component: RequestDetails,
 } as ComponentMeta<typeof RequestDetails>;
 
-const Template: ComponentStory<typeof RequestDetails> = (props) => (
+const Template: ComponentStory<typeof RequestDetails> = ({
+  setPageIndex,
+  setCurrentStep,
+  selectedContact,
+  setContactToSend,
+  mainInfo,
+  setMainInfo,
+  accounts,
+  contacts,
+  selectedAccount,
+  setSelectedAccount,
+  setErrorMessage,
+  showModal,
+}) => (
   <BrowserRouter>
-    <RequestDetails {...props}/>
+    <RequestDetails
+      setPageIndex={setPageIndex}
+      setCurrentStep={setCurrentStep}
+      selectedContact={selectedContact}
+      setContactToSend={setContactToSend}
+      mainInfo={mainInfo}
+      setMainInfo={setMainInfo}
+      accounts={accounts}
+      contacts={contacts}
+      selectedAccount={selectedAccount}
+      setSelectedAccount={setSelectedAccount}
+      setErrorMessage={setErrorMessage}
+      showModal={showModal}
+    />
   </BrowserRouter>
-)
+);
 export const Default = Template.bind({});
 Default.args = {
   mainInfo: {
@@ -27,7 +53,7 @@ Default.args = {
     notifyByEmail: true,
     notifyTextMessage: true,
     agreed: true,
-  }
+  },
 };
 /*
 const Template: ComponentStory<typeof RequestDetails> = ({
