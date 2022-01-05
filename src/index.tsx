@@ -10,7 +10,7 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
 import './i18n/config';
-import './index.css';
+import './styles/index.scss';
 import App from './App';
 import { msalConfig } from './authConfig';
 import * as serviceWorker from './serviceWorker';

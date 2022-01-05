@@ -1,0 +1,25 @@
+@import './../colors';
+
+.default-layout {
+    display: flex;
+    flex-direction: row;
+    background-color: $color-gray-20;
+
+    .left-side-nav {
+        display: flex;
+        width: 240px;
+    }
+
+    .content {
+        display: flex;
+        flex-direction: column;
+        padding: 20px;
+        width: 100%;
+    }
+
+    .right-side-panel {
+        padding: 20px;
+        display: flex;
+        width: 240px;
+    }
+}

@@ -82,14 +82,6 @@ Array [
       </p>
     </div>
   </div>,
-  <hr
-    style={
-      Object {
-        "height": "1px",
-        "width": "100%",
-      }
-    }
-  />,
   <div
     className="mt-2 row"
   >
@@ -119,14 +111,6 @@ Array [
       </label>
     </div>
   </div>,
-  <hr
-    style={
-      Object {
-        "height": "1px",
-        "width": "100%",
-      }
-    }
-  />,
   <div
     className="mt-2 row"
   >
@@ -152,14 +136,6 @@ Array [
       </select>
     </div>
   </div>,
-  <hr
-    style={
-      Object {
-        "height": "1px",
-        "width": "100%",
-      }
-    }
-  />,
   <div
     className="mt-2 row"
   >
@@ -186,14 +162,6 @@ Array [
       </select>
     </div>
   </div>,
-  <hr
-    style={
-      Object {
-        "height": "1px",
-        "width": "100%",
-      }
-    }
-  />,
   <div
     className="mt-2 row"
   >
@@ -246,14 +214,6 @@ Array [
       </p>
     </div>
   </div>,
-  <hr
-    style={
-      Object {
-        "height": "1px",
-        "width": "100%",
-      }
-    }
-  />,
   <div
     className="mt-2 row"
   >
@@ -272,18 +232,10 @@ Array [
       <label
         className="form-label"
       >
-        DUANE TOUGH
+        
       </label>
     </div>
   </div>,
-  <hr
-    style={
-      Object {
-        "height": "1px",
-        "width": "100%",
-      }
-    }
-  />,
   <div
     className="mt-2 row"
   >
@@ -301,9 +253,7 @@ Array [
     >
       <label
         className="form-label"
-      >
-        dtough@hotmail.com
-      </label>
+      />
     </div>
   </div>,
   <hr
@@ -345,7 +295,7 @@ Array [
       className="d-flex justify-content-end col"
     >
       <button
-        className="d-flex btn btn-danger"
+        className="zippy-btn d-flex btn btn-primary"
         disabled={false}
         onClick={[Function]}
         type="button"
@@ -439,14 +389,6 @@ Array [
       </p>
     </div>
   </div>,
-  <hr
-    style={
-      Object {
-        "height": "1px",
-        "width": "100%",
-      }
-    }
-  />,
   <div
     className="mt-2 row"
   >
@@ -475,14 +417,6 @@ Array [
       </label>
     </div>
   </div>,
-  <hr
-    style={
-      Object {
-        "height": "1px",
-        "width": "100%",
-      }
-    }
-  />,
   <div
     className="mt-2 row"
   >
@@ -508,14 +442,6 @@ Array [
       </select>
     </div>
   </div>,
-  <hr
-    style={
-      Object {
-        "height": "1px",
-        "width": "100%",
-      }
-    }
-  />,
   <div
     className="mt-2 row"
   >
@@ -541,14 +467,6 @@ Array [
       </select>
     </div>
   </div>,
-  <hr
-    style={
-      Object {
-        "height": "1px",
-        "width": "100%",
-      }
-    }
-  />,
   <div
     className="mt-2 row"
   >
@@ -600,14 +518,6 @@ Array [
       </p>
     </div>
   </div>,
-  <hr
-    style={
-      Object {
-        "height": "1px",
-        "width": "100%",
-      }
-    }
-  />,
   <div
     className="mt-2 row"
   >
@@ -626,18 +536,10 @@ Array [
       <label
         className="form-label"
       >
-        DUANE TOUGH
+        
       </label>
     </div>
   </div>,
-  <hr
-    style={
-      Object {
-        "height": "1px",
-        "width": "100%",
-      }
-    }
-  />,
   <div
     className="mt-2 row"
   >
@@ -655,9 +557,7 @@ Array [
     >
       <label
         className="form-label"
-      >
-        dtough@hotmail.com
-      </label>
+      />
     </div>
   </div>,
   <hr
@@ -699,7 +599,7 @@ Array [
       className="d-flex justify-content-end col"
     >
       <button
-        className="d-flex btn btn-danger"
+        className="zippy-btn d-flex btn btn-primary"
         disabled={false}
         onClick={[Function]}
         type="button"

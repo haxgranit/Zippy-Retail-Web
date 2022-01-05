@@ -9,6 +9,7 @@ import { useMsal } from '@azure/msal-react';
 import Api, { User, Account } from '../../api';
 import { useAppSelector } from '../../app/hooks';
 import { selectUser } from '../../features/user/userSlice';
+import CommonPageContainer from '../../common/CommonPageContainer';
 
 const Divider = () => <div className="border-top my-3" />;
 
@@ -129,17 +130,14 @@ export const AutodepositSettingsPure = ({ user }: { user: User }) => {
       });
   }, [accounts]);
   return (
-    <div>
-      <Row>
-        <Col>
-          <h2>SETUP AUTODEPOSIT</h2>
-        </Col>
-      </Row>
-      <Row>
-        <LeftCol user={user} accountList={accountList} />
-        <RightCol />
-      </Row>
-    </div>
+    <>
+      <CommonPageContainer title="Setup AutoDeposit">
+        <Row>
+          <LeftCol user={user} accountList={accountList} />
+          <RightCol />
+        </Row>
+      </CommonPageContainer>
+    </>
   );
 };
 

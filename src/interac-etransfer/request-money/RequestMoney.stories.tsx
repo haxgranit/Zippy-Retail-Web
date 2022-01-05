@@ -1,7 +1,7 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { BrowserRouter } from 'react-router-dom';
 import '../../i18n/config';
-import '../../index.css';
+import '../../styles/index.scss';
 import RequestMoney from './RequestMoney';
 
 export default {

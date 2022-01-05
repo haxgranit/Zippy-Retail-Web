@@ -1,7 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots Footer Default 1`] = `
-<div>
+<div
+  className="footer-content-wrapper"
+>
   <div
     className="container"
   >
@@ -23,6 +25,7 @@ exports[`Storyshots Footer Default 1`] = `
         <ul>
           <li>
             <a
+              className="text-decoration-none"
               href="/"
               onClick={[Function]}
             >
@@ -33,6 +36,7 @@ exports[`Storyshots Footer Default 1`] = `
             Please Review Our Legal Stuff by visiting our
              
             <a
+              className="text-decoration-none"
               href="/legal"
               onClick={[Function]}
             >
@@ -111,7 +115,6 @@ exports[`Storyshots Footer Default 1`] = `
             <a
               className="text-decoration-none"
               href="/personal-profile"
-              onClick={[Function]}
             >
               dev docs
             </a>
@@ -153,9 +156,7 @@ exports[`Storyshots Footer Default 1`] = `
         <div
           className="copyright mt-1"
         >
-          <span
-            className="text-decoration-none"
-          >
+          <span>
             © 2021 Lorem ipsum dolor sit amet, consectetuer
           </span>
         </div>
@@ -171,12 +172,11 @@ exports[`Storyshots Footer Default 1`] = `
           className="d-flex flex-column me-2"
         >
           <div
-            className="footer-link mb-1"
+            className="footer-link mt-1"
           >
             <a
               className="text-decoration-none"
               href="/personal-profile"
-              onClick={[Function]}
             >
               dev docs
             </a>
@@ -222,9 +222,7 @@ exports[`Storyshots Footer Default 1`] = `
         <div
           className="copyright mt-2 text-end small"
         >
-          <span
-            className="text-decoration-none"
-          >
+          <span>
             © 2021 Lorem ipsum dolor sit amet, consectetuer
           </span>
         </div>

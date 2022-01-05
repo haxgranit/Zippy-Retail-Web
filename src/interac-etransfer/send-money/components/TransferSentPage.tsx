@@ -162,8 +162,7 @@ const TransferSentPage = ({
             Check Status
           </Button>
           <Button
-            variant="danger"
-            className="d-flex"
+            className="zippy-btn d-flex"
             onClick={() => {
               navigateSteps(PageIds.DetailsPageId);
               setCurrentStep(1);
