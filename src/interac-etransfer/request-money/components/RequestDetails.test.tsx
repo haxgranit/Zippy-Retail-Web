@@ -31,6 +31,7 @@ const component = (
       setMainInfo={mockSetCurrentStep}
       setSelectedAccount={mockSetCurrentStep}
       showModal={mockSetCurrentStep}
+      navigateStep={jest.fn()}
     />
   </BrowserRouter>
 );
@@ -47,6 +48,7 @@ const componentWithoutData = (
       setMainInfo={mockSetCurrentStep}
       setSelectedAccount={mockSetCurrentStep}
       showModal={mockSetCurrentStep}
+      navigateStep={jest.fn()}
     />
   </BrowserRouter>
 );

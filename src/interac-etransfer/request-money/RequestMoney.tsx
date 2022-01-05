@@ -27,10 +27,11 @@ const Divider = () => <div className="border-top my-3" />;
 
 const StepIndexes: any = {
   'request-detail': 1,
+  'request-verify': 1,
   'request-sent': 2,
 };
 
-const Steps = ['request-detail', 'request-sent'];
+const Steps = ['request-detail', 'request-verify', 'request-sent'];
 
 export default function RequestMoney() {
   const { stepId } = useParams();
@@ -60,6 +61,7 @@ export default function RequestMoney() {
 
   const navigateStep = (stepIndex: number) => {
     if (!selectedContact || !selectedAccount || !mainInfo.amount) {
+      navigate(`/interac-etransfer/request-money/${Steps[0]}`);
       return;
     }
     navigate(`/interac-etransfer/request-money/${Steps[stepIndex]}`);
@@ -126,18 +128,16 @@ export default function RequestMoney() {
   }, [pageIndex]);
 
   useEffect(() => {
-    if (stepId === 'request-detail') {
-      setMainInfo({
-        amount: 0,
-        message: '',
-        invoiceNumber: 0,
-        notifyByEmail: false,
-        notifyTextMessage: false,
-        agreed: false,
-      });
-      setSelectedContact(0);
-      setSelectedAccount(0);
+    if (!selectedContact || !selectedAccount || !mainInfo.amount) {
+      navigateStep(0);
+      return;
     }
+    if (stepId === 'request-verify') {
+      setShowVerifyModal(true);
+    } else {
+      setShowVerifyModal(false);
+    }
+    setCurrentStep(StepIndexes[stepId || 'request-detail']);
   }, [stepId]);
 
   useEffect(() => {
@@ -156,7 +156,7 @@ export default function RequestMoney() {
       .then(() => {
         setErrorMessage(null);
         setCurrentStep(2);
-        navigateStep(1);
+        navigateStep(2);
         setShowVerifyModal(false);
       })
       .catch(() => setErrorMessage('Transfer failed.'))
@@ -203,8 +203,8 @@ export default function RequestMoney() {
             {currentStep === 1 && (
             <RequestDetails
               selectedContact={selectedContact}
-              setContactToSend={setSelectedContact}
               selectedAccount={selectedAccount}
+              setContactToSend={setSelectedContact}
               setSelectedAccount={setSelectedAccount}
               setMainInfo={setMainInfo}
               mainInfo={mainInfo}
@@ -212,6 +212,7 @@ export default function RequestMoney() {
               contacts={contactList || []}
               setErrorMessage={setErrorMessage}
               showModal={setShowVerifyModal}
+              navigateStep={navigateStep}
             />
             )}
             {currentStep === 2 && (
@@ -221,6 +222,9 @@ export default function RequestMoney() {
               selectedAccount={selectedAccount}
               selectedContact={selectedContact}
               mainInfo={mainInfo}
+              setContactToSend={setSelectedContact}
+              setSelectedAccount={setSelectedAccount}
+              setMainInfo={setMainInfo}
               setCurrentStep={setCurrentStep}
               navigateStep={navigateStep}
             />

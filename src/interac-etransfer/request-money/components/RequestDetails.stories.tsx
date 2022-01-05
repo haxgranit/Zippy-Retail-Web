@@ -28,6 +28,7 @@ const Template: ComponentStory<typeof RequestDetails> = () => (
       setMainInfo={() => ''}
       setSelectedAccount={() => ''}
       showModal={() => ''}
+      navigateStep={jest.fn()}
     />
   </BrowserRouter>
 );

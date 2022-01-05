@@ -43,6 +43,7 @@ interface RequestDetailProps {
   accounts: Account[];
   contacts: Contact[];
   showModal: any,
+  navigateStep: any,
 }
 
 interface RequestDetailPureProps {
@@ -293,6 +294,7 @@ export default function RequestDetails({
   setSelectedAccount,
   setErrorMessage,
   showModal,
+  navigateStep,
 }: RequestDetailProps): JSX.Element {
   const isAuthenticated = useIsAuthenticated();
   let user: any;
@@ -346,6 +348,7 @@ export default function RequestDetails({
       return;
     }
     showModal(true);
+    navigateStep(1);
   };
 
   return (
