@@ -1,12 +1,9 @@
-import Enzyme, { shallow } from 'enzyme';
+import { render, fireEvent } from '@testing-library/react';
+
 import { BrowserRouter } from 'react-router-dom';
-import Adapter from '@wojtekmaj/enzyme-adapter-react-17';
 
 import HomeLoggedOut from './HomeLoggedOut';
 import '../i18n/config';
-
-// Configure enzyme for react 17
-Enzyme.configure({ adapter: new Adapter() });
 
 const mockUseMsal = jest.fn();
 jest.mock('@azure/msal-react', () => ({
@@ -19,16 +16,17 @@ jest.mock('@azure/msal-react', () => ({
 
 describe('HomeLoggedOut Component', () => {
   it('click buttons on HomeLoggedOut', () => {
-    const wrapper = shallow(
+    const { container, getAllByText } = render(
       <BrowserRouter>
         <HomeLoggedOut />
       </BrowserRouter>,
     );
 
-    const component = wrapper.childAt(0).dive();
-    component.find('button').at(0).simulate('click');
-    component.find('button').at(1).simulate('click');
-    component.find('button').at(2).simulate('click');
-    component.find('button').at(3).simulate('click');
+    const buttons = container.querySelectorAll('button');
+    fireEvent.click(buttons[0]);
+    fireEvent.click(buttons[1]);
+    fireEvent.click(buttons[2]);
+    fireEvent.click(buttons[3]);
+    expect(getAllByText('personal sign up')[0]).toBeInTheDocument();
   });
 });
