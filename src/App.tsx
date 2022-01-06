@@ -163,7 +163,10 @@ export default function App() {
               <Route path=":stepId" element={<RequestMoney />} />
             </Route>
             <Route path="contact-list" element={<ContactList />} />
-            <Route path="contact-list/edit" element={<EditContact />} />
+            <Route path="contact-list/edit">
+              <Route path=":id" element={<EditContact />} />
+              <Route path="" element={<EditContact />} />
+            </Route>
             <Route path="edit-my-profile" element={<EditMyProfile />} />
             <Route path="autodeposit-settings" element={<AutodepositSettings />} />
             <Route path="receive-money" element={<ReceiveMoney />} />

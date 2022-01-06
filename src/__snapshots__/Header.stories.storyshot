@@ -2,22 +2,11 @@
 
 exports[`Storyshots Header Logged In 1`] = `
 <nav
-  className="header-layout navbar navbar-expand-lg navbar-light"
+  className="header-layout navbar navbar-expand-lg navbar-light false"
 >
   <div
     className="left-side-header"
-  >
-    <a
-      className="navbar-brand"
-      href="/"
-      onClick={[Function]}
-    >
-      <img
-        alt=""
-        src="ZippyCash_Logo.svg"
-      />
-    </a>
-  </div>
+  />
   <div
     className="content"
   >
@@ -67,7 +56,7 @@ exports[`Storyshots Header Logged In 1`] = `
       id="navbarSupportedContent"
     >
       <ul
-        className="navbar-nav ms-auto mb-2 mb-lg-0 me-md-5"
+        className="navbar-nav"
       >
         <div
           className="nav-item dropdown"
@@ -105,7 +94,7 @@ exports[`Storyshots Header Logged In 1`] = `
 
 exports[`Storyshots Header Logged Out 1`] = `
 <nav
-  className="header-layout navbar navbar-expand-lg navbar-light"
+  className="header-layout navbar navbar-expand-lg navbar-light container"
 >
   <div
     className="left-side-header"
@@ -117,38 +106,13 @@ exports[`Storyshots Header Logged Out 1`] = `
     >
       <img
         alt=""
-        src="ZippyCash_Logo.svg"
+        src="ZippyCash_Logo.png"
       />
     </a>
   </div>
   <div
     className="content"
-  >
-    <div
-      className="search-box"
-    >
-      <i
-        className="zippy-cash-icon zc-search"
-      />
-      <input
-        className="form-control"
-        onChange={[Function]}
-        placeholder="Search..."
-        type="input"
-      />
-      <select
-        className="form-select"
-        onChange={[Function]}
-        value="all"
-      >
-        <option
-          value="all"
-        >
-          All
-        </option>
-      </select>
-    </div>
-  </div>
+  />
   <div
     className="right-side-header"
   >
@@ -170,7 +134,7 @@ exports[`Storyshots Header Logged Out 1`] = `
       id="navbarSupportedContent"
     >
       <ul
-        className="navbar-nav ms-auto mb-2 mb-lg-0 me-md-5"
+        className="navbar-nav"
       >
         <div
           className="nav-item dropdown"
@@ -186,23 +150,17 @@ exports[`Storyshots Header Logged Out 1`] = `
             language
           </a>
         </div>
-        <div
-          className="nav-item dropdown"
+        <button
+          className="btn btn-transparent light"
+          disabled={false}
+          onClick={[Function]}
+          type="button"
         >
-          <a
-            aria-expanded={false}
-            className="dropdown-toggle nav-link"
-            onClick={[Function]}
-            onKeyDown={[Function]}
-            role="button"
-            tabIndex={0}
-          >
-            login
-          </a>
-        </div>
+          login
+        </button>
       </ul>
       <ul
-        className="navbar-nav ms-auto mb-2 mb-lg-0"
+        className="home-pages-links navbar-nav"
       >
         <li
           className="nav-item"
@@ -248,7 +206,7 @@ exports[`Storyshots Header Logged Out 1`] = `
 
 exports[`Storyshots Header Logging In 1`] = `
 <nav
-  className="header-layout navbar navbar-expand-lg navbar-light"
+  className="header-layout navbar navbar-expand-lg navbar-light container"
 >
   <div
     className="left-side-header"
@@ -260,38 +218,13 @@ exports[`Storyshots Header Logging In 1`] = `
     >
       <img
         alt=""
-        src="ZippyCash_Logo.svg"
+        src="ZippyCash_Logo.png"
       />
     </a>
   </div>
   <div
     className="content"
-  >
-    <div
-      className="search-box"
-    >
-      <i
-        className="zippy-cash-icon zc-search"
-      />
-      <input
-        className="form-control"
-        onChange={[Function]}
-        placeholder="Search..."
-        type="input"
-      />
-      <select
-        className="form-select"
-        onChange={[Function]}
-        value="all"
-      >
-        <option
-          value="all"
-        >
-          All
-        </option>
-      </select>
-    </div>
-  </div>
+  />
   <div
     className="right-side-header"
   >
@@ -313,7 +246,7 @@ exports[`Storyshots Header Logging In 1`] = `
       id="navbarSupportedContent"
     >
       <ul
-        className="navbar-nav ms-auto mb-2 mb-lg-0 me-md-5"
+        className="navbar-nav"
       >
         <div
           className="nav-item dropdown"
@@ -329,23 +262,9 @@ exports[`Storyshots Header Logging In 1`] = `
             language
           </a>
         </div>
-        <div
-          className="nav-item dropdown"
-        >
-          <a
-            aria-expanded={false}
-            className="dropdown-toggle nav-link"
-            onClick={[Function]}
-            onKeyDown={[Function]}
-            role="button"
-            tabIndex={0}
-          >
-            login
-          </a>
-        </div>
       </ul>
       <ul
-        className="navbar-nav ms-auto mb-2 mb-lg-0"
+        className="home-pages-links navbar-nav"
       >
         <li
           className="nav-item"
