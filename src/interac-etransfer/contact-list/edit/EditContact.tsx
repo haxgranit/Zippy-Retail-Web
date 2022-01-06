@@ -2,10 +2,9 @@ import { useState } from 'react';
 import {
   Col, Row, Form, Button,
 } from 'react-bootstrap';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useParams } from 'react-router-dom';
 import StepComponent from '../../../common/StepComponent';
 import IdentityVerificationModal from './IdentityVerificationModal';
-import { formatContactName } from '../../../Helpers';
 import CommonPageContainer from '../../../common/CommonPageContainer';
 
 const Divider = () => <div className="border-top my-3" />;
@@ -67,7 +66,11 @@ const RightCol = () => (
 
 const EditContact: React.FC = () => {
   const { state } = useLocation();
+  const { id } = useParams();
   const selectedContact = state?.item;
+  const [firstName, setFirstName] = useState(selectedContact?.firstName);
+  const [lastName, setLastName] = useState(selectedContact?.lastName);
+  const [email, setEmail] = useState(selectedContact?.email);
   const [show, setShow] = useState(false);
 
   return (
@@ -77,56 +80,53 @@ const EditContact: React.FC = () => {
         handleClose={() => setShow(false)}
         selectedContact={selectedContact}
       />
-      <CommonPageContainer title="Edit Contact">
+      <CommonPageContainer title={`${(id ? 'Edit' : 'New')} Contact`}>
         <Row>
           <LeftCol currentStep={1} setCurrentStep={() => {}} />
           <RightCol />
         </Row>
-        <Row style={{ marginTop: 100 }}>
-          <Col xs="4" style={{ display: 'flex', alignItems: 'center' }}>
-            <span style={{ display: 'inline-block', width: 'fit-content' }}>
-              Name:
+        <Row>
+          <Col xs="4">
+            <span>
+              Firstname:
             </span>
           </Col>
-          <Col xs="4" style={{ display: 'flex', alignItems: 'center' }}>
+          <Col xs="4">
             <Form.Control
               type="text"
-              value={formatContactName(selectedContact?.firstName, selectedContact?.lastName)}
-              style={{
-                display: 'inline-block',
-                width: 250,
-                marginLeft: 10,
-                marginRight: 10,
-              }}
+              value={firstName}
+              onChange={(event) => setFirstName(event.target.value)}
             />
-          </Col>
-          <Col xs="4" style={{ display: 'flex', alignItems: 'center' }}>
-            {}
           </Col>
         </Row>
         <HorizontalLine />
-        <Row style={{ marginTop: 30 }}>
+        <Row>
+          <Col xs="4">
+            <span>
+              Lastname:
+            </span>
+          </Col>
+          <Col xs="4">
+            <Form.Control
+              type="text"
+              value={lastName}
+              onChange={(event) => setLastName(event.target.value)}
+            />
+          </Col>
+        </Row>
+        <HorizontalLine />
+        <Row>
           <Col>
             <span>Details</span>
           </Col>
           <Col>
             <div className="d-flex">
-              <div
-                style={{
-                  width: 20,
-                  height: 25,
-                  border: '1px dotted grey',
-                  textAlign: 'center',
-                  marginRight: 10,
-                  marginLeft: 10,
-                }}
-              >
+              <div>
                 P
               </div>
               <a href="/">Mobile phone</a>
             </div>
           </Col>
-          <Col>{}</Col>
         </Row>
         <HorizontalLine />
         <Row style={{ marginTop: 30 }}>
@@ -138,12 +138,8 @@ const EditContact: React.FC = () => {
           <Col>
             <Form.Control
               type="text"
-              value={selectedContact?.email}
-              style={{
-                width: 250,
-                marginLeft: 10,
-                marginRight: 10,
-              }}
+              value={email}
+              onChange={(event) => setEmail(event.target.value)}
             />
           </Col>
           <Col
@@ -162,14 +158,7 @@ const EditContact: React.FC = () => {
             <span>Notification Language:</span>
           </Col>
           <Col>
-            <Form.Select
-              style={{
-                width: 250,
-                marginLeft: 10,
-                marginRight: 10,
-                marginBottom: 50,
-              }}
-            >
+            <Form.Select>
               <option>English</option>
             </Form.Select>
           </Col>

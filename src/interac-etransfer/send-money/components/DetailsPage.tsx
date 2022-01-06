@@ -6,6 +6,7 @@ import {
   FormControl,
   Button,
 } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import { Account, Contact, User } from '../../../api';
 import { TransferMainDetails, PageIds } from '../SendMoney';
 import { formatContactName } from '../../../Helpers';
@@ -53,6 +54,7 @@ const DetailsPage = ({
     const contact = id ? contacts?.find((el: Contact) => el.id === id) : 'No email';
     return (contact as Contact)?.email || 'No email';
   };
+  const getSelectedContactItem = () => contacts?.find((el: Contact) => el.id === selectedContact);
 
   const handleNext = () => {
     setErrorMessage(null);
@@ -113,19 +115,29 @@ const DetailsPage = ({
               </option>
             ))}
           </Form.Select>
-          <p>
-            { `Email: ${getEmail(selectedContact)}` }
-          </p>
-          <p>
-            <a href="/" className="text-black">
-              Edit Contact
-            </a>
-          </p>
-          <p>
-            <a href="/" className="text-black">
-              New Contact
-            </a>
-          </p>
+          <div className="contact-details">
+            <div>
+              { `Email: ${getEmail(selectedContact)}` }
+            </div>
+            {contacts && user && (
+            <div className="contact-details-controls">
+              <Link
+                to={`/interac-etransfer/contact-list/edit/${selectedContact}`}
+                className={`contact-details-links noselect ${!selectedContact && 'disabled-link'}`}
+                state={{ item: getSelectedContactItem() }}
+              >
+                Edit Contact
+              </Link>
+              <Link
+                to="/interac-etransfer/contact-list/edit"
+                className="contact-details-links noselect"
+                state={{ item: getSelectedContactItem() }}
+              >
+                New Contact
+              </Link>
+            </div>
+            )}
+          </div>
         </Col>
       </Row>
       <Row className="mt-2">
