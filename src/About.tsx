@@ -6,13 +6,14 @@ import ZippyCash_Icons_D from './assets/img/roundicons/aboutus/ZippyCash_Icons_D
 import ZippyCash_Icons_E from './assets/img/roundicons/aboutus/ZippyCash_Icons_E.png';
 import ZippyCash_Icons_F from './assets/img/roundicons/aboutus/ZippyCash_Icons_F.png';
 import ZippyCash_Icons_G from './assets/img/roundicons/aboutus/ZippyCash_Icons_G.png';
+import Footer from './footer/Footer';
 
 export default function About() {
   const { t } = useTranslation();
 
   return (
-    <main>
-      <div>
+    <>
+      <main>
         <div className="container">
           <div>
             <div className="row">
@@ -103,7 +104,8 @@ export default function About() {
             </div>
           </div>
         </div>
-      </div>
-    </main>
+      </main>
+      <Footer />
+    </>
   );
 }
