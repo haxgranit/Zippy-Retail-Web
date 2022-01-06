@@ -14,6 +14,12 @@ import Api, { Account, Contact, InteracEtransferTransaction } from '../../api';
 import { TransferDetails } from '../dialogs/SendMoneyVerificationModal';
 import CommonPageContainer from '../../common/CommonPageContainer';
 
+export const enum PageIds {
+  DetailPageId = 'request-detail',
+  VerifyPageId = 'request-verify',
+  SentPageId = 'request-sent',
+}
+
 export interface RequestMainDetails {
   amount: number;
   invoiceNumber: number;
@@ -31,17 +37,14 @@ const StepIndexes: any = {
   'request-sent': 2,
 };
 
-const Steps = ['request-detail', 'request-verify', 'request-sent'];
-
 export default function RequestMoney() {
   const { stepId } = useParams();
   const navigate = useNavigate();
   const [currentStep, setCurrentStep] = useState(StepIndexes[stepId || 'request-detail']);
 
-  const [pageIndex, setPageIndex] = useState(1);
   const [isRequestingMoney, setIsRequestingMoney] = useState(false);
   const [showVerifyModal, setShowVerifyModal] = useState(false);
-  const [errorMessage, setErrorMessage] = useState<string | null>(null);
+  const [errorMessage, setErrorMessage] = useState<string | undefined>(undefined);
   /** todo */
   const [selectedContact, setSelectedContact] = useState(0);
   const [selectedAccount, setSelectedAccount] = useState(0);
@@ -59,12 +62,22 @@ export default function RequestMoney() {
   const [contactList, setContactList] = useState<Contact[] | null>([]);
   const { instance, accounts } = useMsal();
 
-  const navigateStep = (stepIndex: number) => {
-    if (!selectedContact || !selectedAccount || !mainInfo.amount) {
-      navigate(`/interac-etransfer/request-money/${Steps[0]}`);
+  const validateInputs = (): string | null => {
+    if (selectedContact === 0) return 'Please select a contact to request the money from';
+    if (selectedAccount === 0) return 'Please select an account';
+    if (mainInfo.amount <= 0) return 'Amount should be greater than 0';
+    if (mainInfo.amount > 3000) return 'The maximum amount you can send in each transfer is $3,000';
+    if (!mainInfo.agreed) return 'Please confirm that you have existing relationship with this contact';
+    return null;
+  };
+
+  const navigateStep = (pageId: PageIds) => {
+    const validationMessage = validateInputs();
+    if (validationMessage) {
+      setErrorMessage(validationMessage);
       return;
     }
-    navigate(`/interac-etransfer/request-money/${Steps[stepIndex]}`);
+    navigate(`/interac-etransfer/request-money/${pageId}`);
   };
 
   const getTransferDetails = (): TransferDetails => {
@@ -93,10 +106,8 @@ export default function RequestMoney() {
   const handleRequestMoneyVerificationClose = () => setShowVerifyModal(false);
 
   const handleRequestMoneyVerificationBack = () => {
-    setPageIndex(1);
     setCurrentStep(1);
-    navigateStep(0);
-    setShowVerifyModal(false);
+    navigateStep(PageIds.DetailPageId);
   };
 
   useEffect(() => {
@@ -125,11 +136,13 @@ export default function RequestMoney() {
 
   useEffect(() => {
     window.scrollTo(0, 0);
-  }, [pageIndex]);
+  }, [stepId]);
 
   useEffect(() => {
-    if (!selectedContact || !selectedAccount || !mainInfo.amount) {
-      navigateStep(0);
+    const validationMessage = validateInputs();
+    if (validationMessage) {
+      setErrorMessage(validationMessage);
+      navigateStep(PageIds.DetailPageId);
       return;
     }
     if (stepId === 'request-verify') {
@@ -154,10 +167,9 @@ export default function RequestMoney() {
     new Api(instance, accounts[0])
       .postInteracEtransferTransaction(data)
       .then(() => {
-        setErrorMessage(null);
+        setErrorMessage(undefined);
         setCurrentStep(2);
-        navigateStep(2);
-        setShowVerifyModal(false);
+        navigateStep(PageIds.SentPageId);
       })
       .catch(() => setErrorMessage('Transfer failed.'))
       .finally(() => {
@@ -191,7 +203,10 @@ export default function RequestMoney() {
                   steps={2}
                   currentStep={currentStep}
                   setCurrentStep={(stepIndex: number) => {
-                    if (!selectedContact || !selectedAccount || !mainInfo.amount) {
+                    const validationMessage = validateInputs();
+                    if (validationMessage) {
+                      setErrorMessage(validationMessage);
+                      navigateStep(PageIds.DetailPageId);
                       return;
                     }
                     setCurrentStep(stepIndex);
@@ -200,7 +215,7 @@ export default function RequestMoney() {
                 />
               </Col>
             </Row>
-            {currentStep === 1 && (
+            {(stepId === PageIds.DetailPageId || stepId === PageIds.VerifyPageId) && (
             <RequestDetails
               selectedContact={selectedContact}
               selectedAccount={selectedAccount}
@@ -211,11 +226,11 @@ export default function RequestMoney() {
               accounts={accountsList || []}
               contacts={contactList || []}
               setErrorMessage={setErrorMessage}
-              showModal={setShowVerifyModal}
               navigateStep={navigateStep}
+              validateInputs={validateInputs}
             />
             )}
-            {currentStep === 2 && (
+            {stepId === PageIds.SentPageId && (
             <RequestSent
               accounts={accountsList}
               contacts={contactList}

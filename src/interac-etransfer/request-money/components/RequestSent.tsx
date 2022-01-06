@@ -2,6 +2,7 @@ import { Row, Col, Button } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 import { Account, Contact } from '../../../api';
+import { PageIds } from '../RequestMoney';
 
 const getSelectedById = (id: number, obj:any) => id && obj?.find((el:any) => el.id === id);
 const Divider = () => <div className="border-top my-3" />;
@@ -126,7 +127,7 @@ export const RequestSentPure = ({
                 agreed: false,
               });
               setCurrentStep(1);
-              navigateStep(0);
+              navigateStep(PageIds.DetailPageId);
             }}
           >
             Send another transfer

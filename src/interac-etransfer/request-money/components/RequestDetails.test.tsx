@@ -30,7 +30,7 @@ const component = (
       setErrorMessage={mockSetCurrentStep}
       setMainInfo={mockSetCurrentStep}
       setSelectedAccount={mockSetCurrentStep}
-      showModal={mockSetCurrentStep}
+      validateInputs={jest.fn()}
       navigateStep={jest.fn()}
     />
   </BrowserRouter>
@@ -47,7 +47,7 @@ const componentWithoutData = (
       setErrorMessage={mockSetCurrentStep}
       setMainInfo={mockSetCurrentStep}
       setSelectedAccount={mockSetCurrentStep}
-      showModal={mockSetCurrentStep}
+      validateInputs={jest.fn()}
       navigateStep={jest.fn()}
     />
   </BrowserRouter>
