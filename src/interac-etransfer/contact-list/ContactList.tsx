@@ -401,7 +401,7 @@ const ContactList = () => {
                 {contacts.map((item, index) => (
                   <tr key={item.id}>
                     <td>
-                      <Link to="edit" state={{ item }}>
+                      <Link to={`edit/${item.id}`} state={{ item }}>
                         {formatContactName(item?.firstName, item?.lastName)}
                       </Link>
                     </td>

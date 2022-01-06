@@ -6,7 +6,7 @@ exports[`EditContact Component should render title 1`] = `
     class="d-flex justify-content-between align-items-center"
   >
     <h3>
-      Edit Contact
+      New Contact
     </h3>
   </div>
   <div
@@ -95,40 +95,52 @@ exports[`EditContact Component should render title 1`] = `
     </div>
     <div
       class="row"
-      style="margin-top: 100px;"
     >
       <div
         class="col-4"
-        style="display: flex; align-items: center;"
       >
-        <span
-          style="display: inline-block;"
-        >
-          Name:
+        <span>
+          Firstname:
         </span>
       </div>
       <div
         class="col-4"
-        style="display: flex; align-items: center;"
       >
         <input
           class="form-control"
-          style="display: inline-block; width: 250px; margin-left: 10px; margin-right: 10px;"
           type="text"
           value=""
         />
       </div>
-      <div
-        class="col-4"
-        style="display: flex; align-items: center;"
-      />
     </div>
     <hr
       style="height: 2px; border-width: 0px; color: gray; background: gray; margin-top: 40px;"
     />
     <div
       class="row"
-      style="margin-top: 30px;"
+    >
+      <div
+        class="col-4"
+      >
+        <span>
+          Lastname:
+        </span>
+      </div>
+      <div
+        class="col-4"
+      >
+        <input
+          class="form-control"
+          type="text"
+          value=""
+        />
+      </div>
+    </div>
+    <hr
+      style="height: 2px; border-width: 0px; color: gray; background: gray; margin-top: 40px;"
+    />
+    <div
+      class="row"
     >
       <div
         class="col"
@@ -143,9 +155,7 @@ exports[`EditContact Component should render title 1`] = `
         <div
           class="d-flex"
         >
-          <div
-            style="width: 20px; height: 25px; border: 1px dotted grey; text-align: center; margin-right: 10px; margin-left: 10px;"
-          >
+          <div>
             P
           </div>
           <a
@@ -155,9 +165,6 @@ exports[`EditContact Component should render title 1`] = `
           </a>
         </div>
       </div>
-      <div
-        class="col"
-      />
     </div>
     <hr
       style="height: 2px; border-width: 0px; color: gray; background: gray; margin-top: 40px;"
@@ -180,7 +187,6 @@ exports[`EditContact Component should render title 1`] = `
       >
         <input
           class="form-control"
-          style="width: 250px; margin-left: 10px; margin-right: 10px;"
           type="text"
           value=""
         />
@@ -215,7 +221,6 @@ exports[`EditContact Component should render title 1`] = `
       >
         <select
           class="form-select"
-          style="width: 250px; margin-left: 10px; margin-right: 10px; margin-bottom: 50px;"
         >
           <option>
             English
@@ -313,16 +318,16 @@ exports[`EditContact Component should render title 1`] = `
     class="footer-content-wrapper"
   >
     <div
-      class="container"
+      class="quick-links container"
     >
       <div
         class="row"
       >
-        <div
+        <h3
           class="col-sm-12"
         >
           Quick Links
-        </div>
+        </h3>
       </div>
       <div
         class="row"

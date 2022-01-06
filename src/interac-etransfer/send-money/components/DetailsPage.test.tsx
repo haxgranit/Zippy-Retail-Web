@@ -50,7 +50,7 @@ const component = (
 beforeEach(cleanup);
 
 describe('DetailsPage Component', () => {
-  it('should render SecurityQuestionPage', () => {
+  it('should render DetailsPage', () => {
     render(component);
     expect(
       screen.getByText('Your Interac e-Transfer Details'),

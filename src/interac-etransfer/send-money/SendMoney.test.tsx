@@ -1,7 +1,6 @@
 import React from 'react';
-import {
-  render, fireEvent, screen,
-} from '../../test-utils';
+import { BrowserRouter } from 'react-router-dom';
+import { render, fireEvent, screen } from '../../test-utils';
 import SendMoney from './SendMoney';
 
 const mockedUsedNavigate = jest.fn();
@@ -16,19 +15,31 @@ jest.mock('react-router-dom', () => ({
 
 describe('SendMoney Component', () => {
   test('should render StepComponent inside a SendMoney', () => {
-    render(<SendMoney />);
+    render(
+      <BrowserRouter>
+        <SendMoney />
+      </BrowserRouter>,
+    );
     expect(screen.getByText('Steps:')).toBeInTheDocument();
   });
 
   test('should render DetailsPage inside a SendMoney', () => {
-    render(<SendMoney />);
+    render(
+      <BrowserRouter>
+        <SendMoney />
+      </BrowserRouter>,
+    );
     expect(
       screen.getByText('Your Interac e-Transfer Details'),
     ).toBeInTheDocument();
   });
 
   test('change user account and click buttons', () => {
-    const { container } = render(<SendMoney />);
+    const { container } = render(
+      <BrowserRouter>
+        <SendMoney />
+      </BrowserRouter>,
+    );
     expect(
       screen.getByText('Your Interac e-Transfer Details'),
     ).toBeInTheDocument();
