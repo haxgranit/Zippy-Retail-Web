@@ -543,16 +543,16 @@ exports[`Storyshots interac-etransfer/send-money/SendMoney API Error 1`] = `
     className="footer-content-wrapper"
   >
     <div
-      className="container"
+      className="quick-links container"
     >
       <div
         className="row"
       >
-        <div
+        <h3
           className="col-sm-12"
         >
           Quick Links
-        </div>
+        </h3>
       </div>
       <div
         className="row"
@@ -1314,16 +1314,16 @@ exports[`Storyshots interac-etransfer/send-money/SendMoney Default 1`] = `
     className="footer-content-wrapper"
   >
     <div
-      className="container"
+      className="quick-links container"
     >
       <div
         className="row"
       >
-        <div
+        <h3
           className="col-sm-12"
         >
           Quick Links
-        </div>
+        </h3>
       </div>
       <div
         className="row"

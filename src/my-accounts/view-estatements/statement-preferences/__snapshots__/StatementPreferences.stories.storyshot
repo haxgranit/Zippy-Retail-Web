@@ -400,16 +400,16 @@ exports[`Storyshots my-accounts/view-estatements/statement-preferences/Statement
     className="footer-content-wrapper"
   >
     <div
-      className="container"
+      className="quick-links container"
     >
       <div
         className="row"
       >
-        <div
+        <h3
           className="col-sm-12"
         >
           Quick Links
-        </div>
+        </h3>
       </div>
       <div
         className="row"

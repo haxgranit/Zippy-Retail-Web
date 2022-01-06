@@ -3,11 +3,11 @@ import { useIsAuthenticated, useMsal } from '@azure/msal-react';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
-import { Form } from 'react-bootstrap';
+import { Button, Form } from 'react-bootstrap';
 import { useAppDispatch, useAppSelector } from './app/hooks';
 import { loginRequest } from './authConfig';
 import { selectUser, unload } from './features/user/userSlice';
-import ZippyCashLogo from './assets/img/general/ZippyCash_Logo.svg';
+import ZippyCashLogo from './assets/img/general/ZippyCash_Logo.png';
 
 export const HeaderPure = ({
   isAuthenticated,
@@ -25,27 +25,31 @@ export const HeaderPure = ({
   const { i18n, t } = useTranslation();
 
   return (
-    <nav className="header-layout navbar navbar-expand-lg navbar-light">
+    <nav className={`header-layout navbar navbar-expand-lg navbar-light ${!isAuthenticated && 'container'}`}>
       <div className="left-side-header">
-        <Link to="/" className="navbar-brand">
-          <img src={ZippyCashLogo} alt="" />
-        </Link>
+        { !isAuthenticated && (
+          <Link to="/" className="navbar-brand">
+            <img src={ZippyCashLogo} alt="" />
+          </Link>
+        )}
       </div>
       <div className="content">
-        <div className="search-box">
-          <i className="zippy-cash-icon zc-search" />
-          <Form.Control
-            type="input"
-            placeholder="Search..."
-            onChange={(evt) => evt.preventDefault()}
-          />
-          <Form.Select
-            onChange={(evt) => evt.preventDefault()}
-            value="all"
-          >
-            <option value="all">All</option>
-          </Form.Select>
-        </div>
+        { isAuthenticated && (
+          <div className="search-box">
+            <i className="zippy-cash-icon zc-search" />
+            <Form.Control
+              type="input"
+              placeholder="Search..."
+              onChange={(evt) => evt.preventDefault()}
+            />
+            <Form.Select
+              onChange={(evt) => evt.preventDefault()}
+              value="all"
+            >
+              <option value="all">All</option>
+            </Form.Select>
+          </div>
+        )}
       </div>
       <div className="right-side-header">
         <button
@@ -60,7 +64,7 @@ export const HeaderPure = ({
           <span className="navbar-toggler-icon" />
         </button>
         <div className="collapse navbar-collapse flex-md-column nav-uppercase" id="navbarSupportedContent">
-          <ul className="navbar-nav ms-auto mb-2 mb-lg-0 me-md-5">
+          <ul className="navbar-nav">
             <NavDropdown title={t('header.language')}>
               <NavDropdown.Item onClick={() => i18n.changeLanguage('en-CA')} className="nav-dropdown-item">
                 English (Canada)
@@ -75,22 +79,22 @@ export const HeaderPure = ({
                 Spanish (US)
               </NavDropdown.Item>
             </NavDropdown>
-            <NavDropdown title={userFullName || t('header.login')}>
-              {(isAuthenticated && (
+            {(isAuthenticated && (
+              <NavDropdown title={userFullName || t('header.login')}>
                 <NavDropdown.Item onClick={() => handleLogout()} className="nav-dropdown-item">
                   {t('header.logout')}
                 </NavDropdown.Item>
-              )) || (
-                !isInProgress && (
-                  <NavDropdown.Item onClick={() => handleLogin()} className="nav-dropdown-item">
-                    {t('header.login')}
-                  </NavDropdown.Item>
-                )
-              )}
-            </NavDropdown>
+              </NavDropdown>
+            )) || (
+              !isInProgress && (
+                <Button onClick={() => handleLogin()} variant="transparent light">
+                  {t('header.login')}
+                </Button>
+              )
+            )}
           </ul>
           {!isAuthenticated && (
-            <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
+            <ul className="home-pages-links navbar-nav">
               <li className="nav-item">
                 <Link to="/about" className="nav-link" aria-current="page">{t('header.about')}</Link>
               </li>
