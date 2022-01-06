@@ -38,7 +38,8 @@ const StepIndexes: any = {
 };
 
 export default function RequestMoney() {
-  const { stepId } = useParams();
+  const { stepId = 'request-detail' } = useParams();
+
   const navigate = useNavigate();
   const [currentStep, setCurrentStep] = useState(StepIndexes[stepId || 'request-detail']);
 
@@ -141,8 +142,6 @@ export default function RequestMoney() {
   useEffect(() => {
     const validationMessage = validateInputs();
     if (validationMessage) {
-      setErrorMessage(validationMessage);
-      navigateStep(PageIds.DetailPageId);
       return;
     }
     if (stepId === 'request-verify') {
