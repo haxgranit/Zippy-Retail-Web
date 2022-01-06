@@ -173,25 +173,31 @@ exports[`Storyshots interac-etransfer/send-money/SendMoney API Error 1`] = `
                 Select
               </option>
             </select>
-            <p>
-              Email: No email
-            </p>
-            <p>
-              <a
-                className="text-black"
-                href="/"
+            <div
+              className="contact-details"
+            >
+              <div>
+                Email: No email
+              </div>
+              <div
+                className="contact-details-controls"
               >
-                Edit Contact
-              </a>
-            </p>
-            <p>
-              <a
-                className="text-black"
-                href="/"
-              >
-                New Contact
-              </a>
-            </p>
+                <a
+                  className="contact-details-links noselect disabled-link"
+                  href="/interac-etransfer/contact-list/edit/0"
+                  onClick={[Function]}
+                >
+                  Edit Contact
+                </a>
+                <a
+                  className="contact-details-links noselect"
+                  href="/interac-etransfer/contact-list/edit"
+                  onClick={[Function]}
+                >
+                  New Contact
+                </a>
+              </div>
+            </div>
           </div>
         </div>
         <div
@@ -938,25 +944,31 @@ exports[`Storyshots interac-etransfer/send-money/SendMoney Default 1`] = `
                 Select
               </option>
             </select>
-            <p>
-              Email: No email
-            </p>
-            <p>
-              <a
-                className="text-black"
-                href="/"
+            <div
+              className="contact-details"
+            >
+              <div>
+                Email: No email
+              </div>
+              <div
+                className="contact-details-controls"
               >
-                Edit Contact
-              </a>
-            </p>
-            <p>
-              <a
-                className="text-black"
-                href="/"
-              >
-                New Contact
-              </a>
-            </p>
+                <a
+                  className="contact-details-links noselect disabled-link"
+                  href="/interac-etransfer/contact-list/edit/0"
+                  onClick={[Function]}
+                >
+                  Edit Contact
+                </a>
+                <a
+                  className="contact-details-links noselect"
+                  href="/interac-etransfer/contact-list/edit"
+                  onClick={[Function]}
+                >
+                  New Contact
+                </a>
+              </div>
+            </div>
           </div>
         </div>
         <div

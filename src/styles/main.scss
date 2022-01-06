@@ -4,6 +4,15 @@ body {
     font-family: 'Poppins', sans-serif;
 }
 
+.noselect {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
 .main-container {
     width: 100%;
     height: 100%;
@@ -428,4 +437,26 @@ h3 {
 .footer-content-wrapper {
     margin-top: 20px;
     text-align: center;
+}
+
+.contact-details {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 0;
+
+    .contact-details-controls {
+        .contact-details-links:first-child {
+            margin-right: 10px;
+        }
+
+        .contact-details-links {
+            text-decoration: none;
+            color: $color-blue;
+
+            &.disabled-link {
+                color: $color-light-gray;
+                pointer-events: none;
+            }
+        }
+    }
 }
