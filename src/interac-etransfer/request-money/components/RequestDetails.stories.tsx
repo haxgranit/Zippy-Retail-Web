@@ -26,10 +26,9 @@ const Template: ComponentStory<typeof RequestDetails> = () => (
       setContactToSend={() => ''}
       setErrorMessage={() => ''}
       setMainInfo={() => ''}
-      setCurrentStep={() => ''}
-      navigateStep={() => ''}
       setSelectedAccount={() => ''}
-      showModal={() => ''}
+      validateInputs={() => ''}
+      navigateStep={jest.fn()}
     />
   </BrowserRouter>
 );

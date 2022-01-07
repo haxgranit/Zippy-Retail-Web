@@ -42,6 +42,13 @@ export type InteracEtransferTransaction = {
   id?: number,
 };
 
+type ProblemDetail = {
+  type: string,
+  title: string,
+  status: number,
+  traceId: string,
+};
+
 export async function getToken(instance: IPublicClientApplication, account: AccountInfo)
   : Promise<string | null> {
   const accessTokenRequest = {
@@ -110,7 +117,8 @@ export default class Api {
     });
 
     if (!response.ok) {
-      throw Error(`${response.status} ${response.statusText}`);
+      const problemDetail = await response.json() as ProblemDetail;
+      throw Error(problemDetail.title);
     }
 
     return await response.json() as TResponse;

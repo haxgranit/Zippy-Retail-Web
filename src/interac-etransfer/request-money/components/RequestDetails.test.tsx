@@ -8,7 +8,6 @@ import RequestDetails from './RequestDetails';
 import { RequestMainDetails } from '../RequestMoney';
 
 const mockSetCurrentStep = jest.fn();
-const mockNavigateStep = jest.fn();
 
 const mainInfo = {
   amount: 0,
@@ -24,7 +23,6 @@ const component = (
     <RequestDetails
       accounts={ACCOUNTS}
       contacts={CONTACTS}
-      setCurrentStep={mockSetCurrentStep}
       mainInfo={mainInfo}
       selectedAccount={0}
       selectedContact={0}
@@ -32,8 +30,8 @@ const component = (
       setErrorMessage={mockSetCurrentStep}
       setMainInfo={mockSetCurrentStep}
       setSelectedAccount={mockSetCurrentStep}
-      showModal={mockSetCurrentStep}
-      navigateStep={mockNavigateStep}
+      validateInputs={jest.fn()}
+      navigateStep={jest.fn()}
     />
   </BrowserRouter>
 );
@@ -42,7 +40,6 @@ const componentWithoutData = (
     <RequestDetails
       accounts={[]}
       contacts={[]}
-      setCurrentStep={mockSetCurrentStep}
       mainInfo={mainInfo}
       selectedAccount={0}
       selectedContact={0}
@@ -50,8 +47,8 @@ const componentWithoutData = (
       setErrorMessage={mockSetCurrentStep}
       setMainInfo={mockSetCurrentStep}
       setSelectedAccount={mockSetCurrentStep}
-      showModal={mockSetCurrentStep}
-      navigateStep={mockNavigateStep}
+      validateInputs={jest.fn()}
+      navigateStep={jest.fn()}
     />
   </BrowserRouter>
 );
