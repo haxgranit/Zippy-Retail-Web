@@ -29,9 +29,8 @@ beforeEach(cleanup);
 
 describe('Transfer Sent Page Component', () => {
   it('should render TransferSentPage', () => {
-    render(component);
-    const title = screen.getByText('Your transfer has been sent');
-    expect(title).toBeInTheDocument();
+    const { container } = render(component);
+    expect(container).toMatchSnapshot();
   });
 
   it('Click Send another transfer button on Transfer Sent Page', () => {
@@ -48,7 +47,9 @@ describe('Transfer Sent Page Component', () => {
   });
 
   it('should render with the valid values', () => {
-    render(component);
+    const { container } = render(component);
+    expect(container).toMatchSnapshot();
+
     const sourceEmail = screen.getByText(TRANSFER_INFORMATION.source.email);
     const destinationEmail = screen.getByText(TRANSFER_INFORMATION.destination.email);
 

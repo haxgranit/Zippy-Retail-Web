@@ -2,6 +2,7 @@ import { Row, Col, Button } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 import { Account, Contact } from '../../../api';
+import { PageIds } from '../RequestMoney';
 
 const getSelectedById = (id: number, obj:any) => id && obj?.find((el:any) => el.id === id);
 const Divider = () => <div className="border-top my-3" />;
@@ -11,11 +12,19 @@ export const RequestSentPure = ({
   contact,
   mainInfo,
   setCurrentStep,
+  navigateStep,
+  setContactToSend,
+  setSelectedAccount,
+  setMainInfo,
 }: {
   account: Account,
   contact: Contact,
   mainInfo: any,
   setCurrentStep: any,
+  navigateStep: any,
+  setContactToSend: any,
+  setSelectedAccount: any,
+  setMainInfo: any,
 }) => {
   const navigate = useNavigate();
 
@@ -88,6 +97,16 @@ export const RequestSentPure = ({
             className="d-flex"
             style={{ marginRight: 10 }}
             onClick={() => {
+              setContactToSend(0);
+              setSelectedAccount(0);
+              setMainInfo({
+                amount: 0,
+                message: '',
+                invoiceNumber: 0,
+                notifyByEmail: false,
+                notifyTextMessage: false,
+                agreed: false,
+              });
               navigate('/interac-etransfer/status/requested');
             }}
           >
@@ -96,7 +115,20 @@ export const RequestSentPure = ({
           <Button
             variant="danger"
             className="zippy-btn"
-            onClick={() => setCurrentStep(1)}
+            onClick={() => {
+              setContactToSend(0);
+              setSelectedAccount(0);
+              setMainInfo({
+                amount: 0,
+                message: '',
+                invoiceNumber: 0,
+                notifyByEmail: false,
+                notifyTextMessage: false,
+                agreed: false,
+              });
+              setCurrentStep(1);
+              navigateStep(PageIds.DetailPageId);
+            }}
           >
             Send another transfer
           </Button>
@@ -113,6 +145,10 @@ export default function RequestSent({
   selectedContact,
   mainInfo,
   setCurrentStep,
+  navigateStep,
+  setContactToSend,
+  setSelectedAccount,
+  setMainInfo,
 }: any): JSX.Element {
   const [account] = useState<Account>(getSelectedById(selectedAccount, accounts));
   const [contact] = useState<Contact>(getSelectedById(selectedContact, contacts));
@@ -123,6 +159,10 @@ export default function RequestSent({
       contact={contact}
       mainInfo={mainInfo}
       setCurrentStep={setCurrentStep}
+      navigateStep={navigateStep}
+      setContactToSend={setContactToSend}
+      setSelectedAccount={setSelectedAccount}
+      setMainInfo={setMainInfo}
     />
   );
 }
