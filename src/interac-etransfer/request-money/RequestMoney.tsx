@@ -25,17 +25,8 @@ export interface RequestMainDetails {
 
 const Divider = () => <div className="border-top my-3" />;
 
-export interface LocationParams {
-  pathname: string;
-  state: any;
-  search: string;
-  hash: string;
-  key: string;
-}
-
 export default function RequestMoney() {
-  const location = useLocation() as LocationParams;
-  const { state } = location;
+  const { state } = useLocation() as any;
   const step = state?.step;
   const [currentStep, setCurrentStep] = useState(step || 1);
   const [pageIndex, setPageIndex] = useState(1);
