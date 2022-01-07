@@ -1365,16 +1365,16 @@ exports[`Manage Alert Component Render manage-my-alerts page 1`] = `
     class="footer-content-wrapper"
   >
     <div
-      class="container"
+      class="quick-links container"
     >
       <div
         class="row"
       >
-        <div
+        <h3
           class="col-sm-12"
         >
           Quick Links
-        </div>
+        </h3>
       </div>
       <div
         class="row"

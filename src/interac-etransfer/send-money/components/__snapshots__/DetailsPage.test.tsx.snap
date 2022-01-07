@@ -162,25 +162,13 @@ exports[`DetailsPage Component should render SecurityQuestionPage 1`] = `
           Test Test
         </option>
       </select>
-      <p>
-        Email: email@zippy.cash
-      </p>
-      <p>
-        <a
-          class="text-black"
-          href="/"
-        >
-          Edit Contact
-        </a>
-      </p>
-      <p>
-        <a
-          class="text-black"
-          href="/"
-        >
-          New Contact
-        </a>
-      </p>
+      <div
+        class="contact-details"
+      >
+        <div>
+          Email: email@zippy.cash
+        </div>
+      </div>
     </div>
   </div>
   <div

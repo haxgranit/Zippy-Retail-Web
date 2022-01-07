@@ -1,8 +1,8 @@
 export default function QuickLinks() {
   return (
-    <div className="container">
+    <div className="quick-links container">
       <div className="row">
-        <div className="col-sm-12">Quick Links</div>
+        <h3 className="col-sm-12">Quick Links</h3>
       </div>
       <div className="row">
         <div className="col-sm-2">
