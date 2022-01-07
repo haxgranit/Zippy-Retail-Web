@@ -57,9 +57,8 @@ beforeEach(cleanup);
 
 describe('RequestDetail Component', () => {
   it('should render RequestDetail', () => {
-    render(component);
-    const title = screen.getByText('Request Money Details');
-    expect(title).toBeInTheDocument();
+    const { container } = render(component);
+    expect(container).toMatchSnapshot();
   });
   it('should not  render any form in beginging ', () => {
     render(component);

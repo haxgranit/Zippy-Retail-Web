@@ -30,7 +30,7 @@ beforeEach(cleanup);
 describe('Security Question Page Component', () => {
   it('should render SecurityQuestionPage', () => {
     render(component);
-    expect(screen.getByText('Security Question')).toBeInTheDocument();
+    expect(component).toMatchSnapshot();
   });
 
   it('Click next button on Security Question Page', () => {
