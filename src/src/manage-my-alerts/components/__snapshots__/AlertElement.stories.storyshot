@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots manage-my-alerts/components/AlertElement Default 1`] = `
+<div
+  style={
+    Object {
+      "margin": "20px 5px",
+    }
+  }
+>
+  <div
+    className="d-flex"
+  >
+    <div
+      className="form-check"
+    >
+      <input
+        className="form-check-input"
+        disabled={false}
+        type="checkbox"
+      />
+      <label
+        className="form-check-label"
+        title=""
+      >
+        A scheduled bill payment has failed
+      </label>
+    </div>
+    <i />
+  </div>
+  <hr
+    style={
+      Object {
+        "color": "C4C4C4",
+        "height": "2px",
+      }
+    }
+  />
+</div>
+`;
