@@ -104,6 +104,10 @@ export default function RequestMoney() {
     };
   };
 
+  const handleRequestMoneyVerificationClose = () => {
+    navigateStep(PageIds.DetailPageId);
+  };
+
   const handleRequestMoneyVerificationBack = () => {
     setCurrentStep(1);
     navigateStep(PageIds.DetailPageId);
@@ -179,7 +183,7 @@ export default function RequestMoney() {
     <>
       <RequestMoneyVerificationModal
         show={showVerifyModal}
-        handleClose={handleRequestMoneyVerificationBack}
+        handleClose={handleRequestMoneyVerificationClose}
         handleNext={handleRequestMoneyVerificationNext}
         handleBack={handleRequestMoneyVerificationBack}
         isRequestingMoney={isRequestingMoney}

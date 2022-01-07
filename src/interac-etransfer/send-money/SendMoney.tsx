@@ -255,6 +255,10 @@ export default function SendMoney() {
       return;
     }
     const contact = contactList?.find((item) => item.id === selectedContact);
+    if (!contact) {
+      setErrorMessage('Please select a contact to send money to');
+      return;
+    }
     setProcessing(true);
     new Api(instance, accounts[0])
       .postDirectDepositStatus(contact)
