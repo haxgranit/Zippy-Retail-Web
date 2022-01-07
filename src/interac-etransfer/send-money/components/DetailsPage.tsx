@@ -44,13 +44,16 @@ const DetailsPage = ({
   const handleContactChange = (evt: any) => {
     setContactToSend(Number(evt.target.value));
   };
+
   const handleAccountChange = (evt: any) => {
     setSelectedAccount(Number(evt.target.value));
   };
+
   const getEmail = (id: number) => {
     const contact = id ? contacts?.find((el: Contact) => el.id === id) : 'No email';
     return (contact as Contact)?.email || 'No email';
   };
+
   const getSelectedContactItem = () => contacts?.find((el: Contact) => el.id === selectedContact);
 
   return (
