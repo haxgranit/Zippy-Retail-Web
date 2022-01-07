@@ -23,16 +23,15 @@ const component = (
     <RequestDetails
       accounts={ACCOUNTS}
       contacts={CONTACTS}
-      setCurrentStep={mockSetCurrentStep}
       mainInfo={mainInfo}
       selectedAccount={0}
       selectedContact={0}
       setContactToSend={mockSetCurrentStep}
       setErrorMessage={mockSetCurrentStep}
       setMainInfo={mockSetCurrentStep}
-      setPageIndex={mockSetCurrentStep}
       setSelectedAccount={mockSetCurrentStep}
-      showModal={mockSetCurrentStep}
+      validateInputs={jest.fn()}
+      navigateStep={jest.fn()}
     />
   </BrowserRouter>
 );
@@ -41,16 +40,15 @@ const componentWithoutData = (
     <RequestDetails
       accounts={[]}
       contacts={[]}
-      setCurrentStep={mockSetCurrentStep}
       mainInfo={mainInfo}
       selectedAccount={0}
       selectedContact={0}
       setContactToSend={mockSetCurrentStep}
       setErrorMessage={mockSetCurrentStep}
       setMainInfo={mockSetCurrentStep}
-      setPageIndex={mockSetCurrentStep}
       setSelectedAccount={mockSetCurrentStep}
-      showModal={mockSetCurrentStep}
+      validateInputs={jest.fn()}
+      navigateStep={jest.fn()}
     />
   </BrowserRouter>
 );
