@@ -1,0 +1,190 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots HomeLoggedIn Default 1`] = `
+<main
+  className="default-layout"
+>
+  <div
+    className="left-side-nav"
+  >
+    <div
+      className="vertical-nav-wrapper noselect"
+    >
+      <div
+        className="vertical-nav nav"
+        onKeyDown={[Function]}
+      >
+        <a
+          className="navbar-brand"
+          href="/"
+          onClick={[Function]}
+        >
+          <img
+            alt=""
+            src="ZippyCash_Logo.svg"
+          />
+        </a>
+        <a
+          className="nav-link nav-link"
+          data-rr-ui-event-key={null}
+          disabled={false}
+          href="/my-accounts"
+          onClick={[Function]}
+        >
+          <i
+            className="zippy-cash-icon zc-home"
+          />
+          My Accounts
+          <i
+            className="dropdown zippy-cash-icon zc-up"
+          />
+        </a>
+        <a
+          className="nav-link nav-link"
+          data-rr-ui-event-key={null}
+          disabled={false}
+          href="/interac-etransfer"
+          onClick={[Function]}
+        >
+          <i
+            className="zippy-cash-icon zc-interac-etransfer"
+          />
+          Interac e-Transfer
+          <i
+            className="dropdown zippy-cash-icon zc-up"
+          />
+        </a>
+        <a
+          className="nav-link nav-link"
+          data-rr-ui-event-key={null}
+          disabled={false}
+          href="/bill-payments"
+          onClick={[Function]}
+        >
+          <i
+            className="zippy-cash-icon zc-bill-payments"
+          />
+          Bill Payments
+          <i
+            className="dropdown zippy-cash-icon zc-up"
+          />
+        </a>
+        <a
+          className="nav-link nav-link"
+          data-rr-ui-event-key={null}
+          disabled={false}
+          href="/transfer-funds"
+          onClick={[Function]}
+        >
+          <i
+            className="zippy-cash-icon zc-transfer-funds"
+          />
+          Transfer Funds
+          <i
+            className="dropdown zippy-cash-icon zc-up"
+          />
+        </a>
+        <a
+          className="nav-link nav-link"
+          data-rr-ui-event-key={null}
+          disabled={false}
+          href="/account-security"
+          onClick={[Function]}
+        >
+          <i
+            className="zippy-cash-icon zc-account-security"
+          />
+          Account Security
+        </a>
+        <hr />
+        <a
+          className="nav-link nav-link"
+          data-rr-ui-event-key={null}
+          disabled={false}
+          href="/customer-services"
+          onClick={[Function]}
+        >
+          <i
+            className="zippy-cash-icon zc-customer-services"
+          />
+          Customer Services
+        </a>
+        <a
+          className="nav-link nav-link"
+          data-rr-ui-event-key={null}
+          disabled={false}
+          href="/manage-my-alerts"
+          onClick={[Function]}
+        >
+          <i
+            className="zippy-cash-icon zc-manage-my-alerts"
+          />
+          Manage My Alerts
+        </a>
+        <a
+          className="nav-link nav-link"
+          data-rr-ui-event-key={null}
+          disabled={false}
+          href="/contact-us"
+          onClick={[Function]}
+        >
+          <i
+            className="zippy-cash-icon zc-contact-us"
+          />
+          Contact Us
+        </a>
+        <div
+          className="copyright"
+        >
+          © 2021 Zippy Cash LLC
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    className="content"
+  />
+  <div
+    className="right-side-panel"
+  >
+    <div
+      style={
+        Object {
+          "alignItems": "center",
+          "display": "flex",
+          "flexDirection": "column",
+          "gap": "20px",
+          "width": "240px",
+        }
+      }
+    >
+      <div
+        style={
+          Object {
+            "border": "dashed",
+            "float": "right",
+            "padding": "20px",
+            "textAlign": "center",
+            "width": "200",
+          }
+        }
+      >
+        PLACEHOLDER: Option to sign up for a personal account
+      </div>
+      <div
+        style={
+          Object {
+            "border": "dashed",
+            "float": "right",
+            "padding": "20px",
+            "textAlign": "center",
+            "width": "200",
+          }
+        }
+      >
+        PLACEHOLDER: Option to sign up for a business account
+      </div>
+    </div>
+  </div>
+</main>
+`;

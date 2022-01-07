@@ -1,0 +1,309 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Header Logged In 1`] = `
+<nav
+  className="header-layout navbar navbar-expand-lg navbar-light false"
+>
+  <div
+    className="left-side-header"
+  />
+  <div
+    className="content"
+  >
+    <div
+      className="search-box"
+    >
+      <i
+        className="zippy-cash-icon zc-search"
+      />
+      <input
+        className="form-control"
+        onChange={[Function]}
+        placeholder="Search..."
+        type="input"
+      />
+      <select
+        className="form-select"
+        onChange={[Function]}
+        value="all"
+      >
+        <option
+          value="all"
+        >
+          All
+        </option>
+      </select>
+    </div>
+  </div>
+  <div
+    className="right-side-header"
+  >
+    <button
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+      className="navbar-toggler"
+      data-bs-target="#navbarSupportedContent"
+      data-bs-toggle="collapse"
+      type="button"
+    >
+      <span
+        className="navbar-toggler-icon"
+      />
+    </button>
+    <div
+      className="collapse navbar-collapse flex-md-column nav-uppercase"
+      id="navbarSupportedContent"
+    >
+      <ul
+        className="navbar-nav"
+      >
+        <div
+          className="nav-item dropdown"
+        >
+          <a
+            aria-expanded={false}
+            className="dropdown-toggle nav-link"
+            onClick={[Function]}
+            onKeyDown={[Function]}
+            role="button"
+            tabIndex={0}
+          >
+            language
+          </a>
+        </div>
+        <div
+          className="nav-item dropdown"
+        >
+          <a
+            aria-expanded={false}
+            className="dropdown-toggle nav-link"
+            onClick={[Function]}
+            onKeyDown={[Function]}
+            role="button"
+            tabIndex={0}
+          >
+            login
+          </a>
+        </div>
+      </ul>
+    </div>
+  </div>
+</nav>
+`;
+
+exports[`Storyshots Header Logged Out 1`] = `
+<nav
+  className="header-layout navbar navbar-expand-lg navbar-light container"
+>
+  <div
+    className="left-side-header"
+  >
+    <a
+      className="navbar-brand"
+      href="/"
+      onClick={[Function]}
+    >
+      <img
+        alt=""
+        src="ZippyCash_Logo.png"
+      />
+    </a>
+  </div>
+  <div
+    className="content"
+  />
+  <div
+    className="right-side-header"
+  >
+    <button
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+      className="navbar-toggler"
+      data-bs-target="#navbarSupportedContent"
+      data-bs-toggle="collapse"
+      type="button"
+    >
+      <span
+        className="navbar-toggler-icon"
+      />
+    </button>
+    <div
+      className="collapse navbar-collapse flex-md-column nav-uppercase"
+      id="navbarSupportedContent"
+    >
+      <ul
+        className="navbar-nav"
+      >
+        <div
+          className="nav-item dropdown"
+        >
+          <a
+            aria-expanded={false}
+            className="dropdown-toggle nav-link"
+            onClick={[Function]}
+            onKeyDown={[Function]}
+            role="button"
+            tabIndex={0}
+          >
+            language
+          </a>
+        </div>
+        <button
+          className="btn btn-transparent light"
+          disabled={false}
+          onClick={[Function]}
+          type="button"
+        >
+          login
+        </button>
+      </ul>
+      <ul
+        className="home-pages-links navbar-nav"
+      >
+        <li
+          className="nav-item"
+        >
+          <a
+            aria-current="page"
+            className="nav-link"
+            href="/about"
+            onClick={[Function]}
+          >
+            about us
+          </a>
+        </li>
+        <li
+          className="nav-item"
+        >
+          <a
+            aria-current="page"
+            className="nav-link"
+            href="/personal"
+            onClick={[Function]}
+          >
+            personal
+          </a>
+        </li>
+        <li
+          className="nav-item"
+        >
+          <a
+            aria-current="page"
+            className="nav-link"
+            href="/business"
+            onClick={[Function]}
+          >
+            business
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+`;
+
+exports[`Storyshots Header Logging In 1`] = `
+<nav
+  className="header-layout navbar navbar-expand-lg navbar-light container"
+>
+  <div
+    className="left-side-header"
+  >
+    <a
+      className="navbar-brand"
+      href="/"
+      onClick={[Function]}
+    >
+      <img
+        alt=""
+        src="ZippyCash_Logo.png"
+      />
+    </a>
+  </div>
+  <div
+    className="content"
+  />
+  <div
+    className="right-side-header"
+  >
+    <button
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+      className="navbar-toggler"
+      data-bs-target="#navbarSupportedContent"
+      data-bs-toggle="collapse"
+      type="button"
+    >
+      <span
+        className="navbar-toggler-icon"
+      />
+    </button>
+    <div
+      className="collapse navbar-collapse flex-md-column nav-uppercase"
+      id="navbarSupportedContent"
+    >
+      <ul
+        className="navbar-nav"
+      >
+        <div
+          className="nav-item dropdown"
+        >
+          <a
+            aria-expanded={false}
+            className="dropdown-toggle nav-link"
+            onClick={[Function]}
+            onKeyDown={[Function]}
+            role="button"
+            tabIndex={0}
+          >
+            language
+          </a>
+        </div>
+      </ul>
+      <ul
+        className="home-pages-links navbar-nav"
+      >
+        <li
+          className="nav-item"
+        >
+          <a
+            aria-current="page"
+            className="nav-link"
+            href="/about"
+            onClick={[Function]}
+          >
+            about us
+          </a>
+        </li>
+        <li
+          className="nav-item"
+        >
+          <a
+            aria-current="page"
+            className="nav-link"
+            href="/personal"
+            onClick={[Function]}
+          >
+            personal
+          </a>
+        </li>
+        <li
+          className="nav-item"
+        >
+          <a
+            aria-current="page"
+            className="nav-link"
+            href="/business"
+            onClick={[Function]}
+          >
+            business
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+`;
