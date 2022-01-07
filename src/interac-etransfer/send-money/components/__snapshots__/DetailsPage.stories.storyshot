@@ -285,7 +285,6 @@ Array [
       <button
         className="zippy-btn d-flex btn btn-primary"
         disabled={false}
-        onClick={[Function]}
         type="button"
       >
         Next
@@ -577,7 +576,6 @@ Array [
       <button
         className="zippy-btn d-flex btn btn-primary"
         disabled={false}
-        onClick={[Function]}
         type="button"
       >
         Next
