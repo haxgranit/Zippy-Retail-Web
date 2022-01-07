@@ -159,7 +159,9 @@ export default function App() {
                 <Route path=":transactionId" element={<SendMoney />} />
               </Route>
             </Route>
-            <Route path="request-money" element={<RequestMoney />} />
+            <Route path="request-money" element={<RequestMoney />}>
+              <Route path=":stepId" element={<RequestMoney />} />
+            </Route>
             <Route path="contact-list" element={<ContactList />} />
             <Route path="contact-list/edit">
               <Route path=":id" element={<EditContact />} />
