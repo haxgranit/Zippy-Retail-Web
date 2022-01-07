@@ -247,6 +247,33 @@ export default function SendMoney() {
     navigate(`/interac-etransfer/send-money/${nav_step}${transactionId ? `/${transactionId}` : ''}`);
   };
 
+  const handleSecurity = () => {
+    setErrorMessage(null);
+    const validationMessage = validateInputs();
+    if (validationMessage != null) {
+      setErrorMessage(validationMessage);
+      return;
+    }
+    const contact = contactList?.find((item) => item.id === selectedContact);
+    setProcessing(true);
+    new Api(instance, accounts[0])
+      .postDirectDepositStatus(contact)
+      .then((res) => {
+        if (res) {
+          setCurrentStep(2);
+          navigateSteps(PageIds.SecurityRecipientPageId);
+        } else {
+          setCurrentStep(2);
+          navigateSteps(PageIds.SecurityQuestionPageId);
+        }
+        setProcessing(false);
+      })
+      .catch(() => setErrorMessage('Transfer failed'))
+      .finally(() => {
+        setProcessing(false);
+      });
+  };
+
   const isAuthenticated = useIsAuthenticated();
   let user: any;
   if (isAuthenticated) {
@@ -322,10 +349,8 @@ export default function SendMoney() {
               setMainInfo={setMainInfo}
               accounts={accountsList}
               contacts={contactList}
-              setErrorMessage={setErrorMessage}
-              validateInputs={validateInputs}
-              setCurrentStep={setCurrentStep}
-              navigateSteps={navigateSteps}
+              handleSecurity={handleSecurity}
+              isProcessing={isProcessing}
               user={user}
             />
             )}

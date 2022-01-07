@@ -5,10 +5,11 @@ import {
   Form,
   FormControl,
   Button,
+  Spinner,
 } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { Account, Contact, User } from '../../../api';
-import { TransferMainDetails, PageIds } from '../SendMoney';
+import { TransferMainDetails } from '../SendMoney';
 import { formatContactName } from '../../../Helpers';
 
 interface DetailsPageProps {
@@ -20,10 +21,8 @@ interface DetailsPageProps {
   contacts: Contact[] | null;
   selectedAccount: number;
   setSelectedAccount: Dispatch<SetStateAction<number>>;
-  setErrorMessage: Dispatch<SetStateAction<string | null>>;
-  validateInputs: any;
-  setCurrentStep: any;
-  navigateSteps: any;
+  handleSecurity: any;
+  isProcessing: boolean;
   user: User | undefined;
 }
 const DetailsPage = ({
@@ -35,11 +34,9 @@ const DetailsPage = ({
   contacts,
   selectedAccount,
   setSelectedAccount,
-  setErrorMessage,
-  validateInputs,
-  setCurrentStep,
-  navigateSteps,
   user,
+  handleSecurity,
+  isProcessing,
 }: DetailsPageProps): JSX.Element => {
   const getUserFullName = () => (user && user.firstName && user.lastName ? `${user.firstName} ${user.lastName}` : '');
   const getUserEmail = () => (user && user?.email);
@@ -56,21 +53,6 @@ const DetailsPage = ({
   };
   const getSelectedContactItem = () => contacts?.find((el: Contact) => el.id === selectedContact);
 
-  const handleNext = () => {
-    setErrorMessage(null);
-    const validationMessage = validateInputs();
-    if (validationMessage != null) {
-      setErrorMessage(validationMessage);
-      return;
-    }
-    if (selectedContact === 1) {
-      setCurrentStep(2);
-      navigateSteps(PageIds.SecurityRecipientPageId);
-    } else {
-      setCurrentStep(2);
-      navigateSteps(PageIds.SecurityQuestionPageId);
-    }
-  };
   return (
     <>
       <h4>Your Interac e-Transfer Details</h4>
@@ -258,9 +240,17 @@ const DetailsPage = ({
         <Col className="d-flex justify-content-end">
           <Button
             className="zippy-btn d-flex"
-            onClick={handleNext}
+            onClick={handleSecurity}
+            disabled={isProcessing}
           >
-            Next
+            {isProcessing ? (
+              <span>
+                Next
+                <Spinner style={{ marginLeft: '16px' }} animation="border" variant="light" size="sm" />
+              </span>
+            ) : (
+              'Next'
+            )}
           </Button>
         </Col>
       </Row>
