@@ -64,8 +64,17 @@ const RightCol = () => (
   </Col>
 );
 
+export interface LocationParams {
+  pathname: string;
+  state: any;
+  search: string;
+  hash: string;
+  key: string;
+}
+
 const EditContact: React.FC = () => {
-  const { state } = useLocation();
+  const location = useLocation() as LocationParams;
+  const { state } = location;
   const { id } = useParams();
   const selectedContact = state?.item;
   const [firstName, setFirstName] = useState(selectedContact?.firstName);
