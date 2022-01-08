@@ -28,7 +28,7 @@ describe('HomeLoggedOut Component', () => {
     fireEvent.click(buttons[1]);
     fireEvent.click(buttons[2]);
     fireEvent.click(buttons[3]);
-    const headers = container.querySelectorAll('#header-personal-sign-up');
-    expect(headers).toHaveLength(3);
+    const headers = container.querySelectorAll('.sliderh2');
+    expect(headers).toHaveLength(7);
   });
 });
