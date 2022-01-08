@@ -271,16 +271,16 @@ exports[`StatementPreferences Component should render StatementPreferences Page 
       class="footer-content-wrapper"
     >
       <div
-        class="container"
+        class="quick-links container"
       >
         <div
           class="row"
         >
-          <div
+          <h3
             class="col-sm-12"
           >
             Quick Links
-          </div>
+          </h3>
         </div>
         <div
           class="row"
