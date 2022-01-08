@@ -39,7 +39,7 @@ exports[`Storyshots manage-my-alerts/components/InactiveAlertNote Default 1`] = 
       Note:
     </span>
   </div>
-  <p
+  <div
     className="d-flex flex-column"
   >
     <ul>
@@ -83,6 +83,6 @@ exports[`Storyshots manage-my-alerts/components/InactiveAlertNote Default 1`] = 
         </span>
       </div>
     </div>
-  </p>
+  </div>
 </div>
 `;

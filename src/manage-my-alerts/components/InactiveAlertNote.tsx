@@ -24,7 +24,7 @@ export default function InactiveAlertNote() {
         </div>
         <span style={{ fontWeight: 'bold' }}>Note:</span>
       </div>
-      <p className="d-flex flex-column">
+      <div className="d-flex flex-column">
         <ul>
           <li>
             An inactive alert status applies to bank accounts that were
@@ -64,7 +64,7 @@ export default function InactiveAlertNote() {
             </span>
           </Col>
         </Row>
-      </p>
+      </div>
     </div>
   );
 }

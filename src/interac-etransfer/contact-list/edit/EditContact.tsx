@@ -65,7 +65,7 @@ const RightCol = () => (
 );
 
 const EditContact: React.FC = () => {
-  const { state } = useLocation();
+  const { state } = useLocation() as any;
   const { id } = useParams();
   const selectedContact = state?.item;
   const [firstName, setFirstName] = useState(selectedContact?.firstName);
