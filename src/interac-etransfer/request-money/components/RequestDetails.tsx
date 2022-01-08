@@ -18,7 +18,7 @@ import { useIsAuthenticated } from '@azure/msal-react';
 import { Account, Contact } from '../../../api';
 import DateDropdowns from '../../../components/DateDropdowns';
 import { formatContactName } from '../../../Helpers';
-import { RequestMainDetails } from '../RequestMoney';
+import { PageIds, RequestMainDetails } from '../RequestMoney';
 import { selectUser, UserState } from '../../../features/user/userSlice';
 import { useAppSelector } from '../../../app/hooks';
 // import { useAppSelector } from '../../../app/hooks';
@@ -33,18 +33,17 @@ const StyledLink = styled(Link)`
 const Divider = () => <div className="border-top my-3" />;
 
 interface RequestDetailProps {
-  setCurrentStep: Dispatch<SetStateAction<number>>;
   setContactToSend: Dispatch<SetStateAction<number>>;
   setMainInfo: Dispatch<SetStateAction<RequestMainDetails>>;
-  setPageIndex: Dispatch<SetStateAction<number>>;
   setSelectedAccount: Dispatch<SetStateAction<number>>;
-  setErrorMessage: Dispatch<SetStateAction<string | null>>;
+  setErrorMessage: Dispatch<SetStateAction<string | undefined>>;
   selectedAccount: number;
   selectedContact: number;
   mainInfo: RequestMainDetails;
   accounts: Account[];
   contacts: Contact[];
-  showModal: any,
+  navigateStep: any,
+  validateInputs: any,
 }
 
 interface RequestDetailPureProps {
@@ -285,9 +284,7 @@ export const RequestDetailsPure = ({
 );
 
 export default function RequestDetails({
-  setPageIndex,
-  setCurrentStep,
-  selectedContact = 0,
+  selectedContact,
   setContactToSend,
   mainInfo,
   setMainInfo,
@@ -296,7 +293,8 @@ export default function RequestDetails({
   selectedAccount,
   setSelectedAccount,
   setErrorMessage,
-  showModal,
+  navigateStep,
+  validateInputs,
 }: RequestDetailProps): JSX.Element {
   const isAuthenticated = useIsAuthenticated();
   let user: any;
@@ -333,15 +331,6 @@ export default function RequestDetails({
     return (contact as Contact)?.phone || 'No phone';
   };
 
-  const validateInputs = (): string | null => {
-    if (selectedContact === 0) return 'Please select a contact to request the money from';
-    if (selectedAccount === 0) return 'Please select an account';
-    if (mainInfo.amount <= 0) return 'Amount should be greater than 0';
-    if (mainInfo.amount > 3000) return 'The maximum amount you can send in each transfer is $3,000';
-    if (!mainInfo.agreed) return 'Please confirm that you have existing relationship with this contact';
-    return null;
-  };
-
   const handleNext = () => {
     setErrorMessage('');
     const validationMessage = validateInputs();
@@ -349,9 +338,7 @@ export default function RequestDetails({
       setErrorMessage(validationMessage);
       return;
     }
-    setCurrentStep(1);
-    setPageIndex(1);
-    showModal(true);
+    navigateStep(PageIds.VerifyPageId);
   };
 
   return (

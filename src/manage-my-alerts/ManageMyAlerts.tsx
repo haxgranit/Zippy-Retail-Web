@@ -353,7 +353,7 @@ export default function ManageMyAlerts() {
                     </div>
                     <span style={{ fontWeight: 'bold' }}>Note:</span>
                   </div>
-                  <p className="d-flex flex-column">
+                  <div className="d-flex flex-column">
                     <ul>
                       <li>
                         An inactive alert status applies to bank accoiunts that
@@ -395,7 +395,7 @@ export default function ManageMyAlerts() {
                         </span>
                       </Col>
                     </Row>
-                  </p>
+                  </div>
                 </div>
               </Tab>
               <Tab eventKey="transactions" title="TRANSACTIONS">

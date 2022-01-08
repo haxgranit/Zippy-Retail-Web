@@ -23,16 +23,15 @@ const component = (
     <RequestDetails
       accounts={ACCOUNTS}
       contacts={CONTACTS}
-      setCurrentStep={mockSetCurrentStep}
       mainInfo={mainInfo}
       selectedAccount={0}
       selectedContact={0}
       setContactToSend={mockSetCurrentStep}
       setErrorMessage={mockSetCurrentStep}
       setMainInfo={mockSetCurrentStep}
-      setPageIndex={mockSetCurrentStep}
       setSelectedAccount={mockSetCurrentStep}
-      showModal={mockSetCurrentStep}
+      validateInputs={jest.fn()}
+      navigateStep={jest.fn()}
     />
   </BrowserRouter>
 );
@@ -41,16 +40,15 @@ const componentWithoutData = (
     <RequestDetails
       accounts={[]}
       contacts={[]}
-      setCurrentStep={mockSetCurrentStep}
       mainInfo={mainInfo}
       selectedAccount={0}
       selectedContact={0}
       setContactToSend={mockSetCurrentStep}
       setErrorMessage={mockSetCurrentStep}
       setMainInfo={mockSetCurrentStep}
-      setPageIndex={mockSetCurrentStep}
       setSelectedAccount={mockSetCurrentStep}
-      showModal={mockSetCurrentStep}
+      validateInputs={jest.fn()}
+      navigateStep={jest.fn()}
     />
   </BrowserRouter>
 );
@@ -59,9 +57,8 @@ beforeEach(cleanup);
 
 describe('RequestDetail Component', () => {
   it('should render RequestDetail', () => {
-    render(component);
-    const title = screen.getByText('Request Money Details');
-    expect(title).toBeInTheDocument();
+    const { container } = render(component);
+    expect(container).toMatchSnapshot();
   });
   it('should not  render any form in beginging ', () => {
     render(component);
