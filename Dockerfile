@@ -1,4 +1,4 @@
-FROM node:14.18-alpine AS install
+FROM node:16.13-alpine AS install
 WORKDIR /app
 COPY package*.json .
 RUN npm ci

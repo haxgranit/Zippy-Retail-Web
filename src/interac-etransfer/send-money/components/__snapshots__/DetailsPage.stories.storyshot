@@ -61,25 +61,13 @@ Array [
           Select
         </option>
       </select>
-      <p>
-        Email: No email
-      </p>
-      <p>
-        <a
-          className="text-black"
-          href="/"
-        >
-          Edit Contact
-        </a>
-      </p>
-      <p>
-        <a
-          className="text-black"
-          href="/"
-        >
-          New Contact
-        </a>
-      </p>
+      <div
+        className="contact-details"
+      >
+        <div>
+          Email: No email
+        </div>
+      </div>
     </div>
   </div>,
   <div
@@ -368,25 +356,13 @@ Array [
           Select
         </option>
       </select>
-      <p>
-        Email: No email
-      </p>
-      <p>
-        <a
-          className="text-black"
-          href="/"
-        >
-          Edit Contact
-        </a>
-      </p>
-      <p>
-        <a
-          className="text-black"
-          href="/"
-        >
-          New Contact
-        </a>
-      </p>
+      <div
+        className="contact-details"
+      >
+        <div>
+          Email: No email
+        </div>
+      </div>
     </div>
   </div>,
   <div

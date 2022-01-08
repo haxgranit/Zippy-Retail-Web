@@ -11,13 +11,14 @@ import NumberCircle2 from './assets/img/roundicons/business/numbercircle_2.png';
 import NumberCircle3 from './assets/img/roundicons/business/numbercircle_3.png';
 import NumberCircle4 from './assets/img/roundicons/business/numbercircle_4.png';
 import { b2cPolicies, loginRequest } from './authConfig';
+import Footer from './footer/Footer';
 
 export default function Business() {
   const { instance } = useMsal();
   const { t } = useTranslation();
 
   return (
-    <main>
+    <>
       <div
         className="bg-light"
         style={{
@@ -155,7 +156,7 @@ export default function Business() {
           </div>
         </div>
       </div>
-      <div style={{ backgroundColor: '#51aad8' }}>
+      <main style={{ backgroundColor: '#51aad8' }}>
         <div className="container">
           <div className="row">
             <div className="col-12 col-md-6 col-lg-3">
@@ -264,7 +265,8 @@ export default function Business() {
             </div>
           </div>
         </div>
-      </div>
-    </main>
+      </main>
+      <Footer />
+    </>
   );
 }

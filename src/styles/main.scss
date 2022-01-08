@@ -4,6 +4,15 @@ body {
     font-family: 'Poppins', sans-serif;
 }
 
+.noselect {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
 .main-container {
     width: 100%;
     height: 100%;
@@ -13,10 +22,6 @@ main a:hover {
     color: $color-white;
 }
 
-.slider-slide {
-    background-position: center;
-    background-size: cover;
-}
 
 .noselect {
     -webkit-touch-callout: none; /* iOS Safari */
@@ -25,57 +30,6 @@ main a:hover {
     -moz-user-select: none; /* Old versions of Firefox */
     -ms-user-select: none; /* Internet Explorer/Edge */
     user-select: none; /* Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox */
-}
-
-.slider-slide .container .row {
-    min-height: 60vh;
-    align-items: center;
-}
-
-.sliderh2 {
-    color: $color-white;
-    font-weight: 500;
-    font-size: 1.6em;
-    padding-top: 6em;
-}
-
-.hero-heading {
-    font-size: 4.5em;
-    line-height: 1em;
-}
-
-.hero .hero-button, .my-button {
-    width: 230px;
-    font-weight: bold;
-    font-size: 1.6em;
-    padding: 0px 8px;
-    box-shadow: 5px 5px #88888840;
-    border-radius: 10px !important;
-    color: #FF1926;
-}
-
-.hero .hero-button{
-    margin-top: 30px;
-}
-
-.my-buttonred {
-    font-weight: bold;
-    font-size: 2em;
-    padding: 0px 15px;
-    box-shadow: 5px 5px #88888840;
-    border-radius: 10px !important;
-    color: $color-white;
-    background-color: #FF1926;
-}
-
-.my-buttonred:hover {
-    font-weight: bold;
-    font-size: 2em;
-    padding: 0px 15px;
-    box-shadow: 5px 5px #88888840;
-    border-radius: 10px !important;
-    color: $color-white;
-    background-color: #FF1926;
 }
 
 .ctaband {
@@ -94,7 +48,7 @@ main a:hover {
 }
 
 #redgradient {
-    background-image: linear-gradient(to right, #ed4238, $color-gray-30);
+    background-image: linear-gradient(to right, $color-red, $color-orange);
 }
 
 #bluegradient {
@@ -107,10 +61,6 @@ main a:hover {
 
 .orangeredbar {
     display: none;
-}
-
-.fw-bold {
-    color: $color-white;
 }
 
 .redtitle {
@@ -273,16 +223,6 @@ footer {
     #bluegradient {
         margin-top: 0vh;
     }
-    .sliderh2 {
-        color: $color-white;
-        font-weight: 500;
-        font-size: 2em;
-        padding-top: 0em;
-    }
-    .hero-heading {
-        font-size: 6.5em;
-        line-height: 1em;
-    }
     .hero .hero-button, .my-button {
         width: 340px;
     }
@@ -406,11 +346,25 @@ h3 {
         box-shadow: none;
     }
 
+    &.transparent {
+
+    }
+
     &.zippy-btn {
         background: linear-gradient(83.49deg, #FF0D26 31.24%, #FF7300 99.49%);
         border-radius: 7px;
         border: none;
         padding: 10px 20px;
+    }
+
+    &.my-buttonred {
+        font-weight: bold;
+        font-size: 2em;
+        padding: 0px 15px;
+        box-shadow: 5px 5px #88888840;
+        border-radius: 10px !important;
+        color: $color-white;
+        background-color: #FF1926;
     }
 }
 
@@ -428,4 +382,61 @@ h3 {
 .footer-content-wrapper {
     margin-top: 20px;
     text-align: center;
+}
+
+.contact-details {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 0;
+
+    .contact-details-controls {
+        .contact-details-links:first-child {
+            margin-right: 10px;
+        }
+
+        .contact-details-links {
+            text-decoration: none;
+            color: $color-blue;
+
+            &.disabled-link {
+                color: $color-light-gray;
+                pointer-events: none;
+            }
+        }
+    }
+}
+
+.quick-links {
+    padding-bottom: 20px;
+    a {
+        color: $color_blue;
+
+        &:hover {
+            color: $color_dark-gray;
+        }
+    }
+
+    .row {
+        align-content: center;
+        justify-content: center;
+
+        & > div {
+            display: flex;
+            flex-direction: column;
+            align-content: center;
+            flex-wrap: nowrap;
+
+            ul {
+                margin: 0;
+                padding: 0;
+                display: flex;
+                flex-direction: column;
+                margin: 0;
+
+                li {
+                    list-style-type:none;
+                }
+            }
+        }
+    }
 }
