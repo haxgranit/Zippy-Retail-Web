@@ -1,4 +1,4 @@
-import { render, fireEvent, screen } from '../../../test-utils';
+import { render, fireEvent } from '../../../test-utils';
 
 import SecurityQuestionPage from './SecurityQuestionPage';
 import MAIN_INFO from '../../../stories/MainInfo';
