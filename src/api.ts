@@ -40,6 +40,8 @@ export type InteracEtransferTransaction = {
   amount: number,
   type: string,
   id?: number,
+  securityQuestion: string,
+  securityAnswer: string,
 };
 
 type ProblemDetail = {
@@ -91,12 +93,16 @@ export default class Api {
     return this.fetch<Transaction[]>('get', `InteracEtransfer/Transactions?type=${type}`);
   }
 
+  public getInteracEtransferTransaction(transactionId: number) {
+    return this.fetch<any>('get', `InteracEtransfer/Transactions/${transactionId}`);
+  }
+
   public postInteracEtransferTransaction(data: InteracEtransferTransaction) {
     return this.fetch<InteracEtransferTransaction>('post', 'InteracEtransfer/Transactions', data);
   }
 
-  public postDirectDepositStatus(data: Contact | undefined) {
-    return this.fetch<InteracEtransferTransaction>('post', 'InteracEtransfer/DirectDepositStatus', { email: data?.email });
+  public postDirectDepositStatus(email: string) {
+    return this.fetch<InteracEtransferTransaction>('post', 'InteracEtransfer/DirectDepositStatus', { email });
   }
 
   private async fetch<TResponse>(method: string, path: string, body?: any) {

@@ -13,15 +13,11 @@ export default {
 } as ComponentMeta<typeof TransferSentPage>;
 
 const Template: ComponentStory<typeof TransferSentPage> = ({
-  setCurrentStep,
-  navigateSteps,
   isCompleted,
   transferInformation,
 }) => (
   <BrowserRouter>
     <TransferSentPage
-      setCurrentStep={setCurrentStep}
-      navigateSteps={navigateSteps}
       isCompleted={isCompleted}
       transferInformation={transferInformation}
     />

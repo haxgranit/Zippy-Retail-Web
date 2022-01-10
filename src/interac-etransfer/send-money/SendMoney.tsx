@@ -101,14 +101,17 @@ export default function SendMoney() {
     securityQuestion: undefined,
     showAnswer: false,
   });
+  const [transferInfo, setTransferInformation] = useState<TransferInformation>(
+    TRANSFER_INFORMATION,
+  );
 
   const [accountsList, setAccountsList] = useState<Account[] | null>([]);
   const [contactList, setContactList] = useState<Contact[] | null>([]);
   const { instance, accounts } = useMsal();
 
-  useEffect(() => {
-    const currentApi = new Api(instance, accounts[0]);
+  const currentApi = new Api(instance, accounts[0]);
 
+  useEffect(() => {
     (async () => {
       try {
         const result = await currentApi.listAccounts();
@@ -147,14 +150,14 @@ export default function SendMoney() {
       url: './',
     },
   ];
-  // will remove after integrating api response
-  const tempTransferInformation: TransferInformation = TRANSFER_INFORMATION;
 
   const handleSendMoneyVerificationNext = () => {
     const data: InteracEtransferTransaction = {
       contactId: selectedContact,
       amount: mainInfo.amount,
       type: 'send',
+      securityQuestion: mainInfo.securityQuestion || '',
+      securityAnswer: mainInfo.securityAnswer || '',
     };
     setProcessing(true);
     new Api(instance, accounts[0])
@@ -259,9 +262,13 @@ export default function SendMoney() {
       setErrorMessage('Please select a contact to send money to');
       return;
     }
+    if (!contact.email) {
+      setErrorMessage('There is no email for the selected contact. Please select an email to send money to');
+      return;
+    }
     setProcessing(true);
     new Api(instance, accounts[0])
-      .postDirectDepositStatus(contact)
+      .postDirectDepositStatus(contact.email)
       .then((res) => {
         if (res) {
           setCurrentStep(2);
@@ -310,6 +317,22 @@ export default function SendMoney() {
     if (!selectedAccount && !selectedContact) {
       navigateSteps(PageIds.DetailsPageId);
     }
+    (async () => {
+      if (transactionId) {
+        try {
+          const result = await currentApi.getInteracEtransferTransaction(Number(transactionId));
+          setTransferInformation({
+            ...transferInfo,
+            securityQuestion: result?.securityQuestion,
+            securityAnswer: result?.securityAnswer,
+          });
+        } catch (err) {
+          setTimeout(() => {
+            setErrorMessage('Sorry! a problem has occurred when getting contacts.');
+          }, 0);
+        }
+      }
+    })();
   }, [stepId]);
 
   return (
@@ -383,9 +406,7 @@ export default function SendMoney() {
             || pageId === PageIds.TransferSentCompletedId
             ) && (
             <TransferSentPage
-              navigateSteps={navigateSteps}
-              setCurrentStep={setCurrentStep}
-              transferInformation={tempTransferInformation}
+              transferInformation={transferInfo}
               isCompleted={pageId === PageIds.TransferSentCompletedId}
             />
             )}

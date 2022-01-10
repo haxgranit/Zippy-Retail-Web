@@ -163,6 +163,8 @@ export default function RequestMoney() {
       contactId: selectedContact,
       amount: mainInfo.amount,
       type: 'request',
+      securityQuestion: '',
+      securityAnswer: '',
     };
     setIsRequestingMoney(true);
     new Api(instance, accounts[0])
