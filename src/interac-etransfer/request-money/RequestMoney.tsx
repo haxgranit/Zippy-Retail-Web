@@ -103,7 +103,9 @@ export default function RequestMoney() {
     };
   };
 
-  const handleRequestMoneyVerificationClose = () => setShowVerifyModal(false);
+  const handleRequestMoneyVerificationClose = () => {
+    navigateStep(PageIds.DetailPageId);
+  };
 
   const handleRequestMoneyVerificationBack = () => {
     setCurrentStep(1);
