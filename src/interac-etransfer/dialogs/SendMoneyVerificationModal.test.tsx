@@ -12,7 +12,7 @@ describe('SendMoneyVerificationModal Component', () => {
       <SendMoneyVerificationModal
         transferDetails={{
           source: { name: 'source', email: 'source@zippy.cash' },
-          destination: { name: 'destination', email: 'destination@zippy.cash' },
+          destination: { firstName: 'firstName', lastName: 'lastName', email: 'destination@zippy.cash' },
           fromAccount: 'Personal (8000 001 000000000) $1,747.46',
           amount: 10000,
         }}
@@ -26,7 +26,7 @@ describe('SendMoneyVerificationModal Component', () => {
     const labels = wrapper.find('p');
     expect(labels.at(3).text()).toEqual('source');
     expect(labels.at(4).text()).toEqual('source@zippy.cash');
-    expect(labels.at(6).text()).toEqual('destination');
+    expect(labels.at(6).text()).toEqual('firstName lastName');
     expect(labels.at(7).text()).toEqual('destination@zippy.cash');
     expect(labels.at(9).text()).toEqual('$10,000.00');
     expect(labels.at(11).text()).toEqual('Personal (8000 001 000000000) $1,747.46');
