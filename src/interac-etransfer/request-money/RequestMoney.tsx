@@ -95,16 +95,17 @@ export default function RequestMoney() {
         email: sourceAccount?.email ?? '',
       },
       destination: {
-        name: `${destinationContact?.firstName ?? ''} ${
-          destinationContact?.lastName ?? ''
-        }`,
+        firstName: destinationContact?.firstName,
+        lastName: destinationContact?.lastName,
         email: destinationContact?.email ?? '',
       },
       fromAccount: sourceAccount?.name,
     };
   };
 
-  const handleRequestMoneyVerificationClose = () => setShowVerifyModal(false);
+  const handleRequestMoneyVerificationClose = () => {
+    navigateStep(PageIds.DetailPageId);
+  };
 
   const handleRequestMoneyVerificationBack = () => {
     setCurrentStep(1);

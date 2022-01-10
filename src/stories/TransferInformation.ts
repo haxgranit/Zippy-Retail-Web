@@ -8,6 +8,7 @@ const TRANSFER_INFORMATION: TransferInformation = {
   expiryDate: DateTime.fromISO('2021-08-06T13:07:04.054'),
   submitted: DateTime.fromISO('2021-12-06T13:07:04.054'),
   securityQuestion: 'Security Question',
+  securityAnswer: 'Security Answer',
   amount: 1000,
   balance: 2000,
   referenceNumber: 123456789,

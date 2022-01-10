@@ -85,7 +85,7 @@ export default function SendMoney() {
   const [showVerifyModal, setShowVerifyModal] = useState(
     stepId === PageIds.SendMoneyVerifyPageId || false,
   );
-  const [isSendingMoney, setIsSendingMoney] = useState(false);
+  const [isProcessing, setProcessing] = useState(false);
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
   const [selectedContact, setSelectedContact] = useState(0);
   const [selectedAccount, setSelectedAccount] = useState(0);
@@ -101,14 +101,17 @@ export default function SendMoney() {
     securityQuestion: undefined,
     showAnswer: false,
   });
+  const [transferInfo, setTransferInformation] = useState<TransferInformation>(
+    TRANSFER_INFORMATION,
+  );
 
   const [accountsList, setAccountsList] = useState<Account[] | null>([]);
   const [contactList, setContactList] = useState<Contact[] | null>([]);
   const { instance, accounts } = useMsal();
 
-  useEffect(() => {
-    const currentApi = new Api(instance, accounts[0]);
+  const currentApi = new Api(instance, accounts[0]);
 
+  useEffect(() => {
     (async () => {
       try {
         const result = await currentApi.listAccounts();
@@ -147,16 +150,16 @@ export default function SendMoney() {
       url: './',
     },
   ];
-  // will remove after integrating api response
-  const tempTransferInformation: TransferInformation = TRANSFER_INFORMATION;
 
   const handleSendMoneyVerificationNext = () => {
     const data: InteracEtransferTransaction = {
       contactId: selectedContact,
       amount: mainInfo.amount,
       type: 'send',
+      securityQuestion: mainInfo.securityQuestion || '',
+      securityAnswer: mainInfo.securityAnswer || '',
     };
-    setIsSendingMoney(true);
+    setProcessing(true);
     new Api(instance, accounts[0])
       .postInteracEtransferTransaction(data)
       .then((res) => {
@@ -172,7 +175,7 @@ export default function SendMoney() {
       })
       .catch(() => setErrorMessage('Transfer failed.'))
       .finally(() => {
-        setIsSendingMoney(false);
+        setProcessing(false);
         setShowVerifyModal(false);
       });
   };
@@ -191,9 +194,8 @@ export default function SendMoney() {
         email: sourceAccount?.email ?? '',
       },
       destination: {
-        name: `${destinationContact?.firstName ?? ''} ${
-          destinationContact?.lastName ?? ''
-        }`,
+        firstName: destinationContact?.firstName,
+        lastName: destinationContact?.lastName,
         email: destinationContact?.email ?? '',
       },
       fromAccount: sourceAccount?.name,
@@ -247,6 +249,41 @@ export default function SendMoney() {
     navigate(`/interac-etransfer/send-money/${nav_step}${transactionId ? `/${transactionId}` : ''}`);
   };
 
+  const handleSecurity = () => {
+    setErrorMessage(null);
+    const validationMessage = validateInputs();
+    if (validationMessage != null) {
+      setErrorMessage(validationMessage);
+      return;
+    }
+    const contact = contactList?.find((item) => item.id === selectedContact);
+    if (!contact) {
+      setErrorMessage('Please select a contact to send money to');
+      return;
+    }
+    if (!contact.email) {
+      setErrorMessage('There is no email for the selected contact. Please select an email to send money to');
+      return;
+    }
+    setProcessing(true);
+    new Api(instance, accounts[0])
+      .postDirectDepositStatus(contact.email)
+      .then((res) => {
+        if (res) {
+          setCurrentStep(2);
+          navigateSteps(PageIds.SecurityRecipientPageId);
+        } else {
+          setCurrentStep(2);
+          navigateSteps(PageIds.SecurityQuestionPageId);
+        }
+        setProcessing(false);
+      })
+      .catch(() => setErrorMessage('Transfer failed'))
+      .finally(() => {
+        setProcessing(false);
+      });
+  };
+
   const isAuthenticated = useIsAuthenticated();
   let user: any;
   if (isAuthenticated) {
@@ -279,6 +316,22 @@ export default function SendMoney() {
     if (!selectedAccount && !selectedContact) {
       navigateSteps(PageIds.DetailsPageId);
     }
+    (async () => {
+      if (transactionId) {
+        try {
+          const result = await currentApi.getInteracEtransferTransaction(Number(transactionId));
+          setTransferInformation({
+            ...transferInfo,
+            securityQuestion: result?.securityQuestion,
+            securityAnswer: result?.securityAnswer,
+          });
+        } catch (err) {
+          setTimeout(() => {
+            setErrorMessage('Sorry! a problem has occurred when getting contacts.');
+          }, 0);
+        }
+      }
+    })();
   }, [stepId]);
 
   return (
@@ -288,7 +341,7 @@ export default function SendMoney() {
         handleClose={handleSendMoneyVerificationClose}
         handleNext={handleSendMoneyVerificationNext}
         handleBack={handleSendMoneyVerificationBack}
-        isSendingMoney={isSendingMoney}
+        isSendingMoney={isProcessing}
         transferDetails={getTransferDetails()}
       />
       <CommonPageContainer title="Send Money">
@@ -314,8 +367,6 @@ export default function SendMoney() {
             </Row>
             {pageId === PageIds.DetailsPageId && (
             <DetailsPage
-              navigateSteps={navigateSteps}
-              setCurrentStep={setCurrentStep}
               selectedContact={selectedContact}
               setContactToSend={setSelectedContact}
               selectedAccount={selectedAccount}
@@ -324,8 +375,8 @@ export default function SendMoney() {
               setMainInfo={setMainInfo}
               accounts={accountsList}
               contacts={contactList}
-              setErrorMessage={setErrorMessage}
-              validateInputs={validateInputs}
+              handleSecurity={handleSecurity}
+              isProcessing={isProcessing}
               user={user}
             />
             )}
@@ -354,9 +405,7 @@ export default function SendMoney() {
             || pageId === PageIds.TransferSentCompletedId
             ) && (
             <TransferSentPage
-              navigateSteps={navigateSteps}
-              setCurrentStep={setCurrentStep}
-              transferInformation={tempTransferInformation}
+              transferInformation={transferInfo}
               isCompleted={pageId === PageIds.TransferSentCompletedId}
             />
             )}
