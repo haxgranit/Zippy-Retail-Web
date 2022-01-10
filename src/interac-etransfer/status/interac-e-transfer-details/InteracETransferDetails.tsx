@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import {
-  Tabs, Tab, Table, Button, Row,
+  Tabs, Tab, Table, Button, Row, Col,
 } from 'react-bootstrap';
 import { useNavigate, useParams } from 'react-router-dom';
 import { DateTime } from 'luxon';
@@ -218,72 +218,87 @@ export default function InteracETransferDetails() {
   const selectedTabId = tabId || 'sent';
 
   const crumbLabels = {
-    sent: 'Sent Money',
-    received: 'Received Money',
+    sent: 'Transfer Sent',
+    received: 'Transfer Received',
     requested: 'Requested Money',
   } as any;
 
   return (
     <>
       <CommonPageContainer title="Status">
-        <Breadcrumbs
-          crumbs={
-            [
-              { label: 'Status', link: '/interac-etransfer/status' },
-              { label: crumbLabels[selectedTabId] },
-            ] as Array<Crumb>
-          }
-        />
-        <div>
-          <h4>Your Interac e-Transfer Details</h4>
-          <ul>
-            <li>
-              To learn more about the status of an Interac e-Transfer, or to take
-              action on any of your transfers, select the text link under the
-              status column.
-            </li>
-            <li>
-              You can also view information about your Interac e-Transfer on the
-              &quot;Account Details&quot; page. Select the account from which you
-              made the transfer to view the details of your transfer in the list
-              of transactions
-            </li>
-          </ul>
-          <p>
-            Note: The(Requested) status refers to a transfer you sent in response
-            to a request for money
-          </p>
-        </div>
-        <Tabs
-          defaultActiveKey={selectedTabId || 'sent'}
-          transition={false}
-          id="status-tab"
-          className="mt-2 mb-3"
-          onSelect={(tabKey) => {
-            navigate(`/interac-etransfer/status/${tabKey}`);
-          }}
-        >
-          <Tab eventKey="sent" title="Sent">
-            <SentTabContent
-              navigate={navigate}
-              instance={instance}
-              accounts={accounts}
+        <Row>
+          <Col xs={9}>
+            <Breadcrumbs
+              crumbs={
+                [
+                  { label: 'Status', link: '/interac-etransfer/status' },
+                  { label: crumbLabels[selectedTabId] },
+                ] as Array<Crumb>
+              }
             />
-          </Tab>
-          <Tab eventKey="received" title="Received">
-            <ReceivedTabContent
-              instance={instance}
-              accounts={accounts}
-            />
-          </Tab>
-          <Tab eventKey="requested" title="Requested">
-            <RequestedTabContent
-              navigate={navigate}
-              instance={instance}
-              accounts={accounts}
-            />
-          </Tab>
-        </Tabs>
+            <Tabs
+              defaultActiveKey={selectedTabId || 'sent'}
+              transition={false}
+              id="status-tab"
+              className="mt-2 mb-3"
+              onSelect={(tabKey) => {
+                navigate(`/interac-etransfer/status/${tabKey}`);
+              }}
+            >
+              <Tab eventKey="sent" title="Transfer Sent">
+                <SentTabContent
+                  navigate={navigate}
+                  instance={instance}
+                  accounts={accounts}
+                />
+              </Tab>
+              <Tab eventKey="received" title="Transfer Received">
+                <ReceivedTabContent
+                  instance={instance}
+                  accounts={accounts}
+                />
+              </Tab>
+              <Tab eventKey="requested" title="Requested Money">
+                <RequestedTabContent
+                  navigate={navigate}
+                  instance={instance}
+                  accounts={accounts}
+                />
+              </Tab>
+            </Tabs>
+          </Col>
+          <Col xs={3}>
+            <div className="border p-2 rounded">
+              <b>You can also:</b>
+              <br />
+              View upcoming bills payments and transfers &gt;
+              <br />
+              Stop a payment &gt;
+              <br />
+              Change your statment preferences &gt;
+            </div>
+            <div>
+              <h4>Your Interac e-Transfer Details</h4>
+              <ul>
+                <li>
+                  To learn more about the status of an Interac e-Transfer, or to take
+                  action on any of your transfers, select the text link under the
+                  status column.
+                </li>
+                <li>
+                  You can also view information about your Interac e-Transfer on the
+                  &quot;Account Details&quot; page. Select the account from which you
+                  made the transfer to view the details of your transfer in the list
+                  of transactions
+                </li>
+              </ul>
+              <p>
+                Note: The(Requested) status refers to a transfer you sent in response
+                to a request for money
+              </p>
+            </div>
+          </Col>
+        </Row>
       </CommonPageContainer>
     </>
   );
