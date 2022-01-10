@@ -11,6 +11,7 @@ import Api, { Transaction, TransferType } from '../../../api';
 import MonthSelectComponent from '../../../common/MonthSelectComponent';
 import { formatContactName } from '../../../Helpers';
 import CommonPageContainer from '../../../common/CommonPageContainer';
+import Breadcrumbs, { Crumb } from '../../../common/Breadcrumbs';
 
 const BorderedTR = styled.tr`
   borderTop: '1px solid #c5c5c5'
@@ -37,7 +38,7 @@ const SentTabContent = ({ navigate, instance, accounts }: any) => {
         </thead>
         <tbody className="border-top-0">
           {transactions.map((item: Transaction) => (
-            <tr key={item.id}>
+            <tr key={`sent_${item.id}`}>
               <td>{DateTime.fromISO(item.date).toLocaleString(DateTime.DATE_MED)}</td>
               <td>
                 <div>{formatContactName(item.contact?.firstName, item.contact?.lastName)}</div>
@@ -54,9 +55,9 @@ const SentTabContent = ({ navigate, instance, accounts }: any) => {
               <td>
                 <a
                   className="text-black"
-                  href={`/interac-etransfer/send-money/transfer-sent-complete/${item.id}`}
+                  href={`/interac-etransfer/status/sent/competed/${item.id}`}
                 >
-                  Transfer Completed
+                  Transfer Sent
                 </a>
               </td>
             </tr>
@@ -106,7 +107,7 @@ const ReceivedTabContent = ({ instance, accounts }: any) => {
         </thead>
         <tbody className="border-top-0">
           {transactions.map((item: Transaction) => (
-            <tr key={item.id}>
+            <tr key={`received_${item.id}`}>
               <td>{DateTime.fromISO(item.date).toLocaleString(DateTime.DATE_MED)}</td>
               <td>
                 <div>{formatContactName(item.contact?.firstName, item.contact?.lastName)}</div>
@@ -164,7 +165,7 @@ const RequestedTabContent = ({ navigate, instance, accounts }: any) => {
         </thead>
         <tbody className="border-top-0">
           {transactions.map((item: Transaction) => (
-            <tr key={item.id}>
+            <tr key={`requested_${item.id}`}>
               <td>{DateTime.fromISO(item.date).toLocaleString(DateTime.DATE_MED)}</td>
               <td>
                 <div>{formatContactName(item.contact?.firstName, item.contact?.lastName)}</div>
@@ -214,11 +215,25 @@ export default function InteracETransferDetails() {
   const navigate = useNavigate();
   const { instance, accounts } = useMsal();
   const { tabId } = useParams();
-  const selectedTabId = tabId || undefined;
+  const selectedTabId = tabId || 'sent';
+
+  const crumbLabels = {
+    sent: 'Sent Money',
+    received: 'Received Money',
+    requested: 'Requested Money',
+  } as any;
 
   return (
-    <div>
+    <>
       <CommonPageContainer title="Status">
+        <Breadcrumbs
+          crumbs={
+            [
+              { label: 'Status', link: '/interac-etransfer/status' },
+              { label: crumbLabels[selectedTabId] },
+            ] as Array<Crumb>
+          }
+        />
         <div>
           <h4>Your Interac e-Transfer Details</h4>
           <ul>
@@ -270,6 +285,6 @@ export default function InteracETransferDetails() {
           </Tab>
         </Tabs>
       </CommonPageContainer>
-    </div>
+    </>
   );
 }

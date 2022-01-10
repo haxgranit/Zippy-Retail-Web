@@ -75,6 +75,7 @@ import i18n from './i18n/config';
 import RequestCanceled from './interac-etransfer/status/request-canceled/RequestCanceled';
 import InteracETransferDetails from './interac-etransfer/status/interac-e-transfer-details/InteracETransferDetails';
 import Status from './interac-etransfer/status/Status';
+import SentCompleted from './interac-etransfer/status/sent/completed/SentCompleted';
 
 export default function App() {
   const dispatch = useAppDispatch();
@@ -146,7 +147,8 @@ export default function App() {
           <Route path="interac-etransfer">
             <Route path="/interac-etransfer" element={<Navigate to="/interac-etransfer/status" />} />
             <Route path="/interac-etransfer/status" element={<Status />}>
-              <Route path="/interac-etransfer/status" element={<Navigate to="/interac-etransfer/status/requested" />} />
+              <Route path="/interac-etransfer/status" element={<Navigate to="/interac-etransfer/status/sent" />} />
+              <Route path="sent/competed/:id" element={<SentCompleted />} />
               <Route path=":tabId" element={<InteracETransferDetails />} />
               <Route path="request-sent" element={<RequestSent />}>
                 <Route path=":requestId" element={<RequestSent />} />

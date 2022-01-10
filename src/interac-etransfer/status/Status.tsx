@@ -22,7 +22,7 @@ export default function Status() {
           </div>
           <span style={{ fontWeight: 'bold' }}>Note:</span>
         </div>
-        <p className="d-flex align-items-end">
+        <div className="d-flex align-items-end">
           <span>Your use of Interac e-Transfer is subject to the </span>
           <Row>
             <Col md={12} className="d-flex align-items-center mt-2">
@@ -40,7 +40,7 @@ export default function Status() {
               <span>Interac e-Transfer Terms and Conditions (PDF, 197KB).</span>
             </Col>
           </Row>
-        </p>
+        </div>
       </div>
     </>
   );

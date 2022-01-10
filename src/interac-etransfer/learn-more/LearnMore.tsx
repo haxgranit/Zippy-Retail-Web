@@ -78,7 +78,7 @@ export default function LearnMore() {
                 </div>
                 <span style={{ fontWeight: 'bold' }}>Note:</span>
               </div>
-              <p>
+              <div>
                 <span>Your use of Interac e-Transfer is subject to the </span>
                 <Row>
                   <Col md={12} className="d-flex align-items-center mt-2">
@@ -98,7 +98,7 @@ export default function LearnMore() {
                     </span>
                   </Col>
                 </Row>
-              </p>
+              </div>
             </div>
           </Col>
           <Col md={3}>
