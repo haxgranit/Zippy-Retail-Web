@@ -31,7 +31,7 @@ export const Default = Template.bind({});
 Default.args = {
   transferDetails: {
     source: { name: 'name', email: 'email@zippy.cash' },
-    destination: { name: 'name', email: 'email@zippy.cash' },
+    destination: { firstName: 'firstName', lastName: 'lastName', email: 'email@zippy.cash' },
     fromAccount: 'Personal (8000 001 000000000) $1,747.46',
     amount: 0,
   },
