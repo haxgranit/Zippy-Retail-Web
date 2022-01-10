@@ -10,18 +10,13 @@ import DetailsPage from './DetailsPage';
 import MAIN_INFO from '../../../stories/MainInfo';
 
 const mockSetMainInfo = jest.fn();
-const mockSetErrorMessage = jest.fn();
-const mockSetCurrentStep = jest.fn();
+const mockHandleSecurity = jest.fn();
 const mockSetContactToSend = jest.fn();
-const mockNavigateSteps = jest.fn();
 
 const component = (
   <DetailsPage
-    setCurrentStep={mockSetCurrentStep}
-    navigateSteps={mockNavigateSteps}
     setMainInfo={mockSetMainInfo}
     mainInfo={MAIN_INFO}
-    setErrorMessage={mockSetErrorMessage}
     setContactToSend={mockSetContactToSend}
     setSelectedAccount={jest.fn()}
     selectedAccount={1}
@@ -42,7 +37,8 @@ const component = (
         email: 'email@zippy.cash',
       },
     ]}
-    validateInputs={jest.fn()}
+    handleSecurity={mockHandleSecurity}
+    isProcessing={false}
     user={undefined}
   />
 );
@@ -58,21 +54,21 @@ describe('DetailsPage Component', () => {
   it('Click next button on DetailsPage', () => {
     render(component);
     screen.getAllByRole('button')[1].click();
-    expect(mockNavigateSteps).toBeCalledTimes(1);
+    expect(mockHandleSecurity).toBeCalledTimes(1);
   });
 
   it('Click next button on DetailsPage with option changing', () => {
     render(component);
     userEvent.selectOptions(screen.getAllByRole('combobox')[0], ['1']);
     screen.getAllByRole('button')[1].click();
-    expect(mockNavigateSteps).toBeCalledTimes(1);
+    expect(mockHandleSecurity).toBeCalledTimes(1);
     expect(mockSetContactToSend).toBeCalledTimes(1);
   });
 
   it('Click next button on DetailsPage with option 2', () => {
     render(component);
     screen.getAllByRole('button')[1].click();
-    expect(mockNavigateSteps).toBeCalledTimes(1);
+    expect(mockHandleSecurity).toBeCalledTimes(1);
   });
 
   it('change FormControl text values', () => {
@@ -111,11 +107,8 @@ describe('DetailsPage Component', () => {
   it('getEmail without contacts should render no email', () => {
     const wrapper = (
       <DetailsPage
-        setCurrentStep={mockSetCurrentStep}
-        navigateSteps={mockNavigateSteps}
         setMainInfo={mockSetMainInfo}
         mainInfo={MAIN_INFO}
-        setErrorMessage={mockSetErrorMessage}
         setContactToSend={mockSetContactToSend}
         setSelectedAccount={jest.fn()}
         selectedAccount={0}
@@ -128,7 +121,8 @@ describe('DetailsPage Component', () => {
           },
         ]}
         selectedContact={1}
-        validateInputs={jest.fn()}
+        handleSecurity={jest.fn()}
+        isProcessing={false}
         user={undefined}
       />
     );
@@ -145,11 +139,8 @@ describe('DetailsPage Component', () => {
   it('should not call setCurrentStep when no contact selected', () => {
     const wrapper = (
       <DetailsPage
-        setCurrentStep={mockSetCurrentStep}
-        navigateSteps={mockNavigateSteps}
         setMainInfo={mockSetMainInfo}
         mainInfo={MAIN_INFO}
-        setErrorMessage={mockSetErrorMessage}
         setContactToSend={mockSetContactToSend}
         setSelectedAccount={jest.fn()}
         selectedAccount={1}
@@ -170,23 +161,21 @@ describe('DetailsPage Component', () => {
             email: 'email@zippy.cash',
           },
         ]}
-        validateInputs={jest.fn()}
+        handleSecurity={jest.fn()}
+        isProcessing={false}
         user={undefined}
       />
     );
 
     render(wrapper);
-    expect(mockSetCurrentStep).toBeCalledTimes(0);
+    expect(mockHandleSecurity).toBeCalledTimes(0);
   });
 
   it('should not call setCurrentStep when no account selected', () => {
     const wrapper = (
       <DetailsPage
-        setCurrentStep={mockSetCurrentStep}
-        navigateSteps={mockNavigateSteps}
         setMainInfo={mockSetMainInfo}
         mainInfo={MAIN_INFO}
-        setErrorMessage={mockSetErrorMessage}
         setContactToSend={mockSetContactToSend}
         setSelectedAccount={jest.fn()}
         selectedAccount={0}
@@ -207,23 +196,21 @@ describe('DetailsPage Component', () => {
             email: 'email@zippy.cash',
           },
         ]}
-        validateInputs={jest.fn()}
+        handleSecurity={jest.fn()}
+        isProcessing={false}
         user={undefined}
       />
     );
 
     render(wrapper);
-    expect(mockSetCurrentStep).toBeCalledTimes(0);
+    expect(mockHandleSecurity).toBeCalledTimes(0);
   });
 
   it('should not call setCurrentStep when no transferMethod selected', () => {
     const wrapper = (
       <DetailsPage
-        setCurrentStep={mockSetCurrentStep}
-        navigateSteps={mockNavigateSteps}
         setMainInfo={mockSetMainInfo}
         mainInfo={{ ...MAIN_INFO, transferMethod: '' }}
-        setErrorMessage={mockSetErrorMessage}
         setContactToSend={mockSetContactToSend}
         setSelectedAccount={jest.fn()}
         selectedAccount={1}
@@ -244,23 +231,21 @@ describe('DetailsPage Component', () => {
             email: 'email@zippy.cash',
           },
         ]}
-        validateInputs={jest.fn()}
+        handleSecurity={jest.fn()}
+        isProcessing={false}
         user={undefined}
       />
     );
 
     render(wrapper);
-    expect(mockSetCurrentStep).toBeCalledTimes(0);
+    expect(mockHandleSecurity).toBeCalledTimes(0);
   });
 
   it('should not call setCurrentStep when ammount equal 0', () => {
     const wrapper = (
       <DetailsPage
-        setCurrentStep={mockSetCurrentStep}
-        navigateSteps={mockNavigateSteps}
         setMainInfo={mockSetMainInfo}
         mainInfo={{ ...MAIN_INFO, amount: 0 }}
-        setErrorMessage={mockSetErrorMessage}
         setContactToSend={mockSetContactToSend}
         setSelectedAccount={jest.fn()}
         selectedAccount={1}
@@ -281,23 +266,21 @@ describe('DetailsPage Component', () => {
             email: 'email@zippy.cash',
           },
         ]}
-        validateInputs={jest.fn()}
+        handleSecurity={jest.fn()}
+        isProcessing={false}
         user={undefined}
       />
     );
 
     render(wrapper);
-    expect(mockSetCurrentStep).toBeCalledTimes(0);
+    expect(mockHandleSecurity).toBeCalledTimes(0);
   });
 
   it('should not call setCurrentStep when ammount greater than 3000', () => {
     const wrapper = (
       <DetailsPage
-        setCurrentStep={mockSetCurrentStep}
-        navigateSteps={mockNavigateSteps}
         setMainInfo={mockSetMainInfo}
         mainInfo={{ ...MAIN_INFO, amount: 3001 }}
-        setErrorMessage={mockSetErrorMessage}
         setContactToSend={mockSetContactToSend}
         setSelectedAccount={jest.fn()}
         selectedAccount={1}
@@ -318,12 +301,13 @@ describe('DetailsPage Component', () => {
             email: 'email@zippy.cash',
           },
         ]}
-        validateInputs={jest.fn()}
+        handleSecurity={jest.fn()}
+        isProcessing={false}
         user={undefined}
       />
     );
 
     render(wrapper);
-    expect(mockSetCurrentStep).toBeCalledTimes(0);
+    expect(mockHandleSecurity).toBeCalledTimes(0);
   });
 });

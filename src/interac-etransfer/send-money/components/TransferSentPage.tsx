@@ -1,5 +1,4 @@
 import { DateTime } from 'luxon';
-import { Dispatch, SetStateAction } from 'react';
 import {
   Row, Col, Form, Button,
 } from 'react-bootstrap';
@@ -12,6 +11,7 @@ export interface TransferInformation{
   destination: { name: string; email: string };
   fromAccount: string;
   securityQuestion: string;
+  securityAnswer: string;
   expiryDate: DateTime;
   submitted: DateTime;
   balance: number;
@@ -19,15 +19,11 @@ export interface TransferInformation{
   referenceNumber: number;
 }
 interface TransferSentPageProps{
-  navigateSteps: Dispatch<string>;
-  setCurrentStep: Dispatch<SetStateAction<number>>;
   isCompleted: boolean;
   transferInformation: TransferInformation;
 }
 
 const TransferSentPage = ({
-  navigateSteps,
-  setCurrentStep,
   isCompleted,
   transferInformation,
 }: TransferSentPageProps): JSX.Element => {
@@ -164,8 +160,7 @@ const TransferSentPage = ({
           <Button
             className="zippy-btn d-flex"
             onClick={() => {
-              navigateSteps(PageIds.DetailsPageId);
-              setCurrentStep(1);
+              navigate(`/interac-etransfer/send-money/${PageIds.DetailsPageId}`);
             }}
           >
             Send another transfer
