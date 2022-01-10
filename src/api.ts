@@ -40,8 +40,8 @@ export type InteracEtransferTransaction = {
   amount: number,
   type: string,
   id?: number,
-  securityQuestion: string,
-  securityAnswer: string,
+  securityQuestion?: string,
+  securityAnswer?: string,
 };
 
 type ProblemDetail = {
