@@ -84,13 +84,17 @@ const SentTabContent = ({ navigate, instance, accounts }: any) => {
   );
 };
 
-const ReceivedTabContent = ({ instance, accounts }: any) => {
+const ReceivedTabContent = ({
+  instance,
+  accounts,
+}: any) => {
   const [transactions, setTransactions] = useState<Transaction[]>([]);
   useEffect(() => {
     new Api(instance, accounts[0])
       .getInteracEtransferTransactions(TransferType.RECEIVE)
       .then((data) => setTransactions(data));
   }, []);
+
   return (
     <>
       <MonthSelectComponent />
@@ -277,7 +281,7 @@ export default function InteracETransferDetails() {
               <br />
               Change your statment preferences &gt;
             </div>
-            <div>
+            <div className="quick-tips">
               <h4>Your Interac e-Transfer Details</h4>
               <ul>
                 <li>

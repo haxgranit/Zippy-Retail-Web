@@ -1,99 +1,114 @@
-import { useState } from 'react';
-import
-{
+import {
   Button,
   Col,
-  Form,
   Row,
   Stack,
 } from 'react-bootstrap';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import { useIsAuthenticated, useMsal } from '@azure/msal-react';
+import { DateTime } from 'luxon';
 import QuickLinks from '../../components/QuickLinks';
 import CommonPageContainer from '../../../../common/CommonPageContainer';
 import Breadcrumbs, { Crumb } from '../../../../common/Breadcrumbs';
-
-const LeftCol = () => {
-  const [sendReminderChecked, setSendReminderChecked] = useState(true);
-  const navigate = useNavigate();
-
-  const handleNext = () => {
-    if (sendReminderChecked) navigate('/interac-etransfer/status/request-reminder');
-  };
-
-  return (
-    <>
-      <Col xs={9}>
-        <h6>Transaction Completed</h6>
-        <Row className="align-items-center mt-4">
-          <Col xs={4}>TO:</Col>
-          <Col xs={6}>
-            Kent Ulrich
-            <br />
-            kentu@shw.ca
-          </Col>
-        </Row>
-        <Row className="align-items-center">
-          <Col xs={4}>Amount:</Col>
-          <Col xs={6}>$10.00</Col>
-        </Row>
-        <Row className="align-items-center">
-          <Col xs={4}>Deposit to:</Col>
-          <Col xs={6}>010-01702-9199639</Col>
-        </Row>
-        <Row className="mt-2">
-          <Col xs={4}>This Request Will Expire On</Col>
-          <Col xs={6}>Jan 2,2022</Col>
-        </Row>
-        <Row className="align-items-center">
-          <Col xs={4}>Actions</Col>
-          <Col xs={6}>
-            <Form.Check
-              type="radio"
-              className="actions"
-              label="Send Reminder to Contact"
-              name="Actions"
-              onChange={() => setSendReminderChecked(true)}
-              checked={sendReminderChecked}
-            />
-            <Form.Check
-              type="radio"
-              className="actions"
-              label="Cancel the Request"
-              name="Actions"
-              onChange={() => setSendReminderChecked(false)}
-              checked={!sendReminderChecked}
-            />
-          </Col>
-        </Row>
-        <Stack gap={3} direction="horizontal">
-          <Button
-            variant="outline-primary ms-auto"
-            onClick={() => navigate('/interac-etransfer/status')}
-          >
-            Back
-          </Button>
-          <Button onClick={handleNext}>Next</Button>
-        </Stack>
-      </Col>
-    </>
-  );
-};
+import Api, { Transaction } from '../../../../api';
+import { useAppSelector } from '../../../../app/hooks';
+import { selectUser, UserState } from '../../../../features/user/userSlice';
 
 export default function SentCompleted() {
+  const isAuthenticated = useIsAuthenticated();
+  const navigate = useNavigate();
+  const { id } = useParams();
+  const { instance, accounts } = useMsal();
+  const [transaction, setTransaction] = useState<Transaction | undefined>(undefined);
+  let user: any;
+  const getUserFullName = () => (user && user.firstName && user.lastName ? `${user.firstName} ${user.lastName}` : '');
+  const getUserEmail = () => (user && user.email ? user.email : '');
+
+  const crumbs = [
+    { label: 'Status', link: '/interac-etransfer/status' },
+    { label: 'Sent Money', link: '/interac-etransfer/status/sent' },
+    { label: 'Transfer Sent' },
+  ] as Array<Crumb>;
+
+  useEffect(() => {
+    new Api(instance, accounts[0])
+      .getInteracEtransferTransaction(id)
+      .then((data) => setTransaction(data));
+  }, []);
+
+  if (isAuthenticated) {
+    ({ user } = useAppSelector(selectUser));
+  } else {
+    ({ user } = {
+      user: {
+        firstName: null,
+        lastName: null,
+        email: null,
+      } as any,
+    } as unknown as UserState);
+  }
+
   return (
     <>
       <CommonPageContainer title="Status">
         <Breadcrumbs
-          crumbs={
-            [
-              { label: 'Status', link: '/interac-etransfer/status' },
-              { label: 'Sent Money', link: '/interac-etransfer/status/sent' },
-              { label: 'Transfer Sent' },
-            ] as Array<Crumb>
-          }
+          crumbs={crumbs}
         />
         <Row>
-          <LeftCol />
+          <Col xs={9} className="transaction-details">
+            <h2>Transaction Request</h2>
+            <div className="details">
+              <Row>
+                <Col xs={4}>From</Col>
+                <Col xs={6}>
+                  <strong>{getUserFullName()}</strong>
+                  {user && ` (${getUserEmail()})`}
+                </Col>
+              </Row>
+              <Row>
+                <Col xs={4}>To</Col>
+                <Col xs={6}>
+                  <strong>{transaction ? `${transaction.contact.firstName || ''} ${transaction.contact.lastName || ''}` : ''}</strong>
+                </Col>
+              </Row>
+              <Row>
+                <Col xs={4}>Transfer Date</Col>
+                <Col xs={6}>
+                  {transaction && transaction.date ? DateTime.fromISO(transaction.date).toLocaleString(DateTime.DATE_MED) : ''}
+                </Col>
+              </Row>
+              <Row>
+                <Col xs={4}>Transfer Amount</Col>
+                <Col xs={6}>
+                  <strong className="amount">
+                    {transaction && transaction.amount ? `$${transaction.amount} CAD` : ''}
+                  </strong>
+                </Col>
+              </Row>
+              <Row>
+                <Col xs={4}>
+                  <div>Reference Number</div>
+                  <div>(Keep For Your Records)</div>
+                </Col>
+                <Col xs={6}>{transaction?.id}</Col>
+              </Row>
+            </div>
+            <Stack gap={3} direction="horizontal">
+              <Button
+                className="zippy-btn d-flex"
+                onClick={() => navigate('/interac-etransfer/status')}
+              >
+                Back
+              </Button>
+              <Button
+                className="zippy-btn d-flex ms-auto"
+                onClick={() => navigate('/interac-etransfer/send-money/details')}
+              >
+                Send Another Transfer
+              </Button>
+            </Stack>
+          </Col>
           <QuickLinks />
         </Row>
       </CommonPageContainer>

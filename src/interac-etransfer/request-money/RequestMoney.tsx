@@ -46,7 +46,6 @@ export default function RequestMoney() {
   const [isRequestingMoney, setIsRequestingMoney] = useState(false);
   const [showVerifyModal, setShowVerifyModal] = useState(false);
   const [errorMessage, setErrorMessage] = useState<string | undefined>(undefined);
-  /** todo */
   const [selectedContact, setSelectedContact] = useState(0);
   const [selectedAccount, setSelectedAccount] = useState(0);
 

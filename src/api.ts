@@ -91,6 +91,10 @@ export default class Api {
     return this.fetch<Transaction[]>('get', `InteracEtransfer/Transactions?type=${type}`);
   }
 
+  public getInteracEtransferTransaction(id: any) {
+    return this.fetch<Transaction>('get', `InteracEtransfer/Transactions/${id}`);
+  }
+
   public postInteracEtransferTransaction(data: InteracEtransferTransaction) {
     return this.fetch<InteracEtransferTransaction>('post', 'InteracEtransfer/Transactions', data);
   }
