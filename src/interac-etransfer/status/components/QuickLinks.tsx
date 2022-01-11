@@ -1,17 +1,16 @@
-import { Col } from 'react-bootstrap';
-
 export default function QuickLinks() {
   return (
-    <Col xs={3}>
-      <div className="border p-2 rounded">
-        <b>You can also:</b>
-        <br />
-        View upcoming bills payments and transfers &gt;
-        <br />
-        Stop a payment &gt;
-        <br />
-        Change your statment preferences &gt;
+    <div className="quick-links">
+      <div className="notify-safe">
+        <i className="zippy-cash-icon zc-security" />
+        Online Security Guarantee
       </div>
-    </Col>
+      <h3>You can also</h3>
+      <ul>
+        <li>View upcoming bill payments and transfers</li>
+        <li>Register for Interac® e-Transfer Autodeposits</li>
+        <li>Change your statement preferences</li>
+      </ul>
+    </div>
   );
 }

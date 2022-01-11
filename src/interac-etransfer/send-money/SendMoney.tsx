@@ -322,8 +322,8 @@ export default function SendMoney() {
           const result = await currentApi.getInteracEtransferTransaction(Number(transactionId));
           setTransferInformation({
             ...transferInfo,
-            securityQuestion: result?.securityQuestion,
-            securityAnswer: result?.securityAnswer,
+            securityQuestion: result?.securityQuestion || '',
+            securityAnswer: result?.securityAnswer || '',
           });
         } catch (err) {
           setTimeout(() => {

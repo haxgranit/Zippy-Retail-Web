@@ -130,7 +130,9 @@ export default function RequestSent() {
       </Row>
       <Row>
         <LeftCol />
-        <QuickLinks />
+        <Col xs={3}>
+          <QuickLinks />
+        </Col>
       </Row>
     </div>
   );

@@ -3,6 +3,7 @@ import { BrowserRouter } from 'react-router-dom';
 
 import InteracETransferDetails from './InteracETransferDetails';
 
+// @ts-ignore
 window.API_URL = 'https://zippy-retail-api-dev.azurewebsites.net';
 const mockedUsedNavigate = jest.fn();
 jest.mock('react-router-dom', () => ({

@@ -33,6 +33,8 @@ export type Transaction = {
   contact: Contact;
   amount: number;
   date: string;
+  securityQuestion?: string;
+  securityAnswer?: string;
 };
 
 export type InteracEtransferTransaction = {
@@ -94,7 +96,7 @@ export default class Api {
   }
 
   public getInteracEtransferTransaction(transactionId: number) {
-    return this.fetch<any>('get', `InteracEtransfer/Transactions/${transactionId}`);
+    return this.fetch<Transaction>('get', `InteracEtransfer/Transactions/${transactionId}`);
   }
 
   public postInteracEtransferTransaction(data: InteracEtransferTransaction) {
