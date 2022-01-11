@@ -1,86 +1,49 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots interac-etransfer/contact-list/edit/EditContact Default 1`] = `
-Array [
+exports[`EditContact Component should render title 1`] = `
+<div>
   <div
-    className="d-flex justify-content-between align-items-center"
+    class="d-flex justify-content-between align-items-center"
   >
     <h3>
       New Contact
     </h3>
-  </div>,
+  </div>
   <div
-    className="content-wrapper"
+    class="content-wrapper"
   >
     <div
-      className="row"
+      class="row"
     >
       <div
-        className="col-9"
+        class="col-9"
       >
         <div
-          className="row"
+          class="row"
         >
           <div
-            className="col"
+            class="col"
           >
             <div
-              className="d-flex align-items-center mt-3 mb-3"
+              class="d-flex align-items-center mt-3 mb-3"
             >
               <span
-                style={
-                  Object {
-                    "fontWeight": "bold",
-                    "marginRight": 10,
-                  }
-                }
+                style="font-weight: bold; margin-right: 10px;"
               >
                 Steps: 
               </span>
               <div
-                onClick={[Function]}
-                onKeyPress={[Function]}
                 role="button"
-                style={
-                  Object {
-                    "alignItems": "center",
-                    "backgroundColor": "#C41F3E",
-                    "border": "2px solid #C41F3E",
-                    "borderRadius": 50,
-                    "color": "white",
-                    "display": "flex",
-                    "height": 25,
-                    "justifyContent": "center",
-                    "width": 25,
-                  }
-                }
+                style="width: 25px; height: 25px; border-radius: 50px; border: 2px solid #c41f3e; display: flex; justify-content: center; align-items: center; background-color: rgb(196, 31, 62); color: white;"
               >
                 1
               </div>
               <div
-                style={
-                  Object {
-                    "backgroundColor": "grey",
-                    "height": 2,
-                    "width": 15,
-                  }
-                }
+                style="height: 2px; width: 15px; background-color: grey;"
               />
               <div
-                onClick={[Function]}
-                onKeyPress={[Function]}
                 role="button"
-                style={
-                  Object {
-                    "alignItems": "center",
-                    "border": "2px solid grey",
-                    "borderRadius": 50,
-                    "display": "flex",
-                    "height": 25,
-                    "justifyContent": "center",
-                    "width": 25,
-                  }
-                }
+                style="width: 25px; height: 25px; border-radius: 50px; border: 2px solid grey; display: flex; justify-content: center; align-items: center;"
               >
                 2
               </div>
@@ -88,23 +51,19 @@ Array [
           </div>
         </div>
         <div
-          className="border-top my-3"
+          class="border-top my-3"
         />
         <div
-          className="row"
+          class="row"
         >
           <div
-            className="col"
+            class="col"
           >
             <h3>
               Contact Profile:
             </h3>
             <ul
-              style={
-                Object {
-                  "marginTop": 50,
-                }
-              }
+              style="margin-top: 50px;"
             >
               <li>
                 Change the contact profile by deleting or typing over the existing content then selecting Next
@@ -117,10 +76,10 @@ Array [
         </div>
       </div>
       <div
-        className="col-3"
+        class="col-3"
       >
         <div
-          className="border p-2 rounded"
+          class="border p-2 rounded"
         >
           <b>
             You can also:
@@ -135,82 +94,66 @@ Array [
       </div>
     </div>
     <div
-      className="row"
+      class="row"
     >
       <div
-        className="col-4"
+        class="col-4"
       >
         <span>
           Firstname:
         </span>
       </div>
       <div
-        className="col-4"
+        class="col-4"
       >
         <input
-          className="form-control"
-          onChange={[Function]}
+          class="form-control"
           type="text"
+          value=""
         />
       </div>
     </div>
     <hr
-      style={
-        Object {
-          "background": "gray",
-          "borderWidth": "0px",
-          "color": "gray",
-          "height": "2px",
-          "marginTop": 40,
-        }
-      }
+      style="height: 2px; border-width: 0px; color: gray; background: gray; margin-top: 40px;"
     />
     <div
-      className="row"
+      class="row"
     >
       <div
-        className="col-4"
+        class="col-4"
       >
         <span>
           Lastname:
         </span>
       </div>
       <div
-        className="col-4"
+        class="col-4"
       >
         <input
-          className="form-control"
-          onChange={[Function]}
+          class="form-control"
           type="text"
+          value=""
         />
       </div>
     </div>
     <hr
-      style={
-        Object {
-          "background": "gray",
-          "borderWidth": "0px",
-          "color": "gray",
-          "height": "2px",
-          "marginTop": 40,
-        }
-      }
+      style="height: 2px; border-width: 0px; color: gray; background: gray; margin-top: 40px;"
     />
     <div
-      className="row"
+      class="row"
     >
       <div
-        className="col"
+        class="col"
       >
         <span>
           Details
         </span>
       </div>
       <div
-        className="col"
+        class="col"
       >
         <div
-          className="d-flex"
+          class="d-flex"
         >
           <div>
             P
@@ -224,56 +167,33 @@ Array [
       </div>
     </div>
     <hr
-      style={
-        Object {
-          "background": "gray",
-          "borderWidth": "0px",
-          "color": "gray",
-          "height": "2px",
-          "marginTop": 40,
-        }
-      }
+      style="height: 2px; border-width: 0px; color: gray; background: gray; margin-top: 40px;"
     />
     <div
-      className="row"
-      style={
-        Object {
-          "marginTop": 30,
-        }
-      }
+      class="row"
+      style="margin-top: 30px;"
     >
       <div
-        className="col-4"
+        class="col-4"
       >
         <span
-          style={
-            Object {
-              "alignItems": "center",
-              "display": "flex",
-            }
-          }
+          style="display: flex; align-items: center;"
         >
           Email Address:
         </span>
       </div>
       <div
-        className="col"
+        class="col"
       >
         <input
-          className="form-control"
-          onChange={[Function]}
+          class="form-control"
           type="text"
+          value=""
         />
       </div>
       <div
-        className="col"
-        style={
-          Object {
-            "alignItems": "center",
-            "display": "flex",
-            "justifyContent": "left",
-          }
-        }
+        class="col"
+        style="display: flex; align-items: center; justify-content: left;"
       >
         <a
           href="/"
@@ -283,36 +203,24 @@ Array [
       </div>
     </div>
     <hr
-      style={
-        Object {
-          "background": "gray",
-          "borderWidth": "0px",
-          "color": "gray",
-          "height": "2px",
-          "marginTop": 40,
-        }
-      }
+      style="height: 2px; border-width: 0px; color: gray; background: gray; margin-top: 40px;"
     />
     <div
-      className="row"
-      style={
-        Object {
-          "marginTop": 30,
-        }
-      }
+      class="row"
+      style="margin-top: 30px;"
     >
       <div
-        className="col"
+        class="col"
       >
         <span>
           Notification Language:
         </span>
       </div>
       <div
-        className="col"
+        class="col"
       >
         <select
-          className="form-select"
+          class="form-select"
         >
           <option>
             English
@@ -320,54 +228,26 @@ Array [
         </select>
       </div>
       <div
-        className="col"
+        class="col"
       />
     </div>
     <hr
-      style={
-        Object {
-          "background": "gray",
-          "borderWidth": "0px",
-          "color": "gray",
-          "height": "2px",
-          "marginTop": 40,
-        }
-      }
+      style="height: 2px; border-width: 0px; color: gray; background: gray; margin-top: 40px;"
     />
     <div
-      className="row"
+      class="row"
     >
       <div
-        className="col"
-        style={
-          Object {
-            "background": "white",
-            "padding": 0,
-          }
-        }
+        class="col"
+        style="padding: 0px; background: white;"
       >
         <button
-          className="d-flex btn btn-light"
-          disabled={false}
-          style={
-            Object {
-              "background": "white",
-              "border": "none",
-              "margin": 0,
-            }
-          }
+          class="d-flex btn btn-light"
+          style="margin: 0px; background: white;"
           type="button"
         >
           <div
-            style={
-              Object {
-                "border": "1px dotted grey",
-                "height": 25,
-                "marginRight": 10,
-                "textAlign": "center",
-                "width": 20,
-              }
-            }
+            style="width: 20px; height: 25px; border: 1px dotted grey; text-align: center; margin-right: 10px;"
           >
             P
           </div>
@@ -375,23 +255,12 @@ Array [
         </button>
       </div>
       <div
-        className="col"
-        style={
-          Object {
-            "display": "flex",
-            "justifyContent": "flex-end",
-          }
-        }
+        class="col"
+        style="display: flex; justify-content: flex-end;"
       >
         <button
-          className="btn zippy-btn btn btn-primary"
-          disabled={false}
-          onClick={[Function]}
-          style={
-            Object {
-              "marginLeft": 15,
-            }
-          }
+          class="btn zippy-btn btn btn-primary"
+          style="margin-left: 15px;"
           type="button"
         >
           Next
@@ -399,44 +268,24 @@ Array [
       </div>
     </div>
     <hr
-      style={
-        Object {
-          "background": "gray",
-          "borderWidth": "0px",
-          "color": "gray",
-          "height": "2px",
-          "marginTop": 40,
-        }
-      }
+      style="height: 2px; border-width: 0px; color: gray; background: gray; margin-top: 40px;"
     />
     <div
-      className="row"
+      class="row"
     >
       <div
-        className="mt-4"
+        class="mt-4"
       >
         <div
-          className="d-flex"
+          class="d-flex"
         >
           <div
-            style={
-              Object {
-                "border": "1px dotted grey",
-                "height": 25,
-                "marginRight": 10,
-                "textAlign": "center",
-                "width": 20,
-              }
-            }
+            style="width: 20px; height: 25px; border: 1px dotted grey; text-align: center; margin-right: 10px;"
           >
             P
           </div>
           <span
-            style={
-              Object {
-                "fontWeight": "bold",
-              }
-            }
+            style="font-weight: bold;"
           >
             Note:
           </span>
@@ -446,21 +295,13 @@ Array [
             Your use of Interac e-Transfer is subject to the 
           </span>
           <div
-            className="row"
+            class="row"
           >
             <div
-              className="d-flex align-items-center mt-2 col-md-12"
+              class="d-flex align-items-center mt-2 col-md-12"
             >
               <div
-                style={
-                  Object {
-                    "border": "1px dotted grey",
-                    "height": 25,
-                    "marginRight": 10,
-                    "textAlign": "center",
-                    "width": 20,
-                  }
-                }
+                style="width: 20px; height: 25px; border: 1px dotted grey; text-align: center; margin-right: 10px;"
               >
                 P
               </div>
@@ -472,34 +313,33 @@ Array [
         </div>
       </div>
     </div>
-  </div>,
+  </div>
   <div
-    className="footer-content-wrapper"
+    class="footer-content-wrapper"
   >
     <div
-      className="quick-links container"
+      class="quick-links container"
     >
       <div
-        className="row"
+        class="row"
       >
         <h3
-          className="col-sm-12"
+          class="col-sm-12"
         >
           Quick Links
         </h3>
       </div>
       <div
-        className="row"
+        class="row"
       >
         <div
-          className="col-sm-2"
+          class="col-sm-2"
         >
           <ul>
             <li>
               <a
-                className="text-decoration-none"
+                class="text-decoration-none"
                 href="/"
-                onClick={[Function]}
               >
                 Home
               </a>
@@ -508,9 +348,8 @@ Array [
               Please Review Our Legal Stuff by visiting our
                
               <a
-                className="text-decoration-none"
+                class="text-decoration-none"
                 href="/legal"
-                onClick={[Function]}
               >
                 Privacy Policy | TOU | EULA | CardHolder T&C Pages
               </a>
@@ -518,7 +357,7 @@ Array [
           </ul>
         </div>
         <div
-          className="col-sm-2"
+          class="col-sm-2"
         >
           8465 W Sahara Ave. Las Vegas, NEVADA
           <ul>
@@ -541,13 +380,13 @@ Array [
       </div>
     </div>
     <div
-      className="container"
+      class="container"
     >
       <div
-        className="row"
+        class="row"
       >
         <div
-          className="col-md-12 col-sm-12 col-xs-12 text-left"
+          class="col-md-12 col-sm-12 col-xs-12 text-left"
         >
           © 2021 Zippy Cash LLC  All rights reserved.
           <br />
@@ -567,66 +406,63 @@ Array [
       </div>
     </div>
     <footer
-      className="container mb-3"
+      class="container mb-3"
     >
       <div
-        className="d-none d-md-block"
+        class="d-none d-md-block"
       >
         <div
-          className="d-flex justify-content-between border-bottom"
+          class="d-flex justify-content-between border-bottom"
         />
         <div
-          className="d-flex justify-content-between border-top"
+          class="d-flex justify-content-between border-top"
         >
           <div
-            className=""
+            class=""
           >
             <div
-              className="footer-link mt-1"
+              class="footer-link mt-1"
             >
               <a
-                className="text-decoration-none"
+                class="text-decoration-none"
                 href="/personal-profile"
               >
                 dev docs
               </a>
             </div>
             <div
-              className="footer-link mt-1"
+              class="footer-link mt-1"
             >
               <a
-                className="text-decoration-none"
+                class="text-decoration-none"
                 href="/"
-                onClick={[Function]}
               >
                 Lore
               </a>
             </div>
             <div
-              className="footer-link mt-1"
+              class="footer-link mt-1"
             >
               <a
-                className="text-decoration-none"
+                class="text-decoration-none"
                 href="/"
-                onClick={[Function]}
               >
                 Ipsum
               </a>
             </div>
             <div
-              className="footer-link mt-1"
+              class="footer-link mt-1"
             >
               <a
-                className="text-decoration-none"
+                class="text-decoration-none"
                 href="/"
-                onClick={[Function]}
               >
                 Nullam Atoidio
               </a>
             </div>
           </div>
           <div
-            className="copyright mt-1"
+            class="copyright mt-1"
           >
             <span>
               © 2021 Lorem ipsum dolor sit amet, consectetuer
@@ -635,53 +471,50 @@ Array [
         </div>
       </div>
       <div
-        className="d-block d-md-none"
+        class="d-block d-md-none"
       >
         <div
-          className="d-flex border-bottom"
+          class="d-flex border-bottom"
         >
           <div
-            className="d-flex flex-column me-2"
+            class="d-flex flex-column me-2"
           >
             <div
-              className="footer-link mt-1"
+              class="footer-link mt-1"
             >
               <a
-                className="text-decoration-none"
+                class="text-decoration-none"
                 href="/personal-profile"
               >
                 dev docs
               </a>
             </div>
             <div
-              className="footer-link mb-1"
+              class="footer-link mb-1"
             >
               <a
-                className="text-decoration-none"
+                class="text-decoration-none"
                 href="/"
-                onClick={[Function]}
               >
                 Lore
               </a>
             </div>
             <div
-              className="footer-link mb-1"
+              class="footer-link mb-1"
             >
               <a
-                className="text-decoration-none"
+                class="text-decoration-none"
                 href="/"
-                onClick={[Function]}
               >
                 Ipsum
               </a>
             </div>
             <div
-              className="footer-link mb-1"
+              class="footer-link mb-1"
             >
               <a
-                className="text-decoration-none"
+                class="text-decoration-none"
                 href="/"
-                onClick={[Function]}
               >
                 Nullam Atoidio
               </a>
@@ -689,10 +522,10 @@ Array [
           </div>
         </div>
         <div
-          className="d-flex justify-content-end border-top"
+          class="d-flex justify-content-end border-top"
         >
           <div
-            className="copyright mt-2 text-end small"
+            class="copyright mt-2 text-end small"
           >
             <span>
               © 2021 Lorem ipsum dolor sit amet, consectetuer
@@ -701,6 +534,6 @@ Array [
         </div>
       </div>
     </footer>
-  </div>,
-]
+  </div>
+</div>
 `;

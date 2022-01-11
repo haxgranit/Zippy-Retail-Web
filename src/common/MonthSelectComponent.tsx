@@ -24,14 +24,14 @@ const getDateAry = () => {
 };
 
 export default function MonthSelectComponent(props: any) {
-  const { onChange } = props;
+  const { onChange, prefix = 'option' } = props;
   const dateAry = getDateAry();
   return (
     <Form.Select style={{ maxWidth: 300 }} onChange={onChange} className="month-select-comp">
       {dateAry.map((item: any) => (
-        <optgroup label={`${item.label}`} key={`sent_${item.label}`}>
+        <optgroup label={`${item.label}`} key={`${prefix}_${item.label}`}>
           {item.items.map((dateValue: any) => (
-            <option value={dateValue.value} key={`sent_${dateValue.value}`}>
+            <option value={dateValue.value} key={`${prefix}_${dateValue.value}`}>
               {dateValue.value}
             </option>
           ))}

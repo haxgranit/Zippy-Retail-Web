@@ -1,36 +1,27 @@
-import Enzyme, { shallow } from 'enzyme';
-import Adapter from '@wojtekmaj/enzyme-adapter-react-17';
+import { render, fireEvent } from '../../../test-utils';
 
 import SecurityRecipientPage from './SecurityRecipientPage';
 
-// Configure enzyme for react 17
-Enzyme.configure({ adapter: new Adapter() });
-
 describe('Security Recipient Page Component', () => {
-  const showModal = jest.fn();
   it('Click next button on Security Recipient Page', () => {
-    const wrapper = shallow(
-      <SecurityRecipientPage
-        showModal={showModal}
-        navigateSteps={jest.fn()}
-      />,
+    const showModal = jest.fn();
+    const { container } = render(
+      <SecurityRecipientPage showModal={showModal} navigateSteps={jest.fn()} />,
     );
-    const mEvent = { preventDefault: jest.fn() };
-    wrapper.find('Button[variant="danger"]').simulate('click', mEvent);
+
+    fireEvent.click(container.querySelectorAll('.btn-danger')[0]);
     expect(showModal).toBeCalledTimes(1);
   });
 
   it('Click back button on Security Recipient Page', () => {
-    const navigateSteps = jest.fn();
-    const wrapper = shallow(
+    const setCurrentStep = jest.fn();
+    const { container } = render(
       <SecurityRecipientPage
-        showModal={showModal}
-        navigateSteps={navigateSteps}
-        setCurrentStep={jest.fn()}
+        navigateSteps={jest.fn()}
+        setCurrentStep={setCurrentStep}
       />,
     );
-    const mEvent = { preventDefault: jest.fn() };
-    wrapper.find('Button[variant="danger"]').simulate('click', mEvent);
-    expect(navigateSteps).toBeCalledTimes(1);
+    fireEvent.click(container.querySelectorAll('.btn-outline-danger')[0]);
+    expect(setCurrentStep).toBeCalledTimes(1);
   });
 });
