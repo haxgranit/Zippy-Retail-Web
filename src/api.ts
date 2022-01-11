@@ -125,8 +125,12 @@ export default class Api {
     });
 
     if (!response.ok) {
-      const problemDetail = await response.json() as ProblemDetail;
-      throw Error(problemDetail.title);
+      try {
+        const problemDetail = (await response.json()) as ProblemDetail;
+        throw Error(problemDetail.title);
+      } catch (err: any) {
+        throw Error(err);
+      }
     }
 
     return await response.json() as TResponse;
