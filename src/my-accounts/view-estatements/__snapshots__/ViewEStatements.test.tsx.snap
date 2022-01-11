@@ -1,0 +1,897 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ViewEStatements Component should render ViewEStatements Page 1`] = `
+<div>
+  <div
+    class="d-flex justify-content-between align-items-center"
+  >
+    <h3>
+      EStatements
+    </h3>
+  </div>
+  <div
+    class="content-wrapper"
+  >
+    <div
+      class="row"
+    >
+      <div
+        class="col-md-9"
+      >
+        <div
+          class="align-items-md-end row"
+        >
+          <div
+            class="col-md-8"
+          >
+            <label
+              class="form-label"
+            >
+              Account:
+            </label>
+            <select
+              class="form-select"
+            >
+              <option>
+                Chequing (07102-81-99639) $2,260.57
+              </option>
+              <option
+                value="1"
+              >
+                Chequing (07102-81-99639) $2,260.57
+              </option>
+              <option
+                value="2"
+              >
+                Chequing (07102-81-99639) $2,260.57
+              </option>
+              <option
+                value="3"
+              >
+                Chequing (07102-81-99639) $2,260.57
+              </option>
+            </select>
+          </div>
+          <div
+            class="col"
+          >
+            <button
+              class="text-black btn btn-link"
+              type="button"
+            >
+              View Account Details
+            </button>
+          </div>
+        </div>
+        <div
+          class="align-items-md-start mt-3 row"
+        >
+          <div
+            class="d-flex col-md-8"
+          >
+            <span
+              class="font-weight-bold"
+            >
+              Statement Option: 
+            </span>
+            <div
+              class="d-flex flex-column align-items-start"
+              style="margin-left: 5px;"
+            >
+              <div>
+                Estatement
+              </div>
+              <button
+                class="text-black btn btn-link"
+                style="padding: 0px;"
+                type="button"
+              >
+                Edit Preference
+              </button>
+            </div>
+          </div>
+          <div
+            class="col"
+          >
+            <span
+              class="font-weight-bold"
+            >
+              Alerts: 
+            </span>
+            <span>
+              Inactive
+            </span>
+          </div>
+        </div>
+        <div
+          class="mt-2"
+        >
+          <div
+            class="row"
+          >
+            <div
+              class="bg-light p-3 col-md-12"
+              style="font-weight: 500;"
+            >
+              <span
+                style="color: rgb(220, 53, 69); margin-right: 5px;"
+              >
+                -
+              </span>
+              <span>
+                Statements from 2021
+              </span>
+            </div>
+          </div>
+          <div
+            class="p-3"
+          >
+            <div
+              class="row"
+            >
+              <div
+                class="d-flex align-items-center mt-2 col-md-12"
+              >
+                <div
+                  style="width: 20px; height: 25px; border: 1px dotted grey; text-align: center; margin-right: 10px;"
+                >
+                  P
+                </div>
+                <span>
+                  October 1 to 31, 2021
+                </span>
+              </div>
+            </div>
+            <div
+              class="row"
+            >
+              <div
+                class="d-flex align-items-center mt-2 col-md-12"
+              >
+                <div
+                  style="width: 20px; height: 25px; border: 1px dotted grey; text-align: center; margin-right: 10px;"
+                >
+                  P
+                </div>
+                <span>
+                  September 1 to 30, 2021
+                </span>
+              </div>
+            </div>
+            <div
+              class="row"
+            >
+              <div
+                class="d-flex align-items-center mt-2 col-md-12"
+              >
+                <div
+                  style="width: 20px; height: 25px; border: 1px dotted grey; text-align: center; margin-right: 10px;"
+                >
+                  P
+                </div>
+                <span>
+                  August 1 to 31, 2021
+                </span>
+              </div>
+            </div>
+            <div
+              class="row"
+            >
+              <div
+                class="d-flex align-items-center mt-2 col-md-12"
+              >
+                <div
+                  style="width: 20px; height: 25px; border: 1px dotted grey; text-align: center; margin-right: 10px;"
+                >
+                  P
+                </div>
+                <span>
+                  July 1 to 31, 2021
+                </span>
+              </div>
+            </div>
+            <div
+              class="row"
+            >
+              <div
+                class="d-flex align-items-center mt-2 col-md-12"
+              >
+                <div
+                  style="width: 20px; height: 25px; border: 1px dotted grey; text-align: center; margin-right: 10px;"
+                >
+                  P
+                </div>
+                <span>
+                  June 1 to 30, 2021
+                </span>
+              </div>
+            </div>
+            <div
+              class="row"
+            >
+              <div
+                class="d-flex align-items-center mt-2 col-md-12"
+              >
+                <div
+                  style="width: 20px; height: 25px; border: 1px dotted grey; text-align: center; margin-right: 10px;"
+                >
+                  P
+                </div>
+                <span>
+                  May 1 to 31, 2021
+                </span>
+              </div>
+            </div>
+            <div
+              class="row"
+            >
+              <div
+                class="d-flex align-items-center mt-2 col-md-12"
+              >
+                <div
+                  style="width: 20px; height: 25px; border: 1px dotted grey; text-align: center; margin-right: 10px;"
+                >
+                  P
+                </div>
+                <span>
+                  April 1 to 30, 2021
+                </span>
+              </div>
+            </div>
+            <div
+              class="row"
+            >
+              <div
+                class="d-flex align-items-center mt-2 col-md-12"
+              >
+                <div
+                  style="width: 20px; height: 25px; border: 1px dotted grey; text-align: center; margin-right: 10px;"
+                >
+                  P
+                </div>
+                <span>
+                  March 1 to 31, 2021
+                </span>
+              </div>
+            </div>
+            <div
+              class="row"
+            >
+              <div
+                class="d-flex align-items-center mt-2 col-md-12"
+              >
+                <div
+                  style="width: 20px; height: 25px; border: 1px dotted grey; text-align: center; margin-right: 10px;"
+                >
+                  P
+                </div>
+                <span>
+                  February 1 to 28, 2021
+                </span>
+              </div>
+            </div>
+            <div
+              class="row"
+            >
+              <div
+                class="d-flex align-items-center mt-2 col-md-12"
+              >
+                <div
+                  style="width: 20px; height: 25px; border: 1px dotted grey; text-align: center; margin-right: 10px;"
+                >
+                  P
+                </div>
+                <span>
+                  January 1 to 31, 2021
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="mt-2"
+        >
+          <div
+            class="row"
+          >
+            <div
+              class="bg-light p-3 col-md-12"
+              style="font-weight: 500;"
+            >
+              <span
+                style="color: rgb(220, 53, 69); margin-right: 5px;"
+              >
+                -
+              </span>
+              <span>
+                Statements from 2020
+              </span>
+            </div>
+          </div>
+          <div
+            class="p-3"
+          >
+            <div
+              class="row"
+            >
+              <div
+                class="d-flex align-items-center mt-2 col-md-12"
+              >
+                <div
+                  style="width: 20px; height: 25px; border: 1px dotted grey; text-align: center; margin-right: 10px;"
+                >
+                  P
+                </div>
+                <span>
+                  December 1 to 31, 2020
+                </span>
+              </div>
+            </div>
+            <div
+              class="row"
+            >
+              <div
+                class="d-flex align-items-center mt-2 col-md-12"
+              >
+                <div
+                  style="width: 20px; height: 25px; border: 1px dotted grey; text-align: center; margin-right: 10px;"
+                >
+                  P
+                </div>
+                <span>
+                  November 1 to 31, 2020
+                </span>
+              </div>
+            </div>
+            <div
+              class="row"
+            >
+              <div
+                class="d-flex align-items-center mt-2 col-md-12"
+              >
+                <div
+                  style="width: 20px; height: 25px; border: 1px dotted grey; text-align: center; margin-right: 10px;"
+                >
+                  P
+                </div>
+                <span>
+                  October 1 to 31, 2020
+                </span>
+              </div>
+            </div>
+            <div
+              class="row"
+            >
+              <div
+                class="d-flex align-items-center mt-2 col-md-12"
+              >
+                <div
+                  style="width: 20px; height: 25px; border: 1px dotted grey; text-align: center; margin-right: 10px;"
+                >
+                  P
+                </div>
+                <span>
+                  September 1 to 30, 2020
+                </span>
+              </div>
+            </div>
+            <div
+              class="row"
+            >
+              <div
+                class="d-flex align-items-center mt-2 col-md-12"
+              >
+                <div
+                  style="width: 20px; height: 25px; border: 1px dotted grey; text-align: center; margin-right: 10px;"
+                >
+                  P
+                </div>
+                <span>
+                  August 1 to 31, 2020
+                </span>
+              </div>
+            </div>
+            <div
+              class="row"
+            >
+              <div
+                class="d-flex align-items-center mt-2 col-md-12"
+              >
+                <div
+                  style="width: 20px; height: 25px; border: 1px dotted grey; text-align: center; margin-right: 10px;"
+                >
+                  P
+                </div>
+                <span>
+                  July 1 to 31, 2020
+                </span>
+              </div>
+            </div>
+            <div
+              class="row"
+            >
+              <div
+                class="d-flex align-items-center mt-2 col-md-12"
+              >
+                <div
+                  style="width: 20px; height: 25px; border: 1px dotted grey; text-align: center; margin-right: 10px;"
+                >
+                  P
+                </div>
+                <span>
+                  June 1 to 30, 2020
+                </span>
+              </div>
+            </div>
+            <div
+              class="row"
+            >
+              <div
+                class="d-flex align-items-center mt-2 col-md-12"
+              >
+                <div
+                  style="width: 20px; height: 25px; border: 1px dotted grey; text-align: center; margin-right: 10px;"
+                >
+                  P
+                </div>
+                <span>
+                  May 1 to 31, 2020
+                </span>
+              </div>
+            </div>
+            <div
+              class="row"
+            >
+              <div
+                class="d-flex align-items-center mt-2 col-md-12"
+              >
+                <div
+                  style="width: 20px; height: 25px; border: 1px dotted grey; text-align: center; margin-right: 10px;"
+                >
+                  P
+                </div>
+                <span>
+                  April 1 to 30, 2020
+                </span>
+              </div>
+            </div>
+            <div
+              class="row"
+            >
+              <div
+                class="d-flex align-items-center mt-2 col-md-12"
+              >
+                <div
+                  style="width: 20px; height: 25px; border: 1px dotted grey; text-align: center; margin-right: 10px;"
+                >
+                  P
+                </div>
+                <span>
+                  March 1 to 31, 2020
+                </span>
+              </div>
+            </div>
+            <div
+              class="row"
+            >
+              <div
+                class="d-flex align-items-center mt-2 col-md-12"
+              >
+                <div
+                  style="width: 20px; height: 25px; border: 1px dotted grey; text-align: center; margin-right: 10px;"
+                >
+                  P
+                </div>
+                <span>
+                  February 1 to 29, 2020
+                </span>
+              </div>
+            </div>
+            <div
+              class="row"
+            >
+              <div
+                class="d-flex align-items-center mt-2 col-md-12"
+              >
+                <div
+                  style="width: 20px; height: 25px; border: 1px dotted grey; text-align: center; margin-right: 10px;"
+                >
+                  P
+                </div>
+                <span>
+                  January 1 to 31, 2020
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="mt-2"
+        >
+          <div
+            class="row"
+          >
+            <div
+              class="bg-light p-3 col-md-12"
+              style="font-weight: 500;"
+            >
+              <span
+                style="color: rgb(220, 53, 69); margin-right: 5px;"
+              >
+                +
+              </span>
+              <span>
+                Statements from 2019
+              </span>
+            </div>
+          </div>
+        </div>
+        <div
+          class="mt-4 p-3"
+          style="border-top: 1px solid #e5e5e5; border-bottom: 1px solid #e5e5e5;"
+        >
+          <div
+            class="d-flex justify-content-end row"
+          >
+            <button
+              class="d-flex btn btn-outline-danger"
+              style="width: auto; margin-right: 10px;"
+              type="button"
+            >
+              My Accounts
+            </button>
+            <button
+              class="zippy-btn d-flex btn btn-primary"
+              style="width: auto;"
+              type="button"
+            >
+              Statement Options
+            </button>
+          </div>
+        </div>
+        <div
+          class="mt-2"
+        >
+          <div
+            class="d-flex"
+          >
+            <div
+              style="width: 20px; height: 25px; border: 1px dotted grey; text-align: center; margin-right: 10px;"
+            >
+              P
+            </div>
+            <span
+              style="font-weight: bold;"
+            >
+              Note:
+            </span>
+          </div>
+          <p>
+            An inactive alert status applies to bank accounts that were automatically transferred from Paperless to eStatements. If your alert status is displayed ad "inactive", it means you have not agreed to the terms and conditions for eStatements
+          </p>
+          <div
+            class="row"
+          >
+            <div
+              class="d-flex align-items-center mt-2 col-md-12"
+            >
+              <div
+                style="width: 20px; height: 25px; border: 1px dotted grey; text-align: center; margin-right: 10px;"
+              >
+                P
+              </div>
+              <span>
+                Bank Accounts eStatement Terms and Conditions (May 2016) (PDF, 146KB)
+              </span>
+            </div>
+          </div>
+          <div
+            class="row"
+          >
+            <div
+              class="d-flex align-items-center mt-2 col-md-12"
+            >
+              <div
+                style="width: 20px; height: 25px; border: 1px dotted grey; text-align: center; margin-right: 10px;"
+              >
+                P
+              </div>
+              <span>
+                Credit Card eStatement Terms and Conditions (May 2016) (PDF, 127KB)
+              </span>
+            </div>
+          </div>
+          <div
+            class="row"
+          >
+            <div
+              class="d-flex align-items-center mt-2 col-md-12"
+            >
+              <div
+                style="width: 20px; height: 25px; border: 1px dotted grey; text-align: center; margin-right: 10px;"
+              >
+                P
+              </div>
+              <span>
+                Personal line of Credit eStatement Terms and Conditions (PDF, 100KB) Last Updated October 2019
+              </span>
+            </div>
+          </div>
+          <div
+            class="row"
+          >
+            <div
+              class="d-flex align-items-center mt-2 col-md-12"
+            >
+              <div
+                style="width: 20px; height: 25px; border: 1px dotted grey; text-align: center; margin-right: 10px;"
+              >
+                P
+              </div>
+              <span>
+                ZippyX securities Inc. and PPS Consent to Electronic Delivery (November 2014) (PDF, 47KB)
+              </span>
+            </div>
+          </div>
+          <p>
+            To view or save a eStatement as a PDF you will need Adobe Acrobat Reader. Please download it before opening your eStatement.
+          </p>
+          <p>
+            Portable Document Format(PDF) is a standard form of printable web document. With a PDF, you can save and print your statements for your personal record keeping.
+          </p>
+        </div>
+      </div>
+      <div
+        class="col-md-3"
+      >
+        <div
+          class="p-3 bg-white card"
+        >
+          <div
+            class="card-title h5"
+          >
+            You can also:
+          </div>
+          <div
+            class="card-body"
+          >
+            <a
+              class="text-decoration-none text-black"
+              href="/"
+              style="font-size: 12px; margin-top: 5px; margin-bottom: 5px;"
+            >
+              Set Up Alerts
+              <span
+                style="color: rgb(220, 53, 69); margin-left: 5px;"
+              >
+                &gt;
+              </span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="footer-content-wrapper"
+  >
+    <div
+      class="quick-links container"
+    >
+      <div
+        class="row"
+      >
+        <h3
+          class="col-sm-12"
+        >
+          Quick Links
+        </h3>
+      </div>
+      <div
+        class="row"
+      >
+        <div
+          class="col-sm-2"
+        >
+          <ul>
+            <li>
+              <a
+                class="text-decoration-none"
+                href="/"
+              >
+                Home
+              </a>
+            </li>
+            <li>
+              Please Review Our Legal Stuff by visiting our
+               
+              <a
+                class="text-decoration-none"
+                href="/legal"
+              >
+                Privacy Policy | TOU | EULA | CardHolder T&C Pages
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div
+          class="col-sm-2"
+        >
+          8465 W Sahara Ave. Las Vegas, NEVADA
+          <ul>
+            <li>
+              <a
+                href="tel:+17026231876"
+              >
+                1.702.623.1876
+              </a>
+            </li>
+            <li>
+              <a
+                href="mailto:contact@zippy.cash"
+              >
+                contact@zippy.cash
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div
+      class="container"
+    >
+      <div
+        class="row"
+      >
+        <div
+          class="col-md-12 col-sm-12 col-xs-12 text-left"
+        >
+          © 2021 Zippy Cash LLC  All rights reserved.
+          <br />
+          <br />
+          The Program Manager for the Zippy Cash® Prepaid Visa Debit Card is PayQuicker, LLC
+          <br />
+          Zippy Cash® is a registered trademark of Zippy Cash, LLC
+          <br />
+          The Zippy Cash Prepaid Visa Debit Card is issued by Metropolitan Commercial Bank (Member FDIC) pursuant to a license from Visa U.S.A. Inc. “Metropolitan Commercial Bank” and “Metropolitan” are registered trademarks of Metropolitan Commercial Bank ©2014. BY USING THIS CARD YOU AGREE TO THE TERMS AND CONDITIONS OF THE CARDHOLDER AGREEMENT AND FEE SCHEDULE, IF ANY. All trademarks and service marks are the property of their respective owners.
+          <br />
+          In compliance with the USA PATRIOT Act* and other laws, anyone who is a US resident over 18 with a valid Social Security number and a verifiable physical US address (no PO boxes or APO addresses) can apply for an Zippy Cash Card. This information must be provided, along with other information pertinent to receiving approval, when applying for a Zippy Cash Card. Currently, we do not issue the Zippy Cash Card to residents of Puerto Rico, Guam, the Virgin Islands, American Samoa, or other US territories.
+          <br />
+          *Important information for opening a card account: To help the federal government fight the funding of terrorism and money laundering activities, the USA PATRIOT Act requires all financial institutions and their third parties to obtain, verify and record information that identifies each person who opens a card account. What this means for you: When you open a card account, we will ask for your name, address, date of birth, social security number or country identification number, and other information that will allows us to identify you. We may also request a copy of your driver’s license or other documentation bearing your photo as verification of your identity.
+          <br />
+          Apple and the Apple logo are trademarks of Apple Inc., registered in the U.S. and other countries. App Store is a service mark of Apple Inc. Google Play is a trademark of Google Inc. Data rates may apply. Samsung Pay is a trademark of Samsung Inc.
+        </div>
+      </div>
+    </div>
+    <footer
+      class="container mb-3"
+    >
+      <div
+        class="d-none d-md-block"
+      >
+        <div
+          class="d-flex justify-content-between border-bottom"
+        />
+        <div
+          class="d-flex justify-content-between border-top"
+        >
+          <div
+            class=""
+          >
+            <div
+              class="footer-link mt-1"
+            >
+              <a
+                class="text-decoration-none"
+                href="/personal-profile"
+              >
+                dev docs
+              </a>
+            </div>
+            <div
+              class="footer-link mt-1"
+            >
+              <a
+                class="text-decoration-none"
+                href="/"
+              >
+                Lore
+              </a>
+            </div>
+            <div
+              class="footer-link mt-1"
+            >
+              <a
+                class="text-decoration-none"
+                href="/"
+              >
+                Ipsum
+              </a>
+            </div>
+            <div
+              class="footer-link mt-1"
+            >
+              <a
+                class="text-decoration-none"
+                href="/"
+              >
+                Nullam Atoidio
+              </a>
+            </div>
+          </div>
+          <div
+            class="copyright mt-1"
+          >
+            <span>
+              © 2021 Lorem ipsum dolor sit amet, consectetuer
+            </span>
+          </div>
+        </div>
+      </div>
+      <div
+        class="d-block d-md-none"
+      >
+        <div
+          class="d-flex border-bottom"
+        >
+          <div
+            class="d-flex flex-column me-2"
+          >
+            <div
+              class="footer-link mt-1"
+            >
+              <a
+                class="text-decoration-none"
+                href="/personal-profile"
+              >
+                dev docs
+              </a>
+            </div>
+            <div
+              class="footer-link mb-1"
+            >
+              <a
+                class="text-decoration-none"
+                href="/"
+              >
+                Lore
+              </a>
+            </div>
+            <div
+              class="footer-link mb-1"
+            >
+              <a
+                class="text-decoration-none"
+                href="/"
+              >
+                Ipsum
+              </a>
+            </div>
+            <div
+              class="footer-link mb-1"
+            >
+              <a
+                class="text-decoration-none"
+                href="/"
+              >
+                Nullam Atoidio
+              </a>
+            </div>
+          </div>
+        </div>
+        <div
+          class="d-flex justify-content-end border-top"
+        >
+          <div
+            class="copyright mt-2 text-end small"
+          >
+            <span>
+              © 2021 Lorem ipsum dolor sit amet, consectetuer
+            </span>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+</div>
+`;

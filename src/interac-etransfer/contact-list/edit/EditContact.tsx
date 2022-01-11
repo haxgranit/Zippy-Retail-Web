@@ -213,7 +213,7 @@ const EditContact: React.FC = () => {
               </div>
               <span style={{ fontWeight: 'bold' }}>Note:</span>
             </div>
-            <p>
+            <div>
               <span>Your use of Interac e-Transfer is subject to the </span>
               <Row>
                 <Col md={12} className="d-flex align-items-center mt-2">
@@ -233,7 +233,7 @@ const EditContact: React.FC = () => {
                   </span>
                 </Col>
               </Row>
-            </p>
+            </div>
           </div>
         </Row>
       </CommonPageContainer>

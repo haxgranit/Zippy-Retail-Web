@@ -290,6 +290,32 @@ const SendCodeStep = ({ handleNext, handleClose }: any) => {
   );
 };
 
+export const ModalContent = ({
+  handleBack,
+  selectedContact,
+  step,
+  handleNext,
+  closeMethod,
+}: any) => (
+  <>
+    {step === 0 && (
+      <VerificationStep
+        data={selectedContact}
+        handleNext={handleNext}
+        handleBack={handleBack}
+        handleClose={closeMethod}
+      />
+    )}
+    {step === 1 && (
+      <SendCodeStep
+        data={selectedContact}
+        handleNext={closeMethod}
+        handleClose={closeMethod}
+      />
+    )}
+  </>
+);
+
 export interface IdentityVerificationModalProps {
   show: boolean;
   handleClose: () => void;
@@ -317,21 +343,15 @@ const IdentityVerificationModal = ({
   return (
     <Modal show={show} size="lg">
       <Modal.Body style={{ padding: '0px' }}>
-        {step === 0 && (
-          <VerificationStep
-            data={selectedContact}
-            handleNext={handleNext}
-            handleBack={handleBack}
-            handleClose={closeMethod}
-          />
-        )}
-        {step === 1 && (
-          <SendCodeStep
-            data={selectedContact}
-            handleNext={closeMethod}
-            handleClose={closeMethod}
-          />
-        )}
+        <ModalContent
+          show={show}
+          handleClose={handleClose}
+          selectedContact={selectedContact}
+          step={step}
+          handleNext={handleNext}
+          closeMethod={closeMethod}
+          handleBack={handleBack}
+        />
       </Modal.Body>
     </Modal>
   );
