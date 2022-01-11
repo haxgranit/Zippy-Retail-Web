@@ -2,7 +2,6 @@ import Enzyme, { shallow } from 'enzyme';
 import Adapter from '@wojtekmaj/enzyme-adapter-react-17';
 import React from 'react';
 import { BrowserRouter } from 'react-router-dom';
-import { Button } from 'react-bootstrap';
 import SentCompleted from './SentCompleted';
 
 // Configure enzyme for react 17

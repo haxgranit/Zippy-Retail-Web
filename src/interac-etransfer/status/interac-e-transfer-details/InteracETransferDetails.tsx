@@ -27,7 +27,7 @@ const SentTabContent = ({ navigate, instance, accounts }: any) => {
   }, []);
   return (
     <>
-      <MonthSelectComponent />
+      <MonthSelectComponent prefix="sent" />
       <Table className="mt-2">
         <thead>
           <BorderedTR className="bg-light">
@@ -56,7 +56,7 @@ const SentTabContent = ({ navigate, instance, accounts }: any) => {
               <td>
                 <a
                   className="text-black"
-                  href={`/interac-etransfer/status/sent/competed/${item.id}`}
+                  href={`/interac-etransfer/status/sent/completed/${item.id}`}
                 >
                   Transfer Sent
                 </a>
@@ -98,7 +98,7 @@ const ReceivedTabContent = ({
 
   return (
     <>
-      <MonthSelectComponent />
+      <MonthSelectComponent prefix="received" />
       <Table className="mt-2">
         <thead>
           <BorderedTR
@@ -156,7 +156,7 @@ const RequestedTabContent = ({ navigate, instance, accounts }: any) => {
   }, []);
   return (
     <>
-      <MonthSelectComponent />
+      <MonthSelectComponent prefix="requested" />
       <Table className="mt-2">
         <thead>
           <BorderedTR

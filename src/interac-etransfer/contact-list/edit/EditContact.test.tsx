@@ -1,11 +1,6 @@
 import React from 'react';
-import Enzyme, { shallow } from 'enzyme';
-import Adapter from '@wojtekmaj/enzyme-adapter-react-17';
-
+import { render } from '@testing-library/react';
 import EditContact from './EditContact';
-
-// Configure enzyme for react 17
-Enzyme.configure({ adapter: new Adapter() });
 
 const CONTACT_MOCK = {
   key: 1,
@@ -25,24 +20,11 @@ jest.mock('react-router-dom', () => ({
 }));
 
 describe('EditContact Component', () => {
-  it('should render title', () => {
-    const wrapper = shallow(<EditContact />);
-    const header = wrapper.find('CommonPageContainer');
-    expect(header).toHaveLength(1);
-  });
+  test('should render title', () => {
+    const { container } = render(<EditContact />);
+    const setShow = jest.fn();
+    React.useState = jest.fn().mockImplementationOnce((x) => [x, setShow]);
 
-  it('click next button', () => {
-    const wrapper = shallow(<EditContact />);
-    wrapper.find('Button').at(1).simulate('click');
-  });
-
-  it('click close modal button on IdentityVerificationModal', () => {
-    const wrapper = shallow(<EditContact />);
-    wrapper.find('Button').at(1).simulate('click');
-    const modalWrapper = wrapper.find('IdentityVerificationModal').dive();
-    const firstStepWrapper = modalWrapper.find('VerificationStep').dive();
-    firstStepWrapper.find('Button[variant="link"]').at(0).simulate('click');
-    firstStepWrapper.find('button').at(0).simulate('click');
-    firstStepWrapper.find('button').at(1).simulate('click');
+    expect(container).toMatchSnapshot();
   });
 });

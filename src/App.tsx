@@ -148,7 +148,7 @@ export default function App() {
             <Route path="/interac-etransfer" element={<Navigate to="/interac-etransfer/status" />} />
             <Route path="/interac-etransfer/status" element={<Status />}>
               <Route path="/interac-etransfer/status" element={<Navigate to="/interac-etransfer/status/sent" />} />
-              <Route path="sent/competed/:id" element={<SentCompleted />} />
+              <Route path="sent/completed/:id" element={<SentCompleted />} />
               <Route path=":tabId" element={<InteracETransferDetails />} />
               <Route path="request-sent" element={<RequestSent />}>
                 <Route path=":requestId" element={<RequestSent />} />

@@ -44,7 +44,7 @@ exports[`Storyshots manage-my-alerts/components/InactiveAlertNote Default 1`] = 
   >
     <ul>
       <li>
-        An inactive alert status applies to bank accoiunts that were automatically transferred from Paperless to eStatements. If your alert status is displayed as 'Inactive', it means you have not agreed to the terms and conditions for eStatements. Once you have accepted the terms and conditions, you alerts will be activated and you will not see an 'Inactive' alert status.
+        An inactive alert status applies to bank accounts that were automatically transferred from Paperless to eStatements. If your alert status is displayed as 'Inactive', it means you have not agreed to the terms and conditions for eStatements. Once you have accepted the terms and conditions, your alerts will be activated and you will not see an 'Inactive' alert status.
       </li>
       <li>
         In the case of credit cards, your alerts status will always be active.

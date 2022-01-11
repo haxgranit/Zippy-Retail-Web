@@ -9,7 +9,7 @@ import currencyFormatter from '../helpers/CurrencyFormatter';
 
 export interface TransferDetails {
   source: { name: string; email: string };
-  destination: { name: string; email: string };
+  destination: { firstName: string; lastName: string; email: string };
   fromAccount: string;
   amount: number;
 }
@@ -48,7 +48,7 @@ const RequestMoneyVerificationModal = ({
               <p>Request To:</p>
             </Col>
             <Col>
-              <p>{transferDetails.destination.name}</p>
+              <p>{`${transferDetails.destination.firstName} ${transferDetails.destination?.lastName}`}</p>
               <p>{transferDetails.destination.email}</p>
             </Col>
           </Row>

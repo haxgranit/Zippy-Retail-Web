@@ -1,11 +1,5 @@
-import React from 'react';
-import Enzyme, { shallow } from 'enzyme';
-import Adapter from '@wojtekmaj/enzyme-adapter-react-17';
-
-import IdentityVerificationModal from './IdentityVerificationModal';
-
-// Configure enzyme for react 17
-Enzyme.configure({ adapter: new Adapter() });
+import { render, fireEvent } from '@testing-library/react';
+import { ModalContent } from './IdentityVerificationModal';
 
 const CONTACT_MOCK = {
   key: 1,
@@ -17,64 +11,53 @@ const CONTACT_MOCK = {
 
 describe('IdentityVerificationModal Component', () => {
   it('should render title', () => {
-    const setStep = jest.fn();
-    const handleClose = jest.fn();
-    React.useState = jest.fn().mockImplementationOnce((x) => [x, setStep]);
-    const wrapper = shallow(
-      <IdentityVerificationModal
-        show
-        handleClose={handleClose}
+    const { getByText } = render(
+      <ModalContent
+        step={0}
+        handleBack={jest.fn()}
+        closeMethod={jest.fn()}
+        handleNext={jest.fn()}
         selectedContact={CONTACT_MOCK}
       />,
     );
-    const header = wrapper.find('VerificationStep');
-    expect(header).toHaveLength(1);
+    expect(getByText('EDIT CONTACT - Verification')).toBeInTheDocument();
   });
 
   it('click VerificationStep buttons', () => {
-    const setStep = jest.fn();
-    const handleClose = jest.fn();
-    React.useState = jest.fn().mockImplementationOnce((x) => [x, setStep]);
-    const wrapper = shallow(
-      <IdentityVerificationModal
-        show
-        handleClose={handleClose}
+    const handleBack = jest.fn();
+    const closeMethod = jest.fn();
+    const handleNext = jest.fn();
+    const { container } = render(
+      <ModalContent
+        step={0}
+        handleBack={handleBack}
+        closeMethod={closeMethod}
+        handleNext={handleNext}
         selectedContact={CONTACT_MOCK}
       />,
     );
-    const firstStepWrapper = wrapper.find('VerificationStep').dive();
-    firstStepWrapper.find('Button[variant="link"]').at(0).simulate('click');
-    firstStepWrapper.find('button').at(0).simulate('click');
-    firstStepWrapper.find('button').at(1).simulate('click');
-    expect(setStep).toHaveBeenCalled();
+    fireEvent.click(container.querySelectorAll('.btn-link')[0]);
+    fireEvent.click(container.querySelectorAll('button')[0]);
+    fireEvent.click(container.querySelectorAll('button')[1]);
+
+    expect(handleBack).toHaveBeenCalled();
+    expect(closeMethod).toHaveBeenCalled();
   });
 
   it('click SendCodeStep buttons', () => {
-    const setShowOptions = jest.fn();
-    const setIsSent = jest.fn();
-    const handleClose = jest.fn();
-    const initialStateForStep = 1;
-    React.useState = jest
-      .fn()
-      .mockReturnValueOnce([initialStateForStep, {}])
-      .mockImplementationOnce((x) => [x, setShowOptions])
-      .mockImplementationOnce((x) => [x, setIsSent]);
-    const wrapper = shallow(
-      <IdentityVerificationModal
-        show
-        handleClose={handleClose}
+    const handleBack = jest.fn();
+    const closeMethod = jest.fn();
+    const handleNext = jest.fn();
+    const { container } = render(
+      <ModalContent
+        step={1}
+        handleBack={handleBack}
+        closeMethod={closeMethod}
+        handleNext={handleNext}
         selectedContact={CONTACT_MOCK}
       />,
     );
-    const secondStepWrapper = wrapper.find('SendCodeStep').dive();
-    secondStepWrapper.find('Button[variant="link"]').at(0).simulate('click');
-    expect(setShowOptions).toHaveBeenCalled();
-    secondStepWrapper
-      .find('Button[variant="outline-danger"]')
-      .at(0)
-      .simulate('click');
-    expect(setIsSent).toHaveBeenCalled();
-    secondStepWrapper.find('Button[variant="link"]').at(1).simulate('click');
-    expect(handleClose).toHaveBeenCalled();
+    fireEvent.click(container.querySelectorAll('.btn-link')[0]);
+    fireEvent.click(container.querySelectorAll('.btn-outline-danger')[0]);
   });
 });

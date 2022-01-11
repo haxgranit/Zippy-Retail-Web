@@ -33,7 +33,7 @@ export default function SentCompleted() {
 
   useEffect(() => {
     new Api(instance, accounts[0])
-      .getInteracEtransferTransaction(id)
+      .getInteracEtransferTransaction(Number(id))
       .then((data) => setTransaction(data));
   }, []);
 
