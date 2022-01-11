@@ -11,7 +11,7 @@ export default function VerticalNavLinks() {
         <Link to="/" className="navbar-brand">
           <img src={ZippyCashLogo} alt="" />
         </Link>
-        <Nav.Link className="nav-link" as={NavLink} to="/my-accounts">
+        <Nav.Link className="nav-link" id="my-account-link" as={NavLink} to="/my-accounts">
           <i className="zippy-cash-icon zc-home" />
           My Accounts
           <i className="dropdown zippy-cash-icon zc-up" />

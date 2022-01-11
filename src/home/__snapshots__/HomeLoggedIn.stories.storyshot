@@ -29,6 +29,7 @@ exports[`Storyshots HomeLoggedIn Default 1`] = `
           data-rr-ui-event-key={null}
           disabled={false}
           href="/my-accounts"
+          id="my-account-link"
           onClick={[Function]}
         >
           <i
