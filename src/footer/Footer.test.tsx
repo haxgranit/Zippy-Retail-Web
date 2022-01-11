@@ -6,7 +6,7 @@ import '../i18n/config';
 
 describe('Footer Component', () => {
   it('click footer links', () => {
-    const { container, getAllByText } = render(
+    const { container } = render(
       <BrowserRouter>
         <Footer />
       </BrowserRouter>,
@@ -20,6 +20,6 @@ describe('Footer Component', () => {
     fireEvent.click(container.querySelectorAll('.text-decoration-none')[6], mEvent);
     fireEvent.click(container.querySelectorAll('.text-decoration-none')[7], mEvent);
     fireEvent.click(container.querySelectorAll('.text-decoration-none')[8], mEvent);
-    expect(getAllByText('dev docs')[0]).toBeInTheDocument();
+    expect(container.querySelectorAll('.text-decoration-none')[0]).toBeInTheDocument();
   });
 });
