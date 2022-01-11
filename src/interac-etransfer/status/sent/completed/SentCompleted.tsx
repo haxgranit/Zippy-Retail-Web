@@ -8,12 +8,12 @@ import { useNavigate, useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { useIsAuthenticated, useMsal } from '@azure/msal-react';
 import { DateTime } from 'luxon';
-import QuickLinks from '../../components/QuickLinks';
 import CommonPageContainer from '../../../../common/CommonPageContainer';
 import Breadcrumbs, { Crumb } from '../../../../common/Breadcrumbs';
 import Api, { Transaction } from '../../../../api';
 import { useAppSelector } from '../../../../app/hooks';
 import { selectUser, UserState } from '../../../../features/user/userSlice';
+import QuickLinks from '../../components/QuickLinks';
 
 export default function SentCompleted() {
   const isAuthenticated = useIsAuthenticated();
@@ -52,11 +52,11 @@ export default function SentCompleted() {
   return (
     <>
       <CommonPageContainer title="Status">
-        <Breadcrumbs
-          crumbs={crumbs}
-        />
         <Row>
           <Col xs={9} className="transaction-details">
+            <Breadcrumbs
+              crumbs={crumbs}
+            />
             <h2>Transaction Request</h2>
             <div className="details">
               <Row>
@@ -109,7 +109,20 @@ export default function SentCompleted() {
               </Button>
             </Stack>
           </Col>
-          <QuickLinks />
+          <Col xs={3}>
+            <QuickLinks />
+            <div className="quick-tips">
+              <h4>Your Interac e-Transfer Details</h4>
+              <ul>
+                <li>
+                  You can also view information about your Interac® e-Transfer on the
+                  &quot;Account Details&quot; page. Select the account from which you made the
+                  transfer to view the details of your transfer in the list of
+                  transactions
+                </li>
+              </ul>
+            </div>
+          </Col>
         </Row>
       </CommonPageContainer>
     </>

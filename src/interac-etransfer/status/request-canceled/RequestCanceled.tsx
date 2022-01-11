@@ -56,7 +56,9 @@ export default function RequestCanceled() {
       </Row>
       <Row>
         <LeftCol />
-        <QuickLinks />
+        <Col xs={3}>
+          <QuickLinks />
+        </Col>
       </Row>
     </div>
   );

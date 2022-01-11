@@ -12,6 +12,7 @@ import MonthSelectComponent from '../../../common/MonthSelectComponent';
 import { formatContactName } from '../../../Helpers';
 import CommonPageContainer from '../../../common/CommonPageContainer';
 import Breadcrumbs, { Crumb } from '../../../common/Breadcrumbs';
+import QuickLinks from '../components/QuickLinks';
 
 const BorderedTR = styled.tr`
   borderTop: '1px solid #c5c5c5'
@@ -272,34 +273,21 @@ export default function InteracETransferDetails() {
             </Tabs>
           </Col>
           <Col xs={3}>
-            <div className="border p-2 rounded">
-              <b>You can also:</b>
-              <br />
-              View upcoming bills payments and transfers &gt;
-              <br />
-              Stop a payment &gt;
-              <br />
-              Change your statment preferences &gt;
-            </div>
+            <QuickLinks />
             <div className="quick-tips">
               <h4>Your Interac e-Transfer Details</h4>
               <ul>
                 <li>
-                  To learn more about the status of an Interac e-Transfer, or to take
-                  action on any of your transfers, select the text link under the
-                  status column.
+                  To learn more about the status of an Interac® e-Transfer, or to take
+                  action on any of your transfers, select the text link under the status
+                  column.
                 </li>
                 <li>
-                  You can also view information about your Interac e-Transfer on the
-                  &quot;Account Details&quot; page. Select the account from which you
-                  made the transfer to view the details of your transfer in the list
-                  of transactions
+                  You can also view information about your Interac® e-Transfer on the Account
+                  Details page. Select the account from which you made the transfer to view
+                  the details of your transfer in the list of transactions.
                 </li>
               </ul>
-              <p>
-                Note: The(Requested) status refers to a transfer you sent in response
-                to a request for money
-              </p>
             </div>
           </Col>
         </Row>
