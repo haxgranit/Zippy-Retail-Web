@@ -14,6 +14,7 @@ describe('MakeAPaymentWithPoints Page Component', () => {
 
     const mEvent = { preventDefault: jest.fn() };
     const keyEvent = { key: 'Enter' };
+    expect(container.querySelectorAll('.option-btn')).toHaveLength(2);
     fireEvent.click(container.querySelectorAll('.option-btn')[0], mEvent);
     fireEvent.click(container.querySelectorAll('.option-btn')[1], mEvent);
     fireEvent.keyDown(container.querySelectorAll('.option-btn')[0], keyEvent);
