@@ -18,7 +18,11 @@ const BorderedTR = styled.tr`
   borderTop: '1px solid #c5c5c5'
 `;
 
-const SentTabContent = ({ navigate, instance, accounts }: any) => {
+const SentTabContent = ({
+  navigate,
+  instance,
+  accounts,
+}: any) => {
   const [transactions, setTransactions] = useState<Transaction[]>([]);
   useEffect(() => {
     new Api(instance, accounts[0])
@@ -48,18 +52,23 @@ const SentTabContent = ({ navigate, instance, accounts }: any) => {
               <td>
                 <NumberFormat
                   value={item.amount}
+                  defaultValue={0}
                   displayType="text"
-                  prefix="$"
+                  prefix="$ "
+                  suffix=" CAD"
                   thousandSeparator
+                  decimalScale={2}
+                  fixedDecimalScale
                 />
               </td>
               <td>
-                <a
-                  className="text-black"
-                  href={`/interac-etransfer/status/sent/completed/${item.id}`}
+                <Button
+                  className="zippy-btn zippy-flat transaction-status w-full"
+                  variant="completed"
+                  onClick={() => navigate(`/interac-etransfer/status/sent/completed/${item.id}`)}
                 >
                   Transfer Sent
-                </a>
+                </Button>
               </td>
             </tr>
           ))}
@@ -86,6 +95,7 @@ const SentTabContent = ({ navigate, instance, accounts }: any) => {
 };
 
 const ReceivedTabContent = ({
+  navigate,
   instance,
   accounts,
 }: any) => {
@@ -127,12 +137,13 @@ const ReceivedTabContent = ({
                 />
               </td>
               <td>
-                <a
-                  className="text-black"
-                  href={`/interac-etransfer/send-money/transfer-sent-complete/${item.id}`}
+                <Button
+                  className="zippy-btn zippy-flat transaction-status w-full"
+                  variant="completed"
+                  onClick={() => navigate(`/interac-etransfer/status/received/completed/${item.id}`)}
                 >
                   Transfer Completed
-                </a>
+                </Button>
               </td>
             </tr>
           ))}
@@ -147,7 +158,11 @@ const ReceivedTabContent = ({
   );
 };
 
-const RequestedTabContent = ({ navigate, instance, accounts }: any) => {
+const RequestedTabContent = ({
+  navigate,
+  instance,
+  accounts,
+}: any) => {
   const [transactions, setTransactions] = useState<Transaction[]>([]);
   useEffect(() => {
     new Api(instance, accounts[0])
@@ -185,12 +200,13 @@ const RequestedTabContent = ({ navigate, instance, accounts }: any) => {
                 />
               </td>
               <td>
-                <a
-                  className="text-black"
-                  href={`/interac-etransfer/status/request-sent/${item.id}`}
+                <Button
+                  className="zippy-btn zippy-flat transaction-status w-full"
+                  variant="completed"
+                  onClick={() => navigate(`/interac-etransfer/status/requested/completed/${item.id}`)}
                 >
                   Requested
-                </a>
+                </Button>
               </td>
             </tr>
           ))}
@@ -259,6 +275,7 @@ export default function InteracETransferDetails() {
               </Tab>
               <Tab eventKey="received" title="Transfer Received">
                 <ReceivedTabContent
+                  navigate={navigate}
                   instance={instance}
                   accounts={accounts}
                 />

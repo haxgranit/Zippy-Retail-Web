@@ -1,4 +1,4 @@
-import { render, fireEvent } from '../../../test-utils';
+import { render, fireEvent } from '../../../../test-utils';
 import RequestCanceled from './RequestCanceled';
 
 const mockedUsedNavigate = jest.fn();

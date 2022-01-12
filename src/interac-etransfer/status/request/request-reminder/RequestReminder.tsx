@@ -6,8 +6,7 @@ import
   Stack,
 } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
-import Divider from '../components/Divider';
-import QuickLinks from '../components/QuickLinks';
+import QuickLinks from '../../components/QuickLinks';
 
 const LeftCol = () => {
   const navigate = useNavigate();
@@ -15,8 +14,10 @@ const LeftCol = () => {
     <Col xs={9}>
       <span>
         <i />
-        Request Canceled
+        A reminder has been sent
       </span>
+      <br />
+      Request Reminder Sent.
       <Row className="align-items-center mt-4">
         <Col xs={4}>TO:</Col>
         <Col xs={6}>
@@ -25,12 +26,10 @@ const LeftCol = () => {
           kentu@shw.ca
         </Col>
       </Row>
-      <Divider />
       <Row className="align-items-center">
         <Col xs={4}>Amount:</Col>
         <Col xs={6}>$10.00</Col>
       </Row>
-      <Divider />
       <Stack gap={3} direction="horizontal">
         <Button
           variant="outline-danger ms-auto"
@@ -46,12 +45,12 @@ const LeftCol = () => {
   );
 };
 
-export default function RequestCanceled() {
+export default function RequestReminder() {
   return (
     <div>
       <Row>
         <Col>
-          <h2>REQUEST MONEY</h2>
+          <h2>REQUEST REMINDER</h2>
         </Col>
       </Row>
       <Row>

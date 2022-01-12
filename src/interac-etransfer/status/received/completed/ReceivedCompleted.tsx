@@ -1,10 +1,8 @@
 import {
-  Button,
   Col,
   Row,
-  Stack,
 } from 'react-bootstrap';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { useIsAuthenticated, useMsal } from '@azure/msal-react';
 import { DateTime } from 'luxon';
@@ -16,21 +14,19 @@ import { useAppSelector } from '../../../../app/hooks';
 import { selectUser, UserState } from '../../../../features/user/userSlice';
 import QuickLinks from '../../components/QuickLinks';
 
-export default function SentCompleted() {
+export default function ReceivedCompleted() {
   const isAuthenticated = useIsAuthenticated();
-  const navigate = useNavigate();
   const { id } = useParams();
   const { instance, accounts } = useMsal();
   const [transaction, setTransaction] = useState<Transaction | undefined>(undefined);
 
   let user: any;
   const getUserFullName = () => (user && user.firstName && user.lastName ? `${user.firstName} ${user.lastName}` : '');
-  const getUserEmail = () => (user && user.email ? user.email : '');
 
   const crumbs = [
     { label: 'Status', link: '/interac-etransfer/status' },
-    { label: 'Sent Money', link: '/interac-etransfer/status/sent' },
-    { label: 'Transfer Sent' },
+    { label: 'Transfer Received', link: '/interac-etransfer/status/received' },
+    { label: 'Transfer Completed' },
   ] as Array<Crumb>;
 
   useEffect(() => {
@@ -59,19 +55,19 @@ export default function SentCompleted() {
             <Breadcrumbs
               crumbs={crumbs}
             />
-            <h2>Transaction Request</h2>
+            <h2>Transaction Completed</h2>
             <div className="details">
               <Row>
                 <Col xs={4}>From</Col>
                 <Col xs={6}>
-                  <strong>{getUserFullName()}</strong>
-                  {user && ` (${getUserEmail()})`}
+                  <strong>{transaction ? `${transaction.contact.firstName || ''} ${transaction.contact.lastName || ''}` : ''}</strong>
+                  {transaction && ` (${transaction.contact.email})`}
                 </Col>
               </Row>
               <Row>
                 <Col xs={4}>To</Col>
                 <Col xs={6}>
-                  <strong>{transaction ? `${transaction.contact.firstName || ''} ${transaction.contact.lastName || ''}` : ''}</strong>
+                  <strong>{getUserFullName()}</strong>
                 </Col>
               </Row>
               <Row>
@@ -108,20 +104,6 @@ export default function SentCompleted() {
                 <Col xs={6}>{transaction?.id}</Col>
               </Row>
             </div>
-            <Stack gap={3} direction="horizontal">
-              <Button
-                className="zippy-btn zippy-flat d-flex"
-                onClick={() => navigate('/interac-etransfer/status/sent')}
-              >
-                Back
-              </Button>
-              <Button
-                className="zippy-btn d-flex ms-auto"
-                onClick={() => navigate('/interac-etransfer/send-money/details')}
-              >
-                Send Another Transfer
-              </Button>
-            </Stack>
           </Col>
           <Col xs={3}>
             <QuickLinks />

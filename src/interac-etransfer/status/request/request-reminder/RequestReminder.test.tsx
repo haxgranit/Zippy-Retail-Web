@@ -1,4 +1,4 @@
-import { render, fireEvent } from '../../../test-utils';
+import { render, fireEvent } from '../../../../test-utils';
 import RequestReminder from './RequestReminder';
 
 const mockedUsedNavigate = jest.fn();
