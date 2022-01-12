@@ -6,11 +6,13 @@ describe('ٌRequest Sent Component', () => {
     const show = true;
     const handleCancelRequest = jest.fn();
     const handleBack = jest.fn();
+    const transaction = undefined;
     render(
       <CancelRequestForMoneyVerification
         show={show}
         handleCancelRequest={handleCancelRequest}
         handleBack={handleBack}
+        transaction={transaction}
       />,
     );
     expect(screen.getByText('Cancel Request For Money - VERIFICATION')).toBeInTheDocument();
@@ -19,11 +21,13 @@ describe('ٌRequest Sent Component', () => {
     const show = true;
     const handleCancelRequest = jest.fn();
     const handleBack = jest.fn();
+    const transaction = undefined;
     render(
       <CancelRequestForMoneyVerification
         show={show}
         handleCancelRequest={handleCancelRequest}
         handleBack={handleBack}
+        transaction={transaction}
       />,
     );
 
@@ -34,11 +38,13 @@ describe('ٌRequest Sent Component', () => {
     const show = true;
     const handleCancelRequest = jest.fn();
     const handleBack = jest.fn();
+    const transaction = undefined;
     render(
       <CancelRequestForMoneyVerification
         show={show}
         handleCancelRequest={handleCancelRequest}
         handleBack={handleBack}
+        transaction={transaction}
       />,
     );
 

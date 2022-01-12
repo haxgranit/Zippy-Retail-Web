@@ -79,5 +79,10 @@ i {
             -webkit-mask-image: url("../assets/img/icons/security.svg");
             mask-image: url("../assets/img/icons/security.svg");
         }
+
+        &.zc-x:after {
+            -webkit-mask-image: url("../assets/img/icons/x.svg");
+            mask-image: url("../assets/img/icons/x.svg");
+        }
     }
 }

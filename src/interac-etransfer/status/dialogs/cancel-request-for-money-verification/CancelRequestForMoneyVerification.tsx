@@ -5,57 +5,78 @@ import {
   Button,
   Stack,
 } from 'react-bootstrap';
+import NumberFormat from 'react-number-format';
+import { Transaction } from '../../../../api';
 
 export interface CancelRequestForMoneyVerificationProps {
   show: boolean;
   handleCancelRequest: () => void;
   handleBack: () => void;
+  transaction: Transaction | undefined,
 }
-
-const Divider = () => <div className="border-top my-3" />;
 
 const CancelRequestForMoneyVerification = ({
   show,
   handleCancelRequest,
   handleBack,
+  transaction,
 }: CancelRequestForMoneyVerificationProps) => (
-  <Modal show={show} size="lg">
-    <Modal.Body style={{ padding: '0px' }}>
-      <Row style={{ padding: '15px' }}>
-        <h2>Cancel Request For Money - VERIFICATION</h2>
-        <div>
-          <p>Are you sure you want to cancel this request for money?</p>
-          <Row className="align-items-center mt-4">
-            <Col xs={4}>TO:</Col>
-            <Col xs={6}>
-              Kent Ulrich
-            </Col>
-          </Row>
-          <Divider />
-          <Row className="align-items-center">
-            <Col xs={4}>Amount:</Col>
-            <Col xs={6}>$10.00</Col>
-          </Row>
-          <Divider />
-          <Row className="align-items-center">
-            <Col xs={4}>Email Address:</Col>
-            <Col xs={6}>kentu@shaw.ca</Col>
-          </Row>
-        </div>
-      </Row>
-      <div style={{
-        backgroundColor: '#EAEAEA',
-        padding: '0px',
-        margin: '0px',
-        display: 'flex',
-        flexFlow: 'row-reverse',
-      }}
-      >
-        <Stack gap={3} direction="horizontal" style={{ margin: '16px' }}>
-          <Button variant="outline-danger" onClick={handleBack}>
+  <Modal show={show} className="zippy-cash-modal">
+    <Modal.Header className="transaction-details">
+      Cancel Request For Money - VERIFICATION
+      <Button
+        variant="close"
+        onClick={handleBack}
+      />
+    </Modal.Header>
+    <Modal.Body className="transaction-details">
+      <div className="details">
+        <Row>
+          <Col xs={12}>Are you sure you want to cancel this request for money?</Col>
+        </Row>
+        <Row>
+          <Col xs={6}>To</Col>
+          <Col xs={6}>
+            <strong>{transaction ? `${transaction.contact.firstName || ''} ${transaction.contact.lastName || ''}` : ''}</strong>
+          </Col>
+        </Row>
+        <Row>
+          <Col xs={6}>Transfer Amount</Col>
+          <Col xs={6}>
+            <strong className="amount">
+              {transaction && transaction.amount
+              && (
+                <NumberFormat
+                  value={transaction.amount}
+                  defaultValue={0}
+                  displayType="text"
+                  prefix="$ "
+                  suffix=" CAD"
+                  thousandSeparator
+                  decimalScale={2}
+                  fixedDecimalScale
+                />
+              )}
+            </strong>
+          </Col>
+        </Row>
+        <Row>
+          <Col xs={6}>Email</Col>
+          <Col xs={6}>
+            <strong>{transaction ? ` (${transaction.contact.email})` : ''}</strong>
+          </Col>
+        </Row>
+        <Stack gap={3} direction="horizontal">
+          <Button
+            className="zippy-btn zippy-flat d-flex"
+            onClick={handleBack}
+          >
             Back
           </Button>
-          <Button className="zippy-btn" onClick={handleCancelRequest}>
+          <Button
+            className="zippy-btn d-flex ms-auto"
+            onClick={handleCancelRequest}
+          >
             Cancel Request
           </Button>
         </Stack>

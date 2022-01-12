@@ -71,6 +71,7 @@ export default function RequestSent() {
   return (
     <div>
       <CancelRequestForMoneyVerification
+        transaction={transaction}
         handleBack={handleCancelRequestForMoneyBack}
         handleCancelRequest={handleCancelRequestForMoneyConfirmed}
         show={showCancelRequestForMoney}
