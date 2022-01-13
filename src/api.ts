@@ -125,11 +125,12 @@ export default class Api {
     });
 
     if (!response.ok) {
-      try {
-        const problemDetail = (await response.json()) as ProblemDetail;
+      const responseText = await response.text();
+      if (responseText) {
+        const problemDetail = JSON.parse(responseText) as ProblemDetail;
         throw Error(problemDetail.title);
-      } catch (err: any) {
-        throw Error(err);
+      } else {
+        throw Error('No Response');
       }
     }
 
