@@ -15,16 +15,16 @@ export const b2cPolicies = {
   },
   authorities: {
     signIn: {
-      authority: 'https://zippycashdev.b2clogin.com/zippycashdev.onmicrosoft.com/B2C_1_SignIn',
+      authority: 'https://login-dev.zippy.cash/d0c1aedf-ff82-46fd-890a-3100c16e14ab/B2C_1_SignIn',
     },
     signUpBusiness: {
-      authority: 'https://zippycashdev.b2clogin.com/zippycashdev.onmicrosoft.com/B2C_1_SignUp_Business',
+      authority: 'https://login-dev.zippy.cash/d0c1aedf-ff82-46fd-890a-3100c16e14ab/B2C_1_SignUp_Business',
     },
     signUpPersonal: {
-      authority: 'https://zippycashdev.b2clogin.com/zippycashdev.onmicrosoft.com/B2C_1_SignUp_Personal',
+      authority: 'https://login-dev.zippy.cash/d0c1aedf-ff82-46fd-890a-3100c16e14ab/B2C_1_SignUp_Personal',
     },
   },
-  authorityDomain: 'zippycashdev.b2clogin.com',
+  authorityDomain: 'login-dev.zippy.cash',
 };
 
 /**
