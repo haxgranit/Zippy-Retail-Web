@@ -59,7 +59,7 @@ jobs:
     inputs:
       command: build
       repository: $(DOCKER_REPOSITORY)
-      arguments: --build-arg build_version=$(VERSION)
+      arguments: --build-arg version=$(VERSION)
       tags: |
         $(VERSION)
         latest
