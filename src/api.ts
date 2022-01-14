@@ -46,6 +46,10 @@ export type InteracEtransferTransaction = {
   securityAnswer?: string,
 };
 
+export type VersionResponse = {
+  version: string;
+};
+
 type ProblemDetail = {
   type: string,
   title: string,
@@ -107,22 +111,30 @@ export default class Api {
     return this.fetch<InteracEtransferTransaction>('post', 'InteracEtransfer/DirectDepositStatus', { email });
   }
 
+  public getVersion() {
+    return this.fetch<VersionResponse>('get', 'Version');
+  }
+
   private async fetch<TResponse>(method: string, path: string, body?: any) {
     const apiUrl = (<any>window).API_URL;
     if (!apiUrl) {
       throw Error('window.API_URL is undefined');
     }
-    const accessToken = await getToken(this.instance, this.account);
-    const response = await fetch(`${apiUrl}/${path}`, {
+
+    const request: RequestInit = {
       method,
-      headers: new Headers(
-        {
-          Authorization: `Bearer ${accessToken}`,
-          'Content-Type': 'application/json',
-        },
-      ),
       body: body ? JSON.stringify(body) : null,
-    });
+    };
+
+    if (path !== 'Version') {
+      const accessToken = await getToken(this.instance, this.account);
+      request.headers = new Headers({
+        Authorization: `Bearer ${accessToken}`,
+        'Content-Type': 'application/json',
+      });
+    }
+
+    const response = await fetch(`${apiUrl}/${path}`, request);
 
     if (!response.ok) {
       const problemDetail = await response.json() as ProblemDetail;
