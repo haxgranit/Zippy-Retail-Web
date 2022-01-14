@@ -8,7 +8,7 @@ pool:
 variables:
   VERSION_MAJOR_MINOR: 0.3
   VERSION_PATCH: $[counter(variables['VERSION_MAJOR_MINOR'], 0)]
-  VERSION: ${{ variables.VERSION_MAJOR_MINOR }}.${{ variables.VERSION_PATCH }}
+  VERSION: $[variables.VERSION_MAJOR_MINOR].$[variables.VERSION_PATCH]
 
 jobs:
 - job: Docker
