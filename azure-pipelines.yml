@@ -1,14 +1,12 @@
 trigger: none
 
-name: $(VERSION)
+name: $(VERSION_MAJOR_MINOR).$(Build.BuildId)
 
 pool:
   vmImage: ubuntu-latest
 
 variables:
   VERSION_MAJOR_MINOR: 0.3
-  VERSION_PATCH: $[counter(variables['VERSION_MAJOR_MINOR'], 0)]
-  VERSION: $[format('{0}.{1}', variables['VERSION_MAJOR_MINOR'], variables['VERSION_PATCH'])]
 
 jobs:
 - job: Docker
@@ -59,9 +57,9 @@ jobs:
     inputs:
       command: build
       repository: $(DOCKER_REPOSITORY)
-      arguments: --build-arg version=$(VERSION)
+      arguments: --build-arg version=$(Build.BuildNumber)
       tags: |
-        $(VERSION)
+        $(Build.BuildNumber)
         latest
   # - task: Docker@2
   #   condition: and(succeeded(), eq(variables['docker.push'], 'true'))
@@ -70,5 +68,5 @@ jobs:
   #     command: push
   #     repository: $(DOCKER_REPOSITORY)
   #     tags: |
-  #       $(VERSION)
+  #       $(Build.BuildNumber)
   #       latest
