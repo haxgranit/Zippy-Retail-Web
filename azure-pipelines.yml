@@ -61,12 +61,12 @@ jobs:
       tags: |
         $(Build.BuildNumber)
         latest
-  # - task: Docker@2
-  #   condition: and(succeeded(), eq(variables['docker.push'], 'true'))
-  #   displayName: Push
-  #   inputs:
-  #     command: push
-  #     repository: $(DOCKER_REPOSITORY)
-  #     tags: |
-  #       $(Build.BuildNumber)
-  #       latest
+  - task: Docker@2
+    condition: and(succeeded(), eq(variables['docker.push'], 'true'))
+    displayName: Push
+    inputs:
+      command: push
+      repository: $(DOCKER_REPOSITORY)
+      tags: |
+        $(Build.BuildNumber)
+        latest
