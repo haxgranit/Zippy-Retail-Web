@@ -1,15 +1,15 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { BrowserRouter } from 'react-router-dom';
-import SentCompleted from './SentCompleted';
+import RequestPending from './RequestPending';
 
 export default {
   title: 'interac-etransfer/status/pending/RequestSent',
-  component: SentCompleted,
-} as ComponentMeta<typeof SentCompleted>;
+  component: RequestPending,
+} as ComponentMeta<typeof RequestPending>;
 
-const Template: ComponentStory<typeof SentCompleted> = () => (
+const Template: ComponentStory<typeof RequestPending> = () => (
   <BrowserRouter>
-    <SentCompleted />
+    <RequestPending />
   </BrowserRouter>
 );
 

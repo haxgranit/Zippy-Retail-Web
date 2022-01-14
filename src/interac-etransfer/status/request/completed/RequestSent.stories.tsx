@@ -3,7 +3,7 @@ import { BrowserRouter } from 'react-router-dom';
 import RequestSent from './RequestSent';
 
 export default {
-  title: 'interac-etransfer/status/request-sent/RequestSent',
+  title: 'interac-etransfer/status/pending/RequestSent',
   component: RequestSent,
 } as ComponentMeta<typeof RequestSent>;
 

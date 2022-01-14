@@ -203,7 +203,7 @@ const RequestedTabContent = ({
                 <Button
                   className="zippy-btn zippy-flat transaction-status w-full"
                   variant="completed"
-                  onClick={() => navigate(`/interac-etransfer/status/requested/completed/${item.id}`)}
+                  onClick={() => navigate(`/interac-etransfer/status/requested/pending/${item.id}`)}
                 >
                   Requested
                 </Button>

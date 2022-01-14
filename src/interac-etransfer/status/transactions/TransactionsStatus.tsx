@@ -1,32 +1,38 @@
 import { useEffect, useState } from 'react';
-import
-{
-  Button,
-  Col,
-  Form,
-  Row,
-  Stack,
+import {
+  Button, Col, Form, Row, Stack,
 } from 'react-bootstrap';
 import { useNavigate, useParams } from 'react-router-dom';
 import { DateTime } from 'luxon';
 import { useIsAuthenticated, useMsal } from '@azure/msal-react';
 import NumberFormat from 'react-number-format';
-import Breadcrumbs, { Crumb } from '../../../../common/Breadcrumbs';
-import Api, { Transaction } from '../../../../api';
-import { useAppSelector } from '../../../../app/hooks';
-import { selectUser, UserState } from '../../../../features/user/userSlice';
-import CancelRequestForMoneyVerification from '../../dialogs/cancel-request-for-money-verification/CancelRequestForMoneyVerification';
-import QuickLinks from '../../components/QuickLinks';
-import CommonPageContainer from '../../../../common/CommonPageContainer';
+import Breadcrumbs, { Crumb } from '../../../common/Breadcrumbs';
+import Api, { Transaction } from '../../../api';
+import { useAppSelector } from '../../../app/hooks';
+import { selectUser, UserState } from '../../../features/user/userSlice';
+import CancelRequestForMoneyVerification
+  from '../dialogs/cancel-request-for-money-verification/CancelRequestForMoneyVerification';
+import QuickLinks from '../components/QuickLinks';
+import CommonPageContainer from '../../../common/CommonPageContainer';
+import { TRANSACTIONS_TYPE } from './transactions_type.enum';
+import { TRANSACTIONS_STATUS } from './transactions_status.enum';
 
-export default function RequestSent() {
+export interface TransactionsInterface {
+  type: TRANSACTIONS_TYPE;
+  status: TRANSACTIONS_STATUS;
+  id: string;
+}
+
+export default function TransactionsStatus() {
   const isAuthenticated = useIsAuthenticated();
   const navigate = useNavigate();
-  const { id } = useParams();
+  const { type, status, id } = useParams<Partial<TransactionsInterface>>();
   const { instance, accounts } = useMsal();
   const [transaction, setTransaction] = useState<Transaction | undefined>(undefined);
   const [sendReminderChecked, setSendReminderChecked] = useState(true);
   const [showCancelRequestForMoney, setShowCancelRequestForMoney] = useState(false);
+
+  console.log(type, status, id);
 
   let user: any;
   const getUserFullName = () => (user && user.firstName && user.lastName ? `${user.firstName} ${user.lastName}` : '');
@@ -34,7 +40,7 @@ export default function RequestSent() {
 
   const crumbs = [
     { label: 'Status', link: '/interac-etransfer/status' },
-    { label: 'Requested Money', link: '/interac-etransfer/status/requested' },
+    { label: 'Requested', link: `/interac-etransfer/status/${type}` },
     { label: 'Transfer Pending' },
   ] as Array<Crumb>;
 
@@ -57,7 +63,7 @@ export default function RequestSent() {
   }
 
   const handleNext = () => {
-    if (sendReminderChecked) navigate('/interac-etransfer/status/request-reminder');
+    if (sendReminderChecked) navigate(`/interac-etransfer/status/requested/reminder/${id}`);
     else setShowCancelRequestForMoney(true);
   };
   const handleCancelRequestForMoneyBack = () => {
@@ -65,11 +71,11 @@ export default function RequestSent() {
   };
   const handleCancelRequestForMoneyConfirmed = () => {
     setShowCancelRequestForMoney(false);
-    navigate('/interac-etransfer/status/request-canceled');
+    navigate(`/interac-etransfer/status/requested/canceled/${id}`);
   };
 
   return (
-    <div>
+    <>
       <CancelRequestForMoneyVerification
         transaction={transaction}
         handleBack={handleCancelRequestForMoneyBack}
@@ -83,7 +89,7 @@ export default function RequestSent() {
               crumbs={crumbs}
             />
             <h2>Transaction Pending</h2>
-            <Row className="mt-4">
+            <Row>
               <Col>
                 <ul>
                   <li>
@@ -201,6 +207,6 @@ export default function RequestSent() {
           </Col>
         </Row>
       </CommonPageContainer>
-    </div>
+    </>
   );
 }

@@ -5,58 +5,75 @@ import
   Row,
   Stack,
 } from 'react-bootstrap';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
+import CommonPageContainer from '../../../../common/CommonPageContainer';
 import QuickLinks from '../../components/QuickLinks';
-
-const LeftCol = () => {
-  const navigate = useNavigate();
-  return (
-    <Col xs={9}>
-      <span>
-        <i />
-        Request Canceled
-      </span>
-      <Row className="align-items-center mt-4">
-        <Col xs={4}>TO:</Col>
-        <Col xs={6}>
-          Kent Ulrich
-          <br />
-          kentu@shw.ca
-        </Col>
-      </Row>
-      <Row className="align-items-center">
-        <Col xs={4}>Amount:</Col>
-        <Col xs={6}>$10.00</Col>
-      </Row>
-      <Stack gap={3} direction="horizontal">
-        <Button
-          variant="outline-danger ms-auto"
-          onClick={() => navigate('/interac-etransfer/status')}
-        >
-          Return to Status
-        </Button>
-        <Button className="zippy-btn" onClick={() => navigate('/interac-etransfer/request-money')}>
-          Send Another Request
-        </Button>
-      </Stack>
-    </Col>
-  );
-};
+import Breadcrumbs, { Crumb } from '../../../../common/Breadcrumbs';
 
 export default function RequestCanceled() {
+  const navigate = useNavigate();
+  const { id } = useParams();
+  const crumbs = [
+    { label: 'Status', link: '/interac-etransfer/status' },
+    { label: 'Requested', link: '/interac-etransfer/status/requested' },
+    { label: 'Transfer Pending', link: `/interac-etransfer/status/requested/pending/${id}` },
+    { label: 'Cancel Transfer' },
+  ] as Array<Crumb>;
+
   return (
-    <div>
-      <Row>
-        <Col>
-          <h2>REQUEST MONEY</h2>
-        </Col>
-      </Row>
-      <Row>
-        <LeftCol />
-        <Col xs={3}>
-          <QuickLinks />
-        </Col>
-      </Row>
-    </div>
+    <>
+      <CommonPageContainer title="Status">
+        <Row>
+          <Col xs={9} className="transaction-details">
+            <Breadcrumbs
+              crumbs={crumbs}
+            />
+            <h2>REQUEST MONEY</h2>
+            <div className="details">
+              <Row>
+                <Col xs={4}>TO:</Col>
+                <Col xs={6}>
+                  Kent Ulrich
+                  <br />
+                  kentu@shw.ca
+                </Col>
+              </Row>
+              <Row>
+                <Col xs={4}>Amount:</Col>
+                <Col xs={6}>$10.00</Col>
+              </Row>
+              <Stack gap={3} direction="horizontal">
+                <Button
+                  className="zippy-btn zippy-flat d-flex"
+                  onClick={() => navigate(`/interac-etransfer/status/requested/pending/${id}`)}
+                >
+                  Return to Status
+                </Button>
+                <Button
+                  className="zippy-btn d-flex ms-auto"
+                  onClick={() => navigate('/interac-etransfer/request-money')}
+                >
+                  Send Another Request
+                </Button>
+              </Stack>
+            </div>
+          </Col>
+          <Col xs={3}>
+            <QuickLinks />
+            <div className="quick-tips">
+              <h4>Your Interac e-Transfer Details</h4>
+              <ul>
+                <li>
+                  You can also view information about your Interac® e-Transfer on the
+                  &quot;Account Details&quot; page. Select the account from which you made the
+                  transfer to view the details of your transfer in the list of
+                  transactions
+                </li>
+              </ul>
+            </div>
+          </Col>
+        </Row>
+      </CommonPageContainer>
+    </>
   );
 }

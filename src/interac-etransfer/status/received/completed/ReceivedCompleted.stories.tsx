@@ -3,7 +3,7 @@ import { BrowserRouter } from 'react-router-dom';
 import ReceivedCompleted from './ReceivedCompleted';
 
 export default {
-  title: 'interac-etransfer/status/request-sent/RequestSent',
+  title: 'interac-etransfer/status/pending/RequestSent',
   component: ReceivedCompleted,
 } as ComponentMeta<typeof ReceivedCompleted>;
 
