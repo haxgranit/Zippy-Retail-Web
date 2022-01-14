@@ -26,5 +26,5 @@ Loading.args = {
 export const Loaded = Template.bind({});
 Loaded.args = {
   ...Loading.args,
-  apiVersion: '4.5.6'
+  apiVersion: '4.5.6',
 };
