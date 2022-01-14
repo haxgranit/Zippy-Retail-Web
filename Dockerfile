@@ -5,6 +5,8 @@ RUN npm ci
 COPY . .
 
 FROM install AS build
+ARG version=0.0.0
+RUN npm version --allow-same-version --no-git-tag-version $version
 RUN npm run build
 
 FROM nginx:1.21.3-alpine

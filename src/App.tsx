@@ -76,6 +76,7 @@ import RequestCanceled from './interac-etransfer/status/request-canceled/Request
 import InteracETransferDetails from './interac-etransfer/status/interac-e-transfer-details/InteracETransferDetails';
 import Status from './interac-etransfer/status/Status';
 import SentCompleted from './interac-etransfer/status/sent/completed/SentCompleted';
+import Version from './Version';
 
 export default function App() {
   const dispatch = useAppDispatch();
@@ -199,6 +200,7 @@ export default function App() {
         <Route path="personal" element={<Personal />} />
         <Route path="personal-profile" element={<PersonalProfile />} />
       </Routes>
+      <Version />
     </main>
   );
 }
