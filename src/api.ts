@@ -137,8 +137,13 @@ export default class Api {
     const response = await fetch(`${apiUrl}/${path}`, request);
 
     if (!response.ok) {
-      const problemDetail = await response.json() as ProblemDetail;
-      throw Error(problemDetail.title);
+      const responseText = await response.text();
+      if (responseText) {
+        const problemDetail = JSON.parse(responseText) as ProblemDetail;
+        throw Error(problemDetail.title);
+      } else {
+        throw Error(`Server Error ${response.statusText}`);
+      }
     }
 
     return await response.json() as TResponse;
