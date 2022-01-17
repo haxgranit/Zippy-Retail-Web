@@ -130,7 +130,7 @@ export default class Api {
         const problemDetail = JSON.parse(responseText) as ProblemDetail;
         throw Error(problemDetail.title);
       } else {
-        throw Error('No Response');
+        throw Error(`Server Error ${response.statusText}`);
       }
     }
 
