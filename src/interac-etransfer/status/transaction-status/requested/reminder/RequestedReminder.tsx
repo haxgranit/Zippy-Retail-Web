@@ -10,12 +10,9 @@ import NumberFormat from 'react-number-format';
 import { TransactionProps } from '../../TransactionStatus';
 
 function RequestedReminder({
-  user,
   transaction,
 }: TransactionProps) {
   const navigate = useNavigate();
-
-  console.log({ user });
 
   return (
     <>

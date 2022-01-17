@@ -50,7 +50,7 @@ export type VersionResponse = {
   version: string;
 };
 
-type ProblemDetail = {
+export type ErrorDetail = {
   type: string,
   title: string,
   status: number,
@@ -143,14 +143,12 @@ export default class Api {
       });
     }
 
-    return fetch(`${apiUrl}/${path}`, request)
-      .then(async (response: Response) => {
-        const result = (response.ok ? await response.json() : {}) as TResponse;
-        return result;
-      })
-      .catch((error) => {
-        /** TODO: properly output error from here */
-        throw Error(error.message);
-      });
+    const response = await fetch(`${apiUrl}/${path}`, request);
+    // TODO: proper error output here
+    if (!response.ok) {
+      const error = await response.json() as ErrorDetail;
+      throw Error(error.title);
+    }
+    return (response.status !== 204 ? await response.json() : {}) as TResponse;
   }
 }
