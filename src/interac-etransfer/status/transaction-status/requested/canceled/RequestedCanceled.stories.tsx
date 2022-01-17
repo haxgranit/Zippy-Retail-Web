@@ -12,6 +12,7 @@ const Template: ComponentStory<typeof RequestedCanceled> = () => (
     <RequestedCanceled
       transaction={undefined}
       user={undefined}
+      setCurrentStatus={undefined}
     />
   </BrowserRouter>
 );

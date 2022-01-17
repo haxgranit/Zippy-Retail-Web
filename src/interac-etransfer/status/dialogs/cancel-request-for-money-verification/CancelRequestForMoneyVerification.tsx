@@ -13,6 +13,7 @@ export interface CancelRequestForMoneyVerificationProps {
   handleCancelRequest: () => void;
   handleBack: () => void;
   transaction: Transaction | undefined,
+  processing: boolean,
 }
 
 const CancelRequestForMoneyVerification = ({
@@ -20,6 +21,7 @@ const CancelRequestForMoneyVerification = ({
   handleCancelRequest,
   handleBack,
   transaction,
+  processing,
 }: CancelRequestForMoneyVerificationProps) => (
   <Modal show={show} className="zippy-cash-modal">
     <Modal.Header className="transaction-details">
@@ -70,14 +72,17 @@ const CancelRequestForMoneyVerification = ({
           <Button
             className="zippy-btn zippy-flat d-flex"
             onClick={handleBack}
+            disabled={processing}
           >
             Back
           </Button>
           <Button
             className="zippy-btn d-flex ms-auto"
             onClick={handleCancelRequest}
+            disabled={processing}
           >
-            Cancel Request
+            {processing && <div className="loading spinner-border" role="status" />}
+            {!processing ? 'Cancel Request' : 'Canceling...'}
           </Button>
         </Stack>
       </div>

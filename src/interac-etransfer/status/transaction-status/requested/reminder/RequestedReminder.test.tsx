@@ -11,21 +11,17 @@ jest.mock('react-router-dom', () => ({
 
 describe('RequestedReminder Component', () => {
   it('should render RequestedReminder', () => {
-    const setSendReminderChecked = jest.fn();
-    const setShowCancelRequestForMoney = jest.fn();
     render(
       <BrowserRouter>
         <RequestedReminder
           transaction={undefined}
           user={undefined}
+          setCurrentStatus={undefined}
         />
       </BrowserRouter>,
     );
 
-    React.useState = jest
-      .fn()
-      .mockImplementationOnce(() => [true, setSendReminderChecked])
-      .mockImplementationOnce(() => [false, setShowCancelRequestForMoney]);
-    expect(screen.getByText('STATUS')).toBeInTheDocument();
+    expect(screen.getByText('To')).toBeInTheDocument();
+    expect(screen.getByText('Transfer Amount')).toBeInTheDocument();
   });
 });

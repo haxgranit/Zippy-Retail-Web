@@ -10,31 +10,58 @@ import
 import { useNavigate, useParams } from 'react-router-dom';
 import { DateTime } from 'luxon';
 import NumberFormat from 'react-number-format';
+import { useMsal } from '@azure/msal-react';
 import CancelRequestForMoneyVerification from '../../../dialogs/cancel-request-for-money-verification/CancelRequestForMoneyVerification';
 import { TransactionProps } from '../../TransactionStatus';
+import Api from '../../../../../api';
+import { TransactionActionEnum } from '../../TransactionActionEnum';
 
 function RequestedPending({
   user,
   transaction,
+  setCurrentStatus,
 }: TransactionProps) {
   const navigate = useNavigate();
+  const { instance, accounts } = useMsal();
   const { id } = useParams();
-  const [sendReminderChecked, setSendReminderChecked] = useState(true);
-  const [showCancelRequestForMoney, setShowCancelRequestForMoney] = useState(false);
-
+  const [
+    action,
+    setAction,
+  ] = useState<TransactionActionEnum>(TransactionActionEnum.REMIND);
+  const [showCancelRequestForMoney, setShowCancelRequestForMoney] = useState<boolean>(false);
+  const [processing, setProcessing] = useState<boolean>(false);
   const getUserFullName = () => (user && user.firstName && user.lastName ? `${user.firstName} ${user.lastName}` : '');
   const getUserEmail = () => (user && user.email ? user.email : '');
 
   const handleNext = () => {
-    if (sendReminderChecked) navigate(`/interac-etransfer/status/requested/reminder/${id}`);
-    else setShowCancelRequestForMoney(true);
+    if (action === TransactionActionEnum.REMIND) {
+      setProcessing(true);
+      new Api(instance, accounts[0])
+        .getInteracEtransferSendReminder(Number(id))
+        .finally(() => {
+          setProcessing(false);
+          setCurrentStatus('reminder');
+          navigate(`/interac-etransfer/status/requested/reminder/${id}`);
+        });
+    } else if (action === TransactionActionEnum.CANCEL) {
+      setShowCancelRequestForMoney(true);
+    }
   };
+
   const handleCancelRequestForMoneyBack = () => {
     setShowCancelRequestForMoney(false);
   };
-  const handleCancelRequestForMoneyConfirmed = () => {
-    setShowCancelRequestForMoney(false);
-    navigate(`/interac-etransfer/status/requested/canceled/${id}`);
+
+  const handleCancelRequestForMoneyConfirmed = async () => {
+    setProcessing(true);
+    await new Api(instance, accounts[0])
+      .getInteracEtransferCancelTransaction(Number(id))
+      .finally(() => {
+        setProcessing(false);
+        setShowCancelRequestForMoney(false);
+        setCurrentStatus('cancelled');
+        navigate(`/interac-etransfer/status/requested/canceled/${id}`);
+      });
   };
 
   return (
@@ -45,6 +72,7 @@ function RequestedPending({
           handleBack={handleCancelRequestForMoneyBack}
           handleCancelRequest={handleCancelRequestForMoneyConfirmed}
           show={showCancelRequestForMoney}
+          processing={processing}
         />
         <Col>
           <ul>
@@ -116,8 +144,8 @@ function RequestedPending({
             className="actions"
             label="Send Reminder to Contact"
             name="actions1"
-            onChange={() => setSendReminderChecked(true)}
-            checked={sendReminderChecked}
+            onChange={() => setAction(TransactionActionEnum.REMIND)}
+            checked={action === TransactionActionEnum.REMIND}
           />
           <Form.Check
             id="actions2"
@@ -125,8 +153,8 @@ function RequestedPending({
             className="actions"
             label="Cancel the Request"
             name="actions2"
-            onChange={() => setSendReminderChecked(false)}
-            checked={!sendReminderChecked}
+            onChange={() => setAction(TransactionActionEnum.CANCEL)}
+            checked={action === TransactionActionEnum.CANCEL}
           />
         </Col>
       </Row>
@@ -134,14 +162,17 @@ function RequestedPending({
         <Button
           className="zippy-btn zippy-flat d-flex"
           onClick={() => navigate('/interac-etransfer/status/requested')}
+          disabled={processing}
         >
           Back
         </Button>
         <Button
           className="zippy-btn d-flex ms-auto"
           onClick={handleNext}
+          disabled={processing}
         >
-          Next
+          {processing && <div className="loading spinner-border" role="status" />}
+          {!processing ? 'Next' : 'Sending...'}
         </Button>
       </Stack>
     </>

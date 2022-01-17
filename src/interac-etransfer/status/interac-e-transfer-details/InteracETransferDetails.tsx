@@ -35,7 +35,7 @@ const SentTabContent = ({
       <Table className="mt-2">
         <thead>
           <BorderedTR className="bg-light">
-            <th>Date Sent</th>
+            <th>Date Sent here</th>
             <th>Contact</th>
             <th>Amount</th>
             <th>Status</th>

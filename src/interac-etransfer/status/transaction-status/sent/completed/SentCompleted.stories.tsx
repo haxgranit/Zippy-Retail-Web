@@ -12,6 +12,7 @@ const Template: ComponentStory<typeof SentCompleted> = () => (
     <SentCompleted
       transaction={undefined}
       user={undefined}
+      setCurrentStatus={undefined}
     />
   </BrowserRouter>
 );

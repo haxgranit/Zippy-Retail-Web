@@ -1,5 +1,5 @@
 import {
-  Suspense, useEffect, useState, lazy,
+  Suspense, useEffect, useState, lazy, SetStateAction,
 } from 'react';
 import {
   Col, Row,
@@ -24,6 +24,7 @@ export interface TransactionInterface {
 export interface TransactionProps {
   user: any;
   transaction: Transaction | undefined;
+  setCurrentStatus: any;
 }
 
 export default function TransactionStatus() {
@@ -31,15 +32,18 @@ export default function TransactionStatus() {
   const navigate = useNavigate();
   const { instance, accounts } = useMsal();
   const { type, status, id } = useParams<Partial<TransactionInterface>>();
+  const [currentType, setCurrentType] = useState<TransactionTypeEnum>(type as TransactionTypeEnum);
+  const [
+    currentStatus,
+    setCurrentStatus,
+  ] = useState<TransactionStatusEnum>(status as TransactionStatusEnum);
   const [transaction, setTransaction] = useState<Transaction | undefined>(undefined);
   const [userState, setUserState] = useState<UserState>({
     firstName: null,
     lastName: null,
     email: null,
   } as UserState | any);
-  const [crumbs, setCrumbs] = useState<Array<Crumb>>([
-    { label: 'Status', link: '/interac-etransfer/status' },
-  ] as Array<Crumb>);
+  const [crumbs, setCrumbs] = useState<Array<Crumb>>([] as Array<Crumb>);
   let user: any;
   if (isAuthenticated) {
     ({ user } = useAppSelector(selectUser));
@@ -53,15 +57,11 @@ export default function TransactionStatus() {
     } as unknown as UserState);
   }
 
-  useEffect(() => {
-    new Api(instance, accounts[0])
-      .getInteracEtransferTransaction(Number(id))
-      .then((data) => setTransaction(data));
-
+  const getCrumbs = (typeX: TransactionTypeEnum, statusX: TransactionStatusEnum) => {
     const statusLink = `/interac-etransfer/status/${type}`;
     let typeLabel = '';
-    let crumbsTemp: Array<Crumb> = crumbs;
-    switch (type) {
+    let crumbsTemp: Array<Crumb> = [{ label: 'Status', link: '/interac-etransfer/status' }];
+    switch (typeX) {
       case TransactionTypeEnum.SENT:
         crumbsTemp = [...crumbsTemp, { label: 'Sent', link: statusLink }];
         typeLabel = 'Send Money';
@@ -75,10 +75,10 @@ export default function TransactionStatus() {
         typeLabel = 'Receive Money';
         break;
       default:
-        navigate(`/interac-etransfer/status/${type}`);
+        navigate(`/interac-etransfer/status/${typeX}`);
     }
 
-    switch (status) {
+    switch (statusX) {
       case TransactionStatusEnum.PENDING:
         crumbsTemp = [...crumbsTemp, { label: `${typeLabel} Pending` }];
         break;
@@ -92,10 +92,20 @@ export default function TransactionStatus() {
         crumbsTemp = [...crumbsTemp, { label: `${typeLabel} Reminder` }];
         break;
       default:
-        navigate(`/interac-etransfer/status/${type}`);
+        navigate(`/interac-etransfer/status/${typeX}`);
     }
 
     setCrumbs(crumbsTemp);
+    setCurrentType(typeX);
+    setCurrentStatus(statusX);
+  };
+
+  useEffect(() => {
+    new Api(instance, accounts[0])
+      .getInteracEtransferTransaction(Number(id))
+      .then((data) => setTransaction(data));
+
+    getCrumbs(currentType, currentStatus);
     setUserState(user);
   }, []);
 
@@ -112,10 +122,16 @@ export default function TransactionStatus() {
             <h2>{crumbs[2]?.label}</h2>
             <div className="details">
               <Suspense fallback={<div>Loading...</div>}>
-                <TransactionComponent
-                  transaction={transaction}
-                  user={userState}
-                />
+                { currentType && currentStatus
+                  && (
+                  <TransactionComponent
+                    transaction={transaction}
+                    user={userState}
+                    setCurrentStatus={(value: SetStateAction<string>) => {
+                      getCrumbs(currentType, value.toString() as TransactionStatusEnum);
+                    }}
+                  />
+                  )}
               </Suspense>
             </div>
           </Col>

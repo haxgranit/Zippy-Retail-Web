@@ -46,13 +46,6 @@ export type InteracEtransferTransaction = {
   securityAnswer?: string,
 };
 
-type ProblemDetail = {
-  type: string,
-  title: string,
-  status: number,
-  traceId: string,
-};
-
 export async function getToken(instance: IPublicClientApplication, account: AccountInfo)
   : Promise<string | null> {
   const accessTokenRequest = {
@@ -67,12 +60,13 @@ export async function getToken(instance: IPublicClientApplication, account: Acco
     return accessToken;
   } catch (error) {
     if (error instanceof InteractionRequiredAuthError) {
-      instance.acquireTokenRedirect(accessTokenRequest);
+      await instance.acquireTokenRedirect(accessTokenRequest);
     }
     console.log(error);
   }
   return null;
 }
+
 export default class Api {
   constructor(
     private readonly instance: IPublicClientApplication,
@@ -99,6 +93,14 @@ export default class Api {
     return this.fetch<Transaction>('get', `InteracEtransfer/Transactions/${transactionId}`);
   }
 
+  public getInteracEtransferCancelTransaction(transactionId: number) {
+    return this.fetch<Transaction>('post', `InteracEtransfer/Transactions/${transactionId}/Cancel`);
+  }
+
+  public getInteracEtransferSendReminder(transactionId: number) {
+    return this.fetch<Transaction>('post', `InteracEtransfer/Transactions/${transactionId}/Remind`);
+  }
+
   public postInteracEtransferTransaction(data: InteracEtransferTransaction) {
     return this.fetch<InteracEtransferTransaction>('post', 'InteracEtransfer/Transactions', data);
   }
@@ -113,7 +115,7 @@ export default class Api {
       throw Error('window.API_URL is undefined');
     }
     const accessToken = await getToken(this.instance, this.account);
-    const response = await fetch(`${apiUrl}/${path}`, {
+    return fetch(`${apiUrl}/${path}`, {
       method,
       headers: new Headers(
         {
@@ -122,13 +124,14 @@ export default class Api {
         },
       ),
       body: body ? JSON.stringify(body) : null,
-    });
-
-    if (!response.ok) {
-      const problemDetail = await response.json() as ProblemDetail;
-      throw Error(problemDetail.title);
-    }
-
-    return await response.json() as TResponse;
+    })
+      .then(async (response: Response) => {
+        const result = (response.ok ? await response.json() : {}) as TResponse;
+        return result;
+      })
+      .catch((error) => {
+        /** TODO: properly output error from here */
+        throw Error(error.message);
+      });
   }
 }

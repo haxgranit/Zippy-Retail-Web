@@ -12,6 +12,7 @@ const Template: ComponentStory<typeof RequestedPending> = () => (
     <RequestedPending
       transaction={undefined}
       user={undefined}
+      setCurrentStatus={undefined}
     />
   </BrowserRouter>
 );

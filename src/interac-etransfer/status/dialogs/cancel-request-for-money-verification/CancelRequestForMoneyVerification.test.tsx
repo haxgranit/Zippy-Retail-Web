@@ -13,6 +13,7 @@ describe('ٌRequest Sent Component', () => {
         handleCancelRequest={handleCancelRequest}
         handleBack={handleBack}
         transaction={transaction}
+        processing={false}
       />,
     );
     expect(screen.getByText('Cancel Request For Money - VERIFICATION')).toBeInTheDocument();
@@ -28,6 +29,7 @@ describe('ٌRequest Sent Component', () => {
         handleCancelRequest={handleCancelRequest}
         handleBack={handleBack}
         transaction={transaction}
+        processing={false}
       />,
     );
 
@@ -45,6 +47,7 @@ describe('ٌRequest Sent Component', () => {
         handleCancelRequest={handleCancelRequest}
         handleBack={handleBack}
         transaction={transaction}
+        processing={false}
       />,
     );
 
