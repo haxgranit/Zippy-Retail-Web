@@ -46,6 +46,17 @@ export type InteracEtransferTransaction = {
   securityAnswer?: string,
 };
 
+export type VersionResponse = {
+  version: string;
+};
+
+type ProblemDetail = {
+  type: string,
+  title: string,
+  status: number,
+  traceId: string,
+};
+
 export async function getToken(instance: IPublicClientApplication, account: AccountInfo)
   : Promise<string | null> {
   const accessTokenRequest = {
@@ -109,22 +120,30 @@ export default class Api {
     return this.fetch<InteracEtransferTransaction>('post', 'InteracEtransfer/DirectDepositStatus', { email });
   }
 
+  public getVersion() {
+    return this.fetch<VersionResponse>('get', 'Version');
+  }
+
   private async fetch<TResponse>(method: string, path: string, body?: any) {
     const apiUrl = (<any>window).API_URL;
     if (!apiUrl) {
       throw Error('window.API_URL is undefined');
     }
-    const accessToken = await getToken(this.instance, this.account);
-    return fetch(`${apiUrl}/${path}`, {
+
+    const request: RequestInit = {
       method,
-      headers: new Headers(
-        {
-          Authorization: `Bearer ${accessToken}`,
-          'Content-Type': 'application/json',
-        },
-      ),
       body: body ? JSON.stringify(body) : null,
-    })
+    };
+
+    if (path !== 'Version') {
+      const accessToken = await getToken(this.instance, this.account);
+      request.headers = new Headers({
+        Authorization: `Bearer ${accessToken}`,
+        'Content-Type': 'application/json',
+      });
+    }
+
+    return fetch(`${apiUrl}/${path}`, request)
       .then(async (response: Response) => {
         const result = (response.ok ? await response.json() : {}) as TResponse;
         return result;

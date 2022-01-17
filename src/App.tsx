@@ -72,6 +72,8 @@ import ContributeToTfsa from './customer-services/contribute-to-a-tfsa/Contribut
 import i18n from './i18n/config';
 import InteracETransferDetails from './interac-etransfer/status/interac-e-transfer-details/InteracETransferDetails';
 import Status from './interac-etransfer/status/Status';
+import SentCompleted from './interac-etransfer/status/sent/completed/SentCompleted';
+import { Version } from './Version';
 import TransactionStatus from './interac-etransfer/status/transaction-status/TransactionStatus';
 
 export default function App() {
@@ -191,6 +193,7 @@ export default function App() {
         <Route path="personal" element={<Personal />} />
         <Route path="personal-profile" element={<PersonalProfile />} />
       </Routes>
+      <Version />
     </main>
   );
 }

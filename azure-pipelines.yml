@@ -1,13 +1,19 @@
 trigger: none
 
+name: $(VERSION_MAJOR_MINOR).$(Build.BuildId)
+
 pool:
   vmImage: ubuntu-latest
+
+variables:
+  VERSION_MAJOR_MINOR: 0.4
 
 jobs:
 - job: Docker
   variables:
     DOCKER_BUILDKIT: 1
     DOCKER_REPOSITORY: zippy-retail-web
+
   steps:
   - task: Docker@2
     displayName: Login
@@ -47,10 +53,20 @@ jobs:
       testResultsFiles: $(Build.ArtifactStagingDirectory)/app/junit.xml
   - task: Docker@2
     condition: and(succeeded(), eq(variables['docker.push'], 'true'))
-    displayName: Build Final and Push
+    displayName: Build Final
     inputs:
-      command: buildAndPush
+      command: build
+      repository: $(DOCKER_REPOSITORY)
+      arguments: --build-arg version=$(Build.BuildNumber)
+      tags: |
+        $(Build.BuildNumber)
+        latest
+  - task: Docker@2
+    condition: and(succeeded(), eq(variables['docker.push'], 'true'))
+    displayName: Push
+    inputs:
+      command: push
       repository: $(DOCKER_REPOSITORY)
       tags: |
-        $(Build.BuildId)
+        $(Build.BuildNumber)
         latest
