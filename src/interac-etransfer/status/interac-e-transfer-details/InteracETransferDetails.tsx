@@ -6,7 +6,6 @@ import { useNavigate, useParams } from 'react-router-dom';
 import { DateTime } from 'luxon';
 import NumberFormat from 'react-number-format';
 import { useMsal } from '@azure/msal-react';
-import styled from 'styled-components';
 import { useTranslation } from 'react-i18next';
 import Api, { Transaction, TransferType } from '../../../api';
 import MonthSelectComponent from '../../../common/MonthSelectComponent';
@@ -14,10 +13,6 @@ import { formatContactName } from '../../../Helpers';
 import CommonPageContainer from '../../../common/CommonPageContainer';
 import Breadcrumbs, { Crumb } from '../../../common/Breadcrumbs';
 import QuickLinks from '../components/QuickLinks';
-
-const BorderedTR = styled.tr`
-  borderTop: '1px solid #c5c5c5'
-`;
 
 const SentTabContent = ({
   navigate,
@@ -36,12 +31,12 @@ const SentTabContent = ({
       <MonthSelectComponent prefix="sent" />
       <Table className="mt-2">
         <thead>
-          <BorderedTR className="bg-light">
+          <tr className="bg-light border-top-1">
             <th>Date Sent here</th>
             <th>Contact</th>
             <th>Amount</th>
             <th>Status</th>
-          </BorderedTR>
+          </tr>
         </thead>
         <tbody className="border-top-0">
           {transactions.map((item: Transaction) => (
@@ -114,14 +109,12 @@ const ReceivedTabContent = ({
       <MonthSelectComponent prefix="received" />
       <Table className="mt-2">
         <thead>
-          <BorderedTR
-            className="bg-light"
-          >
+          <tr className="bg-light border-top-1">
             <th>Date Received</th>
             <th>Contact</th>
             <th>Amount</th>
             <th>Status</th>
-          </BorderedTR>
+          </tr>
         </thead>
         <tbody className="border-top-0">
           {transactions.map((item: Transaction) => (
@@ -178,14 +171,12 @@ const RequestedTabContent = ({
       <MonthSelectComponent prefix="requested" />
       <Table className="mt-2">
         <thead>
-          <BorderedTR
-            className="bg-light"
-          >
+          <tr className="bg-light border-top-1">
             <th>Date Requested</th>
             <th>Contact</th>
             <th>Amount</th>
             <th>Status</th>
-          </BorderedTR>
+          </tr>
         </thead>
         <tbody className="border-top-0">
           {transactions.map((item: Transaction) => (
