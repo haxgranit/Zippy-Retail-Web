@@ -11,11 +11,15 @@ const Template: ComponentStory<typeof CancelRequestForMoneyVerification> = ({
   show,
   handleBack,
   handleCancelRequest,
+  transaction,
+  processing,
 }: CancelRequestForMoneyVerificationProps) => (
   <CancelRequestForMoneyVerification
     show={show}
     handleCancelRequest={handleCancelRequest}
     handleBack={handleBack}
+    transaction={transaction}
+    processing={processing}
   />
 );
 

@@ -1,6 +1,7 @@
 /* eslint-disable no-console */
 
 import { AccountInfo, InteractionRequiredAuthError, IPublicClientApplication } from '@azure/msal-browser';
+import { TransactionStatusEnum } from './interac-etransfer/status/transaction-status/TransactionStatusEnum';
 
 export enum TransferType {
   SEND = 'send',
@@ -9,13 +10,13 @@ export enum TransferType {
 }
 
 export type Account = {
-  id: number,
+  id: number;
   name: string;
   email: string;
 };
 
 export type Contact = {
-  id: number,
+  id: number;
   firstName: string;
   lastName: string;
   email: string;
@@ -29,6 +30,7 @@ export type User = {
 };
 
 export type Transaction = {
+  status: TransactionStatusEnum;
   id: number;
   contact: Contact;
   amount: number;
@@ -50,7 +52,7 @@ export type VersionResponse = {
   version: string;
 };
 
-type ProblemDetail = {
+export type ErrorDetail = {
   type: string,
   title: string,
   status: number,
@@ -71,12 +73,13 @@ export async function getToken(instance: IPublicClientApplication, account: Acco
     return accessToken;
   } catch (error) {
     if (error instanceof InteractionRequiredAuthError) {
-      instance.acquireTokenRedirect(accessTokenRequest);
+      await instance.acquireTokenRedirect(accessTokenRequest);
     }
     console.log(error);
   }
   return null;
 }
+
 export default class Api {
   constructor(
     private readonly instance: IPublicClientApplication,
@@ -101,6 +104,14 @@ export default class Api {
 
   public getInteracEtransferTransaction(transactionId: number) {
     return this.fetch<Transaction>('get', `InteracEtransfer/Transactions/${transactionId}`);
+  }
+
+  public getInteracEtransferCancelTransaction(transactionId: number) {
+    return this.fetch<Transaction>('post', `InteracEtransfer/Transactions/${transactionId}/Cancel`);
+  }
+
+  public getInteracEtransferSendReminder(transactionId: number) {
+    return this.fetch<Transaction>('post', `InteracEtransfer/Transactions/${transactionId}/Remind`);
   }
 
   public postInteracEtransferTransaction(data: InteracEtransferTransaction) {
@@ -135,17 +146,11 @@ export default class Api {
     }
 
     const response = await fetch(`${apiUrl}/${path}`, request);
-
+    // TODO: proper error output here
     if (!response.ok) {
-      const responseText = await response.text();
-      if (responseText) {
-        const problemDetail = JSON.parse(responseText) as ProblemDetail;
-        throw Error(problemDetail.title);
-      } else {
-        throw Error(`Server Error ${response.statusText}`);
-      }
+      const error = await response.json() as ErrorDetail;
+      throw Error(error.title);
     }
-
-    return await response.json() as TResponse;
+    return (response.status !== 204 ? await response.json() : {}) as TResponse;
   }
 }

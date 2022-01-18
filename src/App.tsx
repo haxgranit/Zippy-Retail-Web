@@ -69,14 +69,11 @@ import ChangeMortgagePaymentAmount from './customer-services/change-mortgage-pay
 import UnlinkAccountsFromYourDebitCard from './customer-services/unlink-accounts-from-your-debit-card/UnlinkAccountsFromYourDebitCard';
 import DigitalVaultDocuments from './customer-services/digital-vault-documents/DigitalVaultDocuments';
 import ContributeToTfsa from './customer-services/contribute-to-a-tfsa/ContributeToATfsa';
-import RequestSent from './interac-etransfer/status/request-sent/RequestSent';
-import RequestReminder from './interac-etransfer/status/request-reminder/RequestReminder';
 import i18n from './i18n/config';
-import RequestCanceled from './interac-etransfer/status/request-canceled/RequestCanceled';
 import InteracETransferDetails from './interac-etransfer/status/interac-e-transfer-details/InteracETransferDetails';
 import Status from './interac-etransfer/status/Status';
-import SentCompleted from './interac-etransfer/status/sent/completed/SentCompleted';
 import { Version } from './Version';
+import TransactionStatus from './interac-etransfer/status/transaction-status/TransactionStatus';
 
 export default function App() {
   const dispatch = useAppDispatch();
@@ -149,13 +146,8 @@ export default function App() {
             <Route path="/interac-etransfer" element={<Navigate to="/interac-etransfer/status" />} />
             <Route path="/interac-etransfer/status" element={<Status />}>
               <Route path="/interac-etransfer/status" element={<Navigate to="/interac-etransfer/status/sent" />} />
-              <Route path="sent/completed/:id" element={<SentCompleted />} />
               <Route path=":tabId" element={<InteracETransferDetails />} />
-              <Route path="request-sent" element={<RequestSent />}>
-                <Route path=":requestId" element={<RequestSent />} />
-              </Route>
-              <Route path="request-reminder" element={<RequestReminder />} />
-              <Route path="request-canceled" element={<RequestCanceled />} />
+              <Route path=":type/:status/:id" element={<TransactionStatus />} />
             </Route>
             <Route path="send-money" element={<SendMoney />}>
               <Route path=":stepId" element={<SendMoney />}>
