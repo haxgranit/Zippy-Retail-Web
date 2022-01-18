@@ -7,6 +7,7 @@ import { DateTime } from 'luxon';
 import NumberFormat from 'react-number-format';
 import { useMsal } from '@azure/msal-react';
 import styled from 'styled-components';
+import { useTranslation } from 'react-i18next';
 import Api, { Transaction, TransferType } from '../../../api';
 import MonthSelectComponent from '../../../common/MonthSelectComponent';
 import { formatContactName } from '../../../Helpers';
@@ -23,6 +24,7 @@ const SentTabContent = ({
   instance,
   accounts,
 }: any) => {
+  const { t } = useTranslation();
   const [transactions, setTransactions] = useState<Transaction[]>([]);
   useEffect(() => {
     new Api(instance, accounts[0])
@@ -64,10 +66,10 @@ const SentTabContent = ({
               <td>
                 <Button
                   className="zippy-btn zippy-flat transaction-status w-full"
-                  variant="completed"
+                  variant={item.status}
                   onClick={() => navigate(`/interac-etransfer/status/sent/completed/${item.id}`)}
                 >
-                  Transfer Sent
+                  {t(`sent.${item.status}`)}
                 </Button>
               </td>
             </tr>
@@ -99,6 +101,7 @@ const ReceivedTabContent = ({
   instance,
   accounts,
 }: any) => {
+  const { t } = useTranslation();
   const [transactions, setTransactions] = useState<Transaction[]>([]);
   useEffect(() => {
     new Api(instance, accounts[0])
@@ -139,10 +142,10 @@ const ReceivedTabContent = ({
               <td>
                 <Button
                   className="zippy-btn zippy-flat transaction-status w-full"
-                  variant="completed"
+                  variant={item.status}
                   onClick={() => navigate(`/interac-etransfer/status/received/completed/${item.id}`)}
                 >
-                  Transfer Completed
+                  {t(`received.${item.status}`)}
                 </Button>
               </td>
             </tr>
@@ -163,6 +166,7 @@ const RequestedTabContent = ({
   instance,
   accounts,
 }: any) => {
+  const { t } = useTranslation();
   const [transactions, setTransactions] = useState<Transaction[]>([]);
   useEffect(() => {
     new Api(instance, accounts[0])
@@ -202,10 +206,10 @@ const RequestedTabContent = ({
               <td>
                 <Button
                   className="zippy-btn zippy-flat transaction-status w-full"
-                  variant="completed"
+                  variant={item.status}
                   onClick={() => navigate(`/interac-etransfer/status/requested/pending/${item.id}`)}
                 >
-                  Requested
+                  {t(`requested.${item.status}`)}
                 </Button>
               </td>
             </tr>

@@ -1,6 +1,7 @@
 /* eslint-disable no-console */
 
 import { AccountInfo, InteractionRequiredAuthError, IPublicClientApplication } from '@azure/msal-browser';
+import { TransactionStatusEnum } from './interac-etransfer/status/transaction-status/TransactionStatusEnum';
 
 export enum TransferType {
   SEND = 'send',
@@ -9,13 +10,13 @@ export enum TransferType {
 }
 
 export type Account = {
-  id: number,
+  id: number;
   name: string;
   email: string;
 };
 
 export type Contact = {
-  id: number,
+  id: number;
   firstName: string;
   lastName: string;
   email: string;
@@ -29,6 +30,7 @@ export type User = {
 };
 
 export type Transaction = {
+  status: TransactionStatusEnum;
   id: number;
   contact: Contact;
   amount: number;
