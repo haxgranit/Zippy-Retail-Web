@@ -1,7 +1,14 @@
 import { render, fireEvent } from '@testing-library/react';
 import MonthSelectComponent from './MonthSelectComponent';
 
+const ReactTestRenderer = require('react-test-renderer');
+
 describe('MonthSelectComponent Component', () => {
+  it('matches the snapshot', () => {
+    const tree = ReactTestRenderer.create(<MonthSelectComponent />).toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
   it('should render options inside a MonthSelectComponent', () => {
     const { container } = render(<MonthSelectComponent />);
     const options = container.querySelectorAll('option');

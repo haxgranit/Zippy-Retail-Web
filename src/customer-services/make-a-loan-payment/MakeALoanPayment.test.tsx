@@ -1,9 +1,15 @@
 import React from 'react';
 import { render, fireEvent } from '@testing-library/react';
-
 import MakeALoanPayment from './MakeALoanPayment';
 
-describe('MakeAPaymentWithPoints Page Component', () => {
+const ReactTestRenderer = require('react-test-renderer');
+
+describe('MakeALoanPayment Page Component', () => {
+  it('matches the snapshot', () => {
+    const tree = ReactTestRenderer.create(<MakeALoanPayment />).toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
   it('should render and click options MakeALoanPayment', () => {
     const setSelectedRef = jest.fn();
 

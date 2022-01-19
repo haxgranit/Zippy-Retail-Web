@@ -149,7 +149,7 @@ const EndSection = () => (
   </Row>
 );
 
-function ChangeMortgagePaymentAmount() {
+function ChangeMortgagePaymentDetails() {
   return (
     <div>
       <Row>
@@ -166,4 +166,4 @@ function ChangeMortgagePaymentAmount() {
   );
 }
 
-export default ChangeMortgagePaymentAmount;
+export default ChangeMortgagePaymentDetails;

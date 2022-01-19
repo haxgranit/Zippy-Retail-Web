@@ -1,8 +1,9 @@
+import '../i18n/config';
 import { render, fireEvent } from '@testing-library/react';
 import { BrowserRouter } from 'react-router-dom';
-
 import VerticalNavLinks from './VerticalNavLinks';
-import '../i18n/config';
+
+const ReactTestRenderer = require('react-test-renderer');
 
 jest.mock('react-router-dom', () => ({
   ...(jest.requireActual('react-router-dom') as any),
@@ -12,6 +13,15 @@ jest.mock('react-router-dom', () => ({
 }));
 
 describe('VerticalNavLinks Component', () => {
+  it('matches the snapshot', () => {
+    const tree = ReactTestRenderer.create(
+      <BrowserRouter>
+        <VerticalNavLinks />
+      </BrowserRouter>,
+    ).toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
   it('click buttons on VerticalNavLinks', () => {
     const { container } = render(
       <BrowserRouter>
