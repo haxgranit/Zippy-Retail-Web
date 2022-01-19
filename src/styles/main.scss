@@ -336,38 +336,6 @@ h3 {
     font-size: 18px;
 }
 
-.btn {
-    font-style: normal;
-    font-weight: 500;
-    font-size: 13px;
-    box-shadow: none;
-
-    &:focus {
-        box-shadow: none;
-    }
-
-    &.transparent {
-
-    }
-
-    &.zippy-btn {
-        background: linear-gradient(83.49deg, #FF0D26 31.24%, #FF7300 99.49%);
-        border-radius: 7px;
-        border: none;
-        padding: 10px 20px;
-    }
-
-    &.my-buttonred {
-        font-weight: bold;
-        font-size: 2em;
-        padding: 0px 15px;
-        box-shadow: 5px 5px #88888840;
-        border-radius: 10px !important;
-        color: $color-white;
-        background-color: #FF1926;
-    }
-}
-
 .content-wrapper,
 .footer-content-wrapper {
     background-color: $color-white;

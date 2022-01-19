@@ -115,5 +115,17 @@
   "personal_signup.password": "Password",
   "personal_signup.confirm_password": "Confirm Password",
   "personal_signup.agree_title": "By signing up you agree to the <1>terms and conditions</1>",
-  "personal_signup.create_your_account": "Create your account"
+  "personal_signup.create_your_account": "Create your account",
+
+  "sent.pending": "Sent Pending",
+  "sent.cancelled": "Sent Cancelled",
+  "sent.completed": "Sent Completed",
+
+  "requested.pending": "Request Pending",
+  "requested.cancelled": "Request Cancelled",
+  "requested.completed": "Request Completed",
+
+  "received.pending": "Request Pending",
+  "received.cancelled": "Request Cancelled",
+  "received.completed": "Request Completed"
 }

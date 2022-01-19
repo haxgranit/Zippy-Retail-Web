@@ -1,7 +1,17 @@
 import { render, fireEvent } from '@testing-library/react';
 import { BrowserRouter } from 'react-router-dom';
-
 import InteracETransferDetails from './InteracETransferDetails';
+
+const mockChangeLanguage = jest.fn();
+
+jest.mock('react-i18next', () => ({
+  useTranslation: () => ({
+    i18n: {
+      changeLanguage: mockChangeLanguage,
+    },
+    t: (key: string) => key,
+  }),
+}));
 
 // @ts-ignore
 window.API_URL = 'https://zippy-retail-api-dev.azurewebsites.net';

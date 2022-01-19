@@ -3,13 +3,17 @@ import { BrowserRouter } from 'react-router-dom';
 import SentCompleted from './SentCompleted';
 
 export default {
-  title: 'interac-etransfer/status/request-sent/RequestSent',
+  title: 'interac-etransfer/status/sent/completed/SentCompleted',
   component: SentCompleted,
 } as ComponentMeta<typeof SentCompleted>;
 
 const Template: ComponentStory<typeof SentCompleted> = () => (
   <BrowserRouter>
-    <SentCompleted />
+    <SentCompleted
+      transaction={undefined}
+      user={undefined}
+      setCurrentStatus={undefined}
+    />
   </BrowserRouter>
 );
 

@@ -6,7 +6,7 @@ import { useNavigate, useParams } from 'react-router-dom';
 import { DateTime } from 'luxon';
 import NumberFormat from 'react-number-format';
 import { useMsal } from '@azure/msal-react';
-import styled from 'styled-components';
+import { useTranslation } from 'react-i18next';
 import Api, { Transaction, TransferType } from '../../../api';
 import MonthSelectComponent from '../../../common/MonthSelectComponent';
 import { formatContactName } from '../../../Helpers';
@@ -14,11 +14,12 @@ import CommonPageContainer from '../../../common/CommonPageContainer';
 import Breadcrumbs, { Crumb } from '../../../common/Breadcrumbs';
 import QuickLinks from '../components/QuickLinks';
 
-const BorderedTR = styled.tr`
-  borderTop: '1px solid #c5c5c5'
-`;
-
-const SentTabContent = ({ navigate, instance, accounts }: any) => {
+const SentTabContent = ({
+  navigate,
+  instance,
+  accounts,
+}: any) => {
+  const { t } = useTranslation();
   const [transactions, setTransactions] = useState<Transaction[]>([]);
   useEffect(() => {
     new Api(instance, accounts[0])
@@ -30,12 +31,12 @@ const SentTabContent = ({ navigate, instance, accounts }: any) => {
       <MonthSelectComponent prefix="sent" />
       <Table className="mt-2">
         <thead>
-          <BorderedTR className="bg-light">
-            <th>Date Sent</th>
+          <tr className="bg-light border-top-1">
+            <th>Date Sent here</th>
             <th>Contact</th>
             <th>Amount</th>
             <th>Status</th>
-          </BorderedTR>
+          </tr>
         </thead>
         <tbody className="border-top-0">
           {transactions.map((item: Transaction) => (
@@ -48,18 +49,23 @@ const SentTabContent = ({ navigate, instance, accounts }: any) => {
               <td>
                 <NumberFormat
                   value={item.amount}
+                  defaultValue={0}
                   displayType="text"
-                  prefix="$"
+                  prefix="$ "
+                  suffix=" CAD"
                   thousandSeparator
+                  decimalScale={2}
+                  fixedDecimalScale
                 />
               </td>
               <td>
-                <a
-                  className="text-black"
-                  href={`/interac-etransfer/status/sent/completed/${item.id}`}
+                <Button
+                  className="zippy-btn zippy-flat transaction-status w-full"
+                  variant={item.status}
+                  onClick={() => navigate(`/interac-etransfer/status/sent/completed/${item.id}`)}
                 >
-                  Transfer Sent
-                </a>
+                  {t(`sent.${item.status}`)}
+                </Button>
               </td>
             </tr>
           ))}
@@ -86,9 +92,11 @@ const SentTabContent = ({ navigate, instance, accounts }: any) => {
 };
 
 const ReceivedTabContent = ({
+  navigate,
   instance,
   accounts,
 }: any) => {
+  const { t } = useTranslation();
   const [transactions, setTransactions] = useState<Transaction[]>([]);
   useEffect(() => {
     new Api(instance, accounts[0])
@@ -101,14 +109,12 @@ const ReceivedTabContent = ({
       <MonthSelectComponent prefix="received" />
       <Table className="mt-2">
         <thead>
-          <BorderedTR
-            className="bg-light"
-          >
+          <tr className="bg-light border-top-1">
             <th>Date Received</th>
             <th>Contact</th>
             <th>Amount</th>
             <th>Status</th>
-          </BorderedTR>
+          </tr>
         </thead>
         <tbody className="border-top-0">
           {transactions.map((item: Transaction) => (
@@ -127,12 +133,13 @@ const ReceivedTabContent = ({
                 />
               </td>
               <td>
-                <a
-                  className="text-black"
-                  href={`/interac-etransfer/send-money/transfer-sent-complete/${item.id}`}
+                <Button
+                  className="zippy-btn zippy-flat transaction-status w-full"
+                  variant={item.status}
+                  onClick={() => navigate(`/interac-etransfer/status/received/completed/${item.id}`)}
                 >
-                  Transfer Completed
-                </a>
+                  {t(`received.${item.status}`)}
+                </Button>
               </td>
             </tr>
           ))}
@@ -147,7 +154,12 @@ const ReceivedTabContent = ({
   );
 };
 
-const RequestedTabContent = ({ navigate, instance, accounts }: any) => {
+const RequestedTabContent = ({
+  navigate,
+  instance,
+  accounts,
+}: any) => {
+  const { t } = useTranslation();
   const [transactions, setTransactions] = useState<Transaction[]>([]);
   useEffect(() => {
     new Api(instance, accounts[0])
@@ -159,14 +171,12 @@ const RequestedTabContent = ({ navigate, instance, accounts }: any) => {
       <MonthSelectComponent prefix="requested" />
       <Table className="mt-2">
         <thead>
-          <BorderedTR
-            className="bg-light"
-          >
+          <tr className="bg-light border-top-1">
             <th>Date Requested</th>
             <th>Contact</th>
             <th>Amount</th>
             <th>Status</th>
-          </BorderedTR>
+          </tr>
         </thead>
         <tbody className="border-top-0">
           {transactions.map((item: Transaction) => (
@@ -185,12 +195,13 @@ const RequestedTabContent = ({ navigate, instance, accounts }: any) => {
                 />
               </td>
               <td>
-                <a
-                  className="text-black"
-                  href={`/interac-etransfer/status/request-sent/${item.id}`}
+                <Button
+                  className="zippy-btn zippy-flat transaction-status w-full"
+                  variant={item.status}
+                  onClick={() => navigate(`/interac-etransfer/status/requested/pending/${item.id}`)}
                 >
-                  Requested
-                </a>
+                  {t(`requested.${item.status}`)}
+                </Button>
               </td>
             </tr>
           ))}
@@ -259,6 +270,7 @@ export default function InteracETransferDetails() {
               </Tab>
               <Tab eventKey="received" title="Transfer Received">
                 <ReceivedTabContent
+                  navigate={navigate}
                   instance={instance}
                   accounts={accounts}
                 />
