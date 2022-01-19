@@ -21,10 +21,10 @@ import CreateOrEditAccountNickname from './customer-services/create-or-edit-acco
 import ChangeYourAddress from './customer-services/change-your-address/ChangeYourAddress';
 import CustomerServices from './customer-services/customer-services/CustomerServices';
 import { Header } from './Header';
-import { AutodepositSettings } from './interac-etransfer/autodeposit-settings/AutodepositSettings';
+import AutodepositSettings from './interac-etransfer/autodeposit-settings/AutodepositSettings';
 import ContactList from './interac-etransfer/contact-list/ContactList';
 import EditContact from './interac-etransfer/contact-list/edit/EditContact';
-import { EditMyProfile } from './interac-etransfer/edit-my-profile/EditMyProfile';
+import EditMyProfile from './interac-etransfer/edit-my-profile/EditMyProfile';
 import LearnMore from './interac-etransfer/learn-more/LearnMore';
 import ReceiveMoney from './interac-etransfer/receive-money/ReceiveMoney';
 import RequestMoney from './interac-etransfer/request-money/RequestMoney';
@@ -69,9 +69,6 @@ import ChangeMortgagePaymentDetails from './customer-services/change-mortgage-pa
 import UnlinkAccountsFromYourDebitCard from './customer-services/unlink-accounts-from-your-debit-card/UnlinkAccountsFromYourDebitCard';
 import DigitalVaultDocuments from './customer-services/digital-vault-documents/DigitalVaultDocuments';
 import ContributeToTfsa from './customer-services/contribute-to-a-tfsa/ContributeToTfsa';
-import RequestSent from './interac-etransfer/status/request-sent/RequestSent';
-import RequestReminder from './interac-etransfer/status/request-reminder/RequestReminder';
-import ContributeToTfsa from './customer-services/contribute-to-a-tfsa/ContributeToATfsa';
 import i18n from './i18n/config';
 import InteracETransferDetails from './interac-etransfer/status/interac-e-transfer-details/InteracETransferDetails';
 import Status from './interac-etransfer/status/Status';

@@ -1,8 +1,18 @@
+import React from 'react';
 import { render, fireEvent } from '../../../test-utils';
-
 import SecurityRecipientPage from './SecurityRecipientPage';
 
+const ReactTestRenderer = require('react-test-renderer');
+
 describe('Security Recipient Page Component', () => {
+  it('matches the snapshot', () => {
+    const showModal = jest.fn();
+    const tree = ReactTestRenderer.create(
+      <SecurityRecipientPage showModal={showModal} navigateSteps={jest.fn()} />,
+    ).toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
   it('Click next button on Security Recipient Page', () => {
     const showModal = jest.fn();
     const { container } = render(

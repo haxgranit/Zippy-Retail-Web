@@ -2,6 +2,8 @@ import { render, fireEvent } from '@testing-library/react';
 import { BrowserRouter } from 'react-router-dom';
 import InteracETransferDetails from './InteracETransferDetails';
 
+const ReactTestRenderer = require('react-test-renderer');
+
 const mockChangeLanguage = jest.fn();
 
 jest.mock('react-i18next', () => ({
@@ -25,6 +27,15 @@ jest.mock('react-router-dom', () => ({
 }));
 
 describe('InteracETransferDetails Component', () => {
+  it('matches the snapshot', () => {
+    const tree = ReactTestRenderer.create(
+      <BrowserRouter>
+        <InteracETransferDetails />
+      </BrowserRouter>,
+    ).toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
   it('should render InteracETransferDetails', () => {
     const { getByText } = render(
       <BrowserRouter>

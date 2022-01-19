@@ -1,4 +1,4 @@
-import './../../i18n/config';
+import '../../i18n/config';
 import ApplyForACreditLimitIncrease from './ApplyForACreditLimitIncrease';
 
 const ReactTestRenderer = require('react-test-renderer');

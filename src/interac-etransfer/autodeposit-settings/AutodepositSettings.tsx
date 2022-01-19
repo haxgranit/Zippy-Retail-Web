@@ -141,7 +141,7 @@ export const AutodepositSettingsPure = ({ user }: { user: User }) => {
   );
 };
 
-export const AutodepositSettings = () => {
+export default function AutodepositSettings() {
   const { user } = useAppSelector(selectUser);
   return (user && <AutodepositSettingsPure user={user} />) || null;
-};
+}

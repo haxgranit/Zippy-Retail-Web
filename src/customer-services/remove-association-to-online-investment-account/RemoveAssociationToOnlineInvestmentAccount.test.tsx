@@ -1,4 +1,4 @@
-import './../../i18n/config';
+import '../../i18n/config';
 import RemoveAssociationToOnlineInvestmentAccount from './RemoveAssociationToOnlineInvestmentAccount';
 
 const ReactTestRenderer = require('react-test-renderer');

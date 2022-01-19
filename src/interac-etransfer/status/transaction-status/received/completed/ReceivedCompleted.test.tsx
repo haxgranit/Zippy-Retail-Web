@@ -3,6 +3,8 @@ import React from 'react';
 import { BrowserRouter } from 'react-router-dom';
 import ReceivedCompleted from './ReceivedCompleted';
 
+const ReactTestRenderer = require('react-test-renderer');
+
 const mockedUsedNavigate = jest.fn();
 jest.mock('react-router-dom', () => ({
   ...(jest.requireActual('react-router-dom') as any),
@@ -10,6 +12,19 @@ jest.mock('react-router-dom', () => ({
 }));
 
 describe('ReceivedCompleted Component', () => {
+  it('matches the snapshot', () => {
+    const tree = ReactTestRenderer.create(
+      <BrowserRouter>
+        <ReceivedCompleted
+          transaction={undefined}
+          user={undefined}
+          setCurrentStatus={undefined}
+        />
+      </BrowserRouter>,
+    ).toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
   it('should render ReceivedCompleted', () => {
     render(
       <BrowserRouter>

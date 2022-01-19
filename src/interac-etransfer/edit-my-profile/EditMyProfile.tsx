@@ -127,7 +127,7 @@ export const EditMyProfilePure = ({ user }: { user: User }) => (
   </div>
 );
 
-export const EditMyProfile = () => {
+export default function EditMyProfile() {
   const { user } = useAppSelector(selectUser);
   return (user && <EditMyProfilePure user={user} />) || null;
-};
+}

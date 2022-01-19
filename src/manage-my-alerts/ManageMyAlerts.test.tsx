@@ -14,11 +14,21 @@ import {
   EditEmailAccountContent,
 } from './edit-email-account/EditEmailAccount';
 
+const ReactTestRenderer = require('react-test-renderer');
+
 describe('Manage Alert Component', () => {
+  it('matches the snapshot', () => {
+    const tree = ReactTestRenderer.create(
+      <ManageMyAlerts />,
+    ).toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
   test('Render manage-my-alerts page', () => {
     const { container } = render(<ManageMyAlerts />);
     expect(container).toMatchSnapshot();
   });
+
   test('Click Edit Home Phone button  ', () => {
     jest.spyOn(React, 'useState');
 

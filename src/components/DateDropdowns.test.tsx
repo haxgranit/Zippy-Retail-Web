@@ -1,4 +1,4 @@
-import './../i18n/config';
+import '../i18n/config';
 import DateDropdowns from './DateDropdowns';
 
 const ReactTestRenderer = require('react-test-renderer');

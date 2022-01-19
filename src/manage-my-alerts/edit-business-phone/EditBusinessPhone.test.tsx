@@ -1,7 +1,19 @@
 import { render, fireEvent } from '@testing-library/react';
+import React from 'react';
 import { EditBusinessPhoneContent } from './EditBusinessPhone';
 
+const ReactTestRenderer = require('react-test-renderer');
+
 describe('EditBusinessPhone Component', () => {
+  it('matches the snapshot', () => {
+    const handleCancel = jest.fn();
+    const handleSave = jest.fn();
+    const tree = ReactTestRenderer.create(
+      <EditBusinessPhoneContent handleSave={handleSave} handleCancel={handleCancel} />,
+    ).toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
   it('Click cancel button on EditBusinessPhone', () => {
     const handleCancel = jest.fn();
     const handleSave = jest.fn();

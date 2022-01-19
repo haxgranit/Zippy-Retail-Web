@@ -1,5 +1,8 @@
 import { render, fireEvent } from '@testing-library/react';
+import React from 'react';
 import { ModalContent } from './IdentityVerificationModal';
+
+const ReactTestRenderer = require('react-test-renderer');
 
 const CONTACT_MOCK = {
   key: 1,
@@ -10,6 +13,19 @@ const CONTACT_MOCK = {
 };
 
 describe('IdentityVerificationModal Component', () => {
+  it('matches the snapshot', () => {
+    const tree = ReactTestRenderer.create(
+      <ModalContent
+        step={0}
+        handleBack={jest.fn()}
+        closeMethod={jest.fn()}
+        handleNext={jest.fn()}
+        selectedContact={CONTACT_MOCK}
+      />,
+    ).toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
   it('should render title', () => {
     const { getByText } = render(
       <ModalContent

@@ -1,6 +1,7 @@
 import { render, fireEvent } from '../../test-utils';
-
 import ReceiveMoney from './ReceiveMoney';
+
+const ReactTestRenderer = require('react-test-renderer');
 
 const mockedUsedNavigate = jest.fn();
 
@@ -10,6 +11,11 @@ jest.mock('react-router-dom', () => ({
 }));
 
 describe('ReceiveMoney Component', () => {
+  it('matches the snapshot', () => {
+    const tree = ReactTestRenderer.create(<ReceiveMoney />).toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
   it('should render ReceiveMoney', () => {
     const { container } = render(<ReceiveMoney />);
     expect(container).toMatchSnapshot();

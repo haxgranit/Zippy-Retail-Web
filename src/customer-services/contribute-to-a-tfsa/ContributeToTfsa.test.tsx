@@ -1,4 +1,4 @@
-import './../../i18n/config';
+import '../../i18n/config';
 import ContributeToTfsa from './ContributeToTfsa';
 
 const ReactTestRenderer = require('react-test-renderer');

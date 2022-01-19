@@ -1,10 +1,13 @@
-import { render } from '@testing-library/react';
-
+import React from 'react';
 import StatementPreferences from './StatementPreferences';
 
+const ReactTestRenderer = require('react-test-renderer');
+
 describe('StatementPreferences Component', () => {
-  it('should render StatementPreferences Page', () => {
-    const { container } = render(<StatementPreferences />);
-    expect(container).toMatchSnapshot();
+  it('matches the snapshot', () => {
+    const tree = ReactTestRenderer.create(
+      <StatementPreferences />,
+    ).toJSON();
+    expect(tree).toMatchSnapshot();
   });
 });

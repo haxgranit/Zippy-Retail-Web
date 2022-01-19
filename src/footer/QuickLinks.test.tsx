@@ -1,4 +1,4 @@
-import './../i18n/config';
+import '../i18n/config';
 import QuickLinks from './QuickLinks';
 
 const ReactTestRenderer = require('react-test-renderer');

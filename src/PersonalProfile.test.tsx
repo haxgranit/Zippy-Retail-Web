@@ -1,5 +1,5 @@
 import './i18n/config';
-import { BrowserRouter as Router } from "react-router-dom";
+import { BrowserRouter as Router } from 'react-router-dom';
 import PersonalProfile from './PersonalProfile';
 
 const ReactTestRenderer = require('react-test-renderer');
@@ -9,7 +9,7 @@ describe('PersonalProfile Component', () => {
     const tree = ReactTestRenderer.create(
       <Router>
         <PersonalProfile />
-      </Router>
+      </Router>,
     ).toJSON();
     expect(tree).toMatchSnapshot();
   });

@@ -1,4 +1,4 @@
-import './../../i18n/config';
+import '../../i18n/config';
 import PayAndFileBusinessTaxes from './PayAndFileBusinessTaxes';
 
 const ReactTestRenderer = require('react-test-renderer');

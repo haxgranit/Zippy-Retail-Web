@@ -1,4 +1,4 @@
-import './../i18n/config';
+import '../i18n/config';
 import Breadcrumbs from './Breadcrumbs';
 
 const ReactTestRenderer = require('react-test-renderer');

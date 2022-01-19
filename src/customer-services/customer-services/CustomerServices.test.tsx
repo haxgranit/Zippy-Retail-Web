@@ -1,6 +1,6 @@
-import './../../i18n/config';
+import '../../i18n/config';
+import { BrowserRouter as Router } from 'react-router-dom';
 import CustomerServices from './CustomerServices';
-import { BrowserRouter as Router } from "react-router-dom";
 
 const ReactTestRenderer = require('react-test-renderer');
 
