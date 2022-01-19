@@ -3,6 +3,8 @@ import { BrowserRouter } from 'react-router-dom';
 import { render, fireEvent, screen } from '../../test-utils';
 import SendMoney from './SendMoney';
 
+const ReactTestRenderer = require('react-test-renderer');
+
 const mockedUsedNavigate = jest.fn();
 
 jest.mock('react-router-dom', () => ({
@@ -14,6 +16,15 @@ jest.mock('react-router-dom', () => ({
 }));
 
 describe('SendMoney Component', () => {
+  it('matches the snapshot', () => {
+    const tree = ReactTestRenderer.create(
+      <BrowserRouter>
+        <SendMoney />
+      </BrowserRouter>,
+    ).toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
   test('should render StepComponent inside a SendMoney', () => {
     render(
       <BrowserRouter>

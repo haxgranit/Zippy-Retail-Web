@@ -1,17 +1,20 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import '../../i18n/config';
 import '../../styles/index.scss';
-import { EditMyProfilePure } from './EditMyProfile';
+import { Provider } from 'react-redux';
+import EditMyProfile from './EditMyProfile';
+import { store } from '../../app/store';
 
 export default {
   title: 'interac-etransfer/edit-my-profile/EditMyProfile',
-  component: EditMyProfilePure,
-} as ComponentMeta<typeof EditMyProfilePure>;
+  component: EditMyProfile,
+} as ComponentMeta<typeof EditMyProfile>;
 
-const Template: ComponentStory<typeof EditMyProfilePure> = (args) => {
-  const { user } = args;
-  return <EditMyProfilePure user={user} />;
-};
+const Template: ComponentStory<typeof EditMyProfile> = () => (
+  <Provider store={store}>
+    <EditMyProfile />
+  </Provider>
+);
 
 export const Default = Template.bind({});
 Default.args = {

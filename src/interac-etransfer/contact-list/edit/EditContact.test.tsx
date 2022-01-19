@@ -2,6 +2,8 @@ import React from 'react';
 import { render } from '@testing-library/react';
 import EditContact from './EditContact';
 
+const ReactTestRenderer = require('react-test-renderer');
+
 const CONTACT_MOCK = {
   key: 1,
   name: '392 Jones',
@@ -20,6 +22,11 @@ jest.mock('react-router-dom', () => ({
 }));
 
 describe('EditContact Component', () => {
+  it('matches the snapshot', () => {
+    const tree = ReactTestRenderer.create(<EditContact />).toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
   test('should render title', () => {
     const { container } = render(<EditContact />);
     const setShow = jest.fn();

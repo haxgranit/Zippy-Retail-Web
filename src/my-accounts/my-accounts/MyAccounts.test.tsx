@@ -1,10 +1,13 @@
-import { render } from '@testing-library/react';
-
+import React from 'react';
 import MyAccounts from './MyAccounts';
 
-describe('MyAccounts Component', () => {
-  it('should render MyAccounts Page', () => {
-    const { container } = render(<MyAccounts />);
-    expect(container).toMatchSnapshot();
+const ReactTestRenderer = require('react-test-renderer');
+
+describe('GetAlertedHeader Component', () => {
+  it('matches the snapshot', () => {
+    const tree = ReactTestRenderer.create(
+      <MyAccounts />,
+    ).toJSON();
+    expect(tree).toMatchSnapshot();
   });
 });

@@ -10,7 +10,7 @@ function Breadcrumbs({ crumbs }: {
 }) {
   return (
     <div className="breadcrumbs noselect">
-      {crumbs?.map((crumb: Crumb) => (
+      {crumbs?.length && crumbs.map((crumb: Crumb) => (
         !crumb.link
           ? <span key={`${crumb.label}`}>{crumb.label}</span>
           : <a key={`${crumb.label}`} href={crumb.link}>{crumb.label}</a>

@@ -1,28 +1,36 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`MyAccounts Component should render MyAccounts Page 1`] = `
-<div>
+exports[`GetAlertedHeader Component matches the snapshot 1`] = `
+Array [
   <div
-    class="d-flex justify-content-between align-items-center"
+    className="d-flex justify-content-between align-items-center"
   >
     <h3>
       My Accounts
     </h3>
-  </div>
+  </div>,
   <div
-    class="content-wrapper"
+    className="content-wrapper"
   >
     <div
-      class="d-flex justify-content-between"
+      className="d-flex justify-content-between"
     >
       <p>
         Welcome DUANE TOUGH. Your last visit: November 9, 2021 at 4:54 p.m. ET
       </p>
       <div
-        class="d-flex"
+        className="d-flex"
       >
         <div
-          style="width: 20px; height: 25px; border: 1px dotted grey; text-align: center; margin-right: 10px;"
+          style={
+            Object {
+              "border": "1px dotted grey",
+              "height": 25,
+              "marginRight": 10,
+              "textAlign": "center",
+              "width": 20,
+            }
+          }
         >
           P
         </div>
@@ -32,20 +40,27 @@ exports[`MyAccounts Component should render MyAccounts Page 1`] = `
       </div>
     </div>
     <div
-      class="row"
+      className="row"
     >
       <div
-        class="col-md-9"
+        className="col-md-9"
       >
         <div
-          class="fade alert alert-primary show"
+          className="fade alert alert-primary show"
           role="alert"
         >
           <div
-            class="d-flex align-items-center"
+            className="d-flex align-items-center"
           >
             <div
-              style="width: 40px; height: 45px; border: 1px dotted grey; text-align: center;"
+              style={
+                Object {
+                  "border": "1px dotted grey",
+                  "height": 45,
+                  "textAlign": "center",
+                  "width": 40,
+                }
+              }
             >
               P
             </div>
@@ -57,10 +72,10 @@ exports[`MyAccounts Component should render MyAccounts Page 1`] = `
                 We're commited to supporting you. Find the latest information and available resources.
               </p>
               <div
-                class="d-flex justify-content-end"
+                className="d-flex justify-content-end"
               >
                 <a
-                  class="text-danger"
+                  className="text-danger"
                   href="/home"
                 >
                   Go to COVID-19 Support
@@ -71,16 +86,21 @@ exports[`MyAccounts Component should render MyAccounts Page 1`] = `
           </div>
         </div>
         <div
-          class="fade alert alert-primary alert-dismissible show"
+          className="fade alert alert-primary alert-dismissible show"
           role="alert"
         >
           <button
             aria-label="Close alert"
-            class="btn-close"
+            className="btn-close"
+            onClick={[Function]}
             type="button"
           />
           <p
-            style="margin-top: 10px;"
+            style={
+              Object {
+                "marginTop": 10,
+              }
+            }
           >
             You‘ve been rewarded with a new offer.
             <a
@@ -91,10 +111,10 @@ exports[`MyAccounts Component should render MyAccounts Page 1`] = `
           </p>
         </div>
         <div
-          class="row"
+          className="row"
         >
           <div
-            class="col-md-3 text-center d-flex flex-column align-items-center justify-content-center border-right"
+            className="col-md-3 text-center d-flex flex-column align-items-center justify-content-center border-right"
           >
             <p>
               Deposit Accounts
@@ -104,7 +124,7 @@ exports[`MyAccounts Component should render MyAccounts Page 1`] = `
             </p>
           </div>
           <div
-            class="col-md-3 text-center d-flex flex-column align-items-center justify-content-center border-left"
+            className="col-md-3 text-center d-flex flex-column align-items-center justify-content-center border-left"
           >
             <p>
               +
@@ -115,30 +135,41 @@ exports[`MyAccounts Component should render MyAccounts Page 1`] = `
           </div>
         </div>
         <div
-          class="d-flex justify-content-between"
+          className="d-flex justify-content-between"
         >
           <div
-            class="d-flex"
+            className="d-flex"
           >
             <p
-              style="margin: auto;"
+              style={
+                Object {
+                  "margin": "auto",
+                }
+              }
             >
               View: 
             </p>
             <div
-              class="nav"
+              className="nav"
+              onKeyDown={[Function]}
             >
               <a
-                class="nav-link"
+                className="nav-link"
+                data-rr-ui-event-key={null}
+                onClick={[Function]}
+                onKeyDown={[Function]}
                 role="button"
-                tabindex="0"
+                tabIndex={0}
               >
                 List
               </a>
               <a
-                class="nav-link"
+                className="nav-link"
+                data-rr-ui-event-key={null}
+                onClick={[Function]}
+                onKeyDown={[Function]}
                 role="button"
-                tabindex="0"
+                tabIndex={0}
               >
                 Pie Charts
               </a>
@@ -149,11 +180,25 @@ exports[`MyAccounts Component should render MyAccounts Page 1`] = `
           </h5>
         </div>
         <div
-          class="d-flex align-items-center"
-          style="border-top: 3px solid green; border-bottom: 2px solid grey; padding-top: 10px; padding-bottom: 10px; background-color: rgb(242, 243, 242); padding-left: 5px; margin-top: 10px;"
+          className="d-flex align-items-center"
+          style={
+            Object {
+              "backgroundColor": "#F2F3F2",
+              "borderBottom": "2px solid grey",
+              "borderTop": "3px solid green",
+              "marginTop": 10,
+              "paddingBottom": 10,
+              "paddingLeft": 5,
+              "paddingTop": 10,
+            }
+          }
         >
           <span
-            style="font-weight: 500;"
+            style={
+              Object {
+                "fontWeight": 500,
+              }
+            }
           >
             Deposite Accounts
              
@@ -161,35 +206,59 @@ exports[`MyAccounts Component should render MyAccounts Page 1`] = `
              
           </span>
           <a
-            class="text-decoration-none"
+            className="text-decoration-none"
             href="/"
-            style="margin-left: 5px; font-size: 14px; color: rgb(220, 53, 69);"
+            style={
+              Object {
+                "color": "rgb(220, 53, 69)",
+                "fontSize": 14,
+                "marginLeft": 5,
+              }
+            }
           >
             Get up to $300 back with ZippyX Global Money Transfer. 
           </a>
         </div>
         <div
-          class="row"
+          className="row"
         >
           <div
-            class="col-md-9"
+            className="col-md-9"
           >
             <div
-              class="d-flex justify-content-between align-items-center"
-              style="padding-top: 10px; padding-bottom: 10px;"
+              className="d-flex justify-content-between align-items-center"
+              style={
+                Object {
+                  "paddingBottom": 10,
+                  "paddingTop": 10,
+                }
+              }
             >
               <div
-                class="d-flex flex-column"
-                style="border-left: 2px solid green; padding-left: 10px;"
+                className="d-flex flex-column"
+                style={
+                  Object {
+                    "borderLeft": "2px solid green",
+                    "paddingLeft": 10,
+                  }
+                }
               >
                 <a
                   href="/"
-                  style="color: rgb(220, 53, 69);"
+                  style={
+                    Object {
+                      "color": "rgb(220, 53, 69)",
+                    }
+                  }
                 >
                   Chequing
                 </a>
                 <span
-                  style="font-size: 12px;"
+                  style={
+                    Object {
+                      "fontSize": 12,
+                    }
+                  }
                 >
                   01702-81-99639
                 </span>
@@ -199,21 +268,39 @@ exports[`MyAccounts Component should render MyAccounts Page 1`] = `
               </span>
             </div>
             <div
-              class="d-flex justify-content-between align-items-center"
-              style="padding-top: 10px; padding-bottom: 10px;"
+              className="d-flex justify-content-between align-items-center"
+              style={
+                Object {
+                  "paddingBottom": 10,
+                  "paddingTop": 10,
+                }
+              }
             >
               <div
-                class="d-flex flex-column"
-                style="border-left: 2px solid green; padding-left: 10px;"
+                className="d-flex flex-column"
+                style={
+                  Object {
+                    "borderLeft": "2px solid green",
+                    "paddingLeft": 10,
+                  }
+                }
               >
                 <a
                   href="/"
-                  style="color: rgb(220, 53, 69);"
+                  style={
+                    Object {
+                      "color": "rgb(220, 53, 69)",
+                    }
+                  }
                 >
                   Chequing
                 </a>
                 <span
-                  style="font-size: 12px;"
+                  style={
+                    Object {
+                      "fontSize": 12,
+                    }
+                  }
                 >
                   01702-81-99639
                 </span>
@@ -223,21 +310,39 @@ exports[`MyAccounts Component should render MyAccounts Page 1`] = `
               </span>
             </div>
             <div
-              class="d-flex justify-content-between align-items-center"
-              style="padding-top: 10px; padding-bottom: 10px;"
+              className="d-flex justify-content-between align-items-center"
+              style={
+                Object {
+                  "paddingBottom": 10,
+                  "paddingTop": 10,
+                }
+              }
             >
               <div
-                class="d-flex flex-column"
-                style="border-left: 2px solid green; padding-left: 10px;"
+                className="d-flex flex-column"
+                style={
+                  Object {
+                    "borderLeft": "2px solid green",
+                    "paddingLeft": 10,
+                  }
+                }
               >
                 <a
                   href="/"
-                  style="color: rgb(220, 53, 69);"
+                  style={
+                    Object {
+                      "color": "rgb(220, 53, 69)",
+                    }
+                  }
                 >
                   Chequing
                 </a>
                 <span
-                  style="font-size: 12px;"
+                  style={
+                    Object {
+                      "fontSize": 12,
+                    }
+                  }
                 >
                   01702-81-99639
                 </span>
@@ -248,17 +353,31 @@ exports[`MyAccounts Component should render MyAccounts Page 1`] = `
             </div>
           </div>
           <div
-            class="col-md-3"
+            className="col-md-3"
           >
             Graph Here
           </div>
         </div>
         <div
-          class="d-flex align-items-center"
-          style="border-top: 3px solid #B23C54; border-bottom: 2px solid grey; padding-top: 10px; padding-bottom: 10px; background-color: rgb(242, 243, 242); padding-left: 5px; margin-top: 10px;"
+          className="d-flex align-items-center"
+          style={
+            Object {
+              "backgroundColor": "#F2F3F2",
+              "borderBottom": "2px solid grey",
+              "borderTop": "3px solid #B23C54",
+              "marginTop": 10,
+              "paddingBottom": 10,
+              "paddingLeft": 5,
+              "paddingTop": 10,
+            }
+          }
         >
           <span
-            style="font-weight: 500;"
+            style={
+              Object {
+                "fontWeight": 500,
+              }
+            }
           >
             Non-Registered Investments
              
@@ -266,31 +385,62 @@ exports[`MyAccounts Component should render MyAccounts Page 1`] = `
              
           </span>
           <a
-            class="text-decoration-none"
+            className="text-decoration-none"
             href="/"
-            style="margin-left: 5px; font-size: 14px; color: rgb(220, 53, 69);"
-          />
+            style={
+              Object {
+                "color": "rgb(220, 53, 69)",
+                "fontSize": 14,
+                "marginLeft": 5,
+              }
+            }
+          >
+            
+          </a>
         </div>
         <div
-          style="padding: 10px;"
+          style={
+            Object {
+              "padding": 10,
+            }
+          }
         >
           <p>
             You don't have any non-registered investments with ZippyX
           </p>
           <a
             href="/"
-            style="color: rgb(220, 53, 69); font-size: 14px;"
+            style={
+              Object {
+                "color": "rgb(220, 53, 69)",
+                "fontSize": 14,
+              }
+            }
           >
             Kick-start your investing with ZippyX Investor's Edge
              &gt; 
           </a>
         </div>
         <div
-          class="d-flex align-items-center"
-          style="border-top: 3px solid #BC6800; border-bottom: 2px solid grey; padding-top: 10px; padding-bottom: 10px; background-color: rgb(242, 243, 242); padding-left: 5px; margin-top: 10px;"
+          className="d-flex align-items-center"
+          style={
+            Object {
+              "backgroundColor": "#F2F3F2",
+              "borderBottom": "2px solid grey",
+              "borderTop": "3px solid #BC6800",
+              "marginTop": 10,
+              "paddingBottom": 10,
+              "paddingLeft": 5,
+              "paddingTop": 10,
+            }
+          }
         >
           <span
-            style="font-weight: 500;"
+            style={
+              Object {
+                "fontWeight": 500,
+              }
+            }
           >
             Registered Investments
              
@@ -298,28 +448,59 @@ exports[`MyAccounts Component should render MyAccounts Page 1`] = `
              
           </span>
           <a
-            class="text-decoration-none"
+            className="text-decoration-none"
             href="/"
-            style="margin-left: 5px; font-size: 14px; color: rgb(220, 53, 69);"
-          />
+            style={
+              Object {
+                "color": "rgb(220, 53, 69)",
+                "fontSize": 14,
+                "marginLeft": 5,
+              }
+            }
+          >
+            
+          </a>
         </div>
         <div
-          style="padding: 10px;"
+          style={
+            Object {
+              "padding": 10,
+            }
+          }
         >
           <a
             href="/"
-            style="color: rgb(220, 53, 69); font-size: 14px;"
+            style={
+              Object {
+                "color": "rgb(220, 53, 69)",
+                "fontSize": 14,
+              }
+            }
           >
             Grow your money with special interest rates on our TFSA and RRSP savings accounts
              &gt; 
           </a>
         </div>
         <div
-          class="d-flex align-items-center"
-          style="border-top: 3px solid #0163A6; border-bottom: 2px solid grey; padding-top: 10px; padding-bottom: 10px; background-color: rgb(242, 243, 242); padding-left: 5px; margin-top: 10px;"
+          className="d-flex align-items-center"
+          style={
+            Object {
+              "backgroundColor": "#F2F3F2",
+              "borderBottom": "2px solid grey",
+              "borderTop": "3px solid #0163A6",
+              "marginTop": 10,
+              "paddingBottom": 10,
+              "paddingLeft": 5,
+              "paddingTop": 10,
+            }
+          }
         >
           <span
-            style="font-weight: 500;"
+            style={
+              Object {
+                "fontWeight": 500,
+              }
+            }
           >
             Credit
              
@@ -327,19 +508,35 @@ exports[`MyAccounts Component should render MyAccounts Page 1`] = `
              
           </span>
           <a
-            class="text-decoration-none"
+            className="text-decoration-none"
             href="/"
-            style="margin-left: 5px; font-size: 14px; color: rgb(220, 53, 69);"
-          />
+            style={
+              Object {
+                "color": "rgb(220, 53, 69)",
+                "fontSize": 14,
+                "marginLeft": 5,
+              }
+            }
+          >
+            
+          </a>
         </div>
         <div
-          style="padding: 10px;"
+          style={
+            Object {
+              "padding": 10,
+            }
+          }
         >
           <div
-            class="d-flex justify-content-end"
+            className="d-flex justify-content-end"
           >
             <span
-              style="color: grey;"
+              style={
+                Object {
+                  "color": "grey",
+                }
+              }
             >
               Icon
             </span>
@@ -349,55 +546,119 @@ exports[`MyAccounts Component should render MyAccounts Page 1`] = `
           </div>
           <a
             href="/"
-            style="color: rgb(220, 53, 69); font-size: 14px;"
+            style={
+              Object {
+                "color": "rgb(220, 53, 69)",
+                "fontSize": 14,
+              }
+            }
           >
             Join and get up to $1,200 in value with the ZippyX Aventura Visa Infinite Card Conditions apply.
              &gt; 
           </a>
         </div>
         <div
-          class="d-flex"
+          className="d-flex"
         >
           <div
-            class="d-flex flex-column align-items-center"
-            style="border-top: 3px solid grey; padding: 25px 10px 40px 10px; flex: 1; margin-left: 5px; background-color: rgb(242, 243, 242);"
+            className="d-flex flex-column align-items-center"
+            style={
+              Object {
+                "backgroundColor": "#F2F3F2",
+                "borderTop": "3px solid grey",
+                "flex": 1,
+                "marginLeft": 5,
+                "padding": 10,
+                "paddingBottom": 40,
+                "paddingTop": 25,
+              }
+            }
           >
             <div
-              style="width: 40px; height: 45px; border: 1px dotted grey; text-align: center; margin-right: 10px;"
+              style={
+                Object {
+                  "border": "1px dotted grey",
+                  "height": 45,
+                  "marginRight": 10,
+                  "textAlign": "center",
+                  "width": 40,
+                }
+              }
             >
               P
             </div>
             <p
-              style="font-weight: bold; margin-top: 10px;"
+              style={
+                Object {
+                  "fontWeight": "bold",
+                  "marginTop": 10,
+                }
+              }
             >
               Create a savings goal
             </p>
           </div>
           <div
-            class="d-flex flex-column align-items-center"
-            style="border-top: 3px solid grey; padding: 25px 10px 40px 10px; flex: 1; margin-left: 5px; background-color: rgb(242, 243, 242);"
+            className="d-flex flex-column align-items-center"
+            style={
+              Object {
+                "backgroundColor": "#F2F3F2",
+                "borderTop": "3px solid grey",
+                "flex": 1,
+                "marginLeft": 5,
+                "padding": 10,
+                "paddingBottom": 40,
+                "paddingTop": 25,
+              }
+            }
           >
             <div
-              style="width: 40px; height: 45px; border: 1px dotted grey; text-align: center; margin-right: 10px;"
+              style={
+                Object {
+                  "border": "1px dotted grey",
+                  "height": 45,
+                  "marginRight": 10,
+                  "textAlign": "center",
+                  "width": 40,
+                }
+              }
             >
               P
             </div>
             <span
-              style="font-weight: bold; margin-top: 12px;"
+              style={
+                Object {
+                  "fontWeight": "bold",
+                  "marginTop": 12,
+                }
+              }
             >
               Your net worth:
             </span>
             <span
-              style="font-weight: bold;"
+              style={
+                Object {
+                  "fontWeight": "bold",
+                }
+              }
             >
               $337,139.59
             </span>
             <div
-              class="d-flex flex-column justify-content-start"
-              style="width: 100%; margin-top: 15px;"
+              className="d-flex flex-column justify-content-start"
+              style={
+                Object {
+                  "marginTop": 15,
+                  "width": "100%",
+                }
+              }
             >
               <span
-                style="font-weight: bold;"
+                style={
+                  Object {
+                    "fontWeight": "bold",
+                  }
+                }
               >
                 Assets:
               </span>
@@ -405,15 +666,31 @@ exports[`MyAccounts Component should render MyAccounts Page 1`] = `
                 $337,139.59
               </span>
               <div
-                style="width: 100%; height: 10px; background-color: rgb(94, 92, 153); border-radius: 3px;"
+                style={
+                  Object {
+                    "backgroundColor": "#5E5C99",
+                    "borderRadius": 3,
+                    "height": 10,
+                    "width": "100%",
+                  }
+                }
               />
             </div>
             <div
-              class="d-flex flex-column justify-content-start"
-              style="width: 100%; margin-top: 15px;"
+              className="d-flex flex-column justify-content-start"
+              style={
+                Object {
+                  "marginTop": 15,
+                  "width": "100%",
+                }
+              }
             >
               <span
-                style="font-weight: bold;"
+                style={
+                  Object {
+                    "fontWeight": "bold",
+                  }
+                }
               >
                 Liabilities:
               </span>
@@ -423,21 +700,49 @@ exports[`MyAccounts Component should render MyAccounts Page 1`] = `
             </div>
           </div>
           <div
-            class="d-flex flex-column align-items-center"
-            style="border-top: 3px solid grey; padding: 25px 10px 40px 10px; flex: 1; margin-left: 5px; background-color: rgb(242, 243, 242);"
+            className="d-flex flex-column align-items-center"
+            style={
+              Object {
+                "backgroundColor": "#F2F3F2",
+                "borderTop": "3px solid grey",
+                "flex": 1,
+                "marginLeft": 5,
+                "padding": 10,
+                "paddingBottom": 40,
+                "paddingTop": 25,
+              }
+            }
           >
             <div
-              style="width: 40px; height: 45px; border: 1px dotted grey; text-align: center; margin-right: 10px;"
+              style={
+                Object {
+                  "border": "1px dotted grey",
+                  "height": 45,
+                  "marginRight": 10,
+                  "textAlign": "center",
+                  "width": 40,
+                }
+              }
             >
               P
             </div>
             <p
-              style="font-weight: bold; margin-top: 10px; text-align: center;"
+              style={
+                Object {
+                  "fontWeight": "bold",
+                  "marginTop": 10,
+                  "textAlign": "center",
+                }
+              }
             >
               Your ZippyX Financial HealthCheck goal is to manage your money better
             </p>
             <span
-              style="font-weight: bold;"
+              style={
+                Object {
+                  "fontWeight": "bold",
+                }
+              }
             >
               Last completed:
             </span>
@@ -447,19 +752,43 @@ exports[`MyAccounts Component should render MyAccounts Page 1`] = `
           </div>
         </div>
         <div
-          class="d-flex"
-          style="padding: 25px; margin-top: 15px; background-color: rgb(242, 243, 242);"
+          className="d-flex"
+          style={
+            Object {
+              "backgroundColor": "#F2F3F2",
+              "marginTop": 15,
+              "padding": 25,
+            }
+          }
         >
           <div
-            style="width: 145px; height: 160px; border: 1px dotted grey; text-align: center; margin-right: 10px;"
+            style={
+              Object {
+                "border": "1px dotted grey",
+                "height": 160,
+                "marginRight": 10,
+                "textAlign": "center",
+                "width": 145,
+              }
+            }
           >
             P
           </div>
           <div
-            style="padding-left: 15px;"
+            style={
+              Object {
+                "paddingLeft": 15,
+              }
+            }
           >
             <p
-              style="font-weight: bold; font-size: 20px; margin-top: 10px;"
+              style={
+                Object {
+                  "fontSize": 20,
+                  "fontWeight": "bold",
+                  "marginTop": 10,
+                }
+              }
             >
               Save up to 10 cents per litre on gas(1)
             </p>
@@ -468,7 +797,11 @@ exports[`MyAccounts Component should render MyAccounts Page 1`] = `
             </p>
             <a
               href="/"
-              style="color: rgb(220, 53, 69);"
+              style={
+                Object {
+                  "color": "rgb(220, 53, 69)",
+                }
+              }
             >
               Link your card
                &gt;
@@ -476,34 +809,69 @@ exports[`MyAccounts Component should render MyAccounts Page 1`] = `
           </div>
         </div>
         <div
-          class="d-flex"
-          style="padding-top: 15px; padding-bottom: 10px; border-top: 1px solid grey; border-bottom: 2px solid grey; margin-top: 10px;"
+          className="d-flex"
+          style={
+            Object {
+              "borderBottom": "2px solid grey",
+              "borderTop": "1px solid grey",
+              "marginTop": 10,
+              "paddingBottom": 10,
+              "paddingTop": 15,
+            }
+          }
         >
           <p
-            style="color: rgb(90, 95, 97);"
+            style={
+              Object {
+                "color": "#5A5F61",
+              }
+            }
           >
             ZippyX is a member of Canada Deposit Insurance Corporation (CDIC)
           </p>
           <button
-            class="d-flex align-items-center btn btn-primary"
-            style="border-radius: 50px; background-color: rgb(100, 41, 109); height: 50px;"
+            className="d-flex align-items-center btn btn-primary"
+            disabled={false}
+            style={
+              Object {
+                "backgroundColor": "#64296D",
+                "border": "none",
+                "borderRadius": 50,
+                "height": 50,
+              }
+            }
             type="button"
           >
             <div
-              style="width: 20px; border: 1px dotted grey; text-align: center; margin-right: 5px;"
+              style={
+                Object {
+                  "border": "1px dotted grey",
+                  "marginRight": 5,
+                  "textAlign": "center",
+                  "width": 20,
+                }
+              }
             >
               P
             </div>
             <div
-              class="d-flex flex-column align-items-start justify-content-start"
+              className="d-flex flex-column align-items-start justify-content-start"
             >
               <span
-                style="font-size: 13px;"
+                style={
+                  Object {
+                    "fontSize": 13,
+                  }
+                }
               >
                 DEPOSIT
               </span>
               <span
-                style="font-size: 13px;"
+                style={
+                  Object {
+                    "fontSize": 13,
+                  }
+                }
               >
                 PROTETION
               </span>
@@ -511,58 +879,84 @@ exports[`MyAccounts Component should render MyAccounts Page 1`] = `
           </button>
         </div>
         <div
-          style="margin-top: 10px;"
+          style={
+            Object {
+              "marginTop": 10,
+            }
+          }
         >
           <p
-            style="font-weight: bold;"
+            style={
+              Object {
+                "fontWeight": "bold",
+              }
+            }
           >
             Note:
           </p>
           <p
-            style="color: rgb(90, 95, 97);"
+            style={
+              Object {
+                "color": "#5A5F61",
+              }
+            }
           >
             "My Accounts" includes the online accounts you hold with ZippyX and its affilliates. For help, please contact the ZippyX Online Banking support line at 1-888-872-2422
           </p>
         </div>
         <div
-          style="padding: 10px; background-color: rgb(242, 243, 242); border-bottom: 1px solid grey;"
+          style={
+            Object {
+              "backgroundColor": "#F2F3F2",
+              "borderBottom": "1px solid grey",
+              "padding": 10,
+            }
+          }
         >
           <span
-            style="color: rgb(220, 53, 69);"
+            style={
+              Object {
+                "color": "rgb(220, 53, 69)",
+              }
+            }
           >
             +
           </span>
           <span
-            style="font-weight: 500;"
+            style={
+              Object {
+                "fontWeight": 500,
+              }
+            }
           >
             Trademarks and Disclaimers
           </span>
         </div>
       </div>
       <div
-        class="col-md-3"
+        className="col-md-3"
       >
         <div
-          class="p-3 bg-white card"
+          className="p-3 bg-white card"
         >
           <div
-            class="card-title h5"
+            className="card-title h5"
           >
             Quick Transfer
           </div>
           <div
-            class="card-body"
+            className="card-body"
           >
             <p>
               Cant find your account in the list?
             </p>
             <label
-              class="form-label"
+              className="form-label"
             >
               From:
             </label>
             <select
-              class="form-select"
+              className="form-select"
             >
               <option>
                 Choose an account
@@ -584,12 +978,12 @@ exports[`MyAccounts Component should render MyAccounts Page 1`] = `
               </option>
             </select>
             <label
-              class="form-label"
+              className="form-label"
             >
               To:
             </label>
             <select
-              class="form-select"
+              className="form-select"
             >
               <option>
                 Choose an account
@@ -611,15 +1005,15 @@ exports[`MyAccounts Component should render MyAccounts Page 1`] = `
               </option>
             </select>
             <label
-              class="form-label"
+              className="form-label"
             >
               Amount:
             </label>
             <div
-              class="mb-3 input-group"
+              className="mb-3 input-group"
             >
               <span
-                class="input-group-text"
+                className="input-group-text"
                 id="basic-addon1"
               >
                 $
@@ -627,12 +1021,13 @@ exports[`MyAccounts Component should render MyAccounts Page 1`] = `
               <input
                 aria-describedby="basic-addon1"
                 aria-label="Amount"
-                class="form-control"
+                className="form-control"
                 placeholder="Amount"
               />
             </div>
             <button
-              class="zippy-btn btn btn-primary"
+              className="zippy-btn btn btn-primary"
+              disabled={false}
               type="button"
             >
               Next
@@ -640,29 +1035,46 @@ exports[`MyAccounts Component should render MyAccounts Page 1`] = `
           </div>
         </div>
         <div
-          class="bg-white card"
-          style="margin-top: 10px;"
+          className="bg-white card"
+          style={
+            Object {
+              "marginTop": 10,
+            }
+          }
         >
           <div
-            class="card-body"
+            className="card-body"
           >
             <p>
               My Profile
             </p>
             <div
-              style="border-bottom: 1px solid grey;"
+              style={
+                Object {
+                  "borderBottom": "1px solid grey",
+                }
+              }
             >
               <div
-                class="d-flex justify-content-between"
+                className="d-flex justify-content-between"
               >
                 <p>
                   <span
-                    style="color: rgb(220, 53, 69);"
+                    style={
+                      Object {
+                        "color": "rgb(220, 53, 69)",
+                      }
+                    }
                   >
                     -
                   </span>
                   <span
-                    style="font-weight: bold; font-size: 14px;"
+                    style={
+                      Object {
+                        "fontSize": 14,
+                        "fontWeight": "bold",
+                      }
+                    }
                   >
                     Home Address
                   </span>
@@ -672,10 +1084,18 @@ exports[`MyAccounts Component should render MyAccounts Page 1`] = `
                 </span>
               </div>
               <div
-                style="padding-left: 10px;"
+                style={
+                  Object {
+                    "paddingLeft": 10,
+                  }
+                }
               >
                 <p
-                  style="font-size: 14px;"
+                  style={
+                    Object {
+                      "fontSize": 14,
+                    }
+                  }
                 >
                   717-257 ADELAIDE ST W TORONTO, ON M5H 4E7
                 </p>
@@ -683,16 +1103,25 @@ exports[`MyAccounts Component should render MyAccounts Page 1`] = `
             </div>
             <div>
               <div
-                class="d-flex justify-content-between"
+                className="d-flex justify-content-between"
               >
                 <p>
                   <span
-                    style="color: rgb(220, 53, 69);"
+                    style={
+                      Object {
+                        "color": "rgb(220, 53, 69)",
+                      }
+                    }
                   >
                     -
                   </span>
                   <span
-                    style="font-weight: bold; font-size: 14px;"
+                    style={
+                      Object {
+                        "fontSize": 14,
+                        "fontWeight": "bold",
+                      }
+                    }
                   >
                     Contact Details
                   </span>
@@ -702,35 +1131,66 @@ exports[`MyAccounts Component should render MyAccounts Page 1`] = `
                 </span>
               </div>
               <div
-                style="padding-left: 10px;"
+                style={
+                  Object {
+                    "paddingLeft": 10,
+                  }
+                }
               >
                 <span
-                  style="font-weight: bold; font-size: 14px;"
+                  style={
+                    Object {
+                      "fontSize": 14,
+                      "fontWeight": "bold",
+                    }
+                  }
                 >
                   Email
                 </span>
                 <p
-                  style="font-size: 14px;"
+                  style={
+                    Object {
+                      "fontSize": 14,
+                    }
+                  }
                 >
                   dtough@hotmail.com
                 </p>
                 <span
-                  style="font-weight: bold; font-size: 14px;"
+                  style={
+                    Object {
+                      "fontSize": 14,
+                      "fontWeight": "bold",
+                    }
+                  }
                 >
                   Home
                 </span>
                 <p
-                  style="font-size: 14px;"
+                  style={
+                    Object {
+                      "fontSize": 14,
+                    }
+                  }
                 >
                   410-553-1372
                 </p>
                 <span
-                  style="font-weight: bold; font-size: 14px;"
+                  style={
+                    Object {
+                      "fontSize": 14,
+                      "fontWeight": "bold",
+                    }
+                  }
                 >
                   Mobile
                 </span>
                 <p
-                  style="font-size: 14px;"
+                  style={
+                    Object {
+                      "fontSize": 14,
+                    }
+                  }
                 >
                   410-553-1372
                 </p>
@@ -739,125 +1199,227 @@ exports[`MyAccounts Component should render MyAccounts Page 1`] = `
           </div>
         </div>
         <div
-          class="bg-white card"
-          style="margin-top: 10px;"
+          className="bg-white card"
+          style={
+            Object {
+              "marginTop": 10,
+            }
+          }
         >
           <div
-            class="d-flex flex-column card-body"
+            className="d-flex flex-column card-body"
           >
             <p>
               Quick Links
             </p>
             <a
-              class="text-decoration-none text-black"
+              className="text-decoration-none text-black"
               href="/"
-              style="font-size: 12px; margin-top: 5px; margin-bottom: 5px;"
+              style={
+                Object {
+                  "fontSize": 12,
+                  "marginBottom": 5,
+                  "marginTop": 5,
+                }
+              }
             >
               Stop payments
               <span
-                style="color: rgb(220, 53, 69); margin-left: 5px;"
+                style={
+                  Object {
+                    "color": "rgb(220, 53, 69)",
+                    "marginLeft": 5,
+                  }
+                }
               >
                 &gt;
               </span>
             </a>
             <a
-              class="text-decoration-none text-black"
+              className="text-decoration-none text-black"
               href="/"
-              style="font-size: 12px; margin-top: 5px; margin-bottom: 5px;"
+              style={
+                Object {
+                  "fontSize": 12,
+                  "marginBottom": 5,
+                  "marginTop": 5,
+                }
+              }
             >
               Change your password
               <span
-                style="color: rgb(220, 53, 69); margin-left: 5px;"
+                style={
+                  Object {
+                    "color": "rgb(220, 53, 69)",
+                    "marginLeft": 5,
+                  }
+                }
               >
                 &gt;
               </span>
             </a>
             <a
-              class="text-decoration-none text-black"
+              className="text-decoration-none text-black"
               href="/"
-              style="font-size: 12px; margin-top: 5px; margin-bottom: 5px;"
+              style={
+                Object {
+                  "fontSize": 12,
+                  "marginBottom": 5,
+                  "marginTop": 5,
+                }
+              }
             >
               Void Cheque / Direct Deposit Form (PDF, 510KB)
               <span
-                style="color: rgb(220, 53, 69); margin-left: 5px;"
+                style={
+                  Object {
+                    "color": "rgb(220, 53, 69)",
+                    "marginLeft": 5,
+                  }
+                }
               >
                 &gt;
               </span>
             </a>
             <a
-              class="text-decoration-none text-black"
+              className="text-decoration-none text-black"
               href="/"
-              style="font-size: 12px; margin-top: 5px; margin-bottom: 5px;"
+              style={
+                Object {
+                  "fontSize": 12,
+                  "marginBottom": 5,
+                  "marginTop": 5,
+                }
+              }
             >
               Sign up for and view your eStatements
               <span
-                style="color: rgb(220, 53, 69); margin-left: 5px;"
+                style={
+                  Object {
+                    "color": "rgb(220, 53, 69)",
+                    "marginLeft": 5,
+                  }
+                }
               >
                 &gt;
               </span>
             </a>
             <a
-              class="text-decoration-none text-black"
+              className="text-decoration-none text-black"
               href="/"
-              style="font-size: 12px; margin-top: 5px; margin-bottom: 5px;"
+              style={
+                Object {
+                  "fontSize": 12,
+                  "marginBottom": 5,
+                  "marginTop": 5,
+                }
+              }
             >
               Go to ZippyX Rewards
               <span
-                style="color: rgb(220, 53, 69); margin-left: 5px;"
+                style={
+                  Object {
+                    "color": "rgb(220, 53, 69)",
+                    "marginLeft": 5,
+                  }
+                }
               >
                 &gt;
               </span>
             </a>
             <a
-              class="text-decoration-none text-black"
+              className="text-decoration-none text-black"
               href="/"
-              style="font-size: 12px; margin-top: 5px; margin-bottom: 5px;"
+              style={
+                Object {
+                  "fontSize": 12,
+                  "marginBottom": 5,
+                  "marginTop": 5,
+                }
+              }
             >
               Apply for a credit limit increase
               <span
-                style="color: rgb(220, 53, 69); margin-left: 5px;"
+                style={
+                  Object {
+                    "color": "rgb(220, 53, 69)",
+                    "marginLeft": 5,
+                  }
+                }
               >
                 &gt;
               </span>
             </a>
             <a
-              class="text-decoration-none text-black"
+              className="text-decoration-none text-black"
               href="/"
-              style="font-size: 12px; margin-top: 5px; margin-bottom: 5px;"
+              style={
+                Object {
+                  "fontSize": 12,
+                  "marginBottom": 5,
+                  "marginTop": 5,
+                }
+              }
             >
               Register for FREE SPC (Student and Youth Clients)
               <span
-                style="color: rgb(220, 53, 69); margin-left: 5px;"
+                style={
+                  Object {
+                    "color": "rgb(220, 53, 69)",
+                    "marginLeft": 5,
+                  }
+                }
               >
                 &gt;
               </span>
             </a>
             <a
-              class="text-decoration-none text-black"
+              className="text-decoration-none text-black"
               href="/"
-              style="font-size: 12px; margin-top: 5px; margin-bottom: 5px;"
+              style={
+                Object {
+                  "fontSize": 12,
+                  "marginBottom": 5,
+                  "marginTop": 5,
+                }
+              }
             >
               Link my cards to Journie Rewards
               <span
-                style="color: rgb(220, 53, 69); margin-left: 5px;"
+                style={
+                  Object {
+                    "color": "rgb(220, 53, 69)",
+                    "marginLeft": 5,
+                  }
+                }
               >
                 &gt;
               </span>
             </a>
             <div
-              class="d-flex flex-column justify-content-center align-items-center"
+              className="d-flex flex-column justify-content-center align-items-center"
             >
               <button
-                class="btn btn-outline-danger"
-                style="font-size: 13px;"
+                className="btn btn-outline-danger"
+                disabled={false}
+                style={
+                  Object {
+                    "fontSize": 13,
+                  }
+                }
                 type="button"
               >
                 Show more
               </button>
               <a
-                class="text-decoration-none text-black"
+                className="text-decoration-none text-black"
                 href="/"
-                style="font-size: 13px; margin-top: 5px;"
+                style={
+                  Object {
+                    "fontSize": 13,
+                    "marginTop": 5,
+                  }
+                }
               >
                 Show all
               </a>
@@ -865,30 +1427,51 @@ exports[`MyAccounts Component should render MyAccounts Page 1`] = `
           </div>
         </div>
         <div
-          class="card"
-          style="margin-top: 10px; background-color: rgb(242, 243, 242);"
+          className="card"
+          style={
+            Object {
+              "backgroundColor": "#F2F3F2",
+              "marginTop": 10,
+            }
+          }
         >
           <div
-            style="width: 195px; height: 145px; border: 1px dotted grey; text-align: center; margin-right: 10px;"
+            style={
+              Object {
+                "border": "1px dotted grey",
+                "height": 145,
+                "marginRight": 10,
+                "textAlign": "center",
+                "width": 195,
+              }
+            }
           >
             P
           </div>
           <div
-            class="card-body"
+            className="card-body"
           >
             <p
-              class="card-text"
+              className="card-text"
             >
               Travelling out of province or the country?
             </p>
             <p
-              style="font-size: 13px;"
+              style={
+                Object {
+                  "fontSize": 13,
+                }
+              }
             >
               Make sure you're protected. Consider ZippyX Travel Medical Insurancce
             </p>
             <a
               href="/"
-              style="color: rgb(220, 53, 69);"
+              style={
+                Object {
+                  "color": "rgb(220, 53, 69)",
+                }
+              }
             >
               Learn More
                &gt; 
@@ -897,33 +1480,34 @@ exports[`MyAccounts Component should render MyAccounts Page 1`] = `
         </div>
       </div>
     </div>
-  </div>
+  </div>,
   <div
-    class="footer-content-wrapper"
+    className="footer-content-wrapper"
   >
     <div
-      class="quick-links container"
+      className="quick-links container"
     >
       <div
-        class="row"
+        className="row"
       >
         <h3
-          class="col-sm-12"
+          className="col-sm-12"
         >
           Quick Links
         </h3>
       </div>
       <div
-        class="row"
+        className="row"
       >
         <div
-          class="col-sm-2"
+          className="col-sm-2"
         >
           <ul>
             <li>
               <a
-                class="text-decoration-none"
+                className="text-decoration-none"
                 href="/"
+                onClick={[Function]}
               >
                 Home
               </a>
@@ -932,8 +1516,9 @@ exports[`MyAccounts Component should render MyAccounts Page 1`] = `
               Please Review Our Legal Stuff by visiting our
                
               <a
-                class="text-decoration-none"
+                className="text-decoration-none"
                 href="/legal"
+                onClick={[Function]}
               >
                 Privacy Policy | TOU | EULA | CardHolder T&C Pages
               </a>
@@ -941,7 +1526,7 @@ exports[`MyAccounts Component should render MyAccounts Page 1`] = `
           </ul>
         </div>
         <div
-          class="col-sm-2"
+          className="col-sm-2"
         >
           8465 W Sahara Ave. Las Vegas, NEVADA
           <ul>
@@ -964,13 +1549,13 @@ exports[`MyAccounts Component should render MyAccounts Page 1`] = `
       </div>
     </div>
     <div
-      class="container"
+      className="container"
     >
       <div
-        class="row"
+        className="row"
       >
         <div
-          class="col-md-12 col-sm-12 col-xs-12 text-left"
+          className="col-md-12 col-sm-12 col-xs-12 text-left"
         >
           © 2021 Zippy Cash LLC  All rights reserved.
           <br />
@@ -990,63 +1575,66 @@ exports[`MyAccounts Component should render MyAccounts Page 1`] = `
       </div>
     </div>
     <footer
-      class="container mb-3"
+      className="container mb-3"
     >
       <div
-        class="d-none d-md-block"
+        className="d-none d-md-block"
       >
         <div
-          class="d-flex justify-content-between border-bottom"
+          className="d-flex justify-content-between border-bottom"
         />
         <div
-          class="d-flex justify-content-between border-top"
+          className="d-flex justify-content-between border-top"
         >
           <div
-            class=""
+            className=""
           >
             <div
-              class="footer-link mt-1"
+              className="footer-link mt-1"
             >
               <a
-                class="text-decoration-none"
+                className="text-decoration-none"
                 href="/personal-profile"
               >
                 dev docs
               </a>
             </div>
             <div
-              class="footer-link mt-1"
+              className="footer-link mt-1"
             >
               <a
-                class="text-decoration-none"
+                className="text-decoration-none"
                 href="/"
+                onClick={[Function]}
               >
                 Lore
               </a>
             </div>
             <div
-              class="footer-link mt-1"
+              className="footer-link mt-1"
             >
               <a
-                class="text-decoration-none"
+                className="text-decoration-none"
                 href="/"
+                onClick={[Function]}
               >
                 Ipsum
               </a>
             </div>
             <div
-              class="footer-link mt-1"
+              className="footer-link mt-1"
             >
               <a
-                class="text-decoration-none"
+                className="text-decoration-none"
                 href="/"
+                onClick={[Function]}
               >
                 Nullam Atoidio
               </a>
             </div>
           </div>
           <div
-            class="copyright mt-1"
+            className="copyright mt-1"
           >
             <span>
               © 2021 Lorem ipsum dolor sit amet, consectetuer
@@ -1055,50 +1643,53 @@ exports[`MyAccounts Component should render MyAccounts Page 1`] = `
         </div>
       </div>
       <div
-        class="d-block d-md-none"
+        className="d-block d-md-none"
       >
         <div
-          class="d-flex border-bottom"
+          className="d-flex border-bottom"
         >
           <div
-            class="d-flex flex-column me-2"
+            className="d-flex flex-column me-2"
           >
             <div
-              class="footer-link mt-1"
+              className="footer-link mt-1"
             >
               <a
-                class="text-decoration-none"
+                className="text-decoration-none"
                 href="/personal-profile"
               >
                 dev docs
               </a>
             </div>
             <div
-              class="footer-link mb-1"
+              className="footer-link mb-1"
             >
               <a
-                class="text-decoration-none"
+                className="text-decoration-none"
                 href="/"
+                onClick={[Function]}
               >
                 Lore
               </a>
             </div>
             <div
-              class="footer-link mb-1"
+              className="footer-link mb-1"
             >
               <a
-                class="text-decoration-none"
+                className="text-decoration-none"
                 href="/"
+                onClick={[Function]}
               >
                 Ipsum
               </a>
             </div>
             <div
-              class="footer-link mb-1"
+              className="footer-link mb-1"
             >
               <a
-                class="text-decoration-none"
+                className="text-decoration-none"
                 href="/"
+                onClick={[Function]}
               >
                 Nullam Atoidio
               </a>
@@ -1106,10 +1697,10 @@ exports[`MyAccounts Component should render MyAccounts Page 1`] = `
           </div>
         </div>
         <div
-          class="d-flex justify-content-end border-top"
+          className="d-flex justify-content-end border-top"
         >
           <div
-            class="copyright mt-2 text-end small"
+            className="copyright mt-2 text-end small"
           >
             <span>
               © 2021 Lorem ipsum dolor sit amet, consectetuer
@@ -1118,6 +1709,6 @@ exports[`MyAccounts Component should render MyAccounts Page 1`] = `
         </div>
       </div>
     </footer>
-  </div>
-</div>
+  </div>,
+]
 `;

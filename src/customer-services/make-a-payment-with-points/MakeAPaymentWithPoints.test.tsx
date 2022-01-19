@@ -1,9 +1,15 @@
 import React from 'react';
 import { render, fireEvent } from '@testing-library/react';
-
 import MakeAPaymentWithPoints from './MakeAPaymentWithPoints';
 
-describe('MakeAPaymentWithPoints Page Component', () => {
+const ReactTestRenderer = require('react-test-renderer');
+
+describe('MortgagePrepayment Page Component', () => {
+  it('matches the snapshot', () => {
+    const tree = ReactTestRenderer.create(<MakeAPaymentWithPoints />).toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
   it('should render MakeAPaymentWithPoints', () => {
     const setSelectedRef = jest.fn();
 

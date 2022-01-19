@@ -1,10 +1,13 @@
-import { render } from '@testing-library/react';
-
+import React from 'react';
 import ViewAccountDetails from './ViewAccountDetails';
 
+const ReactTestRenderer = require('react-test-renderer');
+
 describe('ViewAccountDetails Component', () => {
-  it('should render ViewAccountDetails Page', () => {
-    const { container } = render(<ViewAccountDetails />);
-    expect(container).toMatchSnapshot();
+  it('matches the snapshot', () => {
+    const tree = ReactTestRenderer.create(
+      <ViewAccountDetails />,
+    ).toJSON();
+    expect(tree).toMatchSnapshot();
   });
 });

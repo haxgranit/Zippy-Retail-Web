@@ -1,10 +1,13 @@
-import { render } from '@testing-library/react';
-
+import React from 'react';
 import ViewEStatements from './ViewEStatements';
 
+const ReactTestRenderer = require('react-test-renderer');
+
 describe('ViewEStatements Component', () => {
-  it('should render ViewEStatements Page', () => {
-    const { container } = render(<ViewEStatements />);
-    expect(container).toMatchSnapshot();
+  it('matches the snapshot', () => {
+    const tree = ReactTestRenderer.create(
+      <ViewEStatements />,
+    ).toJSON();
+    expect(tree).toMatchSnapshot();
   });
 });

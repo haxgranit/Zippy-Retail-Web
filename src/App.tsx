@@ -21,10 +21,10 @@ import CreateOrEditAccountNickname from './customer-services/create-or-edit-acco
 import ChangeYourAddress from './customer-services/change-your-address/ChangeYourAddress';
 import CustomerServices from './customer-services/customer-services/CustomerServices';
 import { Header } from './Header';
-import { AutodepositSettings } from './interac-etransfer/autodeposit-settings/AutodepositSettings';
+import AutodepositSettings from './interac-etransfer/autodeposit-settings/AutodepositSettings';
 import ContactList from './interac-etransfer/contact-list/ContactList';
 import EditContact from './interac-etransfer/contact-list/edit/EditContact';
-import { EditMyProfile } from './interac-etransfer/edit-my-profile/EditMyProfile';
+import EditMyProfile from './interac-etransfer/edit-my-profile/EditMyProfile';
 import LearnMore from './interac-etransfer/learn-more/LearnMore';
 import ReceiveMoney from './interac-etransfer/receive-money/ReceiveMoney';
 import RequestMoney from './interac-etransfer/request-money/RequestMoney';
@@ -48,13 +48,13 @@ import VisaDirect from './transfer-funds/VisaDirect';
 import ZippyToZippy from './transfer-funds/ZippyToZippy';
 import ChangeYourPassword from './customer-services/change-your-password/ChangeYourPassword';
 import ChangeYourContactInformation from './customer-services/change-contact-information/ChangeYourContactInformation';
-import AddACardHolder from './customer-services/add-a-cardholder/AddACardHolder';
+import AddCardHolder from './customer-services/add-a-cardholder/AddCardHolder';
 import OrderCheques from './customer-services/order-cheques/OrderCheques';
 import EbillsEmailNotification from './customer-services/ebills-email-notification/EbillsEmailNotification';
 import ChangeYourTaxResidency from './customer-services/change-your-tax-residency/ChangeYourTaxResidency';
 import CreateAClickToPayAccount from './customer-services/create-a-click-to-pay-account/CreateAClickToPayAccount';
 import MakeALoanPayment from './customer-services/make-a-loan-payment/MakeALoanPayment';
-import MakeAMortgagePayment from './customer-services/make-a-mortgage-payment/MakeAMortgagePayment';
+import MortgagePrepayment from './customer-services/make-a-mortgage-payment/MortgagePrepayment';
 import ApplyForOrChangeOverdraftProtectionService from './customer-services/apply-for-or-change-overdraft-protection-service/ApplyForOrChangeOverdraftProtectionService';
 import MakeAPaymentWithPoints from './customer-services/make-a-payment-with-points/MakeAPaymentWithPoints';
 import RemoveAssociationToOnlineInvestmentAccount from './customer-services/remove-association-to-online-investment-account/RemoveAssociationToOnlineInvestmentAccount';
@@ -65,10 +65,10 @@ import StopPayments from './customer-services/stop-payments/StopPayments';
 import WithdrawFromATfsa from './customer-services/withdraw-from-a-tfsa/WithdrawFromATfsa';
 import PayAndFileBusinessTaxes from './customer-services/pay-and-file-business-taxes/PayAndFileBusinessTaxes';
 import ApplyForPaymentProtectorInsuranceForCreditCards from './customer-services/apply-for-payment-protector-insurance-for-credit-cards/ApplyForPaymentProtectorInsuranceForCreditCards';
-import ChangeMortgagePaymentAmount from './customer-services/change-mortgage-payment-details/ChangeMortgagePaymentDetails';
+import ChangeMortgagePaymentDetails from './customer-services/change-mortgage-payment-details/ChangeMortgagePaymentDetails';
 import UnlinkAccountsFromYourDebitCard from './customer-services/unlink-accounts-from-your-debit-card/UnlinkAccountsFromYourDebitCard';
 import DigitalVaultDocuments from './customer-services/digital-vault-documents/DigitalVaultDocuments';
-import ContributeToTfsa from './customer-services/contribute-to-a-tfsa/ContributeToATfsa';
+import ContributeToTfsa from './customer-services/contribute-to-a-tfsa/ContributeToTfsa';
 import i18n from './i18n/config';
 import InteracETransferDetails from './interac-etransfer/status/interac-e-transfer-details/InteracETransferDetails';
 import Status from './interac-etransfer/status/Status';
@@ -112,13 +112,13 @@ export default function App() {
             <Route path="change-your-address" element={<ChangeYourAddress />} />
             <Route path="change-your-password" element={<ChangeYourPassword />} />
             <Route path="change-your-contact-information" element={<ChangeYourContactInformation />} />
-            <Route path="add-a-cardholder" element={<AddACardHolder />} />
+            <Route path="add-a-cardholder" element={<AddCardHolder />} />
             <Route path="order-cheques" element={<OrderCheques />} />
             <Route path="set-up-ebills-email-notification" element={<EbillsEmailNotification />} />
             <Route path="change-your-tax-residency" element={<ChangeYourTaxResidency />} />
             <Route path="create-a-click-to-pay-account" element={<CreateAClickToPayAccount />} />
             <Route path="make-a-loan-payment" element={<MakeALoanPayment />} />
-            <Route path="make-a-mortgage-payment" element={<MakeAMortgagePayment />} />
+            <Route path="make-a-mortgage-payment" element={<MortgagePrepayment />} />
             <Route path="apply-for-or-change-overdraft-protection-service" element={<ApplyForOrChangeOverdraftProtectionService />} />
             <Route path="make-a-payment-with-points" element={<MakeAPaymentWithPoints />} />
             <Route path="remove-association-to-online-investment-account" element={<RemoveAssociationToOnlineInvestmentAccount />} />
@@ -129,7 +129,7 @@ export default function App() {
             <Route path="withdraw-from-a-tfsa" element={<WithdrawFromATfsa />} />
             <Route path="pay-and-file-business-taxes" element={<PayAndFileBusinessTaxes />} />
             <Route path="apply-for-payment-protector-insurance-for-credit-cards" element={<ApplyForPaymentProtectorInsuranceForCreditCards />} />
-            <Route path="change-mortgage-payment-details" element={<ChangeMortgagePaymentAmount />} />
+            <Route path="change-mortgage-payment-details" element={<ChangeMortgagePaymentDetails />} />
             <Route path="unlink-accounts-from-your-debit-card" element={<UnlinkAccountsFromYourDebitCard />} />
             <Route path="digital-vault-documents" element={<DigitalVaultDocuments />} />
             <Route path="contribute-to-a-tfsa" element={<ContributeToTfsa />} />
