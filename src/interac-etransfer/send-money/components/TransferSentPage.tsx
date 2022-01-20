@@ -143,7 +143,7 @@ const TransferSentPage = ({
           <Form.Label>{transferInformation.referenceNumber}</Form.Label>
         </Col>
       </Row>
-      <p className="mt-4">{`Submitted: ${transferInformation.submitted.toLocaleString(DateTime.DATETIME_FULL)}.`}</p>
+      <p className="mt-4">{`Submitted: ${transferInformation.submitted.toLocaleString(DateTime.DATETIME_MED_WITH_WEEKDAY)}.`}</p>
       <hr style={{ height: '1px', width: '100%' }} />
       <Row className="mt-4 mb-4">
         <Col className="d-flex justify-content-end">

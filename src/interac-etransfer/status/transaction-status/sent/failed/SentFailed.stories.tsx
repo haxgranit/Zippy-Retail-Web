@@ -1,15 +1,15 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { BrowserRouter } from 'react-router-dom';
-import RequestedCanceled from './RequestedCanceled';
+import SentFailed from './SentFailed';
 
 export default {
-  title: 'interac-etransfer/status/completed/RequestedCompleted',
-  component: RequestedCanceled,
-} as ComponentMeta<typeof RequestedCanceled>;
+  title: 'interac-etransfer/status/sent/completed/SentFailed',
+  component: SentFailed,
+} as ComponentMeta<typeof SentFailed>;
 
-const Template: ComponentStory<typeof RequestedCanceled> = () => (
+const Template: ComponentStory<typeof SentFailed> = () => (
   <BrowserRouter>
-    <RequestedCanceled
+    <SentFailed
       transaction={undefined}
       user={undefined}
       setCurrentStatus={undefined}

@@ -2,6 +2,7 @@
 export enum TransactionStatusEnum {
   COMPLETED = 'completed',
   PENDING = 'pending',
-  CANCELED = 'canceled',
+  CANCELLED = 'cancelled',
+  FAILED = 'failed',
   REMINDER = 'reminder',
 }

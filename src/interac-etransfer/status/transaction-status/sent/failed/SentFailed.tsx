@@ -1,5 +1,4 @@
-import
-{
+import {
   Button,
   Col,
   Row,
@@ -10,26 +9,16 @@ import { DateTime } from 'luxon';
 import NumberFormat from 'react-number-format';
 import { TransactionProps } from '../../TransactionStatus';
 
-function RequestedCanceled({
+function SentFailed({
   user,
   transaction,
 }: TransactionProps) {
   const navigate = useNavigate();
-
   const getUserFullName = () => (user && user.firstName && user.lastName ? `${user.firstName} ${user.lastName}` : '');
   const getUserEmail = () => (user && user.email ? user.email : '');
 
   return (
     <>
-      <Row>
-        <Col>
-          <ul>
-            <li>
-              Request Canceled
-            </li>
-          </ul>
-        </Col>
-      </Row>
       <Row>
         <Col xs={4}>From</Col>
         <Col xs={6}>
@@ -76,26 +65,22 @@ function RequestedCanceled({
         </Col>
         <Col xs={6}>{transaction?.id}</Col>
       </Row>
-      <Row>
-        <Col xs={4}>This Request Will Expire On</Col>
-        <Col xs={6}>Jan 2,2022</Col>
-      </Row>
       <Stack gap={3} direction="horizontal">
         <Button
           className="zippy-btn zippy-flat d-flex"
-          onClick={() => navigate('/interac-etransfer/status/requested')}
+          onClick={() => navigate('/interac-etransfer/status/sent')}
         >
           Back
         </Button>
         <Button
           className="zippy-btn d-flex ms-auto"
-          onClick={() => navigate('/interac-etransfer/request-money')}
+          onClick={() => navigate('/interac-etransfer/send-money/details')}
         >
-          Send Another Request
+          Send Another Transfer
         </Button>
       </Stack>
     </>
   );
 }
 
-export default RequestedCanceled;
+export default SentFailed;

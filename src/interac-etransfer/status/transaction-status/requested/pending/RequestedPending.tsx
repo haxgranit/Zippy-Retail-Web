@@ -60,7 +60,7 @@ function RequestedPending({
         setProcessing(false);
         setShowCancelRequestForMoney(false);
         setCurrentStatus('cancelled');
-        navigate(`/interac-etransfer/status/requested/canceled/${id}`);
+        navigate(`/interac-etransfer/status/requested/cancelled/${id}`);
       });
   };
 

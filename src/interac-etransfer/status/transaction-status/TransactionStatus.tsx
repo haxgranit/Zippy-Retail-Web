@@ -82,11 +82,14 @@ export default function TransactionStatus() {
       case TransactionStatusEnum.PENDING:
         crumbsTemp = [...crumbsTemp, { label: `${typeLabel} Pending` }];
         break;
-      case TransactionStatusEnum.CANCELED:
-        crumbsTemp = [...crumbsTemp, { label: `${typeLabel} Canceled` }];
+      case TransactionStatusEnum.CANCELLED:
+        crumbsTemp = [...crumbsTemp, { label: `${typeLabel} Cancelled` }];
         break;
       case TransactionStatusEnum.COMPLETED:
         crumbsTemp = [...crumbsTemp, { label: `${typeLabel} Completed` }];
+        break;
+      case TransactionStatusEnum.FAILED:
+        crumbsTemp = [...crumbsTemp, { label: `${typeLabel} Failed` }];
         break;
       case TransactionStatusEnum.REMINDER:
         crumbsTemp = [...crumbsTemp, { label: `${typeLabel} Reminder` }];
