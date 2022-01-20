@@ -62,7 +62,7 @@ const SentTabContent = ({
                 <Button
                   className="zippy-btn zippy-flat transaction-status w-full"
                   variant={item.status}
-                  onClick={() => navigate(`/interac-etransfer/status/sent/completed/${item.id}`)}
+                  onClick={() => navigate(`/interac-etransfer/status/sent/${item.status}/${item.id}`)}
                 >
                   {t(`sent.${item.status}`)}
                 </Button>
@@ -127,16 +127,20 @@ const ReceivedTabContent = ({
               <td>
                 <NumberFormat
                   value={item.amount}
+                  defaultValue={0}
                   displayType="text"
-                  prefix="$"
+                  prefix="$ "
+                  suffix=" CAD"
                   thousandSeparator
+                  decimalScale={2}
+                  fixedDecimalScale
                 />
               </td>
               <td>
                 <Button
                   className="zippy-btn zippy-flat transaction-status w-full"
                   variant={item.status}
-                  onClick={() => navigate(`/interac-etransfer/status/received/completed/${item.id}`)}
+                  onClick={() => navigate(`/interac-etransfer/status/received/${item.status}/${item.id}`)}
                 >
                   {t(`received.${item.status}`)}
                 </Button>
@@ -189,16 +193,20 @@ const RequestedTabContent = ({
               <td>
                 <NumberFormat
                   value={item.amount}
+                  defaultValue={0}
                   displayType="text"
-                  prefix="$"
+                  prefix="$ "
+                  suffix=" CAD"
                   thousandSeparator
+                  decimalScale={2}
+                  fixedDecimalScale
                 />
               </td>
               <td>
                 <Button
                   className="zippy-btn zippy-flat transaction-status w-full"
                   variant={item.status}
-                  onClick={() => navigate(`/interac-etransfer/status/requested/pending/${item.id}`)}
+                  onClick={() => navigate(`/interac-etransfer/status/requested/${item.status}/${item.id}`)}
                 >
                   {t(`requested.${item.status}`)}
                 </Button>

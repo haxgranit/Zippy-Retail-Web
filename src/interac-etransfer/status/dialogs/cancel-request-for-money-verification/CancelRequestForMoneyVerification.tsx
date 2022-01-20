@@ -82,7 +82,7 @@ const CancelRequestForMoneyVerification = ({
             disabled={processing}
           >
             {processing && <div className="loading spinner-border" role="status" />}
-            {!processing ? 'Cancel Request' : 'Canceling...'}
+            {!processing ? 'Cancel Request' : 'Cancelling...'}
           </Button>
         </Stack>
       </div>

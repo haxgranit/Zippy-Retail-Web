@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import React from 'react';
 import { BrowserRouter } from 'react-router-dom';
-import RequestedCanceled from './RequestedCanceled';
+import RequestedCancelled from './RequestedCancelled';
 
 const ReactTestRenderer = require('react-test-renderer');
 
@@ -11,11 +11,11 @@ jest.mock('react-router-dom', () => ({
   useNavigate: () => mockedUsedNavigate,
 }));
 
-describe('RequestedCanceled Component', () => {
+describe('RequestedCancelled Component', () => {
   it('matches the snapshot', () => {
     const tree = ReactTestRenderer.create(
       <BrowserRouter>
-        <RequestedCanceled
+        <RequestedCancelled
           transaction={undefined}
           user={undefined}
           setCurrentStatus={undefined}
@@ -25,10 +25,10 @@ describe('RequestedCanceled Component', () => {
     expect(tree).toMatchSnapshot();
   });
 
-  it('should render RequestedCanceled', () => {
+  it('should render RequestedCancelled', () => {
     render(
       <BrowserRouter>
-        <RequestedCanceled
+        <RequestedCancelled
           transaction={undefined}
           user={undefined}
           setCurrentStatus={undefined}
