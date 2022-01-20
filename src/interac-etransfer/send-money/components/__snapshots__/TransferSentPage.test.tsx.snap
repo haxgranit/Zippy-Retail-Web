@@ -248,7 +248,7 @@ exports[`Transfer Sent Page Component should render TransferSentPage 1`] = `
   <p
     class="mt-4"
   >
-    Submitted: December 6, 2021, 1:07 PM UTC.
+    Submitted: Mon, Dec 6, 2021, 1:07 PM.
   </p>
   <hr
     style="height: 1px; width: 100%;"
@@ -552,7 +552,7 @@ exports[`Transfer Sent Page Component should render with the valid values 1`] = 
   <p
     class="mt-4"
   >
-    Submitted: December 6, 2021, 1:07 PM UTC.
+    Submitted: Mon, Dec 6, 2021, 1:07 PM.
   </p>
   <hr
     style="height: 1px; width: 100%;"

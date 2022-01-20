@@ -112,7 +112,6 @@ export default function TransactionStatus() {
     setUserState(user);
   }, []);
 
-  console.log({ x: `./${type}/${status}/${type?.replace(/^./, (str) => str.toUpperCase())}${status?.replace(/^./, (str) => str.toUpperCase())}` });
   const TransactionComponent = lazy(() => import(`./${type}/${status}/${type?.replace(/^./, (str) => str.toUpperCase())}${status?.replace(/^./, (str) => str.toUpperCase())}`));
 
   return (
