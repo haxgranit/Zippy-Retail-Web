@@ -9,7 +9,7 @@ import CommonPageContainer from '../../common/CommonPageContainer';
 
 export default function ChangeYourContactInformation() {
   return (
-    <>
+    <div className="page-content">
       <CommonPageContainer title="Change Your Contact Information">
         <Row>
           <Col md={8}>
@@ -198,6 +198,6 @@ export default function ChangeYourContactInformation() {
           </Col>
         </Row>
       </CommonPageContainer>
-    </>
+    </div>
   );
 }

@@ -35,19 +35,17 @@ export default function VerticalNavLinks() {
         )}
         <Nav.Link className="nav-link" as={NavLink} to="/interac-etransfer">
           <i className="zippy-cash-icon zc-interac-etransfer" />
-          Interac e-Transfer
+          My Wallet
           <i className="dropdown zippy-cash-icon zc-up" />
         </Nav.Link>
         {pathname.startsWith('/interac-etransfer') && (
           <Nav className="flex-column" style={{ marginLeft: '20px' }}>
+            <Nav.Link as={NavLink} to="/interac-etransfer/send-money">Zippy Money</Nav.Link>
             <Nav.Link as={NavLink} to="/interac-etransfer/status">Status</Nav.Link>
-            <Nav.Link as={NavLink} to="/interac-etransfer/send-money">Send Money</Nav.Link>
-            <Nav.Link as={NavLink} to="/interac-etransfer/request-money">Request Money</Nav.Link>
-            <Nav.Link as={NavLink} to="/interac-etransfer/contact-list">Contact List</Nav.Link>
-            <Nav.Link as={NavLink} to="/interac-etransfer/edit-my-profile">Edit My Profile</Nav.Link>
-            <Nav.Link as={NavLink} to="/interac-etransfer/autodeposit-settings">Autodeposit Settings</Nav.Link>
-            <Nav.Link as={NavLink} to="/interac-etransfer/receive-money">Receive Money</Nav.Link>
-            <Nav.Link as={NavLink} to="/interac-etransfer/learn-more">Learn More</Nav.Link>
+            <Nav.Link as={NavLink} to="/interac-etransfer/load">Load</Nav.Link>
+            <Nav.Link as={NavLink} to="/interac-etransfer/get">Get</Nav.Link>
+            <Nav.Link as={NavLink} to="/interac-etransfer/funding-source">Funding Source</Nav.Link>
+            <Nav.Link as={NavLink} to="/interac-etransfer/aut-deposit">Auto Deposit</Nav.Link>
           </Nav>
         )}
         <Nav.Link className="nav-link" as={NavLink} to="/bill-payments">

@@ -1,8 +1,8 @@
-import CommonPageContainer from '../common/CommonPageContainer';
+import CommonPageContainer from '../../common/CommonPageContainer';
 
-export default function EFT() {
+export default function ZippyToZippy() {
   return (
-    <>
+    <div className="page-content">
       <CommonPageContainer title="PLACEHOLDER: Zippy to Zippy Screenshot">
         <div style={{
           border: 'dashed',
@@ -12,9 +12,9 @@ export default function EFT() {
           width: '100%',
         }}
         >
-          PLACEHOLDER: EFT Screenshot
+          PLACEHOLDER: Zippy to Zippy Screenshot
         </div>
       </CommonPageContainer>
-    </>
+    </div>
   );
 }

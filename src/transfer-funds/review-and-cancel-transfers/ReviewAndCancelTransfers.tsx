@@ -25,7 +25,7 @@ export default function ReviewAndCancelTransfers() {
     },
   ];
   return (
-    <>
+    <div className="page-content">
       <CommonPageContainer title="Review & Cancel Transfers">
         <Row>
           <Col md={9}>
@@ -94,6 +94,6 @@ export default function ReviewAndCancelTransfers() {
       }
         />
       </CommonPageContainer>
-    </>
+    </div>
   );
 }

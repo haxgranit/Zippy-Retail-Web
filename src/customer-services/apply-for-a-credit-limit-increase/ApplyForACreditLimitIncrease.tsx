@@ -156,7 +156,7 @@ const EndSection = () => (
 
 function ApplyForACreditLimitIncrease() {
   return (
-    <div>
+    <div className="page-content">
       <Row>
         <Col xs={12}>
           <Title />

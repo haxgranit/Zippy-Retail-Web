@@ -1,6 +1,6 @@
 export default function DigitalVaultDocuments() {
   return (
-    <>
+    <div className="page-content">
       <h4>DIGITAL VAULT</h4>
       <h5 className="pb-2 pt-3 mt-2" style={{ borderBottom: '1px solid grey' }}>
         All files
@@ -29,6 +29,6 @@ export default function DigitalVaultDocuments() {
           {'}'}
         </p>
       </div>
-    </>
+    </div>
   );
 }

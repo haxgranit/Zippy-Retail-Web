@@ -4,7 +4,7 @@ import CommonPageContainer from '../../common/CommonPageContainer';
 
 export default function DownloadTransactions() {
   return (
-    <div>
+    <div className="page-content">
       <CommonPageContainer title="Download Transactions">
         <ul>
           <li>

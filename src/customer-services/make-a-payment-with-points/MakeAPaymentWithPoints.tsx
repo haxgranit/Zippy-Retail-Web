@@ -29,7 +29,7 @@ export default function MakeAPaymentWithPoints() {
     borderBottom: '2px solid grey',
   };
   return (
-    <>
+    <div className="page-content">
       <div style={{ padding: 10, backgroundColor: '#F2F3F2' }}>
         <p style={{ textAlign: 'center', marginBottom: 0 }}>
           Payment with Points
@@ -183,6 +183,6 @@ export default function MakeAPaymentWithPoints() {
           </Col>
         </Row>
       </div>
-    </>
+    </div>
   );
 }

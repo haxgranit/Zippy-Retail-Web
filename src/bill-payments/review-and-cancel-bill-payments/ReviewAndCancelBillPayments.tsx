@@ -9,7 +9,7 @@ import CommonPageContainer from '../../common/CommonPageContainer';
 
 export default function ReviewAndCancelBillPayments() {
   return (
-    <>
+    <div className="page-content">
       <CommonPageContainer title="Setup Bill Payments">
         <Row>
           <Col>
@@ -148,6 +148,6 @@ export default function ReviewAndCancelBillPayments() {
           </Col>
         </Row>
       </CommonPageContainer>
-    </>
+    </div>
   );
 }

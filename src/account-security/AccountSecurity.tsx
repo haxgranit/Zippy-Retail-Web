@@ -141,7 +141,7 @@ const Card: React.FC<{
 Card.defaultProps = CardDefaultProps;
 
 const AccountSecurity = () => (
-  <>
+  <div className="page-content">
     <CommonPageContainer title="Account Security">
       <Row>
         <Col>
@@ -238,7 +238,7 @@ const AccountSecurity = () => (
         </Col>
       </Row>
     </CommonPageContainer>
-  </>
+  </div>
 );
 
 export default AccountSecurity;

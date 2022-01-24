@@ -7,14 +7,140 @@
 
     .left-side-nav {
         display: flex;
-        width: 240px;
+        width: 0;
+        position: relative;
+        z-index: 1;
     }
 
     .content {
         display: flex;
         flex-direction: column;
-        padding: 20px;
         width: 100%;
+
+        .page-content {
+            margin-left: 240px;
+            padding: 20px;
+        }
+
+        .zippy-cash-container-wrap {
+            padding-left: 240px;
+            width: 100%;
+            height: calc(100vh - 95px);
+            display: flex;
+            flex-direction: row;
+            background-color: $color-red;
+            justify-content: center;
+            position: absolute;
+
+            .backdrop {
+                background-image: url("../../assets/img/background/ZippyCash_Landing_Slider-02.jpg");
+                position: absolute;
+                top: 0;
+                left: 0;
+                height: 100%;
+                width: 100%;
+                background-repeat: no-repeat;
+                background-position: center right;
+                background-size: cover;
+            }
+
+            .zippy-cash-container {
+                position: relative;
+                width: 414px;
+                background-color: $color-white;
+                border-radius: 31px 31px 0 0;
+                display: flex;
+                flex-direction: column;
+                align-self: center;
+                padding-top: 40px;
+
+                .zippy-cash-container-header {
+                    display: flex;
+                    flex-direction: column;
+
+                    .title {
+                        align-self: center;
+                        font-style: normal;
+                        font-weight: normal;
+                        font-size: 16px;
+                        line-height: 24px;
+                        display: flex;
+                        align-items: center;
+                        text-align: center;
+                        text-transform: capitalize;
+                    }
+
+                    .catch {
+                        align-self: center;
+                        font-style: normal;
+                        font-weight: 600;
+                        font-size: 24px;
+                        line-height: 36px;
+                        display: flex;
+                        align-items: center;
+                        text-align: center;
+                        text-transform: capitalize;
+                        background: linear-gradient(83.49deg, $color-orange 31.24%, $color-red 99.49%);
+                        -webkit-background-clip: text;
+                        -webkit-text-fill-color: transparent;
+                    }
+                }
+
+                .zippy-cash-container-body {
+                    padding: 35px;
+
+                    .amount {
+                        padding: 0;
+                        border: none;
+                        font-style: normal;
+                        font-weight: 300;
+                        font-size: 66px;
+                        display: flex;
+                        align-items: center;
+                        text-align: center;
+                        line-height: unset;
+
+                        &::-webkit-outer-spin-button,
+                        &::-webkit-inner-spin-button {
+                            -webkit-appearance: none;
+                            margin: 0;
+                        }
+
+                        &[type=number] {
+                            -moz-appearance: textfield;
+                        }
+
+                        &:focus {
+                            box-shadow: none;
+                        }
+                    }
+
+                    .select-method {
+                        padding: 20px 0;
+                        display: flex;
+                        font-style: normal;
+                        font-weight: normal;
+                        font-size: 13px;
+                        flex-direction: row;
+                        gap: 20px;
+                        justify-content: center;
+                    }
+
+                    .action {
+                        display: flex;
+                        flex-direction: column;
+
+                        .zippy-btn {
+                            font-style: normal;
+                            font-weight: 600;
+                            font-size: 16px;
+                            letter-spacing: 0.05em;
+                            text-transform: uppercase;
+                        }
+                    }
+                }
+            }
+        }
     }
 
     .right-side-panel {
