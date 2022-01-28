@@ -16,11 +16,11 @@ export type Account = {
 };
 
 export type Contact = {
-  id: number;
+  id?: number;
   firstName: string;
   lastName: string;
   email: string;
-  phone: string;
+  phone?: string;
 };
 
 export type User = {
@@ -92,6 +92,10 @@ export default class Api {
 
   public listContacts() {
     return this.fetch<Contact[]>('get', 'Contacts');
+  }
+
+  public saveContact(data: Contact) {
+    return this.fetch<InteracEtransferTransaction>('post', 'Contacts', data);
   }
 
   public putUser() {

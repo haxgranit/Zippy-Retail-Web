@@ -450,12 +450,14 @@ const ContactList = () => {
               }}
             >
               <Row className="d-flex justify-content-end">
-                <Button
-                  className="zippy-btn d-flex"
-                  style={{ width: 'auto' }}
-                >
-                  Add New Contact
-                </Button>
+                <Link to="add/">
+                  <Button
+                    className="zippy-btn d-flex"
+                    style={{ width: 'auto' }}
+                  >
+                    Add New Contact
+                  </Button>
+                </Link>
               </Row>
             </div>
             <div className="mt-2">

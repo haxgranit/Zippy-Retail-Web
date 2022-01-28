@@ -1,11 +1,14 @@
 import { useState } from 'react';
+import { useMsal } from '@azure/msal-react';
 import {
   Col, Row, Form, Button,
 } from 'react-bootstrap';
-import { useLocation, useParams } from 'react-router-dom';
+import { useLocation, useParams, useNavigate } from 'react-router-dom';
 import StepComponent from '../../../common/StepComponent';
 import IdentityVerificationModal from './IdentityVerificationModal';
 import CommonPageContainer from '../../../common/CommonPageContainer';
+
+import Api from '../../../api';
 
 const Divider = () => <div className="border-top my-3" />;
 const HorizontalLine = () => (
@@ -71,7 +74,27 @@ const EditContact: React.FC = () => {
   const [firstName, setFirstName] = useState(selectedContact?.firstName);
   const [lastName, setLastName] = useState(selectedContact?.lastName);
   const [email, setEmail] = useState(selectedContact?.email);
+  const [phone, setPhone] = useState(selectedContact?.phone);
   const [show, setShow] = useState(false);
+
+  const { instance, accounts } = useMsal();
+  const navigate = useNavigate();
+
+  function saveContact() {
+    new Api(instance, accounts[0])
+      .saveContact({
+        firstName,
+        lastName,
+        email,
+        phone,
+      })
+      .then((result) => {
+        if (result) {
+          navigate('../contact-list');
+        }
+      })
+      .catch((error) => console.log('error', error));
+  }
 
   return (
     <>
@@ -115,7 +138,7 @@ const EditContact: React.FC = () => {
           </Col>
         </Row>
         <HorizontalLine />
-        <Row>
+        {/* <Row>
           <Col>
             <span>Details</span>
           </Col>
@@ -126,6 +149,20 @@ const EditContact: React.FC = () => {
               </div>
               <a href="/">Mobile phone</a>
             </div>
+          </Col>
+        </Row> */}
+        <Row>
+          <Col xs="4">
+            <span>
+              Phone:
+            </span>
+          </Col>
+          <Col xs="4">
+            <Form.Control
+              type="text"
+              value={phone}
+              onChange={(event) => setPhone(event.target.value)}
+            />
           </Col>
         </Row>
         <HorizontalLine />
@@ -189,7 +226,13 @@ const EditContact: React.FC = () => {
           <Col style={{ display: 'flex', justifyContent: 'flex-end' }}>
             <Button
               className="btn zippy-btn"
-              onClick={() => setShow(true)}
+              onClick={() => {
+                if (id) {
+                  setShow(true);
+                } else {
+                  saveContact();
+                }
+              }}
               style={{ marginLeft: 15 }}
             >
               Next
