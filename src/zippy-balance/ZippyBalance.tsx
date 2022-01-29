@@ -1,9 +1,9 @@
 import { useMsal } from '@azure/msal-react';
 import { useEffect, useState } from 'react';
-import Api from '../../api';
-import CommonPageContainer from '../../common/CommonPageContainer';
+import Api from '../api';
+import CommonPageContainer from '../common/CommonPageContainer';
 
-export const ViewBalancePure = ({ balance }: { balance: number | undefined }) => (
+export const ZippyBalancePure = ({ balance }: { balance: number | undefined }) => (
   <div>
     <CommonPageContainer title="Zippy Balance">
       { balance !== undefined ? `$${balance.toFixed(2)}` : 'Loading...' }
@@ -11,7 +11,7 @@ export const ViewBalancePure = ({ balance }: { balance: number | undefined }) =>
   </div>
 );
 
-export default function ViewBalance() {
+export default function ZippyBalance() {
   const { instance, accounts: msalAccounts } = useMsal();
   const [balance, setBalance] = useState<number | undefined>();
 
@@ -23,5 +23,5 @@ export default function ViewBalance() {
       });
   }, [msalAccounts]);
 
-  return <ViewBalancePure balance={balance} />;
+  return <ZippyBalancePure balance={balance} />;
 }

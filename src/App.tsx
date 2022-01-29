@@ -36,7 +36,7 @@ import MyAccounts from './my-accounts/my-accounts/MyAccounts';
 import DownloadTransactions from './my-accounts/download-transactions/DownloadTransactions';
 import StatementPreferences from './my-accounts/view-estatements/statement-preferences/StatementPreferences';
 import UpcomingBillPaymentsAndTransfers from './my-accounts/upcoming-bill-payments-and-transfer/UpcomingBillPaymentsAndTransfers';
-import ViewBalance from './my-accounts/view-balance/ViewBalance';
+import ZippyBalance from './zippy-balance/ZippyBalance';
 import ViewAccountDetails from './my-accounts/view-account-details/ViewAccountDetails';
 import ViewEStatements from './my-accounts/view-estatements/ViewEStatements';
 import Personal from './Personal';
@@ -105,6 +105,7 @@ export default function App() {
       <Header />
       <Routes>
         <Route path="/" element={<Home />}>
+          <Route path="/" element={<ZippyBalance />} />
           <Route path="account-security" element={<AccountSecurity />} />
           <Route path="contact-us" element={<ContactUs />} />
           <Route path="customer-services">
@@ -171,7 +172,6 @@ export default function App() {
           <Route path="manage-my-alerts" element={<ManageMyAlerts />} />
           <Route path="my-accounts">
             <Route path="/my-accounts" element={<MyAccounts />} />
-            <Route path="view-balance" element={<ViewBalance />} />
             <Route path="view-account-details" element={<ViewAccountDetails />} />
             <Route path="download-transactions" element={<DownloadTransactions />} />
             <Route path="view-estatements">

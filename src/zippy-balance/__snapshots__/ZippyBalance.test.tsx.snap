@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`ViewBalance Component matches the snapshot when loaded 1`] = `
+exports[`ZippyBalance Component matches the snapshot when loaded 1`] = `
 <div>
   <div
     className="d-flex justify-content-between align-items-center"
@@ -246,7 +246,7 @@ exports[`ViewBalance Component matches the snapshot when loaded 1`] = `
 </div>
 `;
 
-exports[`ViewBalance Component matches the snapshot when loading 1`] = `
+exports[`ZippyBalance Component matches the snapshot when loading 1`] = `
 <div>
   <div
     className="d-flex justify-content-between align-items-center"
