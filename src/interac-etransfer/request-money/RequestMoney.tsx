@@ -91,7 +91,6 @@ export default function RequestMoney() {
       amount: mainInfo.amount,
       source: {
         name: sourceAccount?.name ?? '',
-        email: sourceAccount?.email ?? '',
       },
       destination: {
         firstName: destinationContact?.firstName,

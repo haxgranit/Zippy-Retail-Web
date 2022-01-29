@@ -4,7 +4,7 @@ import {
 import currencyFormatter from '../helpers/CurrencyFormatter';
 
 export interface TransferDetails {
-  source: { name: string; email: string };
+  source: { name: string };
   destination: { firstName: string; lastName: string; email: string };
   fromAccount: string;
   amount: number;
@@ -43,7 +43,6 @@ export const ModalContent = ({
           </Col>
           <Col>
             <p>{transferDetails.source.name}</p>
-            <p>{transferDetails.source.email}</p>
           </Col>
         </Row>
         <hr style={{ marginTop: '0px' }} />
@@ -191,7 +190,6 @@ const SendMoneyVerificationModal = ({
             </Col>
             <Col>
               <p>{transferDetails.source.name}</p>
-              <p>{transferDetails.source.email}</p>
             </Col>
           </Row>
           <hr style={{ marginTop: '0px' }} />

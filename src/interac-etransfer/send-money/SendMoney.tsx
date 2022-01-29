@@ -191,7 +191,6 @@ export default function SendMoney() {
       amount: mainInfo.amount,
       source: {
         name: sourceAccount?.name ?? '',
-        email: sourceAccount?.email ?? '',
       },
       destination: {
         firstName: destinationContact?.firstName,

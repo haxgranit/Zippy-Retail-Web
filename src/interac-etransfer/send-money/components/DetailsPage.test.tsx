@@ -35,7 +35,6 @@ const component = (
         id: 0,
         name: 'test',
         balance: 0,
-        email: 'email@zippy.cash',
       },
     ]}
     handleSecurity={mockHandleSecurity}
@@ -119,7 +118,6 @@ describe('DetailsPage Component', () => {
             id: 0,
             name: 'test',
             balance: 0,
-            email: 'email@zippy.cash',
           },
         ]}
         selectedContact={1}
@@ -161,7 +159,6 @@ describe('DetailsPage Component', () => {
             id: 0,
             name: 'test',
             balance: 0,
-            email: 'email@zippy.cash',
           },
         ]}
         handleSecurity={jest.fn()}
@@ -197,7 +194,6 @@ describe('DetailsPage Component', () => {
             id: 0,
             name: 'test',
             balance: 0,
-            email: 'email@zippy.cash',
           },
         ]}
         handleSecurity={jest.fn()}
@@ -233,7 +229,6 @@ describe('DetailsPage Component', () => {
             id: 0,
             name: 'test',
             balance: 0,
-            email: 'email@zippy.cash',
           },
         ]}
         handleSecurity={jest.fn()}
@@ -269,7 +264,6 @@ describe('DetailsPage Component', () => {
             id: 0,
             name: 'test',
             balance: 0,
-            email: 'email@zippy.cash',
           },
         ]}
         handleSecurity={jest.fn()}
@@ -305,7 +299,6 @@ describe('DetailsPage Component', () => {
             id: 0,
             name: 'test',
             balance: 0,
-            email: 'email@zippy.cash',
           },
         ]}
         handleSecurity={jest.fn()}
