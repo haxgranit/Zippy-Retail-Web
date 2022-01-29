@@ -34,6 +34,7 @@ const component = (
       {
         id: 0,
         name: 'test',
+        balance: 0,
         email: 'email@zippy.cash',
       },
     ]}
@@ -117,6 +118,7 @@ describe('DetailsPage Component', () => {
           {
             id: 0,
             name: 'test',
+            balance: 0,
             email: 'email@zippy.cash',
           },
         ]}
@@ -158,6 +160,7 @@ describe('DetailsPage Component', () => {
           {
             id: 0,
             name: 'test',
+            balance: 0,
             email: 'email@zippy.cash',
           },
         ]}
@@ -193,6 +196,7 @@ describe('DetailsPage Component', () => {
           {
             id: 0,
             name: 'test',
+            balance: 0,
             email: 'email@zippy.cash',
           },
         ]}
@@ -228,6 +232,7 @@ describe('DetailsPage Component', () => {
           {
             id: 0,
             name: 'test',
+            balance: 0,
             email: 'email@zippy.cash',
           },
         ]}
@@ -263,6 +268,7 @@ describe('DetailsPage Component', () => {
           {
             id: 0,
             name: 'test',
+            balance: 0,
             email: 'email@zippy.cash',
           },
         ]}
@@ -298,6 +304,7 @@ describe('DetailsPage Component', () => {
           {
             id: 0,
             name: 'test',
+            balance: 0,
             email: 'email@zippy.cash',
           },
         ]}
