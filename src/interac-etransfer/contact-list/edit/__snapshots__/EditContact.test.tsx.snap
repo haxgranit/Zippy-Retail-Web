@@ -200,27 +200,20 @@ Array [
       className="row"
     >
       <div
-        className="col"
+        className="col-4"
       >
         <span>
-          Details
+          Phone:
         </span>
       </div>
       <div
-        className="col"
+        className="col-4"
       >
-        <div
-          className="d-flex"
-        >
-          <div>
-            P
-          </div>
-          <a
-            href="/"
-          >
-            Mobile phone
-          </a>
-        </div>
+        <input
+          className="form-control"
+          onChange={[Function]}
+          type="text"
+        />
       </div>
     </div>
     <hr
@@ -848,27 +841,20 @@ exports[`EditContact Component should render title 1`] = `
       class="row"
     >
       <div
-        class="col"
+        class="col-4"
       >
         <span>
-          Details
+          Phone:
         </span>
       </div>
       <div
-        class="col"
+        class="col-4"
       >
-        <div
-          class="d-flex"
-        >
-          <div>
-            P
-          </div>
-          <a
-            href="/"
-          >
-            Mobile phone
-          </a>
-        </div>
+        <input
+          class="form-control"
+          type="text"
+          value=""
+        />
       </div>
     </div>
     <hr
