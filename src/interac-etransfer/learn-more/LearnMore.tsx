@@ -9,7 +9,7 @@ import CommonPageContainer from '../../common/CommonPageContainer';
 
 export default function LearnMore() {
   return (
-    <div>
+    <div className="page-content">
       <CommonPageContainer title="Learn About Interac E-Transfer">
         <Row className="mt-3">
           <Col md={9}>

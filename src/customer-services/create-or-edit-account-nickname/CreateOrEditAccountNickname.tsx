@@ -2,7 +2,7 @@ import { Col, Row, Table } from 'react-bootstrap';
 
 export default function CreateOrEditAccountNickname() {
   return (
-    <>
+    <div className="page-content">
       <Row>
         <Col>
           <h2>ACCOUNT NICKNAME</h2>
@@ -56,6 +56,6 @@ export default function CreateOrEditAccountNickname() {
           the phone or in Banking Centres we&apos;ll be using the account name, not the nickname.
         </Col>
       </Row>
-    </>
+    </div>
   );
 }

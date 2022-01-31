@@ -245,7 +245,7 @@ const EndSection = () => (
 
 function ApplyForPaymentProtectorInsuranceForCreditCards() {
   return (
-    <div>
+    <div className="page-content">
       <Row>
         <Col xs={12}>
           <Title />

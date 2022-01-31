@@ -9,7 +9,7 @@ import CommonPageContainer from '../../common/CommonPageContainer';
 
 export default function CreateAClickToPayAccount() {
   return (
-    <>
+    <div className="page-content">
       <CommonPageContainer title="Signup For Click to Pay">
         <Row className="pt-2 pb-2">
           <Col md="12">
@@ -135,6 +135,6 @@ export default function CreateAClickToPayAccount() {
           </Col>
         </Row>
       </CommonPageContainer>
-    </>
+    </div>
   );
 }

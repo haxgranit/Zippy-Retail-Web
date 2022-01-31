@@ -220,7 +220,7 @@ const Card: React.FC<{
 Card.defaultProps = CardDefaultProps;
 
 const ContributeToTfsa = () => (
-  <>
+  <div className="page-content">
     <CommonPageContainer title="Tax-Free Savings Accounts (TFSA)">
       <Row
         style={{
@@ -494,7 +494,7 @@ const ContributeToTfsa = () => (
         </Col>
       </Row>
     </CommonPageContainer>
-  </>
+  </div>
 );
 
 export default ContributeToTfsa;

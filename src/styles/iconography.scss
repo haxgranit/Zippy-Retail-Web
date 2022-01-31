@@ -84,5 +84,15 @@ i {
             -webkit-mask-image: url("../assets/img/icons/x.svg");
             mask-image: url("../assets/img/icons/x.svg");
         }
+
+        &.zc-add:after {
+            -webkit-mask-image: url("../assets/img/icons/add.svg");
+            mask-image: url("../assets/img/icons/add.svg");
+        }
+
+        &.zc-verified:after {
+            -webkit-mask-image: url("../assets/img/icons/verified.svg");
+            mask-image: url("../assets/img/icons/verified.svg");
+        }
     }
 }

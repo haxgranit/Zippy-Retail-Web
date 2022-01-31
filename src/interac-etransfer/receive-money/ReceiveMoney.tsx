@@ -39,7 +39,7 @@ export default function ReceiveMoney() {
   ];
 
   return (
-    <div>
+    <div className="page-content">
       <CommonPageContainer title="Receive Money">
         <Row>
           <Col md={9}>

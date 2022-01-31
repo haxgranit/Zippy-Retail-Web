@@ -23,7 +23,7 @@ const NumberedCircle = ({ num, title, text }: { num: number, title: string, text
 
 export default function ViewEBills() {
   return (
-    <>
+    <div className="page-content">
       <CommonPageContainer title="View Ebills">
         <Row>
           <Col>
@@ -185,6 +185,6 @@ export default function ViewEBills() {
 
         </Row>
       </CommonPageContainer>
-    </>
+    </div>
   );
 }

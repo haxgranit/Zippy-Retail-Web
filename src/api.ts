@@ -36,6 +36,7 @@ export type Transaction = {
   contact: Contact;
   amount: number;
   date: string;
+  expireDate: string;
   securityQuestion?: string;
   securityAnswer?: string;
 };

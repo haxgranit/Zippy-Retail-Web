@@ -115,7 +115,7 @@ export default function TransactionStatus() {
   const TransactionComponent = lazy(() => import(`./${type}/${status}/${type?.replace(/^./, (str) => str.toUpperCase())}${status?.replace(/^./, (str) => str.toUpperCase())}`));
 
   return (
-    <>
+    <div className="page-content">
       <CommonPageContainer title="Status">
         <Row>
           <Col xs={9} className="transaction-details">
@@ -154,6 +154,6 @@ export default function TransactionStatus() {
           </Col>
         </Row>
       </CommonPageContainer>
-    </>
+    </div>
   );
 }

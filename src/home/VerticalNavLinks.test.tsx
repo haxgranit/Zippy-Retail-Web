@@ -30,7 +30,7 @@ describe('VerticalNavLinks Component', () => {
     );
 
     const links = container.querySelectorAll('.nav-link');
-    expect(links).toHaveLength(8);
+    expect(links).toHaveLength(9);
     fireEvent.click(links[0]);
     fireEvent.click(links[1]);
     fireEvent.click(links[2]);

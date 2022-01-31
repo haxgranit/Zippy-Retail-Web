@@ -1,7 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`AddCardHolder Component matches the snapshot 1`] = `
-Array [
+<div
+  className="page-content"
+>
   <div
     style={
       Object {
@@ -20,7 +22,7 @@ Array [
     >
       Add a Cardholder
     </p>
-  </div>,
+  </div>
   <div
     style={
       Object {
@@ -62,7 +64,7 @@ Array [
         }
       </p>
     </div>
-  </div>,
+  </div>
   <div
     style={
       Object {
@@ -102,7 +104,7 @@ Array [
         </li>
       </ul>
     </p>
-  </div>,
+  </div>
   <div
     className="mt-4 row"
   >
@@ -128,7 +130,7 @@ Array [
         Before you begin
       </span>
     </div>
-  </div>,
+  </div>
   <div
     className="mt-3"
   >
@@ -311,7 +313,7 @@ Array [
         />
       </div>
     </div>
-  </div>,
+  </div>
   <div
     className="mt-4"
   >
@@ -455,7 +457,7 @@ Array [
         </div>
       </div>
     </div>
-  </div>,
+  </div>
   <div
     className="mt-4 pb-4 row"
     style={
@@ -506,7 +508,7 @@ Array [
         </label>
       </div>
     </div>
-  </div>,
+  </div>
   <div
     className="mt-4"
   >
@@ -549,6 +551,6 @@ Array [
         </button>
       </div>
     </div>
-  </div>,
-]
+  </div>
+</div>
 `;

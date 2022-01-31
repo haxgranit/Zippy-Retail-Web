@@ -1,8 +1,8 @@
-import CommonPageContainer from '../common/CommonPageContainer';
+import CommonPageContainer from '../../common/CommonPageContainer';
 
-export default function VisaDirect() {
+export default function EFT() {
   return (
-    <>
+    <div className="page-content">
       <CommonPageContainer title="PLACEHOLDER: Zippy to Zippy Screenshot">
         <div style={{
           border: 'dashed',
@@ -12,9 +12,9 @@ export default function VisaDirect() {
           width: '100%',
         }}
         >
-          PLACEHOLDER: Visa Direct Screenshot
+          PLACEHOLDER: EFT Screenshot
         </div>
       </CommonPageContainer>
-    </>
+    </div>
   );
 }

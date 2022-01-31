@@ -14,7 +14,7 @@ import CommonPageContainer from '../../common/CommonPageContainer';
 
 export default function ViewEStatements() {
   return (
-    <>
+    <div className="page-content">
       <CommonPageContainer title="EStatements">
         <Row>
           <Col md={9}>
@@ -212,6 +212,6 @@ export default function ViewEStatements() {
           </Col>
         </Row>
       </CommonPageContainer>
-    </>
+    </div>
   );
 }

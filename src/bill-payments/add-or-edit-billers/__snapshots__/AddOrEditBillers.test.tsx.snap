@@ -1,14 +1,16 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`AddOrEditBillers Component matches the snapshot 1`] = `
-Array [
+<div
+  className="page-content"
+>
   <div
     className="d-flex justify-content-between align-items-center"
   >
     <h3>
       Add or Edit Payees
     </h3>
-  </div>,
+  </div>
   <div
     className="content-wrapper"
   >
@@ -251,7 +253,7 @@ Array [
         </tr>
       </tbody>
     </table>
-  </div>,
+  </div>
   <div
     className="footer-content-wrapper"
   >
@@ -480,6 +482,6 @@ Array [
         </div>
       </div>
     </footer>
-  </div>,
-]
+  </div>
+</div>
 `;

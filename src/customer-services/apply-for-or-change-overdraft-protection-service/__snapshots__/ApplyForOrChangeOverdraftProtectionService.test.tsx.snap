@@ -1,7 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`ApplyForOrChangeOverdraftProtectionService Component matches the snapshot 1`] = `
-Array [
+<div
+  className="page-content"
+>
   <div
     style={
       Object {
@@ -22,7 +24,7 @@ Array [
       <br />
       Overdraft protection service
     </p>
-  </div>,
+  </div>
   <div
     style={
       Object {
@@ -62,7 +64,7 @@ Array [
         </li>
       </ul>
     </p>
-  </div>,
+  </div>
   <div
     className="mt-4 pb-4 row"
   >
@@ -89,7 +91,7 @@ Array [
         Before you begin
       </span>
     </div>
-  </div>,
+  </div>
   <div
     className="mt-3 row"
   >
@@ -145,7 +147,7 @@ Array [
         </div>
       </div>
     </div>
-  </div>,
+  </div>
   <div
     className="mt-4"
   >
@@ -194,6 +196,6 @@ Array [
         </button>
       </div>
     </div>
-  </div>,
-]
+  </div>
+</div>
 `;
