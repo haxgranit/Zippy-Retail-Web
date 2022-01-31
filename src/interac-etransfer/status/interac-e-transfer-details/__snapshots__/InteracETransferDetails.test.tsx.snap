@@ -112,11 +112,6 @@ exports[`InteracETransferDetails Component matches the snapshot 1`] = `
                 label="2022"
               >
                 <option
-                  value="February 2022"
-                >
-                  February 2022
-                </option>
-                <option
                   value="January 2022"
                 >
                   January 2022
@@ -174,6 +169,11 @@ exports[`InteracETransferDetails Component matches the snapshot 1`] = `
                   value="March 2021"
                 >
                   March 2021
+                </option>
+                <option
+                  value="February 2021"
+                >
+                  February 2021
                 </option>
               </optgroup>
             </select>
@@ -249,11 +249,6 @@ exports[`InteracETransferDetails Component matches the snapshot 1`] = `
                 label="2022"
               >
                 <option
-                  value="February 2022"
-                >
-                  February 2022
-                </option>
-                <option
                   value="January 2022"
                 >
                   January 2022
@@ -311,6 +306,11 @@ exports[`InteracETransferDetails Component matches the snapshot 1`] = `
                   value="March 2021"
                 >
                   March 2021
+                </option>
+                <option
+                  value="February 2021"
+                >
+                  February 2021
                 </option>
               </optgroup>
             </select>
@@ -366,11 +366,6 @@ exports[`InteracETransferDetails Component matches the snapshot 1`] = `
                 label="2022"
               >
                 <option
-                  value="February 2022"
-                >
-                  February 2022
-                </option>
-                <option
                   value="January 2022"
                 >
                   January 2022
@@ -428,6 +423,11 @@ exports[`InteracETransferDetails Component matches the snapshot 1`] = `
                   value="March 2021"
                 >
                   March 2021
+                </option>
+                <option
+                  value="February 2021"
+                >
+                  February 2021
                 </option>
               </optgroup>
             </select>

@@ -68,6 +68,7 @@ exports[`TransactionStart Component matches the snapshot 1`] = `
         <input
           className="amount form-control"
           onChange={[Function]}
+          placeholder="0.00"
           step=".01"
           type="number"
           value={1000}

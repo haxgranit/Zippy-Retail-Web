@@ -45,7 +45,7 @@ export default function ZippyTransaction() {
     email: '',
   } as User);
   const initialMainInfo = {
-    amount: 0,
+    amount: '',
     destination: { email: '', name: '' },
     source: { email: '', name: '' },
     fromAccount: '',
@@ -98,7 +98,7 @@ export default function ZippyTransaction() {
   const handleTriggerTransaction = () => {
     setIsProcessing(true);
     const data: InteracEtransferTransaction = {
-      contactId: contactList ? contactList[3].id : 0,
+      contactId: selectedContact,
       amount: mainInfo.amount,
       type: TransactionTypeEnum.REQUEST,
       securityQuestion: mainInfo.securityQuestion,

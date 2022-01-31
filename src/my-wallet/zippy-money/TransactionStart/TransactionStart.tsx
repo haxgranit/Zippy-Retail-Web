@@ -66,6 +66,7 @@ export default function TransactionStart({
         </div>
         <FormControl
           className="amount"
+          placeholder="0.00"
           value={mainInfo.amount}
           type="number"
           step=".01"

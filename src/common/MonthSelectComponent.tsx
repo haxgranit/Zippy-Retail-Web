@@ -5,7 +5,7 @@ const getDateAry = () => {
   const result: any = [];
   let prevYearValue = '';
   for (let i = 0; i < 12; i += 1) {
-    const calculatedDate = DateTime.now().minus({ months: i });
+    const calculatedDate = DateTime.utc().minus({ months: i });
     const dateStr = calculatedDate.toFormat('MMMM yyyy');
     const yearValue = calculatedDate.toFormat('yyyy');
     if (prevYearValue !== yearValue) {
