@@ -45,9 +45,9 @@ export interface TransferMainDetails {
   amount: number;
   message: string;
   transferMethod: string;
-  securityQuestion: string | undefined;
-  securityAnswer: string | undefined;
-  confirmSecurityAnswer: string | undefined;
+  securityQuestion: string;
+  securityAnswer: string;
+  confirmSecurityAnswer: string;
   showAnswer: boolean;
 }
 
@@ -96,9 +96,9 @@ export default function SendMoney() {
     fromAccount: '',
     message: '',
     transferMethod: 'Email',
-    securityAnswer: undefined,
-    confirmSecurityAnswer: undefined,
-    securityQuestion: undefined,
+    securityAnswer: '',
+    confirmSecurityAnswer: '',
+    securityQuestion: '',
     showAnswer: false,
   });
   const [transferInfo, setTransferInformation] = useState<TransferInformation>(
@@ -335,7 +335,7 @@ export default function SendMoney() {
   }, [stepId]);
 
   return (
-    <div>
+    <div className="page-content">
       <SendMoneyVerificationModal
         show={showVerifyModal}
         handleClose={handleSendMoneyVerificationClose}

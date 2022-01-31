@@ -36,9 +36,9 @@ export const Default = Template.bind({});
 Default.args = {
   mainInfo: {
     ...MAIN_INFO,
-    securityAnswer: undefined,
-    securityQuestion: undefined,
-    confirmSecurityAnswer: undefined,
+    securityAnswer: '',
+    securityQuestion: '',
+    confirmSecurityAnswer: '',
     showAnswer: false,
   },
 };

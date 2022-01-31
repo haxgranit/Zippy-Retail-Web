@@ -307,7 +307,7 @@ const ContactList = () => {
   };
 
   return (
-    <div>
+    <div className="page-content">
       <CommonPageContainer title="Contact List">
         <Row>
           <Col md={9}>

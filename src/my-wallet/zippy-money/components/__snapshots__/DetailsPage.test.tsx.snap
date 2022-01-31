@@ -5,6 +5,7 @@ exports[`DetailsPage Component getEmail with contacts should render an email 1`]
   accounts={
     Array [
       Object {
+        "balance": 0,
         "email": "email@zippy.cash",
         "id": 0,
         "name": "test",
@@ -57,6 +58,7 @@ exports[`DetailsPage Component getEmail without contacts should render no email 
   accounts={
     Array [
       Object {
+        "balance": 0,
         "email": "email@zippy.cash",
         "id": 0,
         "name": "test",

@@ -9,14 +9,14 @@ import {
 } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { Account, Contact, User } from '../../../api';
-import { TransferMainDetails } from '../SendMoney';
 import { formatContactName } from '../../../Helpers';
+import { TransactionMainDetailsInterface } from '../TransactionMainDetailsInterface';
 
 interface DetailsPageProps {
   selectedContact : number;
   setContactToSend: Dispatch<SetStateAction<number>>;
-  mainInfo: TransferMainDetails;
-  setMainInfo: Dispatch<SetStateAction<TransferMainDetails>>;
+  mainInfo: TransactionMainDetailsInterface;
+  setMainInfo: Dispatch<SetStateAction<TransactionMainDetailsInterface>>;
   accounts: Account[] | null;
   contacts: Contact[] | null;
   selectedAccount: number;

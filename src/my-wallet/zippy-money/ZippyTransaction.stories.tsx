@@ -3,16 +3,16 @@ import { rest } from 'msw';
 import { BrowserRouter } from 'react-router-dom';
 import ACCOUNTS from '../../stories/Accounts';
 import CONTACTS from '../../stories/Contacts';
-import SendMoney from './SendMoney';
+import ZippyTransaction from './ZippyTransaction';
 
 export default {
-  title: 'interac-etransfer/send-money/SendMoney',
-  component: SendMoney,
-} as ComponentMeta<typeof SendMoney>;
+  title: 'interac-etransfer/send-money/ZippyTransaction',
+  component: ZippyTransaction,
+} as ComponentMeta<typeof ZippyTransaction>;
 
-const Template: ComponentStory<typeof SendMoney> = () => (
+const Template: ComponentStory<typeof ZippyTransaction> = () => (
   <BrowserRouter>
-    <SendMoney />
+    <ZippyTransaction />
   </BrowserRouter>
 );
 

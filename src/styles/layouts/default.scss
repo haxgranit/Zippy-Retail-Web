@@ -31,6 +31,7 @@
             background-color: $color-red;
             justify-content: center;
             position: absolute;
+            overflow: hidden;
 
             .backdrop {
                 background-image: url("../../assets/img/background/ZippyCash_Landing_Slider-02.jpg");
@@ -44,15 +45,30 @@
                 background-size: cover;
             }
 
+            @keyframes slidein {
+                from {
+                    top: 100%;
+                }
+                to {
+                    top: 0;
+                }
+            }
+
             .zippy-cash-container {
                 position: relative;
                 width: 414px;
                 background-color: $color-white;
-                border-radius: 31px 31px 0 0;
+                border-radius: 31px;
                 display: flex;
                 flex-direction: column;
                 align-self: center;
                 padding-top: 40px;
+                padding-bottom: 20px;
+                animation-duration: 0.2s;
+                animation-name: slidein;
+                transition-timing-function: cubic-bezier(0.42, 0, 0.58, 1);
+                box-shadow: 0 0 5px 2px $color-white;
+
 
                 .zippy-cash-container-header {
                     display: flex;
@@ -87,9 +103,83 @@
                 }
 
                 .zippy-cash-container-body {
+                    display: flex;
+                    flex-wrap: wrap;
+                    flex-direction: column;
                     padding: 35px;
+                    gap: 30px;
+
+                    .account-identifier {
+                        display: flex;
+                        position: relative;
+
+                        input {
+                            background: $color-background;
+                            border-radius: 8px;
+                            border: none;
+                            font-style: normal;
+                            font-weight: normal;
+                            font-size: 12px;
+                            color: $color-dark-gray;
+                            order: 0;
+                            flex-grow: 0;
+                            margin: 0;
+                            padding: 14px 40px 14px 18px;
+
+                            &::placeholder{
+                                color: $color-gray-30;
+                            }
+
+                            &:focus {
+                                box-shadow: none;
+                            }
+                        }
+
+                        .zippy-cash-icon {
+                            position: absolute;
+                            background-color: $color-light-gray;
+                            border-radius: 50%;
+                            top: 50%;
+                            -ms-transform: translateY(-50%);
+                            transform: translateY(-50%);
+                            right: 10px;
+
+                            &:after {
+                                background-color: $color-white;
+                            }
+                        }
+                    }
+
+                    .security-question {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 10px;
+
+                        input {
+                            background: $color-background;
+                            border-radius: 8px;
+                            border: none;
+                            font-style: normal;
+                            font-weight: normal;
+                            font-size: 12px;
+                            color: $color-dark-gray;
+                            order: 0;
+                            flex-grow: 0;
+                            margin: 0;
+                            padding: 14px 18px 14px 18px;
+
+                            &::placeholder{
+                                color: $color-gray-30;
+                            }
+
+                            &:focus {
+                                box-shadow: none;
+                            }
+                        }
+                    }
 
                     .amount {
+                        margin: 20px 0;
                         padding: 0;
                         border: none;
                         font-style: normal;
@@ -115,8 +205,15 @@
                         }
                     }
 
+                    .actions {
+                        &.form-check {
+                            label, input {
+                                cursor: pointer;
+                            }
+                        }
+                    }
+
                     .select-method {
-                        padding: 20px 0;
                         display: flex;
                         font-style: normal;
                         font-weight: normal;
@@ -126,9 +223,65 @@
                         justify-content: center;
                     }
 
+                    .title {
+                        display: flex;
+                        justify-content: center;
+                        align-content: center;
+                        padding-bottom: 30px;
+                        border-bottom: 1px $color-light-gray solid;
+                    }
+
+                    .status {
+                        display: flex;
+                        justify-content: center;
+                        align-content: center;
+                        place-content: center;
+                        flex-direction: column;
+                        min-height: 200px;
+                        text-align: center;
+
+                        .zippy-cash-icon {
+                            display: inline-block;
+                            margin-bottom: 20px;
+
+                            &:after {
+                                background: linear-gradient(83.49deg, $color-red 31.24%, $color-orange 99.49%);
+                                width: 48px;
+                                height: 48px;
+                            }
+                        }
+                    }
+
+                    .details {
+                        display: flex;
+                        flex-direction: column;
+                        font-style: normal;
+                        font-weight: normal;
+                        font-size: 13px;
+                        gap: 20px;
+                        color: $color-dark-gray;
+
+                        strong {
+                            font-style: normal;
+                            font-weight: normal;
+                            font-size: 12px;
+                            color: $color-black;
+                        }
+
+                        .amount {
+                            font-style: normal;
+                            font-weight: 500;
+                            font-size: 13px;
+                            color: $color-blue;
+                            padding: 0;
+                            margin: 0;
+                        }
+                    }
+
                     .action {
                         display: flex;
                         flex-direction: column;
+                        gap: 10px;
 
                         .zippy-btn {
                             font-style: normal;

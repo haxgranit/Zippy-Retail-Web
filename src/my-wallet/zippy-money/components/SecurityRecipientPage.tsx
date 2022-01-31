@@ -1,5 +1,5 @@
 import { Row, Col, Button } from 'react-bootstrap';
-import { PageIds } from '../SendMoney';
+import { PageIds } from '../ZippyTransaction';
 
 const SecurityRecipientPage = ({
   navigateSteps,

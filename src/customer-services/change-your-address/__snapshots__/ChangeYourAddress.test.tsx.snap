@@ -1,7 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`ChangeYourAddress Component matches the snapshot 1`] = `
-Array [
+<div
+  className="page-content"
+>
   <div
     style={
       Object {
@@ -20,7 +22,7 @@ Array [
     >
       Change Your Address
     </p>
-  </div>,
+  </div>
   <div
     style={
       Object {
@@ -53,7 +55,7 @@ Array [
       </div>
       All fields are required unless stated as optional.
     </p>
-  </div>,
+  </div>
   <div
     className="mt-4"
   >
@@ -87,7 +89,7 @@ Array [
         410-553-1372
       </div>
     </div>
-  </div>,
+  </div>
   <div
     className="mt-4"
   >
@@ -350,6 +352,6 @@ Array [
         </div>
       </div>
     </div>
-  </div>,
-]
+  </div>
+</div>
 `;

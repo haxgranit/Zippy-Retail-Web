@@ -8,13 +8,14 @@ import
   Button,
   Alert,
 } from 'react-bootstrap';
-import { PageIds, TransferMainDetails } from '../SendMoney';
+import { PageIds } from '../ZippyTransaction';
+import { TransactionMainDetailsInterface } from '../TransactionMainDetailsInterface';
 
 interface SecurityQuestionPageProps{
   setCurrentStep: Dispatch<SetStateAction<number>>;
   navigateSteps: Dispatch<string>;
-  mainInfo: TransferMainDetails;
-  setMainInfo: Dispatch<SetStateAction<TransferMainDetails>>;
+  mainInfo: TransactionMainDetailsInterface;
+  setMainInfo: Dispatch<SetStateAction<TransactionMainDetailsInterface>>;
   showModal: (show: boolean) => void;
   setErrorMessage: Dispatch<SetStateAction<string | null>>;
 }

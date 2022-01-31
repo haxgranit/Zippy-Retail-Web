@@ -3,7 +3,7 @@ import {
   Row, Col, Form, Button,
 } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
-import { PageIds } from '../SendMoney';
+import { PageIds } from '../ZippyTransaction';
 import currencyFormatter from '../../../interac-etransfer/helpers/CurrencyFormatter';
 
 export interface TransferInformation{
