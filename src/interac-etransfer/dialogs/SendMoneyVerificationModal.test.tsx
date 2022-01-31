@@ -28,7 +28,7 @@ describe('SendMoneyVerificationModal Component', () => {
     const { container } = render(
       <ModalContent
         transferDetails={{
-          source: { name: 'source'},
+          source: { name: 'source' },
           destination: { firstName: 'firstName', lastName: 'lastName', email: 'destination@zippy.cash' },
           fromAccount: 'Personal (8000 001 000000000) $1,747.46',
           amount: 10000,
