@@ -3,7 +3,7 @@ import {
 } from 'react-bootstrap';
 import NumberFormat from 'react-number-format';
 import { DateTime } from 'luxon';
-import ZippyPageContainer from '../../../common/ZippyPageContainer';
+import PageContainer from '../../../common/PageContainer';
 import { TransactionInterface } from '../TransactionInterface';
 import { TransactionTypeEnum } from '../TransactionTypeEnum';
 
@@ -23,7 +23,7 @@ export default function TransactionDetails({
 
   return (
     <>
-      <ZippyPageContainer title="Personal Banking" subTitle="Made Fun With Zippy!">
+      <PageContainer title="Personal Banking" subTitle="Made Fun With Zippy!">
         <div className="title">
           Transaction Completed
         </div>
@@ -82,7 +82,7 @@ export default function TransactionDetails({
             Send Another Transfer
           </Button>
         </div>
-      </ZippyPageContainer>
+      </PageContainer>
     </>
   );
 }

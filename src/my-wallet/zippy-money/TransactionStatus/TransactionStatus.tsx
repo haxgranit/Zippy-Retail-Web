@@ -2,7 +2,7 @@ import {
   Button,
 } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
-import ZippyPageContainer from '../../../common/ZippyPageContainer';
+import PageContainer from '../../../common/PageContainer';
 import { TransactionInterface } from '../TransactionInterface';
 
 export default function TransactionStatus({
@@ -14,7 +14,7 @@ export default function TransactionStatus({
 
   return (
     <>
-      <ZippyPageContainer title="Personal Banking" subTitle="Made Fun With Zippy!" className="transaction-status">
+      <PageContainer title="Personal Banking" subTitle="Made Fun With Zippy!" className="transaction-status">
         <div className="title">
           Transaction Status
         </div>
@@ -38,7 +38,7 @@ export default function TransactionStatus({
             View Transfer Details
           </Button>
         </div>
-      </ZippyPageContainer>
+      </PageContainer>
     </>
   );
 }

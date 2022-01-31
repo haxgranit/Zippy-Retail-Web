@@ -1,14 +1,14 @@
 import '../i18n/config';
-import ZippyPageContainer from './ZippyPageContainer';
+import PageContainer from './PageContainer';
 
 const ReactTestRenderer = require('react-test-renderer');
 
-describe('CommonPageContainer Component', () => {
+describe('PageContainer Component', () => {
   it('matches the snapshot', () => {
     const tree = ReactTestRenderer.create(
-      <ZippyPageContainer title="sample">
+      <PageContainer title="sample">
         <div>test</div>
-      </ZippyPageContainer>,
+      </PageContainer>,
     ).toJSON();
     expect(tree).toMatchSnapshot();
   });

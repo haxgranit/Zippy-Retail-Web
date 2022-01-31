@@ -45,7 +45,7 @@ import ScrollToTop from './ScrollToTop';
 import EFT from './transfer-funds/EFT/EFT';
 import ReviewAndCancelTransfers from './transfer-funds/review-and-cancel-transfers/ReviewAndCancelTransfers';
 import TransferFunds from './transfer-funds/transfer-funds/TransferFunds';
-import VisaDirect from './transfer-funds/VIsaDirect/VisaDirect';
+import VisaDirect from './transfer-funds/VisaDirect/VisaDirect';
 import ZippyToZippy from './transfer-funds/ZippyToZippy/ZippyToZippy';
 import ChangeYourPassword from './customer-services/change-your-password/ChangeYourPassword';
 import ChangeYourContactInformation from './customer-services/change-contact-information/ChangeYourContactInformation';

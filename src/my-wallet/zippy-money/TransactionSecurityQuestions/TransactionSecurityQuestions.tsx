@@ -3,7 +3,7 @@ import {
   FormControl,
 } from 'react-bootstrap';
 import { useState } from 'react';
-import ZippyPageContainer from '../../../common/ZippyPageContainer';
+import PageContainer from '../../../common/PageContainer';
 import { TransactionInterface } from '../TransactionInterface';
 
 export default function TransactionSecurityQuestions({
@@ -22,7 +22,7 @@ export default function TransactionSecurityQuestions({
 
   return (
     <>
-      <ZippyPageContainer title="Personal Banking" subTitle="Made Fun With Zippy!">
+      <PageContainer title="Personal Banking" subTitle="Made Fun With Zippy!">
         <div className="title">
           Security Question
         </div>
@@ -55,7 +55,7 @@ export default function TransactionSecurityQuestions({
             Zipp It
           </Button>
         </div>
-      </ZippyPageContainer>
+      </PageContainer>
     </>
   );
 }

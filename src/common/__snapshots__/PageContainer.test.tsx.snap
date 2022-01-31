@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`CommonPageContainer Component matches the snapshot 1`] = `
+exports[`PageContainer Component matches the snapshot 1`] = `
 <div
   className=""
 >

@@ -4,7 +4,7 @@ import {
   FormControl,
 } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
-import ZippyPageContainer from '../../../common/ZippyPageContainer';
+import PageContainer from '../../../common/PageContainer';
 import { TransactionInterface } from '../TransactionInterface';
 
 export default function TransactionComplete({
@@ -14,7 +14,7 @@ export default function TransactionComplete({
 
   return (
     <>
-      <ZippyPageContainer title="Personal Banking" subTitle="Made Fun With Zippy!">
+      <PageContainer title="Personal Banking" subTitle="Made Fun With Zippy!">
         <div className="zippy-btn-group btn-group" role="group" aria-label="Zippy Cash">
           <Button className="active">
             Send Money
@@ -60,7 +60,7 @@ export default function TransactionComplete({
             Zipp It
           </Button>
         </div>
-      </ZippyPageContainer>
+      </PageContainer>
     </>
   );
 }

@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 
-function ZippyPageContainer({
+function PageContainer({
   className,
   title,
   subTitle,
@@ -34,16 +34,16 @@ function ZippyPageContainer({
   );
 }
 
-ZippyPageContainer.propTypes = {
+PageContainer.propTypes = {
   className: PropTypes.string,
   title: PropTypes.string,
   subTitle: PropTypes.string,
 };
 
-ZippyPageContainer.defaultProps = {
+PageContainer.defaultProps = {
   className: '',
   title: '',
   subTitle: '',
 };
 
-export default ZippyPageContainer;
+export default PageContainer;

@@ -1,6 +1,6 @@
 import { Button, Form, FormControl } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
-import ZippyPageContainer from '../../../common/ZippyPageContainer';
+import PageContainer from '../../../common/PageContainer';
 import { TransactionInterface } from '../TransactionInterface';
 import { TransactionTypeEnum } from '../TransactionTypeEnum';
 import { TunnelTypeEnum } from '../TunnelTypeEnum';
@@ -27,7 +27,7 @@ export default function TransactionStart({
 
   return (
     <>
-      <ZippyPageContainer title="Personal Banking" subTitle="Made Fun With Zippy!">
+      <PageContainer title="Personal Banking" subTitle="Made Fun With Zippy!">
         <div className="zippy-btn-group btn-group" role="group" aria-label="Zippy Cash">
           <Button
             className={transactionType === TransactionTypeEnum.SEND ? 'active' : ''}
@@ -101,7 +101,7 @@ export default function TransactionStart({
             Zipp It
           </Button>
         </div>
-      </ZippyPageContainer>
+      </PageContainer>
     </>
   );
 }
