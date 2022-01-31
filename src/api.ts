@@ -94,7 +94,7 @@ export default class Api {
     return this.fetch<Contact[]>('get', 'Contacts');
   }
 
-  public saveContact(data: Contact) {
+  public postContact(data: Contact) {
     return this.fetch<InteracEtransferTransaction>('post', 'Contacts', data);
   }
 

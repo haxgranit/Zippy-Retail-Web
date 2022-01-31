@@ -82,7 +82,7 @@ const EditContact: React.FC = () => {
 
   function saveContact() {
     new Api(instance, accounts[0])
-      .saveContact({
+      .postContact({
         firstName,
         lastName,
         email,
