@@ -13,7 +13,6 @@ export type Account = {
   id: number;
   name: string;
   balance: number;
-  email: string; // Needs to be removed (https://zippy-cash.atlassian.net/browse/ZCP-1980)
 };
 
 export type Contact = {

@@ -8,7 +8,7 @@ import {
 import currencyFormatter from '../helpers/CurrencyFormatter';
 
 export interface TransferDetails {
-  source: { name: string; email: string };
+  source: { name: string };
   destination: { firstName: string; lastName: string; email: string };
   fromAccount: string;
   amount: number;
