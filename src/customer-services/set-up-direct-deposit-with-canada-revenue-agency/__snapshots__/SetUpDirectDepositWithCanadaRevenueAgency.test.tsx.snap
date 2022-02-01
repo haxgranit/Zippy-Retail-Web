@@ -1,7 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`SetUpDirectDepositWithCanadaRevenueAgency Component matches the snapshot 1`] = `
-Array [
+<div
+  className="page-content"
+>
   <div
     style={
       Object {
@@ -20,7 +22,7 @@ Array [
     >
       Register for direct deposit with the Canada Revenue Agency
     </p>
-  </div>,
+  </div>
   <div
     className="mt-3"
   >
@@ -68,7 +70,7 @@ Array [
         Canada Recovery Benefit(CRB)
       </li>
     </ul>
-  </div>,
+  </div>
   <div>
     <h5
       className="pb-2 pt-2 mb-2 mt-3"
@@ -180,7 +182,7 @@ Array [
         />
       </div>
     </div>
-  </div>,
+  </div>
   <div>
     <h5
       className="pb-2 pt-2 mb-2 mt-3"
@@ -269,7 +271,7 @@ Array [
         </div>
       </div>
     </div>
-  </div>,
+  </div>
   <div
     className="mt-4 row"
   >
@@ -295,7 +297,7 @@ Array [
         Privacy Statement
       </span>
     </div>
-  </div>,
+  </div>
   <div
     className="mt-4"
   >
@@ -338,6 +340,6 @@ Array [
         </button>
       </div>
     </div>
-  </div>,
-]
+  </div>
+</div>
 `;

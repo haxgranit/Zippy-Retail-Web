@@ -8,7 +8,7 @@ import {
 
 export default function AddCardHolder() {
   return (
-    <>
+    <div className="page-content">
       <div style={{ padding: 10, backgroundColor: '#F2F3F2' }}>
         <p style={{ textAlign: 'center', marginBottom: 0 }}>Add a Cardholder</p>
       </div>
@@ -212,6 +212,6 @@ export default function AddCardHolder() {
           </Col>
         </Row>
       </div>
-    </>
+    </div>
   );
 }

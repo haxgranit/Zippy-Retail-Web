@@ -59,6 +59,21 @@ exports[`HomeLoggedIn Component matches the snapshot 1`] = `
           className="nav-link nav-link"
           data-rr-ui-event-key={null}
           disabled={false}
+          href="/my-wallet"
+          onClick={[Function]}
+        >
+          <i
+            className="zippy-cash-icon zc-interac-etransfer"
+          />
+          My Wallet
+          <i
+            className="dropdown zippy-cash-icon zc-up"
+          />
+        </a>
+        <a
+          className="nav-link nav-link"
+          data-rr-ui-event-key={null}
+          disabled={false}
           href="/bill-payments"
           onClick={[Function]}
         >

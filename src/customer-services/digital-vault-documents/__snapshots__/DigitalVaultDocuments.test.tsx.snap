@@ -1,10 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`DigitalVaultDocuments Component matches the snapshot 1`] = `
-Array [
+<div
+  className="page-content"
+>
   <h4>
     DIGITAL VAULT
-  </h4>,
+  </h4>
   <h5
     className="pb-2 pt-3 mt-2"
     style={
@@ -14,7 +16,7 @@ Array [
     }
   >
     All files
-  </h5>,
+  </h5>
   <div
     className="d-flex flex-column align-items-center"
   >
@@ -50,6 +52,6 @@ Array [
       Result #5367
       }
     </p>
-  </div>,
-]
+  </div>
+</div>
 `;

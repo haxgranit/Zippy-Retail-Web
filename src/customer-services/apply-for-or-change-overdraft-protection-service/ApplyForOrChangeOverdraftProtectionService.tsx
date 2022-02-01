@@ -7,7 +7,7 @@ import {
 
 export default function ApplyForOrChangeOverdraftProtectionService() {
   return (
-    <>
+    <div className="page-content">
       <div style={{ padding: 10, backgroundColor: '#F2F3F2' }}>
         <p style={{ textAlign: 'center', marginBottom: 0 }}>
           Spte 1 of 2
@@ -91,6 +91,6 @@ export default function ApplyForOrChangeOverdraftProtectionService() {
           </Col>
         </Row>
       </div>
-    </>
+    </div>
   );
 }

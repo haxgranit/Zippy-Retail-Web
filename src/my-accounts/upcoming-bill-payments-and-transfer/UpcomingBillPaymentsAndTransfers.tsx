@@ -3,7 +3,7 @@ import CommonPageContainer from '../../common/CommonPageContainer';
 
 export default function UpcomingBillPaymentsAndTransfers() {
   return (
-    <div>
+    <div className="page-content">
       <CommonPageContainer title="Upcoming Bill Payments & Transfer">
         <p>
           You have no bill payments or transfers scheduled.

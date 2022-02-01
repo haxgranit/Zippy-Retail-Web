@@ -177,7 +177,7 @@ export default function RequestMoney() {
   };
 
   return (
-    <>
+    <div className="page-content">
       <RequestMoneyVerificationModal
         show={showVerifyModal}
         handleClose={handleRequestMoneyVerificationClose}
@@ -272,6 +272,6 @@ export default function RequestMoney() {
           </Col>
         </Row>
       </CommonPageContainer>
-    </>
+    </div>
   );
 }

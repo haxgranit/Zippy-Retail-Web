@@ -1,14 +1,16 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`EFT Component matches the snapshot 1`] = `
-Array [
+exports[`ZippyToZippy Component matches the snapshot 1`] = `
+<div
+  className="page-content"
+>
   <div
     className="d-flex justify-content-between align-items-center"
   >
     <h3>
       PLACEHOLDER: Zippy to Zippy Screenshot
     </h3>
-  </div>,
+  </div>
   <div
     className="content-wrapper"
   >
@@ -23,9 +25,9 @@ Array [
         }
       }
     >
-      PLACEHOLDER: EFT Screenshot
+      PLACEHOLDER: Zippy to Zippy Screenshot
     </div>
-  </div>,
+  </div>
   <div
     className="footer-content-wrapper"
   >
@@ -254,6 +256,6 @@ Array [
         </div>
       </div>
     </footer>
-  </div>,
-]
+  </div>
+</div>
 `;

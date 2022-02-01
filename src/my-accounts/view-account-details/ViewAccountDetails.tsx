@@ -9,7 +9,7 @@ import CommonPageContainer from '../../common/CommonPageContainer';
 
 export default function ViewAccountDetails() {
   return (
-    <div>
+    <div className="page-content">
       <CommonPageContainer title="Deposit Account Details">
         <p>
           Receive notifications when

@@ -36,7 +36,7 @@ export default function BillerDetails() {
   ];
   const result: string = '{Result #0069}';
   return (
-    <>
+    <div className="page-content">
       <CommonPageContainer title="Payee Details">
         <Row style={{ justifyContent: 'space-between', marginTop: '15px', marginBottom: '15px' }}>
           <h3>PAYEE DETAILS</h3>
@@ -89,6 +89,6 @@ export default function BillerDetails() {
           </Col>
         </Row>
       </CommonPageContainer>
-    </>
+    </div>
   );
 }

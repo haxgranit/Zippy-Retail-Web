@@ -1,7 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`MortgagePrepayment Page Component matches the snapshot 1`] = `
-Array [
+<div
+  className="page-content"
+>
   <div
     style={
       Object {
@@ -20,7 +22,7 @@ Array [
     >
       Payment with Points
     </p>
-  </div>,
+  </div>
   <div
     style={
       Object {
@@ -62,7 +64,7 @@ Array [
         }
       </p>
     </div>
-  </div>,
+  </div>
   <div
     className="mt-3 p-3"
     style={
@@ -94,7 +96,7 @@ Array [
         </li>
       </ul>
     </div>
-  </div>,
+  </div>
   <div
     className="mt-3 row"
   >
@@ -190,7 +192,7 @@ Array [
         </div>
       </div>
     </div>
-  </div>,
+  </div>
   <div
     className="mt-3"
   >
@@ -272,7 +274,7 @@ Array [
         </div>
       </div>
     </div>
-  </div>,
+  </div>
   <div
     className="mt-4"
   >
@@ -320,6 +322,6 @@ Array [
         </button>
       </div>
     </div>
-  </div>,
-]
+  </div>
+</div>
 `;

@@ -13,7 +13,7 @@ const Divider = () => <div className="border-top my-3" />;
 
 export default function StopPayments() {
   return (
-    <>
+    <div className="page-content">
       <CommonPageContainer title="Stop Payment">
         <Row>
           <Col md={9}>
@@ -397,6 +397,6 @@ export default function StopPayments() {
           </Col>
         </Row>
       </CommonPageContainer>
-    </>
+    </div>
   );
 }

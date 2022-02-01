@@ -54,7 +54,7 @@ export default function UnlinkAccountsFromYourDebitCard() {
     },
   ];
   return (
-    <div>
+    <div className="page-content">
       <Row
         style={{
           justifyContent: 'space-between',

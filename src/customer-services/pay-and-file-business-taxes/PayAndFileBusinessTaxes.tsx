@@ -2,7 +2,7 @@ import { Col, Row } from 'react-bootstrap';
 
 export default function PayAndFileBusinessTaxes() {
   return (
-    <div>
+    <div className="page-content">
       <Row
         style={{
           justifyContent: 'space-between',

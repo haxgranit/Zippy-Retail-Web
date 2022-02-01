@@ -25,7 +25,7 @@ export default function MakeALoanPayment() {
     cursor: 'pointer',
   };
   return (
-    <>
+    <div className="page-content">
       <div style={{ padding: 10, backgroundColor: '#F2F3F2' }}>
         <p style={{ textAlign: 'center', marginBottom: 0 }}>
           Make a Loan Payment
@@ -201,6 +201,6 @@ export default function MakeALoanPayment() {
           </Col>
         </Row>
       </div>
-    </>
+    </div>
   );
 }

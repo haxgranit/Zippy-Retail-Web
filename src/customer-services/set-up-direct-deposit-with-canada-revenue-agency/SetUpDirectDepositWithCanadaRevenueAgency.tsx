@@ -8,7 +8,7 @@ import {
 
 export default function SetUpDirectDepositWithCanadaRevenueAgency() {
   return (
-    <>
+    <div className="page-content">
       <div style={{ padding: 10, backgroundColor: '#F2F3F2' }}>
         <p style={{ textAlign: 'center', marginBottom: 0 }}>
           Register for direct deposit with the Canada Revenue Agency
@@ -167,6 +167,6 @@ export default function SetUpDirectDepositWithCanadaRevenueAgency() {
           </Col>
         </Row>
       </div>
-    </>
+    </div>
   );
 }

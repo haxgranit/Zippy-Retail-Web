@@ -1,7 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`CreateOrEditAccountNickname Component matches the snapshot 1`] = `
-Array [
+<div
+  className="page-content"
+>
   <div
     className="row"
   >
@@ -12,7 +14,7 @@ Array [
         ACCOUNT NICKNAME
       </h2>
     </div>
-  </div>,
+  </div>
   <div
     className="mt-4 row"
   >
@@ -28,7 +30,7 @@ Array [
         </li>
       </ul>
     </div>
-  </div>,
+  </div>
   <div
     className="mt-4 row"
   >
@@ -90,7 +92,7 @@ Array [
         </tbody>
       </table>
     </div>
-  </div>,
+  </div>
   <div
     className="border-top border-1 mt-4 pt-2 row"
   >
@@ -103,6 +105,6 @@ Array [
       <br />
       You can add nicknames to all your accounts in ZippyX Online Banking. You'll see the nickname instead of the account name in ZippyX Online Banking. However, on ZippyX ATMs, on the phone or in Banking Centres we'll be using the account name, not the nickname.
     </div>
-  </div>,
-]
+  </div>
+</div>
 `;

@@ -28,7 +28,7 @@ import EditMyProfile from './interac-etransfer/edit-my-profile/EditMyProfile';
 import LearnMore from './interac-etransfer/learn-more/LearnMore';
 import ReceiveMoney from './interac-etransfer/receive-money/ReceiveMoney';
 import RequestMoney from './interac-etransfer/request-money/RequestMoney';
-import SendMoney from './interac-etransfer/send-money/SendMoney';
+import ZippyTransaction from './my-wallet/zippy-money/ZippyTransaction';
 import Home from './home/Home';
 import Legal from './Legal';
 import ManageMyAlerts from './manage-my-alerts/ManageMyAlerts';
@@ -42,11 +42,11 @@ import ViewEStatements from './my-accounts/view-estatements/ViewEStatements';
 import Personal from './Personal';
 import PersonalProfile from './PersonalProfile';
 import ScrollToTop from './ScrollToTop';
-import EFT from './transfer-funds/EFT';
+import EFT from './transfer-funds/EFT/EFT';
 import ReviewAndCancelTransfers from './transfer-funds/review-and-cancel-transfers/ReviewAndCancelTransfers';
 import TransferFunds from './transfer-funds/transfer-funds/TransferFunds';
-import VisaDirect from './transfer-funds/VisaDirect';
-import ZippyToZippy from './transfer-funds/ZippyToZippy';
+import VisaDirect from './transfer-funds/VisaDirect/VisaDirect';
+import ZippyToZippy from './transfer-funds/ZippyToZippy/ZippyToZippy';
 import ChangeYourPassword from './customer-services/change-your-password/ChangeYourPassword';
 import ChangeYourContactInformation from './customer-services/change-contact-information/ChangeYourContactInformation';
 import AddCardHolder from './customer-services/add-a-cardholder/AddCardHolder';
@@ -75,6 +75,7 @@ import InteracETransferDetails from './interac-etransfer/status/interac-e-transf
 import Status from './interac-etransfer/status/Status';
 import { Version } from './Version';
 import TransactionStatus from './interac-etransfer/status/transaction-status/TransactionStatus';
+import SendMoney from './interac-etransfer/send-money/SendMoney';
 
 export default function App() {
   const dispatch = useAppDispatch();
@@ -168,6 +169,13 @@ export default function App() {
             <Route path="autodeposit-settings" element={<AutodepositSettings />} />
             <Route path="receive-money" element={<ReceiveMoney />} />
             <Route path="learn-more" element={<LearnMore />} />
+          </Route>
+          <Route path="my-wallet">
+            <Route path="zippy-money" element={<ZippyTransaction />}>
+              <Route path=":transactionType/:step" element={<ZippyTransaction />}>
+                <Route path=":transactionId" element={<ZippyTransaction />} />
+              </Route>
+            </Route>
           </Route>
           <Route path="manage-my-alerts" element={<ManageMyAlerts />} />
           <Route path="my-accounts">

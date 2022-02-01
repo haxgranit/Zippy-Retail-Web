@@ -38,7 +38,7 @@ export default function StatementPreferences() {
     },
   ];
   return (
-    <div>
+    <div className="page-content">
       <CommonPageContainer title="Statement Preferences">
         <Row style={{ justifyContent: 'space-between', marginTop: '15px' }}>
           <div style={{ marginTop: '20px' }}>

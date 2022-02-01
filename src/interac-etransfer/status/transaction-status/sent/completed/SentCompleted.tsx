@@ -9,7 +9,7 @@ import { DateTime } from 'luxon';
 import NumberFormat from 'react-number-format';
 import { TransactionProps } from '../../TransactionStatus';
 
-function SentCompleted({
+export default function SentCompleted({
   user,
   transaction,
 }: TransactionProps) {
@@ -82,5 +82,3 @@ function SentCompleted({
     </>
   );
 }
-
-export default SentCompleted;
