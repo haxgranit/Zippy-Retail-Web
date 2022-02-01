@@ -20,11 +20,6 @@ import TransactionSecurityQuestions from './TransactionSecurityQuestions/Transac
 import TransactionComplete from './TransactionComplete/TransactionComplete';
 import { TunnelTypeEnum } from './TunnelTypeEnum';
 
-export const enum PageIds {
-  DetailsPageId = 'details',
-  SecurityRecipientPageId = 'security-recipient',
-}
-
 export default function ZippyTransaction() {
   const isAuthenticated = useIsAuthenticated();
   const navigate = useNavigate();

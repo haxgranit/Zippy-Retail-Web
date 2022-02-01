@@ -4,11 +4,9 @@ import PageContainer from '../../../common/PageContainer';
 import { TransactionInterface } from '../TransactionInterface';
 import { TransactionTypeEnum } from '../TransactionTypeEnum';
 import { TunnelTypeEnum } from '../TunnelTypeEnum';
-import { Contact } from '../../../api';
-import { formatContactName } from '../../../Helpers';
 
 export default function TransactionStart({
-  contactList,
+  // contactList,
   // accountsList,
   transactionType,
   handleTriggerTransaction,
@@ -18,8 +16,8 @@ export default function TransactionStart({
   setMainInfo,
   // selectedAccount,
   // setSelectedAccount,
-  selectedContact,
-  setSelectedContact,
+  // selectedContact,
+  // setSelectedContact,
   tunnelType,
   setTunnelType,
 }: TransactionInterface) {
@@ -45,29 +43,15 @@ export default function TransactionStart({
           </Button>
         </div>
         <div className="account-identifier">
-          <Form.Select
-            className="send-account-select"
-            onChange={(event) => setSelectedContact(Number(event.target.value))}
-            value={selectedContact}
-          >
-            <option>Select</option>
-            {contactList?.map((item: Contact) => (
-              <option key={item.id} value={item.id}>
-                {formatContactName(item.firstName, item.lastName)}
-              </option>
-            ))}
-          </Form.Select>
-          {/*
           <FormControl
-              placeholder="Enter @ZippyUsername or Email"
-            />
-            <i className="zippy-cash-icon zc-add" />
-          */}
+            placeholder="Enter @ZippyUsername or Email"
+          />
+          <i className="zippy-cash-icon zc-add" />
         </div>
         <FormControl
           className="amount"
           placeholder="0.00"
-          value={mainInfo.amount}
+          value={mainInfo.amount || ''}
           type="number"
           step=".01"
           onChange={(evt) => setMainInfo({ ...mainInfo, amount: Number(evt.target.value) })}
