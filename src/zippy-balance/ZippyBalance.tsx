@@ -4,7 +4,7 @@ import Api from '../api';
 import CommonPageContainer from '../common/CommonPageContainer';
 
 export const ZippyBalancePure = ({ balance }: { balance: number | undefined }) => (
-  <div>
+  <div className="page-content">
     <CommonPageContainer title="Zippy Balance">
       { balance !== undefined ? `$${balance.toFixed(2)}` : 'Loading...' }
     </CommonPageContainer>
