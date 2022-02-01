@@ -14,6 +14,7 @@ import CommonPageContainer from '../../../common/CommonPageContainer';
 import Breadcrumbs, { Crumb } from '../../../common/Breadcrumbs';
 import QuickLinks from '../components/QuickLinks';
 
+const currentDate = DateTime.now();
 const SentTabContent = ({
   navigate,
   instance,
@@ -28,7 +29,7 @@ const SentTabContent = ({
   }, []);
   return (
     <>
-      <MonthSelectComponent prefix="sent" />
+      <MonthSelectComponent prefix="sent" date={currentDate} />
       <Table className="mt-2">
         <thead>
           <tr className="bg-light border-top-1">
@@ -106,7 +107,7 @@ const ReceivedTabContent = ({
 
   return (
     <>
-      <MonthSelectComponent prefix="received" />
+      <MonthSelectComponent prefix="received" date={currentDate} />
       <Table className="mt-2">
         <thead>
           <tr className="bg-light border-top-1">
@@ -172,7 +173,7 @@ const RequestedTabContent = ({
   }, []);
   return (
     <>
-      <MonthSelectComponent prefix="requested" />
+      <MonthSelectComponent prefix="requested" date={currentDate} />
       <Table className="mt-2">
         <thead>
           <tr className="bg-light border-top-1">

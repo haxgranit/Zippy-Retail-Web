@@ -1,11 +1,10 @@
 import { Form } from 'react-bootstrap';
-import { DateTime } from 'luxon';
 
-const getDateAry = () => {
+const getDateAry = (e:any) => {
   const result: any = [];
   let prevYearValue = '';
   for (let i = 0; i < 12; i += 1) {
-    const calculatedDate = DateTime.utc().minus({ months: i });
+    const calculatedDate = e.minus({ months: i });
     const dateStr = calculatedDate.toFormat('MMMM yyyy');
     const yearValue = calculatedDate.toFormat('yyyy');
     if (prevYearValue !== yearValue) {
@@ -24,8 +23,8 @@ const getDateAry = () => {
 };
 
 export default function MonthSelectComponent(props: any) {
-  const { onChange, prefix = 'option' } = props;
-  const dateAry = getDateAry();
+  const { onChange, prefix = 'option', currentDate } = props;
+  const dateAry = getDateAry(currentDate);
   return (
     <Form.Select style={{ maxWidth: 300 }} onChange={onChange} className="month-select-comp">
       {dateAry.map((item: any) => (
