@@ -94,5 +94,10 @@ i {
             -webkit-mask-image: url("../assets/img/icons/verified.svg");
             mask-image: url("../assets/img/icons/verified.svg");
         }
+
+        &.zc-personal:after {
+            -webkit-mask-image: url("../assets/img/icons/personal.svg");
+            mask-image: url("../assets/img/icons/personal.svg");
+        }
     }
 }

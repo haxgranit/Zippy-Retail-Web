@@ -8,7 +8,7 @@ export default {
   component: ContactSelector,
 } as ComponentMeta<typeof ContactSelector>;
 
-const Template: ComponentStory<typeof ContactSelector> = () => <ContactSelector title="Test Title">child</ContactSelector>;
+const Template: ComponentStory<typeof ContactSelector> = () => <ContactSelector />;
 
 export const Default = Template.bind({});
 Default.args = {};
