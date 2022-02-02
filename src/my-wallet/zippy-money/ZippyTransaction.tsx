@@ -1,7 +1,7 @@
 import { useNavigate, useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { useIsAuthenticated, useMsal } from '@azure/msal-react';
-import { SendMoneyStepsEnum } from './SendMoneyStepsEnum';
+import { SendMoneyStepsEnum } from '../../constants/enum/SendMoneyStepsEnum';
 import Api, {
   Account,
   Contact,
@@ -9,8 +9,8 @@ import Api, {
   Transaction,
   User,
 } from '../../api';
-import { TransactionMainDetailsInterface } from './TransactionMainDetailsInterface';
-import { TransactionTypeEnum } from './TransactionTypeEnum';
+import { TransactionMainDetailsInterface } from '../../constants/interface/TransactionMainDetailsInterface';
+import { TransactionTypeEnum } from '../../constants/enum/TransactionTypeEnum';
 import { useAppSelector } from '../../app/hooks';
 import { selectUser, UserState } from '../../features/user/userSlice';
 import TransactionStart from './TransactionStart/TransactionStart';
@@ -18,12 +18,7 @@ import TransactionDetails from './TransactionDetails/TransactionDetails';
 import TransactionStatus from './TransactionStatus/TransactionStatus';
 import TransactionSecurityQuestions from './TransactionSecurityQuestions/TransactionSecurityQuestions';
 import TransactionComplete from './TransactionComplete/TransactionComplete';
-import { TunnelTypeEnum } from './TunnelTypeEnum';
-
-export const enum PageIds {
-  DetailsPageId = 'details',
-  SecurityRecipientPageId = 'security-recipient',
-}
+import { TunnelTypeEnum } from '../../constants/enum/TunnelTypeEnum';
 
 export default function ZippyTransaction() {
   const isAuthenticated = useIsAuthenticated();
@@ -33,8 +28,14 @@ export default function ZippyTransaction() {
   const [tunnelType, setTunnelType] = useState(TunnelTypeEnum.ZIPPY_CASH);
   const [isProcessing, setIsProcessing] = useState(false);
   const [errorMessage, setErrorMessage] = useState<string>('');
-  const [selectedContact, setSelectedContact] = useState(0);
-  const [selectedAccount, setSelectedAccount] = useState(0);
+  const [selectedContact, setSelectedContact] = useState<Contact>({
+    id: null,
+    email: '',
+    firstName: '',
+    lastName: '',
+    phone: '',
+  } as unknown as Contact);
+  const [selectedAccount, setSelectedAccount] = useState<Account>({} as Account);
   const [accountsList, setAccountsList] = useState<Array<Account>>([]);
   const [contactList, setContactList] = useState<Array<Contact>>([]);
   const [transaction, setTransaction] = useState<Transaction | undefined>(undefined);
@@ -67,8 +68,8 @@ export default function ZippyTransaction() {
   };
 
   const resetMainInfo = () => {
-    setSelectedContact(0);
-    setSelectedAccount(0);
+    setSelectedContact({} as Contact);
+    setSelectedAccount({} as Account);
     setTunnelType(TunnelTypeEnum.ZIPPY_CASH);
     setMainInfo(JSON.parse(JSON.stringify(initialMainInfo)));
     navigate(`/my-wallet/zippy-money/${transactionType}/transaction-start`, {
@@ -98,7 +99,7 @@ export default function ZippyTransaction() {
   const handleTriggerTransaction = () => {
     setIsProcessing(true);
     const data: InteracEtransferTransaction = {
-      contactId: selectedContact,
+      contactId: selectedContact.id,
       amount: mainInfo.amount,
       type: TransactionTypeEnum.REQUEST,
       securityQuestion: mainInfo.securityQuestion,

@@ -4,7 +4,7 @@ import {
 } from 'react-bootstrap';
 import { useState } from 'react';
 import PageContainer from '../../../common/PageContainer';
-import { TransactionInterface } from '../TransactionInterface';
+import { TransactionInterface } from '../../../constants/interface/TransactionInterface';
 
 export default function TransactionSecurityQuestions({
   mainInfo,

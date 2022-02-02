@@ -3,7 +3,7 @@ import {
 } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 import PageContainer from '../../../common/PageContainer';
-import { TransactionInterface } from '../TransactionInterface';
+import { TransactionInterface } from '../../../constants/interface/TransactionInterface';
 
 export default function TransactionStatus({
   transaction,

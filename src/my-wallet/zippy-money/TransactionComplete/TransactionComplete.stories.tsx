@@ -2,7 +2,7 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { BrowserRouter } from 'react-router-dom';
 import React from 'react';
 import TransactionComplete from './TransactionComplete';
-import { TransactionTypeEnum } from '../TransactionTypeEnum';
+import { TransactionTypeEnum } from '../../../constants/enum/TransactionTypeEnum';
 
 export default {
   title: 'my-wallet/zippy-money/TransactionComplete',

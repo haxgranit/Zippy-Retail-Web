@@ -2,8 +2,9 @@ import React from 'react';
 import { BrowserRouter } from 'react-router-dom';
 import TransactionStart from './TransactionStart';
 import MAIN_INFO from '../../../stories/MainInfo';
-import { SendMoneyStepsEnum } from '../SendMoneyStepsEnum';
-import { TransactionTypeEnum } from '../TransactionTypeEnum';
+import { SendMoneyStepsEnum } from '../../../constants/enum/SendMoneyStepsEnum';
+import { TransactionTypeEnum } from '../../../constants/enum/TransactionTypeEnum';
+import { Account, Contact } from '../../../api';
 
 const ReactTestRenderer = require('react-test-renderer');
 
@@ -28,8 +29,8 @@ describe('TransactionStart Component', () => {
           handleTriggerTransaction={undefined}
           isProcessing={false}
           mainInfo={MAIN_INFO}
-          selectedAccount={0}
-          selectedContact={0}
+          selectedAccount={{} as Account}
+          selectedContact={{} as Contact}
           setMainInfo={jest.fn()}
           setSelectedAccount={jest.fn()}
           setSelectedContact={jest.fn()}
