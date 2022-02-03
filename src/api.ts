@@ -15,12 +15,15 @@ export type Account = {
   email: string;
 };
 
-export type Contact = {
-  id?: number;
+export type ContactBase = {
   firstName: string;
   lastName: string;
   email: string;
   phone?: string;
+};
+
+export type Contact = ContactBase & {
+  id: number;
 };
 
 export type User = {
@@ -94,7 +97,7 @@ export default class Api {
     return this.fetch<Contact[]>('get', 'Contacts');
   }
 
-  public postContact(data: Contact) {
+  public postContact(data: ContactBase) {
     return this.fetch<InteracEtransferTransaction>('post', 'Contacts', data);
   }
 
