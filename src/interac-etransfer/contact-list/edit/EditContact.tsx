@@ -138,19 +138,6 @@ const EditContact: React.FC = () => {
           </Col>
         </Row>
         <HorizontalLine />
-        {/* <Row>
-          <Col>
-            <span>Details</span>
-          </Col>
-          <Col>
-            <div className="d-flex">
-              <div>
-                P
-              </div>
-              <a href="/">Mobile phone</a>
-            </div>
-          </Col>
-        </Row> */}
         <Row>
           <Col xs="4">
             <span>
