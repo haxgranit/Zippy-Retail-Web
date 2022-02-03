@@ -59,7 +59,7 @@ export default function VerticalNavLinks() {
           <Nav className="flex-column" style={{ marginLeft: '20px' }}>
             <Nav.Link as={NavLink} to="/my-wallet/zippy-money/send/transaction-start">Zippy Money</Nav.Link>
             <Nav.Link as={NavLink} to="#">Status</Nav.Link>
-            <Nav.Link as={NavLink} to="#">Load</Nav.Link>
+            <Nav.Link as={NavLink} to="/my-wallet/load/start">Load</Nav.Link>
             <Nav.Link as={NavLink} to="#">Get</Nav.Link>
             <Nav.Link as={NavLink} to="#">Funding Source</Nav.Link>
             <Nav.Link as={NavLink} to="#">Auto Deposit</Nav.Link>
