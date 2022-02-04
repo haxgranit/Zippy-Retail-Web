@@ -8,7 +8,7 @@ import CommonPageContainer from '../../common/CommonPageContainer';
 
 export default function ChangeYourPassword() {
   return (
-    <>
+    <div className="page-content">
       <CommonPageContainer title="Change Your Password">
         <div>
           <p>
@@ -58,6 +58,6 @@ export default function ChangeYourPassword() {
           </Row>
         </div>
       </CommonPageContainer>
-    </>
+    </div>
   );
 }

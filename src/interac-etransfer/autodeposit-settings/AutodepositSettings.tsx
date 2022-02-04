@@ -130,14 +130,14 @@ export const AutodepositSettingsPure = ({ user }: { user: User }) => {
       });
   }, [accounts]);
   return (
-    <>
+    <div className="page-content">
       <CommonPageContainer title="Setup AutoDeposit">
         <Row>
           <LeftCol user={user} accountList={accountList} />
           <RightCol />
         </Row>
       </CommonPageContainer>
-    </>
+    </div>
   );
 };
 

@@ -116,7 +116,7 @@ const RightCol = () => (
 );
 
 export const EditMyProfilePure = ({ user }: { user: User }) => (
-  <div>
+  <div className="page-content">
     <CommonPageContainer title="Edit My Profile">
       <h2>Edit My Profile</h2>
       <Row>

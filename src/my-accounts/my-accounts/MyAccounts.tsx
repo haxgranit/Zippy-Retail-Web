@@ -14,7 +14,7 @@ import CommonPageContainer from '../../common/CommonPageContainer';
 
 export default function MyAccounts() {
   return (
-    <>
+    <div className="page-content">
       <CommonPageContainer title="My Accounts">
         <div className="d-flex justify-content-between">
           <p>
@@ -590,6 +590,6 @@ export default function MyAccounts() {
           </div>
         </div>
       </CommonPageContainer>
-    </>
+    </div>
   );
 }

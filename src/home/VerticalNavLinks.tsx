@@ -49,6 +49,21 @@ export default function VerticalNavLinks() {
             <Nav.Link as={NavLink} to="/interac-etransfer/learn-more">Learn More</Nav.Link>
           </Nav>
         )}
+        <Nav.Link className="nav-link" as={NavLink} to="/my-wallet">
+          <i className="zippy-cash-icon zc-interac-etransfer" />
+          My Wallet
+          <i className="dropdown zippy-cash-icon zc-up" />
+        </Nav.Link>
+        {pathname.startsWith('/my-wallet') && (
+          <Nav className="flex-column" style={{ marginLeft: '20px' }}>
+            <Nav.Link as={NavLink} to="/my-wallet/zippy-money/send/transaction-start">Zippy Money</Nav.Link>
+            <Nav.Link as={NavLink} to="#">Status</Nav.Link>
+            <Nav.Link as={NavLink} to="#">Load</Nav.Link>
+            <Nav.Link as={NavLink} to="#">Get</Nav.Link>
+            <Nav.Link as={NavLink} to="#">Funding Source</Nav.Link>
+            <Nav.Link as={NavLink} to="#">Auto Deposit</Nav.Link>
+          </Nav>
+        )}
         <Nav.Link className="nav-link" as={NavLink} to="/bill-payments">
           <i className="zippy-cash-icon zc-bill-payments" />
           Bill Payments

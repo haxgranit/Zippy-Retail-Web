@@ -91,7 +91,6 @@ export default function RequestMoney() {
       amount: mainInfo.amount,
       source: {
         name: sourceAccount?.name ?? '',
-        email: sourceAccount?.email ?? '',
       },
       destination: {
         firstName: destinationContact?.firstName,
@@ -178,7 +177,7 @@ export default function RequestMoney() {
   };
 
   return (
-    <>
+    <div className="page-content">
       <RequestMoneyVerificationModal
         show={showVerifyModal}
         handleClose={handleRequestMoneyVerificationClose}
@@ -273,6 +272,6 @@ export default function RequestMoney() {
           </Col>
         </Row>
       </CommonPageContainer>
-    </>
+    </div>
   );
 }

@@ -50,6 +50,11 @@
         color: $color-red;
       }
     }
+
+    &.btn-neutral {
+      color: $color-dark-gray;
+      background: $color-background;
+    }
   }
 
   &.my-buttonred {
@@ -69,5 +74,47 @@
     display: inline-block;
     vertical-align: middle;
     border-width: 0.2em;
+  }
+}
+
+.btn-transparent {
+  background: transparent;
+  border: none;
+  padding: 0;
+  margin: 0;
+  vertical-align: middle;
+
+  &:visited,
+  &:hover,
+  &:focus {
+    background: transparent;
+    border: none;
+  }
+}
+
+.zippy-btn-group {
+  &.btn-group {
+    background-color: $color-background;
+    border-radius: 38px;
+
+    & > .btn {
+      @extend .zippy-btn;
+      padding: 5px 20px;
+      width: 100%;
+
+      &.active {
+        border-radius: 38px;
+        opacity: 1;
+      }
+
+      &:not(.active) {
+        background: transparent;
+        color: $color-dark-gray;
+      }
+
+      &:focus {
+        box-shadow: none;
+      }
+    }
   }
 }

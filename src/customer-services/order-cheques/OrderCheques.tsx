@@ -31,7 +31,7 @@ export default function OrderCheques() {
   ];
 
   return (
-    <div>
+    <div className="page-content">
       <Row
         style={{
           justifyContent: 'space-between',

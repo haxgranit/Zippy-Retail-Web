@@ -3,7 +3,7 @@ import CommonPageContainer from '../../common/CommonPageContainer';
 
 export default function EbillsEmailNotification() {
   return (
-    <>
+    <div className="page-content">
       <CommonPageContainer title="Ebills Email Notification">
         <b>Step: 1 - 2</b>
         <div className="pt-3 pb-3">
@@ -32,6 +32,6 @@ export default function EbillsEmailNotification() {
           </Col>
         </Row>
       </CommonPageContainer>
-    </>
+    </div>
   );
 }

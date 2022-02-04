@@ -25,7 +25,7 @@ export default function ContactUs(): JSX.Element {
   const FAQs: QuestionLink[] = [{ text: 'What hapend when I link an account to my card', url: 'url1', id: 1 }, { text: 'question1', url: 'url1', id: 2 }];
   const moreQuestions: QuestionLink[] = [{ text: 'question1', url: 'url1', id: 3 }, { text: 'question1', url: 'url1', id: 4 }];
   return (
-    <>
+    <div className="page-content">
       <CommonPageContainer title="Contact Us">
         <Row>
           <Col md={9}>
@@ -178,6 +178,6 @@ export default function ContactUs(): JSX.Element {
           </Col>
         </Row>
       </CommonPageContainer>
-    </>
+    </div>
   );
 }

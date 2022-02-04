@@ -9,7 +9,7 @@ import {
 
 export default function WithdrawFromATfsa() {
   return (
-    <>
+    <div className="page-content">
       <div style={{ padding: 10, backgroundColor: '#F2F3F2' }}>
         <p style={{ textAlign: 'center', marginBottom: 0 }}>
           Withdraw from a TFSA
@@ -153,6 +153,6 @@ export default function WithdrawFromATfsa() {
           </Button>
         </Col>
       </Row>
-    </>
+    </div>
   );
 }

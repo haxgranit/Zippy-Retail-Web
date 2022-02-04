@@ -66,7 +66,7 @@ LinkItem.defaultProps = {
 
 export default function CustomerServices() {
   return (
-    <>
+    <div className="page-content">
       <CommonPageContainer title="Customer Services">
         <div className="mt-4">
           <h4>ONLINE BANKING INFORMATION</h4>
@@ -219,6 +219,6 @@ export default function CustomerServices() {
           </p>
         </div>
       </CommonPageContainer>
-    </>
+    </div>
   );
 }

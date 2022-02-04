@@ -7,14 +7,20 @@
 
     .left-side-nav {
         display: flex;
-        width: 240px;
+        width: 0;
+        position: relative;
+        z-index: 1;
     }
 
     .content {
         display: flex;
         flex-direction: column;
-        padding: 20px;
         width: 100%;
+
+        .page-content {
+            margin-left: 240px;
+            padding: 20px;
+        }
     }
 
     .right-side-panel {

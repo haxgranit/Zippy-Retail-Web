@@ -59,7 +59,7 @@ export default function ManageMyAlerts() {
   const handleSave = () => { };
 
   return (
-    <>
+    <div className="page-content">
       <EditHomePhone
         show={showEditHomeModal}
         handleCancel={closeEditHomeModal}
@@ -525,6 +525,6 @@ export default function ManageMyAlerts() {
           </Col>
         </Row>
       </CommonPageContainer>
-    </>
+    </div>
   );
 }

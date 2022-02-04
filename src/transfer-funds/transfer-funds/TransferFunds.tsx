@@ -140,13 +140,13 @@ const RightCol = () => (
 
 export default function TransferFunds() {
   return (
-    <>
+    <div className="page-content">
       <CommonPageContainer title="Transfers">
         <Row>
           <LeftCol />
           <RightCol />
         </Row>
       </CommonPageContainer>
-    </>
+    </div>
   );
 }

@@ -1,0 +1,148 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TransactionStart Component matches the snapshot 1`] = `
+<div
+  className=""
+>
+  <div
+    className="zippy-cash-container-wrap"
+  >
+    <div
+      className="backdrop"
+    />
+    <div
+      className="zippy-cash-container"
+    >
+      <div
+        className="zippy-cash-container-header"
+      >
+        <div
+          className="title"
+        >
+          Personal Banking
+        </div>
+        <div
+          className="catch"
+        >
+          Made Fun With Zippy!
+        </div>
+      </div>
+      <div
+        className="zippy-cash-container-body"
+      >
+        <div
+          aria-label="Zippy Cash"
+          className="zippy-btn-group btn-group"
+          role="group"
+        >
+          <button
+            className="active btn btn-primary"
+            disabled={true}
+            onClick={[Function]}
+            type="button"
+          >
+            Send Money
+          </button>
+          <button
+            className="btn btn-primary"
+            disabled={false}
+            onClick={[Function]}
+            type="button"
+          >
+            Request Money
+          </button>
+        </div>
+        <div
+          className="contact-selector"
+        >
+          <div
+            className="contact-identifier"
+          >
+            <input
+              className="form-control"
+              onChange={[Function]}
+              placeholder="Enter @ZippyUsername or Email"
+            />
+            <button
+              className="btn-select-contact btn-transparent btn btn-primary"
+              disabled={false}
+              onClick={[Function]}
+              type="button"
+            >
+              <i
+                className="zippy-cash-icon zc-add"
+              />
+            </button>
+          </div>
+          <div
+            className="contact-list-wrap"
+          />
+        </div>
+        <input
+          className="amount form-control"
+          onChange={[Function]}
+          placeholder="0.00"
+          step=".01"
+          type="number"
+          value={1000}
+        />
+        <div
+          className="select-method"
+        >
+          <div
+            className="actions form-check"
+          >
+            <input
+              checked={false}
+              className="form-check-input"
+              disabled={false}
+              id="zippy-cash"
+              name="actions2"
+              onChange={[Function]}
+              type="radio"
+            />
+            <label
+              className="form-check-label"
+              htmlFor="zippy-cash"
+              title=""
+            >
+              Zippy.Cash
+            </label>
+          </div>
+          <div
+            className="actions form-check"
+          >
+            <input
+              checked={false}
+              className="form-check-input"
+              disabled={false}
+              id="interac-e-transfer"
+              name="actions2"
+              onChange={[Function]}
+              type="radio"
+            />
+            <label
+              className="form-check-label"
+              htmlFor="interac-e-transfer"
+              title=""
+            >
+              Interac® e-Transfer
+            </label>
+          </div>
+        </div>
+        <div
+          className="action"
+        >
+          <button
+            className="zippy-btn btn btn-primary"
+            disabled={false}
+            type="button"
+          >
+            Zipp It
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

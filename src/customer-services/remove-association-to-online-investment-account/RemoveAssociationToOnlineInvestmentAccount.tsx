@@ -3,7 +3,7 @@ import CommonPageContainer from '../../common/CommonPageContainer';
 
 export default function RemoveAssociationToOnlineInvestmentAccount() {
   return (
-    <>
+    <div className="page-content">
       <CommonPageContainer title="Remove Association to Investment Account(s)">
         <b>Step: 1 - 2</b>
         <div className="pt-3 pb-3">
@@ -30,6 +30,6 @@ export default function RemoveAssociationToOnlineInvestmentAccount() {
           </Col>
         </Row>
       </CommonPageContainer>
-    </>
+    </div>
   );
 }

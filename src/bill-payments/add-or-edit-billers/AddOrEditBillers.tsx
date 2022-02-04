@@ -3,7 +3,7 @@ import CommonPageContainer from '../../common/CommonPageContainer';
 
 export default function AddOrEditBillers() {
   return (
-    <>
+    <div className="page-content">
       <CommonPageContainer title="Add or Edit Payees">
         <ul className="mt-4">
           <li>On this page, you can edit your existing payees or add new ones</li>
@@ -151,6 +151,6 @@ export default function AddOrEditBillers() {
           </tbody>
         </Table>
       </CommonPageContainer>
-    </>
+    </div>
   );
 }

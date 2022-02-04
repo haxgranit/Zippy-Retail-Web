@@ -248,7 +248,7 @@ export default function InteracETransferDetails() {
   } as any;
 
   return (
-    <>
+    <div className="page-content">
       <CommonPageContainer title="Status">
         <Row>
           <Col xs={9}>
@@ -312,6 +312,6 @@ export default function InteracETransferDetails() {
           </Col>
         </Row>
       </CommonPageContainer>
-    </>
+    </div>
   );
 }

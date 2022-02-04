@@ -9,7 +9,7 @@ import {
 
 export default function RequestACreditCardBalanceTransfer() {
   return (
-    <>
+    <div className="page-content">
       <div style={{ padding: 10, backgroundColor: '#F2F3F2' }}>
         <p style={{ textAlign: 'center', marginBottom: 0 }}>
           Credit card balance transfer
@@ -190,6 +190,6 @@ export default function RequestACreditCardBalanceTransfer() {
           </Col>
         </Row>
       </div>
-    </>
+    </div>
   );
 }

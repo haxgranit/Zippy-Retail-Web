@@ -3,7 +3,7 @@ import CommonPageContainer from '../../common/CommonPageContainer';
 
 export default function SetUpBillPayments() {
   return (
-    <>
+    <div className="page-content">
       <CommonPageContainer title="Setup Bill Payments">
         <Row className="mt-4">
           <Col xs={9}>
@@ -35,6 +35,6 @@ export default function SetUpBillPayments() {
           </Col>
         </Row>
       </CommonPageContainer>
-    </>
+    </div>
   );
 }
