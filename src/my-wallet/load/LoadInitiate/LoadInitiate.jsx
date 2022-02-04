@@ -1,9 +1,9 @@
 import { useState } from 'react';
 import { Button, Form, FormControl } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
-import PageContainer from '../../common/PageContainer';
+import PageContainer from '../../../common/PageContainer';
 
-export default function LoadWallet() {
+export default function LoadInitiate() {
   const dummyAccounts = ['ABC bank', 'XYZ CC'];
   const [selectedAccount, setSelectedAccount] = useState(dummyAccounts[0]);
   const navigate = useNavigate();

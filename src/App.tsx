@@ -76,8 +76,8 @@ import Status from './interac-etransfer/status/Status';
 import { Version } from './Version';
 import TransactionStatus from './interac-etransfer/status/transaction-status/TransactionStatus';
 import SendMoney from './interac-etransfer/send-money/SendMoney';
-import LoadWallet from './my-wallet/load/LoadWallet';
-import LoadWalletStatus from './my-wallet/load/LoadWalletStatus';
+import LoadStatus from './my-wallet/load/LoadStatus/LoadStatus';
+import LoadInitiate from './my-wallet/load/LoadInitiate/LoadInitiate';
 
 export default function App() {
   const dispatch = useAppDispatch();
@@ -179,8 +179,8 @@ export default function App() {
               </Route>
             </Route>
             <Route path="load">
-              <Route path="status" element={<LoadWalletStatus />} />
-              <Route path="start" element={<LoadWallet />} />
+              <Route path="status" element={<LoadStatus />} />
+              <Route path="start" element={<LoadInitiate />} />
             </Route>
           </Route>
           <Route path="manage-my-alerts" element={<ManageMyAlerts />} />

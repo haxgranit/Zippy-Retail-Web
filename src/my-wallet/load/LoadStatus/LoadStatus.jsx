@@ -1,7 +1,7 @@
 import { Button, Col, Row } from 'react-bootstrap';
-import PageContainer from '../../common/PageContainer';
+import PageContainer from '../../../common/PageContainer';
 
-export default function LoadWalletStatus() {
+export default function LoadStatus() {
   return (
     <PageContainer title="Personal Banking" subTitle="Made Fun With Zippy!">
       <div className="title">
