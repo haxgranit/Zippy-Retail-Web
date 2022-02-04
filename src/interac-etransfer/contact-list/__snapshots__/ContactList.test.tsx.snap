@@ -28,10 +28,16 @@ exports[`Contact List Component matches the snapshot 1`] = `
       </li>
       <li>
         <a
-          className="text-black"
-          href="/"
+          href="/add/"
+          onClick={[Function]}
         >
-          Add New Contact
+          <button
+            className="text-black btn btn-link"
+            disabled={false}
+            type="button"
+          >
+            Add New Contact
+          </button>
         </a>
       </li>
       <li>
@@ -177,18 +183,23 @@ exports[`Contact List Component matches the snapshot 1`] = `
       <div
         className="d-flex justify-content-end row"
       >
-        <button
-          className="d-flex btn btn-danger"
-          disabled={false}
-          style={
-            Object {
-              "width": "auto",
-            }
-          }
-          type="button"
+        <a
+          href="/add/"
+          onClick={[Function]}
         >
-          Add New Contact
-        </button>
+          <button
+            className="d-flex btn btn-danger"
+            disabled={false}
+            style={
+              Object {
+                "width": "auto",
+              }
+            }
+            type="button"
+          >
+            Add New Contact
+          </button>
+        </a>
       </div>
     </div>
     <div

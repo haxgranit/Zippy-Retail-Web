@@ -26,9 +26,11 @@ export const ContactListContent = ({
           </a>
         </li>
         <li>
-          <a href="/" className="text-black">
-            Add New Contact
-          </a>
+          <Link to="add/">
+            <Button variant="link" className="text-black">
+              Add New Contact
+            </Button>
+          </Link>
         </li>
         <li>
           Note: Contacts names can not be identical. Please verify and edit (if
@@ -145,9 +147,11 @@ export const ContactListContent = ({
         }}
       >
         <Row className="d-flex justify-content-end">
-          <Button variant="danger" className="d-flex" style={{ width: 'auto' }}>
-            Add New Contact
-          </Button>
+          <Link to="add/">
+            <Button variant="danger" className="d-flex" style={{ width: 'auto' }}>
+              Add New Contact
+            </Button>
+          </Link>
         </Row>
       </div>
       <div className="mt-2">
@@ -322,9 +326,11 @@ const ContactList = () => {
                 </a>
               </li>
               <li>
-                <a href="/" className="text-black">
-                  Add New Contact
-                </a>
+                <Link to="add/">
+                  <Button variant="link" className="text-black">
+                    Add New Contact
+                  </Button>
+                </Link>
               </li>
               <li>
                 Note: Contacts names can not be identical. Please verify and edit
