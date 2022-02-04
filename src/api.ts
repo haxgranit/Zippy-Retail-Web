@@ -61,6 +61,26 @@ export type ErrorDetail = {
   traceId: string,
 };
 
+export type BankAccount = {
+  institutionNumber: string,
+  transitNumber: string,
+  accountNumber: number,
+};
+
+export type PaymentCard = {
+  name: string,
+  number: string,
+  cvv: string,
+  expireDate: string
+};
+
+export type FundingSource = {
+  displayName: string,
+  isDefault: boolean,
+  bankAccount: BankAccount | null,
+  paymentCard: PaymentCard | null,
+};
+
 export async function getToken(instance: IPublicClientApplication, account: AccountInfo)
   : Promise<string | null> {
   const accessTokenRequest = {
@@ -94,6 +114,10 @@ export default class Api {
 
   public listContacts() {
     return this.fetch<Contact[]>('get', 'Contacts');
+  }
+
+  public listFundingSources() {
+    return this.fetch<FundingSource[]>('get', 'FundingSources');
   }
 
   public putUser() {
