@@ -165,6 +165,7 @@ export default function App() {
               <Route path=":id" element={<EditContact />} />
               <Route path="" element={<EditContact />} />
             </Route>
+            <Route path="contact-list/add" element={<EditContact />} />
             <Route path="edit-my-profile" element={<EditMyProfile />} />
             <Route path="autodeposit-settings" element={<AutodepositSettings />} />
             <Route path="receive-money" element={<ReceiveMoney />} />
