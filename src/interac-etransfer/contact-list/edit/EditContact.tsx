@@ -88,10 +88,8 @@ const EditContact: React.FC = () => {
         email,
         phone,
       })
-      .then((result) => {
-        if (result) {
-          navigate('../contact-list');
-        }
+      .then(() => {
+        navigate('../contact-list');
       })
       .catch((error) => console.log('error', error));
   }

@@ -99,7 +99,7 @@ export default class Api {
   }
 
   public postContact(data: ContactBase) {
-    return this.fetch<InteracEtransferTransaction>('post', 'Contacts', data);
+    return this.fetch<Contact>('post', 'Contacts', data);
   }
 
   public putUser() {
