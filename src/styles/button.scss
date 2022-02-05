@@ -77,6 +77,21 @@
   }
 }
 
+.btn-transparent {
+  background: transparent;
+  border: none;
+  padding: 0;
+  margin: 0;
+  vertical-align: middle;
+
+  &:visited,
+  &:hover,
+  &:focus {
+    background: transparent;
+    border: none;
+  }
+}
+
 .zippy-btn-group {
   &.btn-group {
     background-color: $color-background;

@@ -4,8 +4,8 @@ import {
 import NumberFormat from 'react-number-format';
 import { DateTime } from 'luxon';
 import PageContainer from '../../../common/PageContainer';
-import { TransactionInterface } from '../TransactionInterface';
-import { TransactionTypeEnum } from '../TransactionTypeEnum';
+import { TransactionInterface } from '../../../constants/interface/TransactionInterface';
+import { TransactionTypeEnum } from '../../../constants/enum/TransactionTypeEnum';
 
 export default function TransactionDetails({
   user,

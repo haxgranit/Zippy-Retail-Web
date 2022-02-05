@@ -1,6 +1,6 @@
 import { Dispatch, SetStateAction } from 'react';
-import { TransactionTypeEnum } from './TransactionTypeEnum';
-import { SendMoneyStepsEnum } from './SendMoneyStepsEnum';
+import { TransactionTypeEnum } from '../enum/TransactionTypeEnum';
+import { SendMoneyStepsEnum } from '../enum/SendMoneyStepsEnum';
 import { TransferMainDetails } from '../../interac-etransfer/send-money/SendMoney';
 import { TransactionMainDetailsInterface } from './TransactionMainDetailsInterface';
 import {
@@ -9,7 +9,7 @@ import {
   Transaction,
   User,
 } from '../../api';
-import { TunnelTypeEnum } from './TunnelTypeEnum';
+import { TunnelTypeEnum } from '../enum/TunnelTypeEnum';
 
 export interface TransactionInterface {
   contactList: Array<Contact>;
@@ -22,10 +22,10 @@ export interface TransactionInterface {
   mainInfo: TransactionMainDetailsInterface;
   setMainInfo: Dispatch<SetStateAction<TransferMainDetails>>;
   resetMainInfo?: () => void;
-  selectedAccount: number;
-  setSelectedAccount: Dispatch<SetStateAction<number>>;
-  selectedContact : number;
-  setSelectedContact: Dispatch<SetStateAction<number>>;
+  selectedAccount: Account;
+  setSelectedAccount: Dispatch<SetStateAction<Account>>;
+  selectedContact : Contact;
+  setSelectedContact: Dispatch<SetStateAction<Contact>>;
   user?: User;
   transaction?: Transaction;
   transactionId?: number;

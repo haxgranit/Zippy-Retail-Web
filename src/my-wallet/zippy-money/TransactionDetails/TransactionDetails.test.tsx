@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter } from 'react-router-dom';
 import TransactionDetails from './TransactionDetails';
-import { TransactionTypeEnum } from '../TransactionTypeEnum';
+import { TransactionTypeEnum } from '../../../constants/enum/TransactionTypeEnum';
 
 const ReactTestRenderer = require('react-test-renderer');
 

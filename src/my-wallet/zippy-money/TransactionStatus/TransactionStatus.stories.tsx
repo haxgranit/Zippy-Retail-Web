@@ -1,7 +1,7 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { BrowserRouter } from 'react-router-dom';
 import TransactionStatus from './TransactionStatus';
-import { TransactionTypeEnum } from '../TransactionTypeEnum';
+import { TransactionTypeEnum } from '../../../constants/enum/TransactionTypeEnum';
 
 export default {
   title: 'my-wallet/zippy-money/TransactionStatus',

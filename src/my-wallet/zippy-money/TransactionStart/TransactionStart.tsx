@@ -1,11 +1,10 @@
 import { Button, Form, FormControl } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 import PageContainer from '../../../common/PageContainer';
-import { TransactionInterface } from '../TransactionInterface';
-import { TransactionTypeEnum } from '../TransactionTypeEnum';
-import { TunnelTypeEnum } from '../TunnelTypeEnum';
-import { Contact } from '../../../api';
-import { formatContactName } from '../../../Helpers';
+import { TransactionInterface } from '../../../constants/interface/TransactionInterface';
+import { TransactionTypeEnum } from '../../../constants/enum/TransactionTypeEnum';
+import { TunnelTypeEnum } from '../../../constants/enum/TunnelTypeEnum';
+import ContactSelector from '../../../common/ContactSelector';
 
 export default function TransactionStart({
   contactList,
@@ -44,30 +43,15 @@ export default function TransactionStart({
             Request Money
           </Button>
         </div>
-        <div className="account-identifier">
-          <Form.Select
-            className="send-account-select"
-            onChange={(event) => setSelectedContact(Number(event.target.value))}
-            value={selectedContact}
-          >
-            <option>Select</option>
-            {contactList?.map((item: Contact) => (
-              <option key={item.id} value={item.id}>
-                {formatContactName(item.firstName, item.lastName)}
-              </option>
-            ))}
-          </Form.Select>
-          {/*
-          <FormControl
-              placeholder="Enter @ZippyUsername or Email"
-            />
-            <i className="zippy-cash-icon zc-add" />
-          */}
-        </div>
+        <ContactSelector
+          contactList={contactList}
+          selectedContact={selectedContact}
+          setSelectedContact={setSelectedContact}
+        />
         <FormControl
           className="amount"
           placeholder="0.00"
-          value={mainInfo.amount}
+          value={mainInfo.amount || ''}
           type="number"
           step=".01"
           onChange={(evt) => setMainInfo({ ...mainInfo, amount: Number(evt.target.value) })}
