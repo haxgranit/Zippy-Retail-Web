@@ -1,4 +1,5 @@
 import { useMsal } from '@azure/msal-react';
+import Select from 'react-select';
 import { useEffect, useState } from 'react';
 import { Button, Form, FormControl } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
@@ -7,7 +8,7 @@ import PageContainer from '../../../common/PageContainer';
 
 export default function LoadInitiate() {
   const [fundingSources, setFundingSources] = useState([]);
-  const [selectedAccount, setSelectedAccount] = useState(null);
+  const [selectedAccount, setSelectedAccount] = useState(undefined);
   const navigate = useNavigate();
 
   const { instance, accounts } = useMsal();
@@ -21,6 +22,28 @@ export default function LoadInitiate() {
       })
       .catch((error) => console.log('error', error));
   }, []);
+
+  const CustomOption = (props) => {
+    const { data } = props;
+
+    if (data.bankAccount) {
+      return (
+        <div>
+          <span>
+            {' '}
+            {data.bankAccount.accountNumber}
+            {' '}
+          </span>
+        </div>
+      );
+    }
+    return (
+      <div>
+        <span>{data.paymentCard.number}</span>
+      </div>
+    );
+  };
+
   return (
     <PageContainer title="Personal Banking" subTitle="Made Fun With Zippy!">
       <div className="title">
@@ -37,9 +60,11 @@ export default function LoadInitiate() {
         className="send-account-select"
         onChange={(event) => {
           setSelectedAccount(event.target.value);
-          const seletedAccount = fundingSources.find((source) => source.id === +event.target.value);
+          const seletedAccount = fundingSources.find(
+            (source) => source.id === +event.target.value,
+          );
           if (seletedAccount.paymentCard) {
-            // eslint-disable-next-line no-alert
+          // eslint-disable-next-line no-alert
             alert('Card choosen, hence validated');
           }
         }}
@@ -49,10 +74,16 @@ export default function LoadInitiate() {
         {fundingSources?.map((item) => (
           <option key={item.id} value={item.id}>
             {item.displayName
-              ?? (item?.bankAccount?.accountNumber ?? item?.paymentCard?.number)}
+            ?? (item?.bankAccount?.accountNumber ?? item?.paymentCard?.number)}
           </option>
         ))}
       </Form.Select>
+      <Select
+        options={fundingSources}
+        components={{
+          Option: CustomOption,
+        }}
+      />
       <div className="action">
         <Button
           className="zippy-btn"
