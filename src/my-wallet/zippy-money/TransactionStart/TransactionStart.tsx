@@ -4,7 +4,7 @@ import PageContainer from '../../../common/PageContainer';
 import { TransactionInterface } from '../../../constants/interface/TransactionInterface';
 import { TransactionTypeEnum } from '../../../constants/enum/TransactionTypeEnum';
 import { TunnelTypeEnum } from '../../../constants/enum/TunnelTypeEnum';
-import ContactSelector from '../../../common/ContactSelector';
+import ContactInput from '../../../common/ContactInput/ContactInput';
 
 export default function TransactionStart({
   contactList,
@@ -43,7 +43,7 @@ export default function TransactionStart({
             Request Money
           </Button>
         </div>
-        <ContactSelector
+        <ContactInput
           contactList={contactList}
           selectedContact={selectedContact}
           setSelectedContact={setSelectedContact}

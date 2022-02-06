@@ -1,12 +1,12 @@
-import '../i18n/config';
-import ContactSelector from './ContactSelector';
+import '../../../i18n/config';
+import Contacts from './Contacts';
 
 const ReactTestRenderer = require('react-test-renderer');
 
-describe('ContactSelector Component', () => {
+describe('Contacts Component', () => {
   it('matches the snapshot', () => {
     const tree = ReactTestRenderer.create(
-      <ContactSelector />,
+      <Contacts />,
     ).toJSON();
     expect(tree).toMatchSnapshot();
   });
