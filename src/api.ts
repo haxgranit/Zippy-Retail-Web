@@ -1,3 +1,4 @@
+/* eslint-disable class-methods-use-this */
 /* eslint-disable no-console */
 
 import { AccountInfo, InteractionRequiredAuthError, IPublicClientApplication } from '@azure/msal-browser';
@@ -80,6 +81,11 @@ export type FundingSource = {
   paymentCard: PaymentCard | null,
 };
 
+export type FundLoadRequest = {
+  amount: number,
+  sourceId: string
+};
+
 export async function getToken(instance: IPublicClientApplication, account: AccountInfo)
   : Promise<string | null> {
   const accessTokenRequest = {
@@ -117,6 +123,13 @@ export default class Api {
 
   public listFundingSources() {
     return this.fetch<FundingSource[]>('get', 'FundingSources');
+  }
+
+  public postFundLoadRequest(request: FundLoadRequest) {
+    // eslint-disable-next-line prefer-promise-reject-errors
+    if (request.amount > 1000) { return Promise.reject(true); }
+
+    return Promise.resolve(true);
   }
 
   public putUser() {
