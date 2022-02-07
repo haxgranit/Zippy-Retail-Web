@@ -35,7 +35,7 @@ export default function ViewEBills() {
                     partnership with epost
                     <sup>TM</sup>
                     &nbsp;from Canada Post, you can receive
-                    statements through ZippyX Online Banking
+                    statements through ZippyX
                     with one login and password.
                   </p>
                 </div>
@@ -136,8 +136,8 @@ export default function ViewEBills() {
                   and conditions and the Electronic Access Agreement or
                   by their successor agreements. The Electronic Access Agreement
                   may be viewed by selecting the &quot;Agreements&quot;
-                  link at the bottom of most pages of ZippyX Online
-                  Banking. In these terms and conditions, &quot;ZippyX means Canadian
+                  link at the bottom of most pages of ZippyX.
+                  In these terms and conditions, &quot;ZippyX means Canadian
                   Imperial Bank of Commerce and its affiliated companies.
                   <br />
                   <b>2.</b>
@@ -152,7 +152,7 @@ export default function ViewEBills() {
                   your use of the epost service will also be govemed by additional terms
                   and conditions with Canada Post Corporation that will be made available
                   to you during the epost mailbox registration process.
-                  You may access your epost mailbox from ZippyX Online Banking,
+                  You may access your epost mailbox from ZippyX,
                   from the online banking websites of certain
                   other financial institutions and also through wwwepost.ca.
                 </div>

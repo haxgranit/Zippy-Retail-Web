@@ -14,7 +14,7 @@ export default function EbillsEmailNotification() {
           <p>
             In partnership with epost from Canada Post, you can receive, view and
             pay bills from participating companies in personal inbox accessible
-            through ZippyX Banking.
+            through ZippyX.
           </p>
           <p>
             When you access the eBills service, your customer, bill and payment

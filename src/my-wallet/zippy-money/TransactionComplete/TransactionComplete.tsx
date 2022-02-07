@@ -14,7 +14,7 @@ export default function TransactionComplete({
 
   return (
     <>
-      <PageContainer title="Personal Banking" subTitle="Made Fun With Zippy!">
+      <PageContainer title="Personal Account" subTitle="Made Fun With Zippy!">
         <div className="zippy-btn-group btn-group" role="group" aria-label="Zippy Cash">
           <Button className="active">
             Send Money

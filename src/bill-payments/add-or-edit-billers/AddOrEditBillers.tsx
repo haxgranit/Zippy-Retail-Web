@@ -119,7 +119,7 @@ export default function AddOrEditBillers() {
               Create nicknames for your payees to make it easier for you to
               recognize. The nickname will appear instead of the payee name. The
               nickname will only appear when you access your accounts through
-              Online Banking.
+              ZippyX.
             </li>
             <li>
               Deleting a payee will delete any future one-time and recurring

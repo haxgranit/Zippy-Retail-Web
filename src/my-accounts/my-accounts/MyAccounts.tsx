@@ -371,7 +371,7 @@ export default function MyAccounts() {
               <p style={{ color: '#5A5F61' }}>
                 &quot;My Accounts&quot; includes the online accounts you hold
                 with ZippyX and its affilliates. For help, please contact the ZippyX
-                Online Banking support line at 1-888-872-2422
+                support line at 1-888-872-2422
               </p>
             </div>
             <div

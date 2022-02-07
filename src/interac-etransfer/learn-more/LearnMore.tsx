@@ -15,7 +15,7 @@ export default function LearnMore() {
           <Col md={9}>
             <h5>Send and receive money by email or mobile phone number</h5>
             <p className="mt-3">
-              With Interac e-Transfer, you can use online banking to send and
+              With Interac e-Transfer, you can use ZippyX to send and
               receive money electronically. It&apos;s great alternative to cash or
               cheques and all you need to get started is an email address or
               Canadian mobile phone number.

@@ -19,7 +19,7 @@ exports[`ZippyTransaction Component matches the snapshot 1`] = `
         <div
           className="title"
         >
-          Personal Banking
+          Personal Account
         </div>
         <div
           className="catch"

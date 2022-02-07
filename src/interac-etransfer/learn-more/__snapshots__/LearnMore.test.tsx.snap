@@ -26,7 +26,7 @@ exports[`LearnMore Component matches the snapshot 1`] = `
         <p
           className="mt-3"
         >
-          With Interac e-Transfer, you can use online banking to send and receive money electronically. It's great alternative to cash or cheques and all you need to get started is an email address or Canadian mobile phone number.
+          With Interac e-Transfer, you can use ZippyX to send and receive money electronically. It's great alternative to cash or cheques and all you need to get started is an email address or Canadian mobile phone number.
         </p>
         <ul
           className="mt-4"

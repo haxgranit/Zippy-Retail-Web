@@ -236,7 +236,7 @@ export const FREQUENT_QUESTIONS = [
   },
   {
     key: 5,
-    title: 'Why do you need my Online Banking credentials?',
+    title: 'Why do you need my ZippyX account credentials?',
   },
   {
     key: 6,

@@ -30,7 +30,7 @@ export default function HomeLoggedOut() {
                 <div className="container">
                   <div className="row">
                     <div className="col-12">
-                      <h2 className="sliderh2">{t('home.personal_banking')}</h2>
+                      <h2 className="sliderh2">{t('home.personal_account')}</h2>
                       <h1 className="hero-heading display-3 fw-bold">
                         <Trans i18nKey="home.zip_it">
                           Zipp it
@@ -58,7 +58,7 @@ export default function HomeLoggedOut() {
                 <div className="container">
                   <div className="row">
                     <div className="col-12">
-                      <h2 className="sliderh2">{t('home.personal_banking')}</h2>
+                      <h2 className="sliderh2">{t('home.personal_account')}</h2>
                       <h1 className="hero-heading display-3 fw-bold">
                         <Trans
                           i18nKey="home.zip_it"
@@ -120,8 +120,8 @@ export default function HomeLoggedOut() {
             <div className="container py-4">
               <div className="row align-items-center">
                 <div className="col-12 col-md-6 col-lg-8">
-                  <h2>{t('home.business_banking')}</h2>
-                  <h1 className="fw-bold">{t('home.business_banking_desc')}</h1>
+                  <h2>{t('home.business_account')}</h2>
+                  <h1 className="fw-bold">{t('home.business_account_desc')}</h1>
                 </div>
                 <div className="col-12 col-md-6 col-lg-4">
                   <button

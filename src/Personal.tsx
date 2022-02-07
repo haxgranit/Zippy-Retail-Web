@@ -32,7 +32,7 @@ export default function Personal() {
             <div className="col">
               <div className="mb-3">
                 <h2 style={{ color: '#FF1926' }}>
-                  {t('personal.personal_banking')}
+                  {t('personal.personal_account')}
                 </h2>
                 <h1
                   className="redtitle hero-heading display-3"
