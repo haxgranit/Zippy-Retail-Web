@@ -210,10 +210,10 @@ exports[`TransactionStart Component matches the snapshot 1`] = `
         <input
           className="amount form-control"
           onChange={[Function]}
-          placeholder="0.00"
-          step=".01"
-          type="number"
-          value={1000}
+          onKeyDown={[Function]}
+          placeholder="$0.00"
+          type="string"
+          value=""
         />
         <div
           className="select-method"
@@ -224,7 +224,7 @@ exports[`TransactionStart Component matches the snapshot 1`] = `
             <input
               checked={false}
               className="form-check-input"
-              disabled={false}
+              disabled={true}
               id="zippy-cash"
               name="actions2"
               onChange={[Function]}
@@ -264,7 +264,7 @@ exports[`TransactionStart Component matches the snapshot 1`] = `
         >
           <button
             className="zippy-btn btn btn-primary"
-            disabled={false}
+            disabled={true}
             type="button"
           >
             Zipp It

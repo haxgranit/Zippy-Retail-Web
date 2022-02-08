@@ -51,9 +51,9 @@ export default function ZippyTransaction() {
   } as TransactionMainDetailsInterface;
 
   const navigate = useNavigate();
-  const { step, transactionType, transactionId } = useParams();
+  const { step, transactionType = TransactionTypeEnum.SEND, transactionId } = useParams();
   const { instance, accounts } = useMsal();
-  const [tunnelType, setTunnelType] = useState<TunnelTypeEnum>(TunnelTypeEnum.ZIPPY_CASH);
+  const [tunnelType, setTunnelType] = useState<TunnelTypeEnum>(TunnelTypeEnum.INTERAC_E_TRANSFER);
   const [isProcessing, setIsProcessing] = useState<boolean>(false);
   const [errorMessage, setErrorMessage] = useState<string>('');
   const [selectedContact, setSelectedContact] = useState<Contact>(initialContact);
@@ -76,7 +76,7 @@ export default function ZippyTransaction() {
   const resetMainInfo = () => {
     setSelectedContact(initialContact);
     setSelectedAccount({} as Account);
-    setTunnelType(TunnelTypeEnum.ZIPPY_CASH);
+    setTunnelType(TunnelTypeEnum.INTERAC_E_TRANSFER);
     setMainInfo(JSON.parse(JSON.stringify(initialMainInfo)));
     navigate(`/my-wallet/zippy-money/${transactionType}/transaction-start`, {
       state: {
@@ -87,7 +87,7 @@ export default function ZippyTransaction() {
     });
   };
 
-  const postTransaction = (data: InteracEtransferTransaction) => {
+  const postInteractTransaction = (data: InteracEtransferTransaction) => {
     new Api(instance, accounts[0])
       .postInteracEtransferTransaction(data)
       .then((res: InteracEtransferTransaction) => {
@@ -103,35 +103,37 @@ export default function ZippyTransaction() {
   };
 
   const handleTriggerTransaction = () => {
-    setIsProcessing(true);
-    const data: InteracEtransferTransaction = {
-      contactId: selectedContact.id,
-      amount: mainInfo.amount,
-      type: TransactionTypeEnum.REQUEST,
-      securityQuestion: mainInfo.securityQuestion,
-      securityAnswer: mainInfo.securityAnswer,
-    };
-    if (transactionType === TransactionTypeEnum.REQUEST) {
-      delete data.securityQuestion;
-      delete data.securityAnswer;
-      postTransaction(data);
-    } else if (mainInfo.securityQuestion && mainInfo.securityAnswer) {
-      postTransaction(data);
-    } else {
-      new Api(instance, accounts[0])
-        .postDirectDepositStatus(contactList ? contactList[0].email : 'jerome@zippy.cash')
-        .then((res) => {
-          if (res) {
-            postTransaction(data);
-          } else {
+    if (!isProcessing) {
+      setIsProcessing(true);
+      const data: InteracEtransferTransaction = {
+        contactId: selectedContact.id,
+        amount: mainInfo.amount,
+        type: transactionType,
+        securityQuestion: mainInfo.securityQuestion,
+        securityAnswer: mainInfo.securityAnswer,
+      };
+      if (transactionType === TransactionTypeEnum.REQUEST) {
+        delete data.securityQuestion;
+        delete data.securityAnswer;
+        postInteractTransaction(data);
+      } else if (mainInfo.securityQuestion && mainInfo.securityAnswer) {
+        postInteractTransaction(data);
+      } else {
+        new Api(instance, accounts[0])
+          .postDirectDepositStatus(contactList[0].email)
+          .then((res) => {
+            if (res) {
+              postInteractTransaction(data);
+            } else {
+              setIsProcessing(false);
+              navigate(`/my-wallet/zippy-money/${transactionType}/${SendMoneyStepsEnum.TRANSACTION_SECURITY_QUESTIONS}`);
+            }
+          })
+          .catch(() => setErrorMessage('Transfer failed'))
+          .finally(() => {
             setIsProcessing(false);
-            navigate(`/my-wallet/zippy-money/${transactionType}/${SendMoneyStepsEnum.TRANSACTION_SECURITY_QUESTIONS}`);
-          }
-        })
-        .catch(() => setErrorMessage('Transfer failed'))
-        .finally(() => {
-          setIsProcessing(false);
-        });
+          });
+      }
     }
   };
 

@@ -259,6 +259,10 @@
           color: $color-blue;
           padding: 0;
           margin: 0;
+
+          &::first-letter {
+            color: red;
+          }
         }
       }
 
