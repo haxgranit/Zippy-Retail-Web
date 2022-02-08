@@ -1,10 +1,11 @@
-import { Button, Form, FormControl } from 'react-bootstrap';
+import { Button, Form } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 import PageContainer from '../../../common/PageContainer';
 import { TransactionInterface } from '../../../constants/interface/TransactionInterface';
 import { TransactionTypeEnum } from '../../../constants/enum/TransactionTypeEnum';
 import { TunnelTypeEnum } from '../../../constants/enum/TunnelTypeEnum';
-import ContactSelector from '../../../common/ContactSelector';
+import ContactInput from '../../../common/ContactInput/ContactInput';
+import AmountInput from '../../../common/AmountInput';
 
 export default function TransactionStart({
   contactList,
@@ -23,6 +24,8 @@ export default function TransactionStart({
   setTunnelType,
 }: TransactionInterface) {
   const navigate = useNavigate();
+
+  const validate = () => transactionType && selectedContact.id && mainInfo.amount && tunnelType;
 
   return (
     <>
@@ -43,18 +46,14 @@ export default function TransactionStart({
             Request Money
           </Button>
         </div>
-        <ContactSelector
+        <ContactInput
           contactList={contactList}
           selectedContact={selectedContact}
           setSelectedContact={setSelectedContact}
         />
-        <FormControl
-          className="amount"
-          placeholder="0.00"
-          value={mainInfo.amount || ''}
-          type="number"
-          step=".01"
-          onChange={(evt) => setMainInfo({ ...mainInfo, amount: Number(evt.target.value) })}
+        <AmountInput
+          amount={mainInfo.amount}
+          setAmount={(value) => setMainInfo({ ...mainInfo, amount: Number(value) })}
         />
         <div className="select-method">
           <Form.Check
@@ -65,6 +64,7 @@ export default function TransactionStart({
             name="actions2"
             onChange={() => setTunnelType(TunnelTypeEnum.ZIPPY_CASH)}
             checked={tunnelType === TunnelTypeEnum.ZIPPY_CASH}
+            disabled
           />
           <Form.Check
             id="interac-e-transfer"
@@ -79,7 +79,7 @@ export default function TransactionStart({
         <div className="action">
           <Button
             className="zippy-btn"
-            disabled={isProcessing}
+            disabled={isProcessing || !validate()}
             onClick={handleTriggerTransaction}
           >
             {isProcessing && <div className="loading spinner-border" role="status" />}

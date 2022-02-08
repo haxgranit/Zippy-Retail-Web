@@ -9,18 +9,47 @@
     width: 0;
     height: 0;
 
-    .contact-list {
+    @keyframes slideIn {
+      from {
+        display: none;
+        top: 100vh;
+      }
+      to {
+        display: flex;
+        top: 0;
+      }
+    }
+
+    @keyframes slideOut {
+      from {
+        display: flex;
+        top: 0;
+      }
+      to {
+        display: none;
+        top: 100vh;
+      }
+    }
+
+    .contact-container {
+      position: relative;
       width: 235px;
       background: #FFFFFF;
-      box-shadow: 0 0 2px 2px $color-white;
       border-radius: 15px;
       padding: 20px;
       display: flex;
       flex-direction: column;
       gap: 20px;
-      animation-duration: 0.2s;
-      animation-name: slidein;
+      box-shadow: 0 0 2px 2px $color-white;
+      animation: slideIn 0.2s;
       transition-timing-function: cubic-bezier(0.42, 0, 0.58, 1);
+
+      &.hidden {
+        display: none;
+        box-shadow: 0 0 2px 2px $color-white;
+        animation: slideOut 0.2s;
+        transition-timing-function: cubic-bezier(0.42, 0, 0.58, 1);
+      }
 
       .contact-search {
         display: flex;
@@ -101,6 +130,28 @@
               }
             }
           }
+        }
+      }
+
+      .container-header {
+        .title {
+          margin: 0;
+          padding: 0;
+          border: 0;
+          font-style: normal;
+          font-weight: 500;
+          font-size: 14px;
+          line-height: 21px;
+          color: $color-orange;
+        }
+      }
+
+      .container-body {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        input[type=text] {
+          text-align: center;
         }
       }
     }

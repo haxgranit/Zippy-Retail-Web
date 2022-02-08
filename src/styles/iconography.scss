@@ -90,9 +90,32 @@ i {
             mask-image: url("../assets/img/icons/add.svg");
         }
 
-        &.zc-verified:after {
-            -webkit-mask-image: url("../assets/img/icons/verified.svg");
-            mask-image: url("../assets/img/icons/verified.svg");
+        &.zc-personal:after {
+            -webkit-mask-image: url("../assets/img/icons/personal.svg");
+            mask-image: url("../assets/img/icons/personal.svg");
+        }
+
+        &.zc-completed:after {
+            background: $color-green;
+            -webkit-mask-image: url("../assets/img/icons/status-icons/completed.svg");
+            mask-image: url("../assets/img/icons/status-icons/completed.svg");
+        }
+
+        &.zc-failed:after {
+            background: $color-red;
+            -webkit-mask-image: url("../assets/img/icons/status-icons/failed.svg");
+            mask-image: url("../assets/img/icons/status-icons/failed.svg");
+        }
+
+        &.zc-pending:after {
+            background: $color-dark-gray;
+            -webkit-mask-image: url("../assets/img/icons/status-icons/pending.svg");
+            mask-image: url("../assets/img/icons/status-icons/pending.svg");
+        }
+
+        &.zc-personal:after {
+            -webkit-mask-image: url("../assets/img/icons/personal.svg");
+            mask-image: url("../assets/img/icons/personal.svg");
         }
 
         &.zc-personal:after {

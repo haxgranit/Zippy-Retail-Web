@@ -20,8 +20,8 @@ function PageContainer({
             {title && subTitle
               && (
                 <div className="zippy-cash-container-header">
-                  <div className="title">{title}</div>
-                  <div className="catch">{subTitle}</div>
+                  <h1 className="title">{title}</h1>
+                  <h2 className="catch">{subTitle}</h2>
                 </div>
               )}
             <div className="zippy-cash-container-body">
