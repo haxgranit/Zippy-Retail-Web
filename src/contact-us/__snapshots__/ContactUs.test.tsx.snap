@@ -150,7 +150,7 @@ exports[`ContactUs Component matches the snapshot 1`] = `
             <div
               className="col-md-10"
             >
-              ZippyX's Virtual Assistant is available 24/7 to answer your questions about everyday banking and is able to perfom banking transactions on your behalf.
+              ZippyX's Virtual Assistant is available 24/7 to answer your questions and is able to perfom transactions on your behalf.
             </div>
           </div>
           <div
@@ -261,28 +261,6 @@ exports[`ContactUs Component matches the snapshot 1`] = `
             }
           }
         >
-          <div
-            className="col-md-12"
-          >
-            <h6>
-              Find a banking center or ATM
-            </h6>
-            <hr
-              style={
-                Object {
-                  "height": "3px",
-                  "marginTop": "0px",
-                }
-              }
-            />
-          </div>
-          <div
-            className="col-md-12"
-          >
-            <p>
-              More than 1,100 ZippyX banking Centres and 3,500 bank machines across Canada offer the banking services you need
-            </p>
-          </div>
           <div
             className="row row-cols-md-8"
             style={
@@ -408,7 +386,7 @@ exports[`ContactUs Component matches the snapshot 1`] = `
             Frequently Asked Questions
           </h6>
           <h6>
-            Online Banking
+            ZippyX
           </h6>
           <a
             href="url1"

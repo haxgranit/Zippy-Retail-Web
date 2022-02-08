@@ -78,8 +78,8 @@ export default function StopPayments() {
                 notice that the payment was prcessed and then returned.
               </li>
               <li>
-                If you would like to stop a ZippyX payment, you can call Telephone
-                Banking at 1-800-465-2422
+                If you would like to stop a ZippyX payment, you can call at
+                1-800-465-2422
               </li>
             </ul>
             <div>

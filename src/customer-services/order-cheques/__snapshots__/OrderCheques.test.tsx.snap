@@ -120,7 +120,7 @@ exports[`OrderCheques Component matches the snapshot 1`] = `
                 </u>
               </li>
               <li>
-                If you changed your address during this session it will not be reflected in the cheque order process until you exit and sign back on to Online Banking.
+                If you changed your address during this session it will not be reflected in the cheque order process until you exit and sign back on to ZippyX.
               </li>
               <li>
                 If you don't want your home address, phone number and/or email address to appear on your cheques, you can indicate this later in the ordering process.

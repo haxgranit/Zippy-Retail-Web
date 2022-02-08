@@ -32,7 +32,7 @@ exports[`Manage Alert Component Render manage-my-alerts page 1`] = `
               If you choose to activate Push Notifications, you must also enable them on your mobile device.
             </li>
             <li>
-              Push Notifications are personalized alerts sent directly to your mobile device that can help you stay on top of your ZippyX accounts. If you sign into ZippyX Mobile Banking from a mobile device other than your own, Your alerts may be sent to that device until another user signs in to the application.
+              Push Notifications are personalized alerts sent directly to your mobile device that can help you stay on top of your ZippyX accounts. If you sign into ZippyX from a mobile device other than your own, Your alerts may be sent to that device until another user signs in to the application.
             </li>
             <li>
               Some fraud prevention alerts cannot be turned off.
@@ -213,7 +213,7 @@ exports[`Manage Alert Component Render manage-my-alerts page 1`] = `
                     class="d-flex"
                     style="font-weight: bold;"
                   >
-                    Changes have been made to my Online, Mobile and Telephone Banking passwords
+                    Changes have been made to my ZippyX passwords
                     <div
                       style="width: 20px; height: 25px; border: 1px dotted grey; text-align: center; margin-right: 10px;"
                     >
@@ -1620,7 +1620,7 @@ exports[`Manage Alert Component matches the snapshot 1`] = `
             If you choose to activate Push Notifications, you must also enable them on your mobile device.
           </li>
           <li>
-            Push Notifications are personalized alerts sent directly to your mobile device that can help you stay on top of your ZippyX accounts. If you sign into ZippyX Mobile Banking from a mobile device other than your own, Your alerts may be sent to that device until another user signs in to the application.
+            Push Notifications are personalized alerts sent directly to your mobile device that can help you stay on top of your ZippyX accounts. If you sign into ZippyX from a mobile device other than your own, Your alerts may be sent to that device until another user signs in to the application.
           </li>
           <li>
             Some fraud prevention alerts cannot be turned off.
@@ -1851,7 +1851,7 @@ exports[`Manage Alert Component matches the snapshot 1`] = `
                     }
                   }
                 >
-                  Changes have been made to my Online, Mobile and Telephone Banking passwords
+                  Changes have been made to my ZippyX passwords
                   <div
                     style={
                       Object {

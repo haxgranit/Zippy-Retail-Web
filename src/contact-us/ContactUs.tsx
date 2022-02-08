@@ -74,7 +74,7 @@ export default function ContactUs(): JSX.Element {
                 </Col>
                 <Col md={10}>
                   ZippyX&apos;s Virtual Assistant is available 24/7 to answer your questions
-                  about everyday banking and is able to perfom banking transactions
+                  and is able to perfom transactions
                   on your behalf.
                 </Col>
               </Row>
@@ -110,16 +110,6 @@ export default function ContactUs(): JSX.Element {
               </Row>
             </Row>
             <Row style={{ marginTop: '45px', marginBottom: '25px' }}>
-              <Col md={12}>
-                <h6>Find a banking center or ATM</h6>
-                <hr style={{ marginTop: '0px', height: '3px' }} />
-              </Col>
-              <Col md={12}>
-                <p>
-                  More than 1,100 ZippyX banking Centres and 3,500 bank machines across Canada
-                  offer the banking services you need
-                </p>
-              </Col>
               <Row md={8} style={{ justifyItems: 'center', alignItems: 'center', paddingTop: '10px' }}>
                 <Col md={2}>
                   <div style={
@@ -165,7 +155,7 @@ export default function ContactUs(): JSX.Element {
           <Col md={3}>
             <Row style={{ border: 'solid #AAAAAA 1px', justifyItems: 'space-between' }}>
               <h6 style={{ paddingTop: '10px' }}>Frequently Asked Questions</h6>
-              <h6>Online Banking</h6>
+              <h6>ZippyX</h6>
               {FAQs.map((q) => (QuestionElement(q)))}
               <hr style={
               {

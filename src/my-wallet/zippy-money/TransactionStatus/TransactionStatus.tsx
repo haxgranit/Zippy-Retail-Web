@@ -14,7 +14,7 @@ export default function TransactionStatus({
 
   return (
     <>
-      <PageContainer title="Personal Banking" subTitle="Made Fun With Zippy!" className="transaction-status">
+      <PageContainer title="Personal Account" subTitle="Made Fun With Zippy!" className="transaction-status">
         <div className="title">
           Transaction Status
         </div>

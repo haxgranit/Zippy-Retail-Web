@@ -18,7 +18,7 @@ exports[`CustomerServices Component matches the snapshot 1`] = `
       className="mt-4"
     >
       <h4>
-        ONLINE BANKING INFORMATION
+        ZIPPYX INFORMATION
       </h4>
       <div
         className="row"
@@ -1775,7 +1775,7 @@ exports[`CustomerServices Component matches the snapshot 1`] = `
                   }
                 }
               >
-                Why do you need my Online Banking credentials?
+                Why do you need my ZippyX account credentials?
                 <span
                   style={
                     Object {

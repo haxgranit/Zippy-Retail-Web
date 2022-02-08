@@ -8,17 +8,17 @@ export default function RemoveAssociationToOnlineInvestmentAccount() {
         <b>Step: 1 - 2</b>
         <div className="pt-3 pb-3">
           <p>
-            If your card is set up to navigate from ZippyX Online Banking to your
+            If your card is set up to navigate from ZippyX to your
             ZippyX Wealth Management Online Investment Account(s), you can remove
             the association here.
           </p>
           <p>
             By removing the association you will be required to sign on separately
-            to ZippyX Online Banking and ZippyX Wealth Management Online Investment
+            to ZippyX and ZippyX Wealth Management Online Investment
             sites.
           </p>
           <p>
-            For more information about navigation between the ZippyX Online Banking
+            For more information about navigation between the ZippyX
             and ZippyX Wealth Management Online Investment sites select the
             Investing tab above.
           </p>

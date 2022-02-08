@@ -12,8 +12,7 @@ export default function ChangeYourPassword() {
       <CommonPageContainer title="Change Your Password">
         <div>
           <p>
-            Create a password to use when you sign on to ZippyX Online and Mobile
-            Banking.
+            Create a password to use when you sign on to ZippyX.
           </p>
           <Row className="mt-3">
             <Col md={12}>
