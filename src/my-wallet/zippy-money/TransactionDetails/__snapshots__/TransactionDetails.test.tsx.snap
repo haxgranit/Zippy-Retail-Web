@@ -19,7 +19,7 @@ exports[`TransactionDetails Component matches the snapshot 1`] = `
         <h1
           className="title"
         >
-          Personal Banking
+          Personal Account
         </h1>
         <h2
           className="catch"

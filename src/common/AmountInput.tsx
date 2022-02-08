@@ -36,11 +36,11 @@ function AmountInput({
   const canBypass = (display: string) => {
     const lastString = display[display.length - 1];
     return display === `${symbol}0.0`
-        || display === ''
-        || lastString === symbol
-        || lastString === symbol
-        || lastString === thousandSeparator
-        || lastString === decimalSeparator;
+      || display === ''
+      || lastString === symbol
+      || lastString === symbol
+      || lastString === thousandSeparator
+      || lastString === decimalSeparator;
   };
 
   const parseLocaleNumber = (stringNumber: string) => {
@@ -66,13 +66,13 @@ function AmountInput({
     }
 
     if (charCode > 31
-        && (charCode < 48 || charCode > 57)
-        && (charCode < 96 || charCode > 105)
-        && (charCode < 37 || charCode > 40)
-        && charCode !== 46
-        && charCode !== 110
-        && charCode !== 188
-        && charCode !== 190) {
+      && (charCode < 48 || charCode > 57)
+      && (charCode < 96 || charCode > 105)
+      && (charCode < 37 || charCode > 40)
+      && charCode !== 46
+      && charCode !== 110
+      && charCode !== 188
+      && charCode !== 190) {
       event.preventDefault();
       return false;
     }

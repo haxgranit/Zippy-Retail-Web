@@ -91,7 +91,9 @@ const EditContact: React.FC = () => {
       .then(() => {
         navigate('../contact-list');
       })
-      .catch((error) => console.log('error', error));
+      .catch((error) => {
+        throw error.message;
+      });
   }
 
   return (
