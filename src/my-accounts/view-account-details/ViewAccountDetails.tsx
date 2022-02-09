@@ -157,8 +157,8 @@ export default function ViewAccountDetails() {
           <div className="col-12">
             <p>
               For a description of transactions that are included in the ZippyX SmartTM Account
-              monthly fee and the fees for other Personal Banking Services, visit a ZippyX Banking
-              Centre or review Personal Account Service Fees (PDF, 210 KB).
+              monthly fee and the fees for other Personal Services, visit ZippyX or review
+              Personal Account Service Fees (PDF, 210 KB).
             </p>
             <p>
               * Foreign Currency Conversion Fee - If you withdraw foreign currency

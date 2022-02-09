@@ -232,14 +232,6 @@ exports[`TransferFunds Component matches the snapshot 1`] = `
               <li>
                 The "Account Balance" that is displayed may include any funds on hold. The "Available Funds" shows how much money is available immediately to make a transfer.
               </li>
-              <li>
-                If you would like to make a wire transfer, please contact your
-                 
-                <u>
-                  local Banking Centre
-                </u>
-                .
-              </li>
             </ul>
           </div>
         </div>

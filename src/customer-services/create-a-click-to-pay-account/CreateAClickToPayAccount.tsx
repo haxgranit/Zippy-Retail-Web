@@ -71,16 +71,16 @@ export default function CreateAClickToPayAccount() {
               <ol>
                 <li>
                   These terms and conditions apply to the use of Click to Pay
-                  through ZippyX Online Banking. Click to Pay is a service provided
+                  through ZippyX. Click to Pay is a service provided
                   by EMVCo, By agreeing to these terms and conditions, you are
                   agreeing to link directly to Visa&apos;s Click to Pay website
-                  from ZippyX Online Banking. You must also agree to the Click to
+                  from ZippyX. You must also agree to the Click to
                   Pay terms and conditions to use Click to Pay.
                 </li>
                 <li>
                   Once you register fo Click to pay, your Click to Pay account
-                  will be linked to ZippyX Online Banking. This means that when you
-                  access your Click to Pay account through ZippyX Online Banking,
+                  will be linked to ZippyX. This means that when you
+                  access your Click to Pay account through ZippyX,
                   you will not be required to log in separately.
                 </li>
                 <li>

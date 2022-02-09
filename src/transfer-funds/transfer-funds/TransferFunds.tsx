@@ -108,12 +108,6 @@ const LeftCol = () => (
             &quot;Available Funds&quot; shows how much money is available immediately to make a
             transfer.
           </li>
-          <li>
-            If you would like to make a wire transfer, please contact your
-            {' '}
-            <u>local Banking Centre</u>
-            .
-          </li>
         </ul>
       </Col>
     </Row>

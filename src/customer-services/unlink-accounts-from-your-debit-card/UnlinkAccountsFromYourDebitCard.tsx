@@ -138,9 +138,7 @@ export default function UnlinkAccountsFromYourDebitCard() {
               <ul>
                 <li>
                   You may not able to access the unlinked account or perfom
-                  certain atlas (e.g., transfer funds) through ZippyX Online
-                  Banking®, Mobile Banking, Telephone Banking or at bank
-                  machines.
+                  certain atlas (e.g., transfer funds) through ZippyX.
                 </li>
                 <li>
                   You will not be able to use the account for interac® point of
@@ -151,8 +149,7 @@ export default function UnlinkAccountsFromYourDebitCard() {
               <ul>
                 <li>
                   You will not be able to transfer funds between your credit
-                  card and bank account(s) through ZippyX Online Banking, Mobile
-                  Banking, Telephone Banking, or at bank machines.
+                  card and bank account(s) through ZippyX.
                 </li>
                 <li>
                   You will not be able to access your credit card at bank

@@ -16,16 +16,16 @@ exports[`TransactionStart Component matches the snapshot 1`] = `
       <div
         className="zippy-cash-container-header"
       >
-        <div
+        <h1
           className="title"
         >
-          Personal Banking
-        </div>
-        <div
+          Personal Account
+        </h1>
+        <h2
           className="catch"
         >
           Made Fun With Zippy!
-        </div>
+        </h2>
       </div>
       <div
         className="zippy-cash-container-body"
@@ -62,6 +62,7 @@ exports[`TransactionStart Component matches the snapshot 1`] = `
               className="form-control"
               onChange={[Function]}
               placeholder="Enter @ZippyUsername or Email"
+              type="text"
             />
             <button
               className="btn-select-contact btn-transparent btn btn-primary"
@@ -76,15 +77,143 @@ exports[`TransactionStart Component matches the snapshot 1`] = `
           </div>
           <div
             className="contact-list-wrap"
-          />
+          >
+            <div
+              className="contact-container hidden"
+            >
+              <div
+                aria-label="Zippy Cash"
+                className="zippy-btn-group btn-group"
+                role="group"
+              >
+                <button
+                  className="active btn btn-primary"
+                  disabled={true}
+                  onClick={[Function]}
+                  type="button"
+                >
+                  Personal
+                </button>
+                <button
+                  className="btn btn-primary"
+                  disabled={false}
+                  onClick={[Function]}
+                  type="button"
+                >
+                  Business
+                </button>
+              </div>
+              <div
+                className="contact-search"
+              >
+                <i
+                  className="zippy-cash-icon zc-search"
+                />
+                <input
+                  className="form-control"
+                  onChange={[Function]}
+                  placeholder="Search..."
+                  value=""
+                />
+              </div>
+              <div
+                className="contact-list-container"
+              >
+                <div>
+                  Loading...
+                </div>
+              </div>
+              <div
+                className="action"
+              >
+                <button
+                  className="zippy-btn btn btn-primary"
+                  disabled={true}
+                  onClick={[Function]}
+                  type="button"
+                >
+                  <div
+                    className="loading spinner-border"
+                    role="status"
+                  />
+                  Add Contact
+                </button>
+              </div>
+            </div>
+            <div
+              className="contact-container hidden"
+            >
+              <div
+                className="container-header"
+              >
+                <h2
+                  className="title"
+                >
+                  Add  Contact
+                </h2>
+              </div>
+              <div
+                className="container-body"
+              >
+                <input
+                  className="common-input form-control"
+                  name="firstname"
+                  onChange={[Function]}
+                  placeholder="Firstname"
+                  type="text"
+                  value=""
+                />
+                <input
+                  className="common-input form-control"
+                  name="lastname"
+                  onChange={[Function]}
+                  placeholder="Lastname"
+                  type="text"
+                  value=""
+                />
+                <input
+                  className="common-input form-control"
+                  name="email"
+                  onChange={[Function]}
+                  placeholder="Email"
+                  type="text"
+                  value=""
+                />
+                <input
+                  className="common-input form-control"
+                  name="nickname"
+                  onChange={[Function]}
+                  placeholder="Nickname (optional)"
+                  type="text"
+                  value=""
+                />
+              </div>
+              <div
+                className="action"
+              >
+                <button
+                  className="zippy-btn btn btn-primary"
+                  disabled={true}
+                  onClick={[Function]}
+                  type="button"
+                >
+                  <div
+                    className="loading spinner-border"
+                    role="status"
+                  />
+                  Add Contact
+                </button>
+              </div>
+            </div>
+          </div>
         </div>
         <input
           className="amount form-control"
           onChange={[Function]}
-          placeholder="0.00"
-          step=".01"
-          type="number"
-          value={1000}
+          onKeyDown={[Function]}
+          placeholder="$0.00"
+          type="string"
+          value=""
         />
         <div
           className="select-method"
@@ -95,7 +224,7 @@ exports[`TransactionStart Component matches the snapshot 1`] = `
             <input
               checked={false}
               className="form-check-input"
-              disabled={false}
+              disabled={true}
               id="zippy-cash"
               name="actions2"
               onChange={[Function]}
@@ -135,7 +264,7 @@ exports[`TransactionStart Component matches the snapshot 1`] = `
         >
           <button
             className="zippy-btn btn btn-primary"
-            disabled={false}
+            disabled={true}
             type="button"
           >
             Zipp It

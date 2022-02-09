@@ -99,7 +99,7 @@ export default function ManageMyAlerts() {
               <li>
                 Push Notifications are personalized alerts sent directly to your
                 mobile device that can help you stay on top of your ZippyX accounts.
-                If you sign into ZippyX Mobile Banking from a mobile device other
+                If you sign into ZippyX from a mobile device other
                 than your own, Your alerts may be sent to that device until
                 another user signs in to the application.
               </li>
@@ -152,8 +152,7 @@ export default function ManageMyAlerts() {
                 <Row style={{ padding: 10, borderBottom: '1px solid grey' }}>
                   <Col md={8}>
                     <div className="d-flex" style={{ fontWeight: 'bold' }}>
-                      Changes have been made to my Online, Mobile and Telephone
-                      Banking passwords
+                      Changes have been made to my ZippyX passwords
                       <div
                         style={{
                           width: 20,

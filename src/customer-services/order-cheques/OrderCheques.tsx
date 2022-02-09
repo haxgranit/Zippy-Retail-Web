@@ -95,7 +95,7 @@ export default function OrderCheques() {
                   <li>
                     If you changed your address during this session it will not
                     be reflected in the cheque order process until you exit and
-                    sign back on to Online Banking.
+                    sign back on to ZippyX.
                   </li>
                   <li>
                     If you don&apos;t want your home address, phone number

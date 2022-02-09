@@ -53,7 +53,7 @@ exports[`VerticalNavLinks Component matches the snapshot 1`] = `
       className="nav-link nav-link"
       data-rr-ui-event-key={null}
       disabled={false}
-      href="/my-wallet"
+      href="/my-wallet/zippy-money/send/transaction-start"
       onClick={[Function]}
     >
       <i

@@ -69,7 +69,7 @@ export default function CustomerServices() {
     <div className="page-content">
       <CommonPageContainer title="Customer Services">
         <div className="mt-4">
-          <h4>ONLINE BANKING INFORMATION</h4>
+          <h4>ZIPPYX INFORMATION</h4>
           <Row style={{ borderTop: '2px solid grey' }}>
             <Col md={6} style={{ padding: 0 }}>
               <div style={{ backgroundColor: '#ebebeb', padding: 10 }}>

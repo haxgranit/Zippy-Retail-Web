@@ -22,7 +22,7 @@ export default function TransactionSecurityQuestions({
 
   return (
     <>
-      <PageContainer title="Personal Banking" subTitle="Made Fun With Zippy!">
+      <PageContainer title="Personal Account" subTitle="Made Fun With Zippy!">
         <div className="title">
           Security Question
         </div>

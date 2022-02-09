@@ -43,6 +43,7 @@ export interface TransferMainDetails {
   destination: { name: string; email: string };
   fromAccount: string;
   amount: number;
+  amountString?: string;
   message: string;
   transferMethod: string;
   securityQuestion: string;

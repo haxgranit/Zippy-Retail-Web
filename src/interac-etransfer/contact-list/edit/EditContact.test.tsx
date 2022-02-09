@@ -1,4 +1,5 @@
 import React from 'react';
+import { BrowserRouter } from 'react-router-dom';
 import { render } from '@testing-library/react';
 import EditContact from './EditContact';
 
@@ -23,12 +24,12 @@ jest.mock('react-router-dom', () => ({
 
 describe('EditContact Component', () => {
   it('matches the snapshot', () => {
-    const tree = ReactTestRenderer.create(<EditContact />).toJSON();
+    const tree = ReactTestRenderer.create(<BrowserRouter><EditContact /></BrowserRouter>).toJSON();
     expect(tree).toMatchSnapshot();
   });
 
   test('should render title', () => {
-    const { container } = render(<EditContact />);
+    const { container } = render(<BrowserRouter><EditContact /></BrowserRouter>);
     const setShow = jest.fn();
     React.useState = jest.fn().mockImplementationOnce((x) => [x, setShow]);
 
