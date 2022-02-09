@@ -64,6 +64,7 @@ exports[`Header Component matches the snapshot 1`] = `
           <a
             aria-expanded={false}
             className="dropdown-toggle nav-link"
+            href="#"
             onClick={[Function]}
             onKeyDown={[Function]}
             role="button"
@@ -78,6 +79,7 @@ exports[`Header Component matches the snapshot 1`] = `
           <a
             aria-expanded={false}
             className="dropdown-toggle nav-link"
+            href="#"
             onClick={[Function]}
             onKeyDown={[Function]}
             role="button"

@@ -1,5 +1,4 @@
-/* eslint-disable max-len
- */
+/* eslint - disable - next - line */
 import { render, fireEvent } from '@testing-library/react';
 import { DateTime } from 'luxon';
 import MonthSelectComponent from './MonthSelectComponent';

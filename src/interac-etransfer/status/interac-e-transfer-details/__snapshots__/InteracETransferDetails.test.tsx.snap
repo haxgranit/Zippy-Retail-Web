@@ -99,6 +99,7 @@ exports[`InteracETransferDetails Component matches the snapshot 1`] = `
             aria-labelledby="status-tab-tab-sent"
             className="tab-pane"
             id="status-tab-tabpane-sent"
+            role="tabpanel"
           >
             <select
               className="month-select-comp form-select"
@@ -236,6 +237,7 @@ exports[`InteracETransferDetails Component matches the snapshot 1`] = `
             aria-labelledby="status-tab-tab-received"
             className="tab-pane active"
             id="status-tab-tabpane-received"
+            role="tabpanel"
           >
             <select
               className="month-select-comp form-select"
@@ -353,6 +355,7 @@ exports[`InteracETransferDetails Component matches the snapshot 1`] = `
             aria-labelledby="status-tab-tab-requested"
             className="tab-pane"
             id="status-tab-tabpane-requested"
+            role="tabpanel"
           >
             <select
               className="month-select-comp form-select"
