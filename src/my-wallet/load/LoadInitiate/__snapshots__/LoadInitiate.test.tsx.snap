@@ -1,0 +1,80 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TransactionComplete Component matches the snapshot 1`] = `
+<div
+  className=""
+>
+  <div
+    className="zippy-cash-container-wrap"
+  >
+    <div
+      className="backdrop"
+    />
+    <div
+      className="zippy-cash-container"
+    >
+      <div
+        className="zippy-cash-container-header"
+      >
+        <div
+          className="title"
+        >
+          Personal Banking
+        </div>
+        <div
+          className="catch"
+        >
+          Made Fun With Zippy!
+        </div>
+      </div>
+      <div
+        className="zippy-cash-container-body"
+      >
+        <div
+          className="title"
+        >
+          Load wallet
+        </div>
+        <input
+          className="amount form-control"
+          onChange={[Function]}
+          placeholder="0.00"
+          step=".01"
+          type="number"
+        />
+        <div
+          className="position-relative"
+        >
+          <div
+            className="dropbtn1"
+            onClick={[Function]}
+            onKeyDown={[Function]}
+            role="button"
+            tabIndex="0"
+          >
+            Select funding source
+             
+            <img
+              alt=""
+              src="https://dash.com.sg/assets/images/icons/arrow--down--grey.svg"
+              width={30}
+            />
+          </div>
+        </div>
+        <div
+          className="action"
+        >
+          <button
+            className="zippy-btn btn btn-primary"
+            disabled={false}
+            onClick={[Function]}
+            type="button"
+          >
+            Load
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

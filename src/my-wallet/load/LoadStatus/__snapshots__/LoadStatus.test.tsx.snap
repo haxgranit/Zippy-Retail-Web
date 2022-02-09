@@ -1,0 +1,92 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TransactionComplete Component matches the snapshot 1`] = `
+<div
+  className=""
+>
+  <div
+    className="zippy-cash-container-wrap"
+  >
+    <div
+      className="backdrop"
+    />
+    <div
+      className="zippy-cash-container"
+    >
+      <div
+        className="zippy-cash-container-header"
+      >
+        <div
+          className="title"
+        >
+          Personal Banking
+        </div>
+        <div
+          className="catch"
+        >
+          Made Fun With Zippy!
+        </div>
+      </div>
+      <div
+        className="zippy-cash-container-body"
+      >
+        <div
+          className="title"
+        >
+          Fund Transfer
+        </div>
+        <div
+          className="text-center"
+        >
+          <img
+            alt=""
+            height={60}
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRiasGIxFBoQcTrzg0bo5XCQVFIOg_lyreZ2AN96Pdi670ZPLPsl58NCLOTmSlpZiZ6tA4&usqp=CAU"
+            width={60}
+          />
+        </div>
+        <div
+          className="details"
+        >
+          <div
+            className="row"
+          >
+            <div
+              className="col-12"
+            >
+              Your $
+               
+              credited into your zippy account
+            </div>
+          </div>
+          <div
+            className="row"
+          >
+            <div
+              className="col-12"
+            >
+              Your total available Zippy balance is
+               
+              <b>
+                $200
+              </b>
+            </div>
+          </div>
+        </div>
+        <div
+          className="action"
+        >
+          <button
+            className="zippy-btn btn btn-primary"
+            disabled={false}
+            onClick={[Function]}
+            type="button"
+          >
+            Close
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

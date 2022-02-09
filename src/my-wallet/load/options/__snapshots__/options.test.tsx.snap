@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TransactionComplete Component matches the snapshot 1`] = `
+<div
+  className="position-relative"
+>
+  <div
+    className="dropbtn1"
+    onClick={[Function]}
+    onKeyDown={[Function]}
+    role="button"
+    tabIndex="0"
+  >
+    Select funding source
+     
+    <img
+      alt=""
+      src="https://dash.com.sg/assets/images/icons/arrow--down--grey.svg"
+      width={30}
+    />
+  </div>
+</div>
+`;
