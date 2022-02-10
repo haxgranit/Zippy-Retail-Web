@@ -13,6 +13,7 @@ import { TunnelTypeEnum } from '../enum/TunnelTypeEnum';
 
 export interface TransactionInterface {
   contactList: Array<Contact>;
+  setContactList: Dispatch<SetStateAction<Array<Contact>>>,
   accountsList: Array<Account>;
   step: SendMoneyStepsEnum;
   transactionType: TransactionTypeEnum;

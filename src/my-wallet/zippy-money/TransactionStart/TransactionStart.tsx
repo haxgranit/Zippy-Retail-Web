@@ -9,6 +9,7 @@ import AmountInput from '../../../common/AmountInput';
 
 export default function TransactionStart({
   contactList,
+  setContactList,
   // accountsList,
   transactionType,
   handleTriggerTransaction,
@@ -48,6 +49,7 @@ export default function TransactionStart({
         </div>
         <ContactInput
           contactList={contactList}
+          setContactList={setContactList}
           selectedContact={selectedContact}
           setSelectedContact={setSelectedContact}
         />
@@ -64,7 +66,6 @@ export default function TransactionStart({
             name="actions2"
             onChange={() => setTunnelType(TunnelTypeEnum.ZIPPY_CASH)}
             checked={tunnelType === TunnelTypeEnum.ZIPPY_CASH}
-            disabled
           />
           <Form.Check
             id="interac-e-transfer"

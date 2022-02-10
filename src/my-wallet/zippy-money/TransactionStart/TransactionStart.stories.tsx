@@ -16,6 +16,7 @@ const Template: ComponentStory<typeof TransactionStart> = () => (
     <TransactionStart
       accountsList={[]}
       contactList={[]}
+      setContactList={jest.fn()}
       errorMessage=""
       handleTriggerTransaction={undefined}
       isProcessing={false}
@@ -28,7 +29,7 @@ const Template: ComponentStory<typeof TransactionStart> = () => (
       step={SendMoneyStepsEnum.TRANSACTION_START}
       transactionType={TransactionTypeEnum.SEND}
       setTunnelType={jest.fn()}
-    />
+     />
   </BrowserRouter>
 );
 

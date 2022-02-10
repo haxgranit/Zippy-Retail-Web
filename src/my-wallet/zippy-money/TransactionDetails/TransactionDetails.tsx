@@ -15,7 +15,9 @@ export default function TransactionDetails({
 }: Pick<TransactionInterface, 'user' | 'transaction' | 'transactionType' | 'resetMainInfo'>) {
   const getUserFullName = () => {
     if (transactionType === TransactionTypeEnum.SEND) {
+      console.log({ here: true });
       const contact = transaction?.contact;
+      console.log({ here: false });
       return contact && contact.firstName && contact.lastName ? `${contact.firstName} ${contact.lastName}` : '';
     }
     return user && user.firstName && user.lastName ? `${user.firstName} ${user.lastName}` : '';

@@ -49,7 +49,7 @@ export default function VerticalNavLinks() {
             <Nav.Link as={NavLink} to="/interac-etransfer/learn-more">Learn More</Nav.Link>
           </Nav>
         )}
-        <Nav.Link className="nav-link" as={NavLink} to="/my-wallet/zippy-money/send/transaction-start">
+        <Nav.Link className="nav-link" as={NavLink} to="/my-wallet">
           <i className="zippy-cash-icon zc-interac-etransfer" />
           My Wallet
           <i className="dropdown zippy-cash-icon zc-up" />
@@ -57,11 +57,11 @@ export default function VerticalNavLinks() {
         {pathname.startsWith('/my-wallet') && (
           <Nav className="flex-column" style={{ marginLeft: '20px' }}>
             <Nav.Link as={NavLink} to="/my-wallet/zippy-money/send/transaction-start">Zippy Money</Nav.Link>
-            <Nav.Link as={NavLink} to="/my-wallet/zippy-money/status">Status</Nav.Link>
-            <Nav.Link as={NavLink} to="/my-wallet/zippy-money/load">Load</Nav.Link>
-            <Nav.Link as={NavLink} to="/my-wallet/zippy-money/get">Get</Nav.Link>
-            <Nav.Link as={NavLink} to="/my-wallet/zippy-money/funding-source">Funding Source</Nav.Link>
-            <Nav.Link as={NavLink} to="/my-wallet/zippy-money/auto-deposit">Auto Deposit</Nav.Link>
+            <Nav.Link as={NavLink} to="/my-wallet/status">Status</Nav.Link>
+            <Nav.Link as={NavLink} to="/my-wallet/load">Load</Nav.Link>
+            <Nav.Link as={NavLink} to="/my-wallet/get">Get</Nav.Link>
+            <Nav.Link as={NavLink} to="/my-wallet/funding-source">Funding Source</Nav.Link>
+            <Nav.Link as={NavLink} to="/my-wallet/auto-deposit">Auto Deposit</Nav.Link>
           </Nav>
         )}
         <Nav.Link className="nav-link" as={NavLink} to="/bill-payments">
