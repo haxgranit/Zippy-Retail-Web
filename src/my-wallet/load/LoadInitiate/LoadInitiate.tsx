@@ -5,6 +5,7 @@ import { useEffect, useState } from 'react';
 import { Button, FormControl, Modal } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 import Api, { FundingSource } from '../../../api';
+import AmountInput from '../../../common/AmountInput';
 import PageContainer from '../../../common/PageContainer';
 import Options from '../options/options';
 
@@ -114,13 +115,9 @@ export default function LoadInitiate() {
         Load wallet
       </div>
 
-      <FormControl
-        className="amount"
-        placeholder="0.00"
-        type="number"
-        step=".01"
-        defaultValue={amount}
-        onChange={(event) => { setAmoumt(+event.target.value); }}
+      <AmountInput
+        amount={amount}
+        setAmount={(value) => setAmoumt(Number(value))}
       />
       {loadTried && !(amount > 0)
         && (
