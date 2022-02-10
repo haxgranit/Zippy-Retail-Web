@@ -2,7 +2,7 @@
 import { useMsal } from '@azure/msal-react';
 // import Select, { components } from 'react-select';
 import { useEffect, useState } from 'react';
-import { Button, FormControl, Modal } from 'react-bootstrap';
+import { Button, Modal } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 import Api, { FundingSource } from '../../../api';
 import AmountInput from '../../../common/AmountInput';
