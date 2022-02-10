@@ -1,5 +1,6 @@
 import { useMsal } from '@azure/msal-react';
 import { useEffect, useState } from 'react';
+import NumberFormat from 'react-number-format';
 import Api, { Account } from '../api';
 import { useAppSelector } from '../app/hooks';
 import CommonPageContainer from '../common/CommonPageContainer';
@@ -11,7 +12,16 @@ export const ZippyBalancePure = ({ account }: { account: Account | undefined }) 
       { account !== undefined ? (
         <>
           <span>{account.name}</span>
-          <span className="ms-3">{`$${account.balance.toFixed(2)}`}</span>
+          <NumberFormat
+            className="ms-3"
+            value={account.balance}
+            displayType="text"
+            prefix="$ "
+            suffix=" CAD"
+            thousandSeparator
+            decimalScale={2}
+            fixedDecimalScale
+          />
         </>
       ) : 'Loading...' }
     </CommonPageContainer>
