@@ -41,7 +41,7 @@ exports[`TransactionComplete Component matches the snapshot 1`] = `
           <img
             alt=""
             height={60}
-            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRiasGIxFBoQcTrzg0bo5XCQVFIOg_lyreZ2AN96Pdi670ZPLPsl58NCLOTmSlpZiZ6tA4&usqp=CAU"
+            src="https://www.pinclipart.com/picdir/middle/6-65577_cloudy-day-clipart.png"
             width={60}
           />
         </div>

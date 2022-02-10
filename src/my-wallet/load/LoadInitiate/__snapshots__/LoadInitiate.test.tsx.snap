@@ -37,14 +37,14 @@ exports[`TransactionComplete Component matches the snapshot 1`] = `
         </div>
         <input
           className="amount form-control"
-          defaultValue={0}
           onChange={[Function]}
-          placeholder="0.00"
-          step=".01"
-          type="number"
+          onKeyDown={[Function]}
+          placeholder="$0.00"
+          type="string"
+          value=""
         />
         <div
-          className="position-relative"
+          className="dropdown_background"
         >
           <div
             className="dropbtn1"
@@ -57,8 +57,10 @@ exports[`TransactionComplete Component matches the snapshot 1`] = `
              
             <img
               alt=""
-              src="https://dash.com.sg/assets/images/icons/arrow--down--grey.svg"
-              width={30}
+              className="margin"
+              height={14}
+              src="https://library.kissclipart.com/20180915/yhw/kissclipart-drop-down-arrow-icon-clipart-computer-icons-drop-d-172f248dc7644e4f.png"
+              width={14}
             />
           </div>
         </div>
