@@ -1,6 +1,4 @@
-/* eslint-disable react/jsx-props-no-spreading */
 import { useMsal } from '@azure/msal-react';
-// import Select, { components } from 'react-select';
 import { useEffect, useState } from 'react';
 import { Button, Modal } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
@@ -22,14 +20,7 @@ export default function LoadInitiate() {
     new Api(instance, accounts[0])
       .listFundingSources()
       .then((result:FundingSource[]) => {
-        // const options = result.map((s:FundingSource) => ({
-        //   value: s.id,
-        //   ...s,
-        //   label: s.displayName
-        //     ?? (s?.bankAccount?.accountNumber ?? s?.paymentCard?.number),
-        // }));
         setFundingSources(result ?? []);
-        // setSelectedAccount(options[options.findIndex((f) => f.isDefault)]);
       })
       .catch((error) => console.log('error', error));
   }, []);
@@ -68,47 +59,6 @@ export default function LoadInitiate() {
       });
   }
 
-  // const CustomOption = (props) => {
-  //   const { data, isSelected } = props;
-
-  //   if (data.bankAccount) {
-  //     return (
-  //       <components.Option {...props}>
-  //         <>
-  //           <div className="d-flex align-item-center justify-content-between bg-white">
-  //             <div className="bg-white text-black">
-  //               <div className="d-flex align-item-center justify-content-between">
-  //                 Bank Name: ABC Bank
-  //               </div>
-  //               <div className="d-flex align-item-center justify-content-between">
-  //                 Account Number:
-  //                 {' '}
-  //                 {data.bankAccount.accountNumber}
-  //               </div>
-  //             </div>
-  //             <input className="" type="radio" defaultChecked={isSelected} />
-  //           </div>
-  //         </>
-  //       </components.Option>
-  //     );
-  //   }
-  //   return (
-  //     <components.Option {...props}>
-  //       <div className="border-top">
-  //         <div className="d-flex align-item-center justify-content-between">
-  //           <p>{data.paymentCard.number}</p>
-  //           {data.paymentCard.number}
-  //           <img width={30} src="https://pngimg.com/uploads/visa/visa_PNG24.png" alt="" />
-  //           <input type="radio" defaultChecked={isSelected} />
-  //         </div>
-  //         <div className="d-flex align-item-center justify-content-between">
-  //           Debit Card
-  //         </div>
-  //       </div>
-  //     </components.Option>
-  //   );
-  // };
-
   return (
     <PageContainer title="Personal Banking" subTitle="Made Fun With Zippy!">
       <div className="title">
@@ -126,23 +76,6 @@ export default function LoadInitiate() {
             *Amount Must Be Greater Than Zero
           </span>
         )}
-      {/* <Select
-        options={fundingSources}
-        components={{
-          Option: CustomOption,
-        }}
-        onChange={(option) => {
-          setSelectedAccount(option);
-          const seletedAccount = fundingSources.find(
-            (source) => source.id === +option.value,
-          );
-          if (seletedAccount.paymentCard) {
-            // eslint-disable-next-line no-alert
-            alert('Card choosen, hence validated');
-          }
-        }}
-        defaultValue={selectedAccount}
-      /> */}
       <Options
         defaultTitle="Select funding source"
         fundingSources={fundingSources}
