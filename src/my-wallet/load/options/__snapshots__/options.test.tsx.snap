@@ -9,7 +9,7 @@ exports[`TransactionComplete Component matches the snapshot 1`] = `
     onClick={[Function]}
     onKeyDown={[Function]}
     role="button"
-    tabIndex="0"
+    tabIndex={0}
   >
     Select funding source
      

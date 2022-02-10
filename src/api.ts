@@ -78,6 +78,7 @@ export type PaymentCard = {
 };
 
 export type FundingSource = {
+  id:number,
   displayName: string,
   isDefault: boolean,
   bankAccount: BankAccount | null,
@@ -86,7 +87,7 @@ export type FundingSource = {
 
 export type FundLoadRequest = {
   amount: number,
-  sourceId: string
+  sourceId: number
 };
 
 export async function getToken(instance: IPublicClientApplication, account: AccountInfo)

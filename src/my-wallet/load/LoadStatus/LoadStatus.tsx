@@ -3,7 +3,8 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import PageContainer from '../../../common/PageContainer';
 
 export default function LoadStatus() {
-  const { state } = useLocation();
+  // eslint-disable-next-line prefer-destructuring
+  const state: any = useLocation().state;
   const navigate = useNavigate();
   return (
     <PageContainer title="Personal Banking" subTitle="Made Fun With Zippy!">

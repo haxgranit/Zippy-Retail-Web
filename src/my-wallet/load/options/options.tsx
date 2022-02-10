@@ -1,8 +1,10 @@
 import { useState } from 'react';
+import { FundingSource } from '../../../api';
 
-export default function Options({ defaultTitle, fundingSources, onChange }) {
+export default function Options(props: any) {
+  const { defaultTitle, fundingSources, onChange } = props;
   const [expanded, setExpanded] = useState(false);
-  function optionSelected(option) {
+  function optionSelected(option:FundingSource) {
     onChange(option);
     setExpanded(false);
   }
@@ -12,7 +14,7 @@ export default function Options({ defaultTitle, fundingSources, onChange }) {
         <div
           className="dropbtn1"
           role="button"
-          tabIndex="0"
+          tabIndex={0}
           onClick={() => setExpanded(!expanded)}
           onKeyDown={() => {}}
         >
@@ -22,12 +24,12 @@ export default function Options({ defaultTitle, fundingSources, onChange }) {
         </div>
         { expanded && (
         <div className="dropdown-content">
-          {fundingSources?.map((fundingSource) => (
+          {fundingSources?.map((fundingSource: FundingSource, index: number) => (
             fundingSource?.bankAccount ? (
               <>
                 <div
                   role="button"
-                  tabIndex="0"
+                  tabIndex={index}
                   className="d-flex align-item-center justify-content-between text-black"
                   style={{ borderBottom: '1px solid #CCC', padding: '0.5rem' }}
                   onClick={() => optionSelected(fundingSource)}
@@ -48,7 +50,7 @@ export default function Options({ defaultTitle, fundingSources, onChange }) {
                     className="d-flex align-item-center justify-content-between mt-1"
                     role="button"
                     style={{ borderBottom: '1px solid #CCC', padding: '0.5rem' }}
-                    tabIndex="0"
+                    tabIndex={index}
                     onClick={() => optionSelected(fundingSource)}
                     onKeyDown={() => {}}
                   >

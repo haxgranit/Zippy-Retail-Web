@@ -4,15 +4,15 @@ import { useMsal } from '@azure/msal-react';
 import { useEffect, useState } from 'react';
 import { Button, FormControl, Modal } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
-import Api from '../../../api';
+import Api, { FundingSource } from '../../../api';
 import PageContainer from '../../../common/PageContainer';
 import Options from '../options/options';
 
 export default function LoadInitiate() {
-  const [fundingSources, setFundingSources] = useState([]);
-  const [amount, setAmoumt] = useState();
+  const [fundingSources, setFundingSources] = useState<FundingSource[]>([]);
+  const [amount, setAmoumt] = useState(0.00);
   const [cardExpired, setCardExpired] = useState(false);
-  const [selectedAccount, setSelectedAccount] = useState(undefined);
+  const [selectedAccount, setSelectedAccount] = useState<FundingSource | undefined>(undefined);
   const navigate = useNavigate();
 
   const { instance, accounts } = useMsal();
@@ -20,14 +20,14 @@ export default function LoadInitiate() {
   useEffect(() => {
     new Api(instance, accounts[0])
       .listFundingSources()
-      .then((result) => {
-        const options = result.map((s) => ({
-          value: s.id,
-          ...s,
-          label: s.displayName
-            ?? (s?.bankAccount?.accountNumber ?? s?.paymentCard?.number),
-        }));
-        setFundingSources(options ?? []);
+      .then((result:FundingSource[]) => {
+        // const options = result.map((s:FundingSource) => ({
+        //   value: s.id,
+        //   ...s,
+        //   label: s.displayName
+        //     ?? (s?.bankAccount?.accountNumber ?? s?.paymentCard?.number),
+        // }));
+        setFundingSources(result ?? []);
         // setSelectedAccount(options[options.findIndex((f) => f.isDefault)]);
       })
       .catch((error) => console.log('error', error));
@@ -50,7 +50,7 @@ export default function LoadInitiate() {
     }
     const fundRequest = {
       amount,
-      sourceId: selectedAccount,
+      sourceId: selectedAccount.id,
     };
     new Api(instance, accounts[0])
       .postFundLoadRequest(fundRequest)
@@ -120,7 +120,7 @@ export default function LoadInitiate() {
         type="number"
         step=".01"
         defaultValue={amount}
-        onChange={(event) => { setAmoumt(event.target.value); }}
+        onChange={(event) => { setAmoumt(+event.target.value); }}
       />
       {loadTried && !(amount > 0)
         && (
@@ -149,15 +149,8 @@ export default function LoadInitiate() {
       <Options
         defaultTitle="Select funding source"
         fundingSources={fundingSources}
-        onChange={(option) => {
+        onChange={(option: FundingSource) => {
           setSelectedAccount(option);
-          const seletedAccount = fundingSources.find(
-            (source) => source.id === +option.value,
-          );
-          if (seletedAccount.paymentCard) {
-          // eslint-disable-next-line no-alert
-            alert('Card choosen, hence validated');
-          }
         }}
       />
       {loadTried && !selectedAccount
