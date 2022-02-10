@@ -14,7 +14,14 @@ exports[`ZippyBalance Component matches the snapshot when loaded 1`] = `
   <div
     className="content-wrapper"
   >
-    $1000.00
+    <span>
+      8000 001 000000000
+    </span>
+    <span
+      className="ms-3"
+    >
+      $ 1,000.00 CAD
+    </span>
   </div>
   <div
     className="footer-content-wrapper"
