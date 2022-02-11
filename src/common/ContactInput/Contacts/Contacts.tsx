@@ -9,15 +9,18 @@ import {
 import { Contact } from '../../../api';
 import { ContactTypeEnum } from '../../../constants/enum/ContactTypeEnum';
 import { formatContactName } from '../../../Helpers';
+import AddContact from '../AddContact/AddContact';
 
 function Contacts({
   contactList,
+  setContactList,
   selectedContact,
   setSelectedContact,
   showContactList,
   setShowContactList,
 }: {
   contactList: Array<Contact>;
+  setContactList: Dispatch<SetStateAction<Array<Contact>>>;
   selectedContact: Contact;
   setSelectedContact: Dispatch<SetStateAction<Contact>>;
   showContactList: boolean,
@@ -30,11 +33,6 @@ function Contacts({
   const [initialized, setInitialized] = useState<boolean>(false);
   const [isNewContact, setIsNewContact] = useState<boolean>(false);
 
-  const [firstname, setFirstname] = useState<string>('');
-  const [lastname, setLastname] = useState<string>('');
-  const [email, setEmail] = useState<string>('');
-  const [nickname, setNickname] = useState<string>('');
-
   const filter = (value: string) => {
     setSearchValue(value);
     setFilteredContactList(contactList.filter((contactItem) => {
@@ -43,6 +41,14 @@ function Contacts({
         || contactItem?.lastName?.toLowerCase().includes(search)
         || contactItem?.email?.toLowerCase().includes(search);
     }));
+  };
+
+  const contactCreate = (contact: Contact) => {
+    const newContactAdded = [...contactList, contact];
+    setContactList(newContactAdded);
+    setIsNewContact(false);
+    setShowContactList(true);
+    setInitialized(false);
   };
 
   useEffect(() => {
@@ -71,7 +77,7 @@ function Contacts({
           <Button
             className={contactType === ContactTypeEnum.BUSINESS ? 'active' : ''}
             onClick={() => setContactType(ContactTypeEnum.BUSINESS)}
-            disabled={contactType === ContactTypeEnum.BUSINESS}
+            disabled={contactType === ContactTypeEnum.BUSINESS && true}
           >
             Business
           </Button>
@@ -135,56 +141,9 @@ function Contacts({
         </div>
       </div>
       <div className={`contact-container ${isNewContact && !showContactList ? 'visible' : 'hidden'}`}>
-        <div className="container-header">
-          <h2 className="title">Add  Contact</h2>
-        </div>
-        <div className="container-body">
-          <FormControl
-            type="text"
-            className="common-input"
-            placeholder="Firstname"
-            name="firstname"
-            value={firstname}
-            onChange={(evt) => setFirstname(evt.target.value)}
-          />
-          <FormControl
-            type="text"
-            className="common-input"
-            placeholder="Lastname"
-            name="lastname"
-            value={lastname}
-            onChange={(evt) => setLastname(evt.target.value)}
-          />
-          <FormControl
-            type="text"
-            className="common-input"
-            placeholder="Email"
-            name="email"
-            value={email}
-            onChange={(evt) => setEmail(evt.target.value)}
-          />
-          <FormControl
-            type="text"
-            className="common-input"
-            placeholder="Nickname (optional)"
-            name="nickname"
-            value={nickname}
-            onChange={(evt) => setNickname(evt.target.value)}
-          />
-        </div>
-        <div className="action">
-          <Button
-            className="zippy-btn"
-            disabled={isProcessing}
-            onClick={() => {
-              setIsNewContact(false);
-              setShowContactList(true);
-            }}
-          >
-            {isProcessing && <div className="loading spinner-border" role="status" />}
-            Add Contact
-          </Button>
-        </div>
+        <AddContact
+          onContactCreated={(contact: Contact) => contactCreate(contact)}
+        />
       </div>
     </>
   );
@@ -192,6 +151,7 @@ function Contacts({
 
 Contacts.propTypes = {
   contactList: PropTypes.arrayOf(PropTypes.object),
+  setContactList: PropTypes.func,
   selectedContact: PropTypes.objectOf(PropTypes.any),
   setSelectedContact: PropTypes.func,
   showContactList: PropTypes.bool,
@@ -200,6 +160,7 @@ Contacts.propTypes = {
 
 Contacts.defaultProps = {
   contactList: [],
+  setContactList: undefined,
   selectedContact: {
     id: null,
     email: '',

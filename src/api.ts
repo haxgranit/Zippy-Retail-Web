@@ -19,6 +19,7 @@ export type ContactBase = {
   firstName: string;
   lastName: string;
   email: string;
+  nickname?: string;
   phone?: string;
 };
 
@@ -44,12 +45,20 @@ export type Transaction = {
 };
 
 export type InteracEtransferTransaction = {
+  id?: number,
   contactId: number,
   amount: number,
   type: string,
-  id?: number,
   securityQuestion?: string,
   securityAnswer?: string,
+};
+
+export type ZippyCashTransaction = {
+  id?: number,
+  contactId: number,
+  amount: number,
+  isCredit: boolean,
+  createdDate?: string
 };
 
 export type VersionResponse = {
@@ -128,6 +137,14 @@ export default class Api {
 
   public postDirectDepositStatus(email: string) {
     return this.fetch<InteracEtransferTransaction>('post', 'InteracEtransfer/DirectDepositStatus', { email });
+  }
+
+  public getZippyCashTransfer(transactionId: number) {
+    return this.fetch<Transaction>('get', `Transfers/${transactionId}`);
+  }
+
+  public postZippyCashTransfer(data: ZippyCashTransaction) {
+    return this.fetch<ZippyCashTransaction>('post', 'Transfers', data);
   }
 
   public getVersion() {

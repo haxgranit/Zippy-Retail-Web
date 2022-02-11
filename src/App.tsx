@@ -178,6 +178,7 @@ export default function App() {
               </Route>
             </Route>
           </Route>
+          <Route path="my-wallet" element={<Navigate to="/my-wallet/zippy-money/send/transaction-start" />} />
           <Route path="manage-my-alerts" element={<ManageMyAlerts />} />
           <Route path="my-accounts">
             <Route path="/my-accounts" element={<MyAccounts />} />

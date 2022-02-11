@@ -16,6 +16,7 @@ const Template: ComponentStory<typeof TransactionStart> = () => (
     <TransactionStart
       accountsList={[]}
       contactList={[]}
+      setContactList={jest.fn()}
       errorMessage=""
       handleTriggerTransaction={undefined}
       isProcessing={false}

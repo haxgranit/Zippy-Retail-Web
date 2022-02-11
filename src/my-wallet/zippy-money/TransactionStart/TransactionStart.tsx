@@ -9,6 +9,7 @@ import AmountInput from '../../../common/AmountInput';
 
 export default function TransactionStart({
   contactList,
+  setContactList,
   // accountsList,
   transactionType,
   handleTriggerTransaction,
@@ -48,6 +49,7 @@ export default function TransactionStart({
         </div>
         <ContactInput
           contactList={contactList}
+          setContactList={setContactList}
           selectedContact={selectedContact}
           setSelectedContact={setSelectedContact}
         />

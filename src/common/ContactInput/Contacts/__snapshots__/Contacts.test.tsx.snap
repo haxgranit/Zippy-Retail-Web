@@ -121,10 +121,6 @@ Array [
         onClick={[Function]}
         type="button"
       >
-        <div
-          className="loading spinner-border"
-          role="status"
-        />
         Add Contact
       </button>
     </div>
