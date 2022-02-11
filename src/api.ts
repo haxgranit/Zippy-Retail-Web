@@ -19,7 +19,7 @@ export type ContactBase = {
   firstName: string;
   lastName: string;
   email: string;
-  nickName?: string;
+  nickname?: string;
   phone?: string;
 };
 

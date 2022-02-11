@@ -17,7 +17,7 @@ function AddContact({
   const [firstName, setFirstName] = useState<string>('');
   const [lastName, setLastName] = useState<string>('');
   const [email, setEmail] = useState<string>('');
-  const [nickName, setNickName] = useState<string>('');
+  const [nickname, setNickname] = useState<string>('');
 
   const isValid = (): boolean => {
     const regEmail = /^([a-zA-Z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-zA-Z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?\.)+[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?)$/;
@@ -25,8 +25,7 @@ function AddContact({
     if (firstName.length < 3) return false;
     if (lastName.length < 3) return false;
     if (!email.match(regEmail)) return false;
-
-    if (nickName && nickName.length < 3) return false;
+    if (nickname && nickname.length < 3) return false;
 
     return !!firstName && !!lastName && !!email;
   };
@@ -35,7 +34,7 @@ function AddContact({
     setFirstName('');
     setLastName('');
     setEmail('');
-    setNickName('');
+    setNickname('');
   };
 
   const addContact = () => {
@@ -46,7 +45,7 @@ function AddContact({
           firstName,
           lastName,
           email,
-          nickName,
+          nickname,
         }).then((response: Contact) => {
           resetFields();
           onContactCreated(response);
@@ -89,8 +88,8 @@ function AddContact({
           className="common-input"
           placeholder="Nickname (optional)"
           name="nickname"
-          value={nickName}
-          onChange={(evt) => setNickName(evt.target.value)}
+          value={nickname}
+          onChange={(evt) => setNickname(evt.target.value)}
         />
       </div>
       <div className="action">
