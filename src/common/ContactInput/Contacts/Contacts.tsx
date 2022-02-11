@@ -77,7 +77,7 @@ function Contacts({
           <Button
             className={contactType === ContactTypeEnum.BUSINESS ? 'active' : ''}
             onClick={() => setContactType(ContactTypeEnum.BUSINESS)}
-            disabled={contactType === ContactTypeEnum.BUSINESS}
+            disabled={contactType === ContactTypeEnum.BUSINESS && true}
           >
             Business
           </Button>

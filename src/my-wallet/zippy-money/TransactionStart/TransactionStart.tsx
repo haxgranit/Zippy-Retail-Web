@@ -66,6 +66,7 @@ export default function TransactionStart({
             name="actions2"
             onChange={() => setTunnelType(TunnelTypeEnum.ZIPPY_CASH)}
             checked={tunnelType === TunnelTypeEnum.ZIPPY_CASH}
+            disabled
           />
           <Form.Check
             id="interac-e-transfer"

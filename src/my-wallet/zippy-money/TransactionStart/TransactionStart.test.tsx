@@ -38,7 +38,7 @@ describe('TransactionStart Component', () => {
           step={SendMoneyStepsEnum.TRANSACTION_START}
           transactionType={TransactionTypeEnum.SEND}
           setTunnelType={jest.fn()}
-         />
+        />
       </BrowserRouter>,
     ).toJSON();
     expect(tree).toMatchSnapshot();

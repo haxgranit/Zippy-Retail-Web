@@ -44,6 +44,13 @@
       animation: slideIn 0.2s;
       transition-timing-function: cubic-bezier(0.42, 0, 0.58, 1);
 
+      -webkit-touch-callout: none;
+      -webkit-user-select: none;
+      -khtml-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+
       &.hidden {
         display: none;
         box-shadow: 0 0 2px 2px $color-white;

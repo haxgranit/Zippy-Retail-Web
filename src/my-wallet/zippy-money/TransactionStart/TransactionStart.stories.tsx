@@ -29,7 +29,7 @@ const Template: ComponentStory<typeof TransactionStart> = () => (
       step={SendMoneyStepsEnum.TRANSACTION_START}
       transactionType={TransactionTypeEnum.SEND}
       setTunnelType={jest.fn()}
-     />
+    />
   </BrowserRouter>
 );
 
