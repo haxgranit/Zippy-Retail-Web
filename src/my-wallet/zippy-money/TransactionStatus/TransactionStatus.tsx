@@ -41,7 +41,12 @@ export default function TransactionStatus({
 
   return (
     <>
-      <PageContainer title="Personal Account" subTitle="Made Fun With Zippy!" className="transaction-status">
+      <PageContainer
+        title="Personal Account"
+        subTitle="Made Fun With Zippy!"
+        className="transaction-status"
+        backdropImage="backdrop-image-2"
+      >
         <div className="title">
           Transaction Status
         </div>

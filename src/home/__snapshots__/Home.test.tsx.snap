@@ -160,47 +160,5 @@ exports[`Home Component matches the snapshot 1`] = `
   <div
     className="content"
   />
-  <div
-    className="right-side-panel"
-  >
-    <div
-      style={
-        Object {
-          "alignItems": "center",
-          "display": "flex",
-          "flexDirection": "column",
-          "gap": "20px",
-          "width": "240px",
-        }
-      }
-    >
-      <div
-        style={
-          Object {
-            "border": "dashed",
-            "float": "right",
-            "padding": "20px",
-            "textAlign": "center",
-            "width": "200",
-          }
-        }
-      >
-        PLACEHOLDER: Option to sign up for a personal account
-      </div>
-      <div
-        style={
-          Object {
-            "border": "dashed",
-            "float": "right",
-            "padding": "20px",
-            "textAlign": "center",
-            "width": "200",
-          }
-        }
-      >
-        PLACEHOLDER: Option to sign up for a business account
-      </div>
-    </div>
-  </div>
 </main>
 `;
