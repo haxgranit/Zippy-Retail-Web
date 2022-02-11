@@ -4,6 +4,8 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  margin: 0;
+  padding: 0;
 
   .account-name {
     text-align: center;
@@ -17,6 +19,15 @@
     font-weight: 300;
     font-size: 35px;
     color: $color-black;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    div {
+      font-style: normal;
+      font-weight: 300;
+      font-size: 15px;
+    }
 
     p {
       margin: 0 !important;

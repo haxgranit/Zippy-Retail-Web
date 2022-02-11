@@ -97,7 +97,7 @@
       display: flex;
       flex-wrap: wrap;
       flex-direction: column;
-      padding: 35px;
+      padding: 20px 35px;
       gap: 30px;
 
       .contact-identifier {
@@ -289,6 +289,21 @@
           font-size: 16px;
           letter-spacing: 0.05em;
           text-transform: uppercase;
+        }
+
+        &.pair {
+          display: flex;
+          flex-direction: row;
+          gap: 20px;
+
+          .zippy-btn {
+            width: 100%;
+            font-style: normal;
+            font-weight: 600;
+            font-size: 13px;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+          }
         }
       }
     }
