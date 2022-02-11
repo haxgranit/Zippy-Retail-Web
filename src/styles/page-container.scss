@@ -12,7 +12,7 @@
   overflow: hidden;
 
   .backdrop {
-    background-image: url("../assets/img/slider/ZippyCash_Landing_Slider-02.jpg");
+    background-image: url("../assets/img/slider/ZippyCash_Landing_Slider-01.jpg");
     position: absolute;
     top: 0;
     left: 0;
@@ -21,6 +21,18 @@
     background-repeat: no-repeat;
     background-position: center right;
     background-size: cover;
+
+    &.backdrop-image-1 {
+      background-image: url("../assets/img/slider/ZippyCash_Landing_Slider-01.jpg");
+    }
+
+    &.backdrop-image-2 {
+      background-image: url("../assets/img/slider/ZippyCash_Landing_Slider-02.jpg");
+    }
+
+    &.backdrop-image-3 {
+      background-image: url("../assets/img/slider/ZippyCash_Landing_Slider-03.jpg");
+    }
   }
 
   @keyframes slideIn {

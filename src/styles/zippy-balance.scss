@@ -1,0 +1,41 @@
+@import './colors';
+
+.zippy-balance {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  .account-name {
+    text-align: center;
+    font-family: monospace;
+    color: $color-dark-gray;
+  }
+
+  .account-balance {
+    text-align: center;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 35px;
+    color: $color-black;
+
+    p {
+      margin: 0 !important;
+
+      span {
+        margin: 0 !important;
+      }
+
+      &::first-letter {
+        font-style: normal;
+        font-weight: 300;
+        font-size: 25px;
+        color: $color-dark-gray;
+        vertical-align: text-top;
+      }
+    }
+  }
+
+  .spinner {
+    margin: 0 auto;
+  }
+}
