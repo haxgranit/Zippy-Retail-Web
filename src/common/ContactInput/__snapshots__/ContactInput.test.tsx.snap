@@ -147,10 +147,6 @@ exports[`ContactInput Component matches the snapshot 1`] = `
           onClick={[Function]}
           type="button"
         >
-          <div
-            className="loading spinner-border"
-            role="status"
-          />
           Add Contact
         </button>
       </div>

@@ -12,7 +12,7 @@
   overflow: hidden;
 
   .backdrop {
-    background-image: url("../assets/img/slider/ZippyCash_Landing_Slider-02.jpg");
+    background-image: url("../assets/img/slider/ZippyCash_Landing_Slider-01.jpg");
     position: absolute;
     top: 0;
     left: 0;
@@ -21,6 +21,18 @@
     background-repeat: no-repeat;
     background-position: center right;
     background-size: cover;
+
+    &.backdrop-image-1 {
+      background-image: url("../assets/img/slider/ZippyCash_Landing_Slider-01.jpg");
+    }
+
+    &.backdrop-image-2 {
+      background-image: url("../assets/img/slider/ZippyCash_Landing_Slider-02.jpg");
+    }
+
+    &.backdrop-image-3 {
+      background-image: url("../assets/img/slider/ZippyCash_Landing_Slider-03.jpg");
+    }
   }
 
   @keyframes slideIn {
@@ -85,7 +97,7 @@
       display: flex;
       flex-wrap: wrap;
       flex-direction: column;
-      padding: 35px;
+      padding: 20px 35px;
       gap: 30px;
 
       .contact-identifier {
@@ -281,6 +293,21 @@
           font-size: 16px;
           letter-spacing: 0.05em;
           text-transform: uppercase;
+        }
+
+        &.pair {
+          display: flex;
+          flex-direction: row;
+          gap: 20px;
+
+          .zippy-btn {
+            width: 100%;
+            font-style: normal;
+            font-weight: 600;
+            font-size: 13px;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+          }
         }
       }
     }

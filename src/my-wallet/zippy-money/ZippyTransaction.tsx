@@ -8,6 +8,7 @@ import Api, {
   InteracEtransferTransaction,
   Transaction,
   User,
+  ZippyCashTransaction,
 } from '../../api';
 import { TransactionMainDetailsInterface } from '../../constants/interface/TransactionMainDetailsInterface';
 import { TransactionTypeEnum } from '../../constants/enum/TransactionTypeEnum';
@@ -53,6 +54,7 @@ export default function ZippyTransaction() {
   const navigate = useNavigate();
   const { step, transactionType = TransactionTypeEnum.SEND, transactionId } = useParams();
   const { instance, accounts } = useMsal();
+  const api = new Api(instance, accounts[0]);
   const [tunnelType, setTunnelType] = useState<TunnelTypeEnum>(TunnelTypeEnum.INTERAC_E_TRANSFER);
   const [isProcessing, setIsProcessing] = useState<boolean>(false);
   const [errorMessage, setErrorMessage] = useState<string>('');
@@ -67,10 +69,14 @@ export default function ZippyTransaction() {
     mainInfo, setMainInfo,
   ] = useState<TransactionMainDetailsInterface>(JSON.parse(JSON.stringify(initialMainInfo)));
 
-  const loadTransaction = (id: number) => {
-    new Api(instance, accounts[0])
-      .getInteracEtransferTransaction(id)
-      .then((data) => setTransaction(data));
+  const loadTransaction = (id: number, method: TunnelTypeEnum) => {
+    if (method === TunnelTypeEnum.INTERAC_E_TRANSFER) {
+      api.getInteracEtransferTransaction(id)
+        .then((data) => setTransaction(data));
+    } else if (method === TunnelTypeEnum.ZIPPY_CASH) {
+      api.getZippyCashTransfer(id)
+        .then((data) => setTransaction(data));
+    }
   };
 
   const resetMainInfo = () => {
@@ -88,12 +94,50 @@ export default function ZippyTransaction() {
   };
 
   const postInteractTransaction = (data: InteracEtransferTransaction) => {
-    new Api(instance, accounts[0])
-      .postInteracEtransferTransaction(data)
+    api.postInteracEtransferTransaction(data)
       .then((res: InteracEtransferTransaction) => {
         setErrorMessage('');
         setTransId(Number(res.id));
-        loadTransaction(Number(res.id));
+        loadTransaction(Number(res.id), TunnelTypeEnum.INTERAC_E_TRANSFER);
+        navigate(`/my-wallet/zippy-money/${transactionType}/transaction-status/${res.id}`);
+      })
+      .catch(() => setErrorMessage('Transfer failed.'))
+      .finally(() => {
+        setIsProcessing(false);
+      });
+  };
+
+  const interactTransaction = (data: InteracEtransferTransaction) => {
+    if (transactionType === TransactionTypeEnum.REQUEST) {
+      delete data.securityQuestion;
+      delete data.securityAnswer;
+      postInteractTransaction(data);
+    } else if (mainInfo.securityQuestion && mainInfo.securityAnswer) {
+      postInteractTransaction(data);
+    } else {
+      new Api(instance, accounts[0])
+        .postDirectDepositStatus(contactList[0].email)
+        .then((res) => {
+          if (res) {
+            postInteractTransaction(data);
+          } else {
+            setIsProcessing(false);
+            navigate(`/my-wallet/zippy-money/${transactionType}/${SendMoneyStepsEnum.TRANSACTION_SECURITY_QUESTIONS}`);
+          }
+        })
+        .catch(() => setErrorMessage('Transfer failed'))
+        .finally(() => {
+          setIsProcessing(false);
+        });
+    }
+  };
+
+  const zippyCashTransaction = (data: ZippyCashTransaction) => {
+    api.postZippyCashTransfer(data)
+      .then((res: ZippyCashTransaction) => {
+        setErrorMessage('');
+        setTransId(Number(res.id));
+        loadTransaction(Number(res.id), TunnelTypeEnum.ZIPPY_CASH);
         navigate(`/my-wallet/zippy-money/${transactionType}/transaction-status/${res.id}`);
       })
       .catch(() => setErrorMessage('Transfer failed.'))
@@ -105,34 +149,20 @@ export default function ZippyTransaction() {
   const handleTriggerTransaction = () => {
     if (!isProcessing) {
       setIsProcessing(true);
-      const data: InteracEtransferTransaction = {
-        contactId: selectedContact.id,
-        amount: mainInfo.amount,
-        type: transactionType,
-        securityQuestion: mainInfo.securityQuestion,
-        securityAnswer: mainInfo.securityAnswer,
-      };
-      if (transactionType === TransactionTypeEnum.REQUEST) {
-        delete data.securityQuestion;
-        delete data.securityAnswer;
-        postInteractTransaction(data);
-      } else if (mainInfo.securityQuestion && mainInfo.securityAnswer) {
-        postInteractTransaction(data);
-      } else {
-        new Api(instance, accounts[0])
-          .postDirectDepositStatus(contactList[0].email)
-          .then((res) => {
-            if (res) {
-              postInteractTransaction(data);
-            } else {
-              setIsProcessing(false);
-              navigate(`/my-wallet/zippy-money/${transactionType}/${SendMoneyStepsEnum.TRANSACTION_SECURITY_QUESTIONS}`);
-            }
-          })
-          .catch(() => setErrorMessage('Transfer failed'))
-          .finally(() => {
-            setIsProcessing(false);
-          });
+      if (tunnelType === TunnelTypeEnum.INTERAC_E_TRANSFER) {
+        interactTransaction({
+          contactId: selectedContact.id,
+          amount: mainInfo.amount,
+          type: transactionType,
+          securityQuestion: mainInfo.securityQuestion,
+          securityAnswer: mainInfo.securityAnswer,
+        } as InteracEtransferTransaction);
+      } else if (tunnelType === TunnelTypeEnum.ZIPPY_CASH) {
+        zippyCashTransaction({
+          contactId: selectedContact.id,
+          amount: mainInfo.amount,
+          isCredit: !TransactionTypeEnum.SEND,
+        } as ZippyCashTransaction);
       }
     }
   };
@@ -140,7 +170,7 @@ export default function ZippyTransaction() {
   useEffect(() => {
     setUserState(user || initialUser);
     if (transId) {
-      loadTransaction(Number(transId));
+      loadTransaction(Number(transId), TunnelTypeEnum.INTERAC_E_TRANSFER);
     }
 
     new Api(instance, accounts[0])
@@ -162,6 +192,27 @@ export default function ZippyTransaction() {
     <>
       {(() => {
         switch (step) {
+          case SendMoneyStepsEnum.TRANSACTION_START:
+            return (
+              <TransactionStart
+                contactList={contactList}
+                setContactList={setContactList}
+                accountsList={accountsList}
+                selectedContact={selectedContact}
+                setSelectedContact={setSelectedContact}
+                selectedAccount={selectedAccount}
+                setSelectedAccount={setSelectedAccount}
+                transactionType={transactionType as TransactionTypeEnum}
+                handleTriggerTransaction={handleTriggerTransaction}
+                isProcessing={isProcessing}
+                errorMessage={errorMessage}
+                mainInfo={mainInfo}
+                setMainInfo={setMainInfo}
+                step={SendMoneyStepsEnum.TRANSACTION_START}
+                tunnelType={tunnelType}
+                setTunnelType={setTunnelType}
+              />
+            );
           case SendMoneyStepsEnum.TRANSACTION_DETAILS:
             return (
               <TransactionDetails
@@ -190,31 +241,6 @@ export default function ZippyTransaction() {
               />
             );
           case SendMoneyStepsEnum.TRANSACTION_COMPLETE:
-            return (
-              <TransactionComplete
-                transactionType={transactionType as TransactionTypeEnum}
-              />
-            );
-          case SendMoneyStepsEnum.TRANSACTION_START:
-            return (
-              <TransactionStart
-                contactList={contactList}
-                accountsList={accountsList}
-                selectedContact={selectedContact}
-                setSelectedContact={setSelectedContact}
-                selectedAccount={selectedAccount}
-                setSelectedAccount={setSelectedAccount}
-                transactionType={transactionType as TransactionTypeEnum}
-                handleTriggerTransaction={handleTriggerTransaction}
-                isProcessing={isProcessing}
-                errorMessage={errorMessage}
-                mainInfo={mainInfo}
-                setMainInfo={setMainInfo}
-                step={SendMoneyStepsEnum.TRANSACTION_START}
-                tunnelType={tunnelType}
-                setTunnelType={setTunnelType}
-              />
-            );
           default:
             return (
               <TransactionComplete

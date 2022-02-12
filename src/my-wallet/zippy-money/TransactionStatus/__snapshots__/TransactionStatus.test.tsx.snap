@@ -8,7 +8,7 @@ exports[`TransactionStatus Component matches the snapshot 1`] = `
     className="zippy-cash-container-wrap"
   >
     <div
-      className="backdrop"
+      className="backdrop backdrop-image-2"
     />
     <div
       className="zippy-cash-container"

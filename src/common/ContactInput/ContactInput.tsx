@@ -10,10 +10,12 @@ import Contacts from './Contacts/Contacts';
 
 function ContactInput({
   contactList,
+  setContactList,
   selectedContact,
   setSelectedContact,
 }: {
   contactList: Array<Contact>;
+  setContactList: Dispatch<SetStateAction<Array<Contact>>>;
   selectedContact: Contact;
   setSelectedContact: Dispatch<SetStateAction<Contact>>;
 }) {
@@ -53,6 +55,7 @@ function ContactInput({
         <div className="contact-list-wrap">
           <Contacts
             contactList={contactList}
+            setContactList={setContactList}
             setSelectedContact={setSelectedContact}
             showContactList={showContactList}
             setShowContactList={setShowContactList}
@@ -65,12 +68,14 @@ function ContactInput({
 
 ContactInput.propTypes = {
   contactList: PropTypes.arrayOf(PropTypes.object),
+  setContactList: PropTypes.func,
   selectedContact: PropTypes.objectOf(PropTypes.any),
   setSelectedContact: PropTypes.func,
 };
 
 ContactInput.defaultProps = {
   contactList: [],
+  setContactList: undefined,
   selectedContact: {
     id: null,
     email: '',

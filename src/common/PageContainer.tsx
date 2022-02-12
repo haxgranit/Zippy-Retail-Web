@@ -4,18 +4,20 @@ function PageContainer({
   className,
   title,
   subTitle,
+  backdropImage,
   children,
 }: {
   className?: string;
   title?: string;
   subTitle?: string;
+  backdropImage?: string;
   children: any;
 }) {
   return (
     <>
       <div className={className}>
         <div className="zippy-cash-container-wrap">
-          <div className="backdrop" />
+          <div className={`backdrop ${backdropImage || ''}`} />
           <div className="zippy-cash-container">
             {title && subTitle
               && (
@@ -38,12 +40,14 @@ PageContainer.propTypes = {
   className: PropTypes.string,
   title: PropTypes.string,
   subTitle: PropTypes.string,
+  backdropImage: PropTypes.string,
 };
 
 PageContainer.defaultProps = {
   className: '',
   title: '',
   subTitle: '',
+  backdropImage: '',
 };
 
 export default PageContainer;

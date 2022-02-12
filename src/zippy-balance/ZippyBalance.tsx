@@ -1,27 +1,80 @@
 import { useMsal } from '@azure/msal-react';
 import { useEffect, useState } from 'react';
-import Api from '../api';
-import CommonPageContainer from '../common/CommonPageContainer';
+import NumberFormat from 'react-number-format';
+import { Button, Spinner } from 'react-bootstrap';
+import { useNavigate } from 'react-router-dom';
+import Api, { Account } from '../api';
+import { useAppSelector } from '../app/hooks';
+import { selectUser } from '../features/user/userSlice';
+import PageContainer from '../common/PageContainer';
 
-export const ZippyBalancePure = ({ balance }: { balance: number | undefined }) => (
-  <div className="page-content">
-    <CommonPageContainer title="Zippy Balance">
-      { balance !== undefined ? `$${balance.toFixed(2)}` : 'Loading...' }
-    </CommonPageContainer>
-  </div>
-);
+export const ZippyBalancePure = ({ account }: { account: Account | undefined }) => {
+  const navigate = useNavigate();
+
+  return (
+    <>
+      <PageContainer title="Zippy Balance" subTitle="Welcome back!" backdropImage="backdrop-image-1">
+        <div className="zippy-balance">
+          { account !== undefined ? (
+            <>
+              <div className="account-balance">
+                <div>Your Zippy Balance is</div>
+                <p>
+                  <NumberFormat
+                    className="ms-3"
+                    value={account.balance}
+                    displayType="text"
+                    prefix="$ "
+                    suffix=" CAD"
+                    thousandSeparator
+                    decimalScale={2}
+                    fixedDecimalScale
+                  />
+                </p>
+              </div>
+              <div className="account-name">{account.name}</div>
+            </>
+          ) : (
+            <Spinner className="spinner" animation="border" role="status">
+              <span className="visually-hidden">Loading...</span>
+            </Spinner>
+          )}
+        </div>
+        { account !== undefined && (
+          <div className="action pair">
+            <Button
+              className="zippy-btn"
+              onClick={() => navigate('/my-wallet/zippy-money/send/transaction-start')}
+            >
+              Send Money
+            </Button>
+            <Button
+              className="zippy-btn"
+              onClick={() => navigate('/my-wallet/zippy-money/request/transaction-start')}
+            >
+              Request Money
+            </Button>
+          </div>
+        )}
+      </PageContainer>
+    </>
+  );
+};
 
 export default function ZippyBalance() {
   const { instance, accounts: msalAccounts } = useMsal();
-  const [balance, setBalance] = useState<number | undefined>();
+  const [account, setAccount] = useState<Account | undefined>();
+  const { user } = useAppSelector(selectUser);
 
   useEffect(() => {
-    new Api(instance, msalAccounts[0])
-      .listAccounts()
-      .then((accounts) => {
-        setBalance(accounts[0].balance);
-      });
-  }, [msalAccounts]);
+    if (user) {
+      new Api(instance, msalAccounts[0])
+        .listAccounts()
+        .then((accounts) => {
+          setAccount(accounts[0]);
+        });
+    }
+  }, [msalAccounts, user]);
 
-  return <ZippyBalancePure balance={balance} />;
+  return <ZippyBalancePure account={account} />;
 }

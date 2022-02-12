@@ -8,7 +8,7 @@ exports[`PageContainer Component matches the snapshot 1`] = `
     className="zippy-cash-container-wrap"
   >
     <div
-      className="backdrop"
+      className="backdrop "
     />
     <div
       className="zippy-cash-container"

@@ -8,12 +8,14 @@ export default {
   component: ZippyBalancePure,
 } as ComponentMeta<typeof ZippyBalancePure>;
 
-const Template: ComponentStory<typeof ZippyBalancePure> = ({ balance }) => (
-  <ZippyBalancePure balance={balance} />
+const Template: ComponentStory<typeof ZippyBalancePure> = ({ account }) => (
+  <ZippyBalancePure account={account} />
 );
 
 export const Loaded = Template.bind({});
-Loaded.args = { balance: 1000 };
+Loaded.args = {
+  account: { id: 1, name: '8000 001 000000000', balance: 1000 },
+};
 
 export const Loading = Template.bind({});
 Loading.args = {};

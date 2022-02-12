@@ -9,6 +9,7 @@ import AmountInput from '../../../common/AmountInput';
 
 export default function TransactionStart({
   contactList,
+  setContactList,
   // accountsList,
   transactionType,
   handleTriggerTransaction,
@@ -29,7 +30,11 @@ export default function TransactionStart({
 
   return (
     <>
-      <PageContainer title="Personal Account" subTitle="Made Fun With Zippy!">
+      <PageContainer
+        title="Personal Account"
+        subTitle="Made Fun With Zippy!"
+        backdropImage="backdrop-image-2"
+      >
         <div className="zippy-btn-group btn-group" role="group" aria-label="Zippy Cash">
           <Button
             className={transactionType === TransactionTypeEnum.SEND ? 'active' : ''}
@@ -48,6 +53,7 @@ export default function TransactionStart({
         </div>
         <ContactInput
           contactList={contactList}
+          setContactList={setContactList}
           selectedContact={selectedContact}
           setSelectedContact={setSelectedContact}
         />
