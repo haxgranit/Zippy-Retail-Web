@@ -158,7 +158,6 @@ exports[`GetAlertedHeader Component matches the snapshot 1`] = `
               <a
                 className="nav-link"
                 data-rr-ui-event-key={null}
-                href="#"
                 onClick={[Function]}
                 onKeyDown={[Function]}
                 role="button"
@@ -169,7 +168,6 @@ exports[`GetAlertedHeader Component matches the snapshot 1`] = `
               <a
                 className="nav-link"
                 data-rr-ui-event-key={null}
-                href="#"
                 onClick={[Function]}
                 onKeyDown={[Function]}
                 role="button"

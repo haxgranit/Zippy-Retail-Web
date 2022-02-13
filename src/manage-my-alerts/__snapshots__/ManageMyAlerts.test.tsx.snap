@@ -98,7 +98,6 @@ exports[`Manage Alert Component Render manage-my-alerts page 1`] = `
               aria-labelledby="status-tab-tab-fraud"
               class="tab-pane active"
               id="status-tab-tabpane-fraud"
-              role="tabpanel"
             >
               <div
                 class="row"
@@ -688,7 +687,6 @@ exports[`Manage Alert Component Render manage-my-alerts page 1`] = `
               aria-labelledby="status-tab-tab-transactions"
               class="tab-pane"
               id="status-tab-tabpane-transactions"
-              role="tabpanel"
             >
               <div
                 class="row"
@@ -976,7 +974,6 @@ exports[`Manage Alert Component Render manage-my-alerts page 1`] = `
               aria-labelledby="status-tab-tab-reminders"
               class="tab-pane"
               id="status-tab-tabpane-reminders"
-              role="tabpanel"
             >
               <div
                 class="row"
@@ -1696,7 +1693,6 @@ exports[`Manage Alert Component matches the snapshot 1`] = `
             aria-labelledby="status-tab-tab-fraud"
             className="tab-pane active"
             id="status-tab-tabpane-fraud"
-            role="tabpanel"
           >
             <div
               className="row"
@@ -2500,7 +2496,6 @@ exports[`Manage Alert Component matches the snapshot 1`] = `
             aria-labelledby="status-tab-tab-transactions"
             className="tab-pane"
             id="status-tab-tabpane-transactions"
-            role="tabpanel"
           >
             <div
               className="row"
@@ -2909,7 +2904,6 @@ exports[`Manage Alert Component matches the snapshot 1`] = `
             aria-labelledby="status-tab-tab-reminders"
             className="tab-pane"
             id="status-tab-tabpane-reminders"
-            role="tabpanel"
           >
             <div
               className="row"

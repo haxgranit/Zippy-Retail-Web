@@ -29,7 +29,7 @@ const SentTabContent = ({
   }, []);
   return (
     <>
-      <MonthSelectComponent prefix="sent" currentDate={currentDate || DateTime.now()} />
+      <MonthSelectComponent prefix="sent" currentDate={currentDate || DateTime.utc()} />
       <Table className="mt-2">
         <thead>
           <tr className="bg-light border-top-1">
@@ -108,7 +108,7 @@ const ReceivedTabContent = ({
 
   return (
     <>
-      <MonthSelectComponent prefix="received" currentDate={currentDate || DateTime.now()} />
+      <MonthSelectComponent prefix="received" currentDate={currentDate || DateTime.utc()} />
       <Table className="mt-2">
         <thead>
           <tr className="bg-light border-top-1">
@@ -175,7 +175,7 @@ const RequestedTabContent = ({
   }, []);
   return (
     <>
-      <MonthSelectComponent prefix="requested" currentDate={currentDate || DateTime.now()} />
+      <MonthSelectComponent prefix="requested" currentDate={currentDate || DateTime.utc()} />
       <Table className="mt-2">
         <thead>
           <tr className="bg-light border-top-1">

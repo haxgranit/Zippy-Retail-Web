@@ -7,14 +7,14 @@ const ReactTestRenderer = require('react-test-renderer');
 describe('MonthSelectComponent Component', () => {
   it('matches the snapshot', () => {
     const tree = ReactTestRenderer.create(
-      <MonthSelectComponent currentDate={DateTime.now()} />,
+      <MonthSelectComponent currentDate={DateTime.utc()} />,
     ).toJSON();
     expect(tree).toMatchSnapshot();
   });
 
   it('should render options inside a MonthSelectComponent', () => {
     const { container } = render(
-      <MonthSelectComponent currentDate={DateTime.now()} />,
+      <MonthSelectComponent currentDate={DateTime.utc()} />,
     );
     const options = container.querySelectorAll('option');
     expect(options).toHaveLength(12);
@@ -23,7 +23,7 @@ describe('MonthSelectComponent Component', () => {
   it('Click MonthSelectComponent Component', () => {
     const onChange = jest.fn();
     const { container } = render(
-      <MonthSelectComponent onChange={onChange} currentDate={DateTime.now()} />,
+      <MonthSelectComponent onChange={onChange} currentDate={DateTime.utc()} />,
     );
     const mEvent = { preventDefault: jest.fn() };
     const optionElements = container.querySelectorAll('.month-select-comp');
