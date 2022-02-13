@@ -57,10 +57,6 @@ export default function LoadInitiate() {
 
   return (
     <PageContainer title="Personal Banking" subTitle="Made Fun With Zippy!">
-      <div className="title">
-        Load wallet
-      </div>
-
       <AmountInput
         amount={amount}
         setAmount={(value) => setAmoumt(Number(value))}
