@@ -133,12 +133,7 @@ export default class Api {
   }
 
   public listFundingSources() {
-    // return this.fetch<FundingSource[]>('get', 'FundingSources');
-    // Temp changes
-    return Promise.resolve([
-      { id: 1, isDefault: true, bankAccount: { institutionNumber: '123', transitNumber: '12345', accountNumber: '1234567890' } },
-      { id: 2, isDefault: true, bankAccount: { institutionNumber: '1234', transitNumber: '123456', accountNumber: '9874563214' } },
-    ]);
+    return this.fetch<FundingSource[]>('get', 'FundingSources');
   }
 
   public postFundingSource(request: FundingSourceRequest) {
