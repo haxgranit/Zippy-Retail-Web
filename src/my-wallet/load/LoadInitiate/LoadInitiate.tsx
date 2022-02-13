@@ -36,17 +36,12 @@ export default function LoadInitiate() {
     if (!(amount > 0)) {
       return;
     }
-
-    if (selectedAccount?.paymentCard) {
-      setCardExpired(true);
-      return;
-    }
     const fundRequest = {
       amount,
       sourceId: selectedAccount.id,
     };
     new Api(instance, accounts[0])
-      .postFundLoadRequest(fundRequest)
+      .postFundLoadTransaction(fundRequest)
       .then(() => {
         navigate('/my-wallet/load/status', {
           state: { ...fundRequest, status: fundRequest.amount > 500 ? 'Success' : 'In_Progress' },

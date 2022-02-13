@@ -79,24 +79,22 @@ export type BankAccount = {
   accountNumber: number,
 };
 
-export type PaymentCard = {
-  name: string,
-  number: string,
-  cvv: string,
-  expireDate: string
-};
-
 export type FundingSource = {
   id:number,
   displayName: string,
   isDefault: boolean,
   bankAccount: BankAccount | null,
-  paymentCard: PaymentCard | null,
 };
 
-export type FundLoadRequest = {
+export type FundingSourceTransaction = {
   amount: number,
   sourceId: number
+};
+
+export type FundingSourceRequest = {
+  displayName: string,
+  isDefault: boolean,
+  bankAccount: BankAccount
 };
 
 export async function getToken(instance: IPublicClientApplication, account: AccountInfo)
@@ -143,11 +141,12 @@ export default class Api {
     ]);
   }
 
-  public postFundLoadRequest(request: FundLoadRequest) {
-    // eslint-disable-next-line prefer-promise-reject-errors
-    if (request.amount > 1000) { return Promise.reject(true); }
+  public postFundingSource(request: FundingSourceRequest) {
+    return this.fetch<FundingSource[]>('post', 'FundingSources', request);
+  }
 
-    return Promise.resolve(true);
+  public postFundLoadTransaction(request: FundingSourceTransaction) {
+    return this.fetch<FundingSource[]>('post', `FundingSources/${request.sourceId}/Transactions`, request);
   }
 
   public postContact(data: ContactBase) {

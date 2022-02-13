@@ -42,10 +42,7 @@ export default function Options(props: any) {
           onClick={() => setExpanded(!expanded)}
           onKeyDown={() => { }}
         >
-          {selectedSource
-            ? (selectedSource.bankAccount
-              ? selectedSource.bankAccount.accountNumber : selectedSource.paymentCard?.number)
-            : defaultTitle}
+          {selectedSource?.bankAccount ? selectedSource.bankAccount.accountNumber : defaultTitle}
           {' '}
           <img width={14} height={14} className="margin" src="https://library.kissclipart.com/20180915/yhw/kissclipart-drop-down-arrow-icon-clipart-computer-icons-drop-d-172f248dc7644e4f.png" alt="" />
         </div>
@@ -53,54 +50,27 @@ export default function Options(props: any) {
           // TODO: need to remove this once we get actual options from api
           <div ref={ref} className="dropdown-content">
             {fundingSources?.map((fundingSource: FundingSource, index: number) => (
-              fundingSource?.bankAccount ? (
-                <div
-                  onClick={() => optionSelected(fundingSource)}
-                  onKeyDown={() => { }}
-                  role="button"
-                  tabIndex={index}
-                >
-                  <div className="d-flex align-item-center justify-content-between text-black mt-3">
-                    {' '}
-                    <div className="bankName"> Bank Name : HSBC Bank</div>
-                    <div>
-                      <input type="radio" className="styledRadio" checked={selectedSource?.id === fundingSource.id} />
-                    </div>
-                  </div>
-                  <div
-                    className="d-flex align-item-center justify-content-between accountNo"
-                  >
-                    Acc. Number:
-                    {' '}
-                    {fundingSource?.bankAccount?.accountNumber}
+              <div
+                onClick={() => optionSelected(fundingSource)}
+                onKeyDown={() => { }}
+                role="button"
+                tabIndex={index}
+              >
+                <div className="d-flex align-item-center justify-content-between text-black mt-3">
+                  {' '}
+                  <div className="bankName"> Bank Name : HSBC Bank</div>
+                  <div>
+                    <input type="radio" className="styledRadio" checked={selectedSource?.id === fundingSource.id} />
                   </div>
                 </div>
-              )
-                : (
-                  <div
-                    role="button"
-                    tabIndex={index}
-                    onClick={() => optionSelected(fundingSource)}
-                    onKeyDown={() => { }}
-                  >
-                    <div style={{ padding: '0.5em' }}>
-                      <div
-                        className="d-flex align-item-center justify-content-between"
-
-                      >
-                        {fundingSource?.paymentCard?.number}
-                        <p>5789</p>
-                        <img width={30} height={30} src="https://pngimg.com/uploads/visa/visa_PNG24.png" alt="" />
-                        <input type="radio" defaultChecked />
-                      </div>
-                      <div style={{ borderBottom: '1px solid #CCC', marginTop: '-0.4em' }}>
-                        <b>Personal</b>
-                        {' '}
-                        - Debit Card
-                      </div>
-                    </div>
-                  </div>
-                )
+                <div
+                  className="d-flex align-item-center justify-content-between accountNo"
+                >
+                  Acc. Number:
+                  {' '}
+                  {fundingSource?.bankAccount?.accountNumber}
+                </div>
+              </div>
             ))}
           </div>
         )}
