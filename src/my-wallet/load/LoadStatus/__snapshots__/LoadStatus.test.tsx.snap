@@ -19,7 +19,7 @@ exports[`TransactionComplete Component matches the snapshot 1`] = `
         <h1
           className="title"
         >
-          Personal Banking
+          Personal Account
         </h1>
         <h2
           className="catch"
@@ -39,9 +39,9 @@ exports[`TransactionComplete Component matches the snapshot 1`] = `
           className="text-center"
         >
           <img
-            alt=""
+            alt="Success Icon"
             height={60}
-            src="https://www.freeiconspng.com/thumbs/success-icon/success-icon-10.png"
+            src="completed.svg"
             width={60}
           />
         </div>
@@ -82,7 +82,7 @@ exports[`TransactionComplete Component matches the snapshot 1`] = `
             onClick={[Function]}
             type="button"
           >
-            Close
+            View Transfer Detail
           </button>
         </div>
       </div>
