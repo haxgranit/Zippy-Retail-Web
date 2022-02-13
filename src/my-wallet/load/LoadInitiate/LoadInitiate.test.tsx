@@ -5,7 +5,6 @@ import LoadInitiate from './LoadInitiate';
 const ReactTestRenderer = require('react-test-renderer');
 
 const mockedUsedNavigate = jest.fn();
-// const mockeduseLocation = jest.fn().mockImplementation(() => ({ state: { status: 'Success' } }));
 
 jest.mock('react-router-dom', () => ({
   ...(jest.requireActual('react-router-dom') as any),

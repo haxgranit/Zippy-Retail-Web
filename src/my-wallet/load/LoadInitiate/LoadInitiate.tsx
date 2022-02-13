@@ -9,7 +9,7 @@ import Options from '../options/options';
 
 export default function LoadInitiate() {
   const [fundingSources, setFundingSources] = useState<FundingSource[]>([]);
-  const [amount, setAmoumt] = useState(0.00);
+  const [amount, setAmount] = useState(0.00);
   const [cardExpired, setCardExpired] = useState(false);
   const [selectedAccount, setSelectedAccount] = useState<FundingSource | undefined>(undefined);
   const navigate = useNavigate();
@@ -59,7 +59,7 @@ export default function LoadInitiate() {
     <PageContainer title="Personal Banking" subTitle="Made Fun With Zippy!">
       <AmountInput
         amount={amount}
-        setAmount={(value) => setAmoumt(Number(value))}
+        setAmount={(value) => setAmount(Number(value))}
       />
       {loadTried && !(amount > 0)
         && (

@@ -1,4 +1,3 @@
-/* eslint-disable no-nested-ternary */
 import { useEffect, useRef, useState } from 'react';
 import { FundingSource } from '../../../api';
 
@@ -47,7 +46,6 @@ export default function Options(props: any) {
           <img width={14} height={14} className="margin" src="https://library.kissclipart.com/20180915/yhw/kissclipart-drop-down-arrow-icon-clipart-computer-icons-drop-d-172f248dc7644e4f.png" alt="" />
         </div>
         {expanded && (
-          // TODO: need to remove this once we get actual options from api
           <div ref={ref} className="dropdown-content">
             {fundingSources?.map((fundingSource: FundingSource, index: number) => (
               <div
