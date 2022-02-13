@@ -52,36 +52,6 @@ export default function Options(props: any) {
         {expanded && (
           // TODO: need to remove this once we get actual options from api
           <div ref={ref} className="dropdown-content">
-            <div>
-              <div className="d-flex align-item-center justify-content-between text-black mt-3">
-                {' '}
-                <div className="bankName"> Bank Name: HSBC Bank</div>
-                <div>
-                  <input type="radio" className="styledRadio" id="bank1" name="bank_name" value="HSBC" />
-                </div>
-              </div>
-              <div
-                className="d-flex align-item-center justify-content-between accountNo"
-              >
-                Acc. Number: XXXX XXXX 5555
-              </div>
-            </div>
-
-            <div>
-              <div className="d-flex align-item-center justify-content-between text-black mt-3">
-                {' '}
-                <div className="bankName"> Bank Name: HDFC Bank</div>
-                <div>
-                  <input type="radio" className="styledRadio" />
-                </div>
-              </div>
-              <div
-                className="d-flex align-item-center justify-content-between accountNo"
-              >
-                Acc. Number: XXXX XXXX 2467
-              </div>
-            </div>
-
             {fundingSources?.map((fundingSource: FundingSource, index: number) => (
               fundingSource?.bankAccount ? (
                 <div
@@ -92,14 +62,13 @@ export default function Options(props: any) {
                 >
                   <div className="d-flex align-item-center justify-content-between text-black mt-3">
                     {' '}
-                    <div style={{ paddingLeft: '10px' }}> Bank Name : HSBC Bank</div>
+                    <div className="bankName"> Bank Name : HSBC Bank</div>
                     <div>
-                      <input type="radio" />
+                      <input type="radio" className="styledRadio" checked={selectedSource?.id === fundingSource.id} />
                     </div>
                   </div>
                   <div
-                    className="d-flex align-item-center justify-content-between text-black"
-                    style={{ borderBottom: '1px solid #CCC', padding: '0.5rem' }}
+                    className="d-flex align-item-center justify-content-between accountNo"
                   >
                     Acc. Number:
                     {' '}

@@ -19,7 +19,8 @@ export default function LoadInitiate() {
   useEffect(() => {
     new Api(instance, accounts[0])
       .listFundingSources()
-      .then((result:FundingSource[]) => {
+      // .then((result:FundingSource[]) => {
+      .then((result:any) => {
         setFundingSources(result ?? []);
       })
       .catch((error) => console.log('error', error));
