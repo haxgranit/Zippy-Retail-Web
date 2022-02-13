@@ -44,7 +44,7 @@ export default function LoadInitiate() {
       .postFundLoadTransaction(fundRequest)
       .then(() => {
         navigate('/my-wallet/load/status', {
-          state: { ...fundRequest, status: fundRequest.amount > 500 ? 'Success' : 'In_Progress' },
+          state: { ...fundRequest, status: 'Success' },
         });
       })
       .catch((error) => {

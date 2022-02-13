@@ -181,7 +181,7 @@ export default function App() {
             </Route>
             <Route path="load">
               <Route path="status" element={<LoadStatus />} />
-              <Route path="start" element={<LoadInitiate />} />
+              <Route path="" element={<LoadInitiate />} />
             </Route>
           </Route>
           <Route path="my-wallet" element={<Navigate to="/my-wallet/zippy-money/send/transaction-start" />} />
