@@ -6,6 +6,7 @@ import Api, { FundingSource } from '../../../api';
 import AmountInput from '../../../common/AmountInput';
 import PageContainer from '../../../common/PageContainer';
 import Options from '../options/options';
+import Alert from '../../../common/Alert';
 
 export default function LoadInitiate() {
   const [fundingSources, setFundingSources] = useState<FundingSource[]>([]);
@@ -63,10 +64,7 @@ export default function LoadInitiate() {
       />
       {loadTried && !(amount > 0)
         && (
-          <span style={{ color: 'red' }}>
-            {' '}
-            *Amount Must Be Greater Than Zero
-          </span>
+          <Alert AlertMsg="Amount must be greater than zero" />
         )}
       <Options
         defaultTitle="Select funding source"
@@ -77,10 +75,7 @@ export default function LoadInitiate() {
       />
       {loadTried && !selectedAccount
         && (
-          <span style={{ color: 'red' }}>
-            {' '}
-            *Please Select funding source
-          </span>
+          <Alert AlertMsg="Please select funding source" />
         )}
       <div className="action">
         <Button

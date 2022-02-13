@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { FundingSource } from '../../../api';
+import addIcon from '../../../assets/img/icons/add.svg';
 
 export default function Options(props: any) {
   const ref = useRef<any>();
@@ -47,7 +48,8 @@ export default function Options(props: any) {
         </div>
         {expanded && (
           <div ref={ref} className="dropdown-content">
-            {fundingSources?.map((fundingSource: FundingSource, index: number) => (
+            {fundingSources && fundingSources.length > 0
+            && fundingSources?.map((fundingSource: FundingSource, index: number) => (
               <div
                 onClick={() => optionSelected(fundingSource)}
                 onKeyDown={() => { }}
@@ -70,6 +72,13 @@ export default function Options(props: any) {
                 </div>
               </div>
             ))}
+            {fundingSources.length === 0
+            && (
+            <div className="emptyOption">
+              <img src={addIcon} alt="Add Icon" className="addIcon" />
+              Add a Funding Source
+            </div>
+            )}
           </div>
         )}
       </div>
