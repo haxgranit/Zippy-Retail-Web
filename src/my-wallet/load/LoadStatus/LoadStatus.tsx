@@ -1,16 +1,29 @@
 import { Button, Col, Row } from 'react-bootstrap';
 import { useLocation, useNavigate } from 'react-router-dom';
+import { useState } from 'react';
+import { useMsal } from '@azure/msal-react';
 import PageContainer from '../../../common/PageContainer';
 import SuccessIcon from '../../../assets/img/icons/status-icons/completed.svg';
 import PendingIcon from '../../../assets/img/icons/status-icons/pending.svg';
 import FailedIcon from '../../../assets/img/icons/status-icons/failed.svg';
+import Api from '../../../api';
 
 export default function LoadStatus() {
-  // eslint-disable-next-line prefer-destructuring
-  const state: any = useLocation().state;
+  const { instance, accounts } = useMsal();
   const navigate = useNavigate();
+  const [state, setState] = useState<any>(useLocation().state);
+  function retryPayment() {
+    new Api(instance, accounts[0])
+      .postFundLoadTransaction(state)
+      .then(() => {
+        setState({ ...state, status: 'Success' });
+      })
+      .catch((error) => {
+        console.log('error', error);
+      });
+  }
   return (
-    <PageContainer title="Personal Banking" subTitle="Made Fun With Zippy!">
+    <PageContainer title="Personal Account" subTitle="Made Fun With Zippy!">
       <div className="title">
         Fund Transfer
       </div>
@@ -73,12 +86,21 @@ export default function LoadStatus() {
       </div>
 
       <div className="action">
-        <Button
-          className="zippy-btn"
-          onClick={() => navigate('/')}
-        >
-          Close
-        </Button>
+        {state.status !== 'Failure' ? (
+          <Button
+            className="zippy-btn"
+            onClick={() => navigate('/')}
+          >
+            View Transfer Detail
+          </Button>
+        ) : (
+          <Button
+            className="zippy-btn"
+            onClick={() => retryPayment()}
+          >
+            Retry
+          </Button>
+        )}
       </div>
     </PageContainer>
   );

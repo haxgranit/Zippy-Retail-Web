@@ -72,6 +72,9 @@ export default function LoadInitiate() {
         onChange={(option: FundingSource) => {
           setSelectedAccount(option);
         }}
+        onEmptyOptionsSelected={() => {
+          // navigate to add new account
+        }}
       />
       {loadTried && !selectedAccount
         && (

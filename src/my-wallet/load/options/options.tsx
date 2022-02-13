@@ -5,7 +5,9 @@ import addIcon from '../../../assets/img/icons/add.svg';
 export default function Options(props: any) {
   const ref = useRef<any>();
 
-  const { defaultTitle, fundingSources, onChange } = props;
+  const {
+    defaultTitle, fundingSources, onChange, onEmptyOptionsSelected,
+  } = props;
   const [expanded, setExpanded] = useState(false);
   // const [checked, setChecked] = useState(false);
   const [selectedSource, setSelectedSource] = useState<FundingSource | undefined>(undefined);
@@ -74,7 +76,14 @@ export default function Options(props: any) {
             ))}
             {fundingSources.length === 0
             && (
-            <div className="emptyOption">
+            <div
+              className="emptyOption"
+              role="button"
+              tabIndex={0}
+              onClick={() => onEmptyOptionsSelected && onEmptyOptionsSelected()}
+              onKeyDown={() => { }}
+
+            >
               <img src={addIcon} alt="Add Icon" className="addIcon" />
               Add a Funding Source
             </div>
