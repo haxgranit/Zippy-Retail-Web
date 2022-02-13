@@ -8,7 +8,7 @@ exports[`TransactionComplete Component matches the snapshot 1`] = `
     className="zippy-cash-container-wrap"
   >
     <div
-      className="backdrop"
+      className="backdrop "
     />
     <div
       className="zippy-cash-container"
@@ -41,7 +41,7 @@ exports[`TransactionComplete Component matches the snapshot 1`] = `
           <img
             alt=""
             height={60}
-            src="https://www.pinclipart.com/picdir/middle/6-65577_cloudy-day-clipart.png"
+            src="https://www.freeiconspng.com/thumbs/success-icon/success-icon-10.png"
             width={60}
           />
         </div>

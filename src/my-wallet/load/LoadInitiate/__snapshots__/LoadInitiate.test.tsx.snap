@@ -8,7 +8,7 @@ exports[`TransactionComplete Component matches the snapshot 1`] = `
     className="zippy-cash-container-wrap"
   >
     <div
-      className="backdrop"
+      className="backdrop "
     />
     <div
       className="zippy-cash-container"
@@ -30,11 +30,6 @@ exports[`TransactionComplete Component matches the snapshot 1`] = `
       <div
         className="zippy-cash-container-body"
       >
-        <div
-          className="title"
-        >
-          Load wallet
-        </div>
         <input
           className="amount form-control"
           onChange={[Function]}
