@@ -74,9 +74,9 @@ export type ErrorDetail = {
 };
 
 export type BankAccount = {
-  institutionNumber: string,
-  transitNumber: string,
-  accountNumber: number,
+  institutionNumber: number,
+  transitNumber: number,
+  accountNumber: string,
 };
 
 export type FundingSource = {

@@ -13,10 +13,10 @@ export default function LoadStatus() {
       </div>
       <div className="text-center">
         {state.status === 'In_Progress' && (
-          <img height={40} width={40} src="https://www.freeiconspng.com/thumbs/success-icon/success-icon-10.png" alt="" />
+          <img height={40} width={40} src="https://www.pinclipart.com/picdir/middle/6-65577_cloudy-day-clipart.png" alt="" />
         )}
         {state.status === 'Success' && (
-          <img height={60} width={60} src="https://www.pinclipart.com/picdir/middle/6-65577_cloudy-day-clipart.png" alt="" />
+          <img height={60} width={60} src="https://www.freeiconspng.com/thumbs/success-icon/success-icon-10.png" alt="" />
         )}
         {state.status === 'Failure' && (
           <img height={30} width={30} src="https://e7.pngegg.com/pngimages/833/287/png-clipart-check-mark-international-red-cross-and-red-crescent-movement-american-red-cross-red-cross-mark-round-red-x-logo-miscellaneous-text-thumbnail.png" alt="" />
