@@ -11,7 +11,7 @@ export default function LoadStatus() {
   const [state, setState] = useState<any>(useLocation().state);
   function retryPayment() {
     new Api(instance, accounts[0])
-      .postFundLoadTransaction(state)
+      .postFundingSourceTransaction(state)
       .then(() => {
         setState({ ...state, status: 'Success' });
       })

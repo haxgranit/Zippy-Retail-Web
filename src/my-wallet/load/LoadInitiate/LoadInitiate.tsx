@@ -20,9 +20,8 @@ export default function LoadInitiate() {
   useEffect(() => {
     new Api(instance, accounts[0])
       .listFundingSources()
-      // .then((result:FundingSource[]) => {
-      .then((result:any) => {
-        setFundingSources(result ?? []);
+      .then((result:FundingSource[]) => {
+        setFundingSources(result);
       })
       .catch((error) => console.log('error', error));
   }, []);
@@ -42,7 +41,7 @@ export default function LoadInitiate() {
       sourceId: selectedAccount.id,
     };
     new Api(instance, accounts[0])
-      .postFundLoadTransaction(fundRequest)
+      .postFundingSourceTransaction(fundRequest)
       .then(() => {
         navigate('/my-wallet/load/status', {
           state: { ...fundRequest, status: 'Success' },

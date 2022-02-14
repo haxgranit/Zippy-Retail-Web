@@ -158,7 +158,7 @@ export default class Api {
     return this.fetch<FundingSource[]>('post', 'FundingSources', request);
   }
 
-  public postFundLoadTransaction(request: FundingSourceTransactionRequest) {
+  public postFundingSourceTransaction(request: FundingSourceTransactionRequest) {
     return this.fetch<FundingSource[]>('post', `FundingSources/${request.sourceId}/Transactions`, request);
   }
 
