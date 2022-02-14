@@ -4,16 +4,6 @@ import Options from './options';
 
 const ReactTestRenderer = require('react-test-renderer');
 
-// const mockedUsedNavigate = jest.fn();
-
-// jest.mock('react-router-dom', () => ({
-//   ...(jest.requireActual('react-router-dom') as any),
-//   useParams: () => ({
-//     stepId: 'details',
-//   }),
-//   useNavigate: () => mockedUsedNavigate,
-// }));
-
 describe('TransactionComplete Component', () => {
   it('matches the snapshot', () => {
     const fundingSources = [{ id: 1, isDefault: true, bankAccount: { institutionNumber: '123', transitNumber: '12345', accountNumber: '1234567890' } }, {

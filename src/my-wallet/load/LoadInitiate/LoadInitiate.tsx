@@ -5,8 +5,8 @@ import { useNavigate } from 'react-router-dom';
 import Api, { FundingSource, FundingSourceTransactionResponce } from '../../../api';
 import AmountInput from '../../../common/AmountInput';
 import PageContainer from '../../../common/PageContainer';
-import Options from '../options/options';
 import Alert from '../../../common/Alert';
+import Options from '../options/options';
 
 export default function LoadInitiate() {
   const [fundingSources, setFundingSources] = useState<FundingSource[]>([]);
