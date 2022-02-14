@@ -56,19 +56,6 @@ exports[`TransactionComplete Component matches the snapshot 1`] = `
               credited into your zippy account
             </div>
           </div>
-          <div
-            className="row"
-          >
-            <div
-              className="col-12"
-            >
-              Your total available Zippy balance is
-               
-              <b>
-                $200
-              </b>
-            </div>
-          </div>
         </div>
         <div
           className="action"
