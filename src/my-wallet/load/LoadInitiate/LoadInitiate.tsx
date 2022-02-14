@@ -6,7 +6,7 @@ import Api, { FundingSource, FundingSourceTransactionResponce } from '../../../a
 import AmountInput from '../../../common/AmountInput';
 import PageContainer from '../../../common/PageContainer';
 import Alert from '../../../common/Alert';
-import Options from '../options/Options';
+import SourceOptions from '../options/SourceOptions';
 
 export default function LoadInitiate() {
   const [fundingSources, setFundingSources] = useState<FundingSource[]>([]);
@@ -71,7 +71,7 @@ export default function LoadInitiate() {
         && (
           <Alert AlertMsg="Amount must be greater than zero" onClose={() => { setAmountError(false); }} />
         )}
-      <Options
+      <SourceOptions
         defaultTitle="Select funding source"
         fundingSources={fundingSources}
         onChange={(option: FundingSource) => {

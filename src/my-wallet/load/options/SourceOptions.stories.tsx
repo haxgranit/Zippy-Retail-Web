@@ -1,16 +1,16 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { BrowserRouter } from 'react-router-dom';
 import React from 'react';
-import Options from './Options';
+import SourceOptions from './SourceOptions';
 
 export default {
-  title: 'my-wallet/load/Options',
-  component: Options,
-} as ComponentMeta<typeof Options>;
+  title: 'my-wallet/load/SourceOptions',
+  component: SourceOptions,
+} as ComponentMeta<typeof SourceOptions>;
 
-const Template: ComponentStory<typeof Options> = () => (
+const Template: ComponentStory<typeof SourceOptions> = () => (
   <BrowserRouter>
-    <Options fundingSources={[{ bankAccount: { accountNumber: 'Some Number' } }]} />
+    <SourceOptions fundingSources={[{ bankAccount: { accountNumber: 'Some Number' } }]} />
   </BrowserRouter>
 );
 

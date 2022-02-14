@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter } from 'react-router-dom';
-import Options from './Options';
+import SourceOptions from './SourceOptions';
 
 const ReactTestRenderer = require('react-test-renderer');
 
@@ -16,7 +16,7 @@ describe('TransactionComplete Component', () => {
     }];
     const tree = ReactTestRenderer.create(
       <BrowserRouter>
-        <Options
+        <SourceOptions
           defaultTitle="Select funding source"
           fundingSources={fundingSources}
           onChange={() => {}}
