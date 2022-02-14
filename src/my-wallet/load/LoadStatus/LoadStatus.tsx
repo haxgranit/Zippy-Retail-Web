@@ -43,7 +43,7 @@ export default function LoadStatus() {
               Your $
               {state?.amount}
               {' '}
-              credited into your zippy account
+              credit into your zippy account
             </Col>
           </Row>
         )}

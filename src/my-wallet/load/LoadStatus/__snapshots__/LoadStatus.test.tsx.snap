@@ -53,7 +53,7 @@ exports[`TransactionComplete Component matches the snapshot 1`] = `
             >
               Your $
                
-              credited into your zippy account
+              credit into your zippy account
             </div>
           </div>
         </div>
