@@ -98,6 +98,7 @@
       flex-wrap: wrap;
       flex-direction: column;
       padding: 20px 35px;
+      padding-top: 0px;
       gap: 30px;
 
       .contact-identifier {
@@ -227,8 +228,15 @@
         display: flex;
         justify-content: center;
         align-content: center;
-        padding-bottom: 30px;
+        padding-bottom: 15px;
         border-bottom: 1px $color-light-gray solid;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 24px;
+      }
+
+      .complete {
+        color: #00BE7E;
       }
 
       .status {
@@ -280,6 +288,35 @@
             color: red;
           }
         }
+      }
+
+      .transaction-detail {
+        margin-bottom: 121px;
+        margin-top: -18px;
+      }
+
+      .detail-wrap {
+        display: flex;
+        margin-bottom: 25px;
+
+        span {
+          width: 160px;
+          margin-right: 11px;
+          font-style: normal;
+          font-weight: normal;
+          font-size: 13px;
+          line-height: 18px;
+          color: #707272;
+        }
+
+         p {
+          font-style: normal;
+          font-weight: 500;
+          font-size: 12px;
+          line-height: 18px;          
+          color: #000000;
+          margin: 0px;
+         }
       }
 
       .action {

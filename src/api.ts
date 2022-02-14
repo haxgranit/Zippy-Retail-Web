@@ -86,7 +86,7 @@ export type FundingSource = {
   bankAccount: BankAccount | null,
 };
 
-export type FundingSourceTransaction = {
+export type FundingSourceTransactionRequest = {
   amount: number,
   sourceId: number
 };
@@ -95,6 +95,24 @@ export type FundingSourceRequest = {
   displayName: string,
   isDefault: boolean,
   bankAccount: BankAccount
+};
+
+export type DCBankEftTransaction = {
+  id: number,
+  DCBankEftCustomerAccountId: number,
+  fundingSourceTransactionId: number,
+  transactionId: number,
+  transactionStatusCode: string
+  transactionStatusId: number
+};
+
+export type FundingSourceTransaction = {
+  id:number,
+  fundingSourceId:number,
+  amount: number,
+  isCredit: boolean
+  DCBankEftTransaction: DCBankEftTransaction,
+  fundingSource: FundingSource
 };
 
 export async function getToken(instance: IPublicClientApplication, account: AccountInfo)
@@ -140,8 +158,31 @@ export default class Api {
     return this.fetch<FundingSource[]>('post', 'FundingSources', request);
   }
 
-  public postFundLoadTransaction(request: FundingSourceTransaction) {
+  public postFundLoadTransaction(request: FundingSourceTransactionRequest) {
     return this.fetch<FundingSource[]>('post', `FundingSources/${request.sourceId}/Transactions`, request);
+  }
+
+  public getFundLoadTransaction(id: number) {
+    // return this.fetch<FundingSourceTransaction>('post', `FundingSources/${id}/Transactions`);
+    return Promise.resolve({
+      id,
+      fundingSourceId: 345,
+      amount: 12.234,
+      isCredit: true,
+      DCBankEftTransaction: {
+        id: 1,
+        DCBankEftCustomerAccountId: 2,
+        fundingSourceTransactionId: 3,
+        transactionId: 100234,
+        transactionStatusCode: 'string',
+        transactionStatusId: 234,
+      },
+      fundingSource: {
+        id: 1,
+        displayName: 'string',
+        isDefault: true,
+      },
+    });
   }
 
   public postContact(data: ContactBase) {

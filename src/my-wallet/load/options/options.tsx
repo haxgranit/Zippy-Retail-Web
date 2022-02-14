@@ -62,7 +62,7 @@ export default function Options(props: any) {
                   {' '}
                   <div className="bankName"> Bank Name : HSBC Bank</div>
                   <div>
-                    <input type="radio" className="styledRadio" checked={selectedSource?.id === fundingSource.id} />
+                    <input type="radio" className="styledRadio" checked={selectedSource?.id === fundingSource.id} onChange={() => {}} />
                   </div>
                 </div>
                 <div
