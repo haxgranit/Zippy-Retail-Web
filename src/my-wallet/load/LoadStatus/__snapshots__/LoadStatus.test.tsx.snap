@@ -38,11 +38,8 @@ exports[`TransactionComplete Component matches the snapshot 1`] = `
         <div
           className="text-center"
         >
-          <img
-            alt="Success Icon"
-            height={60}
-            src="completed.svg"
-            width={60}
+          <i
+            className="zippy-cash-icon zc-completed"
           />
         </div>
         <div
