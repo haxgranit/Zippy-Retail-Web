@@ -6,7 +6,8 @@ import Api from '../../../api';
 import PageContainer from '../../../common/PageContainer';
 
 type LocationState = {
-  id: number
+  id: number,
+  sourceId: number
 };
 
 export default function TransferDetails() {
@@ -15,7 +16,7 @@ export default function TransferDetails() {
   const state = useLocation().state as LocationState;
   useEffect(() => {
     new Api(instance, accounts[0])
-      .getFundingSourceTransaction(state.id)
+      .getFundingSourceTransaction(state.id, state.sourceId)
       .then((data) => {
         setTransferDeatils(data);
       })

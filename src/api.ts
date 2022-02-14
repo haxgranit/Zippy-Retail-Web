@@ -164,11 +164,11 @@ export default class Api {
   }
 
   public postFundingSourceTransaction(request: FundingSourceTransactionRequest, id: number) {
-    return this.fetch<FundingSourceTransactionResponce>('post', `FundingSources/${id}/Transactions`, request);
+    return this.fetch<FundingSourceTransactionResponce>('post', `FundingSources/${id}/Transactions/`, { amount: request.amount, sourceId: id });
   }
 
-  public getFundingSourceTransaction(id: number) {
-    return this.fetch<FundingSourceTransaction>('get', `FundingSources/${id}/Transactions`);
+  public getFundingSourceTransaction(id: number, sourceId: number) {
+    return this.fetch<FundingSourceTransaction>('get', `FundingSources/${sourceId}/Transactions/${id}`);
   }
 
   public postContact(data: ContactBase) {

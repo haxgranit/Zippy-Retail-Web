@@ -49,7 +49,9 @@ export default function LoadInitiate() {
       .then((resp:FundingSourceTransactionResponce) => {
         setIsLoading(false);
         navigate('/my-wallet/load/status', {
-          state: { ...fundRequest, status: resp.status, id: resp.id },
+          state: {
+            ...fundRequest, status: resp.status, id: resp.id, sourceId: selectedAccount.id,
+          },
         });
       })
       .catch((error) => {
