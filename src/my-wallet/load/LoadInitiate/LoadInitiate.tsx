@@ -12,6 +12,7 @@ export default function LoadInitiate() {
   const [fundingSources, setFundingSources] = useState<FundingSource[]>([]);
   const [amount, setAmount] = useState(0.00);
   const [cardExpired, setCardExpired] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
   const [selectedAccount, setSelectedAccount] = useState<FundingSource | undefined>(undefined);
   const navigate = useNavigate();
 
@@ -40,15 +41,18 @@ export default function LoadInitiate() {
       amount,
       sourceId: selectedAccount.id,
     };
+    setIsLoading(true);
     new Api(instance, accounts[0])
       .postFundingSourceTransaction(fundRequest)
       .then(() => {
+        setIsLoading(false);
         navigate('/my-wallet/load/status', {
           state: { ...fundRequest, status: 'Success' },
         });
       })
       .catch((error) => {
         console.log('error', error);
+        setIsLoading(false);
         navigate('/my-wallet/load/status', {
           state: { ...fundRequest, status: 'Failure' },
         });
@@ -81,6 +85,7 @@ export default function LoadInitiate() {
         )}
       <div className="action">
         <Button
+          disabled={isLoading}
           className="zippy-btn"
           onClick={() => {
             loadFunds();

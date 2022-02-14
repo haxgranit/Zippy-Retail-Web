@@ -53,6 +53,7 @@ export default function Options(props: any) {
             {fundingSources && fundingSources.length > 0
             && fundingSources?.map((fundingSource: FundingSource, index: number) => (
               <div
+                key={fundingSource?.id}
                 onClick={() => optionSelected(fundingSource)}
                 onKeyDown={() => { }}
                 role="button"
