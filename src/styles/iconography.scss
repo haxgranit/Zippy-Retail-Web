@@ -122,5 +122,10 @@ i {
             -webkit-mask-image: url("../assets/img/icons/personal.svg");
             mask-image: url("../assets/img/icons/personal.svg");
         }
+
+        &.zc-info:after {
+            -webkit-mask-image: url("../assets/img/icons/info.svg");
+            mask-image: url("../assets/img/icons/info.svg");
+        }
     }
 }

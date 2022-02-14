@@ -13,7 +13,16 @@ exports[`PageContainer Component matches the snapshot 1`] = `
     <div
       className="zippy-cash-container"
     >
-      
+      <div
+        className="zippy-cash-container-header"
+      >
+        <h1
+          className="title"
+        >
+          sample
+        </h1>
+        
+      </div>
       <div
         className="zippy-cash-container-body"
       >

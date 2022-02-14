@@ -19,13 +19,10 @@ function PageContainer({
         <div className="zippy-cash-container-wrap">
           <div className={`backdrop ${backdropImage || ''}`} />
           <div className="zippy-cash-container">
-            {title && subTitle
-              && (
-                <div className="zippy-cash-container-header">
-                  <h1 className="title">{title}</h1>
-                  <h2 className="catch">{subTitle}</h2>
-                </div>
-              )}
+            <div className="zippy-cash-container-header">
+              {title && <h1 className="title">{title}</h1>}
+              {subTitle && <h2 className="catch">{subTitle}</h2>}
+            </div>
             <div className="zippy-cash-container-body">
               {children}
             </div>
