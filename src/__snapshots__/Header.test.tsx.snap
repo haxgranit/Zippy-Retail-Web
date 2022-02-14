@@ -9,32 +9,7 @@ exports[`Header Component matches the snapshot 1`] = `
   />
   <div
     className="content"
-  >
-    <div
-      className="search-box"
-    >
-      <i
-        className="zippy-cash-icon zc-search"
-      />
-      <input
-        className="form-control"
-        onChange={[Function]}
-        placeholder="Search..."
-        type="input"
-      />
-      <select
-        className="form-select"
-        onChange={[Function]}
-        value="all"
-      >
-        <option
-          value="all"
-        >
-          All
-        </option>
-      </select>
-    </div>
-  </div>
+  />
   <div
     className="right-side-header"
   >
