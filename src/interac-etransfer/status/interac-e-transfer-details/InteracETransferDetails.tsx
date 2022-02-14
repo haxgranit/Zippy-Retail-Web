@@ -18,6 +18,7 @@ const SentTabContent = ({
   navigate,
   instance,
   accounts,
+  currentDate,
 }: any) => {
   const { t } = useTranslation();
   const [transactions, setTransactions] = useState<Transaction[]>([]);
@@ -28,7 +29,7 @@ const SentTabContent = ({
   }, []);
   return (
     <>
-      <MonthSelectComponent prefix="sent" />
+      <MonthSelectComponent prefix="sent" currentDate={currentDate || DateTime.utc()} />
       <Table className="mt-2">
         <thead>
           <tr className="bg-light border-top-1">
@@ -95,6 +96,7 @@ const ReceivedTabContent = ({
   navigate,
   instance,
   accounts,
+  currentDate,
 }: any) => {
   const { t } = useTranslation();
   const [transactions, setTransactions] = useState<Transaction[]>([]);
@@ -106,7 +108,7 @@ const ReceivedTabContent = ({
 
   return (
     <>
-      <MonthSelectComponent prefix="received" />
+      <MonthSelectComponent prefix="received" currentDate={currentDate || DateTime.utc()} />
       <Table className="mt-2">
         <thead>
           <tr className="bg-light border-top-1">
@@ -162,6 +164,7 @@ const RequestedTabContent = ({
   navigate,
   instance,
   accounts,
+  currentDate,
 }: any) => {
   const { t } = useTranslation();
   const [transactions, setTransactions] = useState<Transaction[]>([]);
@@ -172,7 +175,7 @@ const RequestedTabContent = ({
   }, []);
   return (
     <>
-      <MonthSelectComponent prefix="requested" />
+      <MonthSelectComponent prefix="requested" currentDate={currentDate || DateTime.utc()} />
       <Table className="mt-2">
         <thead>
           <tr className="bg-light border-top-1">
@@ -240,6 +243,7 @@ export default function InteracETransferDetails() {
   const { instance, accounts } = useMsal();
   const { tabId } = useParams();
   const selectedTabId = tabId || 'sent';
+  const currentDate = DateTime.now();
 
   const crumbLabels = {
     sent: 'Transfer Sent',
@@ -274,6 +278,7 @@ export default function InteracETransferDetails() {
                   navigate={navigate}
                   instance={instance}
                   accounts={accounts}
+                  currentDate={currentDate}
                 />
               </Tab>
               <Tab eventKey="received" title="Transfer Received">
@@ -281,6 +286,7 @@ export default function InteracETransferDetails() {
                   navigate={navigate}
                   instance={instance}
                   accounts={accounts}
+                  currentDate={currentDate}
                 />
               </Tab>
               <Tab eventKey="requested" title="Requested Money">
@@ -288,6 +294,7 @@ export default function InteracETransferDetails() {
                   navigate={navigate}
                   instance={instance}
                   accounts={accounts}
+                  currentDate={currentDate}
                 />
               </Tab>
             </Tabs>

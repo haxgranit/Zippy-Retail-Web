@@ -1,4 +1,5 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { DateTime } from 'luxon';
 import MonthSelectComponent from './MonthSelectComponent';
 
 export default {
@@ -7,7 +8,7 @@ export default {
 } as ComponentMeta<typeof MonthSelectComponent>;
 
 const Template: ComponentStory<typeof MonthSelectComponent> = () => (
-  <MonthSelectComponent />
+  <MonthSelectComponent currentDate={DateTime.now()} />
 );
 
 export const Default = Template.bind({});
