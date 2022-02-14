@@ -56,7 +56,7 @@ export default function LoadInitiate() {
         console.log('error', error);
         setIsLoading(false);
         navigate('/my-wallet/load/status', {
-          state: { ...fundRequest, status: 'Failure', sourceId: selectedAccount.id },
+          state: { ...fundRequest, status: 'failed', sourceId: selectedAccount.id },
         });
       });
   }

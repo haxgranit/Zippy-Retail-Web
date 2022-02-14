@@ -13,7 +13,7 @@ export default function LoadStatus() {
     new Api(instance, accounts[0])
       .postFundingSourceTransaction(state.amount, state.sourceId)
       .then(() => {
-        setState({ ...state, status: 'Success' });
+        setState({ ...state, status: 'completed' });
       })
       .catch((error) => {
         console.log('error', error);
@@ -29,15 +29,15 @@ export default function LoadStatus() {
         {state.status === 'pending' && (
           <i className="zippy-cash-icon zc-pending" />
         )}
-        {state.status === 'Success' && (
+        {state.status === 'completed' && (
           <i className="zippy-cash-icon zc-completed" />
         )}
-        {state.status === 'Failure' && (
+        {state.status === 'failed' && (
           <i className="zippy-cash-icon zc-failed" />
         )}
       </div>
       <div className="details">
-        {state.status === 'Success' && (
+        {state.status === 'completed' && (
           <Row>
             <Col xs={12}>
               Your $
@@ -57,7 +57,7 @@ export default function LoadStatus() {
             </Col>
           </Row>
         )}
-        {state.status === 'Failure' && (
+        {state.status === 'failed' && (
           <>
             <Row>
               <Col xs={12}>
@@ -73,7 +73,7 @@ export default function LoadStatus() {
           </>
         )}
         {/* hiding it for tim being */}
-        {/* {(state.status === 'Success' || state.status === 'pending') && (
+        {/* {(state.status === 'completed' || state.status === 'pending') && (
           <Row>
             <Col xs={12}>
               Your total available Zippy balance is
@@ -85,7 +85,7 @@ export default function LoadStatus() {
       </div>
 
       <div className="action">
-        {state.status !== 'Failure' ? (
+        {state.status !== 'failed' ? (
           <Button
             className="zippy-btn"
             onClick={() => navigate('/my-wallet/load/transfer-details', {
