@@ -28,9 +28,12 @@ export default function LoadInitiate() {
   }, []);
 
   const [loadTried, setLoadTried] = useState(false);
+  const [amountError, setAmountError] = useState(false);
+  const [sourceError, setSourceError] = useState(false);
   function loadFunds() {
     setLoadTried(true);
-
+    setAmountError(!(amount > 0));
+    setSourceError(!selectedAccount);
     if (!selectedAccount) {
       return;
     }
@@ -65,9 +68,9 @@ export default function LoadInitiate() {
         amount={amount}
         setAmount={(value) => setAmount(Number(value))}
       />
-      {loadTried && !(amount > 0)
+      {loadTried && amountError
         && (
-          <Alert AlertMsg="Amount must be greater than zero" />
+          <Alert AlertMsg="Amount must be greater than zero" onClose={() => { setAmountError(false); }} />
         )}
       <Options
         defaultTitle="Select funding source"
@@ -79,9 +82,9 @@ export default function LoadInitiate() {
           // navigate to add new account
         }}
       />
-      {loadTried && !selectedAccount
+      {loadTried && sourceError
         && (
-          <Alert AlertMsg="Please select funding source" />
+          <Alert AlertMsg="Please select funding source" onClose={() => { setSourceError(false); }} />
         )}
       <div className="action">
         <Button
