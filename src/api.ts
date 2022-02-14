@@ -5,6 +5,7 @@ import { AccountInfo, InteractionRequiredAuthError, IPublicClientApplication } f
 import { TransactionStatusEnum } from './interac-etransfer/status/transaction-status/TransactionStatusEnum';
 
 export enum TransferType {
+  ALL = 'all',
   SEND = 'send',
   RECEIVE = 'receive',
   REQUEST = 'request',

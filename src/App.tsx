@@ -79,6 +79,8 @@ import SendMoney from './interac-etransfer/send-money/SendMoney';
 import LoadStatus from './my-wallet/load/LoadStatus/LoadStatus';
 import LoadInitiate from './my-wallet/load/LoadInitiate/LoadInitiate';
 import TransferDetails from './my-wallet/load/TransferDetails/TransferDetails';
+import TransactionStatusList from './my-wallet/status/TransactionStatusList/TransactionStatusList';
+import TransactionDetails from './my-wallet/status/TransactionDetails/TransactionDetails';
 
 export default function App() {
   const dispatch = useAppDispatch();
@@ -185,8 +187,9 @@ export default function App() {
               <Route path="" element={<LoadInitiate />} />
               <Route path="transfer-details" element={<TransferDetails />} />
             </Route>
+            <Route path="status" element={<TransactionStatusList />} />
+            <Route path="status/:transactionId" element={<TransactionDetails />} />
           </Route>
-          <Route path="my-wallet" element={<Navigate to="/my-wallet/zippy-money/send/transaction-start" />} />
           <Route path="manage-my-alerts" element={<ManageMyAlerts />} />
           <Route path="my-accounts">
             <Route path="/my-accounts" element={<MyAccounts />} />

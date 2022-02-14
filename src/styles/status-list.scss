@@ -1,0 +1,87 @@
+@import './colors';
+
+.status-list {
+  font-style: normal;
+  font-size: 12px;
+  color: $color-black;
+
+  .status-list-container {
+    width: 100%;
+    min-width: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    overflow-x: hidden;
+    height: 40vh;
+
+    .transaction-items {
+      width: 100%;
+      min-width: 100%;
+      --bs-gutter-x: 0;
+      --bs-gutter-y: 0;
+      padding: 10px 0;
+      border-bottom: 1px solid $color-light-gray;
+
+      .row {
+        width: 100%;
+        min-width: 100%;
+        --bs-gutter-x: 0;
+        --bs-gutter-y: 0;
+      }
+
+      .col-5 {
+        display: flex;
+        justify-content: flex-end;
+        vertical-align: center;
+        text-align: right;
+      }
+
+      .status-icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .zippy-cash-icon:after {
+          width: 22px;
+          height: 22px;
+        }
+      }
+
+      .name {
+        padding-left: 10px;
+        font-weight: 500;
+      }
+
+      .amount {
+        font-weight: 600;
+        font-size: 12px !important;
+        padding: 0 5px 0 0 !important;
+        margin: 0 !important;
+      }
+
+      .reference-no {
+        padding-left: 10px;
+        font-weight: normal;
+        color: $color-dark-gray;
+      }
+
+      .date {
+        font-weight: normal;
+        display: flex;
+        padding: 0 10px 0 0 !important;
+        margin: 0 !important;
+      }
+
+      .info-icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .zippy-cash-icon:after {
+          width: 17px;
+          height: 17px;
+        }
+      }
+    }
+  }
+}

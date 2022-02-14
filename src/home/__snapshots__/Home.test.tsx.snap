@@ -59,7 +59,7 @@ exports[`Home Component matches the snapshot 1`] = `
           className="nav-link nav-link"
           data-rr-ui-event-key={null}
           disabled={false}
-          href="/my-wallet/zippy-money/send/transaction-start"
+          href="/my-wallet"
           onClick={[Function]}
         >
           <i
