@@ -7,9 +7,8 @@ import { useEffect, useState } from 'react';
 import { useMsal } from '@azure/msal-react';
 import { useNavigate, useParams } from 'react-router-dom';
 import PageContainer from '../../../common/PageContainer';
-import Api, { Transaction } from '../../../api';
+import Api, { Transaction, TransactionStatusEnum } from '../../../api';
 import { TunnelTypeEnum } from '../../../constants/enum/TunnelTypeEnum';
-import { TransactionStatusEnum } from '../../../interac-etransfer/status/transaction-status/TransactionStatusEnum';
 
 export default function TransactionDetails() {
   const navigate = useNavigate();

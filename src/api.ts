@@ -1,7 +1,14 @@
 /* eslint-disable no-console */
 
 import { AccountInfo, InteractionRequiredAuthError, IPublicClientApplication } from '@azure/msal-browser';
-import { TransactionStatusEnum } from './interac-etransfer/status/transaction-status/TransactionStatusEnum';
+
+export enum TransactionStatusEnum {
+  COMPLETED = 'completed',
+  PENDING = 'pending',
+  CANCELLED = 'cancelled',
+  FAILED = 'failed',
+  REMINDER = 'reminder',
+}
 
 export enum TransferType {
   ALL = 'all',

@@ -3,7 +3,7 @@ import { useIsAuthenticated, useMsal } from '@azure/msal-react';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
-import { Button, Form } from 'react-bootstrap';
+import { Button } from 'react-bootstrap';
 import { useAppDispatch, useAppSelector } from './app/hooks';
 import { loginRequest } from './authConfig';
 import { selectUser, unload } from './features/user/userSlice';
@@ -33,24 +33,7 @@ export const HeaderPure = ({
           </Link>
         )}
       </div>
-      <div className="content">
-        { isAuthenticated && (
-          <div className="search-box">
-            <i className="zippy-cash-icon zc-search" />
-            <Form.Control
-              type="input"
-              placeholder="Search..."
-              onChange={(evt) => evt.preventDefault()}
-            />
-            <Form.Select
-              onChange={(evt) => evt.preventDefault()}
-              value="all"
-            >
-              <option value="all">All</option>
-            </Form.Select>
-          </div>
-        )}
-      </div>
+      <div className="content" />
       <div className="right-side-header">
         <button
           className="navbar-toggler"

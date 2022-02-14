@@ -1,7 +1,6 @@
 import { Dispatch, SetStateAction } from 'react';
 import { TransactionTypeEnum } from '../enum/TransactionTypeEnum';
 import { SendMoneyStepsEnum } from '../enum/SendMoneyStepsEnum';
-import { TransferMainDetails } from '../../interac-etransfer/send-money/SendMoney';
 import { TransactionMainDetailsInterface } from './TransactionMainDetailsInterface';
 import {
   Account,
@@ -21,7 +20,7 @@ export interface TransactionInterface {
   isProcessing: boolean,
   errorMessage: string,
   mainInfo: TransactionMainDetailsInterface;
-  setMainInfo: Dispatch<SetStateAction<TransferMainDetails>>;
+  setMainInfo: Dispatch<SetStateAction<TransactionMainDetailsInterface>>;
   resetMainInfo?: () => void;
   selectedAccount: Account;
   setSelectedAccount: Dispatch<SetStateAction<Account>>;

@@ -5,8 +5,7 @@ import NumberFormat from 'react-number-format';
 import { DateTime } from 'luxon';
 import { Link } from 'react-router-dom';
 import PageContainer from '../../../common/PageContainer';
-import Api, { Transaction, TransferType } from '../../../api';
-import { TransactionStatusEnum } from '../../../interac-etransfer/status/transaction-status/TransactionStatusEnum';
+import Api, { Transaction, TransactionStatusEnum, TransferType } from '../../../api';
 
 export default function TransactionStatusList() {
   const { instance, accounts } = useMsal();
