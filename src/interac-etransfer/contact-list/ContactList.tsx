@@ -5,9 +5,9 @@ import {
 } from 'react-bootstrap';
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import Api, { Contact } from '../../api';
 import { formatContactName } from '../../Helpers';
 import CommonPageContainer from '../../common/CommonPageContainer';
+import Api, { Contact } from '../../api';
 
 const RemoveContactModal: React.FC<{
   show: boolean;

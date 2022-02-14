@@ -12,16 +12,12 @@ import {
 import SendMoneyVerificationModal, {
   TransferDetails,
 } from '../dialogs/SendMoneyVerificationModal';
-import Api, {
-  Account,
-  InteracEtransferTransaction,
-  Contact,
-} from '../../api';
 import { TransferInformation } from './components/TransferSentPage';
 import TRANSFER_INFORMATION from '../../stories/TransferInformation';
 import { useAppSelector } from '../../app/hooks';
 import { selectUser, UserState } from '../../features/user/userSlice';
 import CommonPageContainer from '../../common/CommonPageContainer';
+import Api, { Account, Contact, InteracEtransferTransaction } from '../../api';
 
 export const enum PageIds {
   DetailsPageId = 'details',

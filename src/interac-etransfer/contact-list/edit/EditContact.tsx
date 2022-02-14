@@ -7,7 +7,6 @@ import { useLocation, useParams, useNavigate } from 'react-router-dom';
 import StepComponent from '../../../common/StepComponent';
 import IdentityVerificationModal from './IdentityVerificationModal';
 import CommonPageContainer from '../../../common/CommonPageContainer';
-
 import Api from '../../../api';
 
 const Divider = () => <div className="border-top my-3" />;

@@ -12,7 +12,7 @@ export default function Options(props: any) {
   // const [checked, setChecked] = useState(false);
   const [selectedSource, setSelectedSource] = useState<FundingSource | undefined>(undefined);
   function optionSelected(option: FundingSource) {
-    onChange(option);
+    onChange?.(option);
     setSelectedSource(option);
     setExpanded(false);
   }
