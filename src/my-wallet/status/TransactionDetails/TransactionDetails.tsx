@@ -100,10 +100,6 @@ export default function TransactionDetails() {
               Reference Number
               (Keep For Your Records)
             </Col>
-            <Col xs={6}>*3942439898</Col>
-          </Row>
-          <Row>
-            <Col xs={6}>Transaction ID</Col>
             <Col xs={6}>{transaction?.id}</Col>
           </Row>
           <Row>
