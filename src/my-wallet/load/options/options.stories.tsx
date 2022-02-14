@@ -1,7 +1,7 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { BrowserRouter } from 'react-router-dom';
 import React from 'react';
-import Options from './options';
+import Options from './Options';
 
 export default {
   title: 'my-wallet/load/Options',

@@ -6,7 +6,7 @@ import Api, { FundingSource, FundingSourceTransactionResponce } from '../../../a
 import AmountInput from '../../../common/AmountInput';
 import PageContainer from '../../../common/PageContainer';
 import Alert from '../../../common/Alert';
-import Options from '../options/options';
+import Options from '../options/Options';
 
 export default function LoadInitiate() {
   const [fundingSources, setFundingSources] = useState<FundingSource[]>([]);
@@ -42,11 +42,10 @@ export default function LoadInitiate() {
     }
     const fundRequest = {
       amount,
-      sourceId: selectedAccount.id,
     };
     setIsLoading(true);
     new Api(instance, accounts[0])
-      .postFundingSourceTransaction(fundRequest)
+      .postFundingSourceTransaction(fundRequest, selectedAccount.id)
       .then((resp:FundingSourceTransactionResponce) => {
         setIsLoading(false);
         navigate('/my-wallet/load/status', {
@@ -57,7 +56,7 @@ export default function LoadInitiate() {
         console.log('error', error);
         setIsLoading(false);
         navigate('/my-wallet/load/status', {
-          state: { ...fundRequest, status: 'Failure' },
+          state: { ...fundRequest, status: 'Failure', sourceId: selectedAccount.id },
         });
       });
   }

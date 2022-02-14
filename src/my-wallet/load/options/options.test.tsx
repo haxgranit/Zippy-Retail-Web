@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter } from 'react-router-dom';
-import Options from './options';
+import Options from './Options';
 
 const ReactTestRenderer = require('react-test-renderer');
 

@@ -11,7 +11,7 @@ export default function LoadStatus() {
   const [state, setState] = useState<any>(useLocation().state);
   function retryPayment() {
     new Api(instance, accounts[0])
-      .postFundingSourceTransaction(state)
+      .postFundingSourceTransaction(state.amount, state.sourceId)
       .then(() => {
         setState({ ...state, status: 'Success' });
       })
@@ -72,7 +72,8 @@ export default function LoadStatus() {
 
           </>
         )}
-        {(state.status === 'Success' || state.status === 'pending') && (
+        {/* hiding it for tim being */}
+        {/* {(state.status === 'Success' || state.status === 'pending') && (
           <Row>
             <Col xs={12}>
               Your total available Zippy balance is
@@ -80,14 +81,16 @@ export default function LoadStatus() {
               <b>$200</b>
             </Col>
           </Row>
-        )}
+        )} */}
       </div>
 
       <div className="action">
         {state.status !== 'Failure' ? (
           <Button
             className="zippy-btn"
-            onClick={() => navigate('/my-wallet/load/transfer-details')}
+            onClick={() => navigate('/my-wallet/load/transfer-details', {
+              state: { id: state.id },
+            })}
           >
             View Transfer Detail
           </Button>

@@ -88,7 +88,6 @@ export type FundingSource = {
 
 export type FundingSourceTransactionRequest = {
   amount: number,
-  sourceId: number
 };
 
 export type FundingSourceRequest = {
@@ -164,31 +163,12 @@ export default class Api {
     return this.fetch<FundingSource[]>('post', 'FundingSources', request);
   }
 
-  public postFundingSourceTransaction(request: FundingSourceTransactionRequest) {
-    return this.fetch<FundingSourceTransactionResponce>('post', `FundingSources/${request.sourceId}/Transactions`, request);
+  public postFundingSourceTransaction(request: FundingSourceTransactionRequest, id: number) {
+    return this.fetch<FundingSourceTransactionResponce>('post', `FundingSources/${id}/Transactions`, request);
   }
 
   public getFundingSourceTransaction(id: number) {
-    // return this.fetch<FundingSourceTransaction>('post', `FundingSources/${id}/Transactions`);
-    return Promise.resolve({
-      id,
-      fundingSourceId: 345,
-      amount: 12.234,
-      isCredit: true,
-      DCBankEftTransaction: {
-        id: 1,
-        DCBankEftCustomerAccountId: 2,
-        fundingSourceTransactionId: 3,
-        transactionId: 100234,
-        transactionStatusCode: 'string',
-        transactionStatusId: 234,
-      },
-      fundingSource: {
-        id: 1,
-        displayName: 'string',
-        isDefault: true,
-      },
-    });
+    return this.fetch<FundingSourceTransaction>('get', `FundingSources/${id}/Transactions`);
   }
 
   public postContact(data: ContactBase) {

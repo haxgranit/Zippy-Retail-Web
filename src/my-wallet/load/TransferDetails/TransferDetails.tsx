@@ -1,15 +1,21 @@
 import { useMsal } from '@azure/msal-react';
 import { useEffect, useState } from 'react';
 import { Button } from 'react-bootstrap';
+import { useLocation } from 'react-router-dom';
 import Api from '../../../api';
 import PageContainer from '../../../common/PageContainer';
+
+type LocationState = {
+  id: number
+};
 
 export default function TransferDetails() {
   const { instance, accounts } = useMsal();
   const [transferDeatils, setTransferDeatils] = useState<any>(null);
+  const state = useLocation().state as LocationState;
   useEffect(() => {
     new Api(instance, accounts[0])
-      .getFundingSourceTransaction(1)
+      .getFundingSourceTransaction(state.id)
       .then((data) => {
         setTransferDeatils(data);
       })
@@ -46,7 +52,7 @@ export default function TransferDetails() {
         <div className="detail-wrap">
           <span>Transfer Amount</span>
 
-          <p style={{ color: '#0D6EFD' }}>{ `$${transferDeatils?.amount}`}</p>
+          <p style={{ color: '#0D6EFD' }}>{ `$${transferDeatils?.amount ?? ''}`}</p>
         </div>
 
         <div className="detail-wrap">
