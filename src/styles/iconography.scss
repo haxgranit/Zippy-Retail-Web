@@ -122,5 +122,21 @@ i {
             -webkit-mask-image: url("../assets/img/icons/personal.svg");
             mask-image: url("../assets/img/icons/personal.svg");
         }
+
+        &.zc-alert:after {
+            -webkit-mask-image: url("../assets/img/icons/alert.svg");
+            mask-image: url("../assets/img/icons/alert.svg");
+            background: white;
+            margin-right: 4px;
+        }
+
+        &.zc-close:after {
+            -webkit-mask-image: url("../assets/img/icons/Close.svg");
+            mask-image: url("../assets/img/icons/Close.svg");
+            background: white;
+            width: 8px;
+            height: 8px;
+            margin-left: 16px;
+        }
     }
 }
