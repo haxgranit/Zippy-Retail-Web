@@ -115,6 +115,12 @@ export type FundingSourceTransaction = {
   fundingSource: FundingSource
 };
 
+export type FundingSourceTransactionResponce = {
+  id: number,
+  amount: number,
+  status: string
+};
+
 export async function getToken(instance: IPublicClientApplication, account: AccountInfo)
   : Promise<string | null> {
   const accessTokenRequest = {
@@ -159,7 +165,7 @@ export default class Api {
   }
 
   public postFundingSourceTransaction(request: FundingSourceTransactionRequest) {
-    return this.fetch<FundingSource[]>('post', `FundingSources/${request.sourceId}/Transactions`, request);
+    return this.fetch<FundingSourceTransactionResponce>('post', `FundingSources/${request.sourceId}/Transactions`, request);
   }
 
   public getFundLoadTransaction(id: number) {

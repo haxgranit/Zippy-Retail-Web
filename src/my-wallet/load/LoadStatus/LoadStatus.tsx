@@ -26,7 +26,7 @@ export default function LoadStatus() {
         Fund Transfer
       </div>
       <div className="text-center">
-        {state.status === 'In_Progress' && (
+        {state.status === 'pending' && (
           <i className="zippy-cash-icon zc-pending" />
         )}
         {state.status === 'Success' && (
@@ -47,7 +47,7 @@ export default function LoadStatus() {
             </Col>
           </Row>
         )}
-        {state.status === 'In_Progress' && (
+        {state.status === 'pending' && (
           <Row>
             <Col xs={12}>
               Your $
@@ -72,7 +72,7 @@ export default function LoadStatus() {
 
           </>
         )}
-        {(state.status === 'Success' || state.status === 'In_Progress') && (
+        {(state.status === 'Success' || state.status === 'pending') && (
           <Row>
             <Col xs={12}>
               Your total available Zippy balance is

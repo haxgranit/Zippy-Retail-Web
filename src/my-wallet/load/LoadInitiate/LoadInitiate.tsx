@@ -2,7 +2,7 @@ import { useMsal } from '@azure/msal-react';
 import { useEffect, useState } from 'react';
 import { Button, Modal } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
-import Api, { FundingSource } from '../../../api';
+import Api, { FundingSource, FundingSourceTransactionResponce } from '../../../api';
 import AmountInput from '../../../common/AmountInput';
 import PageContainer from '../../../common/PageContainer';
 import Options from '../options/options';
@@ -44,10 +44,10 @@ export default function LoadInitiate() {
     setIsLoading(true);
     new Api(instance, accounts[0])
       .postFundingSourceTransaction(fundRequest)
-      .then(() => {
+      .then((resp:FundingSourceTransactionResponce) => {
         setIsLoading(false);
         navigate('/my-wallet/load/status', {
-          state: { ...fundRequest, status: 'Success' },
+          state: { ...fundRequest, status: resp.status, id: resp.id },
         });
       })
       .catch((error) => {
