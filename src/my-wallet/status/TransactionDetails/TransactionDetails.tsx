@@ -3,24 +3,44 @@ import {
 } from 'react-bootstrap';
 import NumberFormat from 'react-number-format';
 import { DateTime } from 'luxon';
+import { useEffect, useState } from 'react';
+import { useMsal } from '@azure/msal-react';
+import { useNavigate, useParams } from 'react-router-dom';
 import PageContainer from '../../../common/PageContainer';
-import { TransactionInterface } from '../../../constants/interface/TransactionInterface';
-import { TransactionTypeEnum } from '../../../constants/enum/TransactionTypeEnum';
+import Api, { Transaction } from '../../../api';
+import { TunnelTypeEnum } from '../../../constants/enum/TunnelTypeEnum';
 import { TransactionStatusEnum } from '../../../interac-etransfer/status/transaction-status/TransactionStatusEnum';
 
-export default function TransactionDetails({
-  user,
-  transaction,
-  transactionType,
-  resetMainInfo,
-}: Pick<TransactionInterface, 'user' | 'transaction' | 'transactionType' | 'resetMainInfo'>) {
-  const getUserFullName = () => {
-    if (transactionType === TransactionTypeEnum.SEND) {
-      const contact = transaction?.contact;
-      return contact && contact.firstName && contact.lastName ? `${contact.firstName} ${contact.lastName}` : '';
+export default function TransactionDetails() {
+  const navigate = useNavigate();
+  const { instance, accounts } = useMsal();
+  const api = new Api(instance, accounts[0]);
+  const { transactionId } = useParams();
+  const [transaction, setTransaction] = useState<Transaction>();
+  const [transId] = useState<number>(Number(transactionId));
+  const [isInitialized, setIsInitialized] = useState<boolean>(false);
+
+  const loadTransaction = (id: number, method: TunnelTypeEnum) => {
+    if (method === TunnelTypeEnum.INTERAC_E_TRANSFER) {
+      api.getInteracEtransferTransaction(id)
+        .then((data) => setTransaction(data));
+    } else if (method === TunnelTypeEnum.ZIPPY_CASH) {
+      api.getZippyCashTransfer(id)
+        .then((data) => setTransaction(data));
     }
-    return user && user.firstName && user.lastName ? `${user.firstName} ${user.lastName}` : '';
   };
+
+  const getUserFullName = (trans: Transaction | undefined): string => {
+    const contact = trans?.contact;
+    return contact && contact.firstName && contact.lastName ? `${contact.firstName} ${contact.lastName}` : '';
+  };
+
+  useEffect(() => {
+    if (!isInitialized && transId) {
+      setIsInitialized(true);
+      loadTransaction(Number(transId), TunnelTypeEnum.INTERAC_E_TRANSFER);
+    }
+  });
 
   return (
     <>
@@ -48,7 +68,7 @@ export default function TransactionDetails({
           <Row>
             <Col xs={6}>To</Col>
             <Col xs={6}>
-              <strong>{getUserFullName()}</strong>
+              <strong>{getUserFullName(transaction)}</strong>
             </Col>
           </Row>
           <Row>
@@ -94,7 +114,7 @@ export default function TransactionDetails({
         <div className="action">
           <Button
             className="zippy-btn"
-            onClick={resetMainInfo}
+            onClick={() => navigate('/my-wallet/zippy-money/send/transaction-start')}
           >
             Send Another Transfer
           </Button>

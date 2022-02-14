@@ -49,7 +49,7 @@ export default function VerticalNavLinks() {
             <Nav.Link as={NavLink} to="/interac-etransfer/learn-more">Learn More</Nav.Link>
           </Nav>
         )}
-        <Nav.Link className="nav-link" as={NavLink} to="/my-wallet/zippy-money/send/transaction-start">
+        <Nav.Link className="nav-link" as={NavLink} to="/my-wallet">
           <i className="zippy-cash-icon zc-interac-etransfer" />
           My Wallet
           <i className="dropdown zippy-cash-icon zc-up" />

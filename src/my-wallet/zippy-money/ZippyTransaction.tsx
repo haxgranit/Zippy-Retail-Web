@@ -52,7 +52,11 @@ export default function ZippyTransaction() {
   } as TransactionMainDetailsInterface;
 
   const navigate = useNavigate();
-  const { step, transactionType = TransactionTypeEnum.SEND, transactionId } = useParams();
+  const {
+    step = SendMoneyStepsEnum.TRANSACTION_START,
+    transactionType = TransactionTypeEnum.SEND,
+    transactionId,
+  } = useParams();
   const { instance, accounts } = useMsal();
   const api = new Api(instance, accounts[0]);
   const [tunnelType, setTunnelType] = useState<TunnelTypeEnum>(TunnelTypeEnum.INTERAC_E_TRANSFER);

@@ -1,0 +1,76 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TransactionStatusList Component matches the snapshot 1`] = `
+<div
+  className="status-list"
+>
+  <div
+    className="zippy-cash-container-wrap"
+  >
+    <div
+      className="backdrop backdrop-image-3"
+    />
+    <div
+      className="zippy-cash-container"
+    >
+      <div
+        className="zippy-cash-container-header"
+      >
+        <h1
+          className="title"
+        >
+          Transactions History
+        </h1>
+        
+      </div>
+      <div
+        className="zippy-cash-container-body"
+      >
+        <div
+          aria-label="Zippy Cash"
+          className="zippy-btn-group btn-group"
+          role="group"
+        >
+          <button
+            className="active btn btn-primary"
+            disabled={true}
+            onClick={[Function]}
+            type="button"
+          >
+            All
+          </button>
+          <button
+            className="btn btn-primary"
+            disabled={false}
+            onClick={[Function]}
+            type="button"
+          >
+            Send
+          </button>
+          <button
+            className="btn btn-primary"
+            disabled={false}
+            onClick={[Function]}
+            type="button"
+          >
+            Received
+          </button>
+          <button
+            className="btn btn-primary"
+            disabled={false}
+            onClick={[Function]}
+            type="button"
+          >
+            Requested
+          </button>
+        </div>
+        <div
+          className="status-list-container"
+        >
+          loading
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

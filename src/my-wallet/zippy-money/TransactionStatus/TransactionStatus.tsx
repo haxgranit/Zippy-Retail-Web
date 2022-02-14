@@ -23,6 +23,19 @@ export default function TransactionStatus({
     return user && user.firstName && user.lastName ? `${user.firstName} ${user.lastName}` : '';
   };
 
+  const getIconClass = (status: TransactionStatusEnum | undefined): string => {
+    switch (status) {
+      case TransactionStatusEnum.COMPLETED:
+        return TransactionStatusEnum.COMPLETED;
+      case TransactionStatusEnum.CANCELLED:
+      case TransactionStatusEnum.FAILED:
+        return TransactionStatusEnum.FAILED;
+      case TransactionStatusEnum.PENDING:
+      default:
+        return TransactionStatusEnum.PENDING;
+    }
+  };
+
   const getCopy = (status: TransactionStatusEnum | undefined) => {
     const name = getUserFullName(transaction?.contact);
     const amount = `${transaction?.amount.toFixed(2) || '0.00'} CAD`;
@@ -51,7 +64,7 @@ export default function TransactionStatus({
           Transaction Status
         </div>
         <div className="status">
-          <div><i className="zippy-cash-icon zc-pending" /></div>
+          <div><i className={`zippy-cash-icon zc-${getIconClass(transaction?.status)}`} /></div>
           <div>
             {getCopy(transaction?.status)}
           </div>
