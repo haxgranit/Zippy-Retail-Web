@@ -9,7 +9,7 @@ export default function TransferDetails() {
   const [transferDeatils, setTransferDeatils] = useState<any>(null);
   useEffect(() => {
     new Api(instance, accounts[0])
-      .getFundLoadTransaction(1)
+      .getFundingSourceTransaction(1)
       .then((data) => {
         setTransferDeatils(data);
       })

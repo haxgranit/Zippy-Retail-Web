@@ -168,7 +168,7 @@ export default class Api {
     return this.fetch<FundingSourceTransactionResponce>('post', `FundingSources/${request.sourceId}/Transactions`, request);
   }
 
-  public getFundLoadTransaction(id: number) {
+  public getFundingSourceTransaction(id: number) {
     // return this.fetch<FundingSourceTransaction>('post', `FundingSources/${id}/Transactions`);
     return Promise.resolve({
       id,
