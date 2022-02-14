@@ -1,6 +1,6 @@
-import { TransferMainDetails } from '../interac-etransfer/send-money/SendMoney';
+import { TransactionMainDetailsInterface } from '../constants/interface/TransactionMainDetailsInterface';
 
-const MAIN_INFO: TransferMainDetails = {
+const MAIN_INFO: TransactionMainDetailsInterface = {
   amount: 1000,
   destination: { email: 'destination@email.com', name: 'destination name' },
   source: { email: 'source@email.com', name: 'source name' },

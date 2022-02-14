@@ -32,23 +32,6 @@ export default function VerticalNavLinks() {
             <Nav.Link as={NavLink} to="/my-accounts/upcoming-bill-payments-and-transfers">Upcoming Bill Payments and Transfers</Nav.Link>
           </Nav>
         )}
-        <Nav.Link className="nav-link" as={NavLink} to="/interac-etransfer">
-          <i className="zippy-cash-icon zc-interac-etransfer" />
-          Interac e-Transfer
-          <i className="dropdown zippy-cash-icon zc-up" />
-        </Nav.Link>
-        {pathname.startsWith('/interac-etransfer') && (
-          <Nav className="flex-column" style={{ marginLeft: '20px' }}>
-            <Nav.Link as={NavLink} to="/interac-etransfer/status">Status</Nav.Link>
-            <Nav.Link as={NavLink} to="/interac-etransfer/send-money">Send Money</Nav.Link>
-            <Nav.Link as={NavLink} to="/interac-etransfer/request-money">Request Money</Nav.Link>
-            <Nav.Link as={NavLink} to="/interac-etransfer/contact-list">Contact List</Nav.Link>
-            <Nav.Link as={NavLink} to="/interac-etransfer/edit-my-profile">Edit My Profile</Nav.Link>
-            <Nav.Link as={NavLink} to="/interac-etransfer/autodeposit-settings">Autodeposit Settings</Nav.Link>
-            <Nav.Link as={NavLink} to="/interac-etransfer/receive-money">Receive Money</Nav.Link>
-            <Nav.Link as={NavLink} to="/interac-etransfer/learn-more">Learn More</Nav.Link>
-          </Nav>
-        )}
         <Nav.Link className="nav-link" as={NavLink} to="/my-wallet">
           <i className="zippy-cash-icon zc-interac-etransfer" />
           My Wallet
@@ -76,19 +59,6 @@ export default function VerticalNavLinks() {
             <Nav.Link as={NavLink} to="/bill-payments/add-or-edit-billers">Add or Edit Billers</Nav.Link>
             <Nav.Link as={NavLink} to="/bill-payments/biller-details">Biller Details</Nav.Link>
             <Nav.Link as={NavLink} to="/bill-payments/view-ebills">View eBills</Nav.Link>
-          </Nav>
-        )}
-        <Nav.Link className="nav-link" as={NavLink} to="/transfer-funds">
-          <i className="zippy-cash-icon zc-transfer-funds" />
-          Transfer Funds
-          <i className="dropdown zippy-cash-icon zc-up" />
-        </Nav.Link>
-        {pathname.startsWith('/transfer-funds') && (
-          <Nav className="flex-column" style={{ marginLeft: '20px' }}>
-            <Nav.Link as={NavLink} to="/transfer-funds/zippy-to-zippy">Zippy to Zippy</Nav.Link>
-            <Nav.Link as={NavLink} to="/transfer-funds/eft">EFT</Nav.Link>
-            <Nav.Link as={NavLink} to="/transfer-funds/visa-direct">Visa Direct</Nav.Link>
-            <Nav.Link as={NavLink} to="/transfer-funds/review-and-cancel-transfers">Review and Cancel Transfers</Nav.Link>
           </Nav>
         )}
         <Nav.Link className="nav-link" as={NavLink} to="/account-security">

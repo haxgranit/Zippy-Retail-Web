@@ -44,21 +44,6 @@ exports[`HomeLoggedIn Component matches the snapshot 1`] = `
           className="nav-link nav-link"
           data-rr-ui-event-key={null}
           disabled={false}
-          href="/interac-etransfer"
-          onClick={[Function]}
-        >
-          <i
-            className="zippy-cash-icon zc-interac-etransfer"
-          />
-          Interac e-Transfer
-          <i
-            className="dropdown zippy-cash-icon zc-up"
-          />
-        </a>
-        <a
-          className="nav-link nav-link"
-          data-rr-ui-event-key={null}
-          disabled={false}
           href="/my-wallet"
           onClick={[Function]}
         >
@@ -81,21 +66,6 @@ exports[`HomeLoggedIn Component matches the snapshot 1`] = `
             className="zippy-cash-icon zc-bill-payments"
           />
           Bill Payments
-          <i
-            className="dropdown zippy-cash-icon zc-up"
-          />
-        </a>
-        <a
-          className="nav-link nav-link"
-          data-rr-ui-event-key={null}
-          disabled={false}
-          href="/transfer-funds"
-          onClick={[Function]}
-        >
-          <i
-            className="zippy-cash-icon zc-transfer-funds"
-          />
-          Transfer Funds
           <i
             className="dropdown zippy-cash-icon zc-up"
           />
