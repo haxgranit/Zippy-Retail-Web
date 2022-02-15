@@ -18,18 +18,10 @@ export default function VerticalNavLinks() {
         </Nav.Link>
         {pathname.startsWith('/my-account') && (
           <Nav className="flex-column" style={{ marginLeft: '20px' }}>
-            <Nav.Link as={NavLink} to="/my-account/view-account-details">View Account Details</Nav.Link>
+            <Nav.Link as={NavLink} to="/my-account/account">Account</Nav.Link>
             <Nav.Link as={NavLink} to="/my-account/download-transactions">Download Transactions</Nav.Link>
-            <Nav.Link as={NavLink} to="/my-account/view-estatements">
-              View eStatements
-              <i className="dropdown zippy-cash-icon zc-up" />
-            </Nav.Link>
-            {pathname.startsWith('/my-account/view-estatements') && (
-              <Nav className="flex-column" style={{ marginLeft: '20px' }}>
-                <Nav.Link as={NavLink} to="/my-account/view-estatements/statement-preferences">Statement Preferences</Nav.Link>
-              </Nav>
-            )}
-            <Nav.Link as={NavLink} to="/my-account/upcoming-bill-payments-and-transfers">Upcoming Bill Payments and Transfers</Nav.Link>
+            <Nav.Link as={NavLink} to="/my-account/view-estatements">View E-Statements</Nav.Link>
+            <Nav.Link as={NavLink} to="/my-account/bill-payments">Bill Payments</Nav.Link>
           </Nav>
         )}
         <Nav.Link className="nav-link" as={NavLink} to="/my-wallet">

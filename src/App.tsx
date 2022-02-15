@@ -28,13 +28,7 @@ import ZippyTransaction from './my-wallet/zippy-money/ZippyTransaction';
 import Home from './home/Home';
 import Legal from './Legal';
 import ManageMyAlerts from './manage-my-alerts/ManageMyAlerts';
-import MyAccounts from './my-account/my-account/MyAccounts';
-import DownloadTransactions from './my-account/download-transactions/DownloadTransactions';
-import StatementPreferences from './my-account/view-estatements/statement-preferences/StatementPreferences';
-import UpcomingBillPaymentsAndTransfers from './my-account/upcoming-bill-payments-and-transfer/UpcomingBillPaymentsAndTransfers';
 import MyWallet from './my-wallet/my-wallet/MyWallet';
-import ViewAccountDetails from './my-account/view-account-details/ViewAccountDetails';
-import ViewEStatements from './my-account/view-estatements/ViewEStatements';
 import Personal from './Personal';
 import PersonalProfile from './PersonalProfile';
 import ScrollToTop from './ScrollToTop';
@@ -68,6 +62,10 @@ import LoadInitiate from './my-wallet/load/LoadInitiate/LoadInitiate';
 import TransferDetails from './my-wallet/load/TransferDetails/TransferDetails';
 import TransactionStatusList from './my-wallet/status/TransactionStatusList/TransactionStatusList';
 import TransactionStatus from './my-wallet/status/TransactionDetails/TransactionStatus';
+import Account from './my-account/account/Account';
+import DownloadTransactions from './my-account/download-transactions/DownloadTransactions';
+import ViewEstatements from './my-account/view-estatements/ViewEstatements';
+import AccountBillPayments from './my-account/bill-payments/BillPayments';
 
 export default function App() {
   const dispatch = useAppDispatch();
@@ -159,14 +157,11 @@ export default function App() {
           </Route>
           <Route path="manage-my-alerts" element={<ManageMyAlerts />} />
           <Route path="my-account">
-            <Route path="/my-account" element={<MyAccounts />} />
-            <Route path="view-account-details" element={<ViewAccountDetails />} />
+            <Route path="/my-account" element={<Navigate replace to="/my-account/account" />} />
+            <Route path="account" element={<Account />} />
             <Route path="download-transactions" element={<DownloadTransactions />} />
-            <Route path="view-estatements">
-              <Route path="/my-account/view-estatements" element={<ViewEStatements />} />
-              <Route path="statement-preferences" element={<StatementPreferences />} />
-            </Route>
-            <Route path="upcoming-bill-payments-and-transfers" element={<UpcomingBillPaymentsAndTransfers />} />
+            <Route path="view-estatements" element={<ViewEstatements />} />
+            <Route path="bill-payments" element={<AccountBillPayments />} />
           </Route>
         </Route>
         <Route path="about" element={<About />} />
