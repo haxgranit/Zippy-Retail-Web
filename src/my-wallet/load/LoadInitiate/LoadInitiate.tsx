@@ -9,7 +9,7 @@ import PageContainer from '../../../common/PageContainer';
 import Alert from '../../../common/Alert';
 import SourceOptions from '../options/SourceOptions';
 
-export default function LoadInitiate({ mode } : { mode: string }) {
+export default function LoadInitiate({ mode } : { mode: 'load' | 'get' }) {
   const [fundingSources, setFundingSources] = useState<FundingSource[]>([]);
   const [amount, setAmount] = useState(0.00);
   const [cardExpired, setCardExpired] = useState(false);
