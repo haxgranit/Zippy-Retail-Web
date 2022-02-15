@@ -95,6 +95,7 @@ export default function LoadInitiate() {
             loadFunds();
           }}
         >
+          {isLoading && <div className="loading spinner-border" role="status" />}
           Load
         </Button>
       </div>

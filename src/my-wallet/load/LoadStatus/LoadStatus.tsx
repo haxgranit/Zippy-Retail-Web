@@ -1,9 +1,11 @@
 import { Button, Col, Row } from 'react-bootstrap';
 import { useLocation, useNavigate } from 'react-router-dom';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useMsal } from '@azure/msal-react';
 import PageContainer from '../../../common/PageContainer';
-import Api from '../../../api';
+import Api, { Account } from '../../../api';
+import { useAppSelector } from '../../../app/hooks';
+import { selectUser } from '../../../features/user/userSlice';
 
 export default function LoadStatus() {
   const { instance, accounts } = useMsal();
@@ -19,6 +21,19 @@ export default function LoadStatus() {
         console.log('error', error);
       });
   }
+
+  const [account, setAccount] = useState<Account | undefined>();
+  const { user } = useAppSelector(selectUser);
+
+  useEffect(() => {
+    if (user) {
+      new Api(instance, accounts[0])
+        .listAccounts()
+        .then((msalAccounts) => {
+          setAccount(msalAccounts[0]);
+        });
+    }
+  }, [user]);
 
   return (
     <PageContainer title="Personal Account" subTitle="Made Fun With Zippy!">
@@ -72,16 +87,18 @@ export default function LoadStatus() {
 
           </>
         )}
-        {/* hiding it for tim being */}
-        {/* {(state.status === 'completed' || state.status === 'pending') && (
+        {(state.status === 'completed' || state.status === 'pending') && (
           <Row>
             <Col xs={12}>
               Your total available Zippy balance is
               {' '}
-              <b>$200</b>
+              <b>
+                $
+                {account?.balance}
+              </b>
             </Col>
           </Row>
-        )} */}
+        )}
       </div>
 
       <div className="action">
