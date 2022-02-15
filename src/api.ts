@@ -98,10 +98,16 @@ export type FundingSourceTransactionRequest = {
   amount: number,
 };
 
+// export type FundingSourceRequest = {
+//   displayName: string,
+//   isDefault: boolean,
+//   bankAccount: BankAccount
+// };
+
 export type FundingSourceRequest = {
   displayName: string,
   isDefault: boolean,
-  bankAccount: BankAccount
+  bankAccount: BankAccount,
 };
 
 export type DCBankEftTransaction = {
