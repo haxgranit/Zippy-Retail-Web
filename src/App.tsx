@@ -62,7 +62,7 @@ import LoadStatus from './my-wallet/load/LoadStatus/LoadStatus';
 import LoadInitiate from './my-wallet/load/LoadInitiate/LoadInitiate';
 import TransferDetails from './my-wallet/load/TransferDetails/TransferDetails';
 import TransactionStatusList from './my-wallet/status/TransactionStatusList/TransactionStatusList';
-import TransactionDetails from './my-wallet/status/TransactionDetails/TransactionDetails';
+import TransactionStatus from './my-wallet/status/TransactionDetails/TransactionStatus';
 
 export default function App() {
   const dispatch = useAppDispatch();
@@ -144,7 +144,7 @@ export default function App() {
               <Route path="transfer-details" element={<TransferDetails />} />
             </Route>
             <Route path="status" element={<TransactionStatusList />} />
-            <Route path="status/:transactionId" element={<TransactionDetails />} />
+            <Route path="status/:type/:status/:id" element={<TransactionStatus />} />
           </Route>
           <Route path="manage-my-alerts" element={<ManageMyAlerts />} />
           <Route path="my-accounts">
