@@ -43,7 +43,7 @@ export default function LoadInitiate({ mode } : { mode: string }) {
     }
     const fundRequest = {
       amount,
-      isCredit: mode === 'load',
+      isCredit: mode === 'get',
     };
     setIsLoading(true);
     new Api(instance, accounts[0])

@@ -8,14 +8,21 @@ import Api, { Account } from '../../../api';
 import { useAppSelector } from '../../../app/hooks';
 import { selectUser } from '../../../features/user/userSlice';
 
+type LocationState = {
+  id: number,
+  sourceId: number,
+  isCredit: boolean,
+  amount: number,
+  status: string,
+};
 export default function LoadStatus({ mode } : { mode: string }) {
   const { instance, accounts } = useMsal();
   const navigate = useNavigate();
-  const [state, setState] = useState<any>(useLocation().state);
+  const [state, setState] = useState<LocationState>(useLocation().state as LocationState);
   function retryPayment() {
     new Api(instance, accounts[0])
       .postFundingSourceTransaction(
-        { amount: state.amount as number, isCredit: state.isCredit as boolean },
+        { amount: state.amount, isCredit: state.isCredit },
         state.sourceId,
       )
       .then(() => {
