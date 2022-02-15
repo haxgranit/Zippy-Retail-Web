@@ -1,0 +1,78 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TransactionComplete Component matches the snapshot 1`] = `
+<div
+  className=""
+>
+  <div
+    className="zippy-cash-container-wrap"
+  >
+    <div
+      className="backdrop backdrop-image-2"
+    />
+    <div
+      className="zippy-cash-container"
+    >
+      <div
+        className="zippy-cash-container-header"
+      >
+        <h1
+          className="title"
+        >
+          Your Wallet
+        </h1>
+        <h2
+          className="catch"
+        >
+          Made Fun With Zippy!
+        </h2>
+      </div>
+      <div
+        className="zippy-cash-container-body"
+      >
+        <input
+          className="amount form-control"
+          onChange={[Function]}
+          onKeyDown={[Function]}
+          placeholder="$0.00"
+          type="string"
+          value=""
+        />
+        <div
+          className="dropdown_background"
+        >
+          <div
+            className="dropbtn1"
+            onClick={[Function]}
+            onKeyDown={[Function]}
+            role="button"
+            tabIndex={0}
+          >
+            Select funding source
+             
+            <img
+              alt=""
+              className="margin"
+              height={14}
+              src="https://library.kissclipart.com/20180915/yhw/kissclipart-drop-down-arrow-icon-clipart-computer-icons-drop-d-172f248dc7644e4f.png"
+              width={14}
+            />
+          </div>
+        </div>
+        <div
+          className="action"
+        >
+          <button
+            className="zippy-btn btn btn-primary"
+            disabled={false}
+            onClick={[Function]}
+            type="button"
+          >
+            Load
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

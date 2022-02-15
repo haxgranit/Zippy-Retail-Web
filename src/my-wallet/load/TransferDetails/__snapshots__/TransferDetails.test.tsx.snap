@@ -1,0 +1,112 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TransactionComplete Component matches the snapshot 1`] = `
+<div
+  className=""
+>
+  <div
+    className="zippy-cash-container-wrap"
+  >
+    <div
+      className="backdrop "
+    />
+    <div
+      className="zippy-cash-container"
+    >
+      <div
+        className="zippy-cash-container-header"
+      >
+        <h1
+          className="title"
+        >
+          Your Wallet
+        </h1>
+        <h2
+          className="catch"
+        >
+          Made Fun With Zippy!
+        </h2>
+      </div>
+      <div
+        className="zippy-cash-container-body"
+      >
+        <div
+          className="title complete"
+        >
+          Transfer Completed
+        </div>
+        <div
+          className="transaction-detail"
+        >
+          <div
+            className="detail-wrap"
+          >
+            <span>
+              Transfer Type
+            </span>
+            <p>
+              Zippy Wallet Load
+            </p>
+          </div>
+          <div
+            className="detail-wrap"
+          >
+            <span>
+              Transfer Date
+            </span>
+            <span>
+              
+            </span>
+          </div>
+          <div
+            className="detail-wrap"
+          >
+            <span>
+              Transfer Time (UTC)
+            </span>
+            <span>
+              
+            </span>
+          </div>
+          <div
+            className="detail-wrap"
+          >
+            <span>
+              Transfer Amount
+            </span>
+            <p
+              style={
+                Object {
+                  "color": "#0D6EFD",
+                }
+              }
+            >
+              $
+            </p>
+          </div>
+          <div
+            className="detail-wrap"
+          >
+            <span>
+              Reference Number (Keep For Your Records)
+            </span>
+            <p />
+          </div>
+        </div>
+        <div
+          className="action"
+        >
+          <button
+            className="zippy-btn btn btn-primary"
+            disabled={false}
+            onClick={[Function]}
+            type="button"
+          >
+            Load
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

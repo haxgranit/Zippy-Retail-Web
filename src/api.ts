@@ -1,3 +1,4 @@
+/* eslint-disable class-methods-use-this */
 /* eslint-disable no-console */
 
 import { AccountInfo, InteractionRequiredAuthError, IPublicClientApplication } from '@azure/msal-browser';
@@ -80,6 +81,55 @@ export type ErrorDetail = {
   traceId: string,
 };
 
+export type BankAccount = {
+  institutionNumber: number,
+  transitNumber: number,
+  accountNumber: string,
+};
+
+export type FundingSource = {
+  id:number,
+  displayName: string,
+  isDefault: boolean,
+  bankAccount: BankAccount | null,
+};
+
+export type FundingSourceTransactionRequest = {
+  amount: number,
+};
+
+export type FundingSourceRequest = {
+  displayName: string,
+  isDefault: boolean,
+  bankAccount: BankAccount
+};
+
+export type DCBankEftTransaction = {
+  id: number,
+  DCBankEftCustomerAccountId: number,
+  fundingSourceTransactionId: number,
+  transactionId: number,
+  transactionStatusCode: string
+  transactionStatusId: number
+};
+
+export type FundingSourceTransaction = {
+  id:number,
+  fundingSourceId:number,
+  amount: number,
+  isCredit: boolean,
+  createdDate: string,
+  status: string
+  DCBankEftTransaction: DCBankEftTransaction,
+  fundingSource: FundingSource
+};
+
+export type FundingSourceTransactionResponce = {
+  id: number,
+  amount: number,
+  status: string
+};
+
 export async function getToken(instance: IPublicClientApplication, account: AccountInfo)
   : Promise<string | null> {
   const accessTokenRequest = {
@@ -113,6 +163,22 @@ export default class Api {
 
   public listContacts() {
     return this.fetch<Contact[]>('get', 'Contacts');
+  }
+
+  public listFundingSources() {
+    return this.fetch<FundingSource[]>('get', 'FundingSources');
+  }
+
+  public postFundingSource(request: FundingSourceRequest) {
+    return this.fetch<FundingSource[]>('post', 'FundingSources', request);
+  }
+
+  public postFundingSourceTransaction(request: FundingSourceTransactionRequest, id: number) {
+    return this.fetch<FundingSourceTransactionResponce>('post', `FundingSources/${id}/Transactions/`, { amount: request.amount, sourceId: id });
+  }
+
+  public getFundingSourceTransaction(id: number, sourceId: number) {
+    return this.fetch<FundingSourceTransaction>('get', `FundingSources/${sourceId}/Transactions/${id}`);
   }
 
   public postContact(data: ContactBase) {

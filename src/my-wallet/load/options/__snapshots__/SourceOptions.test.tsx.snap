@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TransactionComplete Component matches the snapshot 1`] = `
+<div
+  className="dropdown_background"
+>
+  <div
+    className="dropbtn1"
+    onClick={[Function]}
+    onKeyDown={[Function]}
+    role="button"
+    tabIndex={0}
+  >
+    Select funding source
+     
+    <img
+      alt=""
+      className="margin"
+      height={14}
+      src="https://library.kissclipart.com/20180915/yhw/kissclipart-drop-down-arrow-icon-clipart-computer-icons-drop-d-172f248dc7644e4f.png"
+      width={14}
+    />
+  </div>
+</div>
+`;

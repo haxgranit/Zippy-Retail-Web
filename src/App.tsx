@@ -58,6 +58,9 @@ import DigitalVaultDocuments from './customer-services/digital-vault-documents/D
 import ContributeToTfsa from './customer-services/contribute-to-a-tfsa/ContributeToTfsa';
 import i18n from './i18n/config';
 import { Version } from './Version';
+import LoadStatus from './my-wallet/load/LoadStatus/LoadStatus';
+import LoadInitiate from './my-wallet/load/LoadInitiate/LoadInitiate';
+import TransferDetails from './my-wallet/load/TransferDetails/TransferDetails';
 import TransactionStatusList from './my-wallet/status/TransactionStatusList/TransactionStatusList';
 import TransactionDetails from './my-wallet/status/TransactionDetails/TransactionDetails';
 
@@ -134,6 +137,11 @@ export default function App() {
               <Route path=":transactionType/:step" element={<ZippyTransaction />}>
                 <Route path=":transactionId" element={<ZippyTransaction />} />
               </Route>
+            </Route>
+            <Route path="load">
+              <Route path="status" element={<LoadStatus />} />
+              <Route path="" element={<LoadInitiate />} />
+              <Route path="transfer-details" element={<TransferDetails />} />
             </Route>
             <Route path="status" element={<TransactionStatusList />} />
             <Route path="status/:transactionId" element={<TransactionDetails />} />
