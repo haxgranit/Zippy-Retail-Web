@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import { useMsal } from '@azure/msal-react';
 import { useEffect, useState } from 'react';
 import { Button, Modal } from 'react-bootstrap';
@@ -8,7 +9,7 @@ import PageContainer from '../../../common/PageContainer';
 import Alert from '../../../common/Alert';
 import SourceOptions from '../options/SourceOptions';
 
-export default function LoadInitiate() {
+export default function LoadInitiate({ mode } : { mode: 'load' | 'get' }) {
   const [fundingSources, setFundingSources] = useState<FundingSource[]>([]);
   const [amount, setAmount] = useState(0.00);
   const [cardExpired, setCardExpired] = useState(false);
@@ -42,6 +43,7 @@ export default function LoadInitiate() {
     }
     const fundRequest = {
       amount,
+      isCredit: mode === 'get',
     };
     setIsLoading(true);
     new Api(instance, accounts[0])
@@ -96,7 +98,7 @@ export default function LoadInitiate() {
           }}
         >
           {isLoading && <div className="loading spinner-border" role="status" />}
-          Load
+          {mode === 'load' ? 'LOAD' : 'GET'}
         </Button>
       </div>
       <Modal show={cardExpired} onHide={() => setCardExpired(false)}>
@@ -117,3 +119,11 @@ export default function LoadInitiate() {
     </PageContainer>
   );
 }
+
+LoadInitiate.propTypes = {
+  mode: PropTypes.string,
+};
+
+LoadInitiate.defaultProps = {
+  mode: 'load',
+};

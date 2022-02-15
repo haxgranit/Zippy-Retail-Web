@@ -62,9 +62,9 @@ import LoadStatus from './my-wallet/load/LoadStatus/LoadStatus';
 import LoadInitiate from './my-wallet/load/LoadInitiate/LoadInitiate';
 import TransferDetails from './my-wallet/load/TransferDetails/TransferDetails';
 import TransactionStatusList from './my-wallet/status/TransactionStatusList/TransactionStatusList';
-import TransactionDetails from './my-wallet/status/TransactionDetails/TransactionDetails';
 import FundingSourceDetails from './my-wallet/funding-source/FundingSourceDetails/FundingSourceDetails';
 import FundingSourceList from './my-wallet/funding-source/FundingSourceList';
+import TransactionStatus from './my-wallet/status/TransactionDetails/TransactionStatus';
 
 export default function App() {
   const dispatch = useAppDispatch();
@@ -141,8 +141,13 @@ export default function App() {
               </Route>
             </Route>
             <Route path="load">
-              <Route path="status" element={<LoadStatus />} />
-              <Route path="" element={<LoadInitiate />} />
+              <Route path="status" element={<LoadStatus mode="load" />} />
+              <Route path="" element={<LoadInitiate mode="load" />} />
+              <Route path="transfer-details" element={<TransferDetails />} />
+            </Route>
+            <Route path="get">
+              <Route path="status" element={<LoadStatus mode="get" />} />
+              <Route path="" element={<LoadInitiate mode="get" />} />
               <Route path="transfer-details" element={<TransferDetails />} />
             </Route>
             <Route path="status" element={<TransactionStatusList />} />
@@ -152,6 +157,7 @@ export default function App() {
               <Route path="add-funding-source" element={<FundingSourceDetails />} />
               <Route path="edit-funding-source/:id" element={<FundingSourceDetails />} />
             </Route>
+            <Route path="status/:type/:status/:id" element={<TransactionStatus />} />
           </Route>
           <Route path="manage-my-alerts" element={<ManageMyAlerts />} />
           <Route path="my-accounts">

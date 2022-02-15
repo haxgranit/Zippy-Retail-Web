@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import { Button, Col, Row } from 'react-bootstrap';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { useEffect, useState } from 'react';
@@ -7,13 +8,23 @@ import Api, { Account } from '../../../api';
 import { useAppSelector } from '../../../app/hooks';
 import { selectUser } from '../../../features/user/userSlice';
 
-export default function LoadStatus() {
+type LocationState = {
+  id: number,
+  sourceId: number,
+  isCredit: boolean,
+  amount: number,
+  status: string,
+};
+export default function LoadStatus({ mode } : { mode: string }) {
   const { instance, accounts } = useMsal();
   const navigate = useNavigate();
-  const [state, setState] = useState<any>(useLocation().state);
+  const [state, setState] = useState<LocationState>(useLocation().state as LocationState);
   function retryPayment() {
     new Api(instance, accounts[0])
-      .postFundingSourceTransaction(state.amount, state.sourceId)
+      .postFundingSourceTransaction(
+        { amount: state.amount, isCredit: state.isCredit },
+        state.sourceId,
+      )
       .then(() => {
         setState({ ...state, status: 'completed' });
       })
@@ -73,7 +84,11 @@ export default function LoadStatus() {
                 Your $
                 {state?.amount}
                 {' '}
-                Zippy credit request is in process.
+                Zippy
+                {' '}
+                {mode === 'load' ? 'credited' : 'debit'}
+                {' '}
+                request is in process.
 
               </p>
             </Col>
@@ -117,7 +132,7 @@ export default function LoadStatus() {
           <Button
             className="zippy-btn"
             onClick={() => navigate('/my-wallet/load/transfer-details', {
-              state: { id: state.id, sourceId: state.sourceId },
+              state: { id: state.id, sourceId: state.sourceId, isCredit: state.isCredit },
             })}
           >
             View Transfer Detail
@@ -134,3 +149,11 @@ export default function LoadStatus() {
     </PageContainer>
   );
 }
+
+LoadStatus.propTypes = {
+  mode: PropTypes.string,
+};
+
+LoadStatus.defaultProps = {
+  mode: 'load',
+};
