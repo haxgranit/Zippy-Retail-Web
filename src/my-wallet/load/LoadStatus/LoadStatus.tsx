@@ -125,7 +125,7 @@ export default function LoadStatus({ mode } : { mode: string }) {
           <Button
             className="zippy-btn"
             onClick={() => navigate('/my-wallet/load/transfer-details', {
-              state: { id: state.id, sourceId: state.sourceId },
+              state: { id: state.id, sourceId: state.sourceId, isCredit: state.isCredit },
             })}
           >
             View Transfer Detail

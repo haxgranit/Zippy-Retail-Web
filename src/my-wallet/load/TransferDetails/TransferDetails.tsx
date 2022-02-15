@@ -7,7 +7,8 @@ import PageContainer from '../../../common/PageContainer';
 
 type LocationState = {
   id: number,
-  sourceId: number
+  sourceId: number,
+  isCredit: boolean
 };
 
 export default function TransferDetails() {
@@ -79,9 +80,9 @@ export default function TransferDetails() {
       <div className="action">
         <Button
           className="zippy-btn"
-          onClick={() => navigate('/my-wallet/load')}
+          onClick={() => navigate(`/my-wallet/${state.isCredit ? 'load' : 'get'}`)}
         >
-          Load
+          {state.isCredit ? 'LOAD' : 'GET'}
         </Button>
       </div>
     </PageContainer>

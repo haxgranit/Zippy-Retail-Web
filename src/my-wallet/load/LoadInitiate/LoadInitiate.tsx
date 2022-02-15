@@ -98,7 +98,7 @@ export default function LoadInitiate({ mode } : { mode: string }) {
           }}
         >
           {isLoading && <div className="loading spinner-border" role="status" />}
-          Load
+          {mode === 'load' ? 'LOAD' : 'GET'}
         </Button>
       </div>
       <Modal show={cardExpired} onHide={() => setCardExpired(false)}>
