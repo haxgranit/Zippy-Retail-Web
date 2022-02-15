@@ -102,7 +102,7 @@ exports[`TransactionComplete Component matches the snapshot 1`] = `
             onClick={[Function]}
             type="button"
           >
-            GET
+            LOAD
           </button>
         </div>
       </div>
