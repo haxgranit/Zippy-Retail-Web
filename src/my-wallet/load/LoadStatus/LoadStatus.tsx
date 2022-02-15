@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import { Button, Col, Row } from 'react-bootstrap';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { useEffect, useState } from 'react';
@@ -7,13 +8,16 @@ import Api, { Account } from '../../../api';
 import { useAppSelector } from '../../../app/hooks';
 import { selectUser } from '../../../features/user/userSlice';
 
-export default function LoadStatus() {
+export default function LoadStatus({ mode } : { mode: string }) {
   const { instance, accounts } = useMsal();
   const navigate = useNavigate();
   const [state, setState] = useState<any>(useLocation().state);
   function retryPayment() {
     new Api(instance, accounts[0])
-      .postFundingSourceTransaction(state.amount, state.sourceId)
+      .postFundingSourceTransaction(
+        { amount: state.amount as number, isCredit: state.isCredit as boolean },
+        state.sourceId,
+      )
       .then(() => {
         setState({ ...state, status: 'completed' });
       })
@@ -68,7 +72,9 @@ export default function LoadStatus() {
               Your $
               {state?.amount}
               {' '}
-              credited request is in progress
+              {mode === 'load' ? 'credited' : 'debit'}
+              {' '}
+              request is in progress
             </Col>
           </Row>
         )}
@@ -123,3 +129,11 @@ export default function LoadStatus() {
     </PageContainer>
   );
 }
+
+LoadStatus.propTypes = {
+  mode: PropTypes.string,
+};
+
+LoadStatus.defaultProps = {
+  mode: 'load',
+};
