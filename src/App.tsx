@@ -139,8 +139,13 @@ export default function App() {
               </Route>
             </Route>
             <Route path="load">
-              <Route path="status" element={<LoadStatus />} />
-              <Route path="" element={<LoadInitiate />} />
+              <Route path="status" element={<LoadStatus mode="load" />} />
+              <Route path="" element={<LoadInitiate mode="load" />} />
+              <Route path="transfer-details" element={<TransferDetails />} />
+            </Route>
+            <Route path="get">
+              <Route path="status" element={<LoadStatus mode="get" />} />
+              <Route path="" element={<LoadInitiate mode="get" />} />
               <Route path="transfer-details" element={<TransferDetails />} />
             </Route>
             <Route path="status" element={<TransactionStatusList />} />

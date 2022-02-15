@@ -97,6 +97,7 @@ export type FundingSource = {
 
 export type FundingSourceTransactionRequest = {
   amount: number,
+  isCredit: boolean
 };
 
 export type FundingSourceRequest = {
@@ -175,7 +176,7 @@ export default class Api {
   }
 
   public postFundingSourceTransaction(request: FundingSourceTransactionRequest, id: number) {
-    return this.fetch<FundingSourceTransactionResponce>('post', `FundingSources/${id}/Transactions/`, { amount: request.amount, sourceId: id });
+    return this.fetch<FundingSourceTransactionResponce>('post', `FundingSources/${id}/Transactions/`, request);
   }
 
   public getFundingSourceTransaction(id: number, sourceId: number) {
