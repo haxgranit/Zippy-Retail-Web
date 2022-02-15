@@ -64,7 +64,7 @@ export default function LoadInitiate() {
   }
 
   return (
-    <PageContainer title="Personal Account" subTitle="Made Fun With Zippy!" backdropImage="backdrop-image-2">
+    <PageContainer title="Your Wallet" subTitle="Made Fun With Zippy!" backdropImage="backdrop-image-2">
       <AmountInput
         amount={amount}
         setAmount={(value) => setAmount(Number(value))}
