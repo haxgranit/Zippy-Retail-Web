@@ -99,7 +99,6 @@ i {
             background: $color-green;
             -webkit-mask-image: url("../assets/img/icons/status-icons/completed.svg");
             mask-image: url("../assets/img/icons/status-icons/completed.svg");
-            margin-top: 37px;
         }
 
         &.zc-cancelled:after,
@@ -107,14 +106,12 @@ i {
             background: $color-red;
             -webkit-mask-image: url("../assets/img/icons/status-icons/failed.svg");
             mask-image: url("../assets/img/icons/status-icons/failed.svg");
-            margin-top: 37px;
         }
 
         &.zc-pending:after {
             background: $color-dark-gray;
             -webkit-mask-image: url("../assets/img/icons/status-icons/pending.svg");
             mask-image: url("../assets/img/icons/status-icons/pending.svg");
-            margin-top: 37px;
         }
 
         &.zc-personal:after {
@@ -131,16 +128,12 @@ i {
             -webkit-mask-image: url("../assets/img/icons/alert.svg");
             mask-image: url("../assets/img/icons/alert.svg");
             background: white;
-            margin-right: 4px;
         }
 
         &.zc-close:after {
             -webkit-mask-image: url("../assets/img/icons/Close.svg");
             mask-image: url("../assets/img/icons/Close.svg");
             background: white;
-            width: 20px;
-            height: 20px;
-            margin-left: 16px;
         }
         &.zc-info:after {
             -webkit-mask-image: url("../assets/img/icons/info.svg");
