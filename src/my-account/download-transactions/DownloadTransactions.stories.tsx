@@ -4,7 +4,7 @@ import '../../styles/index.scss';
 import DownloadTransactions from './DownloadTransactions';
 
 export default {
-  title: 'my-accounts/download-transactions/DownloadTransactions',
+  title: 'my-account/download-transactions/DownloadTransactions',
   component: DownloadTransactions,
 } as ComponentMeta<typeof DownloadTransactions>;
 

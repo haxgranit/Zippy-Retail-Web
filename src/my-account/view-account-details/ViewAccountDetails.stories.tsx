@@ -4,7 +4,7 @@ import '../../styles/index.scss';
 import ViewAccountDetails from './ViewAccountDetails';
 
 export default {
-  title: 'my-accounts/view-account-details/ViewAccountDetails',
+  title: 'my-account/view-account-details/ViewAccountDetails',
   component: ViewAccountDetails,
 } as ComponentMeta<typeof ViewAccountDetails>;
 

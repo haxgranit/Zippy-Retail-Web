@@ -4,7 +4,7 @@ import '../../../styles/index.scss';
 import PanelHeader from './PanelHeader';
 
 export default {
-  title: 'my-accounts/my-accounts/components/PanelHeader',
+  title: 'my-account/my-account/components/PanelHeader',
   component: PanelHeader,
 } as ComponentMeta<typeof PanelHeader>;
 

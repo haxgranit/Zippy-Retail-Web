@@ -11,25 +11,25 @@ export default function VerticalNavLinks() {
         <Link to="/my-wallet" className="navbar-brand">
           <img src={ZippyCashLogo} alt="" />
         </Link>
-        <Nav.Link className="nav-link" id="my-account-link" as={NavLink} to="/my-accounts">
+        <Nav.Link className="nav-link" id="my-account-link" as={NavLink} to="/my-account">
           <i className="zippy-cash-icon zc-home" />
-          My Accounts
+          My Account
           <i className="dropdown zippy-cash-icon zc-up" />
         </Nav.Link>
-        {pathname.startsWith('/my-accounts') && (
+        {pathname.startsWith('/my-account') && (
           <Nav className="flex-column" style={{ marginLeft: '20px' }}>
-            <Nav.Link as={NavLink} to="/my-accounts/view-account-details">View Account Details</Nav.Link>
-            <Nav.Link as={NavLink} to="/my-accounts/download-transactions">Download Transactions</Nav.Link>
-            <Nav.Link as={NavLink} to="/my-accounts/view-estatements">
+            <Nav.Link as={NavLink} to="/my-account/view-account-details">View Account Details</Nav.Link>
+            <Nav.Link as={NavLink} to="/my-account/download-transactions">Download Transactions</Nav.Link>
+            <Nav.Link as={NavLink} to="/my-account/view-estatements">
               View eStatements
               <i className="dropdown zippy-cash-icon zc-up" />
             </Nav.Link>
-            {pathname.startsWith('/my-accounts/view-estatements') && (
+            {pathname.startsWith('/my-account/view-estatements') && (
               <Nav className="flex-column" style={{ marginLeft: '20px' }}>
-                <Nav.Link as={NavLink} to="/my-accounts/view-estatements/statement-preferences">Statement Preferences</Nav.Link>
+                <Nav.Link as={NavLink} to="/my-account/view-estatements/statement-preferences">Statement Preferences</Nav.Link>
               </Nav>
             )}
-            <Nav.Link as={NavLink} to="/my-accounts/upcoming-bill-payments-and-transfers">Upcoming Bill Payments and Transfers</Nav.Link>
+            <Nav.Link as={NavLink} to="/my-account/upcoming-bill-payments-and-transfers">Upcoming Bill Payments and Transfers</Nav.Link>
           </Nav>
         )}
         <Nav.Link className="nav-link" as={NavLink} to="/my-wallet">
