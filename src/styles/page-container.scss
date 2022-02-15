@@ -273,6 +273,25 @@
         gap: 20px;
         color: $color-dark-gray;
 
+        .status-msg {
+          font-style: normal;
+          font-weight: normal;
+          font-size: 20px;
+          line-height: 28px;
+          text-align: center;
+          color: #000000;
+          padding: 0px 60px;
+        }
+
+        .balance-msg {
+          font-style: normal;
+          font-weight: normal;
+          font-size: 18px;
+          line-height: 26px;
+          text-align: center;
+          color: #000000;
+        }
+
         strong {
           font-style: normal;
           font-weight: normal;
@@ -292,7 +311,7 @@
             color: red;
           }
         }
-      }
+       }
 
       .transaction-detail {
         margin-bottom: 121px;

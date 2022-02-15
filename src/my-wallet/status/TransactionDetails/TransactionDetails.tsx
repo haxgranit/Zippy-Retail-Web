@@ -7,9 +7,8 @@ import { useEffect, useState } from 'react';
 import { useMsal } from '@azure/msal-react';
 import { useNavigate, useParams } from 'react-router-dom';
 import PageContainer from '../../../common/PageContainer';
-import Api, { Transaction } from '../../../api';
+import Api, { Transaction, TransactionStatusEnum } from '../../../api';
 import { TunnelTypeEnum } from '../../../constants/enum/TunnelTypeEnum';
-import { TransactionStatusEnum } from '../../../interac-etransfer/status/transaction-status/TransactionStatusEnum';
 
 export default function TransactionDetails() {
   const navigate = useNavigate();
@@ -100,10 +99,6 @@ export default function TransactionDetails() {
               Reference Number
               (Keep For Your Records)
             </Col>
-            <Col xs={6}>*3942439898</Col>
-          </Row>
-          <Row>
-            <Col xs={6}>Transaction ID</Col>
             <Col xs={6}>{transaction?.id}</Col>
           </Row>
           <Row>

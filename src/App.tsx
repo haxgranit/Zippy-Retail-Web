@@ -1,9 +1,7 @@
 import AOS from 'aos';
 import { useIsAuthenticated, useMsal } from '@azure/msal-react';
 import { useEffect } from 'react';
-import {
-  Navigate, Route, Routes, useLocation,
-} from 'react-router-dom';
+import { Route, Routes, useLocation } from 'react-router-dom';
 import Api from './api';
 import { useAppDispatch } from './app/hooks';
 import { load } from './features/user/userSlice';
@@ -21,13 +19,6 @@ import CreateOrEditAccountNickname from './customer-services/create-or-edit-acco
 import ChangeYourAddress from './customer-services/change-your-address/ChangeYourAddress';
 import CustomerServices from './customer-services/customer-services/CustomerServices';
 import { Header } from './Header';
-import AutodepositSettings from './interac-etransfer/autodeposit-settings/AutodepositSettings';
-import ContactList from './interac-etransfer/contact-list/ContactList';
-import EditContact from './interac-etransfer/contact-list/edit/EditContact';
-import EditMyProfile from './interac-etransfer/edit-my-profile/EditMyProfile';
-import LearnMore from './interac-etransfer/learn-more/LearnMore';
-import ReceiveMoney from './interac-etransfer/receive-money/ReceiveMoney';
-import RequestMoney from './interac-etransfer/request-money/RequestMoney';
 import ZippyTransaction from './my-wallet/zippy-money/ZippyTransaction';
 import Home from './home/Home';
 import Legal from './Legal';
@@ -42,11 +33,6 @@ import ViewEStatements from './my-accounts/view-estatements/ViewEStatements';
 import Personal from './Personal';
 import PersonalProfile from './PersonalProfile';
 import ScrollToTop from './ScrollToTop';
-import EFT from './transfer-funds/EFT/EFT';
-import ReviewAndCancelTransfers from './transfer-funds/review-and-cancel-transfers/ReviewAndCancelTransfers';
-import TransferFunds from './transfer-funds/transfer-funds/TransferFunds';
-import VisaDirect from './transfer-funds/VisaDirect/VisaDirect';
-import ZippyToZippy from './transfer-funds/ZippyToZippy/ZippyToZippy';
 import ChangeYourPassword from './customer-services/change-your-password/ChangeYourPassword';
 import ChangeYourContactInformation from './customer-services/change-contact-information/ChangeYourContactInformation';
 import AddCardHolder from './customer-services/add-a-cardholder/AddCardHolder';
@@ -71,11 +57,7 @@ import UnlinkAccountsFromYourDebitCard from './customer-services/unlink-accounts
 import DigitalVaultDocuments from './customer-services/digital-vault-documents/DigitalVaultDocuments';
 import ContributeToTfsa from './customer-services/contribute-to-a-tfsa/ContributeToTfsa';
 import i18n from './i18n/config';
-import InteracETransferDetails from './interac-etransfer/status/interac-e-transfer-details/InteracETransferDetails';
-import Status from './interac-etransfer/status/Status';
 import { Version } from './Version';
-import TransactionStatus from './interac-etransfer/status/transaction-status/TransactionStatus';
-import SendMoney from './interac-etransfer/send-money/SendMoney';
 import LoadStatus from './my-wallet/load/LoadStatus/LoadStatus';
 import LoadInitiate from './my-wallet/load/LoadInitiate/LoadInitiate';
 import TransferDetails from './my-wallet/load/TransferDetails/TransferDetails';
@@ -150,32 +132,6 @@ export default function App() {
             <Route path="biller-details" element={<BillerDetails />} />
             <Route path="view-ebills" element={<ViewEBills />} />
           </Route>
-          <Route path="interac-etransfer">
-            <Route path="/interac-etransfer" element={<Navigate to="/interac-etransfer/status" />} />
-            <Route path="/interac-etransfer/status" element={<Status />}>
-              <Route path="/interac-etransfer/status" element={<Navigate to="/interac-etransfer/status/sent" />} />
-              <Route path=":tabId" element={<InteracETransferDetails />} />
-              <Route path=":type/:status/:id" element={<TransactionStatus />} />
-            </Route>
-            <Route path="send-money" element={<SendMoney />}>
-              <Route path=":stepId" element={<SendMoney />}>
-                <Route path=":transactionId" element={<SendMoney />} />
-              </Route>
-            </Route>
-            <Route path="request-money" element={<RequestMoney />}>
-              <Route path=":stepId" element={<RequestMoney />} />
-            </Route>
-            <Route path="contact-list" element={<ContactList />} />
-            <Route path="contact-list/edit">
-              <Route path=":id" element={<EditContact />} />
-              <Route path="" element={<EditContact />} />
-            </Route>
-            <Route path="contact-list/add" element={<EditContact />} />
-            <Route path="edit-my-profile" element={<EditMyProfile />} />
-            <Route path="autodeposit-settings" element={<AutodepositSettings />} />
-            <Route path="receive-money" element={<ReceiveMoney />} />
-            <Route path="learn-more" element={<LearnMore />} />
-          </Route>
           <Route path="my-wallet">
             <Route path="zippy-money" element={<ZippyTransaction />}>
               <Route path=":transactionType/:step" element={<ZippyTransaction />}>
@@ -205,13 +161,6 @@ export default function App() {
               <Route path="statement-preferences" element={<StatementPreferences />} />
             </Route>
             <Route path="upcoming-bill-payments-and-transfers" element={<UpcomingBillPaymentsAndTransfers />} />
-          </Route>
-          <Route path="transfer-funds">
-            <Route path="/transfer-funds" element={<TransferFunds />} />
-            <Route path="zippy-to-zippy" element={<ZippyToZippy />} />
-            <Route path="eft" element={<EFT />} />
-            <Route path="visa-direct" element={<VisaDirect />} />
-            <Route path="review-and-cancel-transfers" element={<ReviewAndCancelTransfers />} />
           </Route>
         </Route>
         <Route path="about" element={<About />} />

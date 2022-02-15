@@ -99,18 +99,21 @@ i {
             background: $color-green;
             -webkit-mask-image: url("../assets/img/icons/status-icons/completed.svg");
             mask-image: url("../assets/img/icons/status-icons/completed.svg");
+            margin-top: 37px;
         }
 
         &.zc-failed:after {
             background: $color-red;
             -webkit-mask-image: url("../assets/img/icons/status-icons/failed.svg");
             mask-image: url("../assets/img/icons/status-icons/failed.svg");
+            margin-top: 37px;
         }
 
         &.zc-pending:after {
             background: $color-dark-gray;
             -webkit-mask-image: url("../assets/img/icons/status-icons/pending.svg");
             mask-image: url("../assets/img/icons/status-icons/pending.svg");
+            margin-top: 37px;
         }
 
         &.zc-personal:after {

@@ -1,8 +1,8 @@
 import { useMsal } from '@azure/msal-react';
 import { useEffect, useState } from 'react';
 import { Button } from 'react-bootstrap';
-import { useLocation } from 'react-router-dom';
-import Api from '../../../api';
+import { useLocation, useNavigate } from 'react-router-dom';
+import Api, { FundingSourceTransaction } from '../../../api';
 import PageContainer from '../../../common/PageContainer';
 
 type LocationState = {
@@ -12,24 +12,26 @@ type LocationState = {
 
 export default function TransferDetails() {
   const { instance, accounts } = useMsal();
-  const [transferDetails, settransferDetails] = useState<any>(null);
+  const [transferDetails, settransferDetails] = useState<FundingSourceTransaction | null>(null);
   const state = useLocation().state as LocationState;
+  const [dateTime, setDateTime] = useState<{ date: string, time:string }>({ date: '', time: '' });
+  const navigate = useNavigate();
   useEffect(() => {
     new Api(instance, accounts[0])
       .getFundingSourceTransaction(state.id, state.sourceId)
-      .then((data) => {
+      .then((data: FundingSourceTransaction) => {
         settransferDetails(data);
+        const today = new Date(data?.createdDate);
+        const month = today.toLocaleString('default', { month: 'short' });
+        setDateTime({
+          date: `${month} ${today.getDate()}, ${today.getFullYear()}`,
+          time: today.toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true }),
+        });
       })
       .catch((error) => {
         console.log('error', error);
       });
   }, []);
-
-  const today = new Date('2022-02-14T16:18:51.3175848');
-
-  const date = `${today.getDate()}-${today.getMonth() + 1}-${today.getFullYear()}`;
-
-  // new Date().toLocaleDateString('en-us', { weekday:"long", year:"numeric", month:"short"})
 
   return (
     <PageContainer title="Your Wallet" subTitle="Made Fun With Zippy!">
@@ -52,13 +54,13 @@ export default function TransferDetails() {
         <div className="detail-wrap">
           <span>Transfer Date</span>
 
-          <span>{date}</span>
+          <span>{dateTime.date}</span>
         </div>
 
         <div className="detail-wrap">
           <span>Transfer Time (UTC)</span>
 
-          <span>{transferDetails?.createdDate.split('T')[1].split('.')[0]}</span>
+          <span>{dateTime.time}</span>
         </div>
 
         <div className="detail-wrap">
@@ -77,6 +79,7 @@ export default function TransferDetails() {
       <div className="action">
         <Button
           className="zippy-btn"
+          onClick={() => navigate('/my-wallet/load')}
         >
           Load
         </Button>

@@ -110,20 +110,6 @@ exports[`TransactionDetails Component matches the snapshot 1`] = `
             </div>
             <div
               className="col-6"
-            >
-              *3942439898
-            </div>
-          </div>
-          <div
-            className="row"
-          >
-            <div
-              className="col-6"
-            >
-              Transaction ID
-            </div>
-            <div
-              className="col-6"
             />
           </div>
           <div

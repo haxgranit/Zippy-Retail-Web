@@ -9,7 +9,6 @@ export default function SourceOptions(props: any) {
     defaultTitle, fundingSources, onChange, onEmptyOptionsSelected,
   } = props;
   const [expanded, setExpanded] = useState(false);
-  // const [checked, setChecked] = useState(false);
   const [selectedSource, setSelectedSource] = useState<FundingSource | undefined>(undefined);
   function optionSelected(option: FundingSource) {
     onChange?.(option);
@@ -25,9 +24,7 @@ export default function SourceOptions(props: any) {
     };
 
     document.addEventListener('mousedown', checkIfClickedOutside);
-
     return () => {
-      // Cleanup the event listener
       document.removeEventListener('mousedown', checkIfClickedOutside);
     };
   }, [expanded]);
@@ -59,19 +56,32 @@ export default function SourceOptions(props: any) {
                 role="button"
                 tabIndex={index}
               >
+                {fundingSource?.displayName && (
                 <div className="d-flex align-item-center justify-content-between text-black mt-3">
                   {' '}
-                  <div className="bankName"> Bank Name : HSBC Bank</div>
+                  <div className="bankName">
+                    {' '}
+                    {fundingSource?.displayName}
+                  </div>
                   <div>
                     <input type="radio" className="styledRadio" checked={selectedSource?.id === fundingSource.id} onChange={() => {}} />
                   </div>
                 </div>
+                )}
                 <div
                   className="d-flex align-item-center justify-content-between accountNo"
                 >
                   Acc. Number:
                   {' '}
                   {fundingSource?.bankAccount?.accountNumber}
+                  {
+                    !(fundingSource?.displayName)
+                    && (
+                    <div>
+                      <input type="radio" className="styledRadio" checked={selectedSource?.id === fundingSource.id} onChange={() => {}} />
+                    </div>
+                    )
+                  }
                 </div>
               </div>
             ))}

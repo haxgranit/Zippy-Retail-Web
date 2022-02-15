@@ -1,6 +1,8 @@
 import React from 'react';
 import { BrowserRouter } from 'react-router-dom';
+import { Provider } from 'react-redux';
 import LoadStatus from './LoadStatus';
+import { store } from '../../../app/store';
 
 const ReactTestRenderer = require('react-test-renderer');
 
@@ -19,9 +21,11 @@ jest.mock('react-router-dom', () => ({
 describe('TransactionComplete Component', () => {
   it('matches the snapshot', () => {
     const tree = ReactTestRenderer.create(
-      <BrowserRouter>
-        <LoadStatus />
-      </BrowserRouter>,
+      <Provider store={store}>
+        <BrowserRouter>
+          <LoadStatus />
+        </BrowserRouter>
+      </Provider>,
     ).toJSON();
     expect(tree).toMatchSnapshot();
   });

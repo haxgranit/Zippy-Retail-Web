@@ -40,7 +40,7 @@ export default function LoadStatus({ mode } : { mode: string }) {
   }, [user]);
 
   return (
-    <PageContainer title="Personal Account" subTitle="Made Fun With Zippy!">
+    <PageContainer title="Your Wallet" subTitle="Made Fun With Zippy!">
       <div className="title">
         Fund Transfer
       </div>
@@ -59,49 +59,62 @@ export default function LoadStatus({ mode } : { mode: string }) {
         {state.status === 'completed' && (
           <Row>
             <Col xs={12}>
-              Your $
-              {state?.amount}
-              {' '}
-              credit into your zippy account
+              <p className="status-msg">
+                Your $
+                {state?.amount}
+                {' '}
+                credit into your zippy account
+              </p>
             </Col>
           </Row>
         )}
         {state.status === 'pending' && (
           <Row>
-            <Col xs={12}>
-              Your $
-              {state?.amount}
-              {' '}
-              {mode === 'load' ? 'credited' : 'debit'}
-              {' '}
-              request is in progress
+            <Col
+              xs={12}
+            >
+              <p className="status-msg">
+                Your $
+                {state?.amount}
+                {' '}
+                Zippy
+                {' '}
+                {mode === 'load' ? 'credited' : 'debit'}
+                {' '}
+                request is in process.
+
+              </p>
             </Col>
           </Row>
         )}
         {state.status === 'failed' && (
-          <>
-            <Row>
-              <Col xs={12}>
-                Payment failed
-              </Col>
-            </Row>
-            <Row>
-              <Col xs={12}>
-                Your money has not been credited
-              </Col>
-            </Row>
-
-          </>
+        <Row>
+          <Col
+            xs={12}
+          >
+            <p className="status-msg">
+              Your $
+              {state?.amount}
+              {' '}
+              Zippy credit request
+              has been failed.
+            </p>
+          </Col>
+        </Row>
         )}
         {(state.status === 'completed' || state.status === 'pending') && (
           <Row>
-            <Col xs={12}>
-              Your total available Zippy balance is
-              {' '}
-              <b>
-                $
-                {account?.balance}
-              </b>
+            <Col xs={12} style={{ color: '#000000', padding: '0px 90px' }}>
+              <p className="balance-msg">
+                Your total available Zippy balance is
+                {' '}
+                <br />
+                <b>
+                  $
+                  {account?.balance}
+                  .00
+                </b>
+              </p>
             </Col>
           </Row>
         )}
