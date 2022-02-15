@@ -8,7 +8,7 @@ export default function VerticalNavLinks() {
   return (
     <div className="vertical-nav-wrapper noselect">
       <Nav className="vertical-nav">
-        <Link to="/" className="navbar-brand">
+        <Link to="/my-wallet" className="navbar-brand">
           <img src={ZippyCashLogo} alt="" />
         </Link>
         <Nav.Link className="nav-link" id="my-account-link" as={NavLink} to="/my-accounts">
