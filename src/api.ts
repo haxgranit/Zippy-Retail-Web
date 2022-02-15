@@ -117,7 +117,9 @@ export type FundingSourceTransaction = {
   id:number,
   fundingSourceId:number,
   amount: number,
-  isCredit: boolean
+  isCredit: boolean,
+  createdDate: string,
+  status: string
   DCBankEftTransaction: DCBankEftTransaction,
   fundingSource: FundingSource
 };

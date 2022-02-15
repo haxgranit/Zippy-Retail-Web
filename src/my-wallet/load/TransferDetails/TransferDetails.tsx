@@ -1,8 +1,8 @@
 import { useMsal } from '@azure/msal-react';
 import { useEffect, useState } from 'react';
 import { Button } from 'react-bootstrap';
-import { useLocation } from 'react-router-dom';
-import Api from '../../../api';
+import { useLocation, useNavigate } from 'react-router-dom';
+import Api, { FundingSourceTransaction } from '../../../api';
 import PageContainer from '../../../common/PageContainer';
 
 type LocationState = {
@@ -12,13 +12,14 @@ type LocationState = {
 
 export default function TransferDetails() {
   const { instance, accounts } = useMsal();
-  const [transferDetails, settransferDetails] = useState<any>(null);
+  const [transferDetails, settransferDetails] = useState<FundingSourceTransaction | null>(null);
   const state = useLocation().state as LocationState;
   const [dateTime, setDateTime] = useState<{ date: string, time:string }>({ date: '', time: '' });
+  const navigate = useNavigate();
   useEffect(() => {
     new Api(instance, accounts[0])
       .getFundingSourceTransaction(state.id, state.sourceId)
-      .then((data: any) => {
+      .then((data: FundingSourceTransaction) => {
         settransferDetails(data);
         const today = new Date(data?.createdDate);
         const month = today.toLocaleString('default', { month: 'short' });
@@ -78,6 +79,7 @@ export default function TransferDetails() {
       <div className="action">
         <Button
           className="zippy-btn"
+          onClick={() => navigate('/my-wallet/load')}
         >
           Load
         </Button>
