@@ -61,8 +61,6 @@ export default function SourceOptions(props: any) {
                   {' '}
                   <div className="bankName">
                     {' '}
-                    Bank Name :
-                    {' '}
                     {fundingSource?.displayName}
                   </div>
                   <div>
