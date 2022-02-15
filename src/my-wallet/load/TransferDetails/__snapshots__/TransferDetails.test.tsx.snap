@@ -99,6 +99,7 @@ exports[`TransactionComplete Component matches the snapshot 1`] = `
           <button
             className="zippy-btn btn btn-primary"
             disabled={false}
+            onClick={[Function]}
             type="button"
           >
             Load
