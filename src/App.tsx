@@ -1,7 +1,12 @@
 import AOS from 'aos';
 import { useIsAuthenticated, useMsal } from '@azure/msal-react';
 import { useEffect } from 'react';
-import { Route, Routes, useLocation } from 'react-router-dom';
+import {
+  Navigate,
+  Route,
+  Routes,
+  useLocation,
+} from 'react-router-dom';
 import Api from './api';
 import { useAppDispatch } from './app/hooks';
 import { load } from './features/user/userSlice';
@@ -27,7 +32,7 @@ import MyAccounts from './my-accounts/my-accounts/MyAccounts';
 import DownloadTransactions from './my-accounts/download-transactions/DownloadTransactions';
 import StatementPreferences from './my-accounts/view-estatements/statement-preferences/StatementPreferences';
 import UpcomingBillPaymentsAndTransfers from './my-accounts/upcoming-bill-payments-and-transfer/UpcomingBillPaymentsAndTransfers';
-import ZippyBalance from './zippy-balance/ZippyBalance';
+import MyWallet from './my-wallet/my-wallet/MyWallet';
 import ViewAccountDetails from './my-accounts/view-account-details/ViewAccountDetails';
 import ViewEStatements from './my-accounts/view-estatements/ViewEStatements';
 import Personal from './Personal';
@@ -93,7 +98,7 @@ export default function App() {
       <Header />
       <Routes>
         <Route path="/" element={<Home />}>
-          <Route path="/" element={<ZippyBalance />} />
+          <Route path="/" element={<Navigate replace to="/my-wallet" />} />
           <Route path="account-security" element={<AccountSecurity />} />
           <Route path="contact-us" element={<ContactUs />} />
           <Route path="customer-services">
@@ -133,6 +138,7 @@ export default function App() {
             <Route path="view-ebills" element={<ViewEBills />} />
           </Route>
           <Route path="my-wallet">
+            <Route path="/my-wallet" element={<MyWallet />} />
             <Route path="zippy-money" element={<ZippyTransaction />}>
               <Route path=":transactionType/:step" element={<ZippyTransaction />}>
                 <Route path=":transactionId" element={<ZippyTransaction />} />

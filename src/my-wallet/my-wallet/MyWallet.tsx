@@ -3,12 +3,12 @@ import { useEffect, useState } from 'react';
 import NumberFormat from 'react-number-format';
 import { Button, Spinner } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
-import Api, { Account } from '../api';
-import { useAppSelector } from '../app/hooks';
-import { selectUser } from '../features/user/userSlice';
-import PageContainer from '../common/PageContainer';
+import Api, { Account } from '../../api';
+import { useAppSelector } from '../../app/hooks';
+import { selectUser } from '../../features/user/userSlice';
+import PageContainer from '../../common/PageContainer';
 
-export const ZippyBalancePure = ({ account }: { account: Account | undefined }) => {
+export const MyWalletPure = ({ account }: { account: Account | undefined }) => {
   const navigate = useNavigate();
 
   return (
@@ -61,7 +61,7 @@ export const ZippyBalancePure = ({ account }: { account: Account | undefined }) 
   );
 };
 
-export default function ZippyBalance() {
+export default function MyWallet() {
   const { instance, accounts: msalAccounts } = useMsal();
   const [account, setAccount] = useState<Account | undefined>();
   const { user } = useAppSelector(selectUser);
@@ -76,5 +76,5 @@ export default function ZippyBalance() {
     }
   }, [msalAccounts, user]);
 
-  return <ZippyBalancePure account={account} />;
+  return <MyWalletPure account={account} />;
 }

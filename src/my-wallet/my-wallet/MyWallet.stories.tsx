@@ -1,15 +1,15 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import '../i18n/config';
+import '../../i18n/config';
 import '../styles/index.scss';
-import { ZippyBalancePure } from './ZippyBalance';
+import { MyWalletPure } from './MyWallet';
 
 export default {
-  title: 'ZippyBalance',
-  component: ZippyBalancePure,
-} as ComponentMeta<typeof ZippyBalancePure>;
+  title: 'my-wallet/my-wallet/MyWallet',
+  component: MyWalletPure,
+} as ComponentMeta<typeof MyWalletPure>;
 
-const Template: ComponentStory<typeof ZippyBalancePure> = ({ account }) => (
-  <ZippyBalancePure account={account} />
+const Template: ComponentStory<typeof MyWalletPure> = ({ account }) => (
+  <MyWalletPure account={account} />
 );
 
 export const Loaded = Template.bind({});

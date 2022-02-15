@@ -16,7 +16,7 @@ exports[`Home Component matches the snapshot 1`] = `
       >
         <a
           className="navbar-brand"
-          href="/"
+          href="/my-wallet"
           onClick={[Function]}
         >
           <img
