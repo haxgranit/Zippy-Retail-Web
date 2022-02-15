@@ -51,6 +51,7 @@ export type Transaction = {
   expireDate: string;
   securityQuestion?: string;
   securityAnswer?: string;
+  type?: string;
 };
 
 export type InteracEtransferTransaction = {
@@ -191,6 +192,9 @@ export default class Api {
   }
 
   public getInteracEtransferTransactions(type: TransferType) {
+    if (type === TransferType.ALL) {
+      return this.fetch<Transaction[]>('get', 'InteracEtransfer/Transactions');
+    }
     return this.fetch<Transaction[]>('get', `InteracEtransfer/Transactions?type=${type}`);
   }
 

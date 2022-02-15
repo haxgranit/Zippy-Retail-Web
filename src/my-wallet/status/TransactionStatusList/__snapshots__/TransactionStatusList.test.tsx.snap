@@ -65,9 +65,71 @@ exports[`TransactionStatusList Component matches the snapshot 1`] = `
           </button>
         </div>
         <div
+          className="transaction-search"
+        >
+          <i
+            className="zippy-cash-icon zc-search"
+          />
+          <input
+            className="form-control"
+            onChange={[Function]}
+            placeholder="Search..."
+            value=""
+          />
+        </div>
+        <div
           className="status-list-container"
         >
-          loading
+          <div
+            className="simplebar-container"
+            data-simplebar={true}
+          >
+            <div
+              className="simplebar-wrapper"
+            >
+              <div
+                className="simplebar-height-auto-observer-wrapper"
+              >
+                <div
+                  className="simplebar-height-auto-observer"
+                />
+              </div>
+              <div
+                className="simplebar-mask"
+              >
+                <div
+                  className="simplebar-offset"
+                >
+                  <div
+                    className="simplebar-content-wrapper"
+                  >
+                    <div
+                      className="simplebar-content"
+                    >
+                      loading
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                className="simplebar-placeholder"
+              />
+            </div>
+            <div
+              className="simplebar-track simplebar-horizontal"
+            >
+              <div
+                className="simplebar-scrollbar"
+              />
+            </div>
+            <div
+              className="simplebar-track simplebar-vertical"
+            >
+              <div
+                className="simplebar-scrollbar"
+              />
+            </div>
+          </div>
         </div>
       </div>
     </div>
