@@ -19,7 +19,7 @@ exports[`TransactionComplete Component matches the snapshot 1`] = `
         <h1
           className="title"
         >
-          Personal Account
+          Your Wallet
         </h1>
         <h2
           className="catch"

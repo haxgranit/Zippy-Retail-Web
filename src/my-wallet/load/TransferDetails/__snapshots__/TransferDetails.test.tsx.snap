@@ -55,7 +55,7 @@ exports[`TransactionComplete Component matches the snapshot 1`] = `
               Transfer Date
             </span>
             <span>
-              Nov 2, 2021
+              
             </span>
           </div>
           <div
@@ -65,7 +65,7 @@ exports[`TransactionComplete Component matches the snapshot 1`] = `
               Transfer Time (UTC)
             </span>
             <span>
-              10:10 AM
+              
             </span>
           </div>
           <div
