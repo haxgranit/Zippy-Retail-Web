@@ -80,9 +80,9 @@ export default function TransferDetails() {
       <div className="action">
         <Button
           className="zippy-btn"
-          onClick={() => navigate(`/my-wallet/${state.isCredit ? 'load' : 'get'}`)}
+          onClick={() => navigate(`/my-wallet/${state?.isCredit ? 'load' : 'get'}`)}
         >
-          {state.isCredit ? 'LOAD' : 'GET'}
+          {state?.isCredit ? 'LOAD' : 'GET'}
         </Button>
       </div>
     </PageContainer>
