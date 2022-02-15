@@ -102,6 +102,7 @@ i {
             margin-top: 37px;
         }
 
+        &.zc-cancelled:after,
         &.zc-failed:after {
             background: $color-red;
             -webkit-mask-image: url("../assets/img/icons/status-icons/failed.svg");
