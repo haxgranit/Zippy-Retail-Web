@@ -5,8 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import PageContainer from '../../../common/PageContainer';
 import { TransactionInterface } from '../../../constants/interface/TransactionInterface';
 import { TransactionTypeEnum } from '../../../constants/enum/TransactionTypeEnum';
-import { Contact } from '../../../api';
-import { TransactionStatusEnum } from '../../../interac-etransfer/status/transaction-status/TransactionStatusEnum';
+import { Contact, TransactionStatusEnum } from '../../../api';
 
 export default function TransactionStatus({
   user,

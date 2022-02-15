@@ -6,7 +6,7 @@ import { DateTime } from 'luxon';
 import PageContainer from '../../../common/PageContainer';
 import { TransactionInterface } from '../../../constants/interface/TransactionInterface';
 import { TransactionTypeEnum } from '../../../constants/enum/TransactionTypeEnum';
-import { TransactionStatusEnum } from '../../../interac-etransfer/status/transaction-status/TransactionStatusEnum';
+import { TransactionStatusEnum } from '../../../api';
 
 export default function TransactionDetails({
   user,
@@ -80,10 +80,6 @@ export default function TransactionDetails({
               Reference Number
               (Keep For Your Records)
             </Col>
-            <Col xs={6}>*3942439898</Col>
-          </Row>
-          <Row>
-            <Col xs={6}>Transaction ID</Col>
             <Col xs={6}>{transaction?.id}</Col>
           </Row>
           <Row>
