@@ -96,19 +96,25 @@ function Contacts({
           <div className="personal-contacts">
             <h4>Contacts</h4>
             {filteredContactList?.map((item: Contact) => (
-              <div className={`contact-item${selectedContact.id === item.id ? ' selected' : ''}`} key={item.id}>
+              <div
+                className={`contact-item${selectedContact.id === item.id ? ' selected' : ''}`}
+                key={item.id}
+                tabIndex={item.id}
+                role="button"
+                onKeyPress={() => {}}
+                onClick={() => {
+                  if (item.email) {
+                    setSelectedContact(item);
+                    setShowContactList(false);
+                  }
+                }}
+              >
                 <div className="contact-name">
                   {formatContactName(item.firstName, item.lastName)}
                 </div>
                 <button
                   className="btn-select-contact btn-transparent"
                   type="button"
-                  onClick={() => {
-                    if (item.email) {
-                      setSelectedContact(item);
-                      setShowContactList(false);
-                    }
-                  }}
                 >
                   <i className="zippy-cash-icon zc-personal" />
                 </button>
