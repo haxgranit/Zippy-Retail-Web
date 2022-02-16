@@ -1,6 +1,7 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { BrowserRouter } from 'react-router-dom';
 import '../../i18n/config';
-import '../styles/index.scss';
+import '../../styles/index.scss';
 import { MyWalletPure } from './MyWallet';
 
 export default {
@@ -9,7 +10,9 @@ export default {
 } as ComponentMeta<typeof MyWalletPure>;
 
 const Template: ComponentStory<typeof MyWalletPure> = ({ account }) => (
-  <MyWalletPure account={account} />
+  <BrowserRouter>
+    <MyWalletPure account={account} />
+  </BrowserRouter>
 );
 
 export const Loaded = Template.bind({});
