@@ -39,12 +39,12 @@ export default function FundingSourceDetails() {
       });
   }
   return (
-    <PageContainer title="Your Wallet" subTitle="Made Fun With Zippy!" backdropImage="background-funding-image">
-      <div className="fundingTitle">
+    <PageContainer title="Your Wallet" subTitle="Made Fun With Zippy!" backdropImage="background-image-4">
+      <div className="funding-title">
         Funding Source
       </div>
 
-      <div className="bankForm">
+      <div className="bank-form">
         <form action="">
           <Form.Control
             type="text"

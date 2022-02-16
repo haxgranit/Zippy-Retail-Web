@@ -145,10 +145,7 @@ i {
         }
         &.zc-cross::after {
             -webkit-mask-image: url("../assets/img/icons/cross.svg");
-            mask-image: url("../assets/img/icons/cross.svg");
-            width: 18px;
-            height:  18px;
-            margin-top: -5px;
+            mask-image: url("../assets/img/icons/cross.svg");            
         }
     }
 }

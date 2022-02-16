@@ -34,7 +34,7 @@
       background-image: url("../assets/img/slider/ZippyCash_Landing_Slider-03.jpg");
     }
 
-    &.background-funding-image {
+    &.backdrop-image-4 {
       background-image: url("../assets/img/slider/funding-source-bg.png");
     }
   }
@@ -62,7 +62,7 @@
     animation-name: slideIn;
     transition-timing-function: cubic-bezier(0.42, 0, 0.58, 1);
 
-    .fundingTitle {
+    .funding-title {
       font-style: normal;
       font-weight: 500;
       font-size: 16px;
@@ -187,12 +187,12 @@
         }
       }
 
-      .bankWrapper {
+      .bank-wrapper {
         display: flex;
         justify-content: space-between;
         align-items: center;
 
-        .bankTitle {
+        .bank-title {
           margin-left: 12px !important;
           font-style: normal;
           font-weight: 500;
@@ -202,7 +202,7 @@
           margin: 0px;
         }
 
-        .addBtn {
+        .add-btn {
           font-style: normal;
           font-weight: 600;
           font-size: 14px;
@@ -212,14 +212,14 @@
         }
       }
 
-      .bankDetails {
+      .bank-details {
         display: flex;
         justify-content: space-between;
         align-items: flex-start;
         margin-top: 17px;
         border-bottom: 1px solid #DFDFDF;
 
-        .bankName {
+        .bank-name {
           font-style: normal;
           font-weight: 500;
           font-size: 14px;
@@ -228,7 +228,7 @@
           margin: 0px;
         }
 
-        .accNo {
+        .acc-no {
           font-style: normal;
           font-weight: normal;
           font-size: 14px;
@@ -237,7 +237,7 @@
           margin-bottom: 9px;
         }
 
-        .editBtn {
+        .edit-btn {
           font-style: normal;
           font-weight: normal;
           font-size: 14px;
@@ -246,7 +246,7 @@
           cursor: pointer;
         }
 
-        .editWrap {
+        .edit-wrap {
           display: flex;
           flex-direction: column;
           justify-content: center;
@@ -448,7 +448,7 @@
         }
       }
 
-      .bankForm {
+      .bank-form {
         input[type=text] {
           width: 100%;
           border: 1px solid #DFDFDF !important;

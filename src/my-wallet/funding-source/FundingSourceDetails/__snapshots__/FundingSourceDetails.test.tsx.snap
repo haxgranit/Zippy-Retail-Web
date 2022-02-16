@@ -37,7 +37,7 @@ exports[`FundingSourceList Component matches the snapshot 1`] = `
            
         </div>
         <div
-          className="bankForm"
+          className="bank-form"
         >
           <form
             action=""
