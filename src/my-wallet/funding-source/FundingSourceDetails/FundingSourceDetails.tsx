@@ -72,7 +72,6 @@ export default function FundingSourceDetails() {
           />
           <div style={{ display: 'flex', justifyContent: 'flex-start', alignItems: 'center' }}>
             <Form.Check
-              id="interac-e-transfer"
               type="radio"
               className="actions"
               label="Mark this Account as a default"
