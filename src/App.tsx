@@ -33,6 +33,7 @@ import TransactionStatusList from './my-wallet/status/TransactionStatusList/Tran
 import FundingSourceDetails from './my-wallet/funding-source/FundingSourceDetails/FundingSourceDetails';
 import FundingSourceList from './my-wallet/funding-source/FundingSourceList/FundingSourceList';
 import TransactionStatus from './my-wallet/status/TransactionDetails/TransactionStatus';
+import AutoDeposit from './my-wallet/auto-deposit/AutoDeposit';
 import Account from './my-account/account/Account';
 import DownloadTransactions from './my-account/download-transactions/DownloadTransactions';
 import ViewEstatements from './my-account/view-estatements/ViewEstatements';
@@ -96,6 +97,7 @@ export default function App() {
               <Route path="edit-funding-source/:id" element={<FundingSourceDetails />} />
             </Route>
             <Route path="status/:type/:status/:id" element={<TransactionStatus />} />
+            <Route path="auto-deposit" element={<AutoDeposit />} />
           </Route>
           <Route path="manage-my-alerts" element={<ManageMyAlerts />} />
           <Route path="my-account">
