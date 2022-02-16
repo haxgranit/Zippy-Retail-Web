@@ -100,6 +100,49 @@ nav {
         .right-side-header {
             display: flex;
             width: max-content;
+
+            .navbar-nav {
+                display: flex;
+                white-space: nowrap;
+                flex-direction: row;
+
+                .wallet-balance {
+                    display: flex;
+                    justify-content: center;
+                    flex-direction: column;
+                }
+
+                .nav-node-wrap {
+                    &:not(:last-child) {
+                        border-right: 1px solid $color-dark-gray;
+                    }
+
+                    .nav-node {
+                        padding-right: 10px;
+                        margin-left: 10px;
+
+                        .zippy-cash-icon {
+                            vertical-align: middle;
+                            margin-right: 5px;
+                            &::after {
+                                background: linear-gradient(83.49deg, $color-red 31.24%, $color-orange 99.49%);
+                            }
+                        }
+
+                        .amount {
+                            vertical-align: middle;
+                            font-style: normal;
+                            font-weight: 500;
+                            font-size: 15px;
+                            color: $color-black;
+                        }
+
+                        a {
+                            padding: 0;
+                        }
+                    }
+                }
+            }
         }
 
         button {

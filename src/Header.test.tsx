@@ -17,6 +17,7 @@ jest.mock('react-i18next', () => ({
 const component = (
   <BrowserRouter>
     <HeaderPure
+      account={undefined}
       userFullName=""
       isAuthenticated
       isInProgress={false}
@@ -29,6 +30,7 @@ const component = (
 describe('Header Component', () => {
   it('matches the snapshot', () => {
     const tree = ReactTestRenderer.create(<HeaderPure
+      account={undefined}
       userFullName=""
       isAuthenticated
       isInProgress={false}
