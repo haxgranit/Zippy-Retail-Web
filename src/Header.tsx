@@ -53,21 +53,23 @@ export const HeaderPure = ({
         </button>
         <div className="collapse navbar-collapse flex-md-column nav-uppercase" id="navbarSupportedContent">
           <div className="navbar-nav">
-            <div className="nav-node-wrap wallet-balance">
-              <div className="nav-node">
-                <i className="zippy-cash-icon zc-wallet" />
-                <NumberFormat
-                  className="amount"
-                  value={account?.balance}
-                  defaultValue={0}
-                  displayType="text"
-                  prefix="$"
-                  thousandSeparator
-                  decimalScale={2}
-                  fixedDecimalScale
-                />
+            {(isAuthenticated && (
+              <div className="nav-node-wrap wallet-balance">
+                <div className="nav-node">
+                  <i className="zippy-cash-icon zc-wallet" />
+                  <NumberFormat
+                    className="amount"
+                    value={account?.balance}
+                    defaultValue={0}
+                    displayType="text"
+                    prefix="$"
+                    thousandSeparator
+                    decimalScale={2}
+                    fixedDecimalScale
+                  />
+                </div>
               </div>
-            </div>
+            ))}
             <div className="nav-node-wrap">
               <div className="nav-node">
                 <NavDropdown title={t('header.language')}>
@@ -98,7 +100,7 @@ export const HeaderPure = ({
               </div>
             )) || (
               !isInProgress && (
-                <div className="nav-node">
+                <div className="nav-node-wrap">
                   <div className="nav-node">
                     <Button onClick={() => handleLogin()} variant="transparent light">
                       {t('header.login')}
