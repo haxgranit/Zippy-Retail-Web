@@ -30,7 +30,7 @@ export default function VerticalNavLinks() {
         </Nav.Link>
         {pathname.startsWith('/my-wallet') && (
           <Nav className="flex-column" style={{ marginLeft: '20px' }}>
-            <Nav.Link as={NavLink} to="/my-wallet/zippy-money/send/transaction-start">Zippy Money</Nav.Link>
+            <Nav.Link as={NavLink} to="/my-wallet/zippy-money">Zippy Money</Nav.Link>
             <Nav.Link as={NavLink} to="/my-wallet/status">Status</Nav.Link>
             <Nav.Link as={NavLink} to="/my-wallet/load">Load</Nav.Link>
             <Nav.Link as={NavLink} to="/my-wallet/get">Get</Nav.Link>
