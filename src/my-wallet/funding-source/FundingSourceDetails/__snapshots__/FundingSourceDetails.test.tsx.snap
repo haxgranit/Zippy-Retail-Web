@@ -8,7 +8,7 @@ exports[`FundingSourceList Component matches the snapshot 1`] = `
     className="zippy-cash-container-wrap"
   >
     <div
-      className="backdrop background-funding-image"
+      className="backdrop background-image-4"
     />
     <div
       className="zippy-cash-container"
@@ -31,10 +31,9 @@ exports[`FundingSourceList Component matches the snapshot 1`] = `
         className="zippy-cash-container-body"
       >
         <div
-          className="fundingTitle"
+          className="funding-title"
         >
           Funding Source
-           
         </div>
         <div
           className="bank-form"
@@ -45,14 +44,7 @@ exports[`FundingSourceList Component matches the snapshot 1`] = `
             <input
               className="form-control"
               onChange={[Function]}
-              placeholder="Bank Name"
-              type="text"
-              value=""
-            />
-            <input
-              className="form-control"
-              onChange={[Function]}
-              placeholder="Account Name"
+              placeholder="Nickname"
               type="text"
               value=""
             />
@@ -92,14 +84,12 @@ exports[`FundingSourceList Component matches the snapshot 1`] = `
                 <input
                   className="form-check-input"
                   disabled={false}
-                  id="interac-e-transfer"
                   name="actions2"
                   onChange={[Function]}
                   type="radio"
                 />
                 <label
                   className="form-check-label"
-                  htmlFor="interac-e-transfer"
                   title=""
                 >
                   Mark this Account as a default

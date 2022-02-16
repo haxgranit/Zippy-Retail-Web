@@ -8,7 +8,7 @@ exports[`FundingSourceList Component matches the snapshot 1`] = `
     className="zippy-cash-container-wrap"
   >
     <div
-      className="backdrop background-funding-image"
+      className="backdrop backdrop-image-4"
     />
     <div
       className="zippy-cash-container"
@@ -31,13 +31,13 @@ exports[`FundingSourceList Component matches the snapshot 1`] = `
         className="zippy-cash-container-body"
       >
         <div
-          className="fundingTitle"
+          className="funding-title"
         >
           Funding Source
         </div>
         <div>
           <div
-            className="bankWrapper"
+            className="bank-wrapper"
           >
             <div
               style={
@@ -53,13 +53,13 @@ exports[`FundingSourceList Component matches the snapshot 1`] = `
               />
                
               <p
-                className="bankTitle"
+                className="bank-title"
               >
                 Registered Banks
               </p>
             </div>
             <div
-              className="addBtn"
+              className="add-btn"
               onClick={[Function]}
               onKeyDown={[Function]}
               role="button"
@@ -75,6 +75,7 @@ exports[`FundingSourceList Component matches the snapshot 1`] = `
           <button
             className="zippy-btn btn btn-primary"
             disabled={false}
+            onClick={[Function]}
             type="button"
           >
             Send money

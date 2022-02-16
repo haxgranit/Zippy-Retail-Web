@@ -76,6 +76,7 @@ export default function FundingSourceList() {
       <div className="action">
         <Button
           className="zippy-btn"
+          onClick={() => navigate('/my-wallet/zippy-money/send/transaction-start')}
         >
           Send money
         </Button>
