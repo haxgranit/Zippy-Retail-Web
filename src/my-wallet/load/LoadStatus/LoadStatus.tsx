@@ -120,7 +120,6 @@ export default function LoadStatus({ mode } : { mode: string }) {
                 <b>
                   $
                   {account?.balance}
-                  .00
                 </b>
               </p>
             </Col>
