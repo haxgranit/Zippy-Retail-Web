@@ -69,7 +69,7 @@ export default function LoadStatus({ mode } : { mode: string }) {
             <Col xs={12}>
               <p className="status-msg">
                 Your $
-                {state?.amount}
+                {state?.amount.toFixed(2)}
                 {' '}
                 credit into your zippy account
               </p>
@@ -83,7 +83,7 @@ export default function LoadStatus({ mode } : { mode: string }) {
             >
               <p className="status-msg">
                 Your $
-                {state?.amount}
+                {state?.amount.toFixed(2)}
                 {' '}
                 Zippy
                 {' '}
@@ -102,7 +102,7 @@ export default function LoadStatus({ mode } : { mode: string }) {
               >
                 <p className="status-msg">
                   Your $
-                  {state?.amount}
+                  {state?.amount.toFixed(2)}
                   {' '}
                   Zippy credit request
                   has been failed.
