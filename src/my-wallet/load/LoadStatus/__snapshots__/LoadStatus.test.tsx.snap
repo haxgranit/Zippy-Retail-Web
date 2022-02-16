@@ -31,16 +31,20 @@ exports[`TransactionComplete Component matches the snapshot 1`] = `
         className="zippy-cash-container-body"
       >
         <div
-          className="title"
+          className="body"
         >
-          Fund Transfer
+          <div
+            className="title"
+          >
+            Fund Transfer
+          </div>
+          <div
+            className="text-center"
+          />
+          <div
+            className="details"
+          />
         </div>
-        <div
-          className="text-center"
-        />
-        <div
-          className="details"
-        />
         <div
           className="action"
         >

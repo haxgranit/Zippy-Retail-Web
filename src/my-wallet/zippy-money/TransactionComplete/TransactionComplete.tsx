@@ -19,42 +19,44 @@ export default function TransactionComplete({
         subTitle="Made Fun With Zippy!"
         backdropImage="backdrop-image-2"
       >
-        <div className="zippy-btn-group btn-group" role="group" aria-label="Zippy Cash">
-          <Button className="active">
-            Send Money
-          </Button>
-          <Button>
-            Request Money
-          </Button>
-        </div>
-        <div className="account-identifier">
+        <div className="body">
+          <div className="zippy-btn-group btn-group" role="group" aria-label="Zippy Cash">
+            <Button className="active">
+              Send Money
+            </Button>
+            <Button>
+              Request Money
+            </Button>
+          </div>
+          <div className="account-identifier">
+            <FormControl
+              placeholder="Enter @ZippyUsername or Email"
+            />
+            <i className="zippy-cash-icon zc-add" />
+          </div>
           <FormControl
-            placeholder="Enter @ZippyUsername or Email"
+            className="amount"
+            value="0.00"
+            type="number"
+            step=".01"
           />
-          <i className="zippy-cash-icon zc-add" />
-        </div>
-        <FormControl
-          className="amount"
-          value="0.00"
-          type="number"
-          step=".01"
-        />
-        <div className="select-method">
-          <Form.Check
-            id="zippy-cash"
-            type="radio"
-            className="actions"
-            label="Zippy.Cash"
-            name="actions2"
-            checked
-          />
-          <Form.Check
-            id="interac-e-transfer"
-            type="radio"
-            className="actions"
-            label="Interac® e-Transfer"
-            name="actions2"
-          />
+          <div className="select-method">
+            <Form.Check
+              id="zippy-cash"
+              type="radio"
+              className="actions"
+              label="Zippy.Cash"
+              name="actions2"
+              checked
+            />
+            <Form.Check
+              id="interac-e-transfer"
+              type="radio"
+              className="actions"
+              label="Interac® e-Transfer"
+              name="actions2"
+            />
+          </div>
         </div>
         <div className="action">
           <Button

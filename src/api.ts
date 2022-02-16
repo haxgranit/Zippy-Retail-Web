@@ -68,7 +68,8 @@ export type ZippyCashTransaction = {
   contactId: number,
   amount: number,
   isCredit: boolean,
-  createdDate?: string
+  createdDate?: string,
+  note?: string,
 };
 
 export type VersionResponse = {

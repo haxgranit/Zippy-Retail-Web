@@ -31,4 +31,6 @@ export interface TransactionInterface {
   transactionId?: number;
   tunnelType?: TunnelTypeEnum;
   setTunnelType: Dispatch<SetStateAction<TunnelTypeEnum>>;
+  note: string;
+  setNote: Dispatch<SetStateAction<string>>;
 }

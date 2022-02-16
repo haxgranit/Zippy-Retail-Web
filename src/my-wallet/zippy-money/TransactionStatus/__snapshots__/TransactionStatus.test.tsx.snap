@@ -31,20 +31,24 @@ exports[`TransactionStatus Component matches the snapshot 1`] = `
         className="zippy-cash-container-body"
       >
         <div
-          className="title"
+          className="body"
         >
-          Transaction Status
-        </div>
-        <div
-          className="status"
-        >
-          <div>
-            <i
-              className="zippy-cash-icon zc-pending"
-            />
+          <div
+            className="title"
+          >
+            Transaction Status
           </div>
-          <div>
-            Your $0.00 CAD transaction to  is in process.
+          <div
+            className="status"
+          >
+            <div>
+              <i
+                className="zippy-cash-icon zc-pending"
+              />
+            </div>
+            <div>
+              Your $0.00 CAD transaction to  is in process.
+            </div>
           </div>
         </div>
         <div

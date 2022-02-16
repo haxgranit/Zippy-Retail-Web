@@ -37,17 +37,22 @@ function AmountInput({
     const lastString = display[display.length - 1];
     return display === `${symbol}0.0`
       || display === ''
+      || lastString === '0'
       || lastString === symbol
       || lastString === symbol
       || lastString === thousandSeparator
       || lastString === decimalSeparator;
   };
 
-  const parseLocaleNumber = (stringNumber: string) => {
+  const parseLocaleNumber = (stringNumber: string, noBypass: boolean) => {
     stringNumber = stringNumber === '..' ? '.' : stringNumber;
-    if (canBypass(stringNumber)) {
+    if (canBypass(stringNumber) && !noBypass) {
       setDisplayAmount(stringNumber);
     } else {
+      if (noBypass && (stringNumber === ',' || stringNumber === '.')) {
+        stringNumber = '0';
+      }
+
       stringNumber = stringNumber.includes('.') ? stringNumber.slice(0, (stringNumber.indexOf('.')) + decimalPoint + 1) : stringNumber;
       setAmount(parseFloat(parseFloat(stringNumber
         .replace(new RegExp(`\\${symbol}`), '')
@@ -60,7 +65,8 @@ function AmountInput({
 
   const validate = (event: any) => {
     const charCode = (event.which) ? event.which : event.keyCode;
-    if (event.target.value.includes('.') && (charCode === 110 || charCode === 190)) {
+    if (event.target.value.includes('.')
+      && (charCode === 110 || charCode === 190 || charCode === 188)) {
       event.preventDefault();
       return false;
     }
@@ -72,10 +78,12 @@ function AmountInput({
       && charCode !== 46
       && charCode !== 110
       && charCode !== 188
-      && charCode !== 190) {
+      && charCode !== 190
+    ) {
       event.preventDefault();
       return false;
     }
+
     return true;
   };
 
@@ -96,7 +104,10 @@ function AmountInput({
         type="string"
         onKeyDown={(evt) => validate(evt)}
         onChange={(evt) => {
-          parseLocaleNumber(evt.target.value);
+          parseLocaleNumber(evt.target.value, false);
+        }}
+        onBlur={(evt) => {
+          parseLocaleNumber(evt.target.value, true);
         }}
       />
     </>

@@ -27,27 +27,29 @@ export default function TransactionSecurityQuestions({
         subTitle="Made Fun With Zippy!"
         backdropImage="backdrop-image-2"
       >
-        <div className="title">
-          Security Question
-        </div>
-        <div className="security-question">
-          <FormControl
-            placeholder="Create a security question (Up to 40 Char.)"
-            value={mainInfo.securityQuestion}
-            onChange={(evt) => setMainInfo({ ...mainInfo, securityQuestion: evt.target.value })}
-          />
-          <FormControl
-            placeholder="Security Answer (No Space)"
-            type={mainInfo.showAnswer ? 'text' : 'password'}
-            value={mainInfo.securityAnswer}
-            onChange={(evt) => setMainInfo({ ...mainInfo, securityAnswer: evt.target.value })}
-          />
-          <FormControl
-            placeholder="Re-enter Security Answer"
-            type={mainInfo.showAnswer ? 'text' : 'password'}
-            value={confirmAnswer}
-            onChange={(evt) => setConfirmAnswer(evt.target.value)}
-          />
+        <div className="body">
+          <div className="title">
+            Security Question
+          </div>
+          <div className="security-question">
+            <FormControl
+              placeholder="Create a security question (Up to 40 Char.)"
+              value={mainInfo.securityQuestion}
+              onChange={(evt) => setMainInfo({ ...mainInfo, securityQuestion: evt.target.value })}
+            />
+            <FormControl
+              placeholder="Security Answer (No Space)"
+              type={mainInfo.showAnswer ? 'text' : 'password'}
+              value={mainInfo.securityAnswer}
+              onChange={(evt) => setMainInfo({ ...mainInfo, securityAnswer: evt.target.value })}
+            />
+            <FormControl
+              placeholder="Re-enter Security Answer"
+              type={mainInfo.showAnswer ? 'text' : 'password'}
+              value={confirmAnswer}
+              onChange={(evt) => setConfirmAnswer(evt.target.value)}
+            />
+          </div>
         </div>
         <div className="action">
           <Button

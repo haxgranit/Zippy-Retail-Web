@@ -68,6 +68,7 @@ export default function ZippyTransaction() {
   const [contactList, setContactList] = useState<Array<Contact>>([]);
   const [transaction, setTransaction] = useState<Transaction | undefined>(undefined);
   const [transId, setTransId] = useState<number>(Number(transactionId));
+  const [note, setNote] = useState<string>('');
   const [userState, setUserState] = useState<User>(initialUser);
   const [
     mainInfo, setMainInfo,
@@ -150,6 +151,11 @@ export default function ZippyTransaction() {
       });
   };
 
+  const safeText = (unsafeText: string): string => unsafeText.replace(
+    /(<([^>]+)>)/g,
+    (c) => `&#${(`000${c.charCodeAt(0)}`).slice(-4)};`,
+  );
+
   const handleTriggerTransaction = () => {
     if (!isProcessing) {
       setIsProcessing(true);
@@ -158,6 +164,7 @@ export default function ZippyTransaction() {
           contactId: selectedContact.id,
           amount: mainInfo.amount,
           type: transactionType,
+          note: safeText(note),
           securityQuestion: mainInfo.securityQuestion,
           securityAnswer: mainInfo.securityAnswer,
         } as InteracEtransferTransaction);
@@ -166,6 +173,7 @@ export default function ZippyTransaction() {
           contactId: selectedContact.id,
           amount: mainInfo.amount,
           isCredit: !TransactionTypeEnum.SEND,
+          note: safeText(note),
         } as ZippyCashTransaction);
       }
     }
@@ -215,6 +223,8 @@ export default function ZippyTransaction() {
                 step={SendMoneyStepsEnum.TRANSACTION_START}
                 tunnelType={tunnelType}
                 setTunnelType={setTunnelType}
+                note={note}
+                setNote={setNote}
               />
             );
           case SendMoneyStepsEnum.TRANSACTION_DETAILS:

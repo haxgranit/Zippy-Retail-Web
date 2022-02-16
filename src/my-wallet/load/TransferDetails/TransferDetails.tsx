@@ -36,47 +36,48 @@ export default function TransferDetails() {
 
   return (
     <PageContainer title="Your Wallet" subTitle="Made Fun With Zippy!">
-      {transferDetails?.status === 'pending' ? (
-        <div className="title pending">
-          Transfer Pending
-        </div>
-      ) : (
-        <div className="title complete">
-          Transfer Completed
-        </div>
-      )}
+      <div className="body">
+        {transferDetails?.status === 'pending' ? (
+          <div className="title pending">
+            Transfer Pending
+          </div>
+        ) : (
+          <div className="title complete">
+            Transfer Completed
+          </div>
+        )}
 
-      <div className="transaction-detail">
-        <div className="detail-wrap">
-          <span>Transfer Type</span>
+        <div className="transaction-detail">
+          <div className="detail-wrap">
+            <span>Transfer Type</span>
 
-          <p>Zippy Wallet Load</p>
-        </div>
-        <div className="detail-wrap">
-          <span>Transfer Date</span>
+            <p>Zippy Wallet Load</p>
+          </div>
+          <div className="detail-wrap">
+            <span>Transfer Date</span>
 
-          <span>{dateTime.date}</span>
-        </div>
+            <span>{dateTime.date}</span>
+          </div>
 
-        <div className="detail-wrap">
-          <span>Transfer Time (UTC)</span>
+          <div className="detail-wrap">
+            <span>Transfer Time (UTC)</span>
 
-          <span>{dateTime.time}</span>
-        </div>
+            <span>{dateTime.time}</span>
+          </div>
 
-        <div className="detail-wrap">
-          <span>Transfer Amount</span>
+          <div className="detail-wrap">
+            <span>Transfer Amount</span>
 
-          <p style={{ color: '#0D6EFD' }}>{ `$${transferDetails?.amount ?? ''}`}</p>
-        </div>
+            <p style={{ color: '#0D6EFD' }}>{ `$${transferDetails?.amount ?? ''}`}</p>
+          </div>
 
-        <div className="detail-wrap">
-          <span>Reference Number (Keep For Your Records)</span>
+          <div className="detail-wrap">
+            <span>Reference Number (Keep For Your Records)</span>
 
-          <p>{transferDetails?.id}</p>
+            <p>{transferDetails?.id}</p>
+          </div>
         </div>
       </div>
-
       <div className="action">
         <Button
           className="zippy-btn"

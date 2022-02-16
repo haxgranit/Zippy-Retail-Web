@@ -29,63 +29,65 @@ export default function TransactionDetails({
         subTitle="Made Fun With Zippy!"
         backdropImage="backdrop-image-2"
       >
-        <div className="title">
-          {(() => {
-            switch (transaction?.status) {
-              case TransactionStatusEnum.COMPLETED:
-                return 'Transaction Completed';
-              case TransactionStatusEnum.CANCELLED:
-                return 'Transaction Cancelled';
-              case TransactionStatusEnum.FAILED:
-                return 'Transaction Failed';
-              case TransactionStatusEnum.PENDING:
-              default:
-                return 'Transaction Pending';
-            }
-          })()}
-        </div>
-        <div className="details">
-          <Row>
-            <Col xs={6}>To</Col>
-            <Col xs={6}>
-              <strong>{getUserFullName()}</strong>
-            </Col>
-          </Row>
-          <Row>
-            <Col xs={6}>Transfer Date</Col>
-            <Col xs={6}>{transaction && transaction.date ? DateTime.fromISO(transaction.date).toUTC().toLocaleString(DateTime.DATE_MED) : ''}</Col>
-          </Row>
-          <Row>
-            <Col xs={6}>Transfer Time (UTC)</Col>
-            <Col xs={6}>{transaction && transaction.date ? DateTime.fromISO(transaction.date).toUTC().toLocaleString(DateTime.TIME_WITH_SECONDS) : ''}</Col>
-          </Row>
-          <Row>
-            <Col xs={6}>Transfer Amount</Col>
-            <Col xs={6}>
-              <NumberFormat
-                className="amount"
-                value={transaction?.amount}
-                defaultValue={0}
-                displayType="text"
-                prefix="$ "
-                suffix=" CAD"
-                thousandSeparator
-                decimalScale={2}
-                fixedDecimalScale
-              />
-            </Col>
-          </Row>
-          <Row>
-            <Col xs={6}>
-              Reference Number
-              (Keep For Your Records)
-            </Col>
-            <Col xs={6}>{transaction?.id}</Col>
-          </Row>
-          <Row>
-            <Col xs={6}>Expiry Date</Col>
-            <Col xs={6}>{transaction && transaction.expireDate ? DateTime.fromISO(transaction.expireDate).toUTC().toLocaleString(DateTime.DATE_MED) : ''}</Col>
-          </Row>
+        <div className="body">
+          <div className="title">
+            {(() => {
+              switch (transaction?.status) {
+                case TransactionStatusEnum.COMPLETED:
+                  return 'Transaction Completed';
+                case TransactionStatusEnum.CANCELLED:
+                  return 'Transaction Cancelled';
+                case TransactionStatusEnum.FAILED:
+                  return 'Transaction Failed';
+                case TransactionStatusEnum.PENDING:
+                default:
+                  return 'Transaction Pending';
+              }
+            })()}
+          </div>
+          <div className="details">
+            <Row>
+              <Col xs={6}>To</Col>
+              <Col xs={6}>
+                <strong>{getUserFullName()}</strong>
+              </Col>
+            </Row>
+            <Row>
+              <Col xs={6}>Transfer Date</Col>
+              <Col xs={6}>{transaction && transaction.date ? DateTime.fromISO(transaction.date).toUTC().toLocaleString(DateTime.DATE_MED) : ''}</Col>
+            </Row>
+            <Row>
+              <Col xs={6}>Transfer Time (UTC)</Col>
+              <Col xs={6}>{transaction && transaction.date ? DateTime.fromISO(transaction.date).toUTC().toLocaleString(DateTime.TIME_WITH_SECONDS) : ''}</Col>
+            </Row>
+            <Row>
+              <Col xs={6}>Transfer Amount</Col>
+              <Col xs={6}>
+                <NumberFormat
+                  className="amount"
+                  value={transaction?.amount}
+                  defaultValue={0}
+                  displayType="text"
+                  prefix="$ "
+                  suffix=" CAD"
+                  thousandSeparator
+                  decimalScale={2}
+                  fixedDecimalScale
+                />
+              </Col>
+            </Row>
+            <Row>
+              <Col xs={6}>
+                Reference Number
+                (Keep For Your Records)
+              </Col>
+              <Col xs={6}>{transaction?.id}</Col>
+            </Row>
+            <Row>
+              <Col xs={6}>Expiry Date</Col>
+              <Col xs={6}>{transaction && transaction.expireDate ? DateTime.fromISO(transaction.expireDate).toUTC().toLocaleString(DateTime.DATE_MED) : ''}</Col>
+            </Row>
+          </div>
         </div>
         <div className="action">
           <Button
