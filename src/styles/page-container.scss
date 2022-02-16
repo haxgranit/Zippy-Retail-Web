@@ -451,12 +451,35 @@
       .bankForm {
         input[type=text] {
           width: 100%;
-          border: 1px solid #F1F2F2 !important;
-          background: transparent !important;
+          border: 1px solid #DFDFDF !important;
+          background: #FFFFFF !important;
           border-radius: 45px;
           padding: 14px 18px 14px 18px;
-          -webkit-box-shadow: 0 0 0 100px #f1f2f2 inset !important;
-          -webkit-text-fill-color: #000000 !important;
+          -webkit-box-shadow: 0 0 0 100px #FFFFFF inset !important;
+          -webkit-text-fill-color: #656565 !important;
+          margin-bottom: 25px;
+          font-style: normal;
+          font-weight: normal;
+          font-size: 16px;
+          line-height: 150%;
+          color: #656565 !important;
+
+          &::placeholder {
+            background-color: #FFFFFF !important;
+            color: #656565 !important;
+            -webkit-box-shadow: 0 0 0 100px #FFFFFF inset !important;
+            -webkit-text-fill-color: #656565 !important;
+          }
+        }
+
+        input[type=number] {
+          width: 100%;
+          border: 1px solid #DFDFDF !important;
+          background: #FFFFFF !important;
+          border-radius: 45px;
+          padding: 14px 18px 14px 18px;
+          -webkit-box-shadow: none !important;
+          -webkit-text-fill-color: #656565 !important;
           margin-bottom: 25px;
           font-style: normal;
           font-weight: normal;
@@ -465,19 +488,7 @@
           color: #656565;
         }
 
-        input[type=number] {
-          width: 100%;
-          border: 1px solid #F1F2F2 !important;
-          background: transparent !important;
-          border-radius: 45px;
-          padding: 14px 18px 14px 18px;
-          -webkit-box-shadow: 0 0 0 100px #f1f2f2 inset !important;
-          -webkit-text-fill-color: #000000 !important;
-          margin-bottom: 25px;
-          font-style: normal;
-          font-weight: normal;
-          font-size: 16px;
-          line-height: 150%;
+        label {
           color: #656565;
         }
       }

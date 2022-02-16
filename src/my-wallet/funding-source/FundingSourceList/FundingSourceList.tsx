@@ -41,7 +41,6 @@ export default function FundingSourceList() {
             className="addBtn"
           >
             +Add
-
           </div>
         </div>
 
