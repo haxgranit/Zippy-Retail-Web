@@ -66,9 +66,6 @@ exports[`HomeLoggedIn Component matches the snapshot 1`] = `
             className="zippy-cash-icon zc-bill-payments"
           />
           Bill Payments
-          <i
-            className="dropdown zippy-cash-icon zc-up"
-          />
         </a>
         <a
           className="nav-link nav-link"

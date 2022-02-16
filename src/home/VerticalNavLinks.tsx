@@ -21,7 +21,6 @@ export default function VerticalNavLinks() {
             <Nav.Link as={NavLink} to="/my-account/account">Account</Nav.Link>
             <Nav.Link as={NavLink} to="/my-account/download-transactions">Download Transactions</Nav.Link>
             <Nav.Link as={NavLink} to="/my-account/view-estatements">View E-Statements</Nav.Link>
-            <Nav.Link as={NavLink} to="/my-account/bill-payments">Bill Payments</Nav.Link>
           </Nav>
         )}
         <Nav.Link className="nav-link" as={NavLink} to="/my-wallet">
@@ -42,17 +41,7 @@ export default function VerticalNavLinks() {
         <Nav.Link className="nav-link" as={NavLink} to="/bill-payments">
           <i className="zippy-cash-icon zc-bill-payments" />
           Bill Payments
-          <i className="dropdown zippy-cash-icon zc-up" />
         </Nav.Link>
-        {pathname.startsWith('/bill-payments') && (
-          <Nav className="flex-column" style={{ marginLeft: '20px' }}>
-            <Nav.Link as={NavLink} to="/bill-payments/set-up-bill-payments">Set Up Bill Payments</Nav.Link>
-            <Nav.Link as={NavLink} to="/bill-payments/review-and-cancel-bill-payments">Review and Cancel Bill Payments</Nav.Link>
-            <Nav.Link as={NavLink} to="/bill-payments/add-or-edit-billers">Add or Edit Billers</Nav.Link>
-            <Nav.Link as={NavLink} to="/bill-payments/biller-details">Biller Details</Nav.Link>
-            <Nav.Link as={NavLink} to="/bill-payments/view-ebills">View eBills</Nav.Link>
-          </Nav>
-        )}
         <Nav.Link className="nav-link" as={NavLink} to="/account-security">
           <i className="zippy-cash-icon zc-account-security" />
           Account Security
