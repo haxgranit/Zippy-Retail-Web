@@ -1,12 +1,11 @@
 import { useMsal } from '@azure/msal-react';
 import { useState } from 'react';
 import { Button, Form } from 'react-bootstrap';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import Api from '../../../api';
 import PageContainer from '../../../common/PageContainer';
 
 export default function FundingSourceDetails() {
-  const { id } = useParams();
   const [bankName, setBankName] = useState<string>('');
   const [accountNumber, setAccountNumber] = useState<string>('');
   const [institutionNumber, setInstitutionNumber] = useState<string>('');
@@ -43,8 +42,6 @@ export default function FundingSourceDetails() {
     <PageContainer title="Your Wallet" subTitle="Made Fun With Zippy!" backdropImage="background-funding-image">
       <div className="fundingTitle">
         Funding Source
-        {' '}
-        {id}
       </div>
 
       <div className="bankForm">
