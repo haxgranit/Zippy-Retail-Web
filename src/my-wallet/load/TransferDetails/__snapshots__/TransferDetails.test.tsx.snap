@@ -31,66 +31,70 @@ exports[`TransactionComplete Component matches the snapshot 1`] = `
         className="zippy-cash-container-body"
       >
         <div
-          className="title complete"
-        >
-          Transfer Completed
-        </div>
-        <div
-          className="transaction-detail"
+          className="body"
         >
           <div
-            className="detail-wrap"
+            className="title complete"
           >
-            <span>
-              Transfer Type
-            </span>
-            <p>
-              Zippy Wallet Load
-            </p>
+            Transfer Completed
           </div>
           <div
-            className="detail-wrap"
+            className="transaction-detail"
           >
-            <span>
-              Transfer Date
-            </span>
-            <span>
-              
-            </span>
-          </div>
-          <div
-            className="detail-wrap"
-          >
-            <span>
-              Transfer Time (UTC)
-            </span>
-            <span>
-              
-            </span>
-          </div>
-          <div
-            className="detail-wrap"
-          >
-            <span>
-              Transfer Amount
-            </span>
-            <p
-              style={
-                Object {
-                  "color": "#0D6EFD",
-                }
-              }
+            <div
+              className="detail-wrap"
             >
-              $
-            </p>
-          </div>
-          <div
-            className="detail-wrap"
-          >
-            <span>
-              Reference Number (Keep For Your Records)
-            </span>
-            <p />
+              <span>
+                Transfer Type
+              </span>
+              <p>
+                Zippy Wallet Load
+              </p>
+            </div>
+            <div
+              className="detail-wrap"
+            >
+              <span>
+                Transfer Date
+              </span>
+              <span>
+                
+              </span>
+            </div>
+            <div
+              className="detail-wrap"
+            >
+              <span>
+                Transfer Time (UTC)
+              </span>
+              <span>
+                
+              </span>
+            </div>
+            <div
+              className="detail-wrap"
+            >
+              <span>
+                Transfer Amount
+              </span>
+              <p
+                style={
+                  Object {
+                    "color": "#0D6EFD",
+                  }
+                }
+              >
+                $
+              </p>
+            </div>
+            <div
+              className="detail-wrap"
+            >
+              <span>
+                Reference Number (Keep For Your Records)
+              </span>
+              <p />
+            </div>
           </div>
         </div>
         <div

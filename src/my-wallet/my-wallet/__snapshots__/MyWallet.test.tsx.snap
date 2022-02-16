@@ -31,26 +31,30 @@ exports[`MyWallet Component matches the snapshot when loaded 1`] = `
         className="zippy-cash-container-body"
       >
         <div
-          className="zippy-balance"
+          className="body"
         >
           <div
-            className="account-balance"
+            className="zippy-balance"
           >
-            <div>
-              Your Zippy Balance is
+            <div
+              className="account-balance"
+            >
+              <div>
+                Your Zippy Balance is
+              </div>
+              <p>
+                <span
+                  className="ms-3"
+                >
+                  $ 1,000.00 CAD
+                </span>
+              </p>
             </div>
-            <p>
-              <span
-                className="ms-3"
-              >
-                $ 1,000.00 CAD
-              </span>
-            </p>
-          </div>
-          <div
-            className="account-name"
-          >
-            8000 001 000000000
+            <div
+              className="account-name"
+            >
+              8000 001 000000000
+            </div>
           </div>
         </div>
         <div
@@ -110,17 +114,21 @@ exports[`MyWallet Component matches the snapshot when loading 1`] = `
         className="zippy-cash-container-body"
       >
         <div
-          className="zippy-balance"
+          className="body"
         >
           <div
-            className="spinner spinner-border"
-            role="status"
+            className="zippy-balance"
           >
-            <span
-              className="visually-hidden"
+            <div
+              className="spinner spinner-border"
+              role="status"
             >
-              Loading...
-            </span>
+              <span
+                className="visually-hidden"
+              >
+                Loading...
+              </span>
+            </div>
           </div>
         </div>
       </div>

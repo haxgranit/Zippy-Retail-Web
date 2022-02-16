@@ -14,31 +14,33 @@ export const MyWalletPure = ({ account }: { account: Account | undefined }) => {
   return (
     <>
       <PageContainer title="Zippy Balance" subTitle="Welcome back!" backdropImage="backdrop-image-1">
-        <div className="zippy-balance">
-          { account !== undefined ? (
-            <>
-              <div className="account-balance">
-                <div>Your Zippy Balance is</div>
-                <p>
-                  <NumberFormat
-                    className="ms-3"
-                    value={account.balance}
-                    displayType="text"
-                    prefix="$ "
-                    suffix=" CAD"
-                    thousandSeparator
-                    decimalScale={2}
-                    fixedDecimalScale
-                  />
-                </p>
-              </div>
-              <div className="account-name">{account.name}</div>
-            </>
-          ) : (
-            <Spinner className="spinner" animation="border" role="status">
-              <span className="visually-hidden">Loading...</span>
-            </Spinner>
-          )}
+        <div className="body">
+          <div className="zippy-balance">
+            { account !== undefined ? (
+              <>
+                <div className="account-balance">
+                  <div>Your Zippy Balance is</div>
+                  <p>
+                    <NumberFormat
+                      className="ms-3"
+                      value={account.balance}
+                      displayType="text"
+                      prefix="$ "
+                      suffix=" CAD"
+                      thousandSeparator
+                      decimalScale={2}
+                      fixedDecimalScale
+                    />
+                  </p>
+                </div>
+                <div className="account-name">{account.name}</div>
+              </>
+            ) : (
+              <Spinner className="spinner" animation="border" role="status">
+                <span className="visually-hidden">Loading...</span>
+              </Spinner>
+            )}
+          </div>
         </div>
         { account !== undefined && (
           <div className="action pair">

@@ -48,22 +48,23 @@ export default function LoadStatus({ mode } : { mode: string }) {
 
   return (
     <PageContainer title="Your Wallet" subTitle="Made Fun With Zippy!">
-      <div className="title">
-        Fund Transfer
-      </div>
-      <div className="text-center">
-        {state.status === 'pending' && (
+      <div className="body">
+        <div className="title">
+          Fund Transfer
+        </div>
+        <div className="text-center">
+          {state.status === 'pending' && (
           <i className="zippy-cash-icon zc-pending" />
-        )}
-        {state.status === 'completed' && (
+          )}
+          {state.status === 'completed' && (
           <i className="zippy-cash-icon zc-completed" />
-        )}
-        {state.status === 'failed' && (
+          )}
+          {state.status === 'failed' && (
           <i className="zippy-cash-icon zc-failed" />
-        )}
-      </div>
-      <div className="details">
-        {state.status === 'completed' && (
+          )}
+        </div>
+        <div className="details">
+          {state.status === 'completed' && (
           <Row>
             <Col xs={12}>
               <p className="status-msg">
@@ -74,8 +75,8 @@ export default function LoadStatus({ mode } : { mode: string }) {
               </p>
             </Col>
           </Row>
-        )}
-        {state.status === 'pending' && (
+          )}
+          {state.status === 'pending' && (
           <Row>
             <Col
               xs={12}
@@ -93,23 +94,23 @@ export default function LoadStatus({ mode } : { mode: string }) {
               </p>
             </Col>
           </Row>
-        )}
-        {state.status === 'failed' && (
-        <Row>
-          <Col
-            xs={12}
-          >
-            <p className="status-msg">
-              Your $
-              {state?.amount}
-              {' '}
-              Zippy credit request
-              has been failed.
-            </p>
-          </Col>
-        </Row>
-        )}
-        {(state.status === 'completed' || state.status === 'pending') && (
+          )}
+          {state.status === 'failed' && (
+            <Row>
+              <Col
+                xs={12}
+              >
+                <p className="status-msg">
+                  Your $
+                  {state?.amount}
+                  {' '}
+                  Zippy credit request
+                  has been failed.
+                </p>
+              </Col>
+            </Row>
+          )}
+          {(state.status === 'completed' || state.status === 'pending') && (
           <Row>
             <Col xs={12} style={{ color: '#000000', padding: '0px 90px' }}>
               <p className="balance-msg">
@@ -124,9 +125,9 @@ export default function LoadStatus({ mode } : { mode: string }) {
               </p>
             </Col>
           </Row>
-        )}
+          )}
+        </div>
       </div>
-
       <div className="action">
         {state.status !== 'failed' ? (
           <Button

@@ -67,28 +67,30 @@ export default function LoadInitiate({ mode } : { mode: 'load' | 'get' }) {
 
   return (
     <PageContainer title="Your Wallet" subTitle="Made Fun With Zippy!" backdropImage="backdrop-image-2">
-      <AmountInput
-        amount={amount}
-        setAmount={(value) => setAmount(Number(value))}
-      />
-      {loadTried && amountError
+      <div className="body">
+        <AmountInput
+          amount={amount}
+          setAmount={(value) => setAmount(Number(value))}
+        />
+        {loadTried && amountError
         && (
           <Alert AlertMsg="Amount must be greater than zero" onClose={() => { setAmountError(false); }} />
         )}
-      <SourceOptions
-        defaultTitle="Select funding source"
-        fundingSources={fundingSources}
-        onChange={(option: FundingSource) => {
-          setSelectedAccount(option);
-        }}
-        onEmptyOptionsSelected={() => {
+        <SourceOptions
+          defaultTitle="Select funding source"
+          fundingSources={fundingSources}
+          onChange={(option: FundingSource) => {
+            setSelectedAccount(option);
+          }}
+          onEmptyOptionsSelected={() => {
           // navigate to add new account
-        }}
-      />
-      {loadTried && sourceError
+          }}
+        />
+        {loadTried && sourceError
         && (
           <Alert AlertMsg="Please select funding source" onClose={() => { setSourceError(false); }} />
         )}
+      </div>
       <div className="action">
         <Button
           disabled={isLoading}

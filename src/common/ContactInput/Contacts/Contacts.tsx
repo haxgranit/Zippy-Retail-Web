@@ -6,6 +6,7 @@ import {
   useEffect,
   useState,
 } from 'react';
+import SimpleBar from 'simplebar-react';
 import { Contact } from '../../../api';
 import { ContactTypeEnum } from '../../../constants/enum/ContactTypeEnum';
 import { formatContactName } from '../../../Helpers';
@@ -77,7 +78,7 @@ function Contacts({
           <Button
             className={contactType === ContactTypeEnum.BUSINESS ? 'active' : ''}
             onClick={() => setContactType(ContactTypeEnum.BUSINESS)}
-            disabled={contactType === ContactTypeEnum.BUSINESS && true}
+            disabled
           >
             Business
           </Button>
@@ -93,34 +94,36 @@ function Contacts({
         <div className="contact-list-container">
           {filteredContactList.length > 0
           && (
-          <div className="personal-contacts">
-            <h4>Contacts</h4>
-            {filteredContactList?.map((item: Contact) => (
-              <div
-                className={`contact-item${selectedContact.id === item.id ? ' selected' : ''}`}
-                key={item.id}
-                tabIndex={item.id}
-                role="button"
-                onKeyPress={() => {}}
-                onClick={() => {
-                  if (item.email) {
-                    setSelectedContact(item);
-                    setShowContactList(false);
-                  }
-                }}
-              >
-                <div className="contact-name">
-                  {formatContactName(item.firstName, item.lastName)}
-                </div>
-                <button
-                  className="btn-select-contact btn-transparent"
-                  type="button"
-                >
-                  <i className="zippy-cash-icon zc-personal" />
-                </button>
-              </div>
-            ))}
-          </div>
+            <div className="personal-contacts">
+              <h4>Contacts</h4>
+              <SimpleBar className="simplebar-container" forceVisible="y" autoHide={false}>
+                {filteredContactList?.map((item: Contact) => (
+                  <div
+                    className={`contact-item${selectedContact.id === item.id ? ' selected' : ''}`}
+                    key={item.id}
+                    tabIndex={item.id}
+                    role="button"
+                    onKeyPress={() => {}}
+                    onClick={() => {
+                      if (item.email) {
+                        setSelectedContact(item);
+                        setShowContactList(false);
+                      }
+                    }}
+                  >
+                    <div className="contact-name">
+                      {formatContactName(item.firstName, item.lastName)}
+                    </div>
+                    <button
+                      className="btn-select-contact btn-transparent"
+                      type="button"
+                    >
+                      <i className="zippy-cash-icon zc-personal" />
+                    </button>
+                  </div>
+                ))}
+              </SimpleBar>
+            </div>
           )}
           {!initialized && filteredContactList.length === 0 && searchValue === '' && (
           <div>Loading...</div>

@@ -57,40 +57,41 @@ function RequestedPending({
 
   return (
     <>
-      <CancelRequestForMoneyVerification
-        transaction={transaction}
-        handleBack={handleCancelRequestForMoneyBack}
-        handleCancelRequest={handleCancelRequestForMoneyConfirmed}
-        show={showCancelRequestForMoney}
-        processing={processing}
-      />
-      <div className="title">
-        <h3>Transaction Pending</h3>
-      </div>
-      <Row>
-        <Col xs={6}>From</Col>
-        <Col xs={6}>
-          <strong>{getUserFullName()}</strong>
-          {user && ` (${getUserEmail()})`}
-        </Col>
-      </Row>
-      <Row>
-        <Col xs={6}>To</Col>
-        <Col xs={6}>
-          <strong>{transaction ? `${transaction.contact.firstName || ''} ${transaction.contact.lastName || ''}` : ''}</strong>
-        </Col>
-      </Row>
-      <Row>
-        <Col xs={6}>Transfer Date</Col>
-        <Col xs={6}>
-          {transaction && transaction.date ? DateTime.fromISO(transaction.date).toLocaleString(DateTime.DATE_MED) : ''}
-        </Col>
-      </Row>
-      <Row>
-        <Col xs={6}>Transfer Amount</Col>
-        <Col xs={6}>
-          <strong className="amount">
-            {transaction && transaction.amount
+      <div className="body">
+        <CancelRequestForMoneyVerification
+          transaction={transaction}
+          handleBack={handleCancelRequestForMoneyBack}
+          handleCancelRequest={handleCancelRequestForMoneyConfirmed}
+          show={showCancelRequestForMoney}
+          processing={processing}
+        />
+        <div className="title">
+          <h3>Transaction Pending</h3>
+        </div>
+        <Row>
+          <Col xs={6}>From</Col>
+          <Col xs={6}>
+            <strong>{getUserFullName()}</strong>
+            {user && ` (${getUserEmail()})`}
+          </Col>
+        </Row>
+        <Row>
+          <Col xs={6}>To</Col>
+          <Col xs={6}>
+            <strong>{transaction ? `${transaction.contact.firstName || ''} ${transaction.contact.lastName || ''}` : ''}</strong>
+          </Col>
+        </Row>
+        <Row>
+          <Col xs={6}>Transfer Date</Col>
+          <Col xs={6}>
+            {transaction && transaction.date ? DateTime.fromISO(transaction.date).toLocaleString(DateTime.DATE_MED) : ''}
+          </Col>
+        </Row>
+        <Row>
+          <Col xs={6}>Transfer Amount</Col>
+          <Col xs={6}>
+            <strong className="amount">
+              {transaction && transaction.amount
             && (
               <NumberFormat
                 value={transaction.amount}
@@ -103,37 +104,40 @@ function RequestedPending({
                 fixedDecimalScale
               />
             )}
-          </strong>
-        </Col>
-      </Row>
-      <Row>
-        <Col xs={6}>
-          <div>Reference Number</div>
-          <div>(Keep For Your Records)</div>
-        </Col>
-        <Col xs={6}>{transaction?.id}</Col>
-      </Row>
-      <Row>
-        <Col xs={6}>This Request Will Expire On</Col>
-        <Col xs={6}>Jan 2,2022</Col>
-      </Row>
-      <Stack gap={3} direction="horizontal">
-        <Button
-          className="zippy-btn zippy-flat d-flex center w-full"
-          onClick={() => cancelRequest()}
-          disabled={processing}
-        >
-          Cancel Request
-        </Button>
-        <Button
-          className="zippy-btn d-flex ms-auto center w-full"
-          onClick={() => sendReminder()}
-          disabled={processing}
-        >
-          {processing && <div className="loading spinner-border" role="status" />}
-          {!processing ? 'Send Reminder' : 'Sending...'}
-        </Button>
-      </Stack>
+            </strong>
+          </Col>
+        </Row>
+        <Row>
+          <Col xs={6}>
+            <div>Reference Number</div>
+            <div>(Keep For Your Records)</div>
+          </Col>
+          <Col xs={6}>{transaction?.id}</Col>
+        </Row>
+        <Row>
+          <Col xs={6}>This Request Will Expire On</Col>
+          <Col xs={6}>Jan 2,2022</Col>
+        </Row>
+      </div>
+      <div className="action">
+        <Stack gap={3} direction="horizontal">
+          <Button
+            className="zippy-btn zippy-flat d-flex center w-full simple"
+            onClick={() => cancelRequest()}
+            disabled={processing}
+          >
+            Cancel Request
+          </Button>
+          <Button
+            className="zippy-btn d-flex ms-auto center w-full simple"
+            onClick={() => sendReminder()}
+            disabled={processing}
+          >
+            {processing && <div className="loading spinner-border" role="status" />}
+            {!processing ? 'Send Reminder' : 'Sending...'}
+          </Button>
+        </Stack>
+      </div>
     </>
   );
 }

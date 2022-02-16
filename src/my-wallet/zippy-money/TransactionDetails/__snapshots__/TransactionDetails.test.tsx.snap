@@ -31,99 +31,103 @@ exports[`TransactionDetails Component matches the snapshot 1`] = `
         className="zippy-cash-container-body"
       >
         <div
-          className="title"
-        >
-          Transaction Pending
-        </div>
-        <div
-          className="details"
+          className="body"
         >
           <div
-            className="row"
+            className="title"
           >
-            <div
-              className="col-6"
-            >
-              To
-            </div>
-            <div
-              className="col-6"
-            >
-              <strong>
-                
-              </strong>
-            </div>
+            Transaction Pending
           </div>
           <div
-            className="row"
+            className="details"
           >
             <div
-              className="col-6"
+              className="row"
             >
-              Transfer Date
-            </div>
-            <div
-              className="col-6"
-            >
-              
-            </div>
-          </div>
-          <div
-            className="row"
-          >
-            <div
-              className="col-6"
-            >
-              Transfer Time (UTC)
-            </div>
-            <div
-              className="col-6"
-            >
-              
-            </div>
-          </div>
-          <div
-            className="row"
-          >
-            <div
-              className="col-6"
-            >
-              Transfer Amount
-            </div>
-            <div
-              className="col-6"
-            >
-              <span
-                className="amount"
+              <div
+                className="col-6"
               >
-                $ 0.00 CAD
-              </span>
-            </div>
-          </div>
-          <div
-            className="row"
-          >
-            <div
-              className="col-6"
-            >
-              Reference Number (Keep For Your Records)
+                To
+              </div>
+              <div
+                className="col-6"
+              >
+                <strong>
+                  
+                </strong>
+              </div>
             </div>
             <div
-              className="col-6"
-            />
-          </div>
-          <div
-            className="row"
-          >
-            <div
-              className="col-6"
+              className="row"
             >
-              Expiry Date
+              <div
+                className="col-6"
+              >
+                Transfer Date
+              </div>
+              <div
+                className="col-6"
+              >
+                
+              </div>
             </div>
             <div
-              className="col-6"
+              className="row"
             >
-              
+              <div
+                className="col-6"
+              >
+                Transfer Time (UTC)
+              </div>
+              <div
+                className="col-6"
+              >
+                
+              </div>
+            </div>
+            <div
+              className="row"
+            >
+              <div
+                className="col-6"
+              >
+                Transfer Amount
+              </div>
+              <div
+                className="col-6"
+              >
+                <span
+                  className="amount"
+                >
+                  $ 0.00 CAD
+                </span>
+              </div>
+            </div>
+            <div
+              className="row"
+            >
+              <div
+                className="col-6"
+              >
+                Reference Number (Keep For Your Records)
+              </div>
+              <div
+                className="col-6"
+              />
+            </div>
+            <div
+              className="row"
+            >
+              <div
+                className="col-6"
+              >
+                Expiry Date
+              </div>
+              <div
+                className="col-6"
+              >
+                
+              </div>
             </div>
           </div>
         </div>

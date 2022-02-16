@@ -46,7 +46,7 @@ exports[`ContactInput Component matches the snapshot 1`] = `
         </button>
         <button
           className="btn btn-primary"
-          disabled={false}
+          disabled={true}
           onClick={[Function]}
           type="button"
         >

@@ -70,7 +70,7 @@ export default function TransactionStatusList() {
   };
 
   const getTransactionType = (transaction: Transaction): string => {
-    const type = transaction.type || selectedType;
+    const type = transaction.type?.toLowerCase() || selectedType;
     switch (type) {
       case TransferType.RECEIVE:
         return 'received';

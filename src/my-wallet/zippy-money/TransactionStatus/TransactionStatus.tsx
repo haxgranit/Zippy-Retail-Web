@@ -59,13 +59,15 @@ export default function TransactionStatus({
         className="transaction-status"
         backdropImage="backdrop-image-2"
       >
-        <div className="title">
-          Transaction Status
-        </div>
-        <div className="status">
-          <div><i className={`zippy-cash-icon zc-${getIconClass(transaction?.status)}`} /></div>
-          <div>
-            {getCopy(transaction?.status)}
+        <div className="body">
+          <div className="title">
+            Transaction Status
+          </div>
+          <div className="status">
+            <div><i className={`zippy-cash-icon zc-${getIconClass(transaction?.status)}`} /></div>
+            <div>
+              {getCopy(transaction?.status)}
+            </div>
           </div>
         </div>
         <div className="action">
