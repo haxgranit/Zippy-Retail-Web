@@ -100,12 +100,6 @@ export type FundingSourceTransactionRequest = {
   isCredit: boolean
 };
 
-// export type FundingSourceRequest = {
-//   displayName: string,
-//   isDefault: boolean,
-//   bankAccount: BankAccount
-// };
-
 export type FundingSourceRequest = {
   displayName: string,
   isDefault: boolean,
