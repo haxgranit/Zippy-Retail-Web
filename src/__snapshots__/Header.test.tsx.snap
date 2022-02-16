@@ -45,7 +45,7 @@ exports[`Header Component matches the snapshot 1`] = `
             <span
               className="amount"
             >
-              $0.00
+              $1,018.35
             </span>
           </div>
         </div>

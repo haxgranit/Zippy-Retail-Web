@@ -4,6 +4,12 @@ import { HeaderPure } from './Header';
 
 const ReactTestRenderer = require('react-test-renderer');
 
+const SampleData = {
+  id: 12,
+  name: '8000 335 000000012',
+  balance: 1018.35,
+};
+
 const mockChangeLanguage = jest.fn();
 jest.mock('react-i18next', () => ({
   useTranslation: () => ({
@@ -17,7 +23,7 @@ jest.mock('react-i18next', () => ({
 const component = (
   <BrowserRouter>
     <HeaderPure
-      account={undefined}
+      account={SampleData}
       userFullName=""
       isAuthenticated
       isInProgress={false}
@@ -29,14 +35,7 @@ const component = (
 
 describe('Header Component', () => {
   it('matches the snapshot', () => {
-    const tree = ReactTestRenderer.create(<HeaderPure
-      account={undefined}
-      userFullName=""
-      isAuthenticated
-      isInProgress={false}
-      handleLogin={() => {}}
-      handleLogout={() => {}}
-    />).toJSON();
+    const tree = ReactTestRenderer.create(component).toJSON();
     expect(tree).toMatchSnapshot();
   });
 

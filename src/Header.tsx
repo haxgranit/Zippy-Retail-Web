@@ -29,8 +29,6 @@ export const HeaderPure = ({
 }) => {
   const { i18n, t } = useTranslation();
 
-  console.log({ account });
-
   return (
     <nav className={`header-layout navbar navbar-expand-lg navbar-light ${!isAuthenticated && 'container'}`}>
       <div className="left-side-header">
@@ -151,7 +149,6 @@ export const Header = () => {
         .listAccounts()
         .then((accounts) => {
           setAccount(accounts[0]);
-          console.log({ accounts });
         });
     }
   }, [msalAccounts, user]);
