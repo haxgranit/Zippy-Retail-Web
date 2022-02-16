@@ -8,7 +8,7 @@ exports[`AutoDeposit Component matches the snapshot when loaded 1`] = `
     className="zippy-cash-container-wrap"
   >
     <div
-      className="backdrop backdrop-image-2"
+      className="backdrop backdrop-image-3"
     />
     <div
       className="zippy-cash-container"
