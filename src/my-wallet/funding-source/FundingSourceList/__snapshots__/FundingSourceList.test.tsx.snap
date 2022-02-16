@@ -1,0 +1,88 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FundingSourceList Component matches the snapshot 1`] = `
+<div
+  className=""
+>
+  <div
+    className="zippy-cash-container-wrap"
+  >
+    <div
+      className="backdrop backdrop-image-4"
+    />
+    <div
+      className="zippy-cash-container"
+    >
+      <div
+        className="zippy-cash-container-header"
+      >
+        <h1
+          className="title"
+        >
+          Your Wallet
+        </h1>
+        <h2
+          className="catch"
+        >
+          Made Fun With Zippy!
+        </h2>
+      </div>
+      <div
+        className="zippy-cash-container-body"
+      >
+        <div
+          className="funding-title"
+        >
+          Funding Source
+        </div>
+        <div>
+          <div
+            className="bank-wrapper"
+          >
+            <div
+              style={
+                Object {
+                  "alignItems": "center",
+                  "display": "flex",
+                  "justifyContent": "center",
+                }
+              }
+            >
+              <i
+                className="zippy-cash-icon zc-bank"
+              />
+               
+              <p
+                className="bank-title"
+              >
+                Registered Banks
+              </p>
+            </div>
+            <div
+              className="add-btn"
+              onClick={[Function]}
+              onKeyDown={[Function]}
+              role="button"
+              tabIndex={0}
+            >
+              +Add
+            </div>
+          </div>
+        </div>
+        <div
+          className="action"
+        >
+          <button
+            className="zippy-btn btn btn-primary"
+            disabled={false}
+            onClick={[Function]}
+            type="button"
+          >
+            Send money
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

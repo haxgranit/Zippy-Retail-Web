@@ -1,0 +1,117 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FundingSourceList Component matches the snapshot 1`] = `
+<div
+  className=""
+>
+  <div
+    className="zippy-cash-container-wrap"
+  >
+    <div
+      className="backdrop background-image-4"
+    />
+    <div
+      className="zippy-cash-container"
+    >
+      <div
+        className="zippy-cash-container-header"
+      >
+        <h1
+          className="title"
+        >
+          Your Wallet
+        </h1>
+        <h2
+          className="catch"
+        >
+          Made Fun With Zippy!
+        </h2>
+      </div>
+      <div
+        className="zippy-cash-container-body"
+      >
+        <div
+          className="funding-title"
+        >
+          Funding Source
+        </div>
+        <div
+          className="bank-form"
+        >
+          <form
+            action=""
+          >
+            <input
+              className="form-control"
+              onChange={[Function]}
+              placeholder="Nickname"
+              type="text"
+              value=""
+            />
+            <input
+              className="form-control"
+              onChange={[Function]}
+              placeholder="Account Number"
+              type="number"
+              value=""
+            />
+            <input
+              className="form-control"
+              onChange={[Function]}
+              placeholder="Institution Number"
+              type="number"
+              value=""
+            />
+            <input
+              className="form-control"
+              onChange={[Function]}
+              placeholder="Transit Number"
+              type="number"
+              value=""
+            />
+            <div
+              style={
+                Object {
+                  "alignItems": "center",
+                  "display": "flex",
+                  "justifyContent": "flex-start",
+                }
+              }
+            >
+              <div
+                className="actions form-check"
+              >
+                <input
+                  className="form-check-input"
+                  disabled={false}
+                  name="actions2"
+                  onChange={[Function]}
+                  type="radio"
+                />
+                <label
+                  className="form-check-label"
+                  title=""
+                >
+                  Mark this Account as a default
+                </label>
+              </div>
+            </div>
+          </form>
+        </div>
+        <div
+          className="action"
+        >
+          <button
+            className="zippy-btn btn btn-primary"
+            disabled={false}
+            onClick={[Function]}
+            type="button"
+          >
+            Save
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

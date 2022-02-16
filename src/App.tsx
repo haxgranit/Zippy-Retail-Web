@@ -61,6 +61,8 @@ import LoadStatus from './my-wallet/load/LoadStatus/LoadStatus';
 import LoadInitiate from './my-wallet/load/LoadInitiate/LoadInitiate';
 import TransferDetails from './my-wallet/load/TransferDetails/TransferDetails';
 import TransactionStatusList from './my-wallet/status/TransactionStatusList/TransactionStatusList';
+import FundingSourceDetails from './my-wallet/funding-source/FundingSourceDetails/FundingSourceDetails';
+import FundingSourceList from './my-wallet/funding-source/FundingSourceList/FundingSourceList';
 import TransactionStatus from './my-wallet/status/TransactionDetails/TransactionStatus';
 import Account from './my-account/account/Account';
 import DownloadTransactions from './my-account/download-transactions/DownloadTransactions';
@@ -153,6 +155,11 @@ export default function App() {
               <Route path="transfer-details" element={<TransferDetails />} />
             </Route>
             <Route path="status" element={<TransactionStatusList />} />
+            <Route path="funding-source">
+              <Route path="" element={<FundingSourceList />} />
+              <Route path="add-funding-source" element={<FundingSourceDetails />} />
+              <Route path="edit-funding-source/:id" element={<FundingSourceDetails />} />
+            </Route>
             <Route path="status/:type/:status/:id" element={<TransactionStatus />} />
           </Route>
           <Route path="manage-my-alerts" element={<ManageMyAlerts />} />

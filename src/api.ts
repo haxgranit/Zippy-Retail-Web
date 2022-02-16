@@ -104,7 +104,7 @@ export type FundingSourceTransactionRequest = {
 export type FundingSourceRequest = {
   displayName: string,
   isDefault: boolean,
-  bankAccount: BankAccount
+  bankAccount: BankAccount,
 };
 
 export type DCBankEftTransaction = {

@@ -139,5 +139,13 @@ i {
             -webkit-mask-image: url("../assets/img/icons/info.svg");
             mask-image: url("../assets/img/icons/info.svg");
         }
+        &.zc-bank::after {
+            -webkit-mask-image: url("../assets/img/icons/bank.svg");
+            mask-image: url("../assets/img/icons/bank.svg");
+        }
+        &.zc-cross::after {
+            -webkit-mask-image: url("../assets/img/icons/cross.svg");
+            mask-image: url("../assets/img/icons/cross.svg");            
+        }
     }
 }
