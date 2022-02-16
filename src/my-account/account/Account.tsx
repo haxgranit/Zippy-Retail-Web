@@ -1,7 +1,10 @@
+import PageContainer from '../../common/PageContainer';
 import placeholder from './Account.png';
 
 export default function Account() {
   return (
-    <img src={placeholder} alt="placeholder" style={{ paddingLeft: '240px', width: '100%' }} />
+    <PageContainer backdropImage="backdrop-image-1">
+      <img src={placeholder} alt="placeholder" style={{ margin: '-50px -35px' }} />
+    </PageContainer>
   );
 }
