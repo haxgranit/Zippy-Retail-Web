@@ -1,0 +1,122 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FundingSourceList Component matches the snapshot 1`] = `
+<div
+  className=""
+>
+  <div
+    className="zippy-cash-container-wrap"
+  >
+    <div
+      className="backdrop background-funding-image"
+    />
+    <div
+      className="zippy-cash-container"
+    >
+      <div
+        className="zippy-cash-container-header"
+      >
+        <h1
+          className="title"
+        >
+          Your Wallet
+        </h1>
+        <h2
+          className="catch"
+        >
+          Made Fun With Zippy!
+        </h2>
+      </div>
+      <div
+        className="zippy-cash-container-body"
+      >
+        <div
+          className="fundingTitle"
+        >
+          Funding Source
+           
+        </div>
+        <div
+          className="bankForm"
+        >
+          <form
+            action=""
+          >
+            <input
+              onChange={[Function]}
+              placeholder="Bank Name"
+              type="text"
+              value=""
+            />
+            <input
+              onChange={[Function]}
+              placeholder="Account Name"
+              type="text"
+              value=""
+            />
+            <input
+              onChange={[Function]}
+              placeholder="Account Number"
+              type="number"
+              value=""
+            />
+            <input
+              onChange={[Function]}
+              placeholder="Institution Number"
+              type="number"
+              value=""
+            />
+            <input
+              onChange={[Function]}
+              placeholder="Transit Number"
+              type="number"
+              value=""
+            />
+            <div
+              style={
+                Object {
+                  "alignItems": "center",
+                  "display": "flex",
+                  "justifyContent": "flex-start",
+                }
+              }
+            >
+              <input
+                checked={false}
+                onChange={[Function]}
+                style={
+                  Object {
+                    "marginRight": 13,
+                  }
+                }
+                type="radio"
+              />
+              <p
+                style={
+                  Object {
+                    "margin": 0,
+                  }
+                }
+              >
+                Mark this Account as a default
+              </p>
+            </div>
+          </form>
+        </div>
+        <div
+          className="action"
+        >
+          <button
+            className="zippy-btn btn btn-primary"
+            disabled={false}
+            onClick={[Function]}
+            type="button"
+          >
+            Save
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

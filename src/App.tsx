@@ -62,7 +62,7 @@ import LoadInitiate from './my-wallet/load/LoadInitiate/LoadInitiate';
 import TransferDetails from './my-wallet/load/TransferDetails/TransferDetails';
 import TransactionStatusList from './my-wallet/status/TransactionStatusList/TransactionStatusList';
 import FundingSourceDetails from './my-wallet/funding-source/FundingSourceDetails/FundingSourceDetails';
-import FundingSourceList from './my-wallet/funding-source/FundingSourceList';
+import FundingSourceList from './my-wallet/funding-source/FundingSourceList/FundingSourceList';
 import TransactionStatus from './my-wallet/status/TransactionDetails/TransactionStatus';
 import Account from './my-account/account/Account';
 import DownloadTransactions from './my-account/download-transactions/DownloadTransactions';

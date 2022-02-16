@@ -2,8 +2,8 @@ import { useMsal } from '@azure/msal-react';
 import { useEffect, useState } from 'react';
 import { Button } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
-import Api, { FundingSource } from '../../api';
-import PageContainer from '../../common/PageContainer';
+import Api, { FundingSource } from '../../../api';
+import PageContainer from '../../../common/PageContainer';
 
 export default function FundingSourceList() {
   const navigate = useNavigate();
