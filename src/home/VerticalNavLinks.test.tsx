@@ -8,7 +8,7 @@ const ReactTestRenderer = require('react-test-renderer');
 jest.mock('react-router-dom', () => ({
   ...(jest.requireActual('react-router-dom') as any),
   useLocation: () => ({
-    pathname: 'my-accounts',
+    pathname: 'my-account',
   }),
 }));
 

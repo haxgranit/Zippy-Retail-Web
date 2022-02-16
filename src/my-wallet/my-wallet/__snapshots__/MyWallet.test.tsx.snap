@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`ZippyBalance Component matches the snapshot when loaded 1`] = `
+exports[`MyWallet Component matches the snapshot when loaded 1`] = `
 <div
   className=""
 >
@@ -79,7 +79,7 @@ exports[`ZippyBalance Component matches the snapshot when loaded 1`] = `
 </div>
 `;
 
-exports[`ZippyBalance Component matches the snapshot when loading 1`] = `
+exports[`MyWallet Component matches the snapshot when loading 1`] = `
 <div
   className=""
 >

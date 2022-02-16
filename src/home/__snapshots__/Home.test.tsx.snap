@@ -16,7 +16,7 @@ exports[`Home Component matches the snapshot 1`] = `
       >
         <a
           className="navbar-brand"
-          href="/"
+          href="/my-wallet"
           onClick={[Function]}
         >
           <img
@@ -28,14 +28,14 @@ exports[`Home Component matches the snapshot 1`] = `
           className="nav-link nav-link"
           data-rr-ui-event-key={null}
           disabled={false}
-          href="/my-accounts"
+          href="/my-account"
           id="my-account-link"
           onClick={[Function]}
         >
           <i
             className="zippy-cash-icon zc-home"
           />
-          My Accounts
+          My Account
           <i
             className="dropdown zippy-cash-icon zc-up"
           />
