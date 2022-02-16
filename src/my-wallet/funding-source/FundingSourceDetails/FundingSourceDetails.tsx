@@ -8,7 +8,6 @@ import PageContainer from '../../../common/PageContainer';
 export default function FundingSourceDetails() {
   const { id } = useParams();
   const [bankName, setBankName] = useState<string>('');
-  const [accountName, setAccountName] = useState<string>('');
   const [accountNumber, setAccountNumber] = useState<string>('');
   const [institutionNumber, setInstitutionNumber] = useState<string>('');
   const [transitNumber, setTransitNumber] = useState<string>('');
@@ -52,15 +51,9 @@ export default function FundingSourceDetails() {
         <form action="">
           <Form.Control
             type="text"
-            placeholder="Bank Name"
+            placeholder="Nickname"
             value={bankName}
             onChange={(evt) => setBankName(evt.target.value)}
-          />
-          <Form.Control
-            type="text"
-            placeholder="Account Name"
-            value={accountName}
-            onChange={(evt) => setAccountName(evt.target.value)}
           />
           <Form.Control
             type="number"
