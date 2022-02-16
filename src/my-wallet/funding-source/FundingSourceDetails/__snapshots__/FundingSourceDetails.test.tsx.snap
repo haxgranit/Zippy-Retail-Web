@@ -43,30 +43,35 @@ exports[`FundingSourceList Component matches the snapshot 1`] = `
             action=""
           >
             <input
+              className="form-control"
               onChange={[Function]}
               placeholder="Bank Name"
               type="text"
               value=""
             />
             <input
+              className="form-control"
               onChange={[Function]}
               placeholder="Account Name"
               type="text"
               value=""
             />
             <input
+              className="form-control"
               onChange={[Function]}
               placeholder="Account Number"
               type="number"
               value=""
             />
             <input
+              className="form-control"
               onChange={[Function]}
               placeholder="Institution Number"
               type="number"
               value=""
             />
             <input
+              className="form-control"
               onChange={[Function]}
               placeholder="Transit Number"
               type="number"
@@ -81,25 +86,25 @@ exports[`FundingSourceList Component matches the snapshot 1`] = `
                 }
               }
             >
-              <input
-                checked={false}
-                onChange={[Function]}
-                style={
-                  Object {
-                    "marginRight": 13,
-                  }
-                }
-                type="radio"
-              />
-              <p
-                style={
-                  Object {
-                    "margin": 0,
-                  }
-                }
+              <div
+                className="actions form-check"
               >
-                Mark this Account as a default
-              </p>
+                <input
+                  className="form-check-input"
+                  disabled={false}
+                  id="interac-e-transfer"
+                  name="actions2"
+                  onChange={[Function]}
+                  type="radio"
+                />
+                <label
+                  className="form-check-label"
+                  htmlFor="interac-e-transfer"
+                  title=""
+                >
+                  Mark this Account as a default
+                </label>
+              </div>
             </div>
           </form>
         </div>

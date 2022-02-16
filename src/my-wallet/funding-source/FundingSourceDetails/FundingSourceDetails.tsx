@@ -1,6 +1,6 @@
 import { useMsal } from '@azure/msal-react';
 import { useState } from 'react';
-import { Button } from 'react-bootstrap';
+import { Button, Form } from 'react-bootstrap';
 import { useNavigate, useParams } from 'react-router-dom';
 import Api from '../../../api';
 import PageContainer from '../../../common/PageContainer';
@@ -50,44 +50,45 @@ export default function FundingSourceDetails() {
 
       <div className="bankForm">
         <form action="">
-          <input value={bankName} type="text" placeholder="Bank Name" onChange={(evt) => setBankName(evt.target.value)} />
-
-          <input
-            value={accountName}
+          <Form.Control
+            type="text"
+            placeholder="Bank Name"
+            value={bankName}
+            onChange={(evt) => setBankName(evt.target.value)}
+          />
+          <Form.Control
             type="text"
             placeholder="Account Name"
+            value={accountName}
             onChange={(evt) => setAccountName(evt.target.value)}
           />
-
-          <input
+          <Form.Control
             type="number"
             placeholder="Account Number"
             value={accountNumber}
             onChange={(evt) => setAccountNumber(evt.target.value)}
           />
-
-          <input
+          <Form.Control
             type="number"
             placeholder="Institution Number"
             value={institutionNumber}
             onChange={(evt) => setInstitutionNumber(evt.target.value)}
           />
-
-          <input
+          <Form.Control
             type="number"
             placeholder="Transit Number"
             value={transitNumber}
             onChange={(evt) => setTransitNumber(evt.target.value)}
           />
-
           <div style={{ display: 'flex', justifyContent: 'flex-start', alignItems: 'center' }}>
-            <input
+            <Form.Check
+              id="interac-e-transfer"
               type="radio"
-              style={{ marginRight: 13 }}
-              checked={isDefault}
+              className="actions"
+              label="Mark this Account as a default"
+              name="actions2"
               onChange={(evt) => { setIsDefault(evt.target.checked); }}
             />
-            <p style={{ margin: 0 }}>Mark this Account as a default</p>
           </div>
         </form>
 
