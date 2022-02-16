@@ -155,7 +155,6 @@ export default function App() {
               <Route path="transfer-details" element={<TransferDetails />} />
             </Route>
             <Route path="status" element={<TransactionStatusList />} />
-            <Route path="status/:transactionId" element={<TransactionDetails />} />
             <Route path="funding-source">
               <Route path="" element={<FundingSourceList />} />
               <Route path="add-funding-source" element={<FundingSourceDetails />} />
