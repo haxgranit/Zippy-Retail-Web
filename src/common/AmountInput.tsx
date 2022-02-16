@@ -49,17 +49,26 @@ function AmountInput({
     if (canBypass(stringNumber) && !noBypass) {
       setDisplayAmount(stringNumber);
     } else {
-      if (noBypass && (stringNumber === ',' || stringNumber === '.')) {
-        stringNumber = '0';
+      if (noBypass && (stringNumber === ','
+          || stringNumber === '$,'
+          || stringNumber === '.'
+          || stringNumber === '$.'
+          || stringNumber === '$'
+          || stringNumber === '')) {
+        stringNumber = '';
       }
 
-      stringNumber = stringNumber.includes('.') ? stringNumber.slice(0, (stringNumber.indexOf('.')) + decimalPoint + 1) : stringNumber;
-      setAmount(parseFloat(parseFloat(stringNumber
-        .replace(new RegExp(`\\${symbol}`), '')
-        .replace(new RegExp(`\\${thousandSeparator}`, 'g'), '')
-        .replace(new RegExp(`\\${decimalSeparator}`), '.'))
-        .toFixed(decimalPoint)));
-      setDisplayAmount(toCurrency(parseFloat(amount.toFixed(decimalPoint))));
+      if (stringNumber !== '') {
+        stringNumber = stringNumber.includes('.') ? stringNumber.slice(0, (stringNumber.indexOf('.')) + decimalPoint + 1) : stringNumber;
+        setAmount(parseFloat(parseFloat(stringNumber
+          .replace(new RegExp(`\\${symbol}`), '')
+          .replace(new RegExp(`\\${thousandSeparator}`, 'g'), '')
+          .replace(new RegExp(`\\${decimalSeparator}`), '.'))
+          .toFixed(decimalPoint)));
+        setDisplayAmount(toCurrency(parseFloat(amount.toFixed(decimalPoint))));
+      } else {
+        setDisplayAmount('');
+      }
     }
   };
 
