@@ -3,6 +3,7 @@ import { Button, Col, Row } from 'react-bootstrap';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { useMsal } from '@azure/msal-react';
+import NumberFormat from 'react-number-format';
 import PageContainer from '../../../common/PageContainer';
 import Api, { Account } from '../../../api';
 import { useAppSelector } from '../../../app/hooks';
@@ -68,8 +69,19 @@ export default function LoadStatus({ mode } : { mode: string }) {
           <Row>
             <Col xs={12}>
               <p className="status-msg">
-                Your $
-                {state?.amount.toFixed(2)}
+                Your
+                {' '}
+                <NumberFormat
+                  className="amount"
+                  value={state?.amount}
+                  defaultValue={0}
+                  displayType="text"
+                  prefix="$ "
+                  suffix=" CAD"
+                  thousandSeparator
+                  decimalScale={2}
+                  fixedDecimalScale
+                />
                 {' '}
                 credit into your zippy account
               </p>
@@ -82,8 +94,19 @@ export default function LoadStatus({ mode } : { mode: string }) {
               xs={12}
             >
               <p className="status-msg">
-                Your $
-                {state?.amount.toFixed(2)}
+                Your
+                {' '}
+                <NumberFormat
+                  className="amount"
+                  value={state?.amount}
+                  defaultValue={0}
+                  displayType="text"
+                  prefix="$ "
+                  thousandSeparator
+                  decimalScale={2}
+                  fixedDecimalScale
+                  suffix=" CAD"
+                />
                 {' '}
                 Zippy
                 {' '}
@@ -101,8 +124,19 @@ export default function LoadStatus({ mode } : { mode: string }) {
                 xs={12}
               >
                 <p className="status-msg">
-                  Your $
-                  {state?.amount.toFixed(2)}
+                  Your
+                  {' '}
+                  <NumberFormat
+                    className="amount"
+                    value={state?.amount}
+                    defaultValue={0}
+                    displayType="text"
+                    prefix="$ "
+                    suffix=" CAD"
+                    thousandSeparator
+                    decimalScale={2}
+                    fixedDecimalScale
+                  />
                   {' '}
                   Zippy credit request
                   has been failed.
@@ -118,9 +152,18 @@ export default function LoadStatus({ mode } : { mode: string }) {
                 {' '}
                 <br />
                 <b>
-                  $
-                  {account?.balance}
-                  .00
+                  <NumberFormat
+                    className="amount"
+                    value={account?.balance}
+                    defaultValue={0}
+                    displayType="text"
+                    prefix="$ "
+                    suffix=" CAD"
+                    thousandSeparator
+                    decimalScale={2}
+                    fixedDecimalScale
+                  />
+                  {' '}
                 </b>
               </p>
             </Col>
