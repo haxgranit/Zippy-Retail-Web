@@ -267,6 +267,7 @@ exports[`ZippyTransaction Component matches the snapshot 1`] = `
             </div>
           </div>
         </div>
+        
         <div
           className="action"
         >

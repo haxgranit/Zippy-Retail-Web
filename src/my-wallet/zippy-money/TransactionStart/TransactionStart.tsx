@@ -6,6 +6,7 @@ import { TransactionTypeEnum } from '../../../constants/enum/TransactionTypeEnum
 import { TunnelTypeEnum } from '../../../constants/enum/TunnelTypeEnum';
 import ContactInput from '../../../common/ContactInput/ContactInput';
 import AmountInput from '../../../common/AmountInput';
+import Alert from '../../../common/Alert';
 
 export default function TransactionStart({
   transactionType,
@@ -21,6 +22,8 @@ export default function TransactionStart({
   setTunnelType,
   note,
   setNote,
+  errorMessage,
+  setErrorMessage,
 }: TransactionInterface) {
   const navigate = useNavigate();
 
@@ -88,6 +91,11 @@ export default function TransactionStart({
             />
           </div>
         </div>
+        {errorMessage && (
+          <div>
+            <Alert AlertMsg={errorMessage} onClose={() => { setErrorMessage(''); }} />
+          </div>
+        )}
         <div className="action">
           <Button
             className="zippy-btn"
