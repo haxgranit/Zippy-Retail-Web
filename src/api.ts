@@ -1,7 +1,12 @@
 /* eslint-disable class-methods-use-this */
 /* eslint-disable no-console */
 
-import { AccountInfo, InteractionRequiredAuthError, IPublicClientApplication } from '@azure/msal-browser';
+// eslint-disable-next-line max-classes-per-file
+import {
+  AccountInfo,
+  InteractionRequiredAuthError,
+  IPublicClientApplication,
+} from '@azure/msal-browser';
 
 export enum TransactionStatusEnum {
   COMPLETED = 'completed',
@@ -154,6 +159,20 @@ export async function getToken(instance: IPublicClientApplication, account: Acco
   return null;
 }
 
+class CustomError extends Error {
+  private date: number;
+
+  constructor(errorTitle: string, ...params: any) {
+    super(...params);
+    if (Error.captureStackTrace) {
+      Error.captureStackTrace(this, CustomError);
+    }
+    this.date = Date.now();
+    this.stack = params;
+    this.message = errorTitle;
+  }
+}
+
 export default class Api {
   constructor(
     private readonly instance: IPublicClientApplication,
@@ -234,7 +253,7 @@ export default class Api {
   private async fetch<TResponse>(method: string, path: string, body?: any) {
     const apiUrl = (<any>window).API_URL;
     if (!apiUrl) {
-      throw Error('window.API_URL is undefined');
+      throw new CustomError('window.API_URL is undefined');
     }
 
     const request: RequestInit = {
@@ -254,7 +273,7 @@ export default class Api {
     // TODO: proper error output here
     if (!response.ok) {
       const error = await response.json() as ErrorDetail;
-      throw Error(error.title);
+      throw new CustomError(error.title, error);
     }
     return (response.status !== 204 ? await response.json() : {}) as TResponse;
   }
