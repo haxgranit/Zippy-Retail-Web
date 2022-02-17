@@ -35,37 +35,41 @@ function AmountInput({
 
   const canBypass = (display: string) => {
     const lastString = display[display.length - 1];
-    return display === `${symbol}0.0`
+    const dec = display.split(decimalSeparator)[1]?.length || 0;
+    return (display === `${symbol}0.0`
       || display === ''
       || lastString === '0'
       || lastString === symbol
       || lastString === symbol
       || lastString === thousandSeparator
-      || lastString === decimalSeparator;
+      || lastString === decimalSeparator)
+      && dec < 2;
   };
 
   const parseLocaleNumber = (stringNumber: string, noBypass: boolean) => {
     stringNumber = stringNumber === '..' ? '.' : stringNumber;
+    stringNumber = stringNumber === '$$' ? '$' : stringNumber;
     if (canBypass(stringNumber) && !noBypass) {
       setDisplayAmount(stringNumber);
     } else {
       if (noBypass && (stringNumber === ','
-          || stringNumber === '$,'
-          || stringNumber === '.'
-          || stringNumber === '$.'
-          || stringNumber === '$'
-          || stringNumber === '')) {
+        || stringNumber === '$,'
+        || stringNumber === '.'
+        || stringNumber === '$.'
+        || stringNumber === '$'
+        || stringNumber === '')) {
         stringNumber = '';
       }
 
       if (stringNumber !== '') {
         stringNumber = stringNumber.includes('.') ? stringNumber.slice(0, (stringNumber.indexOf('.')) + decimalPoint + 1) : stringNumber;
-        setAmount(parseFloat(parseFloat(stringNumber
+        const parsedAmount = parseFloat(parseFloat(stringNumber
           .replace(new RegExp(`\\${symbol}`), '')
           .replace(new RegExp(`\\${thousandSeparator}`, 'g'), '')
           .replace(new RegExp(`\\${decimalSeparator}`), '.'))
-          .toFixed(decimalPoint)));
-        setDisplayAmount(toCurrency(parseFloat(amount.toFixed(decimalPoint))));
+          .toFixed(decimalPoint));
+        setAmount(parsedAmount);
+        setDisplayAmount(toCurrency(parseFloat(parsedAmount.toFixed(decimalPoint))));
       } else {
         setDisplayAmount('');
       }

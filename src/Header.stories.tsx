@@ -18,6 +18,7 @@ const Template: ComponentStory<typeof HeaderPure> = ({
 }) => (
   <BrowserRouter>
     <HeaderPure
+      account={undefined}
       isAuthenticated={isAuthenticated}
       isInProgress={canLogin}
       handleLogin={handleLogin}

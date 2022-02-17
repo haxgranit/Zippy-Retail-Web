@@ -164,6 +164,8 @@ export default function LoadStatus({ mode } : { mode: string }) {
                     fixedDecimalScale
                   />
                   {' '}
+                  $
+                  {account?.balance}
                 </b>
               </p>
             </Col>

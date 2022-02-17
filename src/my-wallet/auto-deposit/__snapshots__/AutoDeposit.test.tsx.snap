@@ -1,0 +1,54 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AutoDeposit Component matches the snapshot when loaded 1`] = `
+<div
+  className=""
+>
+  <div
+    className="zippy-cash-container-wrap"
+  >
+    <div
+      className="backdrop backdrop-image-3"
+    />
+    <div
+      className="zippy-cash-container"
+    >
+      <div
+        className="zippy-cash-container-header"
+      >
+        <h1
+          className="title"
+        >
+          Auto Deposit
+        </h1>
+        
+      </div>
+      <div
+        className="zippy-cash-container-body"
+      >
+        <div
+          className="body"
+        >
+          <p>
+            Auto Deposit is a convenient way to automatically put funds into your Zippy Wallet. Your employer, a government agency or other financial institutions can deposit funds directly into your Zippy Wallet account for you.
+          </p>
+          <p>
+            To set up a direct deposit complete a direct deposit form and give it to those who make regular payments to you.
+          </p>
+        </div>
+        <div
+          className="action"
+        >
+          <button
+            className="zippy-btn btn btn-primary"
+            disabled={false}
+            type="button"
+          >
+            Setup Direct Deposit
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
