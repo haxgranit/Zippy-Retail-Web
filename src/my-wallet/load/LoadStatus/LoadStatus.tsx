@@ -72,7 +72,7 @@ export default function LoadStatus({ mode } : { mode: string }) {
                 Your
                 {' '}
                 <NumberFormat
-                  className="amount"
+                  className="amount status-amount"
                   value={state?.amount}
                   defaultValue={0}
                   displayType="text"
@@ -97,7 +97,7 @@ export default function LoadStatus({ mode } : { mode: string }) {
                 Your
                 {' '}
                 <NumberFormat
-                  className="amount"
+                  className="amount status-amount"
                   value={state?.amount}
                   defaultValue={0}
                   displayType="text"
@@ -127,7 +127,7 @@ export default function LoadStatus({ mode } : { mode: string }) {
                   Your
                   {' '}
                   <NumberFormat
-                    className="amount"
+                    className="amount status-amount"
                     value={state?.amount}
                     defaultValue={0}
                     displayType="text"
@@ -153,7 +153,7 @@ export default function LoadStatus({ mode } : { mode: string }) {
                 <br />
                 <b>
                   <NumberFormat
-                    className="amount"
+                    className="amount total-balance"
                     value={account?.balance}
                     defaultValue={0}
                     displayType="text"
