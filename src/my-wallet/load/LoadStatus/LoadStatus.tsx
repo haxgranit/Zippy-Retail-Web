@@ -1,4 +1,3 @@
-import PropTypes from 'prop-types';
 import { Button, Col, Row } from 'react-bootstrap';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { useEffect, useState } from 'react';
@@ -16,7 +15,7 @@ type LocationState = {
   amount: number,
   status: string,
 };
-export default function LoadStatus({ mode } : { mode: string }) {
+export default function LoadStatus() {
   const { instance, accounts } = useMsal();
   const navigate = useNavigate();
   const [state, setState] = useState<LocationState>(useLocation().state as LocationState);
@@ -53,7 +52,7 @@ export default function LoadStatus({ mode } : { mode: string }) {
         <div className="title">
           Fund Transfer
         </div>
-        <div className="text-center">
+        <div className="text-center" style={{ marginTop: 30 }}>
           {state.status === 'pending' && (
           <i className="zippy-cash-icon zc-pending" />
           )}
@@ -77,7 +76,6 @@ export default function LoadStatus({ mode } : { mode: string }) {
                   defaultValue={0}
                   displayType="text"
                   prefix="$ "
-                  suffix=" CAD"
                   thousandSeparator
                   decimalScale={2}
                   fixedDecimalScale
@@ -105,12 +103,9 @@ export default function LoadStatus({ mode } : { mode: string }) {
                   thousandSeparator
                   decimalScale={2}
                   fixedDecimalScale
-                  suffix=" CAD"
                 />
                 {' '}
                 Zippy
-                {' '}
-                {mode === 'load' ? 'credited' : 'debit'}
                 {' '}
                 request is in process.
 
@@ -132,13 +127,12 @@ export default function LoadStatus({ mode } : { mode: string }) {
                     defaultValue={0}
                     displayType="text"
                     prefix="$ "
-                    suffix=" CAD"
                     thousandSeparator
                     decimalScale={2}
                     fixedDecimalScale
                   />
                   {' '}
-                  Zippy credit request
+                  Zippy request
                   has been failed.
                 </p>
               </Col>
@@ -158,14 +152,11 @@ export default function LoadStatus({ mode } : { mode: string }) {
                     defaultValue={0}
                     displayType="text"
                     prefix="$ "
-                    suffix=" CAD"
                     thousandSeparator
                     decimalScale={2}
                     fixedDecimalScale
                   />
                   {' '}
-                  $
-                  {account?.balance}
                 </b>
               </p>
             </Col>
@@ -195,10 +186,6 @@ export default function LoadStatus({ mode } : { mode: string }) {
     </PageContainer>
   );
 }
-
-LoadStatus.propTypes = {
-  mode: PropTypes.string,
-};
 
 LoadStatus.defaultProps = {
   mode: 'load',

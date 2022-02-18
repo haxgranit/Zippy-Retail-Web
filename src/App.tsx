@@ -26,7 +26,6 @@ import PersonalProfile from './PersonalProfile';
 import ScrollToTop from './ScrollToTop';
 import i18n from './i18n/config';
 import { Version } from './Version';
-import LoadStatus from './my-wallet/load/LoadStatus/LoadStatus';
 import LoadInitiate from './my-wallet/load/LoadInitiate/LoadInitiate';
 import TransferDetails from './my-wallet/load/TransferDetails/TransferDetails';
 import TransactionStatusList from './my-wallet/status/TransactionStatusList/TransactionStatusList';
@@ -38,6 +37,7 @@ import Account from './my-account/account/Account';
 import DownloadTransactions from './my-account/download-transactions/DownloadTransactions';
 import ViewEstatements from './my-account/view-estatements/ViewEstatements';
 import CustomerServices from './customer-services/CustomerServices';
+import LoadStatus from './my-wallet/load/LoadStatus/LoadStatus';
 
 export default function App() {
   const dispatch = useAppDispatch();
