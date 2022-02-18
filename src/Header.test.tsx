@@ -24,7 +24,7 @@ const component = (
   <BrowserRouter>
     <HeaderPure
       account={SampleData}
-      userFullName=""
+      user={undefined}
       isAuthenticated
       isInProgress={false}
       handleLogin={() => {}}

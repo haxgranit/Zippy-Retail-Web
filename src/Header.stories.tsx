@@ -10,7 +10,7 @@ export default {
 } as ComponentMeta<typeof HeaderPure>;
 
 const Template: ComponentStory<typeof HeaderPure> = ({
-  userFullName,
+  user,
   isAuthenticated,
   isInProgress: canLogin,
   handleLogin,
@@ -23,7 +23,7 @@ const Template: ComponentStory<typeof HeaderPure> = ({
       isInProgress={canLogin}
       handleLogin={handleLogin}
       handleLogout={handleLogout}
-      userFullName={userFullName}
+      user={user}
     />
   </BrowserRouter>
 );

@@ -71,28 +71,6 @@ exports[`Header Component matches the snapshot 1`] = `
             </div>
           </div>
         </div>
-        <div
-          className="nav-node-wrap"
-        >
-          <div
-            className="nav-node"
-          >
-            <div
-              className="nav-item dropdown"
-            >
-              <a
-                aria-expanded={false}
-                className="dropdown-toggle nav-link"
-                onClick={[Function]}
-                onKeyDown={[Function]}
-                role="button"
-                tabIndex={0}
-              >
-                header.login
-              </a>
-            </div>
-          </div>
-        </div>
       </div>
     </div>
   </div>
