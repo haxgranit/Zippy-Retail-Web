@@ -40,6 +40,11 @@ exports[`TransactionComplete Component matches the snapshot 1`] = `
           </div>
           <div
             className="text-center"
+            style={
+              Object {
+                "marginTop": 30,
+              }
+            }
           />
           <div
             className="details"
