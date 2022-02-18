@@ -10,24 +10,25 @@ import { useAppDispatch, useAppSelector } from './app/hooks';
 import { loginRequest } from './authConfig';
 import { selectUser, unload } from './features/user/userSlice';
 import ZippyCashLogo from './assets/img/general/ZippyCash_Logo.png';
-import Api, { Account } from './api';
+import Api, { Account, User } from './api';
 
 export const HeaderPure = ({
   account,
   isAuthenticated,
-  userFullName,
+  user,
   isInProgress,
   handleLogin,
   handleLogout,
 }: {
   account: Account | undefined,
   isAuthenticated: boolean,
-  userFullName: string,
+  user: User | undefined,
   isInProgress: boolean,
   handleLogin: () => void,
   handleLogout: () => void
 }) => {
   const { i18n, t } = useTranslation();
+  const getFullName = () => (user && user.firstName && user.lastName ? `${user.firstName} ${user.lastName}` : '');
 
   return (
     <nav className={`header-layout navbar navbar-expand-lg navbar-light ${!isAuthenticated && 'container'}`}>
@@ -53,7 +54,7 @@ export const HeaderPure = ({
         </button>
         <div className="collapse navbar-collapse flex-md-column nav-uppercase" id="navbarSupportedContent">
           <div className="navbar-nav">
-            {(isAuthenticated && (
+            {(isAuthenticated && account && (
               <div className="nav-node-wrap wallet-balance">
                 <div className="nav-node">
                   <i className="zippy-cash-icon zc-wallet" />
@@ -88,17 +89,18 @@ export const HeaderPure = ({
                 </NavDropdown>
               </div>
             </div>
-            {(isAuthenticated && (
+            {isAuthenticated && user && (
               <div className="nav-node-wrap">
                 <div className="nav-node">
-                  <NavDropdown title={userFullName || t('header.login')}>
+                  <NavDropdown title={getFullName() || t('header.login')}>
                     <NavDropdown.Item onClick={() => handleLogout()} className="nav-dropdown-item">
                       {t('header.logout')}
                     </NavDropdown.Item>
                   </NavDropdown>
                 </div>
               </div>
-            )) || (
+            )}
+            {!isAuthenticated && (
               !isInProgress && (
                 <div className="nav-node-wrap">
                   <div className="nav-node">
@@ -138,7 +140,6 @@ export const Header = () => {
   const dispatch = useAppDispatch();
   const isInProgress = inProgress === InteractionStatus.Startup
       || inProgress === InteractionStatus.HandleRedirect;
-  const getFullName = () => (user && user.firstName && user.lastName ? `${user.firstName} ${user.lastName}` : '');
   const handleLogin = () => instance.loginRedirect(loginRequest);
   const handleLogout = () => {
     dispatch(unload());
@@ -158,7 +159,7 @@ export const Header = () => {
   return (
     <HeaderPure
       account={account}
-      userFullName={getFullName()}
+      user={user}
       isAuthenticated={isAuthenticated}
       isInProgress={isInProgress}
       handleLogin={handleLogin}

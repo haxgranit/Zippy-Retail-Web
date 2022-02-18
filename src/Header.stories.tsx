@@ -9,8 +9,23 @@ export default {
   component: HeaderPure,
 } as ComponentMeta<typeof HeaderPure>;
 
+const SampleData = {
+  id: 12,
+  name: '8000 335 000000012',
+  balance: 1018.35,
+};
+
+const SampleUser = {
+  email: 'sample@zippy.cash',
+  firstName: 'Sample',
+  lastName: 'Test',
+  stateOrProvince: 'Ontario',
+  signupIsBusiness: false,
+};
+
 const Template: ComponentStory<typeof HeaderPure> = ({
-  userFullName,
+  account,
+  user,
   isAuthenticated,
   isInProgress: canLogin,
   handleLogin,
@@ -18,12 +33,12 @@ const Template: ComponentStory<typeof HeaderPure> = ({
 }) => (
   <BrowserRouter>
     <HeaderPure
-      account={undefined}
+      account={account}
       isAuthenticated={isAuthenticated}
       isInProgress={canLogin}
       handleLogin={handleLogin}
       handleLogout={handleLogout}
-      userFullName={userFullName}
+      user={user}
     />
   </BrowserRouter>
 );
@@ -34,9 +49,15 @@ LoggedOut.args = {};
 export const LoggingIn = Template.bind({});
 LoggingIn.args = {
   isInProgress: true,
+  account: SampleData,
+  user: SampleUser,
+  isAuthenticated: true,
 };
 
 export const LoggedIn = Template.bind({});
 LoggedIn.args = {
+  isInProgress: false,
+  account: SampleData,
+  user: SampleUser,
   isAuthenticated: true,
 };
