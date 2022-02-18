@@ -39,6 +39,12 @@ describe('Header Component', () => {
     expect(tree).toMatchSnapshot();
   });
 
+  it('should contain the balance with respect to the sample data', async () => {
+    render(component);
+    const balance = await screen.findByText('$1,018.35');
+    expect(balance.innerHTML).toBe('$1,018.35');
+  });
+
   it('can change language to English (Canada)', async () => {
     render(component);
     (await screen.findByText('header.language')).click();
