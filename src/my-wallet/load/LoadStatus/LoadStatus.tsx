@@ -75,7 +75,8 @@ export default function LoadStatus() {
                   value={state?.amount}
                   defaultValue={0}
                   displayType="text"
-                  prefix="$ "
+                  prefix="$"
+                  suffix=""
                   thousandSeparator
                   decimalScale={2}
                   fixedDecimalScale
@@ -99,10 +100,11 @@ export default function LoadStatus() {
                   value={state?.amount}
                   defaultValue={0}
                   displayType="text"
-                  prefix="$ "
+                  prefix="$"
                   thousandSeparator
                   decimalScale={2}
                   fixedDecimalScale
+                  suffix=""
                 />
                 {' '}
                 Zippy
@@ -126,7 +128,8 @@ export default function LoadStatus() {
                     value={state?.amount}
                     defaultValue={0}
                     displayType="text"
-                    prefix="$ "
+                    prefix="$"
+                    suffix=""
                     thousandSeparator
                     decimalScale={2}
                     fixedDecimalScale
@@ -151,7 +154,8 @@ export default function LoadStatus() {
                     value={account?.balance}
                     defaultValue={0}
                     displayType="text"
-                    prefix="$ "
+                    prefix="$"
+                    suffix=""
                     thousandSeparator
                     decimalScale={2}
                     fixedDecimalScale
