@@ -1,0 +1,30 @@
+.load-status-container {
+    i {
+        &.zippy-cash-icon {
+            &.zc-completed:after {
+                background: $color-green;
+                -webkit-mask-image: url("../assets/img/icons/status-icons/completed.svg");
+                mask-image: url("../assets/img/icons/status-icons/completed.svg");
+                width: 33px;
+                height: 33px;
+            }
+
+            &.zc-cancelled:after,
+            &.zc-failed:after {
+                background: $color-red;
+                -webkit-mask-image: url("../assets/img/icons/status-icons/failed.svg");
+                mask-image: url("../assets/img/icons/status-icons/failed.svg");
+                width: 33px;
+                height: 33px;
+            }
+
+            &.zc-pending:after {
+                background: $color-dark-gray;
+                -webkit-mask-image: url("../assets/img/icons/status-icons/pending.svg");
+                mask-image: url("../assets/img/icons/status-icons/pending.svg");
+                width: 33px;
+                height: 33px;
+            }
+        } 
+    }    
+}

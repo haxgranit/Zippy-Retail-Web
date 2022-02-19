@@ -50,7 +50,7 @@ export default function LoadInitiate({ mode } : { mode: 'load' | 'get' }) {
       .postFundingSourceTransaction(fundRequest, selectedAccount.id)
       .then((resp:FundingSourceTransactionResponce) => {
         setIsLoading(false);
-        navigate('/my-wallet/load/status', {
+        navigate(`/my-wallet/${mode}/status`, {
           state: {
             ...fundRequest, status: resp.status, id: resp.id, sourceId: selectedAccount.id,
           },
@@ -59,7 +59,7 @@ export default function LoadInitiate({ mode } : { mode: 'load' | 'get' }) {
       .catch((error) => {
         console.log('error', error);
         setIsLoading(false);
-        navigate('/my-wallet/load/status', {
+        navigate(`/my-wallet/${mode}/status`, {
           state: { ...fundRequest, status: 'failed', sourceId: selectedAccount.id },
         });
       });

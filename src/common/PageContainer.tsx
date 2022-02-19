@@ -6,8 +6,12 @@ function PageContainer({
   subTitle,
   backdropImage,
   children,
+  showClose,
+  closeHandler,
 }: {
   className?: string;
+  showClose: boolean,
+  closeHandler: Function,
   title?: string;
   subTitle?: string;
   backdropImage?: string;
@@ -20,6 +24,16 @@ function PageContainer({
           <div className={`backdrop ${backdropImage || ''}`} />
           <div className="zippy-cash-container">
             <div className="zippy-cash-container-header">
+              {showClose && (
+                <i
+                  aria-label="close"
+                  tabIndex={0}
+                  className="zippy-cash-icon zc-cross"
+                  role="button"
+                  onClick={() => closeHandler?.()}
+                  onKeyUp={() => { }}
+                />
+              )}
               {title && <h1 className="title">{title}</h1>}
               {subTitle && <h2 className="catch">{subTitle}</h2>}
             </div>
@@ -35,6 +49,8 @@ function PageContainer({
 
 PageContainer.propTypes = {
   className: PropTypes.string,
+  showClose: PropTypes.bool,
+  closeHandler: PropTypes.func,
   title: PropTypes.string,
   subTitle: PropTypes.string,
   backdropImage: PropTypes.string,
@@ -42,6 +58,8 @@ PageContainer.propTypes = {
 
 PageContainer.defaultProps = {
   className: '',
+  showClose: false,
+  closeHandler: () => {},
   title: '',
   subTitle: '',
   backdropImage: '',

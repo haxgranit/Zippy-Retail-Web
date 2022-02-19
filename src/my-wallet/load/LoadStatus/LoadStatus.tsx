@@ -47,10 +47,15 @@ export default function LoadStatus() {
   }, [user]);
 
   return (
-    <PageContainer title="Your Wallet" subTitle="Made Fun With Zippy!">
-      <div className="body">
+    <PageContainer
+      title="Your Wallet"
+      subTitle="Made Fun With Zippy!"
+      showClose
+      closeHandler={() => navigate(`/my-wallet/${state?.isCredit ? 'get' : 'load'}`)}
+    >
+      <div className="body load-status-container">
         <div className="title">
-          Fund Transfer
+          Funds Transfer
         </div>
         <div className="text-center" style={{ marginTop: 30 }}>
           {state.status === 'pending' && (

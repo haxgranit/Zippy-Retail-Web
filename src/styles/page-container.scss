@@ -77,6 +77,14 @@
       display: flex;
       flex-direction: column;
 
+      i.zc-cross {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        margin-right: 27px;
+        cursor: pointer;
+      }
+
       .title {
         align-self: center;
         font-style: normal;
