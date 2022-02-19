@@ -16,6 +16,14 @@ exports[`TransactionComplete Component matches the snapshot 1`] = `
       <div
         className="zippy-cash-container-header"
       >
+        <i
+          aria-label="close"
+          className="zippy-cash-icon zc-cross"
+          onClick={[Function]}
+          onKeyUp={[Function]}
+          role="button"
+          tabIndex={0}
+        />
         <h1
           className="title"
         >
@@ -31,12 +39,12 @@ exports[`TransactionComplete Component matches the snapshot 1`] = `
         className="zippy-cash-container-body"
       >
         <div
-          className="body"
+          className="body load-status-container"
         >
           <div
             className="title"
           >
-            Fund Transfer
+            Funds Transfer
           </div>
           <div
             className="text-center"
