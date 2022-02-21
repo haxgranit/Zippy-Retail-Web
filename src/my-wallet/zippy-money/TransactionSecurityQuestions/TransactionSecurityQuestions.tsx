@@ -27,14 +27,27 @@ export default function TransactionSecurityQuestions({
       return;
     }
 
+    const validChars = /^[0-9a-zA-ZÀ-ÿ-]+$/;
+    if (!mainInfo.securityAnswer.match(validChars)) {
+      setErrorMessage('Security Question Answer can contain letters, digits, hyphens and French characters.');
+      return;
+    }
+
+    if (mainInfo.securityQuestion.length > 40) {
+      setErrorMessage('Security Question cannot be longer than 40 characters.');
+      return;
+    }
+
+    if (mainInfo.securityAnswer.length < 3 && mainInfo.securityAnswer.length > 25) {
+      setErrorMessage('Security Question Answer length must be between 3 and 25 characters.');
+      return;
+    }
+
     if (mainInfo.securityAnswer !== confirmAnswer) {
       setErrorMessage('Confirm answer does not match the Security password');
       return;
     }
 
-    if (mainInfo.securityQuestion.length > 40 || mainInfo.securityAnswer !== confirmAnswer) {
-      return;
-    }
     setErrorMessage('');
     handleTriggerTransaction();
   };
