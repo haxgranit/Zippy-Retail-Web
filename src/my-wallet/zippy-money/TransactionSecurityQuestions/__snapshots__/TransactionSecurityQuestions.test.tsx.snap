@@ -42,12 +42,16 @@ exports[`TransactionSecurityQuestions Component matches the snapshot 1`] = `
             className="security-question"
           >
             <input
+              aria-autocomplete="none"
+              autoComplete="off"
               className="form-control"
               onChange={[Function]}
               placeholder="Create a security question (Up to 40 Char.)"
               value="security Question"
             />
             <input
+              aria-autocomplete="none"
+              autoComplete="off"
               className="form-control"
               onChange={[Function]}
               placeholder="Security Answer (No Space)"
@@ -55,6 +59,8 @@ exports[`TransactionSecurityQuestions Component matches the snapshot 1`] = `
               value="security Answer"
             />
             <input
+              aria-autocomplete="none"
+              autoComplete="off"
               className="form-control"
               onChange={[Function]}
               placeholder="Re-enter Security Answer"
@@ -63,6 +69,7 @@ exports[`TransactionSecurityQuestions Component matches the snapshot 1`] = `
             />
           </div>
         </div>
+        
         <div
           className="action"
         >
