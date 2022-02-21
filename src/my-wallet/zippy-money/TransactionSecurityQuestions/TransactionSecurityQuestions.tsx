@@ -22,7 +22,7 @@ export default function TransactionSecurityQuestions({
       return;
     }
 
-    if (!/^\s+$/.test(mainInfo.securityAnswer || '')) {
+    if (/^\s*$/.test(mainInfo.securityAnswer || '')) {
       setErrorMessage('Please fill in security answer');
       return;
     }
