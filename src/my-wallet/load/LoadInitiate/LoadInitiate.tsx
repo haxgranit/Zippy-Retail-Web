@@ -45,12 +45,13 @@ export default function LoadInitiate({ mode } : { mode: 'load' | 'get' }) {
       amount,
       isCredit: mode === 'get',
     };
+    const statusUrl = `/my-wallet/${mode}/status`;
     setIsLoading(true);
     new Api(instance, accounts[0])
       .postFundingSourceTransaction(fundRequest, selectedAccount.id)
       .then((resp:FundingSourceTransactionResponce) => {
         setIsLoading(false);
-        navigate(`/my-wallet/${mode}/status`, {
+        navigate(statusUrl, {
           state: {
             ...fundRequest, status: resp.status, id: resp.id, sourceId: selectedAccount.id,
           },
@@ -59,7 +60,7 @@ export default function LoadInitiate({ mode } : { mode: 'load' | 'get' }) {
       .catch((error) => {
         console.log('error', error);
         setIsLoading(false);
-        navigate(`/my-wallet/${mode}/status`, {
+        navigate(statusUrl, {
           state: { ...fundRequest, status: 'failed', sourceId: selectedAccount.id },
         });
       });
