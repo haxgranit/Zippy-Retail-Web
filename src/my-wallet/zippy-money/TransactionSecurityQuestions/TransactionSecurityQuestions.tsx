@@ -17,18 +17,17 @@ export default function TransactionSecurityQuestions({
 }: Pick<TransactionInterface, 'mainInfo' | 'setMainInfo' | 'handleTriggerTransaction' | 'isProcessing' | 'errorMessage' | 'setErrorMessage'>) {
   const [confirmAnswer, setConfirmAnswer] = useState<string>('');
   const handleSubmit = () => {
-    if (!mainInfo.securityQuestion || mainInfo.securityQuestion === '') {
+    if (/^\s*$/.test(mainInfo.securityQuestion || '')) {
       setErrorMessage('Please fill in security question.');
       return;
     }
 
-    if (!mainInfo.securityAnswer || mainInfo.securityAnswer === '') {
+    if (!/^\s+$/.test(mainInfo.securityAnswer || '')) {
       setErrorMessage('Please fill in security answer');
       return;
     }
 
-    const validChars = /^[0-9a-zA-ZÀ-ÿ-]+$/;
-    if (!mainInfo.securityAnswer.match(validChars)) {
+    if (!mainInfo.securityAnswer.match(/^[0-9a-zA-ZÀ-ÿ-]+$/)) {
       setErrorMessage('Security Question Answer can contain letters, digits, hyphens and French characters.');
       return;
     }
