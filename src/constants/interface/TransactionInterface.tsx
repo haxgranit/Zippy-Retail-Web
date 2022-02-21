@@ -8,7 +8,7 @@ import {
   Transaction,
   User,
 } from '../../api';
-import { TunnelTypeEnum } from '../enum/TunnelTypeEnum';
+import { TransactionMethodTypeEnum } from '../enum/TransactionMethodTypeEnum';
 
 export interface TransactionInterface {
   contactList: Array<Contact>;
@@ -29,8 +29,7 @@ export interface TransactionInterface {
   user?: User;
   transaction?: Transaction;
   transactionId?: number;
-  tunnelType?: TunnelTypeEnum;
-  setTunnelType: Dispatch<SetStateAction<TunnelTypeEnum>>;
+  transactionMethod?: TransactionMethodTypeEnum;
   note: string;
   setNote: Dispatch<SetStateAction<string>>;
   setErrorMessage: Dispatch<SetStateAction<string>>,

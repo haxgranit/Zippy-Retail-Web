@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import PageContainer from '../../../common/PageContainer';
 import { TransactionInterface } from '../../../constants/interface/TransactionInterface';
 import { TransactionTypeEnum } from '../../../constants/enum/TransactionTypeEnum';
-import { TunnelTypeEnum } from '../../../constants/enum/TunnelTypeEnum';
+import { TransactionMethodTypeEnum } from '../../../constants/enum/TransactionMethodTypeEnum';
 import ContactInput from '../../../common/ContactInput/ContactInput';
 import AmountInput from '../../../common/AmountInput';
 import Alert from '../../../common/Alert';
@@ -18,16 +18,15 @@ export default function TransactionStart({
   setMainInfo,
   selectedContact,
   setSelectedContact,
-  tunnelType,
-  setTunnelType,
+  transactionMethod,
   note,
   setNote,
   errorMessage,
   setErrorMessage,
 }: TransactionInterface) {
   const navigate = useNavigate();
-
-  const validate = () => transactionType && selectedContact.id && mainInfo.amount && tunnelType;
+  const validate = () => transactionType && selectedContact.id
+      && mainInfo.amount && transactionMethod;
 
   return (
     <>
@@ -40,14 +39,14 @@ export default function TransactionStart({
           <div className="zippy-btn-group btn-group" role="group" aria-label="Zippy Cash">
             <Button
               className={transactionType === TransactionTypeEnum.SEND ? 'active' : ''}
-              onClick={() => navigate(`/my-wallet/zippy-money/${TransactionTypeEnum.SEND}/transaction-start`)}
+              onClick={() => navigate(`/my-wallet/zippy-money/${transactionMethod}/${TransactionTypeEnum.SEND}/transaction-start`)}
               disabled={transactionType === TransactionTypeEnum.SEND}
             >
               Send Money
             </Button>
             <Button
               className={transactionType === TransactionTypeEnum.REQUEST ? 'active' : ''}
-              onClick={() => navigate(`/my-wallet/zippy-money/${TransactionTypeEnum.REQUEST}/transaction-start`)}
+              onClick={() => navigate(`/my-wallet/zippy-money/${transactionMethod}/${TransactionTypeEnum.REQUEST}/transaction-start`)}
               disabled={transactionType === TransactionTypeEnum.REQUEST}
             >
               Request Money
@@ -76,9 +75,8 @@ export default function TransactionStart({
               className="actions"
               label="Zippy.Cash"
               name="actions2"
-              onChange={() => setTunnelType(TunnelTypeEnum.ZIPPY_CASH)}
-              checked={tunnelType === TunnelTypeEnum.ZIPPY_CASH}
-              disabled
+              onChange={() => navigate(`/my-wallet/zippy-money/${TransactionMethodTypeEnum.ZIPPY_CASH}/${transactionType}/transaction-start`)}
+              checked={transactionMethod === TransactionMethodTypeEnum.ZIPPY_CASH}
             />
             <Form.Check
               id="interac-e-transfer"
@@ -86,8 +84,8 @@ export default function TransactionStart({
               className="actions"
               label="Interac® e-Transfer"
               name="actions2"
-              onChange={() => setTunnelType(TunnelTypeEnum.INTERAC_E_TRANSFER)}
-              checked={tunnelType === TunnelTypeEnum.INTERAC_E_TRANSFER}
+              onChange={() => navigate(`/my-wallet/zippy-money/${TransactionMethodTypeEnum.INTERAC_E_TRANSFER}/${transactionType}/transaction-start`)}
+              checked={transactionMethod === TransactionMethodTypeEnum.INTERAC_E_TRANSFER}
             />
           </div>
         </div>
@@ -106,6 +104,12 @@ export default function TransactionStart({
             Zipp It
           </Button>
         </div>
+        {transactionMethod === TransactionMethodTypeEnum.INTERAC_E_TRANSFER && (
+          <div className="note">
+            <strong>Note:</strong>
+            Your use of Interac® e-Transfer is subject to these Terms and Conditions.
+          </div>
+        )}
       </PageContainer>
     </>
   );

@@ -25,6 +25,7 @@ import Personal from './Personal';
 import PersonalProfile from './PersonalProfile';
 import ScrollToTop from './ScrollToTop';
 import i18n from './i18n/config';
+import LoadStatus from './my-wallet/load/LoadStatus/LoadStatus';
 import { Version } from './Version';
 import LoadInitiate from './my-wallet/load/LoadInitiate/LoadInitiate';
 import TransferDetails from './my-wallet/load/TransferDetails/TransferDetails';
@@ -37,7 +38,6 @@ import Account from './my-account/account/Account';
 import DownloadTransactions from './my-account/download-transactions/DownloadTransactions';
 import ViewEstatements from './my-account/view-estatements/ViewEstatements';
 import CustomerServices from './customer-services/CustomerServices';
-import LoadStatus from './my-wallet/load/LoadStatus/LoadStatus';
 
 export default function App() {
   const dispatch = useAppDispatch();
@@ -76,7 +76,7 @@ export default function App() {
           <Route path="my-wallet">
             <Route path="/my-wallet" element={<MyWallet />} />
             <Route path="zippy-money" element={<ZippyTransaction />}>
-              <Route path=":transactionType/:step" element={<ZippyTransaction />}>
+              <Route path=":transactionMethod/:transactionType/:step" element={<ZippyTransaction />}>
                 <Route path=":transactionId" element={<ZippyTransaction />} />
               </Route>
             </Route>
@@ -113,7 +113,6 @@ export default function App() {
         <Route path="personal" element={<Personal />} />
         <Route path="personal-profile" element={<PersonalProfile />} />
       </Routes>
-      <Version />
     </main>
   );
 }

@@ -57,6 +57,7 @@ export type Transaction = {
   securityQuestion?: string;
   securityAnswer?: string;
   type?: string;
+  createdDate?: string;
 };
 
 export type InteracEtransferTransaction = {

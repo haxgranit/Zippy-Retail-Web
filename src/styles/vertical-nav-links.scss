@@ -9,12 +9,16 @@
     .vertical-nav {
         position: sticky;
         width: 240px;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
         left: 0;
         top: 0;
         background: $color-white;
         border-radius: 0 0 10px 0;
         border-right: $color-gray-20 solid 1px;
         border-bottom: $color-gray-20 solid 1px;
+        padding-bottom: 50px;
 
         .nav-link,
         .nav-link:visited,
@@ -111,6 +115,9 @@
             line-height: 18px;
             margin: 60px 20px 15px;
             color: $color-gray-40;
+            position: absolute;
+            bottom: 0;
+            left: 0;
         }
     }
 }

@@ -1,6 +1,7 @@
 import Nav from 'react-bootstrap/Nav';
 import { Link, NavLink, useLocation } from 'react-router-dom';
 import ZippyCashLogo from '../assets/img/general/ZippyCash_Logo.svg';
+import { Version } from '../Version';
 
 export default function VerticalNavLinks() {
   const { pathname } = useLocation();
@@ -59,7 +60,10 @@ export default function VerticalNavLinks() {
           <i className="zippy-cash-icon zc-contact-us" />
           Contact Us
         </Nav.Link>
-        <div className="copyright">© 2021 Zippy Cash LLC</div>
+        <div className="copyright">
+          <Version />
+          © 2021 Zippy Cash LLC
+        </div>
       </Nav>
     </div>
   );

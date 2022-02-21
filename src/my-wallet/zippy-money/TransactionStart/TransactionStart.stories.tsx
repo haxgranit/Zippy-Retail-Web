@@ -29,7 +29,6 @@ const Template: ComponentStory<typeof TransactionStart> = () => (
       setSelectedContact={jest.fn()}
       step={SendMoneyStepsEnum.TRANSACTION_START}
       transactionType={TransactionTypeEnum.SEND}
-      setTunnelType={jest.fn()}
       setNote={jest.fn()}
       note=""
     />

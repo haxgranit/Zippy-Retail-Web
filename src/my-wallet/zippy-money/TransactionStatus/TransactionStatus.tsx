@@ -12,7 +12,8 @@ export default function TransactionStatus({
   transaction,
   transactionType,
   resetMainInfo,
-}: Pick<TransactionInterface, 'user' | 'transaction' | 'transactionType' | 'resetMainInfo'>) {
+  transactionMethod,
+}: Pick<TransactionInterface, 'user' | 'transaction' | 'transactionType' | 'resetMainInfo' | 'transactionMethod'>) {
   const navigate = useNavigate();
 
   const getUserFullName = (contact: Contact | undefined) => {
@@ -79,7 +80,7 @@ export default function TransactionStatus({
           </Button>
           <Button
             className="zippy-btn btn-neutral"
-            onClick={() => navigate(`/my-wallet/zippy-money/${transactionType}/transaction-details/${transaction?.id}`)}
+            onClick={() => navigate(`/my-wallet/zippy-money/${transactionMethod}/${transactionType}/transaction-details/${transaction?.id}`)}
           >
             View Transfer Details
           </Button>
