@@ -170,6 +170,8 @@ class CustomError extends Error {
     this.date = Date.now();
     this.stack = params;
     this.message = errorTitle;
+
+    console.log({ 'API-Error': this });
   }
 }
 

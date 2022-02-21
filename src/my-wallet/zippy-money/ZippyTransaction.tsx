@@ -108,8 +108,7 @@ export default function ZippyTransaction() {
         loadTransaction(Number(res.id), TunnelTypeEnum.INTERAC_E_TRANSFER);
         navigate(`/my-wallet/zippy-money/${transactionType}/transaction-status/${res.id}`);
       })
-      .catch((err) => {
-        console.log({ 'API-Error': err });
+      .catch(() => {
         setErrorMessage('Transfer failed');
       })
       .finally(() => {
@@ -135,8 +134,7 @@ export default function ZippyTransaction() {
             navigate(`/my-wallet/zippy-money/${transactionType}/${SendMoneyStepsEnum.TRANSACTION_SECURITY_QUESTIONS}`);
           }
         })
-        .catch((err) => {
-          console.log({ 'API-Error': err });
+        .catch(() => {
           setErrorMessage('Transfer failed');
         })
         .finally(() => {
@@ -153,8 +151,7 @@ export default function ZippyTransaction() {
         loadTransaction(Number(res.id), TunnelTypeEnum.ZIPPY_CASH);
         navigate(`/my-wallet/zippy-money/${transactionType}/transaction-status/${res.id}`);
       })
-      .catch((err) => {
-        console.log({ 'API-Error': err });
+      .catch(() => {
         setErrorMessage('Transfer failed');
       })
       .finally(() => {
