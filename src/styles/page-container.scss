@@ -77,6 +77,14 @@
       display: flex;
       flex-direction: column;
 
+      i.zc-cross {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        margin-right: 27px;
+        cursor: pointer;
+      }
+
       .title {
         align-self: center;
         font-style: normal;
@@ -104,6 +112,7 @@
         background: linear-gradient(83.49deg, $color-orange 31.24%, $color-red 99.49%);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
+        margin-bottom: -5px;
       }
     }
 
@@ -357,7 +366,8 @@
           line-height: 28px;
           text-align: center;
           color: #000000;
-          padding: 0px 60px;
+          padding: 0px 30px;
+          margin-bottom: 21px;
         }
 
         .balance-msg {
@@ -388,6 +398,26 @@
             color: red;
           }
         }
+
+        .status-amount {
+          display: contents;
+          font-style: normal;
+          font-weight: normal;
+          font-size: 20px;
+          line-height: 28px;
+          text-align: center;
+          color: #000000;
+        }
+
+        .total-balance {
+          display: contents;
+          font-style: normal;
+          font-weight: 600;
+          font-size: 24px;
+          line-height: 32px;
+          text-align: center;
+          color: #000000;
+        }
        }
 
       .transaction-detail {
@@ -412,7 +442,7 @@
          p {
           font-style: normal;
           font-weight: 500;
-          font-size: 12px;
+          font-size: 13px;
           line-height: 18px;
           color: #000000;
           margin: 0px;

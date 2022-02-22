@@ -1,8 +1,8 @@
-import PropTypes from 'prop-types';
 import { Button, Col, Row } from 'react-bootstrap';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { useMsal } from '@azure/msal-react';
+import NumberFormat from 'react-number-format';
 import PageContainer from '../../../common/PageContainer';
 import Api, { Account } from '../../../api';
 import { useAppSelector } from '../../../app/hooks';
@@ -15,7 +15,7 @@ type LocationState = {
   amount: number,
   status: string,
 };
-export default function LoadStatus({ mode } : { mode: string }) {
+export default function LoadStatus() {
   const { instance, accounts } = useMsal();
   const navigate = useNavigate();
   const [state, setState] = useState<LocationState>(useLocation().state as LocationState);
@@ -47,12 +47,17 @@ export default function LoadStatus({ mode } : { mode: string }) {
   }, [user]);
 
   return (
-    <PageContainer title="Your Wallet" subTitle="Made Fun With Zippy!">
-      <div className="body">
+    <PageContainer
+      title="Your Wallet"
+      subTitle="Made Fun With Zippy!"
+      showClose
+      closeHandler={() => navigate(`/my-wallet/${state?.isCredit ? 'get' : 'load'}`)}
+    >
+      <div className="body load-status-container">
         <div className="title">
-          Fund Transfer
+          Funds Transfer
         </div>
-        <div className="text-center">
+        <div className="text-center" style={{ marginTop: 30 }}>
           {state.status === 'pending' && (
           <i className="zippy-cash-icon zc-pending" />
           )}
@@ -68,8 +73,19 @@ export default function LoadStatus({ mode } : { mode: string }) {
           <Row>
             <Col xs={12}>
               <p className="status-msg">
-                Your $
-                {state?.amount}
+                Your
+                {' '}
+                <NumberFormat
+                  className="amount status-amount"
+                  value={state?.amount}
+                  defaultValue={0}
+                  displayType="text"
+                  prefix="$"
+                  suffix=""
+                  thousandSeparator
+                  decimalScale={2}
+                  fixedDecimalScale
+                />
                 {' '}
                 credit into your zippy account
               </p>
@@ -82,12 +98,21 @@ export default function LoadStatus({ mode } : { mode: string }) {
               xs={12}
             >
               <p className="status-msg">
-                Your $
-                {state?.amount}
+                Your
+                {' '}
+                <NumberFormat
+                  className="amount status-amount"
+                  value={state?.amount}
+                  defaultValue={0}
+                  displayType="text"
+                  prefix="$"
+                  thousandSeparator
+                  decimalScale={2}
+                  fixedDecimalScale
+                  suffix=""
+                />
                 {' '}
                 Zippy
-                {' '}
-                {mode === 'load' ? 'credited' : 'debit'}
                 {' '}
                 request is in process.
 
@@ -101,10 +126,21 @@ export default function LoadStatus({ mode } : { mode: string }) {
                 xs={12}
               >
                 <p className="status-msg">
-                  Your $
-                  {state?.amount}
+                  Your
                   {' '}
-                  Zippy credit request
+                  <NumberFormat
+                    className="amount status-amount"
+                    value={state?.amount}
+                    defaultValue={0}
+                    displayType="text"
+                    prefix="$"
+                    suffix=""
+                    thousandSeparator
+                    decimalScale={2}
+                    fixedDecimalScale
+                  />
+                  {' '}
+                  Zippy request
                   has been failed.
                 </p>
               </Col>
@@ -118,8 +154,18 @@ export default function LoadStatus({ mode } : { mode: string }) {
                 {' '}
                 <br />
                 <b>
-                  $
-                  {account?.balance}
+                  <NumberFormat
+                    className="amount total-balance"
+                    value={account?.balance}
+                    defaultValue={0}
+                    displayType="text"
+                    prefix="$"
+                    suffix=""
+                    thousandSeparator
+                    decimalScale={2}
+                    fixedDecimalScale
+                  />
+                  {' '}
                 </b>
               </p>
             </Col>
@@ -149,10 +195,6 @@ export default function LoadStatus({ mode } : { mode: string }) {
     </PageContainer>
   );
 }
-
-LoadStatus.propTypes = {
-  mode: PropTypes.string,
-};
 
 LoadStatus.defaultProps = {
   mode: 'load',
