@@ -85,12 +85,14 @@ export default function ZippyTransaction() {
   };
 
   const resetMainInfo = () => {
+    setErrorMessage('');
     setSelectedContact(initialContact);
     setSelectedAccount({} as Account);
     setTunnelType(TunnelTypeEnum.INTERAC_E_TRANSFER);
     setMainInfo(JSON.parse(JSON.stringify(initialMainInfo)));
     navigate(`/my-wallet/zippy-money/${transactionType}/transaction-start`, {
       state: {
+        errorMessage: '',
         selectedContact: 0,
         selectedAccount: 0,
         mainInfo: JSON.parse(JSON.stringify(initialMainInfo)),
@@ -106,7 +108,9 @@ export default function ZippyTransaction() {
         loadTransaction(Number(res.id), TunnelTypeEnum.INTERAC_E_TRANSFER);
         navigate(`/my-wallet/zippy-money/${transactionType}/transaction-status/${res.id}`);
       })
-      .catch(() => setErrorMessage('Transfer failed.'))
+      .catch(() => {
+        setErrorMessage('Transfer failed');
+      })
       .finally(() => {
         setIsProcessing(false);
       });
@@ -130,7 +134,9 @@ export default function ZippyTransaction() {
             navigate(`/my-wallet/zippy-money/${transactionType}/${SendMoneyStepsEnum.TRANSACTION_SECURITY_QUESTIONS}`);
           }
         })
-        .catch(() => setErrorMessage('Transfer failed'))
+        .catch(() => {
+          setErrorMessage('Transfer failed');
+        })
         .finally(() => {
           setIsProcessing(false);
         });
@@ -145,7 +151,9 @@ export default function ZippyTransaction() {
         loadTransaction(Number(res.id), TunnelTypeEnum.ZIPPY_CASH);
         navigate(`/my-wallet/zippy-money/${transactionType}/transaction-status/${res.id}`);
       })
-      .catch(() => setErrorMessage('Transfer failed.'))
+      .catch(() => {
+        setErrorMessage('Transfer failed');
+      })
       .finally(() => {
         setIsProcessing(false);
       });
@@ -218,6 +226,7 @@ export default function ZippyTransaction() {
                 handleTriggerTransaction={handleTriggerTransaction}
                 isProcessing={isProcessing}
                 errorMessage={errorMessage}
+                setErrorMessage={setErrorMessage}
                 mainInfo={mainInfo}
                 setMainInfo={setMainInfo}
                 step={SendMoneyStepsEnum.TRANSACTION_START}
@@ -243,6 +252,8 @@ export default function ZippyTransaction() {
                 setMainInfo={setMainInfo}
                 handleTriggerTransaction={handleTriggerTransaction}
                 isProcessing={isProcessing}
+                errorMessage={errorMessage}
+                setErrorMessage={setErrorMessage}
               />
             );
           case SendMoneyStepsEnum.TRANSACTION_STATUS:

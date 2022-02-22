@@ -127,7 +127,11 @@ i {
         &.zc-alert:after {
             -webkit-mask-image: url("../assets/img/icons/alert.svg");
             mask-image: url("../assets/img/icons/alert.svg");
-            background: white;
+        }
+
+        &.zc-warning:after {
+            -webkit-mask-image: url("../assets/img/icons/warning.svg");
+            mask-image: url("../assets/img/icons/warning.svg");
         }
 
         &.zc-close:after {

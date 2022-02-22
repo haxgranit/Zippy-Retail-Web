@@ -18,6 +18,7 @@ const Template: ComponentStory<typeof TransactionStart> = () => (
       contactList={[]}
       setContactList={jest.fn()}
       errorMessage=""
+      setErrorMessage={jest.fn()}
       handleTriggerTransaction={undefined}
       isProcessing={false}
       mainInfo={MAIN_INFO}

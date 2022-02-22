@@ -16,6 +16,8 @@ const Template: ComponentStory<typeof TransactionSecurityQuestions> = () => (
       setMainInfo={jest.fn()}
       isProcessing={false}
       handleTriggerTransaction={jest.fn()}
+      errorMessage=""
+      setErrorMessage={jest.fn()}
     />
   </BrowserRouter>
 );

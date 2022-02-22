@@ -24,6 +24,8 @@ describe('TransactionSecurityQuestions Component', () => {
           setMainInfo={jest.fn()}
           isProcessing={false}
           handleTriggerTransaction={jest.fn()}
+          errorMessage=""
+          setErrorMessage={jest.fn()}
         />
       </BrowserRouter>,
     ).toJSON();

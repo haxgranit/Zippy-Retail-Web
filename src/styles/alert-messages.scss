@@ -1,0 +1,58 @@
+@import './colors';
+
+.alert-message-container {
+  background: $color-red;
+  border-radius: 6px;
+  padding: 5px 10px;
+  margin: 0 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+
+  .icon-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    .zippy-cash-icon {
+      &.zc-warning {
+        &::after {
+          background-color: $color-white;
+          width: 28px;
+          height: 28px;
+        }
+      }
+    }
+  }
+
+  .alert-message {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    text-transform: capitalize;
+    color: $color-white;
+    width: 100%;
+    text-align: center;
+    padding: 0 10px;
+  }
+
+  .icon-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    .zippy-cash-icon {
+      &.zc-close {
+        &::after {
+          background-color: $color-white;
+          width: 18px;
+          height: 18px;
+        }
+      }
+    }
+  }
+}

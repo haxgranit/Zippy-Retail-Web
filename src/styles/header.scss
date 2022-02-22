@@ -112,7 +112,21 @@ nav {
                     flex-direction: column;
                 }
 
+                @keyframes rightToLeft {
+                    from {
+                        right: 100%;
+                    }
+                    to {
+                        right: 0;
+                    }
+                }
+
                 .nav-node-wrap {
+                    position: relative;
+                    animation-duration: 0.2s;
+                    animation-name: rightToLeft;
+                    transition-timing-function: cubic-bezier(0.42, 0, 0.58, 1);
+
                     &:not(:last-child) {
                         border-right: 1px solid $color-dark-gray;
                     }
@@ -138,8 +152,19 @@ nav {
                         }
 
                         a {
-                            padding: 0;
+                            padding: 5px 10px;
                         }
+                    }
+                }
+
+                .dropdown-menu {
+                    font-style: normal;
+                    font-weight: normal;
+                    font-size: 13px;
+                    padding: 0;
+
+                    .dropdown-item {
+                        padding: 2px;
                     }
                 }
             }

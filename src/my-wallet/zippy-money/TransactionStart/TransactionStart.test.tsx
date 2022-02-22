@@ -27,6 +27,7 @@ describe('TransactionStart Component', () => {
           contactList={[]}
           setContactList={jest.fn()}
           errorMessage=""
+          setErrorMessage={jest.fn()}
           handleTriggerTransaction={undefined}
           isProcessing={false}
           mainInfo={MAIN_INFO}
