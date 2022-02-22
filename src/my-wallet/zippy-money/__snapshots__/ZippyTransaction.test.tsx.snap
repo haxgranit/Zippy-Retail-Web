@@ -85,6 +85,15 @@ exports[`ZippyTransaction Component matches the snapshot 1`] = `
               <div
                 className="contact-container hidden"
               >
+                <button
+                  className="btn-select-contact btn-transparent cross-btn"
+                  onClick={[Function]}
+                  type="button"
+                >
+                  <i
+                    className="zippy-cash-icon zc-cross"
+                  />
+                </button>
                 <div
                   aria-label="Zippy Cash"
                   className="zippy-btn-group btn-group"
