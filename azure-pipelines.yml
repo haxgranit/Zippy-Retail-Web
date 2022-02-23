@@ -6,7 +6,7 @@ pool:
   vmImage: ubuntu-latest
 
 variables:
-  VERSION_MAJOR_MINOR: 0.6
+  VERSION_MAJOR_MINOR: 0.7
 
 jobs:
 - job: Docker
