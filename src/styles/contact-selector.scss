@@ -50,6 +50,11 @@
       -ms-user-select: none;
       user-select: none;
 
+      .cross-btn {
+        display: flex;
+        justify-content: flex-end;
+      }
+      
       &.hidden {
         display: none;
         box-shadow: 0 0 2px 2px $color-white;

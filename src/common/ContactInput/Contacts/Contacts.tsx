@@ -67,6 +67,15 @@ function Contacts({
   return (
     <>
       <div className={`contact-container ${!isNewContact && showContactList ? 'visible' : 'hidden'}`}>
+        <button
+          className="btn-select-contact btn-transparent cross-btn"
+          type="button"
+          onClick={() => {
+            setShowContactList(false);
+          }}
+        >
+          <i className="zippy-cash-icon zc-cross" />
+        </button>
         <div className="zippy-btn-group btn-group" role="group" aria-label="Zippy Cash">
           <Button
             className={contactType === ContactTypeEnum.PERSONAL ? 'active' : ''}
