@@ -12,12 +12,17 @@ const SampleData = {
 
 const mockChangeLanguage = jest.fn();
 jest.mock('react-i18next', () => ({
+  ...(jest.requireActual('react-router-dom') as any),
+  useLocation: () => ({
+    pathname: 'my-account',
+  }),
   useTranslation: () => ({
     i18n: {
       changeLanguage: mockChangeLanguage,
     },
     t: (key: string) => key,
   }),
+  useNavigate: () => jest.fn(),
 }));
 
 const component = (

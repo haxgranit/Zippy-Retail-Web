@@ -19,7 +19,7 @@ exports[`ZippyTransaction Component matches the snapshot 1`] = `
         <h1
           className="title"
         >
-          Personal Account
+          Your Wallet
         </h1>
         <h2
           className="catch"
@@ -229,9 +229,9 @@ exports[`ZippyTransaction Component matches the snapshot 1`] = `
               className="actions form-check"
             >
               <input
-                checked={false}
+                checked={true}
                 className="form-check-input"
-                disabled={true}
+                disabled={false}
                 id="zippy-cash"
                 name="actions2"
                 onChange={[Function]}
@@ -249,7 +249,7 @@ exports[`ZippyTransaction Component matches the snapshot 1`] = `
               className="actions form-check"
             >
               <input
-                checked={true}
+                checked={false}
                 className="form-check-input"
                 disabled={false}
                 id="interac-e-transfer"

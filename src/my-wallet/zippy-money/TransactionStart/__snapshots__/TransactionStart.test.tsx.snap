@@ -19,7 +19,7 @@ exports[`TransactionStart Component matches the snapshot 1`] = `
         <h1
           className="title"
         >
-          Personal Account
+          Your Wallet
         </h1>
         <h2
           className="catch"
@@ -230,7 +230,7 @@ exports[`TransactionStart Component matches the snapshot 1`] = `
               <input
                 checked={false}
                 className="form-check-input"
-                disabled={true}
+                disabled={false}
                 id="zippy-cash"
                 name="actions2"
                 onChange={[Function]}

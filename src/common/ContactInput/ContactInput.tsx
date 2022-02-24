@@ -5,8 +5,8 @@ import {
   SetStateAction,
   useState,
 } from 'react';
-import { Contact } from '../../api';
 import Contacts from './Contacts/Contacts';
+import { Contact } from '../../constants/type/Contact';
 
 function ContactInput({
   contactList,

@@ -11,14 +11,17 @@ import { DateTime } from 'luxon';
 import { Link } from 'react-router-dom';
 import SimpleBar from 'simplebar-react';
 import PageContainer from '../../../common/PageContainer';
-import Api, { Transaction, TransactionStatusEnum, TransferType } from '../../../api';
+import Api from '../../../api';
+import { TransferTypeEnum } from '../../../constants/enum/TransferTypeEnum';
+import { Transaction } from '../../../constants/type/Transaction';
+import { TransactionStatusEnum } from '../../../constants/enum/TransactionStatusEnum';
 
 export default function TransactionStatusList() {
   const { instance, accounts } = useMsal();
   const api = new Api(instance, accounts[0]);
   const [transactions, setTransactions] = useState<Transaction[]>([]);
   const [filteredTransactionList, setFilteredTransactionList] = useState<Transaction[]>([]);
-  const [selectedType, setSelectedType] = useState<TransferType>(TransferType.ALL);
+  const [selectedType, setSelectedType] = useState<TransferTypeEnum>(TransferTypeEnum.ALL);
   const [isProcessing, setIsProcessing] = useState<boolean>(true);
   const [searchValue, setSearchValue] = useState<string>('');
 
@@ -32,7 +35,7 @@ export default function TransactionStatusList() {
     }));
   };
 
-  const getTransations = (type: TransferType) => {
+  const getTransations = (type: TransferTypeEnum) => {
     setSelectedType(type);
     setIsProcessing(true);
     api
@@ -72,11 +75,11 @@ export default function TransactionStatusList() {
   const getTransactionType = (transaction: Transaction): string => {
     const type = transaction.type?.toLowerCase() || selectedType;
     switch (type) {
-      case TransferType.RECEIVE:
+      case TransferTypeEnum.RECEIVE:
         return 'received';
-      case TransferType.SEND:
+      case TransferTypeEnum.SEND:
         return 'sent';
-      case TransferType.REQUEST:
+      case TransferTypeEnum.REQUEST:
         return 'requested';
       default:
         return 'sent';
@@ -96,30 +99,30 @@ export default function TransactionStatusList() {
       >
         <div className="zippy-btn-group btn-group" role="group" aria-label="Zippy Cash">
           <Button
-            className={selectedType === TransferType.ALL ? 'active' : ''}
-            onClick={() => getTransations(TransferType.ALL)}
-            disabled={selectedType === TransferType.ALL}
+            className={selectedType === TransferTypeEnum.ALL ? 'active' : ''}
+            onClick={() => getTransations(TransferTypeEnum.ALL)}
+            disabled={selectedType === TransferTypeEnum.ALL}
           >
             All
           </Button>
           <Button
-            className={selectedType === TransferType.SEND ? 'active' : ''}
-            onClick={() => getTransations(TransferType.SEND)}
-            disabled={selectedType === TransferType.SEND}
+            className={selectedType === TransferTypeEnum.SEND ? 'active' : ''}
+            onClick={() => getTransations(TransferTypeEnum.SEND)}
+            disabled={selectedType === TransferTypeEnum.SEND}
           >
             Send
           </Button>
           <Button
-            className={selectedType === TransferType.RECEIVE ? 'active' : ''}
-            onClick={() => getTransations(TransferType.RECEIVE)}
-            disabled={selectedType === TransferType.RECEIVE}
+            className={selectedType === TransferTypeEnum.RECEIVE ? 'active' : ''}
+            onClick={() => getTransations(TransferTypeEnum.RECEIVE)}
+            disabled={selectedType === TransferTypeEnum.RECEIVE}
           >
             Received
           </Button>
           <Button
-            className={selectedType === TransferType.REQUEST ? 'active' : ''}
-            onClick={() => getTransations(TransferType.REQUEST)}
-            disabled={selectedType === TransferType.REQUEST}
+            className={selectedType === TransferTypeEnum.REQUEST ? 'active' : ''}
+            onClick={() => getTransations(TransferTypeEnum.REQUEST)}
+            disabled={selectedType === TransferTypeEnum.REQUEST}
           >
             Requested
           </Button>

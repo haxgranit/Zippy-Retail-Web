@@ -1,4 +1,4 @@
-import { Contact } from '../api';
+import { Contact } from '../constants/type/Contact';
 
 const CONTACTS : Contact[] = [
   {

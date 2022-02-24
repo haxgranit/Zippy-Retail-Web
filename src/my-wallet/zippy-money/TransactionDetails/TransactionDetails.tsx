@@ -6,7 +6,7 @@ import { DateTime } from 'luxon';
 import PageContainer from '../../../common/PageContainer';
 import { TransactionInterface } from '../../../constants/interface/TransactionInterface';
 import { TransactionTypeEnum } from '../../../constants/enum/TransactionTypeEnum';
-import { TransactionStatusEnum } from '../../../api';
+import { TransactionStatusEnum } from '../../../constants/enum/TransactionStatusEnum';
 
 export default function TransactionDetails({
   user,
@@ -25,14 +25,16 @@ export default function TransactionDetails({
   return (
     <>
       <PageContainer
-        title="Personal Account"
+        title="Your Wallet"
         subTitle="Made Fun With Zippy!"
         backdropImage="backdrop-image-2"
+        showClose
+        closeHandler={resetMainInfo}
       >
         <div className="body">
-          <div className="title">
+          <div className={`title zc-status-${transaction?.status.toLowerCase()}`}>
             {(() => {
-              switch (transaction?.status) {
+              switch (transaction?.status.toLowerCase()) {
                 case TransactionStatusEnum.COMPLETED:
                   return 'Transaction Completed';
                 case TransactionStatusEnum.CANCELLED:
@@ -54,11 +56,11 @@ export default function TransactionDetails({
             </Row>
             <Row>
               <Col xs={6}>Transfer Date</Col>
-              <Col xs={6}>{transaction && transaction.date ? DateTime.fromISO(transaction.date).toUTC().toLocaleString(DateTime.DATE_MED) : ''}</Col>
+              <Col xs={6}>{transaction && transaction.createdDate ? DateTime.fromISO(transaction.createdDate).toUTC().toLocaleString(DateTime.DATE_MED) : ''}</Col>
             </Row>
             <Row>
               <Col xs={6}>Transfer Time (UTC)</Col>
-              <Col xs={6}>{transaction && transaction.date ? DateTime.fromISO(transaction.date).toUTC().toLocaleString(DateTime.TIME_WITH_SECONDS) : ''}</Col>
+              <Col xs={6}>{transaction && transaction.createdDate ? DateTime.fromISO(transaction.createdDate).toUTC().toLocaleString(DateTime.TIME_WITH_SECONDS) : ''}</Col>
             </Row>
             <Row>
               <Col xs={6}>Transfer Amount</Col>
@@ -83,10 +85,12 @@ export default function TransactionDetails({
               </Col>
               <Col xs={6}>{transaction?.id}</Col>
             </Row>
-            <Row>
-              <Col xs={6}>Expiry Date</Col>
-              <Col xs={6}>{transaction && transaction.expireDate ? DateTime.fromISO(transaction.expireDate).toUTC().toLocaleString(DateTime.DATE_MED) : ''}</Col>
-            </Row>
+            {transaction?.expireDate && (
+              <Row>
+                <Col xs={6}>Expiry Date</Col>
+                <Col xs={6}>{transaction && transaction.expireDate ? DateTime.fromISO(transaction.expireDate).toUTC().toLocaleString(DateTime.DATE_MED) : ''}</Col>
+              </Row>
+            )}
           </div>
         </div>
         <div className="action">

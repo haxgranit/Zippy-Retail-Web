@@ -1,143 +1,25 @@
 /* eslint-disable class-methods-use-this */
-/* eslint-disable no-console */
-
-// eslint-disable-next-line max-classes-per-file
 import {
   AccountInfo,
   InteractionRequiredAuthError,
   IPublicClientApplication,
 } from '@azure/msal-browser';
-
-export enum TransactionStatusEnum {
-  COMPLETED = 'completed',
-  PENDING = 'pending',
-  CANCELLED = 'cancelled',
-  FAILED = 'failed',
-  REMINDER = 'reminder',
-}
-
-export enum TransferType {
-  ALL = 'all',
-  SEND = 'send',
-  RECEIVE = 'receive',
-  REQUEST = 'request',
-}
-
-export type Account = {
-  id: number;
-  name: string;
-  balance: number;
-};
-
-export type ContactBase = {
-  firstName: string;
-  lastName: string;
-  email: string;
-  nickname?: string;
-  phone?: string;
-};
-
-export type Contact = ContactBase & {
-  id: number;
-};
-
-export type User = {
-  email: string;
-  firstName: string;
-  lastName: string;
-};
-
-export type Transaction = {
-  status: TransactionStatusEnum;
-  id: number;
-  contact: Contact;
-  amount: number;
-  date: string;
-  expireDate: string;
-  securityQuestion?: string;
-  securityAnswer?: string;
-  type?: string;
-  createdDate?: string;
-};
-
-export type InteracEtransferTransaction = {
-  id?: number,
-  contactId: number,
-  amount: number,
-  type: string,
-  securityQuestion?: string,
-  securityAnswer?: string,
-};
-
-export type ZippyCashTransaction = {
-  id?: number,
-  contactId: number,
-  amount: number,
-  isCredit: boolean,
-  createdDate?: string,
-  note?: string,
-};
-
-export type VersionResponse = {
-  version: string;
-};
-
-export type ErrorDetail = {
-  type: string,
-  title: string,
-  status: number,
-  traceId: string,
-};
-
-export type BankAccount = {
-  institutionNumber: number,
-  transitNumber: number,
-  accountNumber: string,
-};
-
-export type FundingSource = {
-  id:number,
-  displayName: string,
-  isDefault: boolean,
-  bankAccount: BankAccount | null,
-};
-
-export type FundingSourceTransactionRequest = {
-  amount: number,
-  isCredit: boolean
-};
-
-export type FundingSourceRequest = {
-  displayName: string,
-  isDefault: boolean,
-  bankAccount: BankAccount,
-};
-
-export type DCBankEftTransaction = {
-  id: number,
-  DCBankEftCustomerAccountId: number,
-  fundingSourceTransactionId: number,
-  transactionId: number,
-  transactionStatusCode: string
-  transactionStatusId: number
-};
-
-export type FundingSourceTransaction = {
-  id:number,
-  fundingSourceId:number,
-  amount: number,
-  isCredit: boolean,
-  createdDate: string,
-  status: string
-  DCBankEftTransaction: DCBankEftTransaction,
-  fundingSource: FundingSource
-};
-
-export type FundingSourceTransactionResponce = {
-  id: number,
-  amount: number,
-  status: string
-};
+import { TransferTypeEnum } from './constants/enum/TransferTypeEnum';
+import { Account } from './constants/type/Account';
+import { Contact } from './constants/type/Contact';
+import { ContactBase } from './constants/type/ContactBase';
+import { User } from './constants/type/User';
+import { InteracEtransferTransaction } from './constants/type/InteracEtransferTransaction';
+import { Transaction } from './constants/type/Transaction';
+import { ZippyCashTransaction } from './constants/type/ZippyCashTransaction';
+import { VersionResponse } from './constants/type/VersionResponse';
+import { ErrorDetail } from './constants/type/ErrorDetail';
+import { FundingSource } from './constants/type/FundingSource';
+import { FundingSourceTransactionRequest } from './constants/type/FundingSourceTransactionRequest';
+import { FundingSourceRequest } from './constants/type/FundingSourceRequest';
+import { FundingSourceTransaction } from './constants/type/FundingSourceTransaction';
+import { FundingSourceTransactionResponse } from './constants/type/FundingSourceTransactionResponse';
+import CustomError from './custom-error';
 
 export async function getToken(instance: IPublicClientApplication, account: AccountInfo)
   : Promise<string | null> {
@@ -155,25 +37,10 @@ export async function getToken(instance: IPublicClientApplication, account: Acco
     if (error instanceof InteractionRequiredAuthError) {
       await instance.acquireTokenRedirect(accessTokenRequest);
     }
+    /* eslint-disable no-console */
     console.log(error);
   }
   return null;
-}
-
-class CustomError extends Error {
-  private date: number;
-
-  constructor(errorTitle: string, ...params: any) {
-    super(...params);
-    if (Error.captureStackTrace) {
-      Error.captureStackTrace(this, CustomError);
-    }
-    this.date = Date.now();
-    this.stack = params;
-    this.message = errorTitle;
-
-    console.log({ 'API-Error': this });
-  }
 }
 
 export default class Api {
@@ -199,7 +66,7 @@ export default class Api {
   }
 
   public postFundingSourceTransaction(request: FundingSourceTransactionRequest, id: number) {
-    return this.fetch<FundingSourceTransactionResponce>('post', `FundingSources/${id}/Transactions/`, request);
+    return this.fetch<FundingSourceTransactionResponse>('post', `FundingSources/${id}/Transactions/`, request);
   }
 
   public getFundingSourceTransaction(id: number, sourceId: number) {
@@ -214,8 +81,8 @@ export default class Api {
     return this.fetch<User>('put', 'User');
   }
 
-  public getInteracEtransferTransactions(type: TransferType) {
-    if (type === TransferType.ALL) {
+  public getInteracEtransferTransactions(type: TransferTypeEnum) {
+    if (type === TransferTypeEnum.ALL) {
       return this.fetch<Transaction[]>('get', 'InteracEtransfer/Transactions');
     }
     return this.fetch<Transaction[]>('get', `InteracEtransfer/Transactions?type=${type}`);
@@ -241,7 +108,7 @@ export default class Api {
     return this.fetch<InteracEtransferTransaction>('post', 'InteracEtransfer/DirectDepositStatus', { email });
   }
 
-  public getZippyCashTransfer(transactionId: number) {
+  public getTransfer(transactionId: number) {
     return this.fetch<Transaction>('get', `Transfers/${transactionId}`);
   }
 

@@ -1,4 +1,4 @@
-import { Account } from '../api';
+import { Account } from '../constants/type/Account';
 
 const ACCOUNTS: Account[] = [
   {

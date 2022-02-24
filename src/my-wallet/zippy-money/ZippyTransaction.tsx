@@ -2,15 +2,7 @@ import { useNavigate, useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { useMsal } from '@azure/msal-react';
 import { SendMoneyStepsEnum } from '../../constants/enum/SendMoneyStepsEnum';
-import Api, {
-  Account,
-  Contact,
-  InteracEtransferTransaction,
-  Transaction,
-  TransactionStatusEnum,
-  User,
-  ZippyCashTransaction,
-} from '../../api';
+import Api from '../../api';
 import { TransactionMainDetailsInterface } from '../../constants/interface/TransactionMainDetailsInterface';
 import { TransactionTypeEnum } from '../../constants/enum/TransactionTypeEnum';
 import { useAppSelector } from '../../app/hooks';
@@ -21,12 +13,11 @@ import TransactionStatus from './TransactionStatus/TransactionStatus';
 import TransactionSecurityQuestions from './TransactionSecurityQuestions/TransactionSecurityQuestions';
 import TransactionComplete from './TransactionComplete/TransactionComplete';
 import { TransactionMethodTypeEnum } from '../../constants/enum/TransactionMethodTypeEnum';
-
-const initialUser = {
-  firstName: '',
-  lastName: '',
-  email: '',
-} as User;
+import { Account } from '../../constants/type/Account';
+import { Contact } from '../../constants/type/Contact';
+import { Transaction } from '../../constants/type/Transaction';
+import { InteracEtransferTransaction } from '../../constants/type/InteracEtransferTransaction';
+import { ZippyCashTransaction } from '../../constants/type/ZippyCashTransaction';
 
 const initialContact = {
   id: 0,
@@ -66,29 +57,18 @@ export default function ZippyTransaction() {
   const [selectedAccount, setSelectedAccount] = useState<Account>({} as Account);
   const [accountsList, setAccountsList] = useState<Array<Account>>([]);
   const [contactList, setContactList] = useState<Array<Contact>>([]);
-  const [transaction, setTransaction] = useState<Transaction | undefined>(undefined);
+  const [transaction, setTransaction] = useState<Transaction>();
   const [transId, setTransId] = useState<number>(Number(transactionId));
   const [note, setNote] = useState<string>('');
-  const [userState, setUserState] = useState<User>(initialUser);
   const [
     mainInfo, setMainInfo,
   ] = useState<TransactionMainDetailsInterface>(JSON.parse(JSON.stringify(initialMainInfo)));
 
-  const loadTransaction = (id: number, method: TransactionMethodTypeEnum) => {
-    if (method === TransactionMethodTypeEnum.INTERAC_E_TRANSFER) {
-      api.getInteracEtransferTransaction(id)
-        .then((data: Transaction) => setTransaction(data));
-    } else if (method === TransactionMethodTypeEnum.ZIPPY_CASH) {
-      api.getZippyCashTransfer(id)
-        .then((data: Transaction) => {
-          setTransaction({
-            ...data,
-            contact: selectedContact,
-            date: data.createdDate || '',
-            status: TransactionStatusEnum.COMPLETED,
-          });
-        });
-    }
+  const loadTransaction = (id: number) => {
+    api.getTransfer(id)
+      .then((data: Transaction) => {
+        setTransaction(data);
+      });
   };
 
   const resetMainInfo = () => {
@@ -111,7 +91,7 @@ export default function ZippyTransaction() {
       .then((res: InteracEtransferTransaction) => {
         setErrorMessage('');
         setTransId(Number(res.id));
-        loadTransaction(Number(res.id), TransactionMethodTypeEnum.INTERAC_E_TRANSFER);
+        loadTransaction(Number(res.id));
         navigate(`/my-wallet/zippy-money/${transactionMethod}/${transactionType}/transaction-status/${res.id}`);
       })
       .catch(() => {
@@ -154,7 +134,7 @@ export default function ZippyTransaction() {
       .then((res: ZippyCashTransaction) => {
         setErrorMessage('');
         setTransId(Number(res.id));
-        loadTransaction(Number(res.id), TransactionMethodTypeEnum.ZIPPY_CASH);
+        loadTransaction(Number(res.id));
         navigate(`/my-wallet/zippy-money/${transactionMethod}/${transactionType}/transaction-status/${res.id}`);
       })
       .catch(() => {
@@ -194,25 +174,26 @@ export default function ZippyTransaction() {
   };
 
   useEffect(() => {
-    setUserState(user || initialUser);
-    if (transId) {
-      loadTransaction(Number(transId), TransactionMethodTypeEnum.INTERAC_E_TRANSFER);
+    if (user) {
+      new Api(instance, accounts[0])
+        .listAccounts()
+        .then((result: Array<Account>) => setAccountsList(result))
+        .catch(() => {
+          setErrorMessage('Sorry! a problem has occurred when getting accounts.');
+        });
+
+      new Api(instance, accounts[0])
+        .listContacts()
+        .then((result: Array<Contact>) => setContactList(result))
+        .catch(() => {
+          setErrorMessage('Sorry! a problem has occurred when getting contacts.');
+        });
+
+      if (transId) {
+        loadTransaction(Number(transId));
+      }
     }
-
-    new Api(instance, accounts[0])
-      .listAccounts()
-      .then((result: Array<Account>) => setAccountsList(result))
-      .catch(() => {
-        setErrorMessage('Sorry! a problem has occurred when getting accounts.');
-      });
-
-    new Api(instance, accounts[0])
-      .listContacts()
-      .then((result: Array<Contact>) => setContactList(result))
-      .catch(() => {
-        setErrorMessage('Sorry! a problem has occurred when getting contacts.');
-      });
-  }, []);
+  }, [user]);
 
   return (
     <>
@@ -244,7 +225,7 @@ export default function ZippyTransaction() {
           case SendMoneyStepsEnum.TRANSACTION_DETAILS:
             return (
               <TransactionDetails
-                user={userState}
+                user={user}
                 transaction={transaction}
                 transactionType={transactionType as TransactionTypeEnum}
                 resetMainInfo={resetMainInfo}
@@ -264,7 +245,7 @@ export default function ZippyTransaction() {
           case SendMoneyStepsEnum.TRANSACTION_STATUS:
             return (
               <TransactionStatus
-                user={userState}
+                user={user}
                 transaction={transaction}
                 transactionType={transactionType as TransactionTypeEnum}
                 transactionMethod={transactionMethod as TransactionMethodTypeEnum}

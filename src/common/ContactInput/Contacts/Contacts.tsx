@@ -7,10 +7,10 @@ import {
   useState,
 } from 'react';
 import SimpleBar from 'simplebar-react';
-import { Contact } from '../../../api';
 import { ContactTypeEnum } from '../../../constants/enum/ContactTypeEnum';
 import { formatContactName } from '../../../Helpers';
 import AddContact from '../AddContact/AddContact';
+import { Contact } from '../../../constants/type/Contact';
 
 function Contacts({
   contactList,

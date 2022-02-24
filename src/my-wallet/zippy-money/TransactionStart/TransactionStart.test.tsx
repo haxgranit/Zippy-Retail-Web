@@ -4,7 +4,8 @@ import TransactionStart from './TransactionStart';
 import MAIN_INFO from '../../../stories/MainInfo';
 import { SendMoneyStepsEnum } from '../../../constants/enum/SendMoneyStepsEnum';
 import { TransactionTypeEnum } from '../../../constants/enum/TransactionTypeEnum';
-import { Account, Contact } from '../../../api';
+import { Account } from '../../../constants/type/Account';
+import { Contact } from '../../../constants/type/Contact';
 
 const ReactTestRenderer = require('react-test-renderer');
 

@@ -10,7 +10,9 @@ import { useAppDispatch, useAppSelector } from './app/hooks';
 import { loginRequest } from './authConfig';
 import { selectUser, unload } from './features/user/userSlice';
 import ZippyCashLogo from './assets/img/general/ZippyCash_Logo.png';
-import Api, { Account, User } from './api';
+import Api from './api';
+import { Account } from './constants/type/Account';
+import { User } from './constants/type/User';
 
 export const HeaderPure = ({
   account,

@@ -5,7 +5,8 @@ import {
   useState,
 } from 'react';
 import { useMsal } from '@azure/msal-react';
-import Api, { Contact } from '../../../api';
+import Api from '../../../api';
+import { Contact } from '../../../constants/type/Contact';
 
 function AddContact({
   onContactCreated,

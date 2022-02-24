@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
-import { FundingSource } from '../../../api';
 import addIcon from '../../../assets/img/icons/add.svg';
+import { FundingSource } from '../../../constants/type/FundingSource';
 
 export default function SourceOptions(props: any) {
   const ref = useRef<any>();

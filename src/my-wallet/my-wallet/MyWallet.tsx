@@ -3,10 +3,11 @@ import { useEffect, useState } from 'react';
 import NumberFormat from 'react-number-format';
 import { Button, Spinner } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
-import Api, { Account } from '../../api';
+import Api from '../../api';
 import { useAppSelector } from '../../app/hooks';
 import { selectUser } from '../../features/user/userSlice';
 import PageContainer from '../../common/PageContainer';
+import { Account } from '../../constants/type/Account';
 
 export const MyWalletPure = ({ account }: { account: Account | undefined }) => {
   const navigate = useNavigate();
