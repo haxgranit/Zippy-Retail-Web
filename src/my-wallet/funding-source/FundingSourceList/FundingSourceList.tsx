@@ -2,8 +2,9 @@ import { useMsal } from '@azure/msal-react';
 import { useEffect, useState } from 'react';
 import { Button } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
-import Api, { FundingSource } from '../../../api';
+import Api from '../../../api';
 import PageContainer from '../../../common/PageContainer';
+import { FundingSource } from '../../../constants/type/FundingSource';
 
 export default function FundingSourceList() {
   const navigate = useNavigate();
@@ -17,6 +18,7 @@ export default function FundingSourceList() {
       .then((result:FundingSource[]) => {
         setFundingSources(result);
       })
+      // eslint-disable-next-line no-console
       .catch((error) => console.log('error', error));
   }, []);
 

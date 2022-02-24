@@ -3,12 +3,13 @@ import {
 } from 'react';
 import { useParams } from 'react-router-dom';
 import { useIsAuthenticated, useMsal } from '@azure/msal-react';
-import Api, { Transaction } from '../../../api';
+import Api from '../../../api';
 import { useAppSelector } from '../../../app/hooks';
 import { selectUser, UserState } from '../../../features/user/userSlice';
 import { TransactionTypeEnum } from './TransactionTypeEnum';
-import { TransactionStatusEnum } from './TransactionStatusEnum';
 import PageContainer from '../../../common/PageContainer';
+import { Transaction } from '../../../constants/type/Transaction';
+import { TransactionStatusEnum } from '../../../constants/enum/TransactionStatusEnum';
 
 export interface TransactionInterface {
   type: TransactionTypeEnum;

@@ -119,6 +119,17 @@ exports[`HomeLoggedIn Component matches the snapshot 1`] = `
         <div
           className="copyright"
         >
+          <div
+            className="text-end"
+          >
+            <span>
+              App: undefined
+            </span>
+             
+            <span>
+              API: Loading...
+            </span>
+          </div>
           © 2021 Zippy Cash LLC
         </div>
       </div>

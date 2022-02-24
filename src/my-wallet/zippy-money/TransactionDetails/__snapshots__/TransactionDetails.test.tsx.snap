@@ -16,10 +16,18 @@ exports[`TransactionDetails Component matches the snapshot 1`] = `
       <div
         className="zippy-cash-container-header"
       >
+        <i
+          aria-label="close"
+          className="zippy-cash-icon zc-cross"
+          onClick={[Function]}
+          onKeyUp={[Function]}
+          role="button"
+          tabIndex={0}
+        />
         <h1
           className="title"
         >
-          Personal Account
+          Your Wallet
         </h1>
         <h2
           className="catch"
@@ -34,7 +42,7 @@ exports[`TransactionDetails Component matches the snapshot 1`] = `
           className="body"
         >
           <div
-            className="title"
+            className="title zc-status-undefined"
           >
             Transaction Pending
           </div>
@@ -114,20 +122,6 @@ exports[`TransactionDetails Component matches the snapshot 1`] = `
               <div
                 className="col-6"
               />
-            </div>
-            <div
-              className="row"
-            >
-              <div
-                className="col-6"
-              >
-                Expiry Date
-              </div>
-              <div
-                className="col-6"
-              >
-                
-              </div>
             </div>
           </div>
         </div>

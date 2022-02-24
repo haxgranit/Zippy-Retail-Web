@@ -7,11 +7,21 @@ const ReactTestRenderer = require('react-test-renderer');
 
 jest.mock('@azure/msal-react', () => ({
   useIsAuthenticated: () => true,
+  useMsal: () => ({
+    accounts: [null],
+    instance: {
+      acquireTokenSilent: jest.fn(),
+    },
+  }),
 }));
 
 describe('Home Component', () => {
   it('matches the snapshot', () => {
-    const tree = ReactTestRenderer.create(<BrowserRouter><Home /></BrowserRouter>).toJSON();
+    const tree = ReactTestRenderer.create(
+      <BrowserRouter>
+        <Home />
+      </BrowserRouter>,
+    ).toJSON();
     expect(tree).toMatchSnapshot();
   });
 

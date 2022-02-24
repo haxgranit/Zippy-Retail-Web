@@ -2,13 +2,11 @@ import { Dispatch, SetStateAction } from 'react';
 import { TransactionTypeEnum } from '../enum/TransactionTypeEnum';
 import { SendMoneyStepsEnum } from '../enum/SendMoneyStepsEnum';
 import { TransactionMainDetailsInterface } from './TransactionMainDetailsInterface';
-import {
-  Account,
-  Contact,
-  Transaction,
-  User,
-} from '../../api';
-import { TunnelTypeEnum } from '../enum/TunnelTypeEnum';
+import { TransactionMethodTypeEnum } from '../enum/TransactionMethodTypeEnum';
+import { Account } from '../type/Account';
+import { Contact } from '../type/Contact';
+import { User } from '../type/User';
+import { Transaction } from '../type/Transaction';
 
 export interface TransactionInterface {
   contactList: Array<Contact>;
@@ -29,8 +27,7 @@ export interface TransactionInterface {
   user?: User;
   transaction?: Transaction;
   transactionId?: number;
-  tunnelType?: TunnelTypeEnum;
-  setTunnelType: Dispatch<SetStateAction<TunnelTypeEnum>>;
+  transactionMethod?: TransactionMethodTypeEnum;
   note: string;
   setNote: Dispatch<SetStateAction<string>>;
   setErrorMessage: Dispatch<SetStateAction<string>>,

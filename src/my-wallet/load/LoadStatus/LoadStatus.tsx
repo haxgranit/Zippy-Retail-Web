@@ -4,9 +4,10 @@ import { useEffect, useState } from 'react';
 import { useMsal } from '@azure/msal-react';
 import NumberFormat from 'react-number-format';
 import PageContainer from '../../../common/PageContainer';
-import Api, { Account } from '../../../api';
+import Api from '../../../api';
 import { useAppSelector } from '../../../app/hooks';
 import { selectUser } from '../../../features/user/userSlice';
+import { Account } from '../../../constants/type/Account';
 
 type LocationState = {
   id: number,
@@ -29,6 +30,7 @@ export default function LoadStatus() {
         setState({ ...state, status: 'completed' });
       })
       .catch((error) => {
+        // eslint-disable-next-line no-console
         console.log('error', error);
       });
   }

@@ -4,7 +4,8 @@ import TransactionStart from './TransactionStart';
 import MAIN_INFO from '../../../stories/MainInfo';
 import { SendMoneyStepsEnum } from '../../../constants/enum/SendMoneyStepsEnum';
 import { TransactionTypeEnum } from '../../../constants/enum/TransactionTypeEnum';
-import { Account, Contact } from '../../../api';
+import { Account } from '../../../constants/type/Account';
+import { Contact } from '../../../constants/type/Contact';
 
 export default {
   title: 'my-wallet/zippy-money/TransactionStart',
@@ -29,7 +30,6 @@ const Template: ComponentStory<typeof TransactionStart> = () => (
       setSelectedContact={jest.fn()}
       step={SendMoneyStepsEnum.TRANSACTION_START}
       transactionType={TransactionTypeEnum.SEND}
-      setTunnelType={jest.fn()}
       setNote={jest.fn()}
       note=""
     />

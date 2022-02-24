@@ -12,6 +12,16 @@ jest.mock('react-router-dom', () => ({
   }),
 }));
 
+jest.mock('@azure/msal-react', () => ({
+  useIsAuthenticated: () => true,
+  useMsal: () => ({
+    accounts: [null],
+    instance: {
+      acquireTokenSilent: jest.fn(),
+    },
+  }),
+}));
+
 describe('VerticalNavLinks Component', () => {
   it('matches the snapshot', () => {
     const tree = ReactTestRenderer.create(

@@ -11,15 +11,11 @@ export const VersionPure = ({
 }) => (
   <div className="text-end">
     <span>
-      App:
-      {' '}
-      {appVersion}
+      {`App: ${appVersion}`}
     </span>
     {' '}
     <span>
-      API:
-      {' '}
-      {apiVersion}
+      {`API: ${apiVersion}`}
     </span>
   </div>
 );
@@ -30,11 +26,13 @@ export const Version = () => {
   const [apiError, setApiError] = useState<string>();
 
   useEffect(() => {
-    new Api(instance, accounts[0])
-      .getVersion()
-      .then((response) => setApiVersion(response.version))
-      .catch((error) => setApiError(error));
-  }, []);
+    if (instance && accounts[0]) {
+      new Api(instance, accounts[0])
+        .getVersion()
+        .then((response) => setApiVersion(response.version))
+        .catch((error) => setApiError(error));
+    }
+  }, [instance, accounts]);
 
   return (
     <VersionPure

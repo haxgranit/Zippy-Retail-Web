@@ -3,11 +3,13 @@ import { useMsal } from '@azure/msal-react';
 import { useEffect, useState } from 'react';
 import { Button, Modal } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
-import Api, { FundingSource, FundingSourceTransactionResponce } from '../../../api';
+import Api from '../../../api';
 import AmountInput from '../../../common/AmountInput';
 import PageContainer from '../../../common/PageContainer';
 import Alert from '../../../common/Alert';
 import SourceOptions from '../options/SourceOptions';
+import { FundingSource } from '../../../constants/type/FundingSource';
+import { FundingSourceTransactionResponse } from '../../../constants/type/FundingSourceTransactionResponse';
 
 export default function LoadInitiate({ mode } : { mode: 'load' | 'get' }) {
   const [fundingSources, setFundingSources] = useState<FundingSource[]>([]);
@@ -25,6 +27,7 @@ export default function LoadInitiate({ mode } : { mode: 'load' | 'get' }) {
       .then((result:FundingSource[]) => {
         setFundingSources(result);
       })
+      // eslint-disable-next-line no-console
       .catch((error) => console.log('error', error));
   }, []);
 
@@ -49,7 +52,7 @@ export default function LoadInitiate({ mode } : { mode: 'load' | 'get' }) {
     setIsLoading(true);
     new Api(instance, accounts[0])
       .postFundingSourceTransaction(fundRequest, selectedAccount.id)
-      .then((resp:FundingSourceTransactionResponce) => {
+      .then((resp: FundingSourceTransactionResponse) => {
         setIsLoading(false);
         navigate(statusUrl, {
           state: {
@@ -58,6 +61,7 @@ export default function LoadInitiate({ mode } : { mode: 'load' | 'get' }) {
         });
       })
       .catch((error) => {
+        // eslint-disable-next-line no-console
         console.log('error', error);
         setIsLoading(false);
         navigate(statusUrl, {

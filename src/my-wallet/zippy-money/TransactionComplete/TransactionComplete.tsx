@@ -15,7 +15,7 @@ export default function TransactionComplete({
   return (
     <>
       <PageContainer
-        title="Personal Account"
+        title="Your Wallet"
         subTitle="Made Fun With Zippy!"
         backdropImage="backdrop-image-2"
       >

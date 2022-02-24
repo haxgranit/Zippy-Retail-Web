@@ -6,7 +6,7 @@ import {
   Stack,
 } from 'react-bootstrap';
 import NumberFormat from 'react-number-format';
-import { Transaction } from '../../../../../api';
+import { Transaction } from '../../../../../constants/type/Transaction';
 
 export interface CancelRequestForMoneyVerificationProps {
   show: boolean;

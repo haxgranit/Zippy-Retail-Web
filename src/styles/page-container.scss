@@ -3,7 +3,7 @@
 .zippy-cash-container-wrap {
   padding-left: 240px;
   width: 100%;
-  height: calc(100vh - 73px);
+  height: calc(100vh - 45px);
   display: flex;
   flex-direction: row;
   background-color: $color-red;
@@ -83,6 +83,27 @@
         align-items: center;
         margin-right: 27px;
         cursor: pointer;
+        position: absolute;
+        top: 30px;
+        right: 0;
+
+        &:after {
+          background-color: $color-dark-gray;
+          -webkit-transition: 1s ease-in-out;
+          -moz-transition: 1s ease-in-out;
+          -o-transition: 1s ease-in-out;
+          transition: 1s ease-in-out;
+          transform: rotate(0deg);
+        }
+
+        &:hover:after {
+          background-color: $color-dark-gray;
+          -webkit-transition: 1s ease-in-out;
+          -moz-transition: 1s ease-in-out;
+          -o-transition: 1s ease-in-out;
+          transition: 1s ease-in-out;
+          transform: rotate(360deg);
+        }
       }
 
       .title {
@@ -120,7 +141,7 @@
       display: flex;
       flex-direction: column;
       padding: 20px 35px;
-      gap: 20px;
+      gap: 30px;
       height: 100%;
 
       .contact-identifier {
@@ -134,7 +155,7 @@
         .btn-select-contact {
           .zippy-cash-icon {
             position: absolute;
-            background-color: $color-light-gray;
+            background: $color-zippy-gradient;
             border-radius: 50%;
             top: 50%;
             -ms-transform: translateY(-50%);
@@ -266,8 +287,8 @@
       }
 
       .amount {
-        margin: 0;
-        padding: 0;
+        margin: 0px;
+        padding: 20px 0;
         border: none;
         font-style: normal;
         font-weight: 300;
@@ -314,11 +335,24 @@
         display: flex;
         justify-content: center;
         align-content: center;
-        padding-bottom: 15px;
-        border-bottom: 1px $color-light-gray solid;
+        padding-top: 25px;
+        padding-bottom: 25px;
         font-weight: 500;
         font-size: 16px;
         line-height: 24px;
+
+        &.zc-status-completed {
+          color: $color-green;
+        }
+
+        &.zc-status-cancelled,
+        &.zc-status-failed {
+          color: $color-red;
+        }
+
+        &.zc-status-pending {
+          color: $color-dark-gray;
+        }
       }
 
       .complete {
@@ -355,7 +389,7 @@
         font-style: normal;
         font-weight: normal;
         font-size: 13px;
-        gap: 20px;
+        gap: 35px;
         color: $color-dark-gray;
         height: 100%;
 
@@ -452,11 +486,23 @@
       .body {
         display: flex;
         flex-direction: column;
-        gap: 30px;
+        gap: 15px;
         height: 100%;
         font-style: normal;
         font-weight: normal;
         font-size: 13px;
+      }
+
+      .note {
+        font-style: normal;
+        font-weight: normal;
+        font-size: 12px;
+        padding: 0 10px;
+        text-align: center;
+
+        strong {
+          margin-right: 5px;
+        }
       }
 
       .transaction-note {

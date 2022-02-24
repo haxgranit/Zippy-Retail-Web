@@ -34,6 +34,7 @@ export default function FundingSourceDetails() {
         navigate('/my-wallet/funding-source');
       })
       .catch((error) => {
+        // eslint-disable-next-line no-console
         console.log('error', error);
         setIsLoading(false);
       });

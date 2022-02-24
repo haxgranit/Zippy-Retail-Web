@@ -2,8 +2,9 @@ import { useMsal } from '@azure/msal-react';
 import { useEffect, useState } from 'react';
 import { Button } from 'react-bootstrap';
 import { useLocation, useNavigate } from 'react-router-dom';
-import Api, { FundingSourceTransaction } from '../../../api';
+import Api from '../../../api';
 import PageContainer from '../../../common/PageContainer';
+import { FundingSourceTransaction } from '../../../constants/type/FundingSourceTransaction';
 
 type LocationState = {
   id: number,
@@ -30,6 +31,7 @@ export default function TransferDetails() {
         });
       })
       .catch((error) => {
+        // eslint-disable-next-line no-console
         console.log('error', error);
       });
   }, []);
