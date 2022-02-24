@@ -39,7 +39,7 @@ export default function TransactionStatusList() {
     setSelectedType(type);
     setIsProcessing(true);
     api
-      .getInteracEtransferTransactions(type)
+      .getTransfers(type)
       .then((data) => {
         setIsProcessing(false);
         const transactionList = data.sort((a: Transaction, b: Transaction) => {

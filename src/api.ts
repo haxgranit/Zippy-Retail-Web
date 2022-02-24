@@ -112,6 +112,13 @@ export default class Api {
     return this.fetch<Transaction>('get', `Transfers/${transactionId}`);
   }
 
+  public getTransfers(type: TransferTypeEnum) {
+    if (type === TransferTypeEnum.ALL) {
+      return this.fetch<Transaction[]>('get', 'Transfers');
+    }
+    return this.fetch<Transaction[]>('get', `Transfers?type=${type}`);
+  }
+
   public postZippyCashTransfer(data: ZippyCashTransaction) {
     return this.fetch<ZippyCashTransaction>('post', 'Transfers', data);
   }
