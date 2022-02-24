@@ -4,7 +4,7 @@ import { Button } from 'react-bootstrap';
 import { useLocation, useNavigate } from 'react-router-dom';
 import Api from '../../../api';
 import PageContainer from '../../../common/PageContainer';
-import { FundingSourceTransaction } from '../../../constants/type/FundingSourceTransaction';
+import { Transaction } from '../../../constants/type/Transaction';
 
 type LocationState = {
   id: number,
@@ -14,14 +14,14 @@ type LocationState = {
 
 export default function TransferDetails() {
   const { instance, accounts } = useMsal();
-  const [transferDetails, settransferDetails] = useState<FundingSourceTransaction | null>(null);
+  const [transferDetails, settransferDetails] = useState<Transaction | null>(null);
   const state = useLocation().state as LocationState;
   const [dateTime, setDateTime] = useState<{ date: string, time:string }>({ date: '', time: '' });
   const navigate = useNavigate();
   useEffect(() => {
     new Api(instance, accounts[0])
-      .getFundingSourceTransaction(state.id, state.sourceId)
-      .then((data: FundingSourceTransaction) => {
+      .getTransfer(state.id)
+      .then((data: Transaction) => {
         settransferDetails(data);
         const today = new Date(data?.createdDate);
         const month = today.toLocaleString('default', { month: 'short' });

@@ -17,7 +17,6 @@ import { ErrorDetail } from './constants/type/ErrorDetail';
 import { FundingSource } from './constants/type/FundingSource';
 import { FundingSourceTransactionRequest } from './constants/type/FundingSourceTransactionRequest';
 import { FundingSourceRequest } from './constants/type/FundingSourceRequest';
-import { FundingSourceTransaction } from './constants/type/FundingSourceTransaction';
 import { FundingSourceTransactionResponse } from './constants/type/FundingSourceTransactionResponse';
 import CustomError from './custom-error';
 
@@ -67,10 +66,6 @@ export default class Api {
 
   public postFundingSourceTransaction(request: FundingSourceTransactionRequest, id: number) {
     return this.fetch<FundingSourceTransactionResponse>('post', `FundingSources/${id}/Transactions/`, request);
-  }
-
-  public getFundingSourceTransaction(id: number, sourceId: number) {
-    return this.fetch<FundingSourceTransaction>('get', `FundingSources/${sourceId}/Transactions/${id}`);
   }
 
   public postContact(data: ContactBase) {
