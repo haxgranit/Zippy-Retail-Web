@@ -53,6 +53,7 @@ export default function TransactionStatusList() {
           const valueB = DateTime.fromISO(b.date).valueOf();
           return valueA - valueB;
         }).reverse();
+
         setTransactions(transactionList);
         setSearchValue('');
         filter('', transactionList);
@@ -65,7 +66,7 @@ export default function TransactionStatusList() {
   };
 
   const getEquivalentStatus = (status: TransactionStatusEnum): string => {
-    switch (status) {
+    switch (status.toLowerCase()) {
       case TransactionStatusEnum.COMPLETED:
         return TransactionStatusEnum.COMPLETED;
       case TransactionStatusEnum.CANCELLED:
@@ -79,20 +80,17 @@ export default function TransactionStatusList() {
   };
 
   const getTransactionType = (transaction: Transaction): string => {
-    switch (transaction.direction) {
+    switch (transaction.direction.toLowerCase().replace(/^./, transaction.direction[0].toUpperCase())) {
       case DirectionTypeEnum.OUTBOUND:
         return 'sent';
       case DirectionTypeEnum.INBOUND:
       default:
-        if (transaction.status === TransactionStatusEnum.COMPLETED) {
-          return 'received';
-        }
         return 'requested';
     }
   };
 
   const pastToPresent = (transactionType: TransactionTypePastTenseEnum): TransferTypeEnum => {
-    switch (transactionType) {
+    switch (transactionType.toLowerCase()) {
       case TransactionTypePastTenseEnum.RECEIVED:
         return TransferTypeEnum.RECEIVE;
       case TransactionTypePastTenseEnum.REQUESTED:
