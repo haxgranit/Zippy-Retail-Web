@@ -54,19 +54,18 @@ function RequestedReminder({
           <Col xs={6}>Transfer Amount</Col>
           <Col xs={6}>
             <strong className="amount">
-              {transaction && transaction.amount
-            && (
-              <NumberFormat
-                value={transaction.amount}
-                defaultValue={0}
-                displayType="text"
-                prefix="$ "
-                suffix=" CAD"
-                thousandSeparator
-                decimalScale={2}
-                fixedDecimalScale
-              />
-            )}
+              {transaction?.amount && (
+                <NumberFormat
+                  value={transaction.amount}
+                  defaultValue={0}
+                  displayType="text"
+                  prefix="$ "
+                  suffix=" CAD"
+                  thousandSeparator
+                  decimalScale={2}
+                  fixedDecimalScale
+                />
+              )}
             </strong>
           </Col>
         </Row>
