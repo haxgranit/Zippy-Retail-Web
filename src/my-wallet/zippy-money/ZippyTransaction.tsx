@@ -166,7 +166,7 @@ export default function ZippyTransaction() {
         zippyCashTransaction({
           contactId: selectedContact.id,
           amount: mainInfo.amount,
-          isCredit: !!TransactionTypeEnum.SEND,
+          isCredit: transactionType === TransactionTypeEnum.REQUEST,
           note: safeText(note),
         } as ZippyCashTransaction);
       }
