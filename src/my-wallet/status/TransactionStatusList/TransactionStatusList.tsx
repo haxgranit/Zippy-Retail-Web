@@ -36,9 +36,9 @@ export default function TransactionStatusList() {
     setSearchValue(value);
     setFilteredTransactionList(transactionsList.filter((transaction) => {
       const search = value.toLowerCase();
-      return transaction?.contact.firstName?.toLowerCase().includes(search)
-        || transaction?.contact.lastName?.toLowerCase().includes(search)
-        || transaction?.contact.email?.toLowerCase().includes(search);
+      return transaction?.contact?.firstName?.toLowerCase().includes(search)
+        || transaction?.contact?.lastName?.toLowerCase().includes(search)
+        || transaction?.contact?.email?.toLowerCase().includes(search);
     }));
   };
 
