@@ -53,19 +53,19 @@ Array [
       >
         
       </div>
+    </div>
+    <div
+      className="row"
+    >
       <div
-        className="row"
+        className="col-6"
       >
-        <div
-          className="col-6"
-        >
-          Transfer Time (UTC)
-        </div>
-        <div
-          className="col-6"
-        >
-          
-        </div>
+        Transfer Time (UTC)
+      </div>
+      <div
+        className="col-6"
+      >
+        
       </div>
     </div>
     <div
