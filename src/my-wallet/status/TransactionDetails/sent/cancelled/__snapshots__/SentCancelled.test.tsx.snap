@@ -99,15 +99,15 @@ Array [
       className="hstack gap-3"
     >
       <button
-        className="zippy-btn zippy-flat d-flex w-full center simple btn btn-primary"
+        className="zippy-btn zippy-flat d-flex center w-full simple btn btn-primary"
         disabled={false}
         onClick={[Function]}
         type="button"
       >
-        Back
+        Back to Status
       </button>
       <button
-        className="zippy-btn d-flex ms-auto w-full center simple btn btn-primary"
+        className="zippy-btn d-flex ms-auto center w-full simple btn btn-primary"
         disabled={false}
         onClick={[Function]}
         type="button"

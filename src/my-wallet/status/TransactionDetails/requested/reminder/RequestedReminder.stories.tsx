@@ -1,6 +1,7 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { BrowserRouter } from 'react-router-dom';
 import RequestedReminder from './RequestedReminder';
+import { TransactionTypePastTenseEnum } from '../../../../../constants/enum/TransactionTypePastTenseEnum';
 
 export default {
   title: 'interac-etransfer/status/requested/reminder/RequestedReminder',
@@ -13,6 +14,7 @@ const Template: ComponentStory<typeof RequestedReminder> = () => (
       transaction={undefined}
       user={undefined}
       setCurrentStatus={undefined}
+      type={TransactionTypePastTenseEnum.ALL}
     />
   </BrowserRouter>
 );

@@ -89,13 +89,15 @@ export default function App() {
               <Route path="" element={<LoadInitiate mode="get" />} />
               <Route path="transfer-details" element={<TransferDetails />} />
             </Route>
-            <Route path="status" element={<TransactionStatusList />} />
+            <Route path="transaction-history" element={<TransactionStatusList />}>
+              <Route path=":type" element={<TransactionStatusList />} />
+            </Route>
+            <Route path="transaction-history/:type/:status/:id" element={<TransactionStatus />} />
             <Route path="funding-source">
               <Route path="" element={<FundingSourceList />} />
               <Route path="add-funding-source" element={<FundingSourceDetails />} />
               <Route path="edit-funding-source/:id" element={<FundingSourceDetails />} />
             </Route>
-            <Route path="status/:type/:status/:id" element={<TransactionStatus />} />
             <Route path="auto-deposit" element={<AutoDeposit />} />
           </Route>
           <Route path="manage-my-alerts" element={<ManageMyAlerts />} />

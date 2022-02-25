@@ -106,7 +106,8 @@ exports[`TransactionStatusList Component matches the snapshot 1`] = `
                     <div
                       className="simplebar-content"
                     >
-                      loading
+                      loading...
+                      
                     </div>
                   </div>
                 </div>

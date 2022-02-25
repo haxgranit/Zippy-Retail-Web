@@ -8,20 +8,27 @@ import { useEffect, useState } from 'react';
 import { useMsal } from '@azure/msal-react';
 import NumberFormat from 'react-number-format';
 import { DateTime } from 'luxon';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate, useParams } from 'react-router-dom';
 import SimpleBar from 'simplebar-react';
 import PageContainer from '../../../common/PageContainer';
 import Api from '../../../api';
 import { TransferTypeEnum } from '../../../constants/enum/TransferTypeEnum';
 import { Transaction } from '../../../constants/type/Transaction';
 import { TransactionStatusEnum } from '../../../constants/enum/TransactionStatusEnum';
+import { TransactionTypePastTenseEnum } from '../../../constants/enum/TransactionTypePastTenseEnum';
+import { DirectionTypeEnum } from '../../../constants/enum/DirectionTypeEnum';
+
+export interface TransactionInterface {
+  type: TransactionTypePastTenseEnum;
+}
 
 export default function TransactionStatusList() {
+  const navigate = useNavigate();
   const { instance, accounts } = useMsal();
+  const { type = TransactionTypePastTenseEnum.ALL } = useParams<Partial<TransactionInterface>>();
   const api = new Api(instance, accounts[0]);
   const [transactions, setTransactions] = useState<Transaction[]>([]);
   const [filteredTransactionList, setFilteredTransactionList] = useState<Transaction[]>([]);
-  const [selectedType, setSelectedType] = useState<TransferTypeEnum>(TransferTypeEnum.ALL);
   const [isProcessing, setIsProcessing] = useState<boolean>(true);
   const [searchValue, setSearchValue] = useState<string>('');
 
@@ -35,11 +42,10 @@ export default function TransactionStatusList() {
     }));
   };
 
-  const getTransations = (type: TransferTypeEnum) => {
-    setSelectedType(type);
+  const getTransations = (transferType: TransferTypeEnum) => {
     setIsProcessing(true);
     api
-      .getTransfers(type)
+      .getTransfers(transferType)
       .then((data) => {
         setIsProcessing(false);
         const transactionList = data.sort((a: Transaction, b: Transaction) => {
@@ -73,22 +79,35 @@ export default function TransactionStatusList() {
   };
 
   const getTransactionType = (transaction: Transaction): string => {
-    const type = transaction.type?.toLowerCase() || selectedType;
-    switch (type) {
-      case TransferTypeEnum.RECEIVE:
-        return 'received';
-      case TransferTypeEnum.SEND:
+    switch (transaction.direction) {
+      case DirectionTypeEnum.OUTBOUND:
         return 'sent';
-      case TransferTypeEnum.REQUEST:
-        return 'requested';
+      case DirectionTypeEnum.INBOUND:
       default:
-        return 'sent';
+        if (transaction.status === TransactionStatusEnum.COMPLETED) {
+          return 'received';
+        }
+        return 'requested';
+    }
+  };
+
+  const pastToPresent = (transactionType: TransactionTypePastTenseEnum): TransferTypeEnum => {
+    switch (transactionType) {
+      case TransactionTypePastTenseEnum.RECEIVED:
+        return TransferTypeEnum.RECEIVE;
+      case TransactionTypePastTenseEnum.REQUESTED:
+        return TransferTypeEnum.REQUEST;
+      case TransactionTypePastTenseEnum.ALL:
+        return TransferTypeEnum.ALL;
+      case TransactionTypePastTenseEnum.SENT:
+      default:
+        return TransferTypeEnum.SEND;
     }
   };
 
   useEffect(() => {
-    getTransations(selectedType);
-  }, []);
+    getTransations(pastToPresent(type as TransactionTypePastTenseEnum));
+  }, [type]);
 
   return (
     <>
@@ -99,30 +118,30 @@ export default function TransactionStatusList() {
       >
         <div className="zippy-btn-group btn-group" role="group" aria-label="Zippy Cash">
           <Button
-            className={selectedType === TransferTypeEnum.ALL ? 'active' : ''}
-            onClick={() => getTransations(TransferTypeEnum.ALL)}
-            disabled={selectedType === TransferTypeEnum.ALL}
+            className={type === TransactionTypePastTenseEnum.ALL ? 'active' : ''}
+            onClick={() => navigate('/my-wallet/transaction-history')}
+            disabled={type === TransactionTypePastTenseEnum.ALL}
           >
             All
           </Button>
           <Button
-            className={selectedType === TransferTypeEnum.SEND ? 'active' : ''}
-            onClick={() => getTransations(TransferTypeEnum.SEND)}
-            disabled={selectedType === TransferTypeEnum.SEND}
+            className={type === TransactionTypePastTenseEnum.SENT ? 'active' : ''}
+            onClick={() => navigate(`/my-wallet/transaction-history/${TransactionTypePastTenseEnum.SENT}`)}
+            disabled={type === TransactionTypePastTenseEnum.SENT}
           >
             Send
           </Button>
           <Button
-            className={selectedType === TransferTypeEnum.RECEIVE ? 'active' : ''}
-            onClick={() => getTransations(TransferTypeEnum.RECEIVE)}
-            disabled={selectedType === TransferTypeEnum.RECEIVE}
+            className={type === TransactionTypePastTenseEnum.RECEIVED ? 'active' : ''}
+            onClick={() => navigate(`/my-wallet/transaction-history/${TransactionTypePastTenseEnum.RECEIVED}`)}
+            disabled={type === TransactionTypePastTenseEnum.RECEIVED}
           >
             Received
           </Button>
           <Button
-            className={selectedType === TransferTypeEnum.REQUEST ? 'active' : ''}
-            onClick={() => getTransations(TransferTypeEnum.REQUEST)}
-            disabled={selectedType === TransferTypeEnum.REQUEST}
+            className={type === TransactionTypePastTenseEnum.REQUESTED ? 'active' : ''}
+            onClick={() => navigate(`/my-wallet/transaction-history/${TransactionTypePastTenseEnum.REQUESTED}`)}
+            disabled={type === TransactionTypePastTenseEnum.REQUESTED}
           >
             Requested
           </Button>
@@ -139,7 +158,7 @@ export default function TransactionStatusList() {
           <SimpleBar className="simplebar-container" forceVisible="y" autoHide={false}>
             {!isProcessing ? (
               filteredTransactionList.map((item: Transaction) => (
-                <Link key={item.id} to={`/my-wallet/status/${getTransactionType(item)}/${getEquivalentStatus(item.status)}/${item.id}`} className="transaction-items">
+                <Link key={item.id} to={`/my-wallet/transaction-history/${getTransactionType(item)}/${getEquivalentStatus(item.status)}/${item.id}`} className="transaction-items">
                   <Row>
                     <Col xs={1} className="status-icon">
                       <i className={`zippy-cash-icon zc-${getEquivalentStatus(item.status)}`} />
@@ -148,6 +167,7 @@ export default function TransactionStatusList() {
                       <Row>
                         <Col xs={7} className="name">{getUserFullName(item)}</Col>
                         <Col xs={5} className="amount">
+                          {item.direction === DirectionTypeEnum.OUTBOUND ? '- ' : ''}
                           <NumberFormat
                             className="amount"
                             value={item.amount}
@@ -165,7 +185,7 @@ export default function TransactionStatusList() {
                           {`Reference No. ${item.id}`}
                         </Col>
                         <Col xs={5} className="date">
-                          <span>{item && item.date ? DateTime.fromISO(item.date).toUTC().toLocaleString(DateTime.DATE_MED) : ''}</span>
+                          <span>{item && item.createdDate ? DateTime.fromISO(item.createdDate).toUTC().toLocaleString(DateTime.DATE_MED) : ''}</span>
                         </Col>
                       </Row>
                     </Col>
@@ -175,7 +195,8 @@ export default function TransactionStatusList() {
                   </Row>
                 </Link>
               ))
-            ) : 'loading'}
+            ) : 'loading...'}
+            {!isProcessing && filteredTransactionList.length === 0 ? 'no record' : ''}
           </SimpleBar>
         </div>
       </PageContainer>

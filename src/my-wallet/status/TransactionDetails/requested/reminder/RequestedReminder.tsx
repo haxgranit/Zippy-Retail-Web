@@ -8,11 +8,24 @@ import
 import { useNavigate } from 'react-router-dom';
 import NumberFormat from 'react-number-format';
 import { TransactionProps } from '../../TransactionStatus';
+import { MethodTypeEnum } from '../../../../../constants/enum/MethodTypeEnum';
 
 function RequestedReminder({
+  type,
   transaction,
 }: TransactionProps) {
   const navigate = useNavigate();
+  const getTransactionMethodURIString = (method: MethodTypeEnum) => {
+    switch (method) {
+      case MethodTypeEnum.FUNDINGSOURCE:
+        return 'funding-source';
+      case MethodTypeEnum.INTERAC_E_TRANSFER:
+        return 'interac-e-transfer';
+      case MethodTypeEnum.ZIPPY:
+      default:
+        return 'zippy-cash';
+    }
+  };
 
   return (
     <>
@@ -52,13 +65,13 @@ function RequestedReminder({
         <Stack gap={3} direction="horizontal">
           <Button
             className="zippy-btn zippy-flat d-flex center w-full simple"
-            onClick={() => navigate('/my-wallet/status')}
+            onClick={() => navigate(`/my-wallet/transaction-history/${type}`)}
           >
             Back to Status
           </Button>
           <Button
             className="zippy-btn d-flex ms-auto center w-full simple"
-            onClick={() => navigate('/my-wallet/zippy-money/request/transaction-start')}
+            onClick={() => navigate(`/my-wallet/zippy-money/${getTransactionMethodURIString(transaction?.method as MethodTypeEnum)}/request/transaction-start`)}
           >
             Send Another
           </Button>

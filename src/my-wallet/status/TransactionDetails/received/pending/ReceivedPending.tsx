@@ -9,11 +9,11 @@ import { useNavigate } from 'react-router-dom';
 import { TransactionProps } from '../../TransactionStatus';
 
 function ReceivedPending({
+  type,
   user,
   transaction,
 }: TransactionProps) {
   const navigate = useNavigate();
-
   const getUserFullName = () => (user && user.firstName && user.lastName ? `${user.firstName} ${user.lastName}` : '');
 
   return (
@@ -38,7 +38,7 @@ function ReceivedPending({
         <Row>
           <Col xs={6}>Transfer Date</Col>
           <Col xs={6}>
-            {transaction && transaction.date ? DateTime.fromISO(transaction.date).toLocaleString(DateTime.DATE_MED) : ''}
+            {transaction && transaction.createdDate ? DateTime.fromISO(transaction.createdDate).toLocaleString(DateTime.DATE_MED) : ''}
           </Col>
         </Row>
         <Row>
@@ -73,9 +73,9 @@ function ReceivedPending({
         <Stack gap={3} direction="horizontal">
           <Button
             className="zippy-btn zippy-flat d-flex center w-full simple"
-            onClick={() => navigate('/my-wallet/status')}
+            onClick={() => navigate(`/my-wallet/transaction-history/${type}`)}
           >
-            Back
+            Back to Status
           </Button>
         </Stack>
       </div>

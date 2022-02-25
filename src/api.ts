@@ -116,7 +116,7 @@ export default class Api {
     if (type === TransferTypeEnum.ALL) {
       return this.fetch<Transaction[]>('get', 'Transfers');
     }
-    return this.fetch<Transaction[]>('get', `Transfers?type=${type}`);
+    return this.fetch<Transaction[]>('get', `Transfers?type=${type.replace(/^./, (str) => str.toUpperCase())}`);
   }
 
   public postZippyCashTransfer(data: ZippyCashTransaction) {

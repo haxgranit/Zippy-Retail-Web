@@ -1,6 +1,7 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { BrowserRouter } from 'react-router-dom';
 import ReceivedCancelled from './ReceivedCancelled';
+import { TransactionTypePastTenseEnum } from '../../../../../constants/enum/TransactionTypePastTenseEnum';
 
 export default {
   title: 'interac-etransfer/status/received/ReceivedCancelled',
@@ -13,6 +14,7 @@ const Template: ComponentStory<typeof ReceivedCancelled> = () => (
       transaction={undefined}
       user={undefined}
       setCurrentStatus={undefined}
+      type={TransactionTypePastTenseEnum.ALL}
     />
   </BrowserRouter>
 );

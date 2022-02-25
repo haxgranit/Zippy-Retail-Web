@@ -1,7 +1,7 @@
 import {
   Suspense, useEffect, useState, lazy,
 } from 'react';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { useIsAuthenticated, useMsal } from '@azure/msal-react';
 import Api from '../../../api';
 import { useAppSelector } from '../../../app/hooks';
@@ -10,6 +10,7 @@ import { TransactionTypeEnum } from './TransactionTypeEnum';
 import PageContainer from '../../../common/PageContainer';
 import { Transaction } from '../../../constants/type/Transaction';
 import { TransactionStatusEnum } from '../../../constants/enum/TransactionStatusEnum';
+import { TransactionTypePastTenseEnum } from '../../../constants/enum/TransactionTypePastTenseEnum';
 
 export interface TransactionInterface {
   type: TransactionTypeEnum;
@@ -18,12 +19,14 @@ export interface TransactionInterface {
 }
 
 export interface TransactionProps {
+  type: TransactionTypePastTenseEnum;
   user: any;
   transaction: Transaction | undefined;
   setCurrentStatus: any;
 }
 
 export default function TransactionStatus() {
+  const navigate = useNavigate();
   const isAuthenticated = useIsAuthenticated();
   const { instance, accounts } = useMsal();
   const { type, status, id } = useParams<Partial<TransactionInterface>>();
@@ -52,10 +55,10 @@ export default function TransactionStatus() {
 
   useEffect(() => {
     new Api(instance, accounts[0])
-      .getInteracEtransferTransaction(Number(id))
+      .getTransfer(Number(id))
       .then((data) => setTransaction(data));
     setUserState(user);
-  }, []);
+  }, [instance, accounts, user]);
 
   const TransactionComponent = lazy(() => import(`./${type}/${status}/${type?.replace(/^./, (str) => str.toUpperCase())}${status?.replace(/^./, (str) => str.toUpperCase())}`));
 
@@ -66,6 +69,8 @@ export default function TransactionStatus() {
         subTitle="Made Fun With Zippy!"
         className="status-list"
         backdropImage="backdrop-image-3"
+        showClose
+        closeHandler={() => navigate(`/my-wallet/transaction-history/${type}`)}
       >
         <div className="details">
           <Suspense fallback={<div>Loading...</div>}>
@@ -74,6 +79,7 @@ export default function TransactionStatus() {
               <TransactionComponent
                 transaction={transaction}
                 user={userState}
+                type={type}
               />
             )}
           </Suspense>

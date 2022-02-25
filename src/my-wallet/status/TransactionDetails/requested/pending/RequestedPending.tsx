@@ -15,6 +15,7 @@ import { TransactionProps } from '../../TransactionStatus';
 import Api from '../../../../../api';
 
 function RequestedPending({
+  type,
   user,
   transaction,
 }: TransactionProps) {
@@ -32,7 +33,7 @@ function RequestedPending({
       .getInteracEtransferSendReminder(Number(id))
       .finally(() => {
         setProcessing(false);
-        navigate(`/my-wallet/status/requested/reminder/${id}`);
+        navigate(`/my-wallet/transaction-history/${type}/reminder/${id}`);
       });
   };
 
@@ -51,7 +52,7 @@ function RequestedPending({
       .finally(() => {
         setProcessing(false);
         setShowCancelRequestForMoney(false);
-        navigate(`/my-wallet/status/requested/cancelled/${id}`);
+        navigate(`/my-wallet/transaction-history/${type}/cancelled/${id}`);
       });
   };
 
@@ -84,7 +85,7 @@ function RequestedPending({
         <Row>
           <Col xs={6}>Transfer Date</Col>
           <Col xs={6}>
-            {transaction && transaction.date ? DateTime.fromISO(transaction.date).toLocaleString(DateTime.DATE_MED) : ''}
+            {transaction && transaction.createdDate ? DateTime.fromISO(transaction.createdDate).toLocaleString(DateTime.DATE_MED) : ''}
           </Col>
         </Row>
         <Row>
