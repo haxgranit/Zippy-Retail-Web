@@ -79,7 +79,18 @@ function RequestedPending({
         <Row>
           <Col xs={6}>To</Col>
           <Col xs={6}>
-            <strong>{transaction ? `${transaction.contact.firstName || ''} ${transaction.contact.lastName || ''}` : ''}</strong>
+            {transaction?.contact && (
+              <span>
+                <strong>{`${transaction.contact.firstName || ''} ${transaction.contact.lastName || ''}`}</strong>
+                  {` (${transaction.contact.email})`}
+              </span>
+            )}
+            {transaction?.fundingSource && (
+              <span>
+                <strong>{`${transaction.fundingSource.displayName || ''}`}</strong>
+                  {` (${transaction.fundingSource.bankAccount?.accountNumber})`}
+              </span>
+            )}
           </Col>
         </Row>
         <Row>

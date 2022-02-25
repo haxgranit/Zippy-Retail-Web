@@ -31,7 +31,7 @@ export default function TransactionStatus() {
   const { instance, accounts } = useMsal();
   const { type, status, id } = useParams<Partial<TransactionInterface>>();
   const { state = { type } as any } = useLocation();
-  const [currentType] = useState<TransactionTypeEnum>(state?.type as TransactionTypeEnum);
+  const [currentType] = useState<TransactionTypeEnum>((state?.type || type) as TransactionTypeEnum);
   const [
     currentStatus,
   ] = useState<TransactionStatusEnum>(status as TransactionStatusEnum);

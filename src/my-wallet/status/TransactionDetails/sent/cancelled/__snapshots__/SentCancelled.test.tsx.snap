@@ -38,11 +38,7 @@ Array [
       </div>
       <div
         className="col-6"
-      >
-        <strong>
-          
-        </strong>
-      </div>
+      />
     </div>
     <div
       className="row"

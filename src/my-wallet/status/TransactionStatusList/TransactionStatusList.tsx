@@ -36,9 +36,16 @@ export default function TransactionStatusList() {
     setSearchValue(value);
     setFilteredTransactionList(transactionsList.filter((transaction) => {
       const search = value.toLowerCase();
-      return transaction?.contact?.firstName?.toLowerCase().includes(search)
-        || transaction?.contact?.lastName?.toLowerCase().includes(search)
-        || transaction?.contact?.email?.toLowerCase().includes(search);
+      let result = false;
+      if (transaction?.contact) {
+        result = transaction?.contact?.firstName?.toLowerCase().includes(search)
+          || transaction?.contact?.lastName?.toLowerCase().includes(search)
+          || transaction?.contact?.email?.toLowerCase().includes(search);
+      }
+      if (transaction?.fundingSource) {
+        result = transaction?.fundingSource?.displayName?.toLowerCase().includes(search);
+      }
+      return result;
     }));
   };
 
@@ -49,8 +56,8 @@ export default function TransactionStatusList() {
       .then((data) => {
         setIsProcessing(false);
         const transactionList = data.sort((a: Transaction, b: Transaction) => {
-          const valueA = DateTime.fromISO(a.date).valueOf();
-          const valueB = DateTime.fromISO(b.date).valueOf();
+          const valueA = DateTime.fromISO(a.createdDate).valueOf();
+          const valueB = DateTime.fromISO(b.createdDate).valueOf();
           return valueA - valueB;
         }).reverse();
 
@@ -60,9 +67,16 @@ export default function TransactionStatusList() {
       });
   };
 
-  const getUserFullName = (transaction: Transaction): string => {
-    const contact = transaction?.contact;
-    return contact && contact.firstName && contact.lastName ? `${contact.firstName} ${contact.lastName}` : '';
+  const getSourceName = (transaction: Transaction): string => {
+    let sourceName = '';
+    if (transaction?.contact) {
+      const contact = transaction?.contact;
+      sourceName = contact && contact.firstName && contact.lastName ? `${contact.firstName} ${contact.lastName}` : '';
+    }
+    if (transaction?.fundingSource) {
+      sourceName = `${transaction?.fundingSource.displayName}`;
+    }
+    return sourceName;
   };
 
   const getEquivalentStatus = (status: TransactionStatusEnum): string => {
@@ -168,7 +182,7 @@ export default function TransactionStatusList() {
                     </Col>
                     <Col xs={10}>
                       <Row>
-                        <Col xs={7} className="name">{getUserFullName(item)}</Col>
+                        <Col xs={7} className="name">{getSourceName(item)}</Col>
                         <Col xs={5} className="amount">
                           {item.direction === DirectionTypeEnum.OUTBOUND ? '- ' : ''}
                           <NumberFormat

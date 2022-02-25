@@ -3,6 +3,7 @@ import { TransactionStatusEnum } from '../enum/TransactionStatusEnum';
 import { DirectionTypeEnum } from '../enum/DirectionTypeEnum';
 import { MethodTypeEnum } from '../enum/MethodTypeEnum';
 import { Contact } from './Contact';
+import { FundingSource } from './FundingSource';
 
 export type Transaction = {
   status: TransactionStatusEnum;
@@ -10,6 +11,7 @@ export type Transaction = {
   direction: DirectionTypeEnum;
   method: MethodTypeEnum;
   contact: Contact;
+  fundingSource: FundingSource;
   amount: number;
   date: string;
   expireDate: string;
