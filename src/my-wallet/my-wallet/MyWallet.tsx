@@ -47,13 +47,13 @@ export const MyWalletPure = ({ account }: { account: Account | undefined }) => {
           <div className="action pair">
             <Button
               className="zippy-btn"
-              onClick={() => navigate('/my-wallet/zippy-money/send/transaction-start')}
+              onClick={() => navigate('/my-wallet/zippy-money/zippy-cash/send/transaction-start')}
             >
               Send Money
             </Button>
             <Button
               className="zippy-btn"
-              onClick={() => navigate('/my-wallet/zippy-money/request/transaction-start')}
+              onClick={() => navigate('/my-wallet/zippy-money/zippy-cash/request/transaction-start')}
             >
               Request Money
             </Button>
