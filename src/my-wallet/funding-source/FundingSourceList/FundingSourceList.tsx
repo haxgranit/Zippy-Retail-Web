@@ -28,7 +28,7 @@ export default function FundingSourceList() {
         Funding Source
       </div>
 
-      <div>
+      <div style={{ height: 380 }}>
         <div className="bank-wrapper">
           <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
             <i className="zippy-cash-icon zc-bank" />
