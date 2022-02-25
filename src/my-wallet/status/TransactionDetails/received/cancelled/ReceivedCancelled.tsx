@@ -52,6 +52,10 @@ function ReceivedCompleted({
           </Col>
         </Row>
         <Row>
+          <Col xs={6}>Transfer Time (UTC)</Col>
+          <Col xs={6}>{transaction?.createdDate ? DateTime.fromISO(transaction.createdDate).toUTC().toLocaleString(DateTime.TIME_WITH_SECONDS) : ''}</Col>
+        </Row>
+        <Row>
           <Col xs={6}>Transfer Amount</Col>
           <Col xs={6}>
             <strong className="amount">
@@ -70,6 +74,12 @@ function ReceivedCompleted({
             </strong>
           </Col>
         </Row>
+        {transaction?.fundingSource && (
+          <Row>
+            <Col xs={6}>Transfer Method</Col>
+            <Col xs={6}>{transaction?.method}</Col>
+          </Row>
+        )}
         <Row>
           <Col xs={6}>
             <div>Reference Number</div>

@@ -60,6 +60,20 @@ Array [
       <div
         className="col-6"
       >
+        Transfer Time (UTC)
+      </div>
+      <div
+        className="col-6"
+      >
+        
+      </div>
+    </div>
+    <div
+      className="row"
+    >
+      <div
+        className="col-6"
+      >
         Transfer Amount
       </div>
       <div
