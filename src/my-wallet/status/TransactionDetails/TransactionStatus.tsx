@@ -1,7 +1,7 @@
 import {
   Suspense, useEffect, useState, lazy,
 } from 'react';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useLocation, useNavigate, useParams } from 'react-router-dom';
 import { useIsAuthenticated, useMsal } from '@azure/msal-react';
 import Api from '../../../api';
 import { useAppSelector } from '../../../app/hooks';
@@ -30,7 +30,8 @@ export default function TransactionStatus() {
   const isAuthenticated = useIsAuthenticated();
   const { instance, accounts } = useMsal();
   const { type, status, id } = useParams<Partial<TransactionInterface>>();
-  const [currentType] = useState<TransactionTypeEnum>(type as TransactionTypeEnum);
+  const { state = { type } as any } = useLocation();
+  const [currentType] = useState<TransactionTypeEnum>(state?.type as TransactionTypeEnum);
   const [
     currentStatus,
   ] = useState<TransactionStatusEnum>(status as TransactionStatusEnum);
@@ -70,7 +71,7 @@ export default function TransactionStatus() {
         className="status-list"
         backdropImage="backdrop-image-3"
         showClose
-        closeHandler={() => navigate(`/my-wallet/transaction-history/${type}`)}
+        closeHandler={() => navigate(`/my-wallet/transaction-history/${currentType}`)}
       >
         <div className="details">
           <Suspense fallback={<div>Loading...</div>}>

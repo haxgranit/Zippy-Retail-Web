@@ -158,7 +158,12 @@ export default function TransactionStatusList() {
           <SimpleBar className="simplebar-container" forceVisible="y" autoHide={false}>
             {!isProcessing ? (
               filteredTransactionList.map((item: Transaction) => (
-                <Link key={item.id} to={`/my-wallet/transaction-history/${getTransactionType(item)}/${getEquivalentStatus(item.status)}/${item.id}`} className="transaction-items">
+                <Link
+                  key={item.id}
+                  to={`/my-wallet/transaction-history/${getTransactionType(item)}/${getEquivalentStatus(item.status)}/${item.id}`}
+                  state={{ type }}
+                  className="transaction-items"
+                >
                   <Row>
                     <Col xs={1} className="status-icon">
                       <i className={`zippy-cash-icon zc-${getEquivalentStatus(item.status)}`} />

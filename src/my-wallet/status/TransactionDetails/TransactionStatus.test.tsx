@@ -1,4 +1,5 @@
 import React from 'react';
+import { BrowserRouter } from 'react-router-dom';
 import TransactionStatus from './TransactionStatus';
 
 const ReactTestRenderer = require('react-test-renderer');
@@ -12,7 +13,9 @@ jest.mock('react-router-dom', () => ({
 describe('TransactionStatus Component', () => {
   it('matches the snapshot', () => {
     const tree = ReactTestRenderer.create(
-      <TransactionStatus />,
+      <BrowserRouter>
+        <TransactionStatus />
+      </BrowserRouter>,
     ).toJSON();
     expect(tree).toMatchSnapshot();
   });
