@@ -39,7 +39,18 @@ const CancelRequestForMoneyVerification = ({
         <Row>
           <Col xs={6}>To</Col>
           <Col xs={6}>
-            <strong>{transaction ? `${transaction.contact.firstName || ''} ${transaction.contact.lastName || ''}` : ''}</strong>
+            {transaction?.contact && (
+              <span>
+                <strong>{`${transaction.contact.firstName || ''} ${transaction.contact.lastName || ''}`}</strong>
+                  {` (${transaction.contact.email})`}
+              </span>
+            )}
+            {transaction?.fundingSource && (
+              <span>
+                <strong>{`${transaction.fundingSource.displayName || ''}`}</strong>
+                  {` (${transaction.fundingSource.bankAccount?.accountNumber})`}
+              </span>
+            )}
           </Col>
         </Row>
         <Row>
@@ -62,12 +73,14 @@ const CancelRequestForMoneyVerification = ({
             </strong>
           </Col>
         </Row>
-        <Row>
-          <Col xs={6}>Email</Col>
-          <Col xs={6}>
-            <strong>{transaction ? ` (${transaction.contact.email})` : ''}</strong>
-          </Col>
-        </Row>
+        {transaction?.contact && (
+          <Row>
+            <Col xs={6}>Email</Col>
+            <Col xs={6}>
+              <strong>{transaction ? ` (${transaction.contact.email})` : ''}</strong>
+            </Col>
+          </Row>
+        )}
         <Stack gap={3} direction="horizontal">
           <Button
             className="zippy-btn zippy-flat d-flex"
