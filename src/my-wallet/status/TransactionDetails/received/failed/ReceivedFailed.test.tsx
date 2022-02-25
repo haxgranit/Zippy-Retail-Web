@@ -2,6 +2,7 @@ import { render, screen } from '@testing-library/react';
 import React from 'react';
 import { BrowserRouter } from 'react-router-dom';
 import ReceivedFailed from './ReceivedFailed';
+import { TransactionTypePastTenseEnum } from '../../../../../constants/enum/TransactionTypePastTenseEnum';
 
 const ReactTestRenderer = require('react-test-renderer');
 
@@ -19,6 +20,7 @@ describe('ReceivedFailed Component', () => {
           transaction={undefined}
           user={undefined}
           setCurrentStatus={undefined}
+          type={TransactionTypePastTenseEnum.ALL}
         />
       </BrowserRouter>,
     ).toJSON();
@@ -32,6 +34,7 @@ describe('ReceivedFailed Component', () => {
           transaction={undefined}
           user={undefined}
           setCurrentStatus={undefined}
+          type={TransactionTypePastTenseEnum.ALL}
         />
       </BrowserRouter>,
     );

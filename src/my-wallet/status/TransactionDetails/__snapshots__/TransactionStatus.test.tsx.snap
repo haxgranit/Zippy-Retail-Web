@@ -16,6 +16,14 @@ exports[`TransactionStatus Component matches the snapshot 1`] = `
       <div
         className="zippy-cash-container-header"
       >
+        <i
+          aria-label="close"
+          className="zippy-cash-icon zc-cross"
+          onClick={[Function]}
+          onKeyUp={[Function]}
+          role="button"
+          tabIndex={0}
+        />
         <h1
           className="title"
         >

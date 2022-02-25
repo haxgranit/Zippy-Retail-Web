@@ -22,11 +22,7 @@ Array [
       </div>
       <div
         className="col-6"
-      >
-        <strong>
-          
-        </strong>
-      </div>
+      />
     </div>
     <div
       className="row"
@@ -104,7 +100,7 @@ Array [
         onClick={[Function]}
         type="button"
       >
-        Back
+        Back to Status
       </button>
     </div>
   </div>,

@@ -76,17 +76,6 @@ export default class Api {
     return this.fetch<User>('put', 'User');
   }
 
-  public getInteracEtransferTransactions(type: TransferTypeEnum) {
-    if (type === TransferTypeEnum.ALL) {
-      return this.fetch<Transaction[]>('get', 'InteracEtransfer/Transactions');
-    }
-    return this.fetch<Transaction[]>('get', `InteracEtransfer/Transactions?type=${type}`);
-  }
-
-  public getInteracEtransferTransaction(transactionId: number) {
-    return this.fetch<Transaction>('get', `InteracEtransfer/Transactions/${transactionId}`);
-  }
-
   public getInteracEtransferCancelTransaction(transactionId: number) {
     return this.fetch<Transaction>('post', `InteracEtransfer/Transactions/${transactionId}/Cancel`);
   }
@@ -105,6 +94,13 @@ export default class Api {
 
   public getTransfer(transactionId: number) {
     return this.fetch<Transaction>('get', `Transfers/${transactionId}`);
+  }
+
+  public getTransfers(type: TransferTypeEnum) {
+    if (type === TransferTypeEnum.ALL) {
+      return this.fetch<Transaction[]>('get', 'Transfers');
+    }
+    return this.fetch<Transaction[]>('get', `Transfers?type=${type.replace(/^./, (str) => str.toUpperCase())}`);
   }
 
   public postZippyCashTransfer(data: ZippyCashTransaction) {

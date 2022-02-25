@@ -15,6 +15,7 @@ import { TransactionProps } from '../../TransactionStatus';
 import Api from '../../../../../api';
 
 function RequestedPending({
+  type,
   user,
   transaction,
 }: TransactionProps) {
@@ -32,7 +33,7 @@ function RequestedPending({
       .getInteracEtransferSendReminder(Number(id))
       .finally(() => {
         setProcessing(false);
-        navigate(`/my-wallet/status/requested/reminder/${id}`);
+        navigate(`/my-wallet/transaction-history/${type}/reminder/${id}`);
       });
   };
 
@@ -51,7 +52,7 @@ function RequestedPending({
       .finally(() => {
         setProcessing(false);
         setShowCancelRequestForMoney(false);
-        navigate(`/my-wallet/status/requested/cancelled/${id}`);
+        navigate(`/my-wallet/transaction-history/${type}/cancelled/${id}`);
       });
   };
 
@@ -71,39 +72,49 @@ function RequestedPending({
         <Row>
           <Col xs={6}>From</Col>
           <Col xs={6}>
-            <strong>{getUserFullName()}</strong>
-            {user && ` (${getUserEmail()})`}
+            {transaction?.contact && (
+              <span>
+                <strong>{`${transaction.contact.firstName || ''} ${transaction.contact.lastName || ''}`}</strong>
+                  {` (${transaction.contact.email})`}
+              </span>
+            )}
+            {transaction?.fundingSource && (
+              <span>
+                <strong>{`${transaction.fundingSource.displayName || ''}`}</strong>
+                  {` (${transaction.fundingSource.bankAccount?.accountNumber})`}
+              </span>
+            )}
           </Col>
         </Row>
         <Row>
           <Col xs={6}>To</Col>
           <Col xs={6}>
-            <strong>{transaction ? `${transaction.contact.firstName || ''} ${transaction.contact.lastName || ''}` : ''}</strong>
+            <strong>{getUserFullName()}</strong>
+            {user && ` (${getUserEmail()})`}
           </Col>
         </Row>
         <Row>
           <Col xs={6}>Transfer Date</Col>
           <Col xs={6}>
-            {transaction && transaction.date ? DateTime.fromISO(transaction.date).toLocaleString(DateTime.DATE_MED) : ''}
+            {transaction?.createdDate ? DateTime.fromISO(transaction.createdDate).toLocaleString(DateTime.DATE_MED) : ''}
           </Col>
         </Row>
         <Row>
           <Col xs={6}>Transfer Amount</Col>
           <Col xs={6}>
             <strong className="amount">
-              {transaction && transaction.amount
-            && (
-              <NumberFormat
-                value={transaction.amount}
-                defaultValue={0}
-                displayType="text"
-                prefix="$ "
-                suffix=" CAD"
-                thousandSeparator
-                decimalScale={2}
-                fixedDecimalScale
-              />
-            )}
+              {transaction?.amount && (
+                <NumberFormat
+                  value={transaction.amount}
+                  defaultValue={0}
+                  displayType="text"
+                  prefix="$ "
+                  suffix=" CAD"
+                  thousandSeparator
+                  decimalScale={2}
+                  fixedDecimalScale
+                />
+              )}
             </strong>
           </Col>
         </Row>

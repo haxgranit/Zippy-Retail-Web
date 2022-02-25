@@ -22,11 +22,7 @@ Array [
       </div>
       <div
         className="col-6"
-      >
-        <strong>
-          
-        </strong>
-      </div>
+      />
     </div>
     <div
       className="row"
@@ -118,7 +114,7 @@ Array [
         onClick={[Function]}
         type="button"
       >
-        Back
+        Back to Status
       </button>
       <button
         className="zippy-btn d-flex ms-auto center w-full simple btn btn-primary"

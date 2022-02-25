@@ -1,6 +1,7 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { BrowserRouter } from 'react-router-dom';
 import RequestedCompleted from './RequestedCompleted';
+import { TransactionTypePastTenseEnum } from '../../../../../constants/enum/TransactionTypePastTenseEnum';
 
 export default {
   title: 'interac-etransfer/status/completed/RequestedCompleted',
@@ -13,6 +14,7 @@ const Template: ComponentStory<typeof RequestedCompleted> = () => (
       transaction={undefined}
       user={undefined}
       setCurrentStatus={undefined}
+      type={TransactionTypePastTenseEnum.ALL}
     />
   </BrowserRouter>
 );
