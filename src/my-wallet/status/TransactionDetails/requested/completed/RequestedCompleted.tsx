@@ -40,13 +40,6 @@ function RequestedCompleted({
         <Row>
           <Col xs={6}>From</Col>
           <Col xs={6}>
-            <strong>{getUserFullName()}</strong>
-            {user && ` (${getUserEmail()})`}
-          </Col>
-        </Row>
-        <Row>
-          <Col xs={6}>To</Col>
-          <Col xs={6}>
             {transaction?.contact && (
               <span>
                 <strong>{`${transaction.contact.firstName || ''} ${transaction.contact.lastName || ''}`}</strong>
@@ -59,6 +52,13 @@ function RequestedCompleted({
                   {` (${transaction.fundingSource.bankAccount?.accountNumber})`}
               </span>
             )}
+          </Col>
+        </Row>
+        <Row>
+          <Col xs={6}>To</Col>
+          <Col xs={6}>
+            <strong>{getUserFullName()}</strong>
+            {user && ` (${getUserEmail()})`}
           </Col>
         </Row>
         <Row>
