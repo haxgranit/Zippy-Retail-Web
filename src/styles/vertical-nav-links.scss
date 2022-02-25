@@ -10,6 +10,7 @@
         position: sticky;
         width: 240px;
         height: 100vh;
+        min-height: 674px;
         display: flex;
         flex-direction: column;
         left: 0;
@@ -20,92 +21,95 @@
         border-bottom: $color-gray-20 solid 1px;
         padding-bottom: 50px;
 
-        .nav-link,
-        .nav-link:visited,
-        .nav-link:focus {
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            width: 100%;
-            color: $color-gray-40;
-            font-style: normal;
-            font-weight: normal;
-            padding: 5px 30px 5px 10px;
-            font-size: 14px;
-            cursor: pointer;
-            background: transparent;
-            position: relative;
-        }
+        .nav-items {
 
-        .nav-link:hover {
-            color: $color-black;
-        }
+            .nav-link,
+            .nav-link:visited,
+            .nav-link:focus {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                width: 100%;
+                color: $color-gray-40;
+                font-style: normal;
+                font-weight: normal;
+                padding: 5px 30px 5px 10px;
+                font-size: 14px;
+                cursor: pointer;
+                background: transparent;
+                position: relative;
+            }
 
-        .nav-link {
-            .dropdown {
-                position: absolute;
-                right: 15px;
-                top: 50%;
-                transform: translateY(-50%);
-                -ms-transform:translateY(-50%); /* IE */
-                -moz-transform:translateY(-50%); /* Firefox */
-                -webkit-transform:translateY(-50%); /* Safari and Chrome */
-                -o-transform:translateY(-50%);
-                margin: 0;
+            .nav-link:hover {
+                color: $color-black;
+            }
 
-                &:after {
-                    width: 8px;
-                    height: 8px;
+            .nav-link {
+                .dropdown {
+                    position: absolute;
+                    right: 15px;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    -ms-transform:translateY(-50%); /* IE */
+                    -moz-transform:translateY(-50%); /* Firefox */
+                    -webkit-transform:translateY(-50%); /* Safari and Chrome */
+                    -o-transform:translateY(-50%);
+                    margin: 0;
+
+                    &:after {
+                        width: 8px;
+                        height: 8px;
+                    }
                 }
             }
-        }
 
-        .nav > .nav-link {
-            font-size: 12px;
-            padding: 10px 30px 10px 10px;
+            .nav > .nav-link {
+                font-size: 12px;
+                padding: 10px 30px 10px 10px;
 
-            &.active {
-                color: #000000;
+                &.active {
+                    color: #000000;
 
-                & > .dropdown:after {
-                    -webkit-mask-image: url("../assets/img/icons/down.svg");
-                    mask-image: url("../assets/img/icons/down.svg");
+                    & > .dropdown:after {
+                        -webkit-mask-image: url("../assets/img/icons/down.svg");
+                        mask-image: url("../assets/img/icons/down.svg");
+                    }
                 }
             }
-        }
 
-        & > .nav-link {
-            &.active {
-                background: linear-gradient(83.49deg, $color-red 31.24%, $color-orange 99.49%);
-                color: $color-white;
+            & > .nav-link {
+                &.active {
+                    background: linear-gradient(83.49deg, $color-red 31.24%, $color-orange 99.49%);
+                    color: $color-white;
 
-                & > .dropdown:after {
-                    -webkit-mask-image: url("../assets/img/icons/down.svg");
-                    mask-image: url("../assets/img/icons/down.svg");
-                }
+                    & > .dropdown:after {
+                        -webkit-mask-image: url("../assets/img/icons/down.svg");
+                        mask-image: url("../assets/img/icons/down.svg");
+                    }
 
-                & > i.zippy-cash-icon:after {
-                    background-color: #FFF;
+                    & > i.zippy-cash-icon:after {
+                        background-color: #FFF;
+                    }
                 }
             }
-        }
 
-        .navbar-brand {
-            display: block;
-            text-align: center;
-            margin: 10px 0 15px;
-            width: 100%;
-        }
+            .navbar-brand {
+                display: block;
+                text-align: center;
+                margin: 10px 0 15px;
+                width: 100%;
+            }
 
-        .nav-link > i {
-            margin-right: 10px;
-        }
+            .nav-link > i {
+                margin-right: 10px;
+            }
 
-        hr {
-            background: #CFD2D3;
-            border-radius: 1px;
-            width: 100%;
-            margin: 15px 20px;
+            hr {
+                background: #CFD2D3;
+                border-radius: 1px;
+                width: 100%;
+                margin: 15px 20px;
+            }
         }
 
         .copyright {
