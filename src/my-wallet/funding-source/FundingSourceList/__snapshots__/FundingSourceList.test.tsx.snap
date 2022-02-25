@@ -35,7 +35,13 @@ exports[`FundingSourceList Component matches the snapshot 1`] = `
         >
           Funding Source
         </div>
-        <div>
+        <div
+          style={
+            Object {
+              "height": 380,
+            }
+          }
+        >
           <div
             className="bank-wrapper"
           >
