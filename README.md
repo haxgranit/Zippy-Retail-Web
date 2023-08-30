@@ -5,7 +5,7 @@ For the ZCash fintech startup, I was hired as a Lead Developer and Technical Arc
 C#, .NET Core, MVC, React, Mobile app development, Web development
 
 ### High-level architecture
-![](./Zippy Cash AML Diagram .pdf)
+[Zippy Cash AML Diagram](./Zippy Cash AML Diagram.pdf)
 
 ### Mockup
 ![](./zippy-01.png)
